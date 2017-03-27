@@ -216,7 +216,7 @@ advice or time), and so on.
 3D Representations in Computer Graphics
 In computer graphics, 3D objects are represented in many forms. 3D scanners capture raw data in various forms such as point clouds, range images, and voxels. A point cloud is a collection of 3D points, often used in computer vision.  A range image maps pixels of a depth image to a set of points in the scene. Voxels are units of cubes that define the volume of objects, it has applications in many fields including medicine where voxels are used to visualise the results of MRI scans of patients.\cite{mri}
 
-In a production environment it is simpler to define geometry as opposed to capturing examples. The most common representation used for CG production are polygonal meshes, data that contains information of vertices, edges, and faces.\cite{polyhedron} Topology is the organisation of the components that define the mesh geometry. Two surfaces with the same appearance could have different topologies. Where precision is concerned, parametric definitions are used for industries such as CAD. Every representation has its advantages depending on the use case. It is possible to convert between representations, but data loss may be incurred. Properties that make polygon meshes desirable include being efficient rendering, simple to define, expressive enough to capture geometry required, and works well with established techniques such as UV texture mapping and deforming algorithms. The rendering pipeline often converts meshes to tri-faces (faces constructed by three edges) as an optimisation process, but best practice for 3D artists is to maintain a topology of quad-faces which are easier to organise and conforms better with editing tools and algorithms.
+In a production environment it is simpler to define geometry as opposed to capturing examples. The most common representation used for CG production are polygonal meshes, data that contains information of vertices, edges, and faces. Topology is the organisation of the components that define the mesh geometry. Two surfaces with the same appearance could have different topologies. Where precision is concerned, parametric definitions are used for industries such as CAD. Every representation has its advantages depending on the use case. It is possible to convert between representations, but data loss may be incurred. Properties that make polygon meshes desirable include being efficient rendering, simple to define, expressive enough to capture geometry required, and works well with established techniques such as UV texture mapping and deforming algorithms. The rendering pipeline often converts meshes to tri-faces (faces constructed by three edges) as an optimisation process, but best practice for 3D artists is to maintain a topology of quad-faces which are easier to organise and conforms better with editing tools and algorithms.
 
 %** Image of representations
 
@@ -279,30 +279,49 @@ The aim of this study is …
 \chapter{Technical Background}
 \label{chap:technical}
 
-\section{Formal Definition of 3D Polygon Model Representation}
-\noindent
-Polyhedra representation of 3D surfaces are composed of vertices, edges, and faces. Let polygon model P = (V, E, F), where V, E, F represents the set of vertices, edges, and faces respectively. Vertices are 3D points of the form v = (x,y,z) for all X, Y, Z in R domain. Edges are of the form e = (v1, v2) where for all v1 and v2 are members of the set of vertices V. Faces are tuples of vertices that represent surface geometry, fn = (v1, v2, .. , vn). There are other attributes such as normals and texture coordinates, but we are only considering geometry.
+\section{Formal Definition of 3D Polygon Mesh Representation}
+%\cite{polyhedron}The winged-edge polyhedron representation proposed by Baumgart in 1972 introduced a mesh data structure to represent 3D geometry using vertices, edges, and faces. \cite{wingededge}
 
+Polygon mesh representation of 3D surfaces are composed of vertices, edges, and faces. Let polygon mesh $P = (\mathbf{V, E, F})$, where $\mathbf{V, E, F}$ represents the set of vertices, edges, and faces respectively. In practice, polygonal meshes contain more components that affect surface appearance such as texture coordinates and vertex normals, however, the components described are sufficient for geometric processing.
+
+\subsection{Mesh Vertices}
+A mesh vertex $v$ is a 3D point of the form $\forall (x, y, z) \in \Re, v = (x, y, z)$.
+The set of vertices is a point cloud representation of the geometry. 
+
+\subsection{Edges}
+An edge $e$ is an unordered pair that connects two vertices. Formally, it is described in the form $\forall (v_1, v_2) \in \mathbf{V}, e = \{v_1, v_2\}$. Vertices connected by edges form a wireframe of the geometry. 
+
+\subsection{Polygon Faces}
+A polygon face can be formed from an arbitrary number of vertices $\forall (v_1, v_2,...,v_n) \in \mathbf{V}, f_n = (v_1, v_2,..., v_n)$, however, in this context we are only concerned with tri-faces $\forall (v_1, v_2, v_3) \in \mathbf{V}, f_3 = (v_1, v_2, v_3)$ and quad-faces $\forall (v_1, v_2, v_3, v_4) \in \mathbf{V}, f_4 = (v_1, v_2, v_3, v_4)$. Faces describe the geometric surface of an object. 
+
+\subsection{Edge Loops}
 3D programs often allow edge loop selection which are useful properties of the geometry. An edge loop is defined (on blender) as a set of connected edges that either forms a loop or the end vertices are poles (vertices that do not have edges). Edge loops are useful for extracting more information on the structure of the mesh.
 \cite{edgeloops}
 
-\section{Principal Component Analysis}
+% Cite 
+
+\section{Bayesian Gaussian Process Latent Variable Model}
+\subsection{Principal Component Analysis}
 Principal Component Analysis (PCA) is a statistical tool used to perform dimensionality reduction. 
 \cite{pca1901}
-In the original paper by Pearson, PCA takes the ‘best-fitting’ line or plane of a higher dimensional system. Formally, taking y=a0+a1x, or z=a0+a1x+b1y, or z = a0+a1x1+a2x2+a3x3+...+anxn, where y, x, z, x1, x2, …, xn are variables determining the “best” values for the constants a0, a1, …, an.
+In the original paper by Pearson, PCA takes the ‘best-fitting’ line or plane of a higher dimensional system. Formally, taking $y=a_0+a_1x$, or $z=a_0+a_1x+b_1y$, or $z = a_0+a_1x_1+a_2x_2+a_3x_3+...+a_nx_n$, where $y, x, z, x_1, x_2,...,x_n$ are variables determining the 'best' values for the constants $a_0, a_1,...,a_n$.
 PCA works best for reducing dimensions of linear variance.
 %\cite{pca2002}
 
-\section{Probabilistic Dual Principal Component Analysis}
+\subsection{Probabilistic Principal Component Analysis}
+Tipping and Bishop PPCA determines principal axes of observed data through maximum likelihood estimation of parameters in a latent variable model. Probabilistic approach.
+Data has a linear relationship with some latent-space $X_n$. 
 Probabilistic PCA give PDF.
+
+\subsection{Dual Probabilistic Principal Component Analysis}
 Dual PCA is equivalent.
 
-\section{Gaussian Processes}
+\subsection{Gaussian Processes}
 
 
-\section{Gaussian Process Latent Variable Model}
+\subsection{Gaussian Process Latent Variable Model}
 
-\section{Bayesian GPLVM}
+\subsection{Bayesian GPLVM}
 
 
 

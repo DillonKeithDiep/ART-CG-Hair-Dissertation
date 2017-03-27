@@ -1,4 +1,4 @@
-\begin{thebibliography}{10}
+\begin{thebibliography}{1}
 
 \bibitem{fontmanifold}
 N.~D. CAMPBELL and J.~KAUTZ.
@@ -6,15 +6,12 @@ N.~D. CAMPBELL and J.~KAUTZ.
 \newblock ACM Transactions on Graphics (TOG) 33, 4, 91., 2014.
 
 \bibitem{autohair}
-SHAO T.-WU H. WENG~Y. CHAI, M. and K~ZHOU.
+SHAO~T.-WU H. WENG~Y. CHAI, M. and K~ZHOU.
 \newblock {\em AutoHair: Fully automatic hair modeling from a single image}.
 \newblock ACM Trans. Graph. 35, 4 (July), 116:1–116:12, 2016.
 
 \bibitem{MLMethods}
 [ML] from http://opus.bath.ac.uk/41075/.
-
-\bibitem{polyhedron}
-[POLYHEDRON] http://dl.acm.org/citation.cfm?doid=1499949.1500071.
 
 \bibitem{procedural2}
 [Procedural2] http://hpcg.purdue.edu/papers/Smelik14CGF.pdf.

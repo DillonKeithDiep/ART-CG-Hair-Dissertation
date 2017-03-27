@@ -32,9 +32,6 @@ while executing---line 1090 of file plain.bst
 Warning--empty title in MLMethods
 Warning--empty publisher in MLMethods
 Warning--empty year in MLMethods
-Warning--empty title in polyhedron
-Warning--empty publisher in polyhedron
-Warning--empty year in polyhedron
 Warning--empty title in procedural2
 Warning--empty publisher in procedural2
 Warning--empty year in procedural2
@@ -53,7 +50,4 @@ Warning--empty year in mri
 Warning--empty title in edgeloops
 Warning--empty publisher in edgeloops
 Warning--empty year in edgeloops
-Warning--empty title in pca2002
-Warning--empty publisher in pca2002
-Warning--empty year in pca2002
 (There were 14 error messages)
