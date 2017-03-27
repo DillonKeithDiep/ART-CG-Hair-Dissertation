@@ -1,0 +1,37 @@
+\begin{thebibliography}{10}
+
+\bibitem{fontmanifold}
+N.~D. CAMPBELL and J.~KAUTZ.
+\newblock {\em Learning a manifold of fonts}.
+\newblock ACM Transactions on Graphics (TOG) 33, 4, 91., 2014.
+
+\bibitem{autohair}
+SHAO T.-WU H. WENG~Y. CHAI, M. and K~ZHOU.
+\newblock {\em AutoHair: Fully automatic hair modeling from a single image}.
+\newblock ACM Trans. Graph. 35, 4 (July), 116:1–116:12, 2016.
+
+\bibitem{MLMethods}
+[ML] from http://opus.bath.ac.uk/41075/.
+
+\bibitem{polyhedron}
+[POLYHEDRON] http://dl.acm.org/citation.cfm?doid=1499949.1500071.
+
+\bibitem{procedural2}
+[Procedural2] http://hpcg.purdue.edu/papers/Smelik14CGF.pdf.
+
+\bibitem{procedural1}
+[Procedural1] http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=6363215.
+
+\bibitem{pca1901}
+[PCA~1901] http://stat.smmu.edu.cn/history/pearson1901.pdf.
+
+\bibitem{tsr}
+[TSR] https://www.thesimsresource.com/.
+
+\bibitem{mri}
+[MRI] http://www.stat.columbia.edu/ martin/Papers/STS282.pdf.
+
+\bibitem{edgeloops}
+[Edge loops] https://sites.ualberta.ca/~cwant/blender/derived surfaces.pdf.
+
+\end{thebibliography}

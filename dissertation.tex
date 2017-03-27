@@ -1,0 +1,549 @@
+% The document class supplies options to control rendering of some standard
+% features in the result.  The goal is for uniform style, so some attention 
+% to detail is *vital* with all fields.  Each field (i.e., text inside the
+% curly braces below, so the MEng text inside {MEng} for instance) should 
+% take into account the following:
+%
+% - author name       should be formatted as "FirstName LastName"
+%   (not "Initial LastName" for example),
+% - supervisor name   should be formatted as "Title FirstName LastName"
+%   (where Title is "Dr." or "Prof." for example),
+% - degree programme  should be "BSc", "MEng", "MSci", "MSc" or "PhD",
+% - dissertation title should be correctly capitalised (plus you can have
+%   an optional sub-title if appropriate, or leave this field blank),
+% - dissertation type should be formatted as one of the following:
+%   * for the MEng degree programme either "enterprise" or "research" to
+%     reflect the stream,
+%   * for the MSc  degree programme "$X/Y/Z$" for a project deemed to be
+%     X%, Y% and Z% of type I, II and III.
+% - year              should be formatted as a 4-digit year of submission
+%   (so 2014 rather than the accademic year, say 2013/14 say).
+
+\documentclass[ % the name of the author
+                    author={Dillon Keith Diep},
+                % the name of the supervisor
+                supervisor={Dr. Carl Henrik Ek},
+                % the degree programme
+                    degree={MEng},
+                % the dissertation    title (which cannot be blank)
+                     title={Assisted Content Generation for 3D Hair Geometry},
+                % the dissertation subtitle (which can    be blank)
+                  subtitle={},
+                % the dissertation     type
+                      type={Research},
+                % the year of submission
+                      year={2014} ]{dissertation}
+
+\begin{document}
+
+% =============================================================================
+
+% This section simply introduces the structural guidelines.  It can clearly
+% be deleted (or commented out) if you use the file as a template for your
+% own dissertation: everything following it is in the correct order to use 
+% as is.
+
+% =============================================================================
+
+% This macro creates the standard UoB title page by using information drawn
+% from the document class (meaning it is vital you select the correct degree 
+% title and so on).
+
+\maketitle
+
+% After the title page (which is a special case in that it is not numbered)
+% comes the front matter or preliminaries; this macro signals the start of
+% such content, meaning the pages are numbered with Roman numerals.
+
+\frontmatter
+
+% This macro creates the standard UoB declaration; on the printed hard-copy,
+% this must be physically signed by the author in the space indicated.
+
+\makedecl
+
+% LaTeX automatically generates a table of contents, plus associated lists 
+% of figures, tables and algorithms.  The former is a compulsory part of the
+% dissertation, but if you do not require the latter they can be suppressed
+% by simply commenting out the associated macro.
+
+\tableofcontents
+\listoffigures
+\listoftables
+\listofalgorithms
+\lstlistoflistings
+
+% The following sections are part of the front matter, but are not generated
+% automatically by LaTeX; the use of \chapter* means they are not numbered.
+
+% -----------------------------------------------------------------------------
+
+\chapter*{Executive Summary}
+
+{\bf A compulsory section, of at most $1$ page} 
+\vspace{1cm} 
+
+\noindent
+The research hypothesis of this study is that probabilistic principal component analysis with the
+Gaussian Process Latent Variable Model is applicable for improving the creative production workflow of complex 3D geometry such as hair structures of humanoids.
+
+The topic of this thesis explores the concept of assisted content generation by machine learning for the production of 3D hair geometry. The production of 3D virtual worlds is a time-consuming and costly process that also demand expert knowledge. 3D assets encompass a vast range of applications, ranging from simulations and research, to contributing towards the functioning of many businesses. The production of 3D assets also plays a pivotal role in engineering design, and the provisioning of entertainment. One particular task is the creation of 3D hair geometry for humanoid characters. The production of 3D hair is arduous as hair structure is a complex system containing much interdependence between components.
+
+Machine learning applications typically use large data sets for training on problems that often have a concise answer for a given prediction. The application of machine learning to enhance production for creative work is an exciting field that tackles new challenges - not only could it have a notable impact on the economy, artistic products tend to have small sets of data available and evaluation of quality is subjective. Given the same input, acceptable solutions can vary significantly. The mentioned peculiarities of applying machine learning for 3D mesh data defines a unique field of problems to investigate.
+
+Existing tools for 3D modelling have remained mostly static in the paradigm of approach over the past few decades. Automation through methods such as procedural generation can produce output much faster, but the lack of control over the final result makes it less desirable than traditional methods of 3D modelling. The focus of this project is to formulate a revolutionary framework that improves the workflow of producing 3D hair geometry.
+
+\begin{quote}
+\noindent
+\begin{itemize}
+\item Resolved the alignment problem by coming up with a generative model for approximating hair structure
+\item Demonstrated the use of GPLVM on various sizes of data set
+\item Implemented an add-on package for a 3D production program, Blender
+	\begin{itemize}
+		\item This implementation creates guiding splines that are useful for generating geometry
+		\item Appropriate for small training set that is practical for content creators
+		\item Real-time performance that matches current processing time required by traditional tools
+	\end{itemize}
+\item [TODO]: Evaluating kernels
+\item [TODO]: Analysis and Evaluation
+\end{itemize}
+\end{quote}
+
+% -----------------------------------------------------------------------------
+
+\chapter*{Supporting Technologies}
+
+{\bf A compulsory section, of at most $1$ page}
+\vspace{1cm} 
+
+\noindent
+This section should present a detailed summary, in bullet point form, 
+of any third-party resources (e.g., hardware and software components) 
+used during the project.  Use of such resources is always perfectly 
+acceptable: the goal of this section is simply to be clear about how
+and where they are used, so that a clear assessment of your work can
+result.  The content can focus on the project topic itself (rather,
+for example, than including ``I used \mbox{\LaTeX} to prepare my 
+dissertation''); an example is as follows:
+
+\begin{quote}
+\noindent
+\begin{itemize}
+\item I used the Java {\tt BigInteger} class to support my implementation 
+      of RSA.
+\item I used a parts of the OpenCV computer vision library to capture 
+      images from a camera, and for various standard operations (e.g., 
+      threshold, edge detection).
+\item I used an FPGA device supplied by the Department, and altered it 
+      to support an open-source UART core obtained from 
+      \url{http://opencores.org/}.
+\item The web-interface component of my system was implemented by 
+      extending the open-source WordPress software available from
+      \url{http://wordpress.org/}.
+\end{itemize}
+\end{quote}
+
+% -----------------------------------------------------------------------------
+
+\chapter*{Notation and Acronyms}
+
+{\bf An optional section, of roughly $1$ or $2$ pages}
+\vspace{1cm} 
+
+\noindent
+Any well written document will introduce notation and acronyms before
+their use, {\em even if} they are standard in some way: this ensures 
+any reader can understand the resulting self-contained content.  
+
+Said introduction can exist within the dissertation itself, wherever 
+that is appropriate.  For an acronym, this is typically achieved at 
+the first point of use via ``Advanced Encryption Standard (AES)'' or 
+similar, noting the capitalisation of relevant letters.  However, it 
+can be useful to include an additional, dedicated list at the start 
+of the dissertation; the advantage of doing so is that you cannot 
+mistakenly use an acronym before defining it.  A limited example is 
+as follows:
+
+\begin{quote}
+\noindent
+\begin{tabular}{lcl}
+AES                 &:     & Advanced Encryption Standard                                         \\
+DES                 &:     & Data Encryption Standard                                             \\
+                    &\vdots&                                                                      \\
+${\mathcal H}( x )$ &:     & the Hamming weight of $x$                                            \\
+${\mathbb  F}_q$    &:     & a finite field with $q$ elements                                     \\
+$x_i$               &:     & the $i$-th bit of some binary sequence $x$, st. $x_i \in \{ 0, 1 \}$ \\
+\end{tabular}
+\end{quote}
+
+% -----------------------------------------------------------------------------
+
+\chapter*{Acknowledgements}
+
+{\bf An optional section, of at most $1$ page}
+\vspace{1cm} 
+
+\noindent
+It is common practice (although totally optional) to acknowledge any
+third-party advice, contribution or influence you have found useful
+during your work.  Examples include support from friends or family, 
+the input of your Supervisor and/or Advisor, external organisations 
+or persons who  have supplied resources of some kind (e.g., funding, 
+advice or time), and so on.
+
+% =============================================================================
+
+% After the front matter comes a number of chapters; under each chapter,
+% sections, subsections and even subsubsections are permissible.  The
+% pages in this part are numbered with Arabic numerals.  Note that:
+%
+% - A reference point can be marked using \label{XXX}, and then later
+%   referred to via \ref{XXX}; for example Chapter\ref{chap:context}.
+% - The chapters are presented here in one file; this can become hard
+%   to manage.  An alternative is to save the content in seprate files
+%   the use \input{XXX} to import it, which acts like the #include
+%   directive in C.
+
+\mainmatter
+
+% -----------------------------------------------------------------------------
+
+\chapter{Contextual Background}
+\label{chap:context}
+
+\section{Topic Background}
+\noindent
+3D Representations in Computer Graphics
+In computer graphics, 3D objects are represented in many forms. 3D scanners capture raw data in various forms such as point clouds, range images, and voxels. A point cloud is a collection of 3D points, often used in computer vision.  A range image maps pixels of a depth image to a set of points in the scene. Voxels are units of cubes that define the volume of objects, it has applications in many fields including medicine where voxels are used to visualise the results of MRI scans of patients.\cite{mri}
+
+In a production environment it is simpler to define geometry as opposed to capturing examples. The most common representation used for CG production are polygonal meshes, data that contains information of vertices, edges, and faces.\cite{polyhedron} Topology is the organisation of the components that define the mesh geometry. Two surfaces with the same appearance could have different topologies. Where precision is concerned, parametric definitions are used for industries such as CAD. Every representation has its advantages depending on the use case. It is possible to convert between representations, but data loss may be incurred. Properties that make polygon meshes desirable include being efficient rendering, simple to define, expressive enough to capture geometry required, and works well with established techniques such as UV texture mapping and deforming algorithms. The rendering pipeline often converts meshes to tri-faces (faces constructed by three edges) as an optimisation process, but best practice for 3D artists is to maintain a topology of quad-faces which are easier to organise and conforms better with editing tools and algorithms.
+
+%** Image of representations
+
+\section{Production of 3D Hair Geometry}
+\noindent
+On average, a human is born with about 100,000 scalp hair follicles. It is very expensive to render and animate physically correct hair, but creative liberties have been taken to approximate or stylize 3D hair such that it is both acceptable aesthetically and feasible in terms of performance. This study considers modelling of hair geometry, the motion of hair is assumed to be its default resting pose.
+
+In recent years, impressive 3D hair solutions for real-time simulation of realistic hair and fur, such as Nvidia HairWorks and AMD’s TressFX has emerged. These solutions, however, have limited application in comparison to their traditional counterpart of polygonal hair. It is often the case that texture-mapped polygonal hair is used as a fallback for when the advanced simulation fails. Realism is not necessarily always desirable, polygon hair can flexibly represent different art styles. In some cases, a blend of multiple representations are used to balance between cost and quality. 3D hair in movies with large budget can afford to render hair with much higher fidelity for important characters, but might use efficient variants for scenarios such as crowd simulation. Ultimately, representation of virtual hair generally follows a structure of splines with control points that define the overall organisation of strands or segments.
+
+
+[Image of Hair Geometry]
+
+\section{Procedural Generation and Automated Production}
+\noindent
+Procedural generation techniques has been successfully used for terrains and city modelling. Methods such as the Lindenmayer system are used for foliage generation. Fractals with simulated noise can create structure that resemble patterns observed in nature. Procedural techniques, however, are seldom used for modelling objects with specific features. It is difficult to control the output of procedurally generated content without heavily restricting its capabilities.
+\cite{procedural1}
+\cite{procedural2}
+
+Machine Learning in 3D Production
+Machine learning methods can use existing production as training input to train models that are more concise and versatile than predetermined procedural approaches. Research in the past has used machine learning to help non-artists drawing 2D images. Gaussian processes enabled stylised inverse kinematics that deliver simple controls for complicated animation by learning the posing of joints. 
+\cite{MLMethods}
+
+\section{Motivation and Significance}
+\noindent
+State of the art 3D production software such as AutoDesk Maya, 3DS Max, and Blender are advanced programs with sophisticated list of features. That said, such programs have extremely convoluted user interfaces, even the most experienced professionals do not recognise each and every tool available. The most versatile tools are generally the most basic that perform atomic changes as they are applicable in every scenario. Examples include selection of primitives such as vertices, edges, or faces and performing translation, rotation, and scaling. Sculpting tools moves many data points simultaneously, they are popular for defining organic surfaces now that modern machines are sufficiently powerful. Experienced artists might search for an existing base mesh that is similar to start from, but it is not always the case that such a base mesh exists - there are also concerns for quality, such as unorganised topology. As the geometry becomes more detailed and well-defined, each alteration makes less impact and the space of sensible edits becomes smaller. The design and production of 3D geometry remains a slow and delicate process.
+
+Virtual hair creation is a necessity for characters of CG movies and video games that are embedded within culture both economically and as entertainment. Specialised artists learn to be proficient with the design of hair, variety of styles, and techniques for creating them. Hair geometry is much more concentrated than other types, containing many data points that are tedious to edit. Soft selection and sculpting tools are good enough for defining the structure but maintaining topology and issues such as overlapping surfaces are still problematic. Learning the relation of hair structure allows the potential of discovering new hairstyles.  It can also be used as a mean of rapidly generating initial base geometry that fits the target output better than existing geometry found. Generative methods could ensure a level of quality, clean topology that fits established specifications. Assisted content generation using machine learning provides a convenient, non-intrusive and intuitive method for rapidly generating new hair geometry from existing data.
+
+%**Move to evaluation
+The application of machine-learning based tools could enhance the workflow of professional users and improve the experience for non-expert consumers. Such tools integrate into the production environment to improve the efficiency of acquiring initial base geometry and visually compare designs during pre-production. Non-expert users receive the ability to produce 3D geometry without requiring to learn the intrinsics of traditional 3D modelling software. The rise in popularity for augmented reality and 3D printing inspires the development of generative tools that are intuitive and simplistic to use. Applications that allow users to create their personal content could also integrate machine-learning based tools to prevent inappropriate or undesirable creation from being produced while providing options that surpass existing alternatives. An example would be avatar creation for many applications and video games. A space of reasonable options generated from predefined outputs by the developers will allow users to interpolate between sensible configurations, providing an excellent level of customisation while adhering to defined constraints.
+
+\section{Challenges}
+\noindent
+This study faces a number of challenges. First of all, 3D meshes are difficult to compare. The training data in its raw form will have varying dimensions. Meshes can be viewed as samples of the true geometry, thus meshes that represent the same object could differ drastically in number of data points depending on its level of detail. Typical feature extraction methods do not work well on meshes as artistic products are sensitive to data loss - any change could affect the final result drastically.
+
+Another problem encountered is the lack of training data. Typical machine learning solutions use huge data sets in the order of hundreds of thousands for training, but for 3D meshes the expected size of readily available training data is much smaller. Public repositories of 3D polygonal hair are generally around a few thousand in size. Studios that store and organise past production could likely match the size of public repositories, depending on the size of the company. Independent artists that keep their production will range in the hundreds.
+\cite{tsr}
+
+The application of machine learning methods must also account for subjectivity of evaluating artistic assets. The range of acceptable solutions is ambiguous, likened to how hair styles of characters can change drastically during the design phase, determining the threshold of acceptable solutions will be in itself a challenge to resolve.
+
+As mentioned previously, 3D meshes are delicate and can easily be invalidated from small changes. Thus, reparations are required to ensure that the output of trained models are acceptable.
+
+In a production environment, the time required for a technique to return observable result directly affects throughput. For practical efficacy of assisted content generation, usage of our methods should be reasonably effective.
+
+\section{Central Objectives}
+\noindent
+The aim of this study is …
+\begin{itemize}
+\item Resolving the alignment problem of 3D data by standardisation.
+\item Explore the application of GPLVM for 3D hair geometry in a production pipeline.
+\item Investigate the use of latent variables for identifying stylistic properties of 3D hair geometry.
+\item Demonstrate the use of non-linear manifold to generate new hairstyles from training data.
+\item Enable an intuitive method for non-experts to create 3D hair geometry.
+\item Observable output demand performance close to real-time for practical use.
+\end{itemize}
+
+
+% -----------------------------------------------------------------------------
+
+\chapter{Technical Background}
+\label{chap:technical}
+
+\section{Formal Definition of 3D Polygon Model Representation}
+\noindent
+Polyhedra representation of 3D surfaces are composed of vertices, edges, and faces. Let polygon model P = (V, E, F), where V, E, F represents the set of vertices, edges, and faces respectively. Vertices are 3D points of the form v = (x,y,z) for all X, Y, Z in R domain. Edges are of the form e = (v1, v2) where for all v1 and v2 are members of the set of vertices V. Faces are tuples of vertices that represent surface geometry, fn = (v1, v2, .. , vn). There are other attributes such as normals and texture coordinates, but we are only considering geometry.
+
+3D programs often allow edge loop selection which are useful properties of the geometry. An edge loop is defined (on blender) as a set of connected edges that either forms a loop or the end vertices are poles (vertices that do not have edges). Edge loops are useful for extracting more information on the structure of the mesh.
+\cite{edgeloops}
+
+\section{Principal Component Analysis}
+Principal Component Analysis (PCA) is a statistical tool used to perform dimensionality reduction. 
+\cite{pca1901}
+In the original paper by Pearson, PCA takes the ‘best-fitting’ line or plane of a higher dimensional system. Formally, taking y=a0+a1x, or z=a0+a1x+b1y, or z = a0+a1x1+a2x2+a3x3+...+anxn, where y, x, z, x1, x2, …, xn are variables determining the “best” values for the constants a0, a1, …, an.
+PCA works best for reducing dimensions of linear variance.
+%\cite{pca2002}
+
+\section{Probabilistic Dual Principal Component Analysis}
+Probabilistic PCA give PDF.
+Dual PCA is equivalent.
+
+\section{Gaussian Processes}
+
+
+\section{Gaussian Process Latent Variable Model}
+
+\section{Bayesian GPLVM}
+
+
+
+\section{Past Work}
+[Machine learning in Design and Art]
+Neural networks
+2009, 2012, 2015, 2016 (AutoHair \& Past)
+GPLVM on fonts, drawing, 2d
+
+[Automated Production of 3D Assets]
+Procedural generation
+Generative models
+Procedural Generation of Hair 
+Helicoids
+
+Existing work that is relevant
+LAWRENCE, N. 2005. Probabilistic non-linear principal component analysis with Gaussian process latent variable models. The Journal of Machine Learning Research 6, 1783–1816.  
+PCA:
+PPCA:
+PDPCA:
+GPLVM:
+
+Font manifold\cite{fontmanifold}
+
+
+Hair estimation\cite{autohair}
+
+
+% -----------------------------------------------------------------------------
+
+\chapter{Project Execution}
+\label{chap:execution}
+
+{\bf A topic-specific chapter, of roughly $15$ pages} 
+\vspace{1cm} 
+
+\noindent
+This chapter is intended to describe what you did: the goal is to explain
+the main activity or activities, of any type, which constituted your work 
+during the project.  The content is highly topic-specific, but for many 
+projects it will make sense to split the chapter into two sections: one 
+will discuss the design of something (e.g., some hardware or software, or 
+an algorithm, or experiment), including any rationale or decisions made, 
+and the other will discuss how this design was realised via some form of 
+implementation.  
+
+This is, of course, far from ideal for {\em many} project topics.  Some
+situations which clearly require a different approach include:
+
+\begin{itemize}
+\item In a project where asymptotic analysis of some algorithm is the goal,
+      there is no real ``design and implementation'' in a traditional sense
+      even though the activity of analysis is clearly within the remit of
+      this chapter.
+\item In a project where analysis of some results is as major, or a more
+      major goal than the implementation that produced them, it might be
+      sensible to merge this chapter with the next one: the main activity 
+      is such that discussion of the results cannot be viewed separately.
+\end{itemize}
+
+\noindent
+Note that it is common to include evidence of ``best practice'' project 
+management (e.g., use of version control, choice of programming language 
+and so on).  Rather than simply a rote list, make sure any such content 
+is useful and/or informative in some way: for example, if there was a 
+decision to be made then explain the trade-offs and implications 
+involved.
+
+\section{Example Section}
+
+This is an example section; 
+the following content is auto-generated dummy text.
+\lipsum
+
+\subsection{Example Sub-section}
+
+\begin{figure}[t]
+\centering
+foo
+\caption{This is an example figure.}
+\label{fig}
+\end{figure}
+
+\begin{table}[t]
+\centering
+\begin{tabular}{|cc|c|}
+\hline
+foo      & bar      & baz      \\
+\hline
+$0     $ & $0     $ & $0     $ \\
+$1     $ & $1     $ & $1     $ \\
+$\vdots$ & $\vdots$ & $\vdots$ \\
+$9     $ & $9     $ & $9     $ \\
+\hline
+\end{tabular}
+\caption{This is an example table.}
+\label{tab}
+\end{table}
+
+\begin{algorithm}[t]
+\For{$i=0$ {\bf upto} $n$}{
+  $t_i \leftarrow 0$\;
+}
+\caption{This is an example algorithm.}
+\label{alg}
+\end{algorithm}
+
+\begin{lstlisting}[float={t},caption={This is an example listing.},label={lst},language=C]
+for( i = 0; i < n; i++ ) {
+  t[ i ] = 0;
+}
+\end{lstlisting}
+
+This is an example sub-section;
+the following content is auto-generated dummy text.
+Notice the examples in Figure~\ref{fig}, Table~\ref{tab}, Algorithm~\ref{alg}
+and Listing~\ref{lst}.
+\lipsum
+
+\subsubsection{Example Sub-sub-section}
+
+This is an example sub-sub-section;
+the following content is auto-generated dummy text.
+\lipsum
+
+\paragraph{Example paragraph.}
+
+This is an example paragraph; note the trailing full-stop in the title,
+which is intended to ensure it does not run into the text.
+
+% -----------------------------------------------------------------------------
+
+\chapter{Critical Evaluation}
+\label{chap:evaluation}
+
+{\bf A topic-specific chapter, of roughly $15$ pages} 
+\vspace{1cm} 
+
+\noindent
+This chapter is intended to evaluate what you did.  The content is highly 
+topic-specific, but for many projects will have flavours of the following:
+
+\begin{enumerate}
+\item functional  testing, including analysis and explanation of failure 
+      cases,
+\item behavioural testing, often including analysis of any results that 
+      draw some form of conclusion wrt. the aims and objectives,
+      and
+\item evaluation of options and decisions within the project, and/or a
+      comparison with alternatives.
+\end{enumerate}
+
+\noindent
+This chapter often acts to differentiate project quality: even if the work
+completed is of a high technical quality, critical yet objective evaluation 
+and comparison of the outcomes is crucial.  In essence, the reader wants to
+learn something, so the worst examples amount to simple statements of fact 
+(e.g., ``graph X shows the result is Y''); the best examples are analytical 
+and exploratory (e.g., ``graph X shows the result is Y, which means Z; this 
+contradicts [1], which may be because I use a different assumption'').  As 
+such, both positive {\em and} negative outcomes are valid {\em if} presented 
+in a suitable manner.
+
+% -----------------------------------------------------------------------------
+
+\chapter{Conclusion}
+\label{chap:conclusion}
+
+{\bf A compulsory chapter,     of roughly $5$ pages} 
+\vspace{1cm} 
+
+\noindent
+The concluding chapter of a dissertation is often underutilised because it 
+is too often left too close to the deadline: it is important to allocation
+enough attention.  Ideally, the chapter will consist of three parts:
+
+\begin{enumerate}
+\item (Re)summarise the main contributions and achievements, in essence
+      summing up the content.
+\item Clearly state the current project status (e.g., ``X is working, Y 
+      is not'') and evaluate what has been achieved with respect to the 
+      initial aims and objectives (e.g., ``I completed aim X outlined 
+      previously, the evidence for this is within Chapter Y'').  There 
+      is no problem including aims which were not completed, but it is 
+      important to evaluate and/or justify why this is the case.
+\item Outline any open problems or future plans.  Rather than treat this
+      only as an exercise in what you {\em could} have done given more 
+      time, try to focus on any unexplored options or interesting outcomes
+      (e.g., ``my experiment for X gave counter-intuitive results, this 
+      could be because Y and would form an interesting area for further 
+      study'' or ``users found feature Z of my software difficult to use,
+      which is obvious in hindsight but not during at design stage; to 
+      resolve this, I could clearly apply the technique of Smith [7]'').
+\end{enumerate}
+
+% =============================================================================
+
+% Finally, after the main matter, the back matter is specified.  This is
+% typically populated with just the bibliography.  LaTeX deals with these
+% in one of two ways, namely
+%
+% - inline, which roughly means the author specifies entries using the 
+%   \bibitem macro and typesets them manually, or
+% - using BiBTeX, which means entries are contained in a separate file
+%   (which is essentially a databased) then inported; this is the 
+%   approach used below, with the databased being dissertation.bib.
+%
+% Either way, the each entry has a key (or identifier) which can be used
+% in the main matter to cite it, e.g., \cite{X}, \cite[Chapter 2}{Y}.
+
+\backmatter
+
+\bibliography{dissertation}
+
+% -----------------------------------------------------------------------------
+
+% The dissertation concludes with a set of (optional) appendicies; these are 
+% the same as chapters in a sense, but once signaled as being appendicies via
+% the associated macro, LaTeX manages them appropriatly.
+
+\appendix
+
+\chapter{An Example Appendix}
+\label{appx:example}
+
+Content which is not central to, but may enhance the dissertation can be 
+included in one or more appendices; examples include, but are not limited
+to
+
+\begin{itemize}
+\item lengthy mathematical proofs, numerical or graphical results which 
+      are summarised in the main body,
+\item sample or example calculations, 
+      and
+\item results of user studies or questionnaires.
+\end{itemize}
+
+\noindent
+Note that in line with most research conferences, the marking panel is not
+obliged to read such appendices.
+
+% =============================================================================
+
+\end{document}
