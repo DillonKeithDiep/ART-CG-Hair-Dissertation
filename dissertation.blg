@@ -1,33 +1,37 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: dissertation.aux
 The style file: plain.bst
 Database file #1: dissertation.bib
-Name 1 in "CAMPBELL, N. D., AND KAUTZ, J." has a comma at the end for entry fontmanifold
+Name 1 in "Tipping, M. E., and Bishop, C. M." has a comma at the end for entry ppca
 while executing---line 1049 of file plain.bst
-Name 1 in "CHAI, M., SHAO, T., WU, H., WENG, Y., AND ZHOU, K" has a comma at the end for entry autohair
+Name 1 in "Titsias, M. K., and Lawrence, N. D." has a comma at the end for entry bgplvm
 while executing---line 1049 of file plain.bst
-Too many commas in name 1 of "CHAI, M., SHAO, T., WU, H., WENG, Y., AND ZHOU, K" for entry autohair
+Name 1 in "Campbell, N. D., AND Kautz, J." has a comma at the end for entry fontmanifold
 while executing---line 1049 of file plain.bst
-Too many commas in name 1 of "CHAI, M., SHAO, T., WU, H., WENG, Y., AND ZHOU, K" for entry autohair
+Name 1 in "Chai, M., Shaq, T., Wu, H., Weng, Y., and Zhou, K" has a comma at the end for entry autohair
 while executing---line 1049 of file plain.bst
-Too many commas in name 1 of "CHAI, M., SHAO, T., WU, H., WENG, Y., AND ZHOU, K" for entry autohair
+Too many commas in name 1 of "Chai, M., Shaq, T., Wu, H., Weng, Y., and Zhou, K" for entry autohair
 while executing---line 1049 of file plain.bst
-Too many commas in name 1 of "CHAI, M., SHAO, T., WU, H., WENG, Y., AND ZHOU, K" for entry autohair
+Too many commas in name 1 of "Chai, M., Shaq, T., Wu, H., Weng, Y., and Zhou, K" for entry autohair
 while executing---line 1049 of file plain.bst
-Too many commas in name 1 of "CHAI, M., SHAO, T., WU, H., WENG, Y., AND ZHOU, K" for entry autohair
+Too many commas in name 1 of "Chai, M., Shaq, T., Wu, H., Weng, Y., and Zhou, K" for entry autohair
 while executing---line 1049 of file plain.bst
-Name 1 in "CAMPBELL, N. D., AND KAUTZ, J." has a comma at the end for entry fontmanifold
+Too many commas in name 1 of "Chai, M., Shaq, T., Wu, H., Weng, Y., and Zhou, K" for entry autohair
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Chai, M., Shaq, T., Wu, H., Weng, Y., and Zhou, K" for entry autohair
+while executing---line 1049 of file plain.bst
+Name 1 in "Campbell, N. D., AND Kautz, J." has a comma at the end for entry fontmanifold
 while executing---line 1090 of file plain.bst
-Name 1 in "CHAI, M., SHAO, T., WU, H., WENG, Y., AND ZHOU, K" has a comma at the end for entry autohair
+Name 1 in "Chai, M., Shaq, T., Wu, H., Weng, Y., and Zhou, K" has a comma at the end for entry autohair
 while executing---line 1090 of file plain.bst
-Too many commas in name 1 of "CHAI, M., SHAO, T., WU, H., WENG, Y., AND ZHOU, K" for entry autohair
+Too many commas in name 1 of "Chai, M., Shaq, T., Wu, H., Weng, Y., and Zhou, K" for entry autohair
 while executing---line 1090 of file plain.bst
-Too many commas in name 1 of "CHAI, M., SHAO, T., WU, H., WENG, Y., AND ZHOU, K" for entry autohair
+Too many commas in name 1 of "Chai, M., Shaq, T., Wu, H., Weng, Y., and Zhou, K" for entry autohair
 while executing---line 1090 of file plain.bst
-Too many commas in name 1 of "CHAI, M., SHAO, T., WU, H., WENG, Y., AND ZHOU, K" for entry autohair
+Too many commas in name 1 of "Chai, M., Shaq, T., Wu, H., Weng, Y., and Zhou, K" for entry autohair
 while executing---line 1090 of file plain.bst
-Too many commas in name 1 of "CHAI, M., SHAO, T., WU, H., WENG, Y., AND ZHOU, K" for entry autohair
+Too many commas in name 1 of "Chai, M., Shaq, T., Wu, H., Weng, Y., and Zhou, K" for entry autohair
 while executing---line 1090 of file plain.bst
-Too many commas in name 1 of "CHAI, M., SHAO, T., WU, H., WENG, Y., AND ZHOU, K" for entry autohair
+Too many commas in name 1 of "Chai, M., Shaq, T., Wu, H., Weng, Y., and Zhou, K" for entry autohair
 while executing---line 1090 of file plain.bst
 Warning--empty title in MLMethods
 Warning--empty publisher in MLMethods
@@ -38,9 +42,6 @@ Warning--empty year in procedural2
 Warning--empty title in procedural1
 Warning--empty publisher in procedural1
 Warning--empty year in procedural1
-Warning--empty title in pca1901
-Warning--empty publisher in pca1901
-Warning--empty year in pca1901
 Warning--empty title in tsr
 Warning--empty publisher in tsr
 Warning--empty year in tsr
@@ -50,4 +51,8 @@ Warning--empty year in mri
 Warning--empty title in edgeloops
 Warning--empty publisher in edgeloops
 Warning--empty year in edgeloops
-(There were 14 error messages)
+Name 1 in "Tipping, M. E., and Bishop, C. M." has a comma at the end for entry ppca
+while executing---line 1090 of file plain.bst
+Name 1 in "Titsias, M. K., and Lawrence, N. D." has a comma at the end for entry bgplvm
+while executing---line 1090 of file plain.bst
+(There were 18 error messages)

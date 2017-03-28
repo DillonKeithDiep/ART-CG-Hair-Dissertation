@@ -1,12 +1,12 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{fontmanifold}
-N.~D. CAMPBELL and J.~KAUTZ.
+N.~D. Campbell and J.~Kautz.
 \newblock {\em Learning a manifold of fonts}.
 \newblock ACM Transactions on Graphics (TOG) 33, 4, 91., 2014.
 
 \bibitem{autohair}
-SHAO~T.-WU H. WENG~Y. CHAI, M. and K~ZHOU.
+Shaq~T.-Wu H. Weng~Y. Chai, M. and K~Zhou.
 \newblock {\em AutoHair: Fully automatic hair modeling from a single image}.
 \newblock ACM Trans. Graph. 35, 4 (July), 116:1–116:12, 2016.
 
@@ -19,16 +19,34 @@ SHAO~T.-WU H. WENG~Y. CHAI, M. and K~ZHOU.
 \bibitem{procedural1}
 [Procedural1] http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=6363215.
 
-\bibitem{pca1901}
-[PCA~1901] http://stat.smmu.edu.cn/history/pearson1901.pdf.
-
 \bibitem{tsr}
 [TSR] https://www.thesimsresource.com/.
 
 \bibitem{mri}
 [MRI] http://www.stat.columbia.edu/ martin/Papers/STS282.pdf.
 
+\bibitem{pca2002}
+I.~T. Jolliffe.
+\newblock {\em Principal Component Analysis}.
+\newblock Springer Series in Statistics, Springer-Verlag, 2nd edition, 2002.
+
+\bibitem{gplvm}
+N.~D. Lawrence.
+\newblock {\em Probabilistic non-linear principal component analysis with
+  Gaussian process latent variable models}.
+\newblock The Journal of Machine Learning Research 6, 1783–1816, 2005.
+
 \bibitem{edgeloops}
 [Edge loops] https://sites.ualberta.ca/~cwant/blender/derived surfaces.pdf.
+
+\bibitem{ppca}
+M.~E. Tipping and C.~M. Bishop.
+\newblock {\em Probabilistic Principal Component Analysis}.
+\newblock Microsoft Research, Cambridge, UK, 1998.
+
+\bibitem{bgplvm}
+M.~K. Titsias and N.~D. Lawrence.
+\newblock {\em Bayesian Gaussian Process Latent Variable Model}.
+\newblock AISTATS. Vol. 9, 2010.
 
 \end{thebibliography}

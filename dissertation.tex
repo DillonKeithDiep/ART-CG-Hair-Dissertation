@@ -28,7 +28,7 @@
                 % the dissertation    title (which cannot be blank)
                      title={Assisted Content Generation for 3D Hair Geometry},
                 % the dissertation subtitle (which can    be blank)
-                  subtitle={},
+                  subtitle={[INCOMPLETE DRAFT, CONTAINS NOTES FROM RESEARCH]},
                 % the dissertation     type
                       type={Research},
                 % the year of submission
@@ -298,56 +298,54 @@ A polygon face can be formed from an arbitrary number of vertices $\forall (v_1,
 3D programs often allow edge loop selection which are useful properties of the geometry. An edge loop is defined (on blender) as a set of connected edges that either forms a loop or the end vertices are poles (vertices that do not have edges). Edge loops are useful for extracting more information on the structure of the mesh.
 \cite{edgeloops}
 
-% Cite 
+\section{Principal Component Analysis}
+In multivariate analysis, principal component analysis (PCA) is a statistical technique used to perform dimensionality reduction within a data set that consists of interrelated variables.
+The objective is to identify the principal components, a new set of uncorrelated variables ordered by variation present in the original variables, thus, minimising the loss of information.\cite{pca2002}
+%*suppose vector X
+The first principal component is selected by searching for a linear function with maximum variance within the observed data set.
+%**formula
+Following principal components are found by searching for linear functions with maximum variance and are uncorrelated with previously identified principal components.
+%**formula
+This transformation captures most of the variation linearly from the original data set with a chosen dimension that is generally less than the original.
+
+\section{Probabilistic Principal Component Analysis}
+The probabilistic principal component analysis (PPCA) introduced by Tipping and Bishop address the limitation of PCA by deriving it within a density estimation framework.\cite{ppca}
+
+%A probabilistic formulation of PCA is obtained from a Gaussian latent variable model.
+A latent variable model relates a d-dimensional observation vector t to a corresponding q-dimensional vector of latent (unobserved) variables x.
+
+\section{Gaussian Process Latent Variable Model}
+Dual PPCA is equivalent.
+
+GPs. Cite Rasmussen and Williams 2006. Stochastic processes, Nonparametric, nonlinear, supervised, etc.
+GP-LVM. Cite Lawrence 2005. Unsupervised\cite{gplvm}
+GP-LVM can be considered as a multiple-output GP regression model where only the output data are given.
+THe inputs are unobserved latent variables.
+Instead of integrating, they are optimised. This makes model tractable. It is a nonlinear extension of the linear PPCA. 
 
 \section{Bayesian Gaussian Process Latent Variable Model}
-\subsection{Principal Component Analysis}
-Principal Component Analysis (PCA) is a statistical tool used to perform dimensionality reduction. 
-\cite{pca1901}
-In the original paper by Pearson, PCA takes the ‘best-fitting’ line or plane of a higher dimensional system. Formally, taking $y=a_0+a_1x$, or $z=a_0+a_1x+b_1y$, or $z = a_0+a_1x_1+a_2x_2+a_3x_3+...+a_nx_n$, where $y, x, z, x_1, x_2,...,x_n$ are variables determining the 'best' values for the constants $a_0, a_1,...,a_n$.
-PCA works best for reducing dimensions of linear variance.
-%\cite{pca2002}
+The Bayesian Gaussian Process Latent Variable Model (BGPLVM) extends the GPLVM by variationally integrating out the input variables of the Gaussian process to compute a lower bound on the exact marginal likelihood of the nonlinear latent variable model, thus becoming robust to overfitting. \cite{bgplvm}
 
-\subsection{Probabilistic Principal Component Analysis}
-Tipping and Bishop PPCA determines principal axes of observed data through maximum likelihood estimation of parameters in a latent variable model. Probabilistic approach.
-Data has a linear relationship with some latent-space $X_n$. 
-Probabilistic PCA give PDF.
-
-\subsection{Dual Probabilistic Principal Component Analysis}
-Dual PCA is equivalent.
-
-\subsection{Gaussian Processes}
-
-
-\subsection{Gaussian Process Latent Variable Model}
-
-\subsection{Bayesian GPLVM}
+To apply variational Bayes to GP-LVM, need to approximately integrate out latent/input variables that appear nonlinearly in the inverse kernel matrix of the GP model. Standard mean field variational methodologies is not tractable.
 
 
 
-\section{Past Work}
-[Machine learning in Design and Art]
+\section{Related Work}
+\subsection{Learning a Manifold}
+\cite{fontmanifold}
+
+
+\subsection{Drawing Assistant}
+
+\subsection{AutoHair}
+\cite{autohair}
 Neural networks
-2009, 2012, 2015, 2016 (AutoHair \& Past)
-GPLVM on fonts, drawing, 2d
-
+Helicoids
 [Automated Production of 3D Assets]
 Procedural generation
 Generative models
 Procedural Generation of Hair 
-Helicoids
 
-Existing work that is relevant
-LAWRENCE, N. 2005. Probabilistic non-linear principal component analysis with Gaussian process latent variable models. The Journal of Machine Learning Research 6, 1783–1816.  
-PCA:
-PPCA:
-PDPCA:
-GPLVM:
-
-Font manifold\cite{fontmanifold}
-
-
-Hair estimation\cite{autohair}
 
 
 % -----------------------------------------------------------------------------

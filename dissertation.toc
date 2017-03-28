@@ -11,14 +11,14 @@
 \contentsline {subsection}{\numberline {2.1.2}Edges}{5}{subsection.2.1.2}
 \contentsline {subsection}{\numberline {2.1.3}Polygon Faces}{5}{subsection.2.1.3}
 \contentsline {subsection}{\numberline {2.1.4}Edge Loops}{5}{subsection.2.1.4}
-\contentsline {section}{\numberline {2.2}Bayesian Gaussian Process Latent Variable Model}{5}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}Principal Component Analysis}{5}{subsection.2.2.1}
-\contentsline {subsection}{\numberline {2.2.2}Probabilistic Principal Component Analysis}{6}{subsection.2.2.2}
-\contentsline {subsection}{\numberline {2.2.3}Dual Probabilistic Principal Component Analysis}{6}{subsection.2.2.3}
-\contentsline {subsection}{\numberline {2.2.4}Gaussian Processes}{6}{subsection.2.2.4}
-\contentsline {subsection}{\numberline {2.2.5}Gaussian Process Latent Variable Model}{6}{subsection.2.2.5}
-\contentsline {subsection}{\numberline {2.2.6}Bayesian GPLVM}{6}{subsection.2.2.6}
-\contentsline {section}{\numberline {2.3}Past Work}{6}{section.2.3}
+\contentsline {section}{\numberline {2.2}Principal Component Analysis}{5}{section.2.2}
+\contentsline {section}{\numberline {2.3}Probabilistic Principal Component Analysis}{6}{section.2.3}
+\contentsline {section}{\numberline {2.4}Gaussian Process Latent Variable Model}{6}{section.2.4}
+\contentsline {section}{\numberline {2.5}Bayesian Gaussian Process Latent Variable Model}{6}{section.2.5}
+\contentsline {section}{\numberline {2.6}Related Work}{6}{section.2.6}
+\contentsline {subsection}{\numberline {2.6.1}Learning a Manifold}{6}{subsection.2.6.1}
+\contentsline {subsection}{\numberline {2.6.2}Drawing Assistant}{6}{subsection.2.6.2}
+\contentsline {subsection}{\numberline {2.6.3}AutoHair}{6}{subsection.2.6.3}
 \contentsline {chapter}{\numberline {3}Project Execution}{7}{chapter.3}
 \contentsline {section}{\numberline {3.1}Example Section}{7}{section.3.1}
 \contentsline {subsection}{\numberline {3.1.1}Example Sub-section}{8}{subsection.3.1.1}

@@ -7,10 +7,13 @@
 \BOOKMARK [1][-]{section.1.6}{Central Objectives}{chapter.1}% 7
 \BOOKMARK [0][-]{chapter.2}{Technical Background}{}% 8
 \BOOKMARK [1][-]{section.2.1}{Formal Definition of 3D Polygon Mesh Representation}{chapter.2}% 9
-\BOOKMARK [1][-]{section.2.2}{Bayesian Gaussian Process Latent Variable Model}{chapter.2}% 10
-\BOOKMARK [1][-]{section.2.3}{Past Work}{chapter.2}% 11
-\BOOKMARK [0][-]{chapter.3}{Project Execution}{}% 12
-\BOOKMARK [1][-]{section.3.1}{Example Section}{chapter.3}% 13
-\BOOKMARK [0][-]{chapter.4}{Critical Evaluation}{}% 14
-\BOOKMARK [0][-]{chapter.5}{Conclusion}{}% 15
-\BOOKMARK [0][-]{appendix.A}{An Example Appendix}{}% 16
+\BOOKMARK [1][-]{section.2.2}{Principal Component Analysis}{chapter.2}% 10
+\BOOKMARK [1][-]{section.2.3}{Probabilistic Principal Component Analysis}{chapter.2}% 11
+\BOOKMARK [1][-]{section.2.4}{Gaussian Process Latent Variable Model}{chapter.2}% 12
+\BOOKMARK [1][-]{section.2.5}{Bayesian Gaussian Process Latent Variable Model}{chapter.2}% 13
+\BOOKMARK [1][-]{section.2.6}{Related Work}{chapter.2}% 14
+\BOOKMARK [0][-]{chapter.3}{Project Execution}{}% 15
+\BOOKMARK [1][-]{section.3.1}{Example Section}{chapter.3}% 16
+\BOOKMARK [0][-]{chapter.4}{Critical Evaluation}{}% 17
+\BOOKMARK [0][-]{chapter.5}{Conclusion}{}% 18
+\BOOKMARK [0][-]{appendix.A}{An Example Appendix}{}% 19
