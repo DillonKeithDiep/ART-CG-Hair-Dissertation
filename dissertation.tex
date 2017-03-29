@@ -315,20 +315,92 @@ The probabilistic principal component analysis (PPCA) introduced by Tipping and 
 A latent variable model relates a d-dimensional observation vector t to a corresponding q-dimensional vector of latent (unobserved) variables x.
 
 \section{Gaussian Process Latent Variable Model}
-Dual PPCA is equivalent.
 
 GPs. Cite Rasmussen and Williams 2006. Stochastic processes, Nonparametric, nonlinear, supervised, etc.
 GP-LVM. Cite Lawrence 2005. Unsupervised\cite{gplvm}
 GP-LVM can be considered as a multiple-output GP regression model where only the output data are given.
 THe inputs are unobserved latent variables.
 Instead of integrating, they are optimised. This makes model tractable. It is a nonlinear extension of the linear PPCA. 
+Discuss kernels.
+
+The Gaussian Process Latent Variable Model (GP-LVM) probabilistic framework to perform non-linear principal component analysis. 
+
+Three categories of ML: supervised, unsupervised, and reinforcement learning.
+One approach to unsupervised learning is to represent the data, $\mathbf{Y}$, in some lower dimensional embedded space, $\mathbf{X}$. GP-LVM is a method that represents the data in this latent space.
+
+A latent variable model relates a set of latent variables, $\mathbf{X}\in \Re^{N\times q}$, to a set of observed variables, $\mathbf{Y}\in \Re^{N\times D}$, through a set of parameters. A typical latent variable model marginalises the latent variables and finds the parameters through maximising the likelihood. GP-LVM alternatively marginalises the parameters and optimise the latent variables. The results are equivalent.
+
+%* BEGIN GPLVM PPCA RECAP
+PPCA is a latent variable model in which the maximum likelihood solution for the parameters is found through solving a eigenvalue problem on the data's covariance matrix.
+Given set of centred D-dimensional data $\mathbf{Y}=[\mathbf{y}_1...\mathbf{y}_N]^T$. Denote q-dimensional latent variable associated with each point in $\mathbf{x}_n$
+The relationship between the latent variable and the data point is linear with noise added,
+\begin{equation}
+	\mathbf{y}_n=\mathbf{Wx}_n+\eta_n
+\end{equation}
+where the matrix $\mathbf{W}\in\Re^{D\times q}$ specifies the linear relationship between the between the latent-space and the data space and the noise values, $\eta_n\in\Re^{D\times 1}$, are taken to be an independent sample from a spherical Gaussian distribution with mean zero and covariance $\beta^{-1}\mathbf{I}$,
+\begin{equation}
+	p(\eta_n)=N(\eta_n|\mathbf{0},\beta^{-1}\mathbf{I})
+\end{equation}
+The likelihood for a data point can then be written as 
+\begin{equation}
+	p(\mathbf{y}_n|\mathbf{x}_n,\mathbf{W},\beta)=N(\mathbf{y}_n|\mathbf{Wx}_n,\beta^{-1}\mathbf{I})
+\end{equation}
+To obtain the marginal likelihood, integrate over the latent variables
+\begin{equation}
+	p(\mathbf{y}_n|\mathbf{W},\beta)=\int p(\mathbf{y}_n|\mathbf{x}_n, \mathbf{W},\beta)p(\mathbf{x}_n),d\mathbf{x}_n
+\end{equation}
+which requires to specify a prior distribution over $\mathbf{x}_n$. For probabilistic PCA, the appropriate prior is a unit covariance, zero mean Gaussian distribution,
+\begin{equation}
+	p(\mathbf{x}_n)=N(\mathbf{x}_n|\mathbf{0},\mathbf{I})
+\end{equation}
+The marginal likelihood for each data point can then be found analytically (through marginalisation) as
+\begin{equation}
+	p(\mathbf{y}_n|\mathbf{W},\beta)=N(\mathbf{y}_n|0,\mathbf{WW}^T+\beta^{-1}\mathbf{I})
+\end{equation}
+Taking advantage of the independence of the data points, the likelihood of the full data set is given by 
+\begin{equation}
+	p(\mathbf{Y}|\mathbf{W},\beta)=\prod^N_{n=1}p(\mathbf{y}_n|\mathbf{W},\beta)
+\end{equation}
+Parameters $\mathbf{W}$ can the nbe found through maximisation of the full data set.
+%* END GPLVM PPCA RECAP
+
+Lawrence introduced the dual probabilistic PCA (DPPCA) as an alternative solution to PPCA that is equivalent. Instead of optimising parameters and marginalising latent variables, the dual approach marginalises the parameters, $\mathbf{W}$, and optimises with respect to latent variables, $\mathbf{X}$.
+
+A probabilistic intepretation of PCA is the dual PPCA (DPPCA). Linear mappings from the embedded space can easily be non-linearised through Gaussian processes. This is referred to as the GP-LVM.
+
 
 \section{Bayesian Gaussian Process Latent Variable Model}
-The Bayesian Gaussian Process Latent Variable Model (BGPLVM) extends the GPLVM by variationally integrating out the input variables of the Gaussian process to compute a lower bound on the exact marginal likelihood of the nonlinear latent variable model, thus becoming robust to overfitting. \cite{bgplvm}
+\iffalse
+	%* START BGPLVM RECAP OF TRADITIONAL GPLVM
+	Let $Y \in \Re^{N \times D}$ be the observed data where $N$ is the number of observations and $D$ is the dimensionality of each data vector. These data are associated with latent variables $X \in \Re^{N \times Q}$ where, for the purpose of dimensionality reduction, $Q \ll D$. GP-LVM defines a forward mapping from the latent space to observation space that is governed by Gaussian processes. If the GPs are taken to be independent across the features then the likelihood function is written as 
+	\begin{equation} \label{gplvmml}
+		p(Y|X)=\prod^{D}_{d=1}p(y_d|X)
+	\end{equation}
+	where $y_d$ represents the $d^{th}$ column of $Y$ and
+	\begin{equation}
+		p(y_d|X)=\mathcal{N}(y_d|\mathbf{0}, K_{NN}+\beta^{-1}I_{N})
+	\end{equation}
+	$K_{NN}$ is the $N\times N$ covariance matrix defined by the kernel function $k(x,x')$.
+	
+	Equation \ref{gplvmml} can be viewed as the likelihood function of a multiple-output GP regression model where the vectors of different outputs are drawn independently from the same Gaussian process prior which is evaluated at the inputs $X$. Since X is a latent variable, we can assign it to a prior density given by the standard normal density. More precisely, the prior for $X$ is:
+	\begin{equation}
+		p(X)=\prod^N_{n=1}\mathcal{N}(\mathbf{x}_n|\mathbf{0}, I_Q)
+	\end{equation}
+	where each $X_n$ is the $n^{th}$ row of $X$. The joint probability model for the GP-LVM is
+	\begin{equation}
+	p(Y,X)=p(Y|X)p(X)
+	\end{equation}
+	The hyperparameters of the model are kernel parameters $\mathbf{\theta}=(\sigma^2_f, \sigma_1,...,\sigma_Q)$ and the inverse variacne parameter $\beta$. These parameters are omitted from the conditioning of the distribution. GPLVM training finds the MAP estimate of $X$ whilst jointly maximising with respect to the hyperparameters.
+	%*End GPLVM RECAP
+	The Bayesian Gaussian Process Latent Variable Model (Bayesian GP-LVM) extends the GP-LVM by variationally integrating out the input variables of the Gaussian process to compute a lower bound on the exact marginal likelihood of the nonlinear latent variable model, thus becoming robust to overfitting. \cite{bgplvm}
+	
+	To apply variational Bayes to GP-LVM, need to approximately integrate out latent/input variables that appear nonlinearly in the inverse kernel matrix of the GP model. Standard mean field variational methodologies is not tractable.
+	
+	A variational Bayesian approach to marginalisation of latent variables, $X$, allows for optimising of the resulting lower bound on the marginal likelihood with respect to the hyperparameters. The lower bound can also be used for model comparison and automatic selection of latent dimensionality.
+\fi
 
-To apply variational Bayes to GP-LVM, need to approximately integrate out latent/input variables that appear nonlinearly in the inverse kernel matrix of the GP model. Standard mean field variational methodologies is not tractable.
 
-
+\section{Generative Models}
 
 \section{Related Work}
 \subsection{Learning a Manifold}

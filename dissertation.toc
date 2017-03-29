@@ -14,16 +14,17 @@
 \contentsline {section}{\numberline {2.2}Principal Component Analysis}{5}{section.2.2}
 \contentsline {section}{\numberline {2.3}Probabilistic Principal Component Analysis}{6}{section.2.3}
 \contentsline {section}{\numberline {2.4}Gaussian Process Latent Variable Model}{6}{section.2.4}
-\contentsline {section}{\numberline {2.5}Bayesian Gaussian Process Latent Variable Model}{6}{section.2.5}
-\contentsline {section}{\numberline {2.6}Related Work}{6}{section.2.6}
-\contentsline {subsection}{\numberline {2.6.1}Learning a Manifold}{6}{subsection.2.6.1}
-\contentsline {subsection}{\numberline {2.6.2}Drawing Assistant}{6}{subsection.2.6.2}
-\contentsline {subsection}{\numberline {2.6.3}AutoHair}{6}{subsection.2.6.3}
-\contentsline {chapter}{\numberline {3}Project Execution}{7}{chapter.3}
-\contentsline {section}{\numberline {3.1}Example Section}{7}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}Example Sub-section}{8}{subsection.3.1.1}
-\contentsline {subsubsection}{Example Sub-sub-section}{9}{section*.11}
-\contentsline {paragraph}{Example paragraph.}{10}{section*.12}
-\contentsline {chapter}{\numberline {4}Critical Evaluation}{11}{chapter.4}
-\contentsline {chapter}{\numberline {5}Conclusion}{13}{chapter.5}
-\contentsline {chapter}{\numberline {A}An Example Appendix}{17}{appendix.A}
+\contentsline {section}{\numberline {2.5}Bayesian Gaussian Process Latent Variable Model}{7}{section.2.5}
+\contentsline {section}{\numberline {2.6}Generative Models}{7}{section.2.6}
+\contentsline {section}{\numberline {2.7}Related Work}{7}{section.2.7}
+\contentsline {subsection}{\numberline {2.7.1}Learning a Manifold}{7}{subsection.2.7.1}
+\contentsline {subsection}{\numberline {2.7.2}Drawing Assistant}{7}{subsection.2.7.2}
+\contentsline {subsection}{\numberline {2.7.3}AutoHair}{7}{subsection.2.7.3}
+\contentsline {chapter}{\numberline {3}Project Execution}{9}{chapter.3}
+\contentsline {section}{\numberline {3.1}Example Section}{9}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Example Sub-section}{10}{subsection.3.1.1}
+\contentsline {subsubsection}{Example Sub-sub-section}{11}{section*.11}
+\contentsline {paragraph}{Example paragraph.}{12}{section*.12}
+\contentsline {chapter}{\numberline {4}Critical Evaluation}{13}{chapter.4}
+\contentsline {chapter}{\numberline {5}Conclusion}{15}{chapter.5}
+\contentsline {chapter}{\numberline {A}An Example Appendix}{19}{appendix.A}
