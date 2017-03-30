@@ -308,8 +308,31 @@ Following principal components are found by searching for linear functions with 
 %**formula
 This transformation captures most of the variation linearly from the original data set with a chosen dimension that is generally less than the original.
 
+\subsection{PCA [Temp Main]}
+Intro:
+In multivariate analysis, principal component analysis (PCA) is a statistical technique used to perform dimensionality reduction.\cite{pca2002} It was originally introduced by Pearson\cite{pca1901}, and independently developed by Hotelling\cite{pca1933}, where the standard algebraic derivation of PCA was presented in terms of a standardized linear projection.
+
+Intuition:
+Consider variables of hair structure: location, orientation, length, color. There is some relation in between, this is measured as covariance of the variables. PCA represents these observed variables as a combination that is independent, so location, orientation, length may be combined but not color.
+
+Derivation1:
+Given a set of $n$ observed $d$-dimensional data vectors $\mathbf{X}=\{\mathbf{x}_1,\mathbf{x}_2,...,\mathbf{x}_n\}$, $\mathbf{x}_i = \{x_1,x_2,...,x_d\}$, principal component analysis can be solved as an eigenvalue decomposition problem to determine a selected size of $m$ principal components, where $\mathbf{Y}=\{\mathbf{y}_1,\mathbf{y}_2,...,\mathbf{y}_m\}$, $\mathbf{y}=\{y_1,y_2,...,y_d\}$. 
+
 \section{Probabilistic Principal Component Analysis}
-The probabilistic principal component analysis (PPCA) introduced by Tipping and Bishop address the limitation of PCA by deriving it within a density estimation framework.\cite{ppca}
+
+\subsection{PPCA Main}
+The probabilistic principal component analysis (PPCA) is a probabilistic variance of PCA introduced by Tipping and Bishop\cite{PPCA}. 
+
+A latent variable model transforms a set of observed variables to a set of latent (unobserved) variables that is ordinarily parsimonious, retaining much variation of the original data with fewer variables. A notable latent variable model is that of factor analysis, one that assumes linearity in relation of the observed data set.
+\begin{equation} \label{factoranalysis}
+	\mathbf{t=Wx+\mu+\epsilon}
+\end{equation}
+
+
+
+
+
+A spherical Gaussian distribution is isotropic and mathematically defined as $\mathcal{N}(\mathbf{0},\sigma^2\mathbf{I})$. 
 
 %A probabilistic formulation of PCA is obtained from a Gaussian latent variable model.
 A latent variable model relates a d-dimensional observation vector t to a corresponding q-dimensional vector of latent (unobserved) variables x.

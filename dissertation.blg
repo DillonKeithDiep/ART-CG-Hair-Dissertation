@@ -1,6 +1,7 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: dissertation.aux
 The style file: plain.bst
 Database file #1: dissertation.bib
+Warning--I didn't find a database entry for "pca1933"
 Name 1 in "Tipping, M. E., and Bishop, C. M." has a comma at the end for entry ppca
 while executing---line 1049 of file plain.bst
 Name 1 in "Campbell, N. D., AND Kautz, J." has a comma at the end for entry fontmanifold
@@ -40,6 +41,9 @@ Warning--empty year in procedural2
 Warning--empty title in procedural1
 Warning--empty publisher in procedural1
 Warning--empty year in procedural1
+Warning--empty title in pca1901
+Warning--empty publisher in pca1901
+Warning--empty year in pca1901
 Warning--empty title in tsr
 Warning--empty publisher in tsr
 Warning--empty year in tsr
