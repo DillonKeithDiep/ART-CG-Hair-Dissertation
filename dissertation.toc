@@ -23,20 +23,21 @@
 \contentsline {subsubsection}{Dimensionality reduction}{7}{section*.13}
 \contentsline {subsubsection}{PPCA and missing data}{8}{section*.14}
 \contentsline {section}{\numberline {2.4}Gaussian Process Latent Variable Model}{9}{section.2.4}
-\contentsline {subsection}{\numberline {2.4.1}Dual Probabilistic PCA}{9}{subsection.2.4.1}
-\contentsline {subsection}{\numberline {2.4.2}Gaussian Processes}{10}{subsection.2.4.2}
-\contentsline {subsection}{\numberline {2.4.3}GP-LVM}{10}{subsection.2.4.3}
-\contentsline {section}{\numberline {2.5}Bayesian Gaussian Process Latent Variable Model}{10}{section.2.5}
-\contentsline {section}{\numberline {2.6}Generative Models}{10}{section.2.6}
-\contentsline {section}{\numberline {2.7}Related Work}{10}{section.2.7}
-\contentsline {subsection}{\numberline {2.7.1}Learning a Manifold}{10}{subsection.2.7.1}
-\contentsline {subsection}{\numberline {2.7.2}Drawing Assistant}{10}{subsection.2.7.2}
-\contentsline {subsection}{\numberline {2.7.3}AutoHair}{10}{subsection.2.7.3}
-\contentsline {chapter}{\numberline {3}Project Execution}{11}{chapter.3}
-\contentsline {section}{\numberline {3.1}Example Section}{11}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}Example Sub-section}{12}{subsection.3.1.1}
-\contentsline {subsubsection}{Example Sub-sub-section}{13}{section*.15}
-\contentsline {paragraph}{Example paragraph.}{14}{section*.16}
-\contentsline {chapter}{\numberline {4}Critical Evaluation}{15}{chapter.4}
-\contentsline {chapter}{\numberline {5}Conclusion}{17}{chapter.5}
-\contentsline {chapter}{\numberline {A}An Example Appendix}{21}{appendix.A}
+\contentsline {subsection}{\numberline {2.4.1}GPLVM MAIN}{9}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {2.4.2}Dual Probabilistic PCA}{9}{subsection.2.4.2}
+\contentsline {subsection}{\numberline {2.4.3}Gaussian Processes}{10}{subsection.2.4.3}
+\contentsline {subsection}{\numberline {2.4.4}GP-LVM}{10}{subsection.2.4.4}
+\contentsline {section}{\numberline {2.5}Bayesian Gaussian Process Latent Variable Model}{11}{section.2.5}
+\contentsline {section}{\numberline {2.6}Generative Models}{11}{section.2.6}
+\contentsline {section}{\numberline {2.7}Related Work}{11}{section.2.7}
+\contentsline {subsection}{\numberline {2.7.1}Learning a Manifold}{11}{subsection.2.7.1}
+\contentsline {subsection}{\numberline {2.7.2}Drawing Assistant}{11}{subsection.2.7.2}
+\contentsline {subsection}{\numberline {2.7.3}AutoHair}{11}{subsection.2.7.3}
+\contentsline {chapter}{\numberline {3}Project Execution}{13}{chapter.3}
+\contentsline {section}{\numberline {3.1}Example Section}{13}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Example Sub-section}{14}{subsection.3.1.1}
+\contentsline {subsubsection}{Example Sub-sub-section}{15}{section*.15}
+\contentsline {paragraph}{Example paragraph.}{16}{section*.16}
+\contentsline {chapter}{\numberline {4}Critical Evaluation}{17}{chapter.4}
+\contentsline {chapter}{\numberline {5}Conclusion}{19}{chapter.5}
+\contentsline {chapter}{\numberline {A}An Example Appendix}{23}{appendix.A}
