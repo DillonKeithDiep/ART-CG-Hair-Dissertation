@@ -308,6 +308,33 @@ Following principal components are found by searching for linear functions with 
 %**formula
 This transformation captures most of the variation linearly from the original data set with a chosen dimension that is generally less than the original.
 
+\subsection{PCA *Main}
+In multivariate analysis, principal component analysis (PCA) is a statistical technique used to perform dimensionality reduction. It was originally introduced by Pearson in 1901\cite{pca1901}, and independently developed by Hotelling\cite{pca1933} in 1933, presenting one of the most common derivation of PCA in algebraic terms as a standardized linear projection which maximizes the variance in projection space.
+
+Intro: Consider a set of $n$ observed variables $\mathbf{X}=\{x_1,x_2,...,x_n\}$. The variables may be correlated. For example hair structure: position, orientation, length. The motivation of PCA is to find a smaller set of independent variables $\mathbf{Y}=\{y_1,y_2,...,y_m\}$ where generally $m<n$, that is descriptive of the values $\mathbf{X}$ would take.
+
+The relation would thus be $x_i=f_i(y_1,y_2,...), (i=1,2,...,n)$.
+the ys are components.
+Consider only normally distributed systems of components having zero correlations and unit variacnes.
+Denote the expectation with $E$, the mean value in the population, the condition of zero mean is expressed by $E_{yi}=0$.
+Combining the assumption of unit variance and zero correlation: $E_{yiyj}=\delta_{ij}$, where $\delta_{ij}$ is the Kronecker delta, euqals unity if $i$ equals $j$, zero otherwise.
+
+FOllowing notation of T.L. Kelley, x's standard measures are expressed by taking the deviation of each from its mean value and dividing by its standard deviation. We get a set of quantities $\mathbf{Z}=\{z_1,z_2,...,z_n\}$. Confining to the case in which the functions $f_i$ are linear, the equations take form of 
+\begin{equation} \label{pca:line}
+z_i=\sum_ja_{ij}y_j
+\end{equation}
+, constant terms disappearing because both the z's and y's have zero means.
+
+Squaring each side of equation \ref{pca:line} and taking the mean value, it is evident that the variance of $z_i$ may be written $a^2_{i1}+a^2_{i2}+...+a^2_{in}$, and that the first term is correctly described as the contribution of $y_1$ to the variance $z_i$. The sum of the contributions of $y_i$ to the variances of all the $z$'s is $S = a^2_{11}+a^2_{21}+...+a^2_{n1}$, which in our abbreviated notation may be written $S=a_{i1}a_{i1}$.
+
+
+Derivation: 
+
+\subsection{PCA}
+The most common derivation of PCA is in terms of a standardized linear projection which maximises the variance in the projected space (Hotelling, 19333). For a set of observed d-dimensional data vectors $\{\mathbf{t}_n\}$, $n\in {1,...,N}$, the q principal axes $\mathbf{w}_j, j\in \{1,...,q\}$, are those orthonormal axes onto which the retained variance under projection is maximal. It can be shown that the vectors $\mathbf{w}_j$ are given by the q dominant eigenvectors (those with the largest associated eigenvalues $\lambda_j$) of the sample covariance matrix $\mathbf{Sw}_j=\lambda_j\mathbf{w}_j$. The q principal components of the observed vector $\mathbf{t}_n$ are given by the vector $\mathbf{x}_n=\mathbf{W}^T(\mathbf{t}_n-\mathbf{\bar{t}})$, where $\mathbf{W=(w_1,w_2,...,w}_q)$. The variables $x_j$ are then uncorrelated such that the covariance matrix $\sum_n\mathbf{x}_n\mathbf{x}^T_n /N$ is diagonal with elements $\lambda_j$.
+
+A complementary property of PCA is that of all orthogonal linear projections $\mathbf{x}_n=\mathbf{W}^T(\mathbf{t}_n-\mathbf{\bar{t}})$, the principal component projection minimises the squared reconstruction error $\sum_n||\mathbf{t}_n-\mathbf{\hat{t}}_n||^2$, where the optimal linear reconstruction of $\mathbf{t}_n$ is given by $\mathbf{\hat{t}=Wx}_n+\mathbf{\bar{t}}$.
+
 \section{Probabilistic Principal Component Analysis}
 The probabilistic principal component analysis (PPCA) introduced by Tipping and Bishop address the limitation of PCA by deriving it within a density estimation framework.\cite{ppca}
 
@@ -367,7 +394,7 @@ where the q column vectors in the d x d matrix $U_q$ are the principal eigenvect
 
 It may also be shown that for $W=W_{ML}$ the maximum likelihood estimator for $\sigma^2$ is given by
 \begin{equation}
-	\sigma^2_{ML}=/frac{1}{d-q}\sum^d_{j=q+1}\lambda_j
+	\sigma^2_{ML}=\frac{1}{d-q}\sum^d_{j=q+1}\lambda_j
 \end{equation}
 which has clear intepretation as the variance 'lost' in the projection, averaged over the lost dimensions.
 
@@ -378,10 +405,10 @@ Dimensionality reduction form the perspective of PPCA gives the distribution of 
 \begin{equation}
 	<x_n|t_n>=M^{-1}W^T_{ML}(t_n-\mu)
 \end{equation}
+From expression 6?, the corresponding conditional covariance is given by $\sigma^2_{ML}\mathbf{M}^{-1}$ and is thus independent of n. It can be seen that when $\sigma^2\rightarrow 0,\mathbf{M}^{-1}\rightarrow (\mathbf{W}^T_{ML}\mathbf{W}_{ML})^{-1}$ and equation 9? then represents an orthogonal projection into latent space and so standard PCA is recovered. However, the density model then becomes singular, and thus undefined. In practice, with $\sigma^2 > 0$ as determined by equation 8?, the latent projection becomes skewed towards the origin as a result of the Gaussian marginal distribution for $\mathbf{x}$. Because of this, the reconstruction $\mathbf{W}_{ML}\mathbf{x}_n|\mathbf{t}_n>+\mu$ is not an orthogonal projection of $\mathbf{t}_n$ and is therefore not optimal (in the squared reconstruction error sense). Nevertheless, optimal reconstruction of the observed data from the conditional latent mean may still be obtained, in the case of $\sigma^2 > 0$, and is given by $\mathbf{W}_{ML}(\mathbf{W}^T_{ML}\mathbf{W}_{ML}^{-1}\mathbf{M}<\mathbf{x}_n|\mathbf{t}_n>+\mu$.
 
 \subsubsection{PPCA and missing data}
-
-
+PPCA offers a natural approach to the estimation of the principal axes in cases where some, or indeed all, of the data vectors $mathbf{t}_n=(t_{})$ exhibit one or more missing (at random) values. Drawing on the standard methodology for maximising the likelihood of a Gaussian model in the presence of missing values (Little and Rubin, 1987) and EM algorithm for PPCA given in Appendix B, we may derive an iterative algorithm for maximum likelihood estimation of the principal axes, where both the latent variables $\{\mathbf{x}_n\}$ and the missing observation $\{t_{nj}\}$ make up the 'complete' data. Even with the presence of uncertainty from missing data, salient features of the projection remain clear.
 
 \vspace{10cm}
 %* BEGIN GPLVM PPCA RECAP
