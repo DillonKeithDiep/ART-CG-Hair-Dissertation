@@ -328,7 +328,6 @@ A latent variable model transforms a set of $n$ $d$-dimensional observed variabl
 $\mathbf{W}$ represents a matrix that specifies the relation between the observed data-space with the latent-space.
 The parameter $\mu$ allows for non-zero mean, and the $\epsilon$ parameter represents noise within the model.
 
-
 \subsection{Relation of Factor Analysis and PCA}
 
 Standard PCA does not differentiate between covariance and variance. FA latent variables explain the correlations between the variables observed, and $\epsilon_i$ represents variability for $\mathbf{y_i}$. The maximum-likelihood estimates of the columns of $\mathbf{W}$ will thus generally \textit{not} correspond to the principal subspace of the observed data.
@@ -370,6 +369,21 @@ Given that the observation covariance model, $\mathbf{C}=\mathbf{WW}^T\sigma^2\m
 where the $q$ column vectors in the $d \times q$ matrix $\mathbf{U}_q$ are the principal eigenvectors of $\mathbf{S}$, with corresponding eigenvalues $\lambda_1,...,\lambda_q$ in the $q \times q$ diagonal matrix $\Lambda_q$, and $\mathbf{R}$ is an arbitrary $q \times q$ orthogonal rotation matrix. From equation \ref{ppca:ml}, the latent variable model defined by equation \ref{ppca:fa} effects a mapping from the latent space into the \textit{principal subspace} of the observed data.
 
 \subsection{Maximum-Likelihood PCA}
+ $\Lambda_q=[ \lambda_1,...,\lambda_q ]$.
+
+The matrix $\mathbf{U_q}$ may contain any of the eigenvectors of $\mathbf{S}$, so to identify those which maximise the likelihood, the expression for $\mathbf{W}$ in (15) is substituted into the log-likelihood function (4) to give 
+$$\mathcal{L}=-\frac{n}{2} ( d\ln(2\pi)+\sum^{q'}_{j=1}\ln(\lambda_j)+\frac{1}{\sigma^2}\sum^d_{j=q+1}\lambda_j+(d-q')\ln\sigma^2+q' )$$
+
+Where $q'$ is the number of non-zero $l_j$, $\lambda_1,...,\lambda_{q'}$ are eigenvalues corresponding to the eigenvectors 'retained' in W, and $\lambda_{q'+1,...,\lambda_d}$ are those 'discarded'. Maximising (17, L) with respect to $\sigma^2$ gives
+$$\sigma^2=\frac{1}{d-q}\sum^d_{j=q'+1}\lambda_j$$
+so
+$$\mathcal{L}=-\frac{n}{2}( \sum^{q'}_{j=1}\ln(\lambda_j)+(d-q')\ln( \frac{1}{d-q'}\sum^d_{j=q'+1}\lambda_j ) +d\ln(2\pi)+d )$$
+
+To find the maximum of (19, L), with respect to the choice of eigenvectors and eigenvalues to retain in $\mathbf{W}$, and those to discard.
+By exploiting the constancy of the sum of all eigenvalues, the condition for maximisation of the likelihood can be expressed equivalently as minimisation of the quantity
+$$E=\ln(\frac{1}{d-q'}\sum^d_{j=q'+1}\lambda_j)-\frac{1}{d-q'}\sum^d_{j=q'+1}\ln(\lambda_j)$$
+
+L is maximised with respect to $q'$ when there are fewest terms in the sums in (20, E) which occurs when $q'=q$ and therefore no $l_j$ is zero. Furthermore, $L$ is minimised when $\mathbf{W=0}$, which is equivalent to the case where $q'=0$.
 
 \subsubsection{The Stationary Points of the Log-Likelihood}
 The gradient of the log-likelihood (\ref{ppca:loglikelihood}) with respect to $\mathbf{W}$ is obtained from matrix differentiation (Kranowsi and Marriott 1994):

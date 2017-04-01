@@ -21,17 +21,17 @@
 \contentsline {subsection}{\numberline {2.3.3}The probability model}{7}{subsection.2.3.3}
 \contentsline {subsection}{\numberline {2.3.4}Principal Subspace}{7}{subsection.2.3.4}
 \contentsline {subsection}{\numberline {2.3.5}Maximum-Likelihood PCA}{7}{subsection.2.3.5}
-\contentsline {subsubsection}{The Stationary Points of the Log-Likelihood}{7}{section*.11}
+\contentsline {subsubsection}{The Stationary Points of the Log-Likelihood}{8}{section*.11}
 \contentsline {section}{\numberline {2.4}Gaussian Process Latent Variable Model}{8}{section.2.4}
 \contentsline {subsection}{\numberline {2.4.1}Probabilistic PCA}{8}{subsection.2.4.1}
-\contentsline {subsection}{\numberline {2.4.2}Dual Probabilistic PCA}{8}{subsection.2.4.2}
-\contentsline {subsection}{\numberline {2.4.3}Gaussian Processes}{9}{subsection.2.4.3}
-\contentsline {subsection}{\numberline {2.4.4}GP-LVM}{9}{subsection.2.4.4}
+\contentsline {subsection}{\numberline {2.4.2}Dual Probabilistic PCA}{9}{subsection.2.4.2}
+\contentsline {subsection}{\numberline {2.4.3}Gaussian Processes}{10}{subsection.2.4.3}
+\contentsline {subsection}{\numberline {2.4.4}GP-LVM}{10}{subsection.2.4.4}
 \contentsline {section}{\numberline {2.5}Bayesian Gaussian Process Latent Variable Model}{10}{section.2.5}
-\contentsline {subsection}{\numberline {2.5.1}Variational Inference}{10}{subsection.2.5.1}
-\contentsline {section}{\numberline {2.6}Generative Models}{10}{section.2.6}
-\contentsline {section}{\numberline {2.7}Related Work}{10}{section.2.7}
-\contentsline {subsection}{\numberline {2.7.1}Learning a Manifold}{10}{subsection.2.7.1}
+\contentsline {subsection}{\numberline {2.5.1}Variational Inference}{11}{subsection.2.5.1}
+\contentsline {section}{\numberline {2.6}Generative Models}{11}{section.2.6}
+\contentsline {section}{\numberline {2.7}Related Work}{11}{section.2.7}
+\contentsline {subsection}{\numberline {2.7.1}Learning a Manifold}{11}{subsection.2.7.1}
 \contentsline {subsection}{\numberline {2.7.2}Drawing Assistant}{11}{subsection.2.7.2}
 \contentsline {subsection}{\numberline {2.7.3}AutoHair}{11}{subsection.2.7.3}
 \contentsline {chapter}{\numberline {3}Project Execution}{13}{chapter.3}
