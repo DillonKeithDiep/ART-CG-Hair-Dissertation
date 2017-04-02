@@ -4,6 +4,8 @@ Database file #1: dissertation.bib
 Warning--I didn't find a database entry for "pca1933"
 Name 1 in "Tipping, M. E., and Bishop, C. M." has a comma at the end for entry ppca
 while executing---line 1049 of file plain.bst
+Name 1 in "Titsias, M. K., and Lawrence, N. D." has a comma at the end for entry bgplvm
+while executing---line 1049 of file plain.bst
 Name 1 in "Campbell, N. D., AND Kautz, J." has a comma at the end for entry fontmanifold
 while executing---line 1049 of file plain.bst
 Name 1 in "Chai, M., Shaq, T., Wu, H., Weng, Y., and Zhou, K" has a comma at the end for entry autohair
@@ -55,4 +57,6 @@ Warning--empty publisher in edgeloops
 Warning--empty year in edgeloops
 Name 1 in "Tipping, M. E., and Bishop, C. M." has a comma at the end for entry ppca
 while executing---line 1090 of file plain.bst
-(There were 16 error messages)
+Name 1 in "Titsias, M. K., and Lawrence, N. D." has a comma at the end for entry bgplvm
+while executing---line 1090 of file plain.bst
+(There were 18 error messages)
