@@ -36,6 +36,11 @@ I.~T. Jolliffe.
 \bibitem{edgeloops}
 [Edge loops] https://sites.ualberta.ca/~cwant/blender/derived surfaces.pdf.
 
+\bibitem{ppca}
+M.~E. Tipping and C.~M. Bishop.
+\newblock {\em Probabilistic Principal Component Analysis}.
+\newblock Microsoft Research, Cambridge, UK, 1998.
+
 \bibitem{bgplvm}
 M.~K. Titsias and N.~D. Lawrence.
 \newblock {\em Bayesian Gaussian Process Latent Variable Model}.

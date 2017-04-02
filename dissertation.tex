@@ -274,52 +274,48 @@ The aim of this study is …
 \end{itemize}
 
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Generative Models}
+\section{Related Work}
+\subsection{Learning a Manifold}
+\cite{fontmanifold}
+\subsection{Drawing Assistant}
+\subsection{AutoHair}
+\cite{autohair}
+Neural networks
+Helicoids
+[Automated Production of 3D Assets]
+Procedural generation
+Generative models
+Procedural Generation of Hair 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 % -----------------------------------------------------------------------------
 
 \chapter{Technical Background}
 \label{chap:technical}
 
-\section{Formal Definition of 3D Polygon Mesh Representation}
-%\cite{polyhedron}The winged-edge polyhedron representation proposed by Baumgart in 1972 introduced a mesh data structure to represent 3D geometry using vertices, edges, and faces. \cite{wingededge}
-
-Polygon mesh representation of 3D surfaces are composed of vertices, edges, and faces. Let polygon mesh $P = (\mathbf{V, E, F})$, where $\mathbf{V, E, F}$ represents the set of vertices, edges, and faces respectively. In practice, polygonal meshes contain more components that affect surface appearance such as texture coordinates and vertex normals, however, the components described are sufficient for geometric processing.
-
-\subsection{Mesh Vertices}
-A mesh vertex $v$ is a 3D point of the form $\forall (x, y, z) \in \Re, v = (x, y, z)$.
-The set of vertices is a point cloud representation of the geometry. 
-
-\subsection{Edges}
-An edge $e$ is an unordered pair that connects two vertices. Formally, it is described in the form $\forall (v_1, v_2) \in \mathbf{V}, e = \{v_1, v_2\}$. Vertices connected by edges form a wireframe of the geometry. 
-
-\subsection{Polygon Faces}
-A polygon face can be formed from an arbitrary number of vertices $\forall (v_1, v_2,...,v_n) \in \mathbf{V}, f_n = (v_1, v_2,..., v_n)$, however, in this context we are only concerned with tri-faces $\forall (v_1, v_2, v_3) \in \mathbf{V}, f_3 = (v_1, v_2, v_3)$ and quad-faces $\forall (v_1, v_2, v_3, v_4) \in \mathbf{V}, f_4 = (v_1, v_2, v_3, v_4)$. Faces describe the geometric surface of an object. 
-
-\subsection{Edge Loops}
-3D programs often allow edge loop selection which are useful properties of the geometry. An edge loop is defined (on blender) as a set of connected edges that either forms a loop or the end vertices are poles (vertices that do not have edges). Edge loops are useful for extracting more information on the structure of the mesh.
-\cite{edgeloops}
-
 \section{Principal Component Analysis}
-\subsection{PCA [Temp Main]}
-Intro:
-In multivariate analysis, principal component analysis (PCA) is a statistical technique used to perform dimensionality reduction.\cite{pca2002} It was originally introduced by Pearson\cite{pca1901}, and independently developed by Hotelling\cite{pca1933}, where the standard algebraic derivation of PCA was presented in terms of a standardized linear projection.
-
-Intuition:
-Consider variables of hair structure: location, orientation, length, color. There is some correlation between the variables, this is measured as covariance. PCA represents these observed variables as a combination that is independent, so location, orientation, length may be combined but not color. This is captured by selecting orthonormal axes that retain the most variance.
-
-Derivation1:
-Given a set of $n$ observed $d$-dimensional data vectors $\mathbf{X}=\{\mathbf{x}_1,\mathbf{x}_2,...,\mathbf{x}_n\}$, $\mathbf{x}_i = \{x_1,x_2,...,x_d\}$, principal component analysis can be solved as an eigenvalue decomposition problem to determine a selected size of $m$ principal components, where $\mathbf{Y}=\{\mathbf{y}_1,\mathbf{y}_2,...,\mathbf{y}_m\}$, $\mathbf{y}=\{y_1,y_2,...,y_d\}$. 
-
 \subsection{PCA}
-The most common derivation of PCA is in terms of a standardized linear projection which maximises the variance in the projected space (Hotelling, 19333). For a set of observed d-dimensional data vectors $\{\mathbf{t}_n\}$, $n\in {1,...,N}$, the q principal axes $\mathbf{w}_j, j\in \{1,...,q\}$, are those orthonormal axes onto which the retained variance under projection is maximal. It can be shown that the vectors $\mathbf{w}_j$ are given by the q dominant eigenvectors (those with the largest associated eigenvalues $\lambda_j$) of the sample covariance matrix $\mathbf{Sw}_j=\lambda_j\mathbf{w}_j$. The q principal components of the observed vector $\mathbf{t}_n$ are given by the vector $\mathbf{x}_n=\mathbf{W}^T(\mathbf{t}_n-\mathbf{\bar{t}})$, where $\mathbf{W=(w_1,w_2,...,w}_q)$. The variables $x_j$ are then uncorrelated such that the covariance matrix $\sum_n\mathbf{x}_n\mathbf{x}^T_n /N$ is diagonal with elements $\lambda_j$.
+In multivariate analysis, principal component analysis (PCA) is a statistical technique used to perform dimensionality reduction. \cite{pca2002} It was originally introduced by Pearson \cite{pca1901}, and independently developed by Hotelling \cite{pca1933}, where the standard algebraic derivation of PCA was presented in terms of a standardized linear projection.
 
-A complementary property of PCA is that of all orthogonal linear projections $\mathbf{x}_n=\mathbf{W}^T(\mathbf{t}_n-\mathbf{\bar{t}})$, the principal component projection minimises the squared reconstruction error $\sum_n||\mathbf{t}_n-\mathbf{\hat{t}}_n||^2$, where the optimal linear reconstruction of $\mathbf{t}_n$ is given by $\mathbf{\hat{t}=Wx}_n+\mathbf{\bar{t}}$.
+{ \color{red}
+Consider variables of hair structure: location, orientation, length, color. There is some correlation between the variables, this is measured as covariance. PCA represents these observed variables as a combination that is independent, so location, orientation, length may be combined but not color. This is captured by selecting orthonormal axes that retain the most variance.
+}
+
+{ \color{red}
+Given a set of $n$ observed $d$-dimensional data vectors $\mathbf{X}=\{\mathbf{x}_1,\mathbf{x}_2,...,\mathbf{x}_n\}$, $\mathbf{x}_i = \{x_1,x_2,...,x_d\}$, principal component analysis can be solved as an eigenvalue decomposition problem to determine a selected size of $m$ principal components, where $\mathbf{Y}=\{\mathbf{y}_1,\mathbf{y}_2,...,\mathbf{y}_m\}$, $\mathbf{y}=\{y_1,y_2,...,y_d\}$. 
+}
 
 \subsection{Single Value Decomposition of X}
+{ \color{red}
 PCA can be seen as SVD of X, $\mathbf{X=U\Sigma V^T}$.
+}
 
-\vspace{5cm}
 \section{Probabilistic Principal Component Analysis}
-PPCA Tipping and Bishop 1999
+A limitation of standard PCA is the lack of a probabilistic solution. Tipping and Bishop introduced a probabilistic principal component analysis by constraining a latent variable model to be effectively equivalent when its marginal likelihood is maximised. \cite{ppca}
+
 \subsection{Latent Variable Models and Factor Analysis}
 A latent variable model transforms a set of $n$ $d$-dimensional observed variables, $\mathbf{Y}\in\Re^{n \times d}$, to a set of $q$-dimensional latent (unobserved) variables, $\mathbf{X}\in\Re^{n \times q}$. Latent variables are parsimonious, it is generally the case that $q \ll d$, explaining the original data with fewer variables. A notable latent variable model is that of factor analysis, one that assumes linearity in relation of the observed data set.
 \begin{equation} \label{ppca:fa}
@@ -329,7 +325,7 @@ $\mathbf{W}$ represents a matrix that specifies the relation between the observe
 The parameter $\mu$ allows for non-zero mean, and the $\epsilon$ parameter represents noise within the model.
 
 \subsection{Relation of Factor Analysis and PCA}
-
+{ \color{red}
 Standard PCA does not differentiate between covariance and variance. FA latent variables explain the correlations between the variables observed, and $\epsilon_i$ represents variability for $\mathbf{y_i}$. The maximum-likelihood estimates of the columns of $\mathbf{W}$ will thus generally \textit{not} correspond to the principal subspace of the observed data.
 
 A special case is the isotropic error model. Constraining the residual variances $\psi_i=\sigma^2$ to be equal, the maximum-likelihood is equivalent to a least-squares criterion, and a principal component solution emerges.
@@ -342,14 +338,16 @@ The maximum likelihood estimators $\mathbf{W}_{ML}$ and $\sigma^2_{ML}$ of facto
 PCA may be viewed as a maximum likelihood procedure based on a probability density model of the observed data (Lawley 1953, Anderson and Robin 1956).
 
 Tipping and Bishop extend Lawley and Anderson and Rubin to show how PCA may be viewed as a maximum likelihood procedure based on a probability density model of the observed data.
+}
 
-\subsection{The probability model}
-Let parameter $\epsilon$ of equation \ref{ppca:fa} be modelled as an isotropic, spherical Gaussian distribution $\mathcal{N}(\mathbf{0},\sigma^2\mathbf{I})$. We obtain the conditional probability distribution:
+\subsection{The Probability Model}
+{ \color{red}
+In probabilistic PCA, the parameter $\epsilon$ of equation \ref{ppca:fa} be modelled as an isotropic, spherical Gaussian distribution $\mathcal{N}(\mathbf{0},\sigma^2\mathbf{I})$. We obtain the conditional probability distribution:
 \begin{equation} \label{ppca:conditional}
 	p(\mathbf{Y|X})\sim\mathcal{N}(\mathbf{WX+\mu},\sigma^2\mathbf{I}). 
 \end{equation}
 
-The marginal distribution over the latent variables are Gaussian, defined by $\mathbf{X\sim\mathcal{N}(0,I)}$. The marginal distribution for the observed data $\mathbf{Y}$ is obtained by integrating out the latent variables,
+The marginal distribution over the latent variables are standard Gaussian, defined as $\mathbf{X\sim\mathcal{N}(0,I)}$. The marginal distribution for the observed data $\mathbf{Y}$ is obtained by integrating out the latent variables,
 $$\mathbf{Y}\sim\mathcal{N}\mathbf{(\mu,C)}.$$
 The observation covariance model is $\mathbf{C=WW}^T+\sigma^2\mathbf{I}$. The corresponding log-likelihood is
 \begin{equation} \label{ppca:loglikelihood}
@@ -360,53 +358,12 @@ $$\mathbf{S}=\frac{1}{n}\sum^n_{i=1}(\mathbf{y}_i-\mu)(\mathbf{y}_i-\mu)^T$$
 The conditional distribution of the latent variables $\mathbf{x}$ given the observed $\mathbf{y}$, which may be calculated by using Bayes theorem is:
 $$p(\mathbf{x|y)\sim\mathcal{N}(M^{-1}W}^T\mathbf{(y-\mu),\sigma^2M^{-1})}$$
 where $\mathbf{M=W}^T\mathbf{W+\sigma^2I}$, and $\mathbf{M}$ is a $q \times q$ matrix.
-
-\subsection{Principal Subspace}
-Given that the observation covariance model, $\mathbf{C}=\mathbf{WW}^T\sigma^2\mathbf{I}$, the likelihood (\ref{ppca:loglikelihood}) is maximised when
-\begin{equation} \label{ppca:ml}
-	\mathbf{W}_{ML}=\mathbf{U}_q(\Lambda_q-\sigma^2\mathbf{I})^{\frac{1}{2}}\mathbf{R}
-\end{equation}
-where the $q$ column vectors in the $d \times q$ matrix $\mathbf{U}_q$ are the principal eigenvectors of $\mathbf{S}$, with corresponding eigenvalues $\lambda_1,...,\lambda_q$ in the $q \times q$ diagonal matrix $\Lambda_q$, and $\mathbf{R}$ is an arbitrary $q \times q$ orthogonal rotation matrix. From equation \ref{ppca:ml}, the latent variable model defined by equation \ref{ppca:fa} effects a mapping from the latent space into the \textit{principal subspace} of the observed data.
-
-\subsection{Maximum-Likelihood PCA}
- $\Lambda_q=[ \lambda_1,...,\lambda_q ]$.
-
-The matrix $\mathbf{U_q}$ may contain any of the eigenvectors of $\mathbf{S}$, so to identify those which maximise the likelihood, the expression for $\mathbf{W}$ in (15) is substituted into the log-likelihood function (4) to give 
-$$\mathcal{L}=-\frac{n}{2} ( d\ln(2\pi)+\sum^{q'}_{j=1}\ln(\lambda_j)+\frac{1}{\sigma^2}\sum^d_{j=q+1}\lambda_j+(d-q')\ln\sigma^2+q' )$$
-
-Where $q'$ is the number of non-zero $l_j$, $\lambda_1,...,\lambda_{q'}$ are eigenvalues corresponding to the eigenvectors 'retained' in W, and $\lambda_{q'+1,...,\lambda_d}$ are those 'discarded'. Maximising (17, L) with respect to $\sigma^2$ gives
-$$\sigma^2=\frac{1}{d-q}\sum^d_{j=q'+1}\lambda_j$$
-so
-$$\mathcal{L}=-\frac{n}{2}( \sum^{q'}_{j=1}\ln(\lambda_j)+(d-q')\ln( \frac{1}{d-q'}\sum^d_{j=q'+1}\lambda_j ) +d\ln(2\pi)+d )$$
-
-To find the maximum of (19, L), with respect to the choice of eigenvectors and eigenvalues to retain in $\mathbf{W}$, and those to discard.
-By exploiting the constancy of the sum of all eigenvalues, the condition for maximisation of the likelihood can be expressed equivalently as minimisation of the quantity
-$$E=\ln(\frac{1}{d-q'}\sum^d_{j=q'+1}\lambda_j)-\frac{1}{d-q'}\sum^d_{j=q'+1}\ln(\lambda_j)$$
-
-L is maximised with respect to $q'$ when there are fewest terms in the sums in (20, E) which occurs when $q'=q$ and therefore no $l_j$ is zero. Furthermore, $L$ is minimised when $\mathbf{W=0}$, which is equivalent to the case where $q'=0$.
-
-\subsubsection{The Stationary Points of the Log-Likelihood}
-The gradient of the log-likelihood (\ref{ppca:loglikelihood}) with respect to $\mathbf{W}$ is obtained from matrix differentiation (Kranowsi and Marriott 1994):
-$$\frac{\delta\mathcal{L}}{\delta\mathbf{W}}=N(\mathbf{C^{-1}SC^{-1}W-C^{-1}W}),$$
-at the stationary points
-\begin{equation} \label{ppca:stationary}
-	\mathbf{SC^{-1}W=W}.
-\end{equation}
-There are three possible classes of solutions to equation \ref{ppca:stationary}. Trivially, $\mathbf{W=0}$ is a minimum of the log-likelihood. The case when the covariance model are identical, $\mathbf{C=S}$, $\mathbf{W}$ has a known solution as $\mathbf{WW^T=S-\sigma I}$, thus $\mathbf{W=U(\Lambda-\sigma^2 I)^\frac{1}{2}R}$, where $\mathbf{U}$ is a square matrix whose columns are the eigenvectors of $\mathbf{S}$, with $\mathbf{\Lambda}$ the corresponding diagonal matrix of eigenvalues, and $\mathbf{R}$ is an arbitrary orthogonal matrix.
-
-The third case, where $\mathbf{SC^{-1}W=W}$, but $\mathbf{W \ne 0}$  and $\mathbf{C \ne S}$. To find these, express the parameter matrix in terms of its singular value decomposition:
-\begin{equation} \label{ppca:svd1}
-	\mathbf{W=ULV}^T
-\end{equation}
-
-As Tipping and Bishop noted, it turns out that all potential solutions for $\mathbf{W}$ may be written as $\mathbf{W=U_q(K_q-\sigma^2I)^\frac{1}{2}R}$.
-
-
-\section{Gaussian Process Latent Variable Model}
+}
 
 \subsection{Probabilistic PCA}
 Consider a set of $n$ centred $d$-dimensional data $\mathbf{Y=\{y_1,y_2,...,y_n\}}$.
 For each observed data point, $1 \leq i \leq n $, there is an associated $q$-dimensional latent variable $\mathbf{x_i}$.
+
 The original data can be represented in terms of the latent variable with noise value,
 $$\mathbf{y_i=Wx_i+\epsilon_i}.$$
 The matrix $\mathbf{W \in \Re^{d \times q}}$ represents the linear relationship between the latent-space with the  data-space. The noise values, $\epsilon_n \in \Re^{d \times 1}$, are sampled as independent spherical Gaussian distributions defined by $p(\epsilon_i)\sim\mathcal{N}(\mathbf{0, \beta^{-1}I})$.
@@ -423,6 +380,38 @@ $$p(\mathbf{y_i|W,W,\beta})\sim\mathcal{N}(\mathbf{y_i|0,WW^T+\beta^{-1}I}).$$
 Assuming that the data points are independent, the likelihood of the full data set is the product of each marginal likelihood,
 $$p(\mathbf{Y|W,\beta})=\prod^N_{i=1} p(\mathbf{y_i|W,\beta}).$$
 
+\subsection{The Principal Subspace of PPCA}
+Tipping and Bishop\cite{ppca} showed that all potential solutions for $\mathbf{W}$, the likelihood likelihood (\ref{ppca:loglikelihood}), is of the form $$\mathbf{W=U_q(K_q-\sigma^2I)^\frac{1}{2}R}.$$
+One particular case of interest is when the likelihood is maximised when
+\begin{equation} \label{ppca:ml}
+	\mathbf{W}_{ML}=\mathbf{U}_q(\Lambda_q-\sigma^2\mathbf{I})^{\frac{1}{2}}\mathbf{R}.
+\end{equation}
+The $\mathbf{U_q}$ matrix contains the column vectors that are the principal eigenvectors and $\Lambda_q=[\lambda_1,...,\lambda_q]$ represents the diagonal matrix of the corresponding eigenvalues, $\mathbf{R}$ represent an arbitrary orthogonal rotation matrix. 
+
+Maximising the likelihood of $\mathbf{W}$ by equation \ref{ppca:ml} on the latent variable model defined by equation \ref{ppca:fa} maps the latent-space to the principal subspace of the observed data. Selecting $\mathbf{W}_{ML}$, the latent variable model is effectively equivalent to standard principal component analysis.
+
+\subsection{Maximum-Likelihood PCA}
+{ \color{red}
+ $\Lambda_q=[ \lambda_1,...,\lambda_q ]$.
+
+The matrix $\mathbf{U_q}$ may contain any of the eigenvectors of $\mathbf{S}$, so to identify those which maximise the likelihood, the expression for $\mathbf{W}$ in (15) is substituted into the log-likelihood function (4) to give 
+$$\mathcal{L}=-\frac{n}{2} ( d\ln(2\pi)+\sum^{q'}_{j=1}\ln(\lambda_j)+\frac{1}{\sigma^2}\sum^d_{j=q+1}\lambda_j+(d-q')\ln\sigma^2+q' )$$
+
+Where $q'$ is the number of non-zero $l_j$, $\lambda_1,...,\lambda_{q'}$ are eigenvalues corresponding to the eigenvectors 'retained' in W, and $\lambda_{q'+1,...,\lambda_d}$ are those 'discarded'. Maximising (17, L) with respect to $\sigma^2$ gives
+$$\sigma^2=\frac{1}{d-q}\sum^d_{j=q'+1}\lambda_j$$
+so
+$$\mathcal{L}=-\frac{n}{2}( \sum^{q'}_{j=1}\ln(\lambda_j)+(d-q')\ln( \frac{1}{d-q'}\sum^d_{j=q'+1}\lambda_j ) +d\ln(2\pi)+d )$$
+
+To find the maximum of (19, L), with respect to the choice of eigenvectors and eigenvalues to retain in $\mathbf{W}$, and those to discard.
+By exploiting the constancy of the sum of all eigenvalues, the condition for maximisation of the likelihood can be expressed equivalently as minimisation of the quantity
+$$E=\ln(\frac{1}{d-q'}\sum^d_{j=q'+1}\lambda_j)-\frac{1}{d-q'}\sum^d_{j=q'+1}\ln(\lambda_j)$$
+
+which only depends on the discarded values and is non-negative (Jensen's equality). Interestingly, the minimisation of E leads only to the requirement that discarded $\lambda_j$ be adjacent within the spectrum of ordered eigenvalues of $\mathbf{S}$. However, equation (14) requires that $\lambda_j > \sigma^2, \forall j \in {1,...,q'}$, so from equation (18), we can deduce that the smallest eigenvalue must be discarded. This is now sufficient to show that E must be minimised when $\lambda_1,...,\lambda_{q'}$ are the smallest d-q eigenvalues, and so the likelihood of L maximised is when $\lambda_1,...,\lambda_{q'}$ are the largest eigenvalues of $\mathbf{S}$.
+
+L is maximised with respect to $q'$ when there are fewest terms in the sums in (20, E) which occurs when $q'=q$ and therefore no $l_j$ is zero. Furthermore, $L$ is minimised when $\mathbf{W=0}$, which is equivalent to the case where $q'=0$.
+}
+
+\section{Gaussian Process Latent Variable Model}
 \subsection{Dual Probabilistic PCA}
 Lawrence introduced the dual probabilistic PCA (DPPCA) as an alternative solution to PPCA that is equivalent. Instead of optimising parameters and marginalising latent variables, the dual approach marginalises the parameters, $\mathbf{W}$, and optimises with respect to latent variables, $\mathbf{X}$.
 
@@ -463,50 +452,61 @@ where the element at $ith$ row and $jth$ column ok $\mathbf{K}$ is given by the 
 DPPCA points to a new class of models which consist of Gaussian process mappings from a latent space, $\mathbf{X}$, to an observed data-space, $\mathbf{Y}$. DPPCA is the special case where the output dimensions are \textit{a priori} assumed to be linear, independent and identically distributed. However, each of these assumptions can be infringed to obtain new probabilistic models. Independence can be broken by allowing an arbitrary rotation on the data matrix $\mathbf{Y}$, the 'identically distributed' assumption can be broken by allowing different covariance functions for each output dimension. By replacing the inner product kernel with a covariance function that allows for non-linear functions we obtain a non-linear latent variable model. Due to the close relationship with the linear model, which has an intepretation as probabilistic PCA, such a model can be interpreted as a non-linear probabilistic version of PCA.
 
 \section{Bayesian Gaussian Process Latent Variable Model}
-The Bayesian Gaussian Process Latent Variable Model (Bayesian GP-LVM) extends the GP-LVM by variationally integrating out the input variables of the Gaussian process to compute a lower bound on the exact marginal likelihood of the nonlinear latent variable model, thus becoming robust to overfitting. \cite{bgplvm}
-
-To apply variational Bayes to GP-LVM, need to approximately integrate out latent/input variables that appear nonlinearly in the inverse kernel matrix of the GP model. Standard mean field variational methodologies is not tractable.
+The Bayesian Gaussian Process Latent Variable Model (Bayesian GP-LVM) \cite{bgplvm} extends the GP-LVM by variationally integrating out the input variables of the Gaussian process to approximate the marginal likelihood of a fully marginalised model. The approximated marginal likelihood can be used to compute a Jensen's lower bound that is robust to overfitting. A fully marginalised model establishes a Bayesian perspective that copes well with uncertainty caused by missing data and can automatically determine latent dimensions within the observed data set.
 
 Recall that the marginalised likelihood of the GPLVM is
 $$p(\mathbf{Y|X},\beta)=\prod^d_{i=1}p(\mathbf{y}_{:,i}|\mathbf{X},\beta)$$
 where $\mathbf{y}_{:,i}$ represents the $i^{th}$ column of $\mathbf{Y}$ and
 $$p(\mathbf{y}_{:,i}|\mathbf{X},\beta)=\mathcal{N}(\mathbf{y}_{:,i}|\mathbf{0,XX}^T+\beta^{-1}\mathbf{I}).$$
-
 $K_{nn}$ is the $n \times n$ covariance matrix defined by the kernel function $k(\mathbf{x,x'})$.
-
-Since X is a latent variable, we can assign it to a prior density given by the standard normal density. The prior for $X$ is thus
+The latent variable X is assigned a prior density given by the standard normal density. 
 $$p(\mathbf{X})=\prod^n_{i=1}\mathcal{N}(\mathbf{x_i|0, I_Q})$$
 where each $\mathbf{x_i}$ is the $i^{th}$ row of $\mathbf{X}$. The joint probability model for the GP-LVM is
 $$p(\mathbf{Y,X})=p(\mathbf{Y|X})p(\mathbf{X})$$
 
-Instead of training the GP-LVM model by finding the MAP estimate of $\mathbf{X}$ whilst jointly maximizing with respect to the hyperparameters as introduced in the orginal paper, Bayesian GP-LVM performs variational inference to marginalise the latent variables. This method enables optimisation of the resulting lower bound on the marginal likelihood with respect to the hyperparameters.
+The standard GP-LVM method trains by finding the MAP estimate of $\mathbf{X}$ whilst jointly maximizing with respect to the hyperparameters as introduced in the orginal paper. Bayesian GP-LVM performs variational inference to marginalise the latent variables. This method enables optimisation of the resulting lower bound on the marginal likelihood with respect to the hyperparameters. 
 
 \subsection{Variational Inference}
-To obtain the marginal likelihood of the observed data, we integrate out the latent variables:
+In order to apply variational Bayesian methods to GP-LVM, the latent/input variables that appear non-linearly must first be approximately integrated out.
+
+The marginal likelihood of the observed data is obtained by integrating out the latent variables:
 $$p(\mathbf{Y})=\int p(\mathbf{Y|X})p(\mathbf{X})d\mathbf{X}.$$
-This method, however, is intractable in practice. Instead, let variational distribution $q(\mathbf{X})$ approximate the posterior distribution over the latent variables, $p(\mathbf{X|Y})$.
+Computationally, this integration is intractable in practice. Variaitonal Bayesian methods can instead be used by using variational distribution $q(\mathbf{X})$ to approximate the posterior distribution over the latent variables, $p(\mathbf{X|Y})$.
 $$q(\mathbf{X})=\prod^n_{i=1}\mathcal{N}(\mathbf{x_n|\mu_n,S_n})$$
-where the variational parameters are $\mathbf{ \{ \mu_n,S_n \}^n_{i=1} }$ and $\mathbf{S_n}$ is a diagonal covariance matrix. Using this variational distribution, the Jensen's lower bound on $\log p(\mathbf{Y})$ is expressed as
+where the variational parameters are $\mathbf{ \{ \mu_n,S_n \}^n_{i=1} }$ and $\mathbf{S_n}$ is a diagonal covariance matrix. 
+
+The variational distribution can then be used to obtain a Jensen's lower bound on $\log p(\mathbf{Y})$:
 $$F(q)=\int q(\mathbf{X})\log \frac{ p(\mathbf{Y|X})p(\mathbf{X}) }{ q(\mathbf{X}) } d\mathbf{X}$$
+$$=\int q(\mathbf{X})\log p(\mathbf{Y|X})p(\mathbf{X})d\mathbf{X} - \int q(x)\log\frac{q(X)}{p(X)}dX$$
+$$=\tilde{F}(q)-KL(q||p).$$
+The second term is the negative KL divergence between the variational posterior distribution $q(X)$ and the prior distribution p(X) over the latent variables. Since the distributions are Gaussian, the negative KL divergence is tractable. The problematic term is $\tilde{F}(q)$, and variational sparse GP regression is applied for approximation.
 
+\section{Kernel Methods}
+\subsection{Kernel Basics}
+\subsection{RBF}
+\subsection{Exponential}
+\subsection{Combining Kernels}
 
-\section{Generative Models}
+\section{Formal Definition of 3D Polygon Mesh Representation}
+%\cite{polyhedron}The winged-edge polyhedron representation proposed by Baumgart in 1972 introduced a mesh data structure to represent 3D geometry using vertices, edges, and faces. \cite{wingededge}
 
-\section{Related Work}
-\subsection{Learning a Manifold}
-\cite{fontmanifold}
+Polygon mesh representation of 3D surfaces are composed of vertices, edges, and faces. Let polygon mesh $P = (\mathbf{V, E, F})$, where $\mathbf{V, E, F}$ represents the set of vertices, edges, and faces respectively. In practice, polygonal meshes contain more components that affect surface appearance such as texture coordinates and vertex normals, however, the components described are sufficient for geometric processing.
 
+\subsection{Mesh Vertices}
+A mesh vertex $v$ is a 3D point of the form $\forall (x, y, z) \in \Re, v = (x, y, z)$.
+The set of vertices is a point cloud representation of the geometry. 
 
-\subsection{Drawing Assistant}
+\subsection{Edges}
+An edge $e$ is an unordered pair that connects two vertices. Formally, it is described in the form $\forall (v_1, v_2) \in \mathbf{V}, e = \{v_1, v_2\}$. Vertices connected by edges form a wireframe of the geometry. 
 
-\subsection{AutoHair}
-\cite{autohair}
-Neural networks
-Helicoids
-[Automated Production of 3D Assets]
-Procedural generation
-Generative models
-Procedural Generation of Hair 
+\subsection{Polygon Faces}
+A polygon face can be formed from an arbitrary number of vertices $\forall (v_1, v_2,...,v_n) \in \mathbf{V}, f_n = (v_1, v_2,..., v_n)$, however, in this context we are only concerned with tri-faces $\forall (v_1, v_2, v_3) \in \mathbf{V}, f_3 = (v_1, v_2, v_3)$ and quad-faces $\forall (v_1, v_2, v_3, v_4) \in \mathbf{V}, f_4 = (v_1, v_2, v_3, v_4)$. Faces describe the geometric surface of an object. 
+
+\subsection{Edge Loops}
+3D programs often allow edge loop selection which are useful properties of the geometry. An edge loop is defined (on blender) as a set of connected edges that either forms a loop or the end vertices are poles (vertices that do not have edges). Edge loops are useful for extracting more information on the structure of the mesh.
+\cite{edgeloops}
+
+\section{Graph Theory}
 
 
 
