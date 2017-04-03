@@ -33,6 +33,12 @@ I.~T. Jolliffe.
 \newblock {\em Principal Component Analysis}.
 \newblock Springer Series in Statistics, Springer-Verlag, 2nd edition, 2002.
 
+\bibitem{gplvm}
+N.~D. Lawrence.
+\newblock {\em Probabilistic non-linear principal component analysis with
+  Gaussian process latent variable models}.
+\newblock The Journal of Machine Learning Research 6, 1783–1816, 2005.
+
 \bibitem{edgeloops}
 [Edge loops] https://sites.ualberta.ca/~cwant/blender/derived surfaces.pdf.
 

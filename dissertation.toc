@@ -12,20 +12,17 @@
 \contentsline {subsection}{\numberline {1.8.3}AutoHair}{3}{subsection.1.8.3}
 \contentsline {chapter}{\numberline {2}Technical Background}{5}{chapter.2}
 \contentsline {section}{\numberline {2.1}Principal Component Analysis}{5}{section.2.1}
-\contentsline {subsection}{\numberline {2.1.1}PCA}{5}{subsection.2.1.1}
-\contentsline {subsection}{\numberline {2.1.2}Single Value Decomposition of X}{5}{subsection.2.1.2}
+\contentsline {subsection}{\numberline {2.1.1}Single Value Decomposition of X}{5}{subsection.2.1.1}
 \contentsline {section}{\numberline {2.2}Probabilistic Principal Component Analysis}{5}{section.2.2}
 \contentsline {subsection}{\numberline {2.2.1}Latent Variable Models and Factor Analysis}{5}{subsection.2.2.1}
-\contentsline {subsection}{\numberline {2.2.2}Relation of Factor Analysis and PCA}{5}{subsection.2.2.2}
-\contentsline {subsection}{\numberline {2.2.3}The Probability Model}{6}{subsection.2.2.3}
-\contentsline {subsection}{\numberline {2.2.4}Probabilistic PCA}{6}{subsection.2.2.4}
-\contentsline {subsection}{\numberline {2.2.5}The Principal Subspace of PPCA}{7}{subsection.2.2.5}
-\contentsline {subsection}{\numberline {2.2.6}Maximum-Likelihood PCA}{7}{subsection.2.2.6}
-\contentsline {section}{\numberline {2.3}Gaussian Process Latent Variable Model}{8}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1}Dual Probabilistic PCA}{8}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.2.2}Relation of Factor Analysis and PCA}{6}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}Probabilistic PCA}{6}{subsection.2.2.3}
+\contentsline {subsection}{\numberline {2.2.4}The Principal Subspace of PPCA}{6}{subsection.2.2.4}
+\contentsline {subsection}{\numberline {2.2.5}Maximum-Likelihood PCA}{7}{subsection.2.2.5}
+\contentsline {section}{\numberline {2.3}Gaussian Process Latent Variable Model}{7}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Dual Probabilistic PCA}{7}{subsection.2.3.1}
 \contentsline {subsection}{\numberline {2.3.2}Gaussian Processes}{8}{subsection.2.3.2}
-\contentsline {subsection}{\numberline {2.3.3}GP-LVM}{9}{subsection.2.3.3}
-\contentsline {section}{\numberline {2.4}Bayesian Gaussian Process Latent Variable Model}{9}{section.2.4}
+\contentsline {section}{\numberline {2.4}Bayesian Gaussian Process Latent Variable Model}{8}{section.2.4}
 \contentsline {subsection}{\numberline {2.4.1}Variational Inference}{9}{subsection.2.4.1}
 \contentsline {section}{\numberline {2.5}Kernel Methods}{10}{section.2.5}
 \contentsline {subsection}{\numberline {2.5.1}Kernel Basics}{10}{subsection.2.5.1}
@@ -37,12 +34,12 @@
 \contentsline {subsection}{\numberline {2.6.2}Edges}{10}{subsection.2.6.2}
 \contentsline {subsection}{\numberline {2.6.3}Polygon Faces}{10}{subsection.2.6.3}
 \contentsline {subsection}{\numberline {2.6.4}Edge Loops}{10}{subsection.2.6.4}
-\contentsline {section}{\numberline {2.7}Graph Theory}{11}{section.2.7}
-\contentsline {chapter}{\numberline {3}Project Execution}{13}{chapter.3}
-\contentsline {section}{\numberline {3.1}Example Section}{13}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}Example Sub-section}{14}{subsection.3.1.1}
-\contentsline {subsubsection}{Example Sub-sub-section}{15}{section*.11}
-\contentsline {paragraph}{Example paragraph.}{16}{section*.12}
-\contentsline {chapter}{\numberline {4}Critical Evaluation}{17}{chapter.4}
-\contentsline {chapter}{\numberline {5}Conclusion}{19}{chapter.5}
-\contentsline {chapter}{\numberline {A}An Example Appendix}{23}{appendix.A}
+\contentsline {section}{\numberline {2.7}Graph Theory}{10}{section.2.7}
+\contentsline {chapter}{\numberline {3}Project Execution}{11}{chapter.3}
+\contentsline {section}{\numberline {3.1}Example Section}{11}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Example Sub-section}{12}{subsection.3.1.1}
+\contentsline {subsubsection}{Example Sub-sub-section}{13}{section*.11}
+\contentsline {paragraph}{Example paragraph.}{14}{section*.12}
+\contentsline {chapter}{\numberline {4}Critical Evaluation}{15}{chapter.4}
+\contentsline {chapter}{\numberline {5}Conclusion}{17}{chapter.5}
+\contentsline {chapter}{\numberline {A}An Example Appendix}{21}{appendix.A}

@@ -28,7 +28,7 @@
                 % the dissertation    title (which cannot be blank)
                      title={Assisted Content Generation for 3D Hair Geometry},
                 % the dissertation subtitle (which can    be blank)
-                  subtitle={[INCOMPLETE DRAFT, CONTAINS NOTES FROM RESEARCH]},
+                  subtitle={[INCOMPLETE DRAFT, NOT FOR SUBMISSION]},
                 % the dissertation     type
                       type={Research},
                 % the year of submission
@@ -84,28 +84,30 @@
 \vspace{1cm} 
 
 \noindent
-The research hypothesis of this study is that probabilistic principal component analysis with the
-Gaussian Process Latent Variable Model is applicable for improving the creative production workflow of complex 3D geometry such as hair structures of humanoids.
+The topic of this thesis explores the concept of assisted content generation by machine learning for the production of 3D hair geometry. The research hypothesis of this study is that non-linear probabilistic principal component analysis with the Gaussian Process Latent Variable Model is applicable for improving the creative production workflow of complex 3D hair structure and geometry for humanoids.
 
-The topic of this thesis explores the concept of assisted content generation by machine learning for the production of 3D hair geometry. The production of 3D virtual worlds is a time-consuming and costly process that also demand expert knowledge. 3D assets encompass a vast range of applications, ranging from simulations and research, to contributing towards the functioning of many businesses. The production of 3D assets also plays a pivotal role in engineering design, and the provisioning of entertainment. One particular task is the creation of 3D hair geometry for humanoid characters. The production of 3D hair is arduous as hair structure is a complex system containing much interdependence between components.
+Production of 3D virtual worlds is a time-consuming and costly process that also demand expert knowledge. 3D assets encompass a vast range of applications, ranging from simulations and research, to contributing towards the functioning of many businesses. The production of 3D assets impacts many industries including engineering, medicine, and the provisioning of entertainment. One particular task is the creation of 3D hair geometry for humanoid characters. The production of 3D hair is arduous as hair structure is a complex system containing much interdependence between components.
 
-Machine learning applications typically use large data sets for training on problems that often have a concise answer for a given prediction. The application of machine learning to enhance production for creative work is an exciting field that tackles new challenges - not only could it have a notable impact on the economy, artistic products tend to have small sets of data available and evaluation of quality is subjective. Given the same input, acceptable solutions can vary significantly. The mentioned peculiarities of applying machine learning for 3D mesh data defines a unique field of problems to investigate.
+Machine learning applications typically use large data sets for training on problems that often have a concise answer for a given prediction. The application of machine learning to enhance production for creative work is an exciting field that tackles novel challenges - not only could it have a notable impact on the economy, artistic products tend to have small sets of data available and evaluation of quality is subjective. Given the same input, acceptable solutions can vary significantly. The mentioned peculiarities of applying machine learning for 3D mesh data establish a unique field of problems to investigate.
 
-Existing tools for 3D modelling have remained mostly static in the paradigm of approach over the past few decades. Automation through methods such as procedural generation can produce output much faster, but the lack of control over the final result makes it less desirable than traditional methods of 3D modelling. The focus of this project is to formulate a revolutionary framework that improves the workflow of producing 3D hair geometry.
+Existing tools for 3D modelling have remained mostly static in the paradigm of approach over the past few decades. Automation through methods such as procedural generation can produce output much faster, but the lack of control over the final result makes it less desirable than traditional methods of 3D modelling. The focus of this project is to formulate a revolutionary approach that improves the workflow of producing 3D hair geometry.
 
 \begin{quote}
 \noindent
 \begin{itemize}
-\item Resolved the alignment problem by coming up with a generative model for approximating hair structure
-\item Demonstrated the use of GPLVM on various sizes of data set
-\item Implemented an add-on package for a 3D production program, Blender
+	\item Formulation of a generative model for 3D humanoid hair structure
+	\item Resolving the alignment problem by approximating raw input data using a generative model
+	\item Learning a low dimension latent-space of high dimensional hair structure data
+	{\color{red}
+	\item Evaluated the performance of various kernels for high dimensional training data
+	\item Formulation of reparation techniques on output generation of 3D geometry to conform with established constraints
+	}
+	\item Implemented an add-on package for a 3D production program, Blender
 	\begin{itemize}
-		\item This implementation creates guiding splines that are useful for generating geometry
+		\item The implementation creates guiding splines that are useful for generating hair geometry
 		\item Appropriate for small training set that is practical for content creators
-		\item Real-time performance that matches current processing time required by traditional tools
+		\item Real-time performance that matches state of the art non-learning tools
 	\end{itemize}
-\item [TODO]: Evaluating kernels
-\item [TODO]: Analysis and Evaluation
 \end{itemize}
 \end{quote}
 
@@ -297,20 +299,17 @@ Procedural Generation of Hair
 \label{chap:technical}
 
 \section{Principal Component Analysis}
-\subsection{PCA}
 In multivariate analysis, principal component analysis (PCA) is a statistical technique used to perform dimensionality reduction. \cite{pca2002} It was originally introduced by Pearson \cite{pca1901}, and independently developed by Hotelling \cite{pca1933}, where the standard algebraic derivation of PCA was presented in terms of a standardized linear projection.
 
-{ \color{red}
-Consider variables of hair structure: location, orientation, length, color. There is some correlation between the variables, this is measured as covariance. PCA represents these observed variables as a combination that is independent, so location, orientation, length may be combined but not color. This is captured by selecting orthonormal axes that retain the most variance.
-}
+Consider the properties that define hair structure. Observable variables that can be measured could be its location, orientation, length, and colour. It is likely that there is some correlation between the variables, measurable as covariance between the data. PCA retrieves an ordered list of orthonormal axes that retain the most variance, namely, the principal components.
 
 { \color{red}
-Given a set of $n$ observed $d$-dimensional data vectors $\mathbf{X}=\{\mathbf{x}_1,\mathbf{x}_2,...,\mathbf{x}_n\}$, $\mathbf{x}_i = \{x_1,x_2,...,x_d\}$, principal component analysis can be solved as an eigenvalue decomposition problem to determine a selected size of $m$ principal components, where $\mathbf{Y}=\{\mathbf{y}_1,\mathbf{y}_2,...,\mathbf{y}_m\}$, $\mathbf{y}=\{y_1,y_2,...,y_d\}$. 
+Given a set of $n$ observed $d$-dimensional data vectors $\mathbf{X=\{x_1,x_2,...,x_n\}}$, $\mathbf{x_i} = [x_1,x_2,...,x_d]$, the $q$ principal axes $\mathbf{w_j}$, $j \in {1,...,q}$, are the orthonormal axes which retain maximal variance. The vectors $\mathbf{w_j}$ are given by the $q$ dominant eigenvectors by corresponding eigenvalues $\lambda_j$ of the sample covariance matrix $S=\sum_n\mathbf{(t_n-\bar{t})(t_n-\bar{t})}^T/n$, where $\mathbf{\bar{t}}$ is the data sample mean, such that $\mathbf{Sw_j=\lambda_jw_j}$. The $q$ principal components of the observed data $\mathbf{t_n}$ are given by the vector $\mathbf{x_n=W^T(t_n-\bar{t})}$, where $\mathbf{W=(w_1,w_2,...,w_q)}$. The variables $x_j$ are independent such that the covariance matrix $\mathbf{\sum_nx_nx^T_n}/d$ is diagonal with elements $\lambda_j$.
 }
 
 \subsection{Single Value Decomposition of X}
 { \color{red}
-PCA can be seen as SVD of X, $\mathbf{X=U\Sigma V^T}$.
+Principal component analysis is equivalent to the singular value decomposition (SVD) of X, $\mathbf{X=U\Sigma V^T}$.
 }
 
 \section{Probabilistic Principal Component Analysis}
@@ -321,28 +320,13 @@ A latent variable model transforms a set of $n$ $d$-dimensional observed variabl
 \begin{equation} \label{ppca:fa}
 	\mathbf{Y=WX+\mu+\epsilon}
 \end{equation}
-$\mathbf{W}$ represents a matrix that specifies the relation between the observed data-space with the latent-space.
+$\mathbf{W}$ represents a matrix that specifies the linear relation between the observed data-space with the latent-space.
 The parameter $\mu$ allows for non-zero mean, and the $\epsilon$ parameter represents noise within the model.
 
 \subsection{Relation of Factor Analysis and PCA}
-{ \color{red}
-Standard PCA does not differentiate between covariance and variance. FA latent variables explain the correlations between the variables observed, and $\epsilon_i$ represents variability for $\mathbf{y_i}$. The maximum-likelihood estimates of the columns of $\mathbf{W}$ will thus generally \textit{not} correspond to the principal subspace of the observed data.
+The standard PCA does not differentiate between covariance and variance of the data. Factor analysis latent variables explain the correlations between the variables observed, $\epsilon_i$ represents variability of $\mathbf{y_i}$. The maximum-likelihood estimates of $\mathbf{W}$ will thus generally not correspond to the principal subspace.
 
-A special case is the isotropic error model. Constraining the residual variances $\psi_i=\sigma^2$ to be equal, the maximum-likelihood is equivalent to a least-squares criterion, and a principal component solution emerges.
-The observation covariance model $\mathbf{WW}^T+\sigma^2\mathbf{I}$ can be made exact (assuming correct choice of q), and both $\mathbf{W}$ and $\sigma^2$ may then be determined analytically through eigen-decomposition of S (Anderson 1963; Basilevsky 1994, pp.361-363).
-
-Lawley (1953) and Anderson and Rubin (1956) show that stationary points of the likelihood function occur when $\mathbf{W}$ is a matrix whose columns are scaled eigenvectors of the sample covariance matrix $\mathbf{S}$, and $\sigma^2$ is the average variance in the discarded dimensions. Falls short of showing that the principal eigenvectors represent the global maximum of the likelihood.
-
-The maximum likelihood estimators $\mathbf{W}_{ML}$ and $\sigma^2_{ML}$ of factor analysis when using isotropic Gaussian distribution for $\epsilon$ corresponds to principal component analysis.
-
-PCA may be viewed as a maximum likelihood procedure based on a probability density model of the observed data (Lawley 1953, Anderson and Robin 1956).
-
-Tipping and Bishop extend Lawley and Anderson and Rubin to show how PCA may be viewed as a maximum likelihood procedure based on a probability density model of the observed data.
-}
-
-\subsection{The Probability Model}
-{ \color{red}
-In probabilistic PCA, the parameter $\epsilon$ of equation \ref{ppca:fa} be modelled as an isotropic, spherical Gaussian distribution $\mathcal{N}(\mathbf{0},\sigma^2\mathbf{I})$. We obtain the conditional probability distribution:
+In probabilistic PCA, the parameter $\epsilon$ of equation \ref{ppca:fa} is modelled as an isotropic, spherical Gaussian distribution $\mathcal{N}(\mathbf{0},\sigma^2\mathbf{I})$. We obtain the conditional probability distribution:
 \begin{equation} \label{ppca:conditional}
 	p(\mathbf{Y|X})\sim\mathcal{N}(\mathbf{WX+\mu},\sigma^2\mathbf{I}). 
 \end{equation}
@@ -351,14 +335,9 @@ The marginal distribution over the latent variables are standard Gaussian, defin
 $$\mathbf{Y}\sim\mathcal{N}\mathbf{(\mu,C)}.$$
 The observation covariance model is $\mathbf{C=WW}^T+\sigma^2\mathbf{I}$. The corresponding log-likelihood is
 \begin{equation} \label{ppca:loglikelihood}
-	\mathcal{L}=\frac{n}{2}(d ln(2\pi)+ln|\mathbf{C}|+tr(\mathbf{C^{-1}S}))
+	\mathcal{L}=\frac{n}{2}(d ln(2\pi)+ln|\mathbf{C}|+tr(\mathbf{C^{-1}S})),
 \end{equation}
-where
 $$\mathbf{S}=\frac{1}{n}\sum^n_{i=1}(\mathbf{y}_i-\mu)(\mathbf{y}_i-\mu)^T$$
-The conditional distribution of the latent variables $\mathbf{x}$ given the observed $\mathbf{y}$, which may be calculated by using Bayes theorem is:
-$$p(\mathbf{x|y)\sim\mathcal{N}(M^{-1}W}^T\mathbf{(y-\mu),\sigma^2M^{-1})}$$
-where $\mathbf{M=W}^T\mathbf{W+\sigma^2I}$, and $\mathbf{M}$ is a $q \times q$ matrix.
-}
 
 \subsection{Probabilistic PCA}
 Consider a set of $n$ centred $d$-dimensional data $\mathbf{Y=\{y_1,y_2,...,y_n\}}$.
@@ -368,25 +347,25 @@ The original data can be represented in terms of the latent variable with noise 
 $$\mathbf{y_i=Wx_i+\epsilon_i}.$$
 The matrix $\mathbf{W \in \Re^{d \times q}}$ represents the linear relationship between the latent-space with the  data-space. The noise values, $\epsilon_n \in \Re^{d \times 1}$, are sampled as independent spherical Gaussian distributions defined by $p(\epsilon_i)\sim\mathcal{N}(\mathbf{0, \beta^{-1}I})$.
 
-Using properties of Gaussian distribution, the likelihood of a data point is thus
+Using the properties of Gaussian distribution, the likelihood of a data point is thus
 \begin{equation} \label{ppca:likelihood}
 p(\mathbf{y_i|x_i,W,\beta)\sim\mathcal{N}(y_i|Wx_i,\beta^{-1}I)}.
 \end{equation}
 Integrating over the latent variables gives the marginal likelihood,
 $$p(\mathbf{y_i|W,\beta})=\int p(\mathbf{y_i|x_i,W,\beta})p(\mathbf{x_i})d\mathbf{x_i}.$$
-The prior of probabilistic PCA is modelled as a unit Gaussian distribution $p(\mathbf{x_i})\sim\mathcal{N}(\mathbf{x_i|0,I})$.
-Marginalisation of the integral obtains the marginal likelihood of each data point as
+As the prior of probabilistic PCA is modelled as a standard Gaussian distribution, $p(\mathbf{x_i})\sim\mathcal{N}(\mathbf{x_i|0,I})$,
+marginalisation of the integral obtains the marginal likelihood of each data point as
 $$p(\mathbf{y_i|W,W,\beta})\sim\mathcal{N}(\mathbf{y_i|0,WW^T+\beta^{-1}I}).$$
 Assuming that the data points are independent, the likelihood of the full data set is the product of each marginal likelihood,
 $$p(\mathbf{Y|W,\beta})=\prod^N_{i=1} p(\mathbf{y_i|W,\beta}).$$
 
 \subsection{The Principal Subspace of PPCA}
 Tipping and Bishop\cite{ppca} showed that all potential solutions for $\mathbf{W}$, the likelihood likelihood (\ref{ppca:loglikelihood}), is of the form $$\mathbf{W=U_q(K_q-\sigma^2I)^\frac{1}{2}R}.$$
-One particular case of interest is when the likelihood is maximised when
+One particular case of interest is when the likelihood is maximised,
 \begin{equation} \label{ppca:ml}
 	\mathbf{W}_{ML}=\mathbf{U}_q(\Lambda_q-\sigma^2\mathbf{I})^{\frac{1}{2}}\mathbf{R}.
 \end{equation}
-The $\mathbf{U_q}$ matrix contains the column vectors that are the principal eigenvectors and $\Lambda_q=[\lambda_1,...,\lambda_q]$ represents the diagonal matrix of the corresponding eigenvalues, $\mathbf{R}$ represent an arbitrary orthogonal rotation matrix. 
+The $\mathbf{U_q}$ matrix contains the column vectors that are the principal eigenvectors, $\Lambda_q=[\lambda_1,...,\lambda_q]$ represents the diagonal matrix of the corresponding eigenvalues, and $\mathbf{R}$ represent an arbitrary orthogonal rotation matrix. 
 
 Maximising the likelihood of $\mathbf{W}$ by equation \ref{ppca:ml} on the latent variable model defined by equation \ref{ppca:fa} maps the latent-space to the principal subspace of the observed data. Selecting $\mathbf{W}_{ML}$, the latent variable model is effectively equivalent to standard principal component analysis.
 
@@ -409,77 +388,81 @@ $$E=\ln(\frac{1}{d-q'}\sum^d_{j=q'+1}\lambda_j)-\frac{1}{d-q'}\sum^d_{j=q'+1}\ln
 which only depends on the discarded values and is non-negative (Jensen's equality). Interestingly, the minimisation of E leads only to the requirement that discarded $\lambda_j$ be adjacent within the spectrum of ordered eigenvalues of $\mathbf{S}$. However, equation (14) requires that $\lambda_j > \sigma^2, \forall j \in {1,...,q'}$, so from equation (18), we can deduce that the smallest eigenvalue must be discarded. This is now sufficient to show that E must be minimised when $\lambda_1,...,\lambda_{q'}$ are the smallest d-q eigenvalues, and so the likelihood of L maximised is when $\lambda_1,...,\lambda_{q'}$ are the largest eigenvalues of $\mathbf{S}$.
 
 L is maximised with respect to $q'$ when there are fewest terms in the sums in (20, E) which occurs when $q'=q$ and therefore no $l_j$ is zero. Furthermore, $L$ is minimised when $\mathbf{W=0}$, which is equivalent to the case where $q'=0$.
+
+**Show equivalent to SVD of X
 }
 
 \section{Gaussian Process Latent Variable Model}
+The Gaussian Process Latent Variable Model (GP-LVM) is a non-linear latent variable model derived from a dual of the probabilistic PCA by replacing the inner product kernel with Gaussian processes (Lawrence 2005) \cite{gplvm}. The use of an inner product kernel that allows for non-linear functions enable a non-linear embedding of the data-space to obtain a lower dimension latent-space. 
+
 \subsection{Dual Probabilistic PCA}
-Lawrence introduced the dual probabilistic PCA (DPPCA) as an alternative solution to PPCA that is equivalent. Instead of optimising parameters and marginalising latent variables, the dual approach marginalises the parameters, $\mathbf{W}$, and optimises with respect to latent variables, $\mathbf{X}$.
+The dual probabilistic PCA marginalises the parameters, $\mathbf{W}$, and optimises with respect to latent variables, $\mathbf{X}$. This is the dual approach of the standard probabilistic PCA where the parameters are optimised and the latent variables are marginalised.
 
-A conjugate prior to the likelihood of PPCA (\ref{ppca:likelihood}) is a spherical Gaussian distribution
+A conjugate prior to the likelihood of probabilistic PCA (\ref{ppca:likelihood}) is a spherical Gaussian distribution
 $$p(\mathbf{W})=\prod^d_{i=1}\mathcal{N}(\mathbf{w}_i|\mathbf{0,I}),$$
-Marginalisation of both $\mathbf{W}$ and $\mathbf{X}$ is intractable. Marginalisation of W is simple with the conjugate prior. The marginalised likelihood of $\mathbf{W}$ is
-$$p(\mathbf{Y|X},\beta)=\prod^d_{i=1}p(\mathbf{y}_{:,i}|\mathbf{X},\beta)$$
-where $\mathbf{y}_{:,i}$ represents the $i$th column of $\mathbf{Y}$ and
+Marginalisation of both $\mathbf{W}$ and $\mathbf{X}$ is intractable. 
+The parameters, $\mathbf{W}$, is selected for marginalisation as the conjugate prior is a Gaussian distribution that can be analytically integrated.
+The marginalised likelihood of $\mathbf{W}$ is
+$$p(\mathbf{Y|X},\beta)=\prod^d_{i=1}p(\mathbf{y}_{:,i}|\mathbf{X},\beta),$$
+where $\mathbf{y}_{:,i}$ represents the $i^{it}$ column of $\mathbf{Y}$ and
 $$p(\mathbf{y}_{:,i}|\mathbf{X},\beta)=\mathcal{N}(\mathbf{y}_{:,i}|\mathbf{0,XX}^T+\beta^{-1}\mathbf{I}).$$
-
 The objective function is the log-likelihood
 \begin{equation} \label{dppca:loglikelihood}
 	L=-\frac{dn}{2}ln2\pi-\frac{d}{2}ln|\mathbf{K}|-\frac{1}{2}tr(\mathbf{K^{-1}YY}^T)
 \end{equation}
 where $$\mathbf{K=XX}^T+\beta^{-1}I.$$
-
-The gradients of the log-likelihood (\ref{dppca:loglikelihood}) with respect to $\mathbf{X}$ may be found (Magnus and Neudecker, 1999) as
-$$\frac{\sigma L}{\sigma \mathbf{X}}=\mathbf{K^{-1}YY}^T\mathbf{K^{-1}X}-D\mathbf{K^{-1}X},$$
+{\color{red}The gradients of the log-likelihood (\ref{dppca:loglikelihood}) with respect to $\mathbf{X}$ may be found (Magnus and Neudecker, 1999) as}
+$$\frac{\sigma L}{\sigma \mathbf{X}}=\mathbf{K^{-1}YY}^T\mathbf{K^{-1}X}-d\mathbf{K^{-1}X},$$
 a fixed point where the gradients are zero is then given by 
-$$\frac{1}{D}\mathbf{YY}^T\mathbf{K^{-1}X=X}.$$
+$$\frac{1}{d}\mathbf{YY}^T\mathbf{K^{-1}X=X}.$$
 The values for $\mathbf{X}$ which maximise the likelihood are given by 
 $$\mathbf{X=ULV}^T$$
-where $\mathbf{U}$ is an $N\times q$ matrix whose columns are the first eigenvectors of $\mathbf{YY}^T,\mathbf{L}$ is a $q\times q$ diagonal matrix whose $jth$ element is $l_j=(\lambda_j-\frac{1}{\beta})^{-\frac{1}{2}}$ where $\lambda_j$ is the eigenvalue associated with the $jth$ eigenvector $D^{-1}\mathbf{YY}^T$ and $V$ is an arbitrary $q\times q$ rotation matrix. Assuming that the eigenvalues are ordered according to magnitude with largest first. The eigenvalue problem developed is equivalent to that solved in PCA.
+$\mathbf{U}$ is an $n \times q$ matrix whose columns are the first eigenvectors of $\mathbf{YY}^T$. $\mathbf{L}$ is a $q \times q$ diagonal matrix whose $j^{th}$ element is $l_j=(\lambda_j-\frac{1}{\beta})^{-\frac{1}{2}}$ where $\lambda_j$ is the eigenvalue associated with the $j^{th}$ eigenvector $d^{-1}\mathbf{YY}^T$ and $\mathbf{V}$ is an arbitrary $q\times q$ rotation matrix. The eigenvalue problem developed here is equivalent to the eigenvalue problem solved in standard PCA when the eigenvalues are ordered by magnitude, with the largest eignevalues first.
+
+Dual probabilistic PCA assumes that the output dimensions are linear, independent, and identically distributed. Infringing upon these assumptions derive new probabilistic models.
 
 \subsection{Gaussian Processes}
-Gaussian processes (O'Hagan, 1992; Williams, 1998) are a class of probabilistic models which specify distribution over funciton spaces.
-GPs work over infinite dimensions, they are not functions as processes approximate over a finite range.
-A GP first requires specifying a Gaussian process prior, parametrised by a mean and covariance.
+Gaussian processes (O'Hagan, 1992; Williams, 1998) are a class of probabilistic models which specify distribution over function spaces.
+Gaussian processes work over infinite dimensions, however, they are processes that approximate within a finite range as opposed to functions.
 
-A simple GP prior over the space of functions that are linear but corrupted by Gaussian noise of variance $\beta^{-1}\mathbf{I}$ is
-$$k(\mathbf{x}_i,\mathbf{x}_j)=\mathbf{x}^T_i\mathbf{x}_j+\beta^{-1}\delta_{ij}$$
-where $\mathbf{x}_i$ and $\mathbf{x}_j$ are vectors from the space of inputs to the function and $\sigma_1{ij}$ is the Knronecker delta. If these inputs were taken from our embedding matrix, $\mathbf{X}$, and the covariance function was evaluated at each of the $N$ points, we would recover the covariance matrix of the form
+A Gaussian process first requires specifying a prior, parametrised by a mean and covariance.
+A simple prior over the space of functions that are linear but corrupted by Gaussian noise of variance $\beta^{-1}\mathbf{I}$ is
+\begin{equation} \label{gp:prior}
+	k(\mathbf{x}_i,\mathbf{x}_j)=\mathbf{x}^T_i\mathbf{x}_j+\beta^{-1}\delta_{ij}.
+\end{equation}
+$\mathbf{x}_i$ and $\mathbf{x}_j$ are vectors from the space of inputs to the function and $\sigma_1{ij}$ is the Knronecker delta. If these inputs were taken from our embedding matrix, $\mathbf{X}$, and the covariance function was evaluated at each of the $N$ points, we would recover the covariance matrix of the form
 $$\mathbf{K=XX}^T+\beta^{-1}\mathbf{I}$$
-where the element at $ith$ row and $jth$ column ok $\mathbf{K}$ is given by the simple GP prior. This is recognised as the covariance associated with each factor of the marginal likelihood for dual probabilistic PCA. The marginal likelihood for dual probabilistic PCA is therefore a product of D independent Gaussian processes. In PCA we are optimising parameters and input positions of a Gaussian process prior distribution where the (linear) covariance function for each dimension is given by $\mathbf{K}$
-
-\subsection{GP-LVM}
-
-DPPCA points to a new class of models which consist of Gaussian process mappings from a latent space, $\mathbf{X}$, to an observed data-space, $\mathbf{Y}$. DPPCA is the special case where the output dimensions are \textit{a priori} assumed to be linear, independent and identically distributed. However, each of these assumptions can be infringed to obtain new probabilistic models. Independence can be broken by allowing an arbitrary rotation on the data matrix $\mathbf{Y}$, the 'identically distributed' assumption can be broken by allowing different covariance functions for each output dimension. By replacing the inner product kernel with a covariance function that allows for non-linear functions we obtain a non-linear latent variable model. Due to the close relationship with the linear model, which has an intepretation as probabilistic PCA, such a model can be interpreted as a non-linear probabilistic version of PCA.
+where the element at $ith$ row and $jth$ column of $\mathbf{K}$ is given by the prior (\ref{gp:prior}). This is recognised as the covariance associated with each factor of the marginal likelihood for dual probabilistic PCA. The marginal likelihood for dual probabilistic PCA is therefore a product of $d$ independent Gaussian processes. In PCA we are optimising parameters and input positions of a Gaussian process prior distribution where the (linear) covariance function for each dimension is given by $\mathbf{K}$.
 
 \section{Bayesian Gaussian Process Latent Variable Model}
-The Bayesian Gaussian Process Latent Variable Model (Bayesian GP-LVM) \cite{bgplvm} extends the GP-LVM by variationally integrating out the input variables of the Gaussian process to approximate the marginal likelihood of a fully marginalised model. The approximated marginal likelihood can be used to compute a Jensen's lower bound that is robust to overfitting. A fully marginalised model establishes a Bayesian perspective that copes well with uncertainty caused by missing data and can automatically determine latent dimensions within the observed data set.
+The Bayesian Gaussian Process Latent Variable Model (Bayesian GP-LVM) \cite{bgplvm} extends the GP-LVM by variationally integrating out the input variables of the Gaussian process to approximate the marginal likelihood of a fully marginalised model. The approximated marginal likelihood can be used to compute a lower bound that is robust to overfitting. A fully marginalised model establishes a Bayesian perspective that copes well with uncertainty caused by missing data and can automatically determine latent dimensions within the observed data set.
 
-Recall that the marginalised likelihood of the GPLVM is
-$$p(\mathbf{Y|X},\beta)=\prod^d_{i=1}p(\mathbf{y}_{:,i}|\mathbf{X},\beta)$$
+The marginalised likelihood of the GPLVM can be represented in the form
+$$p(\mathbf{Y|X})=\prod^d_{i=1}p(\mathbf{y}_{:,i}|\mathbf{X})$$
 where $\mathbf{y}_{:,i}$ represents the $i^{th}$ column of $\mathbf{Y}$ and
-$$p(\mathbf{y}_{:,i}|\mathbf{X},\beta)=\mathcal{N}(\mathbf{y}_{:,i}|\mathbf{0,XX}^T+\beta^{-1}\mathbf{I}).$$
+$$p(\mathbf{y}_{:,i}|\mathbf{X})=\mathcal{N}(\mathbf{y_{:,i}|0},K_{nn}+\beta^{-1}\mathbf{I}_n).$$
 $K_{nn}$ is the $n \times n$ covariance matrix defined by the kernel function $k(\mathbf{x,x'})$.
-The latent variable X is assigned a prior density given by the standard normal density. 
-$$p(\mathbf{X})=\prod^n_{i=1}\mathcal{N}(\mathbf{x_i|0, I_Q})$$
-where each $\mathbf{x_i}$ is the $i^{th}$ row of $\mathbf{X}$. The joint probability model for the GP-LVM is
+The latent variable X is assigned a prior density given by the standard Gaussian distribution, 
+$$p(\mathbf{X})=\prod^n_{i=1}\mathcal{N}(\mathbf{x_i|0, I_Q}).$$
+Each $\mathbf{x_i}$ is the $i^{th}$ row of $\mathbf{X}$. The joint probability model for the GP-LVM is
 $$p(\mathbf{Y,X})=p(\mathbf{Y|X})p(\mathbf{X})$$
 
-The standard GP-LVM method trains by finding the MAP estimate of $\mathbf{X}$ whilst jointly maximizing with respect to the hyperparameters as introduced in the orginal paper. Bayesian GP-LVM performs variational inference to marginalise the latent variables. This method enables optimisation of the resulting lower bound on the marginal likelihood with respect to the hyperparameters. 
+The standard GP-LVM method trains by finding the MAP estimate of $\mathbf{X}$ whilst jointly maximizing with respect to the hyperparameters. Bayesian GP-LVM performs variational inference to marginalise the latent variables. This method enables optimisation of the resulting lower bound on the marginal likelihood with respect to the hyperparameters. 
 
 \subsection{Variational Inference}
-In order to apply variational Bayesian methods to GP-LVM, the latent/input variables that appear non-linearly must first be approximately integrated out.
+{ \color{red}In order to apply variational Bayesian methods to GP-LVM, the latent/input variables that appear non-linearly must first be approximately integrated out.}
 
 The marginal likelihood of the observed data is obtained by integrating out the latent variables:
 $$p(\mathbf{Y})=\int p(\mathbf{Y|X})p(\mathbf{X})d\mathbf{X}.$$
 Computationally, this integration is intractable in practice. Variaitonal Bayesian methods can instead be used by using variational distribution $q(\mathbf{X})$ to approximate the posterior distribution over the latent variables, $p(\mathbf{X|Y})$.
-$$q(\mathbf{X})=\prod^n_{i=1}\mathcal{N}(\mathbf{x_n|\mu_n,S_n})$$
-where the variational parameters are $\mathbf{ \{ \mu_n,S_n \}^n_{i=1} }$ and $\mathbf{S_n}$ is a diagonal covariance matrix. 
+$$q(\mathbf{X})=\prod^n_{i=1}\mathcal{N}(\mathbf{x_n|\mu_n,S_n}).$$
+The variational parameters are $\mathbf{ \{ \mu_n,S_n \}^n_{i=1} }$ and $\mathbf{S_n}$ is a diagonal covariance matrix. 
 
 The variational distribution can then be used to obtain a Jensen's lower bound on $\log p(\mathbf{Y})$:
 $$F(q)=\int q(\mathbf{X})\log \frac{ p(\mathbf{Y|X})p(\mathbf{X}) }{ q(\mathbf{X}) } d\mathbf{X}$$
 $$=\int q(\mathbf{X})\log p(\mathbf{Y|X})p(\mathbf{X})d\mathbf{X} - \int q(x)\log\frac{q(X)}{p(X)}dX$$
 $$=\tilde{F}(q)-KL(q||p).$$
-The second term is the negative KL divergence between the variational posterior distribution $q(X)$ and the prior distribution p(X) over the latent variables. Since the distributions are Gaussian, the negative KL divergence is tractable. The problematic term is $\tilde{F}(q)$, and variational sparse GP regression is applied for approximation.
+The $KL(q||p)$ term is the negative KL divergence between the variational posterior distribution $q(X)$ and the prior distribution p(X) over the latent variables. Since the distributions are Gaussian, the negative KL divergence is tractable. The problematic term is $\tilde{F}(q)$, where variational sparse Gaussian process regression is applied for approximation.
 
 \section{Kernel Methods}
 \subsection{Kernel Basics}
