@@ -10,7 +10,7 @@ Shaq~T.-Wu H. Weng~Y. Chai, M. and K~Zhou.
 \newblock {\em AutoHair: Fully automatic hair modeling from a single image}.
 \newblock ACM Trans. Graph. 35, 4 (July), 116:1–116:12, 2016.
 
-\bibitem{MLMethods}
+\bibitem{mlmethods}
 [ML] from http://opus.bath.ac.uk/41075/.
 
 \bibitem{procedural2}
@@ -32,6 +32,12 @@ Shaq~T.-Wu H. Weng~Y. Chai, M. and K~Zhou.
 I.~T. Jolliffe.
 \newblock {\em Principal Component Analysis}.
 \newblock Springer Series in Statistics, Springer-Verlag, 2nd edition, 2002.
+
+\bibitem{gplvm}
+N.~D. Lawrence.
+\newblock {\em Probabilistic non-linear principal component analysis with
+  Gaussian process latent variable models}.
+\newblock The Journal of Machine Learning Research 6, 1783–1816, 2005.
 
 \bibitem{edgeloops}
 [Edge loops] https://sites.ualberta.ca/~cwant/blender/derived surfaces.pdf.
