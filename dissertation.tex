@@ -214,84 +214,83 @@ advice or time), and so on.
 \label{chap:context}
 
 \section{Topic Background}
-\noindent
-3D Representations in Computer Graphics
-In computer graphics, 3D objects are represented in many forms. 3D scanners capture raw data in various forms such as point clouds, range images, and voxels. A point cloud is a collection of 3D points, often used in computer vision.  A range image maps pixels of a depth image to a set of points in the scene. Voxels are units of cubes that define the volume of objects, it has applications in many fields including medicine where voxels are used to visualise the results of MRI scans of patients.\cite{mri}
+The subject of machine learning can be divided into three major paradigms: supervised learning, unsupervised learning, and reinforcement learning. The prediction of output values given a new input is known as regression. The role that learning methods play in both manufacturing and consumption continue to grow, but adoption has been slow for creative fields.  Generally, robust models improve in performance as more reliable data is obtained. Creative production values uniqueness and versatility, properties that cause difficulty in machine learning methods. Varying styles in design complicate feature analysis and ambiguity of correctness is problematic when predicting an output.
 
-In a production environment it is simpler to define geometry as opposed to capturing examples. The most common representation used for CG production are polygonal meshes, data that contains information of vertices, edges, and faces. Topology is the organisation of the components that define the mesh geometry. Two surfaces with the same appearance could have different topologies. Where precision is concerned, parametric definitions are used for industries such as CAD. Every representation has its advantages depending on the use case. It is possible to convert between representations, but data loss may be incurred. Properties that make polygon meshes desirable include being efficient rendering, simple to define, expressive enough to capture geometry required, and works well with established techniques such as UV texture mapping and deforming algorithms. The rendering pipeline often converts meshes to tri-faces (faces constructed by three edges) as an optimisation process, but best practice for 3D artists is to maintain a topology of quad-faces which are easier to organise and conforms better with editing tools and algorithms.
+To overcome the challenges of the scenario introduced, probabilistic latent variable models such as the Gaussian Process Latent Variable Model \cite{gplvm} present an opportunity to learn stylistic properties of design and predict multiple acceptable outputs by analysing the likelihood.
+
+\section{Production of Computer Graphics}
+In computer graphics, 3D objects are represented in many forms. 3D scanners capture raw data in various forms such as point clouds, range images, and voxels. A point cloud is a collection of 3D points, often used in computer vision.  A range image maps pixels of a depth image to a set of points in the scene. Voxels are units of cubes that define the volume of objects, it has applications in many fields including medicine where voxels are used to visualise the results of MRI scans. \cite{mri}
+
+In a production environment it is straightforward to define geometry as opposed to capturing examples. The most common representation used for CG production are polygonal meshes, data that contains information of vertices, edges, and faces. The topology of a mesh is the organisation of components that define the geometry. Two surfaces with the same appearance could have different topology, affecting how well the meshes could deform and reaction to operations. Where precision is concerned, parametric definitions are used for industries such as CAD. Every representation has its advantages depending on the use case. It is possible to convert between representations, but data loss may be incurred. Properties that make polygon meshes desirable include efficient rendering, simple to define, expressive enough to capture geometry required, and works well with established techniques such as UV texture mapping and mesh-based algorithms. The rendering pipeline often converts meshes to tri-faces (faces constructed by three edges) as an optimisation process, but best practice for 3D artists is to maintain a topology of quad-faces which are easier to organise and conforms better with editing tools and algorithms.
 
 %** Image of representations
 
-\section{Production of 3D Hair Geometry}
-\noindent
-On average, a human is born with about 100,000 scalp hair follicles. It is very expensive to render and animate physically correct hair, but creative liberties have been taken to approximate or stylize 3D hair such that it is both acceptable aesthetically and feasible in terms of performance. This study considers modelling of hair geometry, the motion of hair is assumed to be its default resting pose.
+\subsection{3D Hair Geometry}
+On average, a human is born with about 100,000 scalp hair follicles. \cite{hairfollicles} It is computationally very expensive to render and animate physically correct hair, but creative liberties have been taken to approximate, or stylize 3D hair such that it is both acceptable aesthetically and feasible in terms of performance. This study considers modelling of hair geometry, the motion of hair is assumed to be its default resting pose.
 
-In recent years, impressive 3D hair solutions for real-time simulation of realistic hair and fur, such as Nvidia HairWorks and AMD’s TressFX has emerged. These solutions, however, have limited application in comparison to their traditional counterpart of polygonal hair. It is often the case that texture-mapped polygonal hair is used as a fallback for when the advanced simulation fails. Realism is not necessarily always desirable, polygon hair can flexibly represent different art styles. In some cases, a blend of multiple representations are used to balance between cost and quality. 3D hair in movies with large budget can afford to render hair with much higher fidelity for important characters, but might use efficient variants for scenarios such as crowd simulation. Ultimately, representation of virtual hair generally follows a structure of splines with control points that define the overall organisation of strands or segments.
+In recent years, impressive 3D hair solutions for real-time simulation of realistic hair and fur, such as Nvidia HairWorks and AMD’s TressFX has emerged. These solutions, however, have limited application in comparison to their traditional counterpart of polygonal hair. It is often the case that texture-mapped polygonal hair is used as a fallback for when the advanced simulation fails. Realism is not necessarily always desirable, polygon hair can flexibly represent different art styles. In some cases, a blend of multiple representations are used to balance between cost and quality. 3D hair in cinematography with large budget can afford to render hair with much higher fidelity for important characters, but would still consider use efficient variants for scenarios such as crowd simulation. Ultimately, representation of virtual hair generally follows a structure of splines with control points that define the overall organisation of strands or segments.
 
 
 [Image of Hair Geometry]
 
-\section{Procedural Generation and Automated Production}
-\noindent
-Procedural generation techniques has been successfully used for terrains and city modelling. Methods such as the Lindenmayer system are used for foliage generation. Fractals with simulated noise can create structure that resemble patterns observed in nature. Procedural techniques, however, are seldom used for modelling objects with specific features. It is difficult to control the output of procedurally generated content without heavily restricting its capabilities.
+\subsection{Procedural Generation and Automated Production}
+{\color{red}
+Procedural generation techniques has been successfully used for terrains and city modelling. Methods such as the Lindenmayer system are used for foliage generation. \cite{lsystem} Fractals with simulated noise can create structure that resemble patterns observed in nature. Procedural techniques, however, are seldom used for modelling objects with specific features. It is difficult to control the output of procedurally generated content without heavily restricting its capabilities.
 \cite{procedural1}
 \cite{procedural2}
 
-Machine Learning in 3D Production
-Machine learning methods can use existing production as training input to train models that are more concise and versatile than predetermined procedural approaches. Research in the past has used machine learning to help non-artists drawing 2D images. Gaussian processes enabled stylised inverse kinematics that deliver simple controls for complicated animation by learning the posing of joints. 
-\cite{MLMethods}
+MPC simulate undead horde with crowd simulation system ALICE. PAPI (rigid body dynamic solver). In-house cloth solver with ALICE (using nCloth when detail needed)
+%http://www.creativebloq.com/3d/zombie-apocalypse-mpc-create-hordes-undead-
+}
+
+\section{Related Research of Machine Learning in Creative Fields}
+{\color{red}
+\subsection{Learning a Manifold of Fonts}
+\cite{fontmanifold}
+\subsection{Stylised Inverse Kinematics}
+\subsection{Procedural Trees}
+\subsection{Latent Space Doodling}
+\subsection{2D Drawing Assistant}
+\cite{mlmethods}
+\subsection{AutoHair}
+\cite{autohair}
+Neural network
+
+Helicoid hair model
+
+Traversable space of learned hairstyle
+}
 
 \section{Motivation and Significance}
-\noindent
-State of the art 3D production software such as AutoDesk Maya, 3DS Max, and Blender are advanced programs with sophisticated list of features. That said, such programs have extremely convoluted user interfaces, even the most experienced professionals do not recognise each and every tool available. The most versatile tools are generally the most basic that perform atomic changes as they are applicable in every scenario. Examples include selection of primitives such as vertices, edges, or faces and performing translation, rotation, and scaling. Sculpting tools moves many data points simultaneously, they are popular for defining organic surfaces now that modern machines are sufficiently powerful. Experienced artists might search for an existing base mesh that is similar to start from, but it is not always the case that such a base mesh exists - there are also concerns for quality, such as unorganised topology. As the geometry becomes more detailed and well-defined, each alteration makes less impact and the space of sensible edits becomes smaller. The design and production of 3D geometry remains a slow and delicate process.
+State of the art 3D production software such as AutoDesk Maya, 3DS Max, and Blender are advanced programs with sophisticated list of features. That said, such programs have extremely convoluted user interfaces, even the most experienced professionals do not recognise each and every tool available. The most versatile tools are generally the most basic that perform atomic changes as they are applicable in every scenario. Examples include selection of primitives such as vertices, edges, or faces and performing translation, rotation, and scaling. Sculpting tools move many data points simultaneously, they are often used for defining organic surfaces now that modern machines are sufficiently powerful. Experienced artists might search for an existing base mesh that is similar to start on, but it is not always the case that such a base mesh exists - there are also concerns for quality, such as poor topology. As the geometry becomes more detailed and well-defined, each alteration makes less impact and the space of sensible changes becomes smaller. The design and production of 3D geometry remains a slow and delicate process.
 
-Virtual hair creation is a necessity for characters of CG movies and video games that are embedded within culture both economically and as entertainment. Specialised artists learn to be proficient with the design of hair, variety of styles, and techniques for creating them. Hair geometry is much more concentrated than other types, containing many data points that are tedious to edit. Soft selection and sculpting tools are good enough for defining the structure but maintaining topology and issues such as overlapping surfaces are still problematic. Learning the relation of hair structure allows the potential of discovering new hairstyles.  It can also be used as a mean of rapidly generating initial base geometry that fits the target output better than existing geometry found. Generative methods could ensure a level of quality, clean topology that fits established specifications. Assisted content generation using machine learning provides a convenient, non-intrusive and intuitive method for rapidly generating new hair geometry from existing data.
+Virtual hair creation is a necessity for characters of CG movies and video games that are embedded within culture both economically and as entertainment. Specialised artists learn to be proficient with the design of hair, variety of styles, and techniques for creating them. Hair geometry is much more concentrated than other types, containing many data points that is exhausting to edit. Soft selection and sculpting tools are good enough for defining the structure but maintaining topology and issues such as overlapping surfaces are still problematic. Learning the relation of hair structure allows the potential of discovering new hairstyles.  It can also be used as a mean of rapidly generating initial base geometry that fits the target output better than existing geometry available. Generative methods could ensure a level of quality, clean topology that fits established specifications. Assisted content generation using machine learning provides a convenient, non-intrusive and intuitive method for rapidly generating new hair geometry from existing data.
 
 %**Move to evaluation
-The application of machine-learning based tools could enhance the workflow of professional users and improve the experience for non-expert consumers. Such tools integrate into the production environment to improve the efficiency of acquiring initial base geometry and visually compare designs during pre-production. Non-expert users receive the ability to produce 3D geometry without requiring to learn the intrinsics of traditional 3D modelling software. The rise in popularity for augmented reality and 3D printing inspires the development of generative tools that are intuitive and simplistic to use. Applications that allow users to create their personal content could also integrate machine-learning based tools to prevent inappropriate or undesirable creation from being produced while providing options that surpass existing alternatives. An example would be avatar creation for many applications and video games. A space of reasonable options generated from predefined outputs by the developers will allow users to interpolate between sensible configurations, providing an excellent level of customisation while adhering to defined constraints.
+The application of machine-learning based tools could enhance the workflow of professional users and improve the experience for non-expert consumers. Such tools integrate into the production environment to improve the efficiency of acquiring initial base geometry and visually compare designs during pre-production. Non-expert users receive the ability to produce 3D geometry without requiring to learn the intrinsics of traditional 3D modelling software. The rise of augmented reality and 3D printing inspires the development of generative tools that are intuitive and simplistic to use. Applications that allow users to create personal content could also integrate machine-learning based tools to prevent inappropriate or undesirable creation from being produced while providing options that surpass existing alternatives. An example would be avatar creation for many applications and video games. A space of reasonable options generated from predefined outputs by the developers will allow users to interpolate between sensible configurations, providing an excellent level of customisation while adhering to defined constraints.
 
 \section{Challenges}
-\noindent
-This study faces a number of challenges. First of all, 3D meshes are difficult to compare. The training data in its raw form will have varying dimensions. Meshes can be viewed as samples of the true geometry, thus meshes that represent the same object could differ drastically in number of data points depending on its level of detail. Typical feature extraction methods do not work well on meshes as artistic products are sensitive to data loss - any change could affect the final result drastically.
+This study faces a number of challenges. Firstly, 3D meshes are difficult to compare. The training data in its raw form will have varying dimensions. Meshes can be viewed as samples of the true geometry, thus meshes that represent the same object could differ drastically in number of data points depending on its level of detail. Typical feature extraction methods do not work well on meshes as artistic products are sensitive to data loss - any change could affect the perception of final result drastically.
 
-Another problem encountered is the lack of training data. Typical machine learning solutions use huge data sets in the order of hundreds of thousands for training, but for 3D meshes the expected size of readily available training data is much smaller. Public repositories of 3D polygonal hair are generally around a few thousand in size. Studios that store and organise past production could likely match the size of public repositories, depending on the size of the company. Independent artists that keep their production will range in the hundreds.
+Another problem encountered is the lack of training data. Typical machine learning solutions use huge data sets in the order of hundreds of thousands for training, but for 3D meshes the expected size of readily available training data is much smaller. Public repositories of 3D polygonal hair are generally around a few thousand in size. Studios that store and organise past production could likely match the size of public repositories, depending on the size of the company. Independent artists that keep their production will rarely go beyond the range of hundreds.
 \cite{tsr}
 
 The application of machine learning methods must also account for subjectivity of evaluating artistic assets. The range of acceptable solutions is ambiguous, likened to how hair styles of characters can change drastically during the design phase, determining the threshold of acceptable solutions will be in itself a challenge to resolve.
 
-As mentioned previously, 3D meshes are delicate and can easily be invalidated from small changes. Thus, reparations are required to ensure that the output of trained models are acceptable.
+As mentioned previously, 3D meshes are delicate and can easily be invalidated from small changes. Thus, reparations to ensure that the output of trained models are acceptable is a topic to explore.
 
-In a production environment, the time required for a technique to return observable result directly affects throughput. For practical efficacy of assisted content generation, usage of our methods should be reasonably effective.
+In a production environment, the time required for a technique to return observable result directly affects throughput. For practical efficacy of assisted content generation, the technique should be reasonably fast in presenting observable output.
 
 \section{Central Objectives}
-\noindent
 The aim of this study is …
 \begin{itemize}
 \item Resolving the alignment problem of 3D data by standardisation.
-\item Explore the application of GPLVM for 3D hair geometry in a production pipeline.
+\item Explore the application of GP-LVM for 3D hair geometry in a production pipeline.
 \item Investigate the use of latent variables for identifying stylistic properties of 3D hair geometry.
 \item Demonstrate the use of non-linear manifold to generate new hairstyles from training data.
 \item Enable an intuitive method for non-experts to create 3D hair geometry.
 \item Observable output demand performance close to real-time for practical use.
 \end{itemize}
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Generative Models}
-\section{Related Work}
-\subsection{Learning a Manifold}
-\cite{fontmanifold}
-\subsection{Drawing Assistant}
-\subsection{AutoHair}
-\cite{autohair}
-Neural networks
-Helicoids
-[Automated Production of 3D Assets]
-Procedural generation
-Generative models
-Procedural Generation of Hair 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % -----------------------------------------------------------------------------
 
@@ -486,8 +485,13 @@ An edge $e$ is an unordered pair that connects two vertices. Formally, it is des
 A polygon face can be formed from an arbitrary number of vertices $\forall (v_1, v_2,...,v_n) \in \mathbf{V}, f_n = (v_1, v_2,..., v_n)$, however, in this context we are only concerned with tri-faces $\forall (v_1, v_2, v_3) \in \mathbf{V}, f_3 = (v_1, v_2, v_3)$ and quad-faces $\forall (v_1, v_2, v_3, v_4) \in \mathbf{V}, f_4 = (v_1, v_2, v_3, v_4)$. Faces describe the geometric surface of an object. 
 
 \subsection{Edge Loops}
+{\color{red}
 3D programs often allow edge loop selection which are useful properties of the geometry. An edge loop is defined (on blender) as a set of connected edges that either forms a loop or the end vertices are poles (vertices that do not have edges). Edge loops are useful for extracting more information on the structure of the mesh.
 \cite{edgeloops}
+}
+
+\subsection{Topology}
+Tris, quads, poles, etc
 
 \section{Graph Theory}
 
@@ -498,102 +502,79 @@ A polygon face can be formed from an arbitrary number of vertices $\forall (v_1,
 \chapter{Project Execution}
 \label{chap:execution}
 
-{\bf A topic-specific chapter, of roughly $15$ pages} 
-\vspace{1cm} 
+\section{Example}
+\begin{figure}[!h]
+	\centering
+	foo
+	\caption{This is an example figure.}
+	\label{fig}
+\end{figure}
 
-\noindent
-This chapter is intended to describe what you did: the goal is to explain
-the main activity or activities, of any type, which constituted your work 
-during the project.  The content is highly topic-specific, but for many 
-projects it will make sense to split the chapter into two sections: one 
-will discuss the design of something (e.g., some hardware or software, or 
-an algorithm, or experiment), including any rationale or decisions made, 
-and the other will discuss how this design was realised via some form of 
-implementation.  
+\begin{table}[!h]
+	\centering
+	\begin{tabular}{|cc|c|}
+		\hline
+		foo      & bar      & baz      \\
+		\hline
+		$0     $ & $0     $ & $0     $ \\
+		\hline
+	\end{tabular}
+	\caption{This is an example table.}
+	\label{tab}
+\end{table}
 
-This is, of course, far from ideal for {\em many} project topics.  Some
-situations which clearly require a different approach include:
+\begin{algorithm}[!h]
+	\For{$i=0$ {\bf upto} $n$}{
+		$t_i \leftarrow 0$\;
+	}
+	\caption{This is an example algorithm.}
+	\label{alg}
+\end{algorithm}
 
-\begin{itemize}
-\item In a project where asymptotic analysis of some algorithm is the goal,
-      there is no real ``design and implementation'' in a traditional sense
-      even though the activity of analysis is clearly within the remit of
-      this chapter.
-\item In a project where analysis of some results is as major, or a more
-      major goal than the implementation that produced them, it might be
-      sensible to merge this chapter with the next one: the main activity 
-      is such that discussion of the results cannot be viewed separately.
-\end{itemize}
+\begin{lstlisting}[float={!h},caption={This is an example listing.},label={lst},language=C]
+for( i = 0; i < n; i++ ) {
+t[ i ] = 0;
+}
+\end{lstlisting}
 
-\noindent
+\section{Project Management}
+{\color{red}
 Note that it is common to include evidence of ``best practice'' project 
 management (e.g., use of version control, choice of programming language 
 and so on).  Rather than simply a rote list, make sure any such content 
 is useful and/or informative in some way: for example, if there was a 
 decision to be made then explain the trade-offs and implications 
 involved.
-
-\section{Example Section}
-
-This is an example section; 
-the following content is auto-generated dummy text.
-\lipsum
-
-\subsection{Example Sub-section}
-
-\begin{figure}[t]
-\centering
-foo
-\caption{This is an example figure.}
-\label{fig}
-\end{figure}
-
-\begin{table}[t]
-\centering
-\begin{tabular}{|cc|c|}
-\hline
-foo      & bar      & baz      \\
-\hline
-$0     $ & $0     $ & $0     $ \\
-$1     $ & $1     $ & $1     $ \\
-$\vdots$ & $\vdots$ & $\vdots$ \\
-$9     $ & $9     $ & $9     $ \\
-\hline
-\end{tabular}
-\caption{This is an example table.}
-\label{tab}
-\end{table}
-
-\begin{algorithm}[t]
-\For{$i=0$ {\bf upto} $n$}{
-  $t_i \leftarrow 0$\;
 }
-\caption{This is an example algorithm.}
-\label{alg}
-\end{algorithm}
 
-\begin{lstlisting}[float={t},caption={This is an example listing.},label={lst},language=C]
-for( i = 0; i < n; i++ ) {
-  t[ i ] = 0;
-}
-\end{lstlisting}
+\subsection{Source Control}
+Git with atomic change descriptions. Branches, conflict resolution by merges, roll-backs. Cloud storage.
 
-This is an example sub-section;
-the following content is auto-generated dummy text.
-Notice the examples in Figure~\ref{fig}, Table~\ref{tab}, Algorithm~\ref{alg}
-and Listing~\ref{lst}.
-\lipsum
+\subsection{Time-line}
+Calender.
+Internal Deadlines.
+Trello for notes
 
-\subsubsection{Example Sub-sub-section}
+\section{Acquiring Training Data}
+The Sims Resource
+\section{Pre-processing Phase}
+Tris to Quad
 
-This is an example sub-sub-section;
-the following content is auto-generated dummy text.
-\lipsum
+\section{Generative Model of Hair}
+Structure of splines from points
 
-\paragraph{Example paragraph.}
+\section{Approximating Input Training Data to Generative Model}
+Algorithms of approximation
 
-This is an example paragraph; note the trailing full-stop in the title,
-which is intended to ensure it does not run into the text.
+\section{Learning a Manifold with Bayesian GP-LVM}
+Training
+Kernels
+
+\section{Generation of Output}
+Blender
+
+\section{Reparation}
+Normals, clusters, intersections
 
 % -----------------------------------------------------------------------------
 
