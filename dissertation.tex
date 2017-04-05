@@ -26,9 +26,9 @@
                 % the degree programme
                     degree={MEng},
                 % the dissertation    title (which cannot be blank)
-                     title={ART-CG:},
+                     title={ARt-CG:},
                 % the dissertation subtitle (which can    be blank)
-                  subtitle={Assisted Real-Time Content Generation of 3D Hair Geometry},
+                  subtitle={Assisted Real-time Content Generation of 3D Hair using Latent Manifolds},
                 % the dissertation     type
                       type={Research},
                 % the year of submission
@@ -82,13 +82,13 @@
 \vspace{1cm} 
 
 \noindent
-The topic of this thesis explores the concept of assisted content generation by machine learning for the production of 3D hair geometry. The research hypothesis of this study is that non-linear probabilistic principal component analysis with the Gaussian Process Latent Variable Model is applicable for improving the creative production workflow of complex 3D hair structure and geometry for humanoids.
+The topic of this thesis explores the concept of assisted content generation by training generative models using unsupervised machine learning for the production of 3D hair geometry. The research hypothesis of this study is that non-linear probabilistic principal component analysis with the Gaussian Process Latent Variable Model is applicable for improving the creative production workflow of complex 3D hair geometry for humanoids.
 
 Production of 3D virtual worlds is a time-consuming and costly process that also demand expert knowledge. 3D assets encompass a vast range of applications, ranging from simulations and research, to contributing towards the functioning of many businesses. The production of 3D assets impacts many industries including engineering, medicine, and the provisioning of entertainment. One particular task is the creation of 3D hair geometry for humanoid characters. The production of 3D hair is arduous as hair structure is a complex system containing much interdependence between components.
 
-Machine learning applications typically use large data sets for training on problems that often have a concise answer for a given prediction. The application of machine learning to enhance production for creative work is an exciting field that tackles novel challenges - not only could it have a notable impact on the economy, artistic products tend to have small sets of data available and evaluation of quality is subjective. Given the same input, acceptable solutions can vary significantly. The mentioned peculiarities of applying machine learning for 3D mesh data establish a unique field of problems to investigate.
+Machine learning applications typically use large data sets for training on problems that often have a concise answer for a given prediction. The application of machine learning to enhance production for creative work is an exciting field that tackles novel challenges: artistic products tend to have small sets of data available, and evaluation of quality is subjective. Given the same input, acceptable solutions can vary significantly. The mentioned peculiarities of applying machine learning for 3D mesh data establish a unique field of problems to investigate.
 
-Existing tools for 3D modelling have remained mostly static in the paradigm of approach over the past few decades. Automation through methods such as procedural generation can produce output much faster, but the lack of control over the final result makes it less desirable than traditional methods of 3D modelling. The focus of this project is to formulate a revolutionary approach that improves the workflow of producing 3D hair geometry.
+Existing tools for 3D modelling have remained mostly static in the paradigm of approach over the past several decades. Automation through methods such as procedural generation can produce output much faster, but the lack of control over the final result makes it less desirable than traditional methods of 3D modelling. The focus of this project is to formulate a revolutionary approach that improves the workflow of producing 3D hair geometry through unsupervised training of generative models.
 
 \begin{quote}
 \noindent
@@ -212,9 +212,15 @@ advice or time), and so on.
 \label{chap:context}
 
 \section{Topic Background}
-The subject of machine learning can be divided into three major paradigms: supervised learning, unsupervised learning, and reinforcement learning. The prediction of output values given a new input is known as regression. The role that learning methods play in both manufacturing and consumption continue to grow, but adoption has been slow for creative fields.  Generally, robust models improve in performance as more reliable data is obtained. Creative production values uniqueness and versatility, properties that cause difficulty in machine learning methods. Varying styles in design complicate feature analysis and ambiguity of correctness is problematic when predicting an output.
+The task of machine learning can be divided into three major paradigms: 
+\begin{itemize}
+	\item \textit{Supervised learning} is provided input training examples with desired outputs to learn the mapping of inputs to output.
+	\item \textit{Unsupervised learning} is given only input data, the procedure learns structure of and relation between data.
+	\item \textit{Reinforcement learning} seeks to iteratively improve a pool of solutions by simulating an environment that apply concepts inspired by the theory of evolution.
+\end{itemize}
+The role that learning methods play in both manufacturing and consumer application continue to grow, but adoption has been slow for creative fields.  Generally, robust models improve in performance as more reliable data is obtained. Creative production values uniqueness and versatility, properties that cause difficulty in machine learning methods. Varying styles in design complicate feature analysis and ambiguity of correctness is problematic when predicting an output.
 
-To overcome the challenges of the scenario introduced, probabilistic latent variable models such as the Gaussian Process Latent Variable Model \cite{gplvm} present an opportunity to learn stylistic properties of design and predict multiple acceptable outputs by analysing the likelihood.
+To overcome the challenges of the scenario introduced, unsupervised learning with probabilistic latent variable models such as the Gaussian Process Latent Variable Model \cite{gplvm} present an opportunity to learn stylistic properties of design and predict multiple acceptable outputs by analysing the likelihood.
 
 \section{Production of Computer Graphics}
 In computer graphics, 3D objects are represented in many forms. 3D scanners capture raw data in various forms such as point clouds, range images, and voxels. A point cloud is a collection of 3D points, often used in computer vision.  A range image maps pixels of a depth image to a set of points in the scene. Voxels are units of cubes that define the volume of objects, it has applications in many fields including medicine where voxels are used to visualise the results of MRI scans. \cite{mri}
@@ -224,7 +230,7 @@ In a production environment it is straightforward to define geometry as opposed 
 %** Image of representations
 
 \subsection{3D Hair Geometry}
-On average, a human is born with about 100,000 scalp hair follicles. \cite{hairfollicles} It is computationally very expensive to render and animate physically correct hair, but creative liberties have been taken to approximate, or stylize 3D hair such that it is both acceptable aesthetically and feasible in terms of performance. This study considers modelling of hair geometry, the motion of hair is assumed to be its default resting pose.
+On average, a human is born with between 90,000 to 150,000 scalp hair follicles. \cite{hairfollicles} It is computationally very expensive to render and animate physically correct hair, but creative liberties have been taken to approximate, or stylize 3D hair such that it is both acceptable aesthetically and feasible in terms of performance. This study considers modelling of hair geometry, the motion of hair is assumed to be its default resting pose.
 
 In recent years, impressive 3D hair solutions for real-time simulation of realistic hair and fur, such as Nvidia HairWorks and AMD’s TressFX has emerged. These solutions, however, have limited application in comparison to their traditional counterpart of polygonal hair. It is often the case that texture-mapped polygonal hair is used as a fallback for when the advanced simulation fails. Realism is not necessarily always desirable, polygon hair can flexibly represent different art styles. In some cases, a blend of multiple representations are used to balance between cost and quality. 3D hair in cinematography with large budget can afford to render hair with much higher fidelity for important characters, but would still consider use efficient variants for scenarios such as crowd simulation. Ultimately, representation of virtual hair generally follows a structure of splines with control points that define the overall organisation of strands or segments.
 
@@ -232,15 +238,9 @@ In recent years, impressive 3D hair solutions for real-time simulation of realis
 [Image of Hair Geometry]
 
 \subsection{Procedural Generation and Automated Production}
-{\color{red}
-
-Procedural generation techniques produce output that adhere to rules established by its generative model. Such techniques have been successfully applied for generation of terrains and city modelling. Fractals and methods such as the Lindenmayer system has been used to produce content such as foliage generation. \cite{lsystem} Automated techniques such as the ones discussed, however, are seldom used for modelling objects with specific design. It is difficult to control the output of procedurally generated content without heavily restricting its capabilities. Automated methods that do not learn is cannot adapt to changing demands without reimplementation. Simulation methods, despite widely used in application, cannot simulate creative styles that are not accounted for.
+Procedural generation techniques produce output that adhere to rules established by the generative model defined. Such techniques have been successfully applied for generation of terrains and city modelling. Fractals and methods such as the Lindenmayer system has been used to produce patterns that resemble those observed in nature. \cite{lsystem} Automated techniques such as the ones discussed, however, are seldom used for modelling objects with specific design. It is difficult to control the output of procedurally generated content without heavily restricting its capabilities. Automated methods that do not learn is cannot adapt to changing demands without reimplementation.
 \cite{procedural1}
 \cite{procedural2}
-
-MPC simulate undead horde with crowd simulation system ALICE. PAPI (rigid body dynamic solver). In-house cloth solver with ALICE (using nCloth when detail needed)
-%http://www.creativebloq.com/3d/zombie-apocalypse-mpc-create-hordes-undead-
-}
 
 \section{Related Research of Machine Learning in Creative Fields}
 {\color{red}
@@ -560,23 +560,45 @@ Calender.
 Internal Deadlines.
 Trello for notes
 
-\section{Acquiring Training Data}
-The Sims Resource
-\section{Pre-processing Phase}
-Tris to Quad
+\section{Training Data Set}
+\subsection{Acquiring Training Data}
+There are not many good hair models available freely.
+Looking to mod community of Electronic Arts. The Sims Resource is a collection of hairstyles already standardised to the same head shape.
+
+The files are in \textit{.package} file format for the game, The Sims. Community software reads the package file and extract geometry in simgeom format. The simgeom format is finally converted to obj format.
+
+\subsection{Pre-processing Phase}
+Tris to Quad done on Blender with script.
+Imperfect algorithm, complete quad conversion manually.
 
 \section{Generative Model of Hair}
 Structure of splines from points
 
 \section{Approximating Input Training Data to Generative Model}
-Algorithms of approximation
+Split mesh into submeshes of hair segments.
+Extract edge loops of segments.
+Sample uniformly using spherical coordinates.
+Associate edges to roots
+
 
 \section{Learning a Manifold with Bayesian GP-LVM}
-Training
-Kernels
+Read obj data
+Parse obj to data structure
+Add offset so top of head is "mean", so uncertain hair moves towards the top (avoids hair moving inside head or other unlikely areas)
+Training with GPLVM.
+Kernel used.
+Give algorithm.
 
 \section{Generation of Output}
-Blender
+GPy native matplotlib conflicts with Blender as TKInter is disabled.
+Plot image of latent space to be imported into image editor of Blender.
+Pickle model to be imported by Blender's python.
+Select latent variables from manifold (Blender event API)
+Read model and predict output by selected latent variables
+Generate guide splines following format of latent model and generative model
+Extrude by spline object
+Rotate by head surface normals
+Convert to Poly
 
 \section{Reparation}
 Normals, clusters, intersections
@@ -586,65 +608,50 @@ Normals, clusters, intersections
 \chapter{Critical Evaluation}
 \label{chap:evaluation}
 
-{\bf A topic-specific chapter, of roughly $15$ pages} 
-\vspace{1cm} 
+\section{Functional Testing}
+functional  testing, including analysis and explanation of failure cases.
+5 pages
+      
+\section{Behavioural Testing}
+behavioural testing, often including analysis of any results that draw some form of conclusion wrt. the aims and objectives
+5 pages
 
-\noindent
-This chapter is intended to evaluate what you did.  The content is highly 
-topic-specific, but for many projects will have flavours of the following:
+\section{Evaluation}
+evaluation of options and decisions within the project, and/or a comparison with alternatives.
+2 page
 
-\begin{enumerate}
-\item functional  testing, including analysis and explanation of failure 
-      cases,
-\item behavioural testing, often including analysis of any results that 
-      draw some form of conclusion wrt. the aims and objectives,
-      and
-\item evaluation of options and decisions within the project, and/or a
-      comparison with alternatives.
-\end{enumerate}
-
-\noindent
-This chapter often acts to differentiate project quality: even if the work
-completed is of a high technical quality, critical yet objective evaluation 
-and comparison of the outcomes is crucial.  In essence, the reader wants to
-learn something, so the worst examples amount to simple statements of fact 
-(e.g., ``graph X shows the result is Y''); the best examples are analytical 
-and exploratory (e.g., ``graph X shows the result is Y, which means Z; this 
-contradicts [1], which may be because I use a different assumption'').  As 
-such, both positive {\em and} negative outcomes are valid {\em if} presented 
-in a suitable manner.
+\section{Applications}
+MMOs, games, etc
+1 page
 
 % -----------------------------------------------------------------------------
 
 \chapter{Conclusion}
 \label{chap:conclusion}
 
-{\bf A compulsory chapter,     of roughly $5$ pages} 
-\vspace{1cm} 
+\section{Summary}
+(Re)summarise the main contributions and achievements, in essence
+summing up the content. 2 pages
 
-\noindent
-The concluding chapter of a dissertation is often underutilised because it 
-is too often left too close to the deadline: it is important to allocation
-enough attention.  Ideally, the chapter will consist of three parts:
+\section{Project Status}
+Clearly state the current project status (e.g., ``X is working, Y 
+is not'') and evaluate what has been achieved with respect to the 
+initial aims and objectives (e.g., ``I completed aim X outlined 
+previously, the evidence for this is within Chapter Y'').  There 
+is no problem including aims which were not completed, but it is 
+important to evaluate and/or justify why this is the case. 2 pages
 
-\begin{enumerate}
-\item (Re)summarise the main contributions and achievements, in essence
-      summing up the content.
-\item Clearly state the current project status (e.g., ``X is working, Y 
-      is not'') and evaluate what has been achieved with respect to the 
-      initial aims and objectives (e.g., ``I completed aim X outlined 
-      previously, the evidence for this is within Chapter Y'').  There 
-      is no problem including aims which were not completed, but it is 
-      important to evaluate and/or justify why this is the case.
-\item Outline any open problems or future plans.  Rather than treat this
-      only as an exercise in what you {\em could} have done given more 
-      time, try to focus on any unexplored options or interesting outcomes
-      (e.g., ``my experiment for X gave counter-intuitive results, this 
-      could be because Y and would form an interesting area for further 
-      study'' or ``users found feature Z of my software difficult to use,
-      which is obvious in hindsight but not during at design stage; to 
-      resolve this, I could clearly apply the technique of Smith [7]'').
-\end{enumerate}
+\section{Future Work}
+Outline any open problems or future plans.  Rather than treat this
+only as an exercise in what you {\em could} have done given more 
+time, try to focus on any unexplored options or interesting outcomes
+(e.g., ``my experiment for X gave counter-intuitive results, this 
+could be because Y and would form an interesting area for further 
+study'' or ``users found feature Z of my software difficult to use,
+which is obvious in hindsight but not during at design stage; to 
+resolve this, I could clearly apply the technique of Smith [7]''). 1 page
+
+
 
 % =============================================================================
 

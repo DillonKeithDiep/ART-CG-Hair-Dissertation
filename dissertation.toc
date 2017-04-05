@@ -1,7 +1,7 @@
 \contentsline {chapter}{\numberline {1}Contextual Background}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}Topic Background}{1}{section.1.1}
 \contentsline {section}{\numberline {1.2}Production of Computer Graphics}{1}{section.1.2}
-\contentsline {subsection}{\numberline {1.2.1}3D Hair Geometry}{1}{subsection.1.2.1}
+\contentsline {subsection}{\numberline {1.2.1}3D Hair Geometry}{2}{subsection.1.2.1}
 \contentsline {subsection}{\numberline {1.2.2}Procedural Generation and Automated Production}{2}{subsection.1.2.2}
 \contentsline {section}{\numberline {1.3}Related Research of Machine Learning in Creative Fields}{2}{section.1.3}
 \contentsline {subsection}{\numberline {1.3.1}Learning a Manifold of Fonts}{2}{subsection.1.3.1}
@@ -9,9 +9,9 @@
 \contentsline {subsection}{\numberline {1.3.3}Latent Doodle Space}{2}{subsection.1.3.3}
 \contentsline {subsection}{\numberline {1.3.4}Real-time Drawing Assistance through Crowd-sourcing}{2}{subsection.1.3.4}
 \contentsline {subsection}{\numberline {1.3.5}AutoHair}{2}{subsection.1.3.5}
-\contentsline {section}{\numberline {1.4}Motivation and Significance}{2}{section.1.4}
+\contentsline {section}{\numberline {1.4}Motivation and Significance}{3}{section.1.4}
 \contentsline {section}{\numberline {1.5}Challenges}{3}{section.1.5}
-\contentsline {section}{\numberline {1.6}Central Objectives}{3}{section.1.6}
+\contentsline {section}{\numberline {1.6}Central Objectives}{4}{section.1.6}
 \contentsline {chapter}{\numberline {2}Technical Background}{5}{chapter.2}
 \contentsline {section}{\numberline {2.1}Principal Component Analysis}{5}{section.2.1}
 \contentsline {subsection}{\numberline {2.1.1}Single Value Decomposition of X}{5}{subsection.2.1.1}
@@ -43,13 +43,21 @@
 \contentsline {section}{\numberline {3.2}Project Management}{11}{section.3.2}
 \contentsline {subsection}{\numberline {3.2.1}Source Control}{11}{subsection.3.2.1}
 \contentsline {subsection}{\numberline {3.2.2}Time-line}{11}{subsection.3.2.2}
-\contentsline {section}{\numberline {3.3}Acquiring Training Data}{12}{section.3.3}
-\contentsline {section}{\numberline {3.4}Pre-processing Phase}{12}{section.3.4}
-\contentsline {section}{\numberline {3.5}Generative Model of Hair}{12}{section.3.5}
-\contentsline {section}{\numberline {3.6}Approximating Input Training Data to Generative Model}{12}{section.3.6}
-\contentsline {section}{\numberline {3.7}Learning a Manifold with Bayesian GP-LVM}{12}{section.3.7}
-\contentsline {section}{\numberline {3.8}Generation of Output}{12}{section.3.8}
-\contentsline {section}{\numberline {3.9}Reparation}{12}{section.3.9}
+\contentsline {section}{\numberline {3.3}Training Data Set}{12}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Acquiring Training Data}{12}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Pre-processing Phase}{12}{subsection.3.3.2}
+\contentsline {section}{\numberline {3.4}Generative Model of Hair}{12}{section.3.4}
+\contentsline {section}{\numberline {3.5}Approximating Input Training Data to Generative Model}{12}{section.3.5}
+\contentsline {section}{\numberline {3.6}Learning a Manifold with Bayesian GP-LVM}{12}{section.3.6}
+\contentsline {section}{\numberline {3.7}Generation of Output}{12}{section.3.7}
+\contentsline {section}{\numberline {3.8}Reparation}{12}{section.3.8}
 \contentsline {chapter}{\numberline {4}Critical Evaluation}{13}{chapter.4}
+\contentsline {section}{\numberline {4.1}Functional Testing}{13}{section.4.1}
+\contentsline {section}{\numberline {4.2}Behavioural Testing}{13}{section.4.2}
+\contentsline {section}{\numberline {4.3}Evaluation}{13}{section.4.3}
+\contentsline {section}{\numberline {4.4}Applications}{13}{section.4.4}
 \contentsline {chapter}{\numberline {5}Conclusion}{15}{chapter.5}
+\contentsline {section}{\numberline {5.1}Summary}{15}{section.5.1}
+\contentsline {section}{\numberline {5.2}Project Status}{15}{section.5.2}
+\contentsline {section}{\numberline {5.3}Future Work}{15}{section.5.3}
 \contentsline {chapter}{\numberline {A}An Example Appendix}{19}{appendix.A}

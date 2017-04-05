@@ -10,14 +10,19 @@ Shaq~T.-Wu H. Weng~Y. Chai, M. and K~Zhou.
 \newblock {\em AutoHair: Fully automatic hair modeling from a single image}.
 \newblock ACM Trans. Graph. 35, 4 (July), 116:1–116:12, 2016.
 
+\bibitem{procedural1}
+F.~Bevilacqua D.~M. D.~Carli, C. T.~Pozzer and M.~C. d~Ornellas.
+\newblock {\em A survey of procedural content generation techniques suitable to
+  game development}.
+\newblock X Simposio Brasileiro de Games e Entretenimento Digital, 2011.
+
+\bibitem{hairfollicles}
+R.~Milo. et~al.
+\newblock {\em Number of hairs on human head}.
+\newblock BioNumbers. BNID 101509, 2017.
+
 \bibitem{mlmethods}
 [ML] from http://opus.bath.ac.uk/41075/.
-
-\bibitem{procedural2}
-[Procedural2] http://hpcg.purdue.edu/papers/Smelik14CGF.pdf.
-
-\bibitem{procedural1}
-[Procedural1] http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=6363215.
 
 \bibitem{pca1901}
 [PCA~1901] http://stat.smmu.edu.cn/history/pearson1901.pdf.

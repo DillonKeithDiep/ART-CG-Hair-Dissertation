@@ -16,13 +16,19 @@
 \BOOKMARK [0][-]{chapter.3}{Project Execution}{}% 16
 \BOOKMARK [1][-]{section.3.1}{Example}{chapter.3}% 17
 \BOOKMARK [1][-]{section.3.2}{Project Management}{chapter.3}% 18
-\BOOKMARK [1][-]{section.3.3}{Acquiring Training Data}{chapter.3}% 19
-\BOOKMARK [1][-]{section.3.4}{Pre-processing Phase}{chapter.3}% 20
-\BOOKMARK [1][-]{section.3.5}{Generative Model of Hair}{chapter.3}% 21
-\BOOKMARK [1][-]{section.3.6}{Approximating Input Training Data to Generative Model}{chapter.3}% 22
-\BOOKMARK [1][-]{section.3.7}{Learning a Manifold with Bayesian GP-LVM}{chapter.3}% 23
-\BOOKMARK [1][-]{section.3.8}{Generation of Output}{chapter.3}% 24
-\BOOKMARK [1][-]{section.3.9}{Reparation}{chapter.3}% 25
-\BOOKMARK [0][-]{chapter.4}{Critical Evaluation}{}% 26
-\BOOKMARK [0][-]{chapter.5}{Conclusion}{}% 27
-\BOOKMARK [0][-]{appendix.A}{An Example Appendix}{}% 28
+\BOOKMARK [1][-]{section.3.3}{Training Data Set}{chapter.3}% 19
+\BOOKMARK [1][-]{section.3.4}{Generative Model of Hair}{chapter.3}% 20
+\BOOKMARK [1][-]{section.3.5}{Approximating Input Training Data to Generative Model}{chapter.3}% 21
+\BOOKMARK [1][-]{section.3.6}{Learning a Manifold with Bayesian GP-LVM}{chapter.3}% 22
+\BOOKMARK [1][-]{section.3.7}{Generation of Output}{chapter.3}% 23
+\BOOKMARK [1][-]{section.3.8}{Reparation}{chapter.3}% 24
+\BOOKMARK [0][-]{chapter.4}{Critical Evaluation}{}% 25
+\BOOKMARK [1][-]{section.4.1}{Functional Testing}{chapter.4}% 26
+\BOOKMARK [1][-]{section.4.2}{Behavioural Testing}{chapter.4}% 27
+\BOOKMARK [1][-]{section.4.3}{Evaluation}{chapter.4}% 28
+\BOOKMARK [1][-]{section.4.4}{Applications}{chapter.4}% 29
+\BOOKMARK [0][-]{chapter.5}{Conclusion}{}% 30
+\BOOKMARK [1][-]{section.5.1}{Summary}{chapter.5}% 31
+\BOOKMARK [1][-]{section.5.2}{Project Status}{chapter.5}% 32
+\BOOKMARK [1][-]{section.5.3}{Future Work}{chapter.5}% 33
+\BOOKMARK [0][-]{appendix.A}{An Example Appendix}{}% 34
