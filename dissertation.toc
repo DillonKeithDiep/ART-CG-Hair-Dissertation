@@ -6,10 +6,9 @@
 \contentsline {section}{\numberline {1.3}Related Research of Machine Learning in Creative Fields}{2}{section.1.3}
 \contentsline {subsection}{\numberline {1.3.1}Learning a Manifold of Fonts}{2}{subsection.1.3.1}
 \contentsline {subsection}{\numberline {1.3.2}Stylised Inverse Kinematics}{2}{subsection.1.3.2}
-\contentsline {subsection}{\numberline {1.3.3}Procedural Trees}{2}{subsection.1.3.3}
-\contentsline {subsection}{\numberline {1.3.4}Latent Space Doodling}{2}{subsection.1.3.4}
-\contentsline {subsection}{\numberline {1.3.5}2D Drawing Assistant}{2}{subsection.1.3.5}
-\contentsline {subsection}{\numberline {1.3.6}AutoHair}{2}{subsection.1.3.6}
+\contentsline {subsection}{\numberline {1.3.3}Latent Doodle Space}{2}{subsection.1.3.3}
+\contentsline {subsection}{\numberline {1.3.4}Real-time Drawing Assistance through Crowd-sourcing}{2}{subsection.1.3.4}
+\contentsline {subsection}{\numberline {1.3.5}AutoHair}{2}{subsection.1.3.5}
 \contentsline {section}{\numberline {1.4}Motivation and Significance}{2}{section.1.4}
 \contentsline {section}{\numberline {1.5}Challenges}{3}{section.1.5}
 \contentsline {section}{\numberline {1.6}Central Objectives}{3}{section.1.6}

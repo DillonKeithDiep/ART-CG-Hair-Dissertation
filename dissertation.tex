@@ -20,22 +20,20 @@
 %   (so 2014 rather than the accademic year, say 2013/14 say).
 
 \documentclass[ % the name of the author
-                    author={Dillon Keith Diep},
+                    author={Dillon Keith Diep [INCOMPLETE DRAFT, NOT FOR SUBMISSION]},
                 % the name of the supervisor
                 supervisor={Dr. Carl Henrik Ek},
                 % the degree programme
                     degree={MEng},
                 % the dissertation    title (which cannot be blank)
-                     title={Assisted Content Generation for 3D Hair Geometry},
+                     title={ART-CG:},
                 % the dissertation subtitle (which can    be blank)
-                  subtitle={[INCOMPLETE DRAFT, NOT FOR SUBMISSION]},
+                  subtitle={Assisted Real-Time Content Generation of 3D Hair Geometry},
                 % the dissertation     type
                       type={Research},
                 % the year of submission
                       year={2014} ]{dissertation}
-
 \begin{document}
-
 % =============================================================================
 
 % This section simply introduces the structural guidelines.  It can clearly
@@ -235,7 +233,8 @@ In recent years, impressive 3D hair solutions for real-time simulation of realis
 
 \subsection{Procedural Generation and Automated Production}
 {\color{red}
-Procedural generation techniques has been successfully used for terrains and city modelling. Methods such as the Lindenmayer system are used for foliage generation. \cite{lsystem} Fractals with simulated noise can create structure that resemble patterns observed in nature. Procedural techniques, however, are seldom used for modelling objects with specific features. It is difficult to control the output of procedurally generated content without heavily restricting its capabilities.
+
+Procedural generation techniques produce output that adhere to rules established by its generative model. Such techniques have been successfully applied for generation of terrains and city modelling. Fractals and methods such as the Lindenmayer system has been used to produce content such as foliage generation. \cite{lsystem} Automated techniques such as the ones discussed, however, are seldom used for modelling objects with specific design. It is difficult to control the output of procedurally generated content without heavily restricting its capabilities. Automated methods that do not learn is cannot adapt to changing demands without reimplementation. Simulation methods, despite widely used in application, cannot simulate creative styles that are not accounted for.
 \cite{procedural1}
 \cite{procedural2}
 
@@ -246,12 +245,18 @@ MPC simulate undead horde with crowd simulation system ALICE. PAPI (rigid body d
 \section{Related Research of Machine Learning in Creative Fields}
 {\color{red}
 \subsection{Learning a Manifold of Fonts}
-\cite{fontmanifold}
+Campbell \& Kautz (2014) presented a framework that learns a latent manifold of font styles which generate new fonts with attributes that are derived from the training data. \cite{fontmanifold} The process involved parametrising fonts in a comparable manner and performing unsupervised learning with the GP-LVM model. The manifold allowed non-experts to create font styles without experience on type design and rapid prototyping.
+
 \subsection{Stylised Inverse Kinematics}
-\subsection{Procedural Trees}
-\subsection{Latent Space Doodling}
-\subsection{2D Drawing Assistant}
+Grochow et al. (2004) learned the likelihood of posture for inverse kinematics. \cite{styleik}
+
+\subsection{Latent Doodle Space}
+Baxer \& Anjyo (2006) proposed the concept of a latent doodle space that generate new drawings based on the input examples of simple line art. \cite{latentdoodle}
+
+\subsection{Real-time Drawing Assistance through Crowd-sourcing}
 \cite{mlmethods}
+Limpaecher et al. (2013) proposed a method that collects large amounts of data to build a spatially varying model that corrects simple strokes of art.
+
 \subsection{AutoHair}
 \cite{autohair}
 Neural network
