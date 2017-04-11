@@ -1,14 +1,19 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: dissertation.aux
 The style file: plain.bst
 Database file #1: dissertation.bib
+Repeated entry---line 33 of file dissertation.bib
+ : @book{procedural1
+ :                  ,
+I'm skipping whatever remains of this entry
 Warning--I didn't find a database entry for "lsystem"
-Warning--I didn't find a database entry for "procedural2"
-Warning--I didn't find a database entry for "styleik"
-Warning--I didn't find a database entry for "latentdoodle"
 Warning--I didn't find a database entry for "pca1933"
+Warning--I didn't find a database entry for "s4pe"
+Warning--I didn't find a database entry for "s4cas"
 Name 1 in "D. M. D. Carli, C. T. Pozzer, F. Bevilacqua, and M. C. d Ornellas" has a comma at the end for entry procedural1
 while executing---line 1049 of file plain.bst
 Name 1 in "Campbell, N. D., AND Kautz, J." has a comma at the end for entry fontmanifold
+while executing---line 1049 of file plain.bst
+Name 1 in "Baxter, W., and Anjyo, K." has a comma at the end for entry latentdoodle
 while executing---line 1049 of file plain.bst
 Name 1 in "Chai, M., Shaq, T., Wu, H., Weng, Y., and Zhou, K" has a comma at the end for entry autohair
 while executing---line 1049 of file plain.bst
@@ -26,6 +31,8 @@ Name 1 in "Tipping, M. E., and Bishop, C. M." has a comma at the end for entry p
 while executing---line 1049 of file plain.bst
 Name 1 in "Titsias, M. K., and Lawrence, N. D." has a comma at the end for entry bgplvm
 while executing---line 1049 of file plain.bst
+Name 1 in "Baxter, W., and Anjyo, K." has a comma at the end for entry latentdoodle
+while executing---line 1090 of file plain.bst
 Name 1 in "Campbell, N. D., AND Kautz, J." has a comma at the end for entry fontmanifold
 while executing---line 1090 of file plain.bst
 Name 1 in "Chai, M., Shaq, T., Wu, H., Weng, Y., and Zhou, K" has a comma at the end for entry autohair
@@ -42,9 +49,6 @@ Too many commas in name 1 of "Chai, M., Shaq, T., Wu, H., Weng, Y., and Zhou, K"
 while executing---line 1090 of file plain.bst
 Name 1 in "D. M. D. Carli, C. T. Pozzer, F. Bevilacqua, and M. C. d Ornellas" has a comma at the end for entry procedural1
 while executing---line 1090 of file plain.bst
-Warning--empty title in mlmethods
-Warning--empty publisher in mlmethods
-Warning--empty year in mlmethods
 Warning--empty title in pca1901
 Warning--empty publisher in pca1901
 Warning--empty year in pca1901
@@ -61,4 +65,4 @@ Name 1 in "Tipping, M. E., and Bishop, C. M." has a comma at the end for entry p
 while executing---line 1090 of file plain.bst
 Name 1 in "Titsias, M. K., and Lawrence, N. D." has a comma at the end for entry bgplvm
 while executing---line 1090 of file plain.bst
-(There were 20 error messages)
+(There were 23 error messages)

@@ -1,5 +1,10 @@
 \begin{thebibliography}{10}
 
+\bibitem{latentdoodle}
+W.~Baxter and K.~Anjyo.
+\newblock {\em Latent Doodle Space}.
+\newblock Eurographics 2006. Vol. 25, 3., 2006.
+
 \bibitem{fontmanifold}
 N.~D. Campbell and J.~Kautz.
 \newblock {\em Learning a manifold of fonts}.
@@ -21,8 +26,10 @@ R.~Milo. et~al.
 \newblock {\em Number of hairs on human head}.
 \newblock BioNumbers. BNID 101509, 2017.
 
-\bibitem{mlmethods}
-[ML] from http://opus.bath.ac.uk/41075/.
+\bibitem{styleik}
+et~al Grochow, K.
+\newblock {\em Style-Based Inverse Kinematics}.
+\newblock SIGGRAPH '04 ACM SIGGRAPH 2004 Papers. pp.522-531, 2004.
 
 \bibitem{pca1901}
 [PCA~1901] http://stat.smmu.edu.cn/history/pearson1901.pdf.
@@ -42,7 +49,12 @@ I.~T. Jolliffe.
 N.~D. Lawrence.
 \newblock {\em Probabilistic non-linear principal component analysis with
   Gaussian process latent variable models}.
-\newblock The Journal of Machine Learning Research 6, 1783–1816, 2005.
+\newblock The Journal of Machine Learning Research 6, 1783–1816, 2004.
+
+\bibitem{drawingassistance}
+et~al Limpaecher, A.
+\newblock {\em Real-time Drawing Assistance through Crowdsourcing}.
+\newblock ACM Trans. Graph. 32, 4 (July), 2013.
 
 \bibitem{edgeloops}
 [Edge loops] https://sites.ualberta.ca/~cwant/blender/derived surfaces.pdf.

@@ -1,63 +1,57 @@
 \contentsline {chapter}{\numberline {1}Contextual Background}{1}{chapter.1}
-\contentsline {section}{\numberline {1.1}Topic Background}{1}{section.1.1}
-\contentsline {section}{\numberline {1.2}Production of Computer Graphics}{1}{section.1.2}
-\contentsline {subsection}{\numberline {1.2.1}3D Hair Geometry}{2}{subsection.1.2.1}
-\contentsline {subsection}{\numberline {1.2.2}Procedural Generation and Automated Production}{2}{subsection.1.2.2}
+\contentsline {section}{\numberline {1.1}Production of 3D Content}{1}{section.1.1}
+\contentsline {subsection}{\numberline {1.1.1}3D Hair Geometry}{1}{subsection.1.1.1}
+\contentsline {subsection}{\numberline {1.1.2}Procedural Generation and Automated Production}{2}{subsection.1.1.2}
+\contentsline {section}{\numberline {1.2}Motivation and Significance}{2}{section.1.2}
 \contentsline {section}{\numberline {1.3}Related Research of Machine Learning in Creative Fields}{2}{section.1.3}
-\contentsline {subsection}{\numberline {1.3.1}Learning a Manifold of Fonts}{2}{subsection.1.3.1}
-\contentsline {subsection}{\numberline {1.3.2}Stylised Inverse Kinematics}{2}{subsection.1.3.2}
-\contentsline {subsection}{\numberline {1.3.3}Latent Doodle Space}{2}{subsection.1.3.3}
-\contentsline {subsection}{\numberline {1.3.4}Real-time Drawing Assistance through Crowd-sourcing}{2}{subsection.1.3.4}
-\contentsline {subsection}{\numberline {1.3.5}AutoHair}{2}{subsection.1.3.5}
-\contentsline {section}{\numberline {1.4}Motivation and Significance}{3}{section.1.4}
-\contentsline {section}{\numberline {1.5}Challenges}{3}{section.1.5}
-\contentsline {section}{\numberline {1.6}Central Objectives}{4}{section.1.6}
+\contentsline {subsection}{\numberline {1.3.1}Style-Based Inverse Kinematics}{3}{subsection.1.3.1}
+\contentsline {subsection}{\numberline {1.3.2}Latent Doodle Space}{3}{subsection.1.3.2}
+\contentsline {subsection}{\numberline {1.3.3}Learning a Manifold of Fonts}{3}{subsection.1.3.3}
+\contentsline {subsection}{\numberline {1.3.4}Real-time Drawing Assistance through Crowd-sourcing}{3}{subsection.1.3.4}
+\contentsline {subsection}{\numberline {1.3.5}AutoHair}{3}{subsection.1.3.5}
+\contentsline {section}{\numberline {1.4}Challenges}{3}{section.1.4}
+\contentsline {section}{\numberline {1.5}Central Objectives}{4}{section.1.5}
 \contentsline {chapter}{\numberline {2}Technical Background}{5}{chapter.2}
 \contentsline {section}{\numberline {2.1}Principal Component Analysis}{5}{section.2.1}
-\contentsline {subsection}{\numberline {2.1.1}Single Value Decomposition of X}{5}{subsection.2.1.1}
-\contentsline {section}{\numberline {2.2}Probabilistic Principal Component Analysis}{5}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}Latent Variable Models and Factor Analysis}{5}{subsection.2.2.1}
-\contentsline {subsection}{\numberline {2.2.2}Relation of Factor Analysis and PCA}{6}{subsection.2.2.2}
-\contentsline {subsection}{\numberline {2.2.3}Probabilistic PCA}{6}{subsection.2.2.3}
-\contentsline {subsection}{\numberline {2.2.4}The Principal Subspace of PPCA}{6}{subsection.2.2.4}
-\contentsline {subsection}{\numberline {2.2.5}Maximum-Likelihood PCA}{7}{subsection.2.2.5}
+\contentsline {section}{\numberline {2.2}Probabilistic Principal Component Analysis}{6}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Latent Variable Models and Factor Analysis}{6}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}A Probabilistic Model for PCA}{6}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}The Principal Subspace of PPCA}{7}{subsection.2.2.3}
 \contentsline {section}{\numberline {2.3}Gaussian Process Latent Variable Model}{7}{section.2.3}
 \contentsline {subsection}{\numberline {2.3.1}Dual Probabilistic PCA}{7}{subsection.2.3.1}
 \contentsline {subsection}{\numberline {2.3.2}Gaussian Processes}{8}{subsection.2.3.2}
 \contentsline {section}{\numberline {2.4}Bayesian Gaussian Process Latent Variable Model}{8}{section.2.4}
 \contentsline {subsection}{\numberline {2.4.1}Variational Inference}{9}{subsection.2.4.1}
-\contentsline {section}{\numberline {2.5}Kernel Methods}{10}{section.2.5}
-\contentsline {subsection}{\numberline {2.5.1}Kernel Basics}{10}{subsection.2.5.1}
-\contentsline {subsection}{\numberline {2.5.2}RBF}{10}{subsection.2.5.2}
-\contentsline {subsection}{\numberline {2.5.3}Exponential}{10}{subsection.2.5.3}
-\contentsline {subsection}{\numberline {2.5.4}Combining Kernels}{10}{subsection.2.5.4}
-\contentsline {section}{\numberline {2.6}Formal Definition of 3D Polygon Mesh Representation}{10}{section.2.6}
-\contentsline {subsection}{\numberline {2.6.1}Mesh Vertices}{10}{subsection.2.6.1}
-\contentsline {subsection}{\numberline {2.6.2}Edges}{10}{subsection.2.6.2}
-\contentsline {subsection}{\numberline {2.6.3}Polygon Faces}{10}{subsection.2.6.3}
-\contentsline {subsection}{\numberline {2.6.4}Edge Loops}{10}{subsection.2.6.4}
-\contentsline {subsection}{\numberline {2.6.5}Topology}{10}{subsection.2.6.5}
-\contentsline {section}{\numberline {2.7}Graph Theory}{10}{section.2.7}
+\contentsline {section}{\numberline {2.5}Formal Definition of 3D Polygon Mesh Representation}{9}{section.2.5}
+\contentsline {subsection}{\numberline {2.5.1}Mesh Vertices}{9}{subsection.2.5.1}
+\contentsline {subsection}{\numberline {2.5.2}Edges}{9}{subsection.2.5.2}
+\contentsline {subsection}{\numberline {2.5.3}Polygon Faces}{9}{subsection.2.5.3}
+\contentsline {subsection}{\numberline {2.5.4}Edge Loops}{9}{subsection.2.5.4}
+\contentsline {subsection}{\numberline {2.5.5}Topology}{10}{subsection.2.5.5}
+\contentsline {section}{\numberline {2.6}Graph Theory}{10}{section.2.6}
 \contentsline {chapter}{\numberline {3}Project Execution}{11}{chapter.3}
-\contentsline {section}{\numberline {3.1}Example}{11}{section.3.1}
-\contentsline {section}{\numberline {3.2}Project Management}{11}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Source Control}{11}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Time-line}{11}{subsection.3.2.2}
-\contentsline {section}{\numberline {3.3}Training Data Set}{12}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}Acquiring Training Data}{12}{subsection.3.3.1}
-\contentsline {subsection}{\numberline {3.3.2}Pre-processing Phase}{12}{subsection.3.3.2}
-\contentsline {section}{\numberline {3.4}Generative Model of Hair}{12}{section.3.4}
-\contentsline {section}{\numberline {3.5}Approximating Input Training Data to Generative Model}{12}{section.3.5}
-\contentsline {section}{\numberline {3.6}Learning a Manifold with Bayesian GP-LVM}{12}{section.3.6}
-\contentsline {section}{\numberline {3.7}Generation of Output}{12}{section.3.7}
-\contentsline {section}{\numberline {3.8}Reparation}{12}{section.3.8}
-\contentsline {chapter}{\numberline {4}Critical Evaluation}{13}{chapter.4}
-\contentsline {section}{\numberline {4.1}Functional Testing}{13}{section.4.1}
-\contentsline {section}{\numberline {4.2}Behavioural Testing}{13}{section.4.2}
-\contentsline {section}{\numberline {4.3}Evaluation}{13}{section.4.3}
-\contentsline {section}{\numberline {4.4}Applications}{13}{section.4.4}
-\contentsline {chapter}{\numberline {5}Conclusion}{15}{chapter.5}
-\contentsline {section}{\numberline {5.1}Summary}{15}{section.5.1}
-\contentsline {section}{\numberline {5.2}Project Status}{15}{section.5.2}
-\contentsline {section}{\numberline {5.3}Future Work}{15}{section.5.3}
-\contentsline {chapter}{\numberline {A}An Example Appendix}{19}{appendix.A}
+\contentsline {section}{\numberline {3.1}Training Data Set}{11}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Acquiring Training Data}{11}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Repairing Training Data}{11}{subsection.3.1.2}
+\contentsline {section}{\numberline {3.2}Generative Model of Hair}{11}{section.3.2}
+\contentsline {section}{\numberline {3.3}Approximating Generative Parameters from Input Data}{12}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Parsing OBJ File}{12}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Spline Estimation}{12}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}Structure Estimation}{12}{subsection.3.3.3}
+\contentsline {section}{\numberline {3.4}Learning a Manifold with Bayesian GP-LVM}{12}{section.3.4}
+\contentsline {section}{\numberline {3.5}Generation of Output}{12}{section.3.5}
+\contentsline {section}{\numberline {3.6}Reparation}{12}{section.3.6}
+\contentsline {section}{\numberline {3.7}Project Management}{13}{section.3.7}
+\contentsline {subsection}{\numberline {3.7.1}Source Control}{13}{subsection.3.7.1}
+\contentsline {subsection}{\numberline {3.7.2}Issue Tracking}{13}{subsection.3.7.2}
+\contentsline {subsection}{\numberline {3.7.3}Time-line}{13}{subsection.3.7.3}
+\contentsline {chapter}{\numberline {4}Critical Evaluation}{15}{chapter.4}
+\contentsline {section}{\numberline {4.1}Functional Testing}{15}{section.4.1}
+\contentsline {section}{\numberline {4.2}Behavioural Testing}{15}{section.4.2}
+\contentsline {section}{\numberline {4.3}Evaluation}{15}{section.4.3}
+\contentsline {section}{\numberline {4.4}Applications}{15}{section.4.4}
+\contentsline {chapter}{\numberline {5}Conclusion}{17}{chapter.5}
+\contentsline {section}{\numberline {5.1}Summary}{17}{section.5.1}
+\contentsline {section}{\numberline {5.2}Project Status}{17}{section.5.2}
+\contentsline {section}{\numberline {5.3}Future Work}{17}{section.5.3}
+\contentsline {chapter}{\numberline {A}An Example Appendix}{21}{appendix.A}
