@@ -294,33 +294,28 @@ In a production environment, the time required for a technique to return observa
 \chapter{Technical Background}
 \label{chap:technical}
 
-{\color{red} Explain why PCA and GPLVM is relevant}
-
 \section{Principal Component Analysis}
+In order to comprehend how GPLVM can learn a latent manifold from observed data, 
+first we consider how it was derived, starting from principal component analysis.
+
 In multivariate analysis, principal component analysis (PCA) is a statistical technique used to perform dimensionality reduction. It was originally introduced by Pearson \cite{pca1901}, and independently developed by Hotelling \cite{pca1933}, where the standard algebraic derivation of PCA was presented in terms of a standardized linear projection.
 
-Consider the properties that define hair structure. Observable variables that can be measured could be its location, orientation, length, and colour. It is likely that there is some covariance between the variables. PCA retrieves an ordered list of orthonormal axes that retain the most linear variance, namely, the principal components. A principal component is a combination of observed variables that reflects on their relation.
+Consider the properties that define hair structure. Observable variables that can be measured include location, orientation, length, and colour. The data collected may indicate that some variables change together, this relation is measured as the covariance. The PCA technique searches for an ordered set of linear combination of the observed variables that retain maximal variance. Should two observed variables strongly covary linearly, then it is plausible to describe the data with a single variable instead. The more linearly the variables covary, the less data is lost from choosing a smaller set of principal components, thus effectively reducing dimensionality.
 
-Given a set of $n$ observed $d$-dimensional data vectors $\mathbf{X=\{x_1,x_2,...,x_n\}}$, $\mathbf{x_i} = [x_1,x_2,...,x_d]$, the $q$ principal components $\mathbf{w_j}$, $j \in {1,...,q}$, are the orthonormal axes which retain maximal variance.
+Given a set of $n$ observed $d$-dimensional data, $\mathbf{X=\{x_1,x_2,...,x_n\}}$, the $q$ principal components $\mathbf{w_j}$, $j \in {1,...,q}$, are the orthonormal axes with maximal variance retained. The value of $q$ can be as high as $n$, but generally it is the case that $q \ll n$. The first principal component is a linear function $\boldsymbol{\alpha}^T_1\mathbf{X}$ that retains most variance of $\mathbf{X}$, where $\boldsymbol{\alpha} = [\alpha_{11}, \alpha_{12}, ..., \alpha_{1n}]$ is a vector of $n$ constants such that:
+$$\boldsymbol{\alpha}^T_1\mathbf{X}=\alpha_{11}x_1+\alpha_{12}x_2+...+\alpha_{1n}x_n = \sum^d_{i=1}a_{1i}x_i$$
+The following principal components are found by looking for a linear function that is orthogonal to the chosen principal components and retain maximum variance. 
 
-The first principal component is a linear function $\boldsymbol{\alpha}^T_1\mathbf{X}$ that retains maximum variance of $\mathbf{X}$, where $\boldsymbol{\alpha} = [\alpha_{11}, \alpha_{12}, ..., \alpha_{1n}]$ is a vector of $n$ constants such that:
-$$\boldsymbol{\alpha}^T_1\mathbf{X}=\alpha_{11}x_1+\alpha_{12}x_2+...+\alpha_{1n}x_n = \sum^p_{i=1}a_{1i}x_i$$
-The following principal components are found by looking for a linear function that is uncorrelated to the chosen principal components and have maximum variance. \cite{pca2002}
-
-{\color{red} Express PCA as an eigenvalue decomposition problem}
-
-PCA can be expressed as an eigenvalue decomposition problem. Consider a data matrix $\mathbf{X}$ with covariance matrix $\Sigma$. The $(i,j)^{th}$ element is the covariance between the $i^{th}$ and $j^{th}$ elements of $\mathbf{X}$ when $i \neq j$, and the variance of the $j^{th}$ element when $i = j$. The $k^{th}$ principal component is given by $z_k=\boldsymbol{\alpha}^T_k\mathbf{X}$ where $\boldsymbol{\alpha}_k$ is an eigenvector of $\Sigma$ corresponding to its kth largest eigenvalue $\lambda_k$, where $var(z_k)$ denotes the variance of $z_k$.
-
-The principal components can be defined as
-$$\boldsymbol{z=A^TX},$$
-where $\mathbf{z}$ is the vector whose $k^{th}$ element is $z_k$, the kth principal component, and $\mathbf{A}$ is the orthogonal matrix whose $k^{th}$ column, $\alpha_k$ is the $k^{th}$ eigenvector of $\Sigma$. Thus, the PCs are defined by an orthonormal linear transformation of $\mathbf{X}$.
-
-We can express the covariance matrix as
-$$\Sigma=A\Lambda A^T,$$
-where $\Lambda$ is the diagonal matrix whose $k^{th}$ diagonal element is $\lambda_k$, the $k^{th}$ eigenvalue of $\Sigma$, and $\lambda_k = var(\alpha^T_kX)=var(z_k)$.
-
+PCA can be performed by singular value decomposition (SVD) of $\mathbf{X}$ in matrix form, \cite{pca2002}
+$$\mathbf{X=ULV}^T,$$
+where given $r = r(\mathbf{X})$ denotes the rank of $\mathbf{X}$, then
+$\mathbf{U}$ is a $n \times r$ matrix of orthonormal columns that are the left singular vectors,
+$\mathbf{L}$ is a $r \times r$ diagonal matrix of the singular values of $\mathbf{X}$, and
+$\mathbf{V}$ is a $d \times r$ matrix of orthonormal columns that are the right singular vectors.
 \section{Probabilistic Principal Component Analysis}
 A limitation of standard PCA is the lack of a probabilistic solution. Tipping and Bishop introduced a probabilistic principal component analysis by constraining a latent variable model to be effectively equivalent when its marginal likelihood is maximised. \cite{ppca}
+
+Suppose that the principal components of a set of data that represent hair structure. Standard PCA searches for the principal subspace that retains maximal variance. Extrapolating values using the principal axes can infer new hairstyles, but only within a fixed style embedded by the orthonormal axes. In the case of 3D content production, it is much more useful to have a selection of plausible designs to choose from. A probabilistic model of PCA provides many possible solutions that are associated with a probability likelihood. This enables us to explore other potential linear embeddings of hair structure.
 
 \subsection{Latent Variable Models and Factor Analysis}
 A latent variable model transforms a set of $n$ $d$-dimensional observed variables, $\mathbf{Y}\in\Re^{n \times d}$, to a set of $q$-dimensional latent (unobserved) variables, $\mathbf{X}\in\Re^{n \times q}$. Latent variables are parsimonious, it is generally the case that $q \ll d$, explaining the original data with fewer variables. A notable latent variable model is that of factor analysis, one that assumes linearity in relation of the observed data set,
@@ -328,18 +323,24 @@ A latent variable model transforms a set of $n$ $d$-dimensional observed variabl
 	\mathbf{Y=WX+\mu+\epsilon}.
 \end{equation}
 $\mathbf{W}$ represents a matrix that specifies the linear relation between the observed data-space with the latent-space.
-The parameter $\mu$ allows for non-zero mean, and the $\epsilon$ parameter represents noise within the model. Standard PCA and factor analysis both aim to reduce dimensions, however, the approach taken is different. PCA is a statistical technique, whilst factor analysis estimates a model that explains the observed data. The maximum-likelihood estimates of $\mathbf{W}$ will thus generally not correspond to the principal subspace. Tipping and Bishop develop a latent variable model that performs principal component analysis by modelling the parameter $\epsilon$ of equation \ref{ppca:fa} as an isotropic, spherical Gaussian distribution $\mathcal{N}(\mathbf{0},\sigma^2\mathbf{I})$. The conditional probability distribution is thus,
+The parameter $\mu$ allows for non-zero mean, and the $\epsilon$ parameter represents noise within the model. Standard PCA and factor analysis both aim to reduce dimensions, however, the approach taken is different. PCA is a statistical technique that transforms the observed variables to principal components, whilst factor analysis estimates a model to explain the data. The maximum-likelihood estimates of $\mathbf{W}$ will thus generally not correspond to the principal subspace. Tipping and Bishop develop a latent variable model that performs principal component analysis by modelling the parameter $\epsilon$ of equation \ref{ppca:fa} as an isotropic, spherical Gaussian distribution $\mathcal{N}(\mathbf{0},\beta^{-1}\mathbf{I})$. The conditional probability distribution is thus,
 \begin{equation} \label{ppca:conditional}
-	p(\mathbf{Y|X})\sim\mathcal{N}(\mathbf{WX+\mu},\sigma^2\mathbf{I}). 
+	p(\mathbf{Y|X})\sim\mathcal{N}(\mathbf{WX+\mu},\beta^{-1}\mathbf{I}). 
 \end{equation}
 
 The marginal distribution over the latent variables are standard Gaussian, defined as $\mathbf{X\sim\mathcal{N}(0,I)}$. The marginal distribution for the observed data $\mathbf{Y}$ is obtained by integrating out the latent variables,
 $$\mathbf{Y}\sim\mathcal{N}\mathbf{(\mu,C)}.$$
-The observation covariance model is $\mathbf{C=WW}^T+\sigma^2\mathbf{I}$, and corresponding log-likelihood
+The observation covariance model is $\mathbf{C=WW}^T+\beta^{-1}\mathbf{I}$, and corresponding log-likelihood
 \begin{equation} \label{ppca:loglikelihood}
 	\mathcal{L}=\frac{n}{2}(d ln(2\pi)+ln|\mathbf{C}|+tr(\mathbf{C^{-1}S})),
 \end{equation}
 $$\mathbf{S}=\frac{1}{n}\sum^n_{i=1}(\mathbf{y}_i-\mu)(\mathbf{y}_i-\mu)^T$$
+
+{\color{red}
+
+\subsection{The Gaussian Distribution}
+Addition, multiplication, and integration properties
+}
 
 \subsection{A Probabilistic Model for PCA}
 Consider a set of $n$ centred $d$-dimensional data $\mathbf{Y=\{y_1,y_2,...,y_n\}}$.
@@ -376,33 +377,37 @@ Maximising the likelihood of $\mathbf{W}$ by equation \ref{ppca:ml} on the laten
 \section{Gaussian Process Latent Variable Model}
 The Gaussian Process Latent Variable Model (GP-LVM) is a non-linear latent variable model derived from a dual of the probabilistic PCA by replacing the inner product kernel with Gaussian processes (Lawrence 2005) \cite{gplvm}. The use of an inner product kernel that allows for non-linear functions enable a non-linear embedding of the data-space to obtain a lower dimension latent-space. 
 
-\subsection{Dual Probabilistic PCA}
-The dual probabilistic PCA marginalises the parameters, $\mathbf{W}$, and optimises with respect to latent variables, $\mathbf{X}$. This is the dual approach of the standard probabilistic PCA where the parameters are optimised and the latent variables are marginalised.
+{\color{red}
+PPCA presents a space of linearly embedded hairstyles, however, it is unlikely that linear embeddings of observed variables for hair is effective for high dimensional data such as hair structure. GP-LVM replaces the covariance matrix with a non-linear kernel, allowing non-linear embedding of the observed variables to capture the complexity of hair structure.
+}
 
-A conjugate prior to the likelihood of probabilistic PCA (\ref{ppca:likelihood}) is a spherical Gaussian distribution
-$$p(\mathbf{W})=\prod^d_{i=1}\mathcal{N}(\mathbf{w}_i|\mathbf{0,I}),$$
-Marginalisation of both $\mathbf{W}$ and $\mathbf{X}$ is intractable. 
-The parameters, $\mathbf{W}$, is selected for marginalisation as the conjugate prior is a Gaussian distribution that can be analytically integrated.
+\subsection{Dual Probabilistic PCA}
+The dual probabilistic PCA introduced by Lawrence marginalises the parameters, $\mathbf{W}$, and optimises with respect to latent variables, $\mathbf{X}$. This is the dual approach of the standard probabilistic PCA where the parameters are optimised and the latent variables are marginalised.
+
+First, a conjugate prior to the likelihood of probabilistic PCA (\ref{ppca:likelihood}) is taken to be a spherical Gaussian distribution,
+$$p(\mathbf{W})=\prod^d_{i=1}\mathcal{N}(\mathbf{w}_i|\mathbf{0,I}).$$
+As marginalisation of both $\mathbf{W}$ and $\mathbf{X}$ is intractable, $\mathbf{W}$ is selected for marginalisation as the conjugate prior is Gaussian distributed, thus, it can be integrated analytically.
 The marginalised likelihood of $\mathbf{W}$ is
 $$p(\mathbf{Y|X},\beta)=\prod^d_{i=1}p(\mathbf{y}_{:,i}|\mathbf{X},\beta),$$
-where $\mathbf{y}_{:,i}$ represents the $i^{it}$ column of $\mathbf{Y}$ and
+The $\mathbf{y}_{:,i}$ parameter represents the $i^{it}$ column of $\mathbf{Y}$, where
 $$p(\mathbf{y}_{:,i}|\mathbf{X},\beta)=\mathcal{N}(\mathbf{y}_{:,i}|\mathbf{0,XX}^T+\beta^{-1}\mathbf{I}).$$
 The objective function is the log-likelihood
 \begin{equation} \label{dppca:loglikelihood}
-	L=-\frac{dn}{2}ln2\pi-\frac{d}{2}ln|\mathbf{K}|-\frac{1}{2}tr(\mathbf{K^{-1}YY}^T)
+	L=-\frac{dn}{2}ln2\pi-\frac{d}{2}ln|\mathbf{K}|-\frac{1}{2}tr(\mathbf{K^{-1}YY}^T),
 \end{equation}
-where $$\mathbf{K=XX}^T+\beta^{-1}I.$$
-{\color{red}The gradients of the log-likelihood (\ref{dppca:loglikelihood}) with respect to $\mathbf{X}$ may be found (Magnus and Neudecker, 1999) as}
-$$\frac{\sigma L}{\sigma \mathbf{X}}=\mathbf{K^{-1}YY}^T\mathbf{K^{-1}X}-d\mathbf{K^{-1}X},$$
-a fixed point where the gradients are zero is then given by 
+$$\mathbf{K=XX}^T+\beta^{-1}I.$$
+In the original paper, Lawrence found the gradients of the log-likelihood (\ref{dppca:loglikelihood}) with respect to $\mathbf{X}$ as
+$$\frac{\sigma L}{\sigma \mathbf{X}}=\mathbf{K^{-1}YY}^T\mathbf{K^{-1}X}-d\mathbf{K^{-1}X}.$$ 
+A stationary point where the gradients are zero is given by
 $$\frac{1}{d}\mathbf{YY}^T\mathbf{K^{-1}X=X}.$$
-The values for $\mathbf{X}$ which maximise the likelihood are given by 
-$$\mathbf{X=ULV}^T$$
-$\mathbf{U}$ is an $n \times q$ matrix whose columns are the first eigenvectors of $\mathbf{YY}^T$. $\mathbf{L}$ is a $q \times q$ diagonal matrix whose $j^{th}$ element is $l_j=(\lambda_j-\frac{1}{\beta})^{-\frac{1}{2}}$ where $\lambda_j$ is the eigenvalue associated with the $j^{th}$ eigenvector $d^{-1}\mathbf{YY}^T$ and $\mathbf{V}$ is an arbitrary $q\times q$ rotation matrix. The eigenvalue problem developed here is equivalent to the eigenvalue problem solved in standard PCA when the eigenvalues are ordered by magnitude, with the largest eignevalues first.
+The values for $\mathbf{X}$ which maximise the likelihood are given by singular value decomposition of $\mathbf{X}$,
+$$\mathbf{X=ULV}^T.$$
+$\mathbf{U}$ is an $n \times q$ matrix whose orthonormal column vectors are the first eigenvectors of $\mathbf{YY}^T$. $\mathbf{L}$ is a $q \times q$ diagonal matrix of singular values, whose $j^{th}$ element is $l_j=(\lambda_j-\frac{1}{\beta})^{-\frac{1}{2}}$, where $\lambda_j$ is the eigenvalue associated with the $j^{th}$ eigenvector $d^{-1}\mathbf{YY}^T$. $\mathbf{V}$ is an arbitrary $q\times q$ rotation matrix. Lawrence showed that the eigenvalue problem developed here is equivalent to the eigenvalue problem solved in PPCA, and thus, DPPCA is also effectively equal to standard PCA when the likelihood is maximised.
 
 Dual probabilistic PCA assumes that the output dimensions are linear, independent, and identically distributed. Infringing upon these assumptions derive new probabilistic models.
 
 \subsection{Gaussian Processes}
+{\color{red}
 Gaussian processes (O'Hagan, 1992; Williams, 1998) are a class of probabilistic models which specify distribution over function spaces.
 Gaussian processes work over infinite dimensions, however, they are processes that approximate within a finite range as opposed to functions.
 
@@ -414,6 +419,11 @@ A simple prior over the space of functions that are linear but corrupted by Gaus
 $\mathbf{x}_i$ and $\mathbf{x}_j$ are vectors from the space of inputs to the function and $\sigma_1{ij}$ is the Knronecker delta. If these inputs were taken from our embedding matrix, $\mathbf{X}$, and the covariance function was evaluated at each of the $N$ points, we would recover the covariance matrix of the form
 $$\mathbf{K=XX}^T+\beta^{-1}\mathbf{I}$$
 where the element at $ith$ row and $jth$ column of $\mathbf{K}$ is given by the prior (\ref{gp:prior}). This is recognised as the covariance associated with each factor of the marginal likelihood for dual probabilistic PCA. The marginal likelihood for dual probabilistic PCA is therefore a product of $d$ independent Gaussian processes. In PCA we are optimising parameters and input positions of a Gaussian process prior distribution where the (linear) covariance function for each dimension is given by $\mathbf{K}$.
+
+**Explain better \& kernels
+}
+
+
 
 \section{Bayesian Gaussian Process Latent Variable Model}
 The Bayesian Gaussian Process Latent Variable Model (Bayesian GP-LVM) \cite{bgplvm} extends the GP-LVM by variationally integrating out the input variables of the Gaussian process to approximate the marginal likelihood of a fully marginalised model. The approximated marginal likelihood can be used to compute a lower bound that is robust to overfitting. A fully marginalised model establishes a Bayesian perspective that copes well with uncertainty caused by missing data and can automatically determine latent dimensions within the observed data set.

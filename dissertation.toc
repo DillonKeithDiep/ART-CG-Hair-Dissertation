@@ -13,10 +13,11 @@
 \contentsline {section}{\numberline {1.5}Central Objectives}{4}{section.1.5}
 \contentsline {chapter}{\numberline {2}Technical Background}{5}{chapter.2}
 \contentsline {section}{\numberline {2.1}Principal Component Analysis}{5}{section.2.1}
-\contentsline {section}{\numberline {2.2}Probabilistic Principal Component Analysis}{6}{section.2.2}
+\contentsline {section}{\numberline {2.2}Probabilistic Principal Component Analysis}{5}{section.2.2}
 \contentsline {subsection}{\numberline {2.2.1}Latent Variable Models and Factor Analysis}{6}{subsection.2.2.1}
-\contentsline {subsection}{\numberline {2.2.2}A Probabilistic Model for PCA}{6}{subsection.2.2.2}
-\contentsline {subsection}{\numberline {2.2.3}The Principal Subspace of PPCA}{7}{subsection.2.2.3}
+\contentsline {subsection}{\numberline {2.2.2}The Gaussian Distribution}{6}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}A Probabilistic Model for PCA}{6}{subsection.2.2.3}
+\contentsline {subsection}{\numberline {2.2.4}The Principal Subspace of PPCA}{7}{subsection.2.2.4}
 \contentsline {section}{\numberline {2.3}Gaussian Process Latent Variable Model}{7}{section.2.3}
 \contentsline {subsection}{\numberline {2.3.1}Dual Probabilistic PCA}{7}{subsection.2.3.1}
 \contentsline {subsection}{\numberline {2.3.2}Gaussian Processes}{8}{subsection.2.3.2}
@@ -26,7 +27,7 @@
 \contentsline {subsection}{\numberline {2.5.1}Mesh Vertices}{9}{subsection.2.5.1}
 \contentsline {subsection}{\numberline {2.5.2}Edges}{9}{subsection.2.5.2}
 \contentsline {subsection}{\numberline {2.5.3}Polygon Faces}{9}{subsection.2.5.3}
-\contentsline {subsection}{\numberline {2.5.4}Edge Loops}{9}{subsection.2.5.4}
+\contentsline {subsection}{\numberline {2.5.4}Edge Loops}{10}{subsection.2.5.4}
 \contentsline {subsection}{\numberline {2.5.5}Topology}{10}{subsection.2.5.5}
 \contentsline {section}{\numberline {2.6}Graph Theory}{10}{section.2.6}
 \contentsline {chapter}{\numberline {3}Project Execution}{11}{chapter.3}
