@@ -5,6 +5,11 @@ W.~Baxter and K.~Anjyo.
 \newblock {\em Latent Doodle Space}.
 \newblock Eurographics 2006. Vol. 25, 3., 2006.
 
+\bibitem{bishop}
+C.~M. Bishop.
+\newblock {\em Pattern Recognition and Machine Learning}.
+\newblock Springer, 2006.
+
 \bibitem{fontmanifold}
 N.~D. Campbell and J.~Kautz.
 \newblock {\em Learning a manifold of fonts}.
@@ -58,6 +63,11 @@ et~al Limpaecher, A.
 
 \bibitem{edgeloops}
 [Edge loops] https://sites.ualberta.ca/~cwant/blender/derived surfaces.pdf.
+
+\bibitem{gp}
+C.~E. Rasmussen and C.~Williams.
+\newblock {\em Gaussian Processes for Machine Learning}.
+\newblock MIT Press, 2006.
 
 \bibitem{ppca}
 M.~E. Tipping and C.~M. Bishop.
