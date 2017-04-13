@@ -7,6 +7,7 @@
 
 \RequirePackage{pgfkeys}
 \RequirePackage{pgfopts}
+\RequirePackage{bm}
 
 \pgfkeys{/dissertation/.cd,
 %     author = string

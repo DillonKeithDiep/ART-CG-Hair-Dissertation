@@ -14,10 +14,10 @@
 \contentsline {chapter}{\numberline {2}Technical Background}{5}{chapter.2}
 \contentsline {section}{\numberline {2.1}Principal Component Analysis}{5}{section.2.1}
 \contentsline {section}{\numberline {2.2}Probabilistic Principal Component Analysis}{5}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}Latent Variable Models and Factor Analysis}{6}{subsection.2.2.1}
-\contentsline {subsection}{\numberline {2.2.2}The Gaussian Distribution}{6}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.1}The Gaussian Distribution}{6}{subsection.2.2.1}
 \contentsline {subsubsection}{Properties of Gaussian Distribution}{6}{section*.11}
-\contentsline {subsubsection}{Multivariate Gaussian Distribution}{7}{section*.12}
+\contentsline {subsubsection}{Multivariate Gaussian Distribution}{6}{section*.12}
+\contentsline {subsection}{\numberline {2.2.2}Latent Variable Models and Factor Analysis}{7}{subsection.2.2.2}
 \contentsline {subsection}{\numberline {2.2.3}A Probabilistic Model for PCA}{7}{subsection.2.2.3}
 \contentsline {subsection}{\numberline {2.2.4}The Principal Subspace of PPCA}{8}{subsection.2.2.4}
 \contentsline {section}{\numberline {2.3}Gaussian Process Latent Variable Model}{8}{section.2.3}
@@ -26,9 +26,9 @@
 \contentsline {section}{\numberline {2.4}Bayesian Gaussian Process Latent Variable Model}{9}{section.2.4}
 \contentsline {subsection}{\numberline {2.4.1}Variational Inference}{10}{subsection.2.4.1}
 \contentsline {section}{\numberline {2.5}Formal Definition of 3D Polygon Mesh Representation}{10}{section.2.5}
-\contentsline {subsection}{\numberline {2.5.1}Mesh Vertices}{11}{subsection.2.5.1}
-\contentsline {subsection}{\numberline {2.5.2}Edges}{11}{subsection.2.5.2}
-\contentsline {subsection}{\numberline {2.5.3}Polygon Faces}{11}{subsection.2.5.3}
+\contentsline {subsection}{\numberline {2.5.1}Mesh Vertices}{10}{subsection.2.5.1}
+\contentsline {subsection}{\numberline {2.5.2}Edges}{10}{subsection.2.5.2}
+\contentsline {subsection}{\numberline {2.5.3}Polygon Faces}{10}{subsection.2.5.3}
 \contentsline {subsection}{\numberline {2.5.4}Edge Loops}{11}{subsection.2.5.4}
 \contentsline {subsection}{\numberline {2.5.5}Topology}{11}{subsection.2.5.5}
 \contentsline {section}{\numberline {2.6}Graph Theory}{11}{section.2.6}

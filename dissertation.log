@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.3.12)  13 APR 2017 21:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.3.12)  13 APR 2017 21:38
 entering extended mode
 **./dissertation.tex
 (dissertation.tex
@@ -19,6 +19,14 @@ Document Class: dissertation 2012/05/04, Daniel Page <Daniel.Page@bristol.ac.uk
 Package: pgfopts 2014/07/10 v2.1a LaTeX package options with pgfkeys
 \pgfopts@list@add@a@toks=\toks17
 \pgfopts@list@add@b@toks=\toks18
+)
+(E:\Programs\MikTex\tex\latex\tools\bm.sty
+Package: bm 2017/01/16 v1.2c Bold Symbol Support (DPC/FMi)
+\symboldoperators=\mathgroup4
+\symboldletters=\mathgroup5
+\symboldsymbols=\mathgroup6
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 141.
+LaTeX Info: Redefining \bm on input line 207.
 )
 (E:\Programs\MikTex\tex\latex\base\book.cls
 Document Class: book 2014/09/29 v1.4h Standard LaTeX document class
@@ -85,6 +93,7 @@ File: amsgen.sty 1999/11/30 v2.0 generic functions
 ))
 (E:\Programs\MikTex\tex\latex\amsmath\amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+LaTeX Info: Redefining \boldsymbol on input line 28.
 \pmbraise@=\dimen106
 )
 (E:\Programs\MikTex\tex\latex\amsmath\amsopn.sty
@@ -133,8 +142,8 @@ Package: amssymb 2013/01/14 v3.01 AMS font symbols
 
 (E:\Programs\MikTex\tex\latex\amsfonts\amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
-\symAMSa=\mathgroup4
-\symAMSb=\mathgroup5
+\symAMSa=\mathgroup7
+\symAMSb=\mathgroup8
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
@@ -481,11 +490,11 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 Package: lipsum 2014/07/27 v1.3 150 paragraphs of Lorem Ipsum dummy text
 \c@lips@count=\count157
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 79.
+Package hyperref Info: Option `colorlinks' set `true' on input line 80.
 
 
 Package hyperref Warning: Option `bookmarks' has already been used,
-(hyperref)                setting the option has no effect on input line 79.
+(hyperref)                setting the option has no effect on input line 80.
 
 ) (dissertation.aux)
 \openout1 = `dissertation.aux'.
@@ -702,15 +711,15 @@ LaTeX Warning: Citation `pca1933' on page 5 undefined on input line 301.
 
 [5
 
-] [6] [7] [8] [9] [10]
-Overfull \hbox (4.33508pt too wide) in paragraph at lines 554--555
+] [6] [7] [8] [9]
+Overfull \hbox (4.81424pt too wide) in paragraph at lines 554--555
 \OT1/cmr/m/n/10 A poly-gon face can be formed from an ar-bi-trary num-ber of ve
 r-tices $\OMS/cmsy/m/n/10 8\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 v[]; v[]; :::; v[]
-\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 2 \OT1/cmr/bx/n/10 V\OML/cmm/m/it/10 ; f[] \
+\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 2 \OML/cmm/b/it/10 V\OML/cmm/m/it/10 ; f[] \
 OT1/cmr/m/n/10 = (\OML/cmm/m/it/10 v[]; v[]; :::; v[]\OT1/cmr/m/n/10 )$,
  []
 
-[11] [12
+[10] [11] [12
 
 ]
 Chapter 3.
@@ -770,31 +779,34 @@ LaTeX Warning: There were undefined references.
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 11696 strings out of 493333
- 174140 string characters out of 3143102
- 430388 words of memory out of 3000000
- 14869 multiletter control sequences out of 15000+200000
- 9854 words of font info for 37 fonts, out of 3000000 for 9000
+ 11774 strings out of 493333
+ 174956 string characters out of 3143102
+ 429729 words of memory out of 3000000
+ 14938 multiletter control sequences out of 15000+200000
+ 11684 words of font info for 43 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,12n,74p,1311b,7218s stack positions out of 5000i,500n,10000p,200000b,50000s
-<E:/Programs/MikTex/fonts/type1/public/amsfonts/cm/cmbx10.pfb><
-E:/Programs/MikTex/fonts/type1/public/amsfonts/cm/cmbx12.pfb><E:/Programs/MikTe
-x/fonts/type1/public/amsfonts/cm/cmbx5.pfb><E:/Programs/MikTex/fonts/type1/publ
-ic/amsfonts/cm/cmbx7.pfb><E:/Programs/MikTex/fonts/type1/public/amsfonts/cm/cme
-x10.pfb><E:/Programs/MikTex/fonts/type1/public/amsfonts/cm/cmmi10.pfb><E:/Progr
-ams/MikTex/fonts/type1/public/amsfonts/cm/cmmi7.pfb><E:/Programs/MikTex/fonts/t
-ype1/public/amsfonts/cm/cmr10.pfb><E:/Programs/MikTex/fonts/type1/public/amsfon
-ts/cm/cmr12.pfb><E:/Programs/MikTex/fonts/type1/public/amsfonts/cm/cmr17.pfb><E
-:/Programs/MikTex/fonts/type1/public/amsfonts/cm/cmr5.pfb><E:/Programs/MikTex/f
-onts/type1/public/amsfonts/cm/cmr7.pfb><E:/Programs/MikTex/fonts/type1/public/a
-msfonts/cm/cmsl10.pfb><E:/Programs/MikTex/fonts/type1/public/amsfonts/cm/cmsy10
-.pfb><E:/Programs/MikTex/fonts/type1/public/amsfonts/cm/cmsy7.pfb><E:/Programs/
-MikTex/fonts/type1/public/amsfonts/cm/cmti10.pfb><E:/Programs/MikTex/fonts/type
-1/public/amsfonts/cm/cmtt10.pfb><E:/Programs/MikTex/fonts/type1/public/amsfonts
-/symbols/msbm10.pfb>
-Output written on dissertation.pdf (45 pages, 360838 bytes).
+ 42i,12n,74p,1312b,7218s stack positions out of 5000i,500n,10000p,200000b,50000s
+<E:/Programs/MikTex/fonts/type1/public/amsfonts/cm/cmbsy10.pfb>
+<E:/Programs/MikTex/fonts/type1/public/amsfonts/cmextra/cmbsy7.pfb><E:/Programs
+/MikTex/fonts/type1/public/amsfonts/cm/cmbx10.pfb><E:/Programs/MikTex/fonts/typ
+e1/public/amsfonts/cm/cmbx12.pfb><E:/Programs/MikTex/fonts/type1/public/amsfont
+s/cm/cmbx5.pfb><E:/Programs/MikTex/fonts/type1/public/amsfonts/cm/cmbx7.pfb><E:
+/Programs/MikTex/fonts/type1/public/amsfonts/cm/cmex10.pfb><E:/Programs/MikTex/
+fonts/type1/public/amsfonts/cm/cmmi10.pfb><E:/Programs/MikTex/fonts/type1/publi
+c/amsfonts/cm/cmmi7.pfb><E:/Programs/MikTex/fonts/type1/public/amsfonts/cm/cmmi
+b10.pfb><E:/Programs/MikTex/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb><E:/
+Programs/MikTex/fonts/type1/public/amsfonts/cm/cmr10.pfb><E:/Programs/MikTex/fo
+nts/type1/public/amsfonts/cm/cmr12.pfb><E:/Programs/MikTex/fonts/type1/public/a
+msfonts/cm/cmr17.pfb><E:/Programs/MikTex/fonts/type1/public/amsfonts/cm/cmr5.pf
+b><E:/Programs/MikTex/fonts/type1/public/amsfonts/cm/cmr7.pfb><E:/Programs/MikT
+ex/fonts/type1/public/amsfonts/cm/cmsl10.pfb><E:/Programs/MikTex/fonts/type1/pu
+blic/amsfonts/cm/cmsy10.pfb><E:/Programs/MikTex/fonts/type1/public/amsfonts/cm/
+cmsy7.pfb><E:/Programs/MikTex/fonts/type1/public/amsfonts/cm/cmti10.pfb><E:/Pro
+grams/MikTex/fonts/type1/public/amsfonts/cm/cmtt10.pfb><E:/Programs/MikTex/font
+s/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on dissertation.pdf (45 pages, 394953 bytes).
 PDF statistics:
- 570 PDF objects out of 1000 (max. 8388607)
+ 586 PDF objects out of 1000 (max. 8388607)
  150 named destinations out of 1000 (max. 500000)
  254 words of extra memory for PDF output out of 10000 (max. 10000000)
 
