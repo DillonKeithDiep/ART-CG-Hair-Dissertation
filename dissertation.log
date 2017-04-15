@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.3.12)  13 APR 2017 21:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.3.12)  15 APR 2017 07:17
 entering extended mode
 **./dissertation.tex
 (dissertation.tex
@@ -712,7 +712,7 @@ LaTeX Warning: Citation `pca1933' on page 5 undefined on input line 301.
 [5
 
 ] [6] [7] [8] [9]
-Overfull \hbox (4.81424pt too wide) in paragraph at lines 554--555
+Overfull \hbox (4.81424pt too wide) in paragraph at lines 565--566
 \OT1/cmr/m/n/10 A poly-gon face can be formed from an ar-bi-trary num-ber of ve
 r-tices $\OMS/cmsy/m/n/10 8\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 v[]; v[]; :::; v[]
 \OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 2 \OML/cmm/b/it/10 V\OML/cmm/m/it/10 ; f[] \
@@ -724,10 +724,10 @@ OT1/cmr/m/n/10 = (\OML/cmm/m/it/10 v[]; v[]; :::; v[]\OT1/cmr/m/n/10 )$,
 ]
 Chapter 3.
 
-LaTeX Warning: Citation `s4pe' on page 13 undefined on input line 576.
+LaTeX Warning: Citation `s4pe' on page 13 undefined on input line 589.
 
 
-LaTeX Warning: Citation `s4cas' on page 13 undefined on input line 576.
+LaTeX Warning: Citation `s4cas' on page 13 undefined on input line 589.
 
 (E:\Programs\MikTex\tex\latex\listings\lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
@@ -761,12 +761,12 @@ Missing character: There is no “ in font cmr10!
 
 ]
 Appendix A.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 764.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 777.
 [23]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 764.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 777.
  (dissertation.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 764.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 764.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 777.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 777.
 Package rerunfilecheck Info: File `dissertation.out' has not changed.
 (rerunfilecheck)             Checksum: 29BC8E157D372109FBF35EAB23D57249;2143.
 
@@ -781,7 +781,7 @@ LaTeX Warning: There were undefined references.
 Here is how much of TeX's memory you used:
  11774 strings out of 493333
  174956 string characters out of 3143102
- 429729 words of memory out of 3000000
+ 430729 words of memory out of 3000000
  14938 multiletter control sequences out of 15000+200000
  11684 words of font info for 43 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -804,9 +804,9 @@ blic/amsfonts/cm/cmsy10.pfb><E:/Programs/MikTex/fonts/type1/public/amsfonts/cm/
 cmsy7.pfb><E:/Programs/MikTex/fonts/type1/public/amsfonts/cm/cmti10.pfb><E:/Pro
 grams/MikTex/fonts/type1/public/amsfonts/cm/cmtt10.pfb><E:/Programs/MikTex/font
 s/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on dissertation.pdf (45 pages, 394951 bytes).
+Output written on dissertation.pdf (45 pages, 395502 bytes).
 PDF statistics:
- 586 PDF objects out of 1000 (max. 8388607)
+ 587 PDF objects out of 1000 (max. 8388607)
  150 named destinations out of 1000 (max. 500000)
  254 words of extra memory for PDF output out of 10000 (max. 10000000)
 

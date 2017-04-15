@@ -319,19 +319,15 @@ Suppose that the PCA is applied to a set of data that represents hair structure.
 
 
 \subsection{The Gaussian Distribution}
-The Gaussian (normal) distribution is a reasonable prior assumption for data that is subject to the central limit theorem, which states that as the sample size of a population tends to infinity, the distribution becomes increasingly Gaussian. \cite{bishop}
-
+The Gaussian (normal) distribution is a reasonable prior assumption for data that is subject to the central limit theorem, which states that as the sample size of a population tends to infinity, the distribution becomes increasingly Gaussian. \cite[p.78]{bishop}
 A random variable $X$ that is normally distributed with mean $\mu$ and variance $\sigma^2$ is denoted as
 $$X\sim\mathcal{N}(\mu, \sigma^2).$$
-The Gaussian density for a single variable $y$ is expressed as \cite{bishop}:
+The Gaussian density for a single variable $y$ is expressed as \cite[p.78]{bishop}:
 $$\mathcal{N}(y|\mu, \sigma^2)=\frac{1}{\sqrt{2\pi\sigma^2}}\exp\left(-\frac{(y-\mu)^2}{2\sigma^2}\right),$$
 $$\mathcal{N}(y|\mu,\sigma^2) \equiv p(y|\mu,\sigma^2).$$
-For a $D$-dimensional vector $\bm{y}\sim\mathcal{N}(\bm{\mu},\bm{\Sigma})$, the multivariate Gaussian distribution is expressed as \cite{gp}
-$$p(\bm{y}|\bm{\mu},\bm{ \Sigma})=\frac{1}{(2\pi)^{D/2}}\frac{1}{|\bm{\Sigma}|^{1/2}}\exp\left(-\frac{(\bm{y}-\bm{\mu})^T\bm{\Sigma}^{-1}(\bm{y}-\bm{\mu})}{2}\right).$$
-$\bm{\mu}\in\Re^{D \times 1}$ represents the mean vector, and $\bm{\Sigma}\in\Re^{D \times D}$ is the covariance matrix.
 
 \subsubsection{Properties of Gaussian Distribution}
-Notable properties of the Gaussian distribution that are useful include the summation (\ref{gd:sum}), scaling (\ref{gd:scale}), and product (\ref{gd:prod}) operation - all of which yields a result that is also a Gaussian distribution. \cite{gp}
+Notable properties of the Gaussian distribution that are useful include the summation (\ref{gd:sum}), scaling (\ref{gd:scale}), and product (\ref{gd:prod}) operation - all of which yields a result that is also a Gaussian distribution. \cite[p.200]{gp}
 \begin{equation} \label{gd:sum}
 \sum^n_{i=1}y_i\sim\mathcal{N}(\sum^n_{i=1}\mu_i,\sum^n_{i=1}\sigma^2_i)
 \end{equation}
@@ -395,15 +391,30 @@ h
 \right]
 \right)
 \right).$$
-Generalizing the joint probability density of a multivariate Gaussian distribution to a $n$-dimension vector $\bm{y}$ gives,
-$$p(\bm{y})=\frac{1}{2\pi|\bm{D}|^{1/2}}\exp\left(-\frac{1}{2}(\bm{y}-\bm{\mu})^T\bm{D}^{-1}(\bm{y}-\bm{u})\right),$$
-where $\bm{D}\in\Re^{n \times 1}$ is the diagonal matrix containing the variances of $\bm{y}$.
+For a $n$-dimensional vector $\bm{y}$, the joint probability density is expressed as
+$$p(\bm{y})=\frac{1}{2\pi|\bm{D}|^{1/2}}\exp\left(-\frac{1}{2}(\bm{y}-\bm{\mu})^T\bm{D}^{-1}(\bm{y}-\bm{u})\right), \cite[p.78]{bishop}$$
+where $\bm{D}\in\Re^{n \times 1}$ is the diagonal matrix of the variances $\Sigma$.
 An arbitrary rotation matrix $\bm{R}^T\in\Re^{n \times n}$ applied to the basis forms a correlated Gaussian,
 $$p(\bm{y})=\frac{1}{2\pi|\bm{D}|^{1/2}}\exp\left(-\frac{1}{2}(\bm{R}^T\bm{y}-\bm{R}^T\bm{\mu})^T\bm{D}^{-1}(\bm{R}^T\bm{y}-\bm{R}^T{u})\right).$$
 This gives an eigenvalue decomposition of the inverse covariance matrix, 
 $$\bm{C}^{-1}=\bm{RD}^{-1}\bm{R}^T,$$
 thus the covariance matrix, 
-$$\bm{C}=\bm{RDR}^T$$.
+$$\bm{C}=\bm{RDR}^T.$$
+
+{\color{red}
+As a consequence, if $\bm{x}\sim\mathcal{N}(\bm{\mu},\bm{\Sigma})$, and $\bm{y}=\bm{Wx}$, then $\bm{y}\sim\mathcal{N}(\bm{W\mu},\bm{W \Sigma W}^T)$.
+
+Given
+$\bm{x}\sim\mathcal{N}(\bm{0},\bm{I})$,
+$\bm{\epsilon}\sim\mathcal{N}(\bm{0},\bm{\sigma}^2)$, and
+$\bm{y}=\bm{Wx}+\bm{\epsilon}$, then
+$\bm{Wx}\sim\mathcal{N}(\bm{0},\bm{WW}^T)$,
+$\bm{y}\sim\mathcal{N}(\bm{0},bm{C})$, where $\bm{C}=\bm{WW}^T\beta^{-1}\bm{I}$, and $\bm{I}$ is the identity matrix. \cite{gplvm}
+
+
+
+
+}
 
 \subsection{Latent Variable Models and Factor Analysis}
 A latent variable model transforms a set of $n$ $d$-dimensional observed variables encoded as a data matrix, $\bm{Y}^T\in\Re^{n \times d}$, to a set of $n$ $q$-dimensional latent (unobserved) variables, $\bm{X}\in\Re^{n \times q}$. Latent variables are parsimonious, it is generally the case that $q \ll d$, explaining the original data with fewer variables. A notable latent variable model is that of factor analysis, one that assumes linearity in relation of the observed data set,
@@ -563,6 +574,8 @@ A polygon face can be formed from an arbitrary number of vertices $\forall (v_1,
 Tris, quads, poles, etc
 
 \section{Graph Theory}
+The construction of 3D polygonal meshes resemble graphs very much. As it turns out, methods of graph theory are useful for processing meshes.
+
 
 
 
