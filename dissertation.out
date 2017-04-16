@@ -10,22 +10,21 @@
 \BOOKMARK [1][-]{section.2.3}{Gaussian Process Latent Variable Model}{chapter.2}% 10
 \BOOKMARK [1][-]{section.2.4}{Bayesian Gaussian Process Latent Variable Model}{chapter.2}% 11
 \BOOKMARK [1][-]{section.2.5}{Formal Definition of 3D Polygon Mesh Representation}{chapter.2}% 12
-\BOOKMARK [1][-]{section.2.6}{Graph Theory}{chapter.2}% 13
-\BOOKMARK [0][-]{chapter.3}{Project Execution}{}% 14
-\BOOKMARK [1][-]{section.3.1}{Training Data Set}{chapter.3}% 15
-\BOOKMARK [1][-]{section.3.2}{Generative Model of Hair}{chapter.3}% 16
-\BOOKMARK [1][-]{section.3.3}{Approximating Generative Parameters from Input Data}{chapter.3}% 17
-\BOOKMARK [1][-]{section.3.4}{Learning a Manifold with Bayesian GP-LVM}{chapter.3}% 18
-\BOOKMARK [1][-]{section.3.5}{Generation of Output}{chapter.3}% 19
-\BOOKMARK [1][-]{section.3.6}{Reparation}{chapter.3}% 20
-\BOOKMARK [1][-]{section.3.7}{Project Management}{chapter.3}% 21
-\BOOKMARK [0][-]{chapter.4}{Critical Evaluation}{}% 22
-\BOOKMARK [1][-]{section.4.1}{Functional Testing}{chapter.4}% 23
-\BOOKMARK [1][-]{section.4.2}{Behavioural Testing}{chapter.4}% 24
-\BOOKMARK [1][-]{section.4.3}{Evaluation}{chapter.4}% 25
-\BOOKMARK [1][-]{section.4.4}{Applications}{chapter.4}% 26
-\BOOKMARK [0][-]{chapter.5}{Conclusion}{}% 27
-\BOOKMARK [1][-]{section.5.1}{Summary}{chapter.5}% 28
-\BOOKMARK [1][-]{section.5.2}{Project Status}{chapter.5}% 29
-\BOOKMARK [1][-]{section.5.3}{Future Work}{chapter.5}% 30
-\BOOKMARK [0][-]{appendix.A}{An Example Appendix}{}% 31
+\BOOKMARK [0][-]{chapter.3}{Project Execution}{}% 13
+\BOOKMARK [1][-]{section.3.1}{Training Data Set}{chapter.3}% 14
+\BOOKMARK [1][-]{section.3.2}{Generative Model of Hair}{chapter.3}% 15
+\BOOKMARK [1][-]{section.3.3}{Approximating Generative Parameters from Input Data}{chapter.3}% 16
+\BOOKMARK [1][-]{section.3.4}{Learning a Manifold with Bayesian GP-LVM}{chapter.3}% 17
+\BOOKMARK [1][-]{section.3.5}{Generation of Output}{chapter.3}% 18
+\BOOKMARK [1][-]{section.3.6}{Reparation}{chapter.3}% 19
+\BOOKMARK [1][-]{section.3.7}{Project Management}{chapter.3}% 20
+\BOOKMARK [0][-]{chapter.4}{Critical Evaluation}{}% 21
+\BOOKMARK [1][-]{section.4.1}{Functional Testing}{chapter.4}% 22
+\BOOKMARK [1][-]{section.4.2}{Behavioural Testing}{chapter.4}% 23
+\BOOKMARK [1][-]{section.4.3}{Evaluation}{chapter.4}% 24
+\BOOKMARK [1][-]{section.4.4}{Applications}{chapter.4}% 25
+\BOOKMARK [0][-]{chapter.5}{Conclusion}{}% 26
+\BOOKMARK [1][-]{section.5.1}{Summary}{chapter.5}% 27
+\BOOKMARK [1][-]{section.5.2}{Project Status}{chapter.5}% 28
+\BOOKMARK [1][-]{section.5.3}{Future Work}{chapter.5}% 29
+\BOOKMARK [0][-]{appendix.A}{An Example Appendix}{}% 30

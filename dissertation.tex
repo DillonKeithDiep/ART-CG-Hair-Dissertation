@@ -515,6 +515,25 @@ Dual probabilistic PCA assumes that the output dimensions are linear, independen
 	where the element at $ith$ row and $jth$ column of $\bm{K}$ is given by the prior (\ref{gp:prior}). This is recognised as the covariance associated with each factor of the marginal likelihood for dual probabilistic PCA. The marginal likelihood for dual probabilistic PCA is therefore a product of $d$ independent Gaussian processes. In PCA we are optimising parameters and input positions of a Gaussian process prior distribution where the (linear) covariance function for each dimension is given by $\bm{K}$.
 	
 	**Explain better \& kernels
+	
+	------------------------------------------------------
+	
+	A Gaussian process is a non-parametric statistical model that defines a distribution over functions. Infinite function to finite stochastic process.
+	
+	Predicting for new unobserved inputs $x_*$ is inductive. Extrapolating finite training data to a function that makes predictions for all possible values. To do this, make assumptions of underlying function. Function should be consistent with training data. An approach is, given a prior probability to every possible function, choose those that are more likely. 
+	
+	A Gaussian process is a generalisation of the Gaussian probability distribution. A probability distribution describes random variables which are scalars or vectors, a stochastic process governs the properties of functions. A function can be seen as a very long vector that specifies a function value, discretizing a continuously infinite function. 
+	
+	The covariance function of a Gaussian process describes the properties of functions, such as variability. Learning in Gaussian processes is to determine a suitable covariance function. 
+	
+	\subsubsection{Regression}
+	Weight-space view. 
+	
+	\subsubsection{Covariance Functions}
+	
+	\subsubsection{Learning}
+	
+	\subsubsection{Kernel Machines}
 }
 
 
@@ -552,19 +571,34 @@ The $KL(q||p)$ term is the negative KL divergence between the variational poster
 \section{Formal Definition of 3D Polygon Mesh Representation}
 %\cite{polyhedron}The winged-edge polyhedron representation proposed by Baumgart in 1972 introduced a mesh data structure to represent 3D geometry using vertices, edges, and faces. \cite{wingededge}
 
-Polygon mesh representation of 3D surfaces are composed of vertices, edges, and faces. Let polygon mesh $P = (\bm{V, E, F})$, where $\bm{V, E, F}$ represents the set of vertices, edges, and faces respectively. In practice, polygonal meshes contain more components that affect surface appearance such as texture coordinates and vertex normals, however, the components described are sufficient for geometric processing.
+\subsection{The Mesh Data Structure}
+Polygon mesh representation of 3D surfaces are composed of vertices, edges, and faces. The definition of a mesh data structure vary in 3D programs, we take advantage of the structural similarity between a mesh and a graph to inspire a formal definition for mesh geometry.
 
-\subsection{Mesh Vertices}
-A mesh vertex $v$ is a 3D point of the form $\forall (x, y, z) \in \Re, v = (x, y, z)$.
+\subsubsection{Definition of a Graph}
+A \textbf{graph} $G$ can be defined as $G=(V,E)$ where $V$ is a non-empty finite \textbf{vertex set} and $E$ is the \textbf{edge set}. \cite[p.8]{graphtheory} An edge $e$ joins a pair of vertices in the graph together, defined as $e=(v_1, v_2)$ where $\forall(v_1 \land v_2)\in V$.
+
+\subsubsection{Definition of a Mesh}
+Let polygon mesh $P = (V, E, F)$, where $V, E, F$ represents the set of vertices, edges, and faces respectively. In practice, polygonal meshes contain more components that influences surface appearance such as texture coordinates and vertex normals, however, the components described are sufficient for geometric processing. The vertex set and edge set of a mesh forms an \textbf{undirected simple graph}, where there is at most one edge for each pair of vertices and edges are bidirectional.
+
+\subsubsection{Mesh Vertices}
+A mesh vertex $v$ is a 3D point of the form
+$$\forall (x \land y \land z) \in \Re, v = (x, y, z).$$
 The set of vertices is a point cloud representation of the geometry. 
 
-\subsection{Edges}
-An edge $e$ is an unordered pair that connects two vertices. Formally, it is described in the form $\forall (v_1, v_2) \in \bm{V}, e = \{v_1, v_2\}$. Vertices connected by edges form a wireframe of the geometry. 
+\subsubsection{Mesh Edges}
+An mesh edge $e$ is an unordered pair that connects two vertices. It is described in the form
+$$\forall (v_1 \land v_2) \in V, e = \{v_1, v_2\}.$$
+Vertices connected by edges form a wireframe of the geometry. 
 
-\subsection{Polygon Faces}
-A polygon face can be formed from an arbitrary number of vertices $\forall (v_1, v_2,...,v_n) \in \bm{V}, f_n = (v_1, v_2,..., v_n)$, however, in this context we are only concerned with tri-faces $\forall (v_1, v_2, v_3) \in \bm{V}, f_3 = (v_1, v_2, v_3)$ and quad-faces $\forall (v_1, v_2, v_3, v_4) \in \bm{V}, f_4 = (v_1, v_2, v_3, v_4)$. Faces describe the geometric surface of an object. 
+\subsubsection{Polygon Faces}
+An $n$-gon face is formed from an arbitrary number of vertices 
+$$\forall (v_1 \land v_2 \land ... \land v_n) \in V, f_n = (v_1, v_2,..., v_n),$$ 
+however, for meshes we are only concerned with tri-faces $f_3$ when rendering, and quad-faces $f_4$ during content creation, where
+$$\forall (v_1 \land v_2 \land v_3) \in V, f_3 = (v_1, v_2, v_3),$$
+$$\forall (v_1 \land v_2 \land v_3 \land v_4) \in V, f_4 = (v_1, v_2, v_3, v_4).$$
+Faces describe the geometric surface of an object. 
 
-\subsection{Edge Loops}
+\subsubsection{Edge Loops}
 {\color{red}
 	3D programs often allow edge loop selection which are useful properties of the geometry. An edge loop is defined (on blender) as a set of connected edges that either forms a loop or the end vertices are poles (vertices that do not have edges). Edge loops are useful for extracting more information on the structure of the mesh.
 	\cite{edgeloops}
@@ -572,12 +606,6 @@ A polygon face can be formed from an arbitrary number of vertices $\forall (v_1,
 
 \subsection{Topology}
 Tris, quads, poles, etc
-
-\section{Graph Theory}
-The construction of 3D polygonal meshes resemble graphs very much. As it turns out, methods of graph theory are useful for processing meshes.
-
-
-
 
 % -----------------------------------------------------------------------------
 

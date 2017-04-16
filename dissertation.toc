@@ -23,15 +23,21 @@
 \contentsline {section}{\numberline {2.3}Gaussian Process Latent Variable Model}{8}{section.2.3}
 \contentsline {subsection}{\numberline {2.3.1}Dual Probabilistic PCA}{8}{subsection.2.3.1}
 \contentsline {subsection}{\numberline {2.3.2}Gaussian Processes}{9}{subsection.2.3.2}
-\contentsline {section}{\numberline {2.4}Bayesian Gaussian Process Latent Variable Model}{9}{section.2.4}
+\contentsline {subsubsection}{Regression}{10}{section*.13}
+\contentsline {subsubsection}{Covariance Functions}{10}{section*.14}
+\contentsline {subsubsection}{Learning}{10}{section*.15}
+\contentsline {subsubsection}{Kernel Machines}{10}{section*.16}
+\contentsline {section}{\numberline {2.4}Bayesian Gaussian Process Latent Variable Model}{10}{section.2.4}
 \contentsline {subsection}{\numberline {2.4.1}Variational Inference}{10}{subsection.2.4.1}
-\contentsline {section}{\numberline {2.5}Formal Definition of 3D Polygon Mesh Representation}{10}{section.2.5}
-\contentsline {subsection}{\numberline {2.5.1}Mesh Vertices}{10}{subsection.2.5.1}
-\contentsline {subsection}{\numberline {2.5.2}Edges}{10}{subsection.2.5.2}
-\contentsline {subsection}{\numberline {2.5.3}Polygon Faces}{10}{subsection.2.5.3}
-\contentsline {subsection}{\numberline {2.5.4}Edge Loops}{11}{subsection.2.5.4}
-\contentsline {subsection}{\numberline {2.5.5}Topology}{11}{subsection.2.5.5}
-\contentsline {section}{\numberline {2.6}Graph Theory}{11}{section.2.6}
+\contentsline {section}{\numberline {2.5}Formal Definition of 3D Polygon Mesh Representation}{11}{section.2.5}
+\contentsline {subsection}{\numberline {2.5.1}The Mesh Data Structure}{11}{subsection.2.5.1}
+\contentsline {subsubsection}{Definition of a Graph}{11}{section*.17}
+\contentsline {subsubsection}{Definition of a Mesh}{11}{section*.18}
+\contentsline {subsubsection}{Mesh Vertices}{11}{section*.19}
+\contentsline {subsubsection}{Mesh Edges}{11}{section*.20}
+\contentsline {subsubsection}{Polygon Faces}{11}{section*.21}
+\contentsline {subsubsection}{Edge Loops}{11}{section*.22}
+\contentsline {subsection}{\numberline {2.5.2}Topology}{12}{subsection.2.5.2}
 \contentsline {chapter}{\numberline {3}Project Execution}{13}{chapter.3}
 \contentsline {section}{\numberline {3.1}Training Data Set}{13}{section.3.1}
 \contentsline {subsection}{\numberline {3.1.1}Acquiring Training Data}{13}{subsection.3.1.1}
