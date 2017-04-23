@@ -1,5 +1,10 @@
 \begin{thebibliography}{10}
 
+\bibitem{wingededge}
+B.~G. Baumgart.
+\newblock {\em Winged Edge Polyhedron Representation}.
+\newblock Advanced Research Projects Agency. AD-755 141., 1972.
+
 \bibitem{latentdoodle}
 W.~Baxter and K.~Anjyo.
 \newblock {\em Latent Doodle Space}.
@@ -16,7 +21,7 @@ N.~D. Campbell and J.~Kautz.
 \newblock ACM Transactions on Graphics (TOG) 33, 4, 91., 2014.
 
 \bibitem{autohair}
-Shaq~T.-Wu H. Weng~Y. Chai, M. and K~Zhou.
+Shaq T. Wu H. Weng~Y. Chai, M. and K~Zhou.
 \newblock {\em AutoHair: Fully automatic hair modeling from a single image}.
 \newblock ACM Trans. Graph. 35, 4 (July), 116:1–116:12, 2016.
 
@@ -61,8 +66,16 @@ et~al Limpaecher, A.
 \newblock {\em Real-time Drawing Assistance through Crowdsourcing}.
 \newblock ACM Trans. Graph. 32, 4 (July), 2013.
 
+\bibitem{blenderstudio}
+T.~Mullen and C.~Andaur.
+\newblock {\em Blender Studio Projects: Digital Movie-Making}.
+\newblock Wiley Publishing, Inc, 2010.
+
 \bibitem{edgeloops}
-[Edge loops] https://sites.ualberta.ca/~cwant/blender/derived surfaces.pdf.
+B.~Raitt and G.~Minter.
+\newblock {\em Digital Sculpture Techniques: How to apply the principles of
+  traditional sculpture to make stunning 3D characters}.
+\newblock Nichimen Graphics, 2000.
 
 \bibitem{gp}
 C.~E. Rasmussen and C.~Williams.

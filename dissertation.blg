@@ -60,9 +60,6 @@ Warning--empty year in tsr
 Warning--empty title in mri
 Warning--empty publisher in mri
 Warning--empty year in mri
-Warning--empty title in edgeloops
-Warning--empty publisher in edgeloops
-Warning--empty year in edgeloops
 Name 1 in "Rasmussen, C. E., and Williams, C." has a comma at the end for entry gp
 while executing---line 1090 of file plain.bst
 Name 1 in "Tipping, M. E., and Bishop, C. M." has a comma at the end for entry ppca

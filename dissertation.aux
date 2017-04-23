@@ -18,10 +18,8 @@
 \providecommand\HyField@AuxAddToCoFields[2]{}
 \bibstyle{plain}
 \providecommand \oddpage@label [2]{}
-\citation{mri}
 \citation{hairfollicles}
-\citation{procedural1}
-\citation{lsystem}
+\citation{curseofdyn}
 \@writefile{toc}{\contentsline {chapter}{\numberline {1}Contextual Background}{1}{chapter.1}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
@@ -31,23 +29,26 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {1.1.1}3D Hair Geometry}{1}{subsection.1.1.1}}
 \@writefile{lof}{\contentsline {figure}{\numberline {1.1}{\ignorespaces Image of hair geometry.}}{1}{figure.1.1}}
 \newlabel{fig}{{1.1}{1}{Image of hair geometry}{figure.1.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.1.2}Procedural Generation and Automated Production}{2}{subsection.1.1.2}}
-\@writefile{toc}{\contentsline {section}{\numberline {1.2}Motivation and Significance}{2}{section.1.2}}
-\@writefile{toc}{\contentsline {section}{\numberline {1.3}Related Research of Machine Learning in Creative Fields}{2}{section.1.3}}
+\citation{procedural1}
+\citation{lsystem}
 \citation{gplvm}
 \citation{styleik}
 \citation{latentdoodle}
 \citation{fontmanifold}
+\@writefile{toc}{\contentsline {section}{\numberline {1.2}Curse of Dimensionality}{2}{section.1.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.2.1}Procedural Generation and Automated Production}{2}{subsection.1.2.1}}
+\@writefile{toc}{\contentsline {section}{\numberline {1.3}Related Research of Machine Learning in Creative Fields}{2}{section.1.3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.3.1}Style-Based Inverse Kinematics}{2}{subsection.1.3.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.3.2}Latent Doodle Space}{2}{subsection.1.3.2}}
 \citation{drawingassistance}
 \citation{autohair}
-\citation{tsr}
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.3.1}Style-Based Inverse Kinematics}{3}{subsection.1.3.1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.3.2}Latent Doodle Space}{3}{subsection.1.3.2}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {1.3.3}Learning a Manifold of Fonts}{3}{subsection.1.3.3}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {1.3.4}Real-time Drawing Assistance through Crowd-sourcing}{3}{subsection.1.3.4}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {1.3.5}AutoHair}{3}{subsection.1.3.5}}
-\@writefile{toc}{\contentsline {section}{\numberline {1.4}Challenges}{3}{section.1.4}}
-\@writefile{toc}{\contentsline {section}{\numberline {1.5}Central Objectives}{4}{section.1.5}}
+\@writefile{toc}{\contentsline {section}{\numberline {1.4}Motivation and Significance}{3}{section.1.4}}
+\citation{tsr}
+\@writefile{toc}{\contentsline {section}{\numberline {1.5}Challenges}{4}{section.1.5}}
+\@writefile{toc}{\contentsline {section}{\numberline {1.6}Central Objectives}{4}{section.1.6}}
 \citation{pca1901}
 \citation{pca1933}
 \citation{pca2002}
@@ -63,49 +64,55 @@
 \citation{bishop}
 \citation{gp}
 \citation{bishop}
-\citation{gplvm}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.2.1}The Gaussian Distribution}{6}{subsection.2.2.1}}
 \@writefile{toc}{\contentsline {subsubsection}{Properties of Gaussian Distribution}{6}{section*.11}}
 \newlabel{gd:sum}{{2.1}{6}{Properties of Gaussian Distribution}{equation.2.2.1}{}}
 \newlabel{gd:scale}{{2.2}{6}{Properties of Gaussian Distribution}{equation.2.2.2}{}}
 \newlabel{gd:prod}{{2.3}{6}{Properties of Gaussian Distribution}{equation.2.2.3}{}}
 \@writefile{toc}{\contentsline {subsubsection}{Multivariate Gaussian Distribution}{6}{section*.12}}
+\newlabel{jointpd}{{2.4}{6}{Multivariate Gaussian Distribution}{equation.2.2.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.2}Latent Variable Models and Factor Analysis}{6}{subsection.2.2.2}}
+\newlabel{ppca:fa}{{2.5}{6}{Latent Variable Models and Factor Analysis}{equation.2.2.5}{}}
+\citation{gplvm}
 \citation{ppca}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.2}Latent Variable Models and Factor Analysis}{7}{subsection.2.2.2}}
-\newlabel{ppca:fa}{{2.4}{7}{Latent Variable Models and Factor Analysis}{equation.2.2.4}{}}
-\newlabel{ppca:conditional}{{2.5}{7}{Latent Variable Models and Factor Analysis}{equation.2.2.5}{}}
-\newlabel{ppca:loglikelihood}{{2.6}{7}{Latent Variable Models and Factor Analysis}{equation.2.2.6}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.2.3}A Probabilistic Model for PCA}{7}{subsection.2.2.3}}
-\newlabel{ppca:likelihood}{{2.7}{7}{A Probabilistic Model for PCA}{equation.2.2.7}{}}
+\newlabel{ppca:conditional}{{2.6}{7}{A Probabilistic Model for PCA}{equation.2.2.6}{}}
+\newlabel{ppca:loglikelihood}{{2.7}{7}{A Probabilistic Model for PCA}{equation.2.2.7}{}}
+\newlabel{ppca:likelihood}{{2.8}{7}{A Probabilistic Model for PCA}{equation.2.2.8}{}}
 \citation{gplvm}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.2.4}The Principal Subspace of PPCA}{8}{subsection.2.2.4}}
-\newlabel{ppca:ml}{{2.8}{8}{The Principal Subspace of PPCA}{equation.2.2.8}{}}
+\newlabel{ppca:ml}{{2.9}{8}{The Principal Subspace of PPCA}{equation.2.2.9}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {2.3}Gaussian Process Latent Variable Model}{8}{section.2.3}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.3.1}Dual Probabilistic PCA}{8}{subsection.2.3.1}}
-\newlabel{dppca:loglikelihood}{{2.9}{8}{Dual Probabilistic PCA}{equation.2.3.9}{}}
-\citation{bgplvm}
+\newlabel{dppca:loglikelihood}{{2.10}{8}{Dual Probabilistic PCA}{equation.2.3.10}{}}
+\citation{gp}
+\citation{gplvm}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.3.2}Gaussian Processes}{9}{subsection.2.3.2}}
-\newlabel{gp:prior}{{2.10}{9}{Gaussian Processes}{equation.2.3.10}{}}
-\@writefile{toc}{\contentsline {subsubsection}{Regression}{10}{section*.13}}
-\@writefile{toc}{\contentsline {subsubsection}{Covariance Functions}{10}{section*.14}}
-\@writefile{toc}{\contentsline {subsubsection}{Learning}{10}{section*.15}}
-\@writefile{toc}{\contentsline {subsubsection}{Kernel Machines}{10}{section*.16}}
+\@writefile{toc}{\contentsline {subsubsection}{GPs for Regression}{9}{section*.13}}
+\newlabel{bayes}{{2.11}{9}{GPs for Regression}{equation.2.3.11}{}}
+\citation{bgplvm}
+\newlabel{gp:prior}{{2.12}{10}{GPs for Regression}{equation.2.3.12}{}}
+\newlabel{kronecker}{{2.13}{10}{GPs for Regression}{equation.2.3.13}{}}
+\@writefile{toc}{\contentsline {subsubsection}{Learning with the Covariance Function}{10}{section*.14}}
 \@writefile{toc}{\contentsline {section}{\numberline {2.4}Bayesian Gaussian Process Latent Variable Model}{10}{section.2.4}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.4.1}Variational Inference}{10}{subsection.2.4.1}}
+\citation{wingededge}
 \citation{graphtheory}
-\citation{edgeloops}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4.1}Variational Inference}{11}{subsection.2.4.1}}
 \@writefile{toc}{\contentsline {section}{\numberline {2.5}Formal Definition of 3D Polygon Mesh Representation}{11}{section.2.5}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.5.1}The Mesh Data Structure}{11}{subsection.2.5.1}}
-\@writefile{toc}{\contentsline {subsubsection}{Definition of a Graph}{11}{section*.17}}
-\@writefile{toc}{\contentsline {subsubsection}{Definition of a Mesh}{11}{section*.18}}
-\@writefile{toc}{\contentsline {subsubsection}{Mesh Vertices}{11}{section*.19}}
-\@writefile{toc}{\contentsline {subsubsection}{Mesh Edges}{11}{section*.20}}
-\@writefile{toc}{\contentsline {subsubsection}{Polygon Faces}{11}{section*.21}}
-\@writefile{toc}{\contentsline {subsubsection}{Edge Loops}{11}{section*.22}}
+\@writefile{toc}{\contentsline {subsubsection}{Definition of a Graph}{11}{section*.15}}
+\@writefile{toc}{\contentsline {subsubsection}{Definition of a Mesh}{11}{section*.16}}
+\citation{blenderstudio}
+\citation{blenderstudio}
+\citation{blenderstudio}
+\citation{edgeloops}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.5.2}Topology}{12}{subsection.2.5.2}}
+\@writefile{toc}{\contentsline {subsubsection}{Poles}{12}{section*.17}}
+\@writefile{toc}{\contentsline {subsubsection}{Edge Loops}{12}{section*.18}}
 \citation{tsr}
 \citation{s4pe}
 \citation{s4cas}
+\citation{examplebasedhair}
 \@writefile{toc}{\contentsline {chapter}{\numberline {3}Project Execution}{13}{chapter.3}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
@@ -114,25 +121,47 @@
 \@writefile{toc}{\contentsline {section}{\numberline {3.1}Training Data Set}{13}{section.3.1}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.1.1}Acquiring Training Data}{13}{subsection.3.1.1}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.1.2}Repairing Training Data}{13}{subsection.3.1.2}}
-\@writefile{loa}{\contentsline {algocf}{\numberline {3.1}{\ignorespaces Tri-to-quad using Blender API}}{13}{algocf.3.1}}
 \@writefile{toc}{\contentsline {section}{\numberline {3.2}Generative Model of Hair}{13}{section.3.2}}
+\citation{sphericalcoords}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces Spherical coordinate system}}{14}{figure.3.1}}
+\newlabel{fig}{{3.1}{14}{Spherical coordinate system}{figure.3.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces Image of scalp space}}{14}{figure.3.2}}
+\newlabel{fig}{{3.2}{14}{Image of scalp space}{figure.3.2}{}}
 \newlabel{aa}{{3.1}{14}{Generative Hair Parameter Format}{lstlisting.3.1}{}}
 \@writefile{lol}{\contentsline {lstlisting}{\numberline {3.1}Generative Hair Parameter Format.}{14}{lstlisting.3.1}}
 \@writefile{toc}{\contentsline {section}{\numberline {3.3}Approximating Generative Parameters from Input Data}{14}{section.3.3}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.3.1}Parsing OBJ File}{14}{subsection.3.3.1}}
-\@writefile{loa}{\contentsline {algocf}{\numberline {3.2}{\ignorespaces Parsing OBJ format.}}{14}{algocf.3.2}}
-\newlabel{alg}{{3.2}{14}{Parsing OBJ File}{algocf.3.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.2}Spline Estimation}{14}{subsection.3.3.2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.3}Structure Estimation}{14}{subsection.3.3.3}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.4}Learning a Manifold with Bayesian GP-LVM}{14}{section.3.4}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.5}Generation of Output}{14}{section.3.5}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.6}Reparation}{14}{section.3.6}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.7}Project Management}{15}{section.3.7}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.7.1}Source Control}{15}{subsection.3.7.1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.7.2}Issue Tracking}{15}{subsection.3.7.2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.7.3}Time-line}{15}{subsection.3.7.3}}
-\@writefile{lot}{\contentsline {table}{\numberline {3.1}{\ignorespaces This is an example table.}}{15}{table.3.1}}
-\newlabel{tab}{{3.1}{15}{This is an example table}{table.3.1}{}}
+\@writefile{loa}{\contentsline {algocf}{\numberline {3.1}{\ignorespaces Parsing OBJ format}}{14}{algocf.3.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.2}Assumptions of Input Mesh}{14}{subsection.3.3.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.3}Spline Estimation}{15}{subsection.3.3.3}}
+\@writefile{toc}{\contentsline {subsubsection}{Edge Loop Extraction}{15}{section*.19}}
+\@writefile{toc}{\contentsline {subsubsection}{Border Edge Loops}{15}{section*.20}}
+\@writefile{loa}{\contentsline {algocf}{\numberline {3.2}{\ignorespaces Extracting border edge loops}}{15}{algocf.3.2}}
+\@writefile{toc}{\contentsline {subsubsection}{Root Edge Loop}{15}{section*.21}}
+\@writefile{loa}{\contentsline {algocf}{\numberline {3.3}{\ignorespaces Determining root border edge loop}}{15}{algocf.3.3}}
+\@writefile{toc}{\contentsline {subsubsection}{Spline Edge Loops}{15}{section*.22}}
+\@writefile{loa}{\contentsline {algocf}{\numberline {3.4}{\ignorespaces Extracting spline edge loops}}{15}{algocf.3.4}}
+\@writefile{loa}{\contentsline {algocf}{\numberline {3.5}{\ignorespaces Reconstructing spline path}}{15}{algocf.3.5}}
+\@writefile{toc}{\contentsline {subsubsection}{Spline Repair Operation}{15}{section*.23}}
+\@writefile{toc}{\contentsline {subsubsection}{Approximating Fixed Spline}{15}{section*.24}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.4}Structure Estimation}{15}{subsection.3.3.4}}
+\@writefile{toc}{\contentsline {subsubsection}{Selection Operator}{15}{section*.25}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.4}Learning a Manifold with Bayesian GP-LVM}{15}{section.3.4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.1}Handling Uncertainty}{15}{subsection.3.4.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.2}GP-LVM and Bayesian GP-LVM}{16}{subsection.3.4.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.3}Kernel: ARD, Variance, and Lengthscale}{16}{subsection.3.4.3}}
+\@writefile{toc}{\contentsline {subsubsection}{RBF}{16}{section*.26}}
+\@writefile{toc}{\contentsline {subsubsection}{Exponential}{16}{section*.27}}
+\@writefile{toc}{\contentsline {subsubsection}{Linear}{16}{section*.28}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.5}Generation of Output}{16}{section.3.5}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.6}Data Acquisition}{16}{section.3.6}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.7}Challenges}{16}{section.3.7}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.8}Project Management}{16}{section.3.8}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.8.1}Source Control}{16}{subsection.3.8.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.8.2}Issue Tracking}{16}{subsection.3.8.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.8.3}Time-line}{16}{subsection.3.8.3}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.1}{\ignorespaces This is an example table.}}{16}{table.3.1}}
+\newlabel{tab}{{3.1}{16}{This is an example table}{table.3.1}{}}
 \@writefile{toc}{\contentsline {chapter}{\numberline {4}Critical Evaluation}{17}{chapter.4}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
@@ -140,8 +169,13 @@
 \newlabel{chap:evaluation}{{4}{17}{Critical Evaluation}{chapter.4}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {4.1}Functional Testing}{17}{section.4.1}}
 \@writefile{toc}{\contentsline {section}{\numberline {4.2}Behavioural Testing}{17}{section.4.2}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.3}Evaluation}{17}{section.4.3}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.4}Applications}{17}{section.4.4}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.3}Statistical Analysis}{17}{section.4.3}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.4}Evaluation}{17}{section.4.4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4.1}Training and Model}{17}{subsection.4.4.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4.2}Choice of Learning Model}{17}{subsection.4.4.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4.3}Comparing with Other methods}{17}{subsection.4.4.3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4.4}Extending to other models}{17}{subsection.4.4.4}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.5}Applications}{18}{section.4.5}}
 \@writefile{toc}{\contentsline {chapter}{\numberline {5}Conclusion}{19}{chapter.5}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
@@ -151,24 +185,26 @@
 \@writefile{toc}{\contentsline {section}{\numberline {5.2}Project Status}{19}{section.5.2}}
 \@writefile{toc}{\contentsline {section}{\numberline {5.3}Future Work}{19}{section.5.3}}
 \bibdata{dissertation}
-\bibcite{latentdoodle}{1}
-\bibcite{bishop}{2}
-\bibcite{fontmanifold}{3}
-\bibcite{autohair}{4}
-\bibcite{procedural1}{5}
-\bibcite{hairfollicles}{6}
-\bibcite{styleik}{7}
-\bibcite{pca1901}{8}
-\bibcite{tsr}{9}
-\bibcite{mri}{10}
-\bibcite{pca2002}{11}
-\bibcite{gplvm}{12}
-\bibcite{drawingassistance}{13}
-\bibcite{edgeloops}{14}
-\bibcite{gp}{15}
-\bibcite{ppca}{16}
-\bibcite{bgplvm}{17}
-\bibcite{graphtheory}{18}
+\bibcite{wingededge}{1}
+\bibcite{latentdoodle}{2}
+\bibcite{bishop}{3}
+\bibcite{fontmanifold}{4}
+\bibcite{autohair}{5}
+\bibcite{procedural1}{6}
+\bibcite{hairfollicles}{7}
+\bibcite{styleik}{8}
+\bibcite{pca1901}{9}
+\bibcite{tsr}{10}
+\bibcite{mri}{11}
+\bibcite{pca2002}{12}
+\bibcite{gplvm}{13}
+\bibcite{drawingassistance}{14}
+\bibcite{blenderstudio}{15}
+\bibcite{edgeloops}{16}
+\bibcite{gp}{17}
+\bibcite{ppca}{18}
+\bibcite{bgplvm}{19}
+\bibcite{graphtheory}{20}
 \@writefile{toc}{\contentsline {chapter}{\numberline {A}An Example Appendix}{23}{appendix.A}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}

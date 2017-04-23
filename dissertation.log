@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.3.12)  16 APR 2017 05:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.3.12)  23 APR 2017 22:24
 entering extended mode
 **./dissertation.tex
 (dissertation.tex
@@ -496,7 +496,14 @@ Package hyperref Info: Option `colorlinks' set `true' on input line 80.
 Package hyperref Warning: Option `bookmarks' has already been used,
 (hyperref)                setting the option has no effect on input line 80.
 
-) (dissertation.aux)
+) (dissertation.aux
+
+LaTeX Warning: Label `fig' multiply defined.
+
+
+LaTeX Warning: Label `fig' multiply defined.
+
+)
 \openout1 = `dissertation.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 36.
@@ -610,7 +617,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 50--50
 
  []
 
-<logo/logo_uob_color.pdf, id=123, 546.04pt x 158.5925pt>
+<logo/logo_uob_color.pdf, id=135, 546.04pt x 158.5925pt>
 File: logo/logo_uob_color.pdf Graphic file (type pdf)
 
 <use logo/logo_uob_color.pdf>
@@ -671,13 +678,13 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
  [11] [12
 
 ]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 96.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 97.
 
 (E:\Programs\MikTex\tex\latex\base\omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 96.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 97.
  [13] [14
 
 ] [15] [16
@@ -690,59 +697,64 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 ]
 Chapter 1.
 
-LaTeX Warning: Citation `lsystem' on page 1 undefined on input line 233.
+LaTeX Warning: Citation `curseofdyn' on page 1 undefined on input line 244.
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.234 
+l.245 
        [1
 
-]pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has
- been already used, duplicate ignored
+]
+
+LaTeX Warning: Citation `lsystem' on page 2 undefined on input line 247.
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has 
+been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.251 
+l.270 
        [2] [3] [4]
 Chapter 2.
 
-LaTeX Warning: Citation `pca1933' on page 5 undefined on input line 301.
+LaTeX Warning: Citation `pca1933' on page 5 undefined on input line 313.
 
 [5
 
-] [6] [7] [8]
-Underfull \vbox (badness 2119) has occurred while \output is active []
-
- [9]
-[10] [11] [12]
+] [6] [7] [8] [9] [10] [11] [12]
 Chapter 3.
 
-LaTeX Warning: Citation `s4pe' on page 13 undefined on input line 616.
+LaTeX Warning: Citation `s4pe' on page 13 undefined on input line 615.
 
 
-LaTeX Warning: Citation `s4cas' on page 13 undefined on input line 616.
+LaTeX Warning: Citation `s4cas' on page 13 undefined on input line 615.
+
+
+LaTeX Warning: Citation `examplebasedhair' on page 13 undefined on input line 6
+33.
+
+[13
+
+]
+
+LaTeX Warning: Citation `sphericalcoords' on page 14 undefined on input line 63
+6.
 
 (E:\Programs\MikTex\tex\latex\listings\lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
 (E:\Programs\MikTex\tex\latex\listings\lstmisc.sty
 File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
-)
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[13
-
-] [14] [15] [16
-
-]
+) [14] [15] [16]
 Chapter 4.
-[17] [18
+[17
 
-]
+] [18]
 Chapter 5.
-[19] [20
+[19
+
+] [20
 
 ] (dissertation.bbl
 Missing character: There is no â in font cmr10!
@@ -757,17 +769,20 @@ Missing character: There is no “ in font cmr10!
 
 ]
 Appendix A.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 804.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 922.
 [23]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 804.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 922.
  (dissertation.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 804.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 804.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 922.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 922.
 Package rerunfilecheck Info: File `dissertation.out' has not changed.
-(rerunfilecheck)             Checksum: 27F66CCC584CD8FB8455C1794E3CAFF8;2083.
+(rerunfilecheck)             Checksum: 29A688BCF10482A4017F05B4ECFF88E2;2286.
 
 
 LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: There were multiply-defined labels.
 
  )
 (\end occurred inside a group at level 1)
@@ -775,34 +790,35 @@ LaTeX Warning: There were undefined references.
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 11781 strings out of 493333
- 175023 string characters out of 3143102
- 430766 words of memory out of 3000000
- 14938 multiletter control sequences out of 15000+200000
- 11684 words of font info for 43 fonts, out of 3000000 for 9000
+ 11830 strings out of 493333
+ 175627 string characters out of 3143102
+ 432166 words of memory out of 3000000
+ 14950 multiletter control sequences out of 15000+200000
+ 12043 words of font info for 44 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,12n,74p,1311b,7218s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 42i,20n,74p,1154b,7218s stack positions out of 5000i,500n,10000p,200000b,50000s
 <E:/Programs/MikTex/fonts/type1/public/amsfonts/cm/cmbsy10.pfb>
 <E:/Programs/MikTex/fonts/type1/public/amsfonts/cmextra/cmbsy7.pfb><E:/Programs
 /MikTex/fonts/type1/public/amsfonts/cm/cmbx10.pfb><E:/Programs/MikTex/fonts/typ
 e1/public/amsfonts/cm/cmbx12.pfb><E:/Programs/MikTex/fonts/type1/public/amsfont
 s/cm/cmbx5.pfb><E:/Programs/MikTex/fonts/type1/public/amsfonts/cm/cmbx7.pfb><E:
-/Programs/MikTex/fonts/type1/public/amsfonts/cm/cmex10.pfb><E:/Programs/MikTex/
-fonts/type1/public/amsfonts/cm/cmmi10.pfb><E:/Programs/MikTex/fonts/type1/publi
-c/amsfonts/cm/cmmi7.pfb><E:/Programs/MikTex/fonts/type1/public/amsfonts/cm/cmmi
-b10.pfb><E:/Programs/MikTex/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb><E:/
-Programs/MikTex/fonts/type1/public/amsfonts/cm/cmr10.pfb><E:/Programs/MikTex/fo
-nts/type1/public/amsfonts/cm/cmr12.pfb><E:/Programs/MikTex/fonts/type1/public/a
-msfonts/cm/cmr17.pfb><E:/Programs/MikTex/fonts/type1/public/amsfonts/cm/cmr5.pf
-b><E:/Programs/MikTex/fonts/type1/public/amsfonts/cm/cmr7.pfb><E:/Programs/MikT
-ex/fonts/type1/public/amsfonts/cm/cmsl10.pfb><E:/Programs/MikTex/fonts/type1/pu
-blic/amsfonts/cm/cmsy10.pfb><E:/Programs/MikTex/fonts/type1/public/amsfonts/cm/
-cmsy7.pfb><E:/Programs/MikTex/fonts/type1/public/amsfonts/cm/cmti10.pfb><E:/Pro
-grams/MikTex/fonts/type1/public/amsfonts/cm/cmtt10.pfb><E:/Programs/MikTex/font
-s/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on dissertation.pdf (45 pages, 399975 bytes).
+/Programs/MikTex/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><E:/Programs/MikTe
+x/fonts/type1/public/amsfonts/cm/cmex10.pfb><E:/Programs/MikTex/fonts/type1/pub
+lic/amsfonts/cm/cmmi10.pfb><E:/Programs/MikTex/fonts/type1/public/amsfonts/cm/c
+mmi7.pfb><E:/Programs/MikTex/fonts/type1/public/amsfonts/cm/cmmib10.pfb><E:/Pro
+grams/MikTex/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb><E:/Programs/MikTex
+/fonts/type1/public/amsfonts/cm/cmr10.pfb><E:/Programs/MikTex/fonts/type1/publi
+c/amsfonts/cm/cmr12.pfb><E:/Programs/MikTex/fonts/type1/public/amsfonts/cm/cmr1
+7.pfb><E:/Programs/MikTex/fonts/type1/public/amsfonts/cm/cmr5.pfb><E:/Programs/
+MikTex/fonts/type1/public/amsfonts/cm/cmr7.pfb><E:/Programs/MikTex/fonts/type1/
+public/amsfonts/cm/cmsl10.pfb><E:/Programs/MikTex/fonts/type1/public/amsfonts/c
+m/cmsy10.pfb><E:/Programs/MikTex/fonts/type1/public/amsfonts/cm/cmsy7.pfb><E:/P
+rograms/MikTex/fonts/type1/public/amsfonts/cm/cmti10.pfb><E:/Programs/MikTex/fo
+nts/type1/public/amsfonts/cm/cmtt10.pfb><E:/Programs/MikTex/fonts/type1/public/
+amsfonts/symbols/msbm10.pfb>
+Output written on dissertation.pdf (45 pages, 427620 bytes).
 PDF statistics:
- 593 PDF objects out of 1000 (max. 8388607)
- 157 named destinations out of 1000 (max. 500000)
- 246 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 663 PDF objects out of 1000 (max. 8388607)
+ 193 named destinations out of 1000 (max. 500000)
+ 270 words of extra memory for PDF output out of 10000 (max. 10000000)
 
