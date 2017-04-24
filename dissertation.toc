@@ -39,46 +39,48 @@
 \contentsline {section}{\numberline {3.1}Training Data Set}{13}{section.3.1}
 \contentsline {subsection}{\numberline {3.1.1}Acquiring Training Data}{13}{subsection.3.1.1}
 \contentsline {subsection}{\numberline {3.1.2}Repairing Training Data}{13}{subsection.3.1.2}
-\contentsline {section}{\numberline {3.2}Generative Model of Hair}{13}{section.3.2}
+\contentsline {section}{\numberline {3.2}Generative Model of Hair}{14}{section.3.2}
 \contentsline {section}{\numberline {3.3}Approximating Generative Parameters from Input Data}{14}{section.3.3}
 \contentsline {subsection}{\numberline {3.3.1}Parsing OBJ File}{14}{subsection.3.3.1}
 \contentsline {subsection}{\numberline {3.3.2}Assumptions of Input Mesh}{14}{subsection.3.3.2}
-\contentsline {subsection}{\numberline {3.3.3}Spline Estimation}{15}{subsection.3.3.3}
-\contentsline {subsubsection}{Edge Loop Extraction}{15}{section*.19}
+\contentsline {subsection}{\numberline {3.3.3}Spline Estimation}{14}{subsection.3.3.3}
+\contentsline {subsubsection}{Edge Loop Extraction}{14}{section*.19}
 \contentsline {subsubsection}{Border Edge Loops}{15}{section*.20}
-\contentsline {subsubsection}{Root Edge Loop}{15}{section*.21}
-\contentsline {subsubsection}{Spline Edge Loops}{15}{section*.22}
-\contentsline {subsubsection}{Spline Repair Operation}{15}{section*.23}
-\contentsline {subsubsection}{Approximating Fixed Spline}{15}{section*.24}
-\contentsline {subsection}{\numberline {3.3.4}Structure Estimation}{15}{subsection.3.3.4}
-\contentsline {subsubsection}{Selection Operator}{15}{section*.25}
-\contentsline {section}{\numberline {3.4}Learning a Manifold with Bayesian GP-LVM}{15}{section.3.4}
-\contentsline {subsection}{\numberline {3.4.1}Handling Uncertainty}{15}{subsection.3.4.1}
-\contentsline {subsection}{\numberline {3.4.2}GP-LVM and Bayesian GP-LVM}{16}{subsection.3.4.2}
-\contentsline {subsection}{\numberline {3.4.3}Kernel: ARD, Variance, and Lengthscale}{16}{subsection.3.4.3}
-\contentsline {subsubsection}{RBF}{16}{section*.26}
-\contentsline {subsubsection}{Exponential}{16}{section*.27}
-\contentsline {subsubsection}{Linear}{16}{section*.28}
-\contentsline {section}{\numberline {3.5}Generation of Output}{16}{section.3.5}
-\contentsline {section}{\numberline {3.6}Data Acquisition}{16}{section.3.6}
-\contentsline {section}{\numberline {3.7}Challenges}{16}{section.3.7}
-\contentsline {section}{\numberline {3.8}Project Management}{16}{section.3.8}
-\contentsline {subsection}{\numberline {3.8.1}Source Control}{16}{subsection.3.8.1}
-\contentsline {subsection}{\numberline {3.8.2}Issue Tracking}{16}{subsection.3.8.2}
-\contentsline {subsection}{\numberline {3.8.3}Time-line}{16}{subsection.3.8.3}
-\contentsline {chapter}{\numberline {4}Critical Evaluation}{17}{chapter.4}
-\contentsline {section}{\numberline {4.1}Functional Testing}{17}{section.4.1}
-\contentsline {section}{\numberline {4.2}Behavioural Testing}{17}{section.4.2}
-\contentsline {section}{\numberline {4.3}Statistical Analysis}{17}{section.4.3}
-\contentsline {section}{\numberline {4.4}Evaluation}{17}{section.4.4}
-\contentsline {subsection}{\numberline {4.4.1}Training and Model}{17}{subsection.4.4.1}
-\contentsline {subsection}{\numberline {4.4.2}Choice of Learning Model}{17}{subsection.4.4.2}
-\contentsline {subsection}{\numberline {4.4.3}Comparing with Other methods}{17}{subsection.4.4.3}
-\contentsline {subsection}{\numberline {4.4.4}Extending to other models}{17}{subsection.4.4.4}
-\contentsline {subsubsection}{Addressing Non-Intuitive Use}{18}{section*.29}
-\contentsline {section}{\numberline {4.5}Applications}{18}{section.4.5}
-\contentsline {chapter}{\numberline {5}Conclusion}{19}{chapter.5}
-\contentsline {section}{\numberline {5.1}Summary}{19}{section.5.1}
-\contentsline {section}{\numberline {5.2}Project Status}{19}{section.5.2}
-\contentsline {section}{\numberline {5.3}Future Work}{19}{section.5.3}
-\contentsline {chapter}{\numberline {A}An Example Appendix}{23}{appendix.A}
+\contentsline {subsubsection}{Root Edge Loop}{16}{section*.21}
+\contentsline {subsubsection}{Spline Edge Loops}{16}{section*.22}
+\contentsline {subsection}{\numberline {3.3.4}Edge Loop Path Derivation}{16}{subsection.3.3.4}
+\contentsline {subsubsection}{Spline Repair Operation}{16}{section*.23}
+\contentsline {subsubsection}{Approximating Fixed Spline}{16}{section*.24}
+\contentsline {subsection}{\numberline {3.3.5}Structure Estimation}{17}{subsection.3.3.5}
+\contentsline {subsubsection}{Selection Operator}{17}{section*.25}
+\contentsline {section}{\numberline {3.4}Learning a Manifold with Bayesian GP-LVM}{17}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Handling Uncertainty}{17}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.2}GP-LVM and Bayesian GP-LVM}{17}{subsection.3.4.2}
+\contentsline {subsection}{\numberline {3.4.3}Kernel: ARD, Variance, and Lengthscale}{17}{subsection.3.4.3}
+\contentsline {subsubsection}{RBF}{17}{section*.26}
+\contentsline {subsubsection}{Exponential}{17}{section*.27}
+\contentsline {subsubsection}{Linear}{17}{section*.28}
+\contentsline {section}{\numberline {3.5}Generation of Output}{17}{section.3.5}
+\contentsline {section}{\numberline {3.6}Data Acquisition}{17}{section.3.6}
+\contentsline {section}{\numberline {3.7}Challenges}{17}{section.3.7}
+\contentsline {section}{\numberline {3.8}Project Management}{18}{section.3.8}
+\contentsline {subsection}{\numberline {3.8.1}Source Control}{18}{subsection.3.8.1}
+\contentsline {subsection}{\numberline {3.8.2}Issue Tracking}{18}{subsection.3.8.2}
+\contentsline {subsection}{\numberline {3.8.3}Time-line}{18}{subsection.3.8.3}
+\contentsline {chapter}{\numberline {4}Critical Evaluation}{19}{chapter.4}
+\contentsline {section}{\numberline {4.1}Functional Testing}{19}{section.4.1}
+\contentsline {section}{\numberline {4.2}Behavioural Testing}{19}{section.4.2}
+\contentsline {section}{\numberline {4.3}Statistical Analysis}{19}{section.4.3}
+\contentsline {section}{\numberline {4.4}Evaluation}{19}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}Training and Model}{19}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.2}Choice of Learning Model}{19}{subsection.4.4.2}
+\contentsline {subsection}{\numberline {4.4.3}Comparing with Other methods}{19}{subsection.4.4.3}
+\contentsline {subsection}{\numberline {4.4.4}Extending to other models}{19}{subsection.4.4.4}
+\contentsline {subsubsection}{Addressing Non-Intuitive Use}{20}{section*.29}
+\contentsline {subsubsection}{Observations}{20}{section*.30}
+\contentsline {section}{\numberline {4.5}Applications}{20}{section.4.5}
+\contentsline {chapter}{\numberline {5}Conclusion}{21}{chapter.5}
+\contentsline {section}{\numberline {5.1}Summary}{21}{section.5.1}
+\contentsline {section}{\numberline {5.2}Project Status}{21}{section.5.2}
+\contentsline {section}{\numberline {5.3}Future Work}{21}{section.5.3}
+\contentsline {chapter}{\numberline {A}An Example Appendix}{25}{appendix.A}

@@ -615,7 +615,7 @@ An edge loop is a set of connected non-forking edges that traverses the polygon 
 To begin the training process, it is necessary to obtain suitable 3D hair geometry for use as input training data. Compared to the abundance of images freely available, appropriate 3D models are much less common. Courtesy of Electronic Arts, there exists an active community that produces free custom content for their gaming software - which includes polygonal hair. \cite{tsr} The acquired files are encoded in the \textit{PACKAGE} format for the latest game of \textit{The Sims} series. Open-source community software \textit{s4pe} is used to read the package file and extract geometry in \textit{SIMGEOM} format. \cite{s4pe} The \textit{SIMGEOM} format is then converted to \textit{OBJ} format using yet another open-source program \textit{S4CASTools}. \cite{s4cas} The geometry extracted is already standardised in scale and orientation.
 
 \subsection{Repairing Training Data}
-As mentioned, it is often the case for 3D mesh topology to be organised by quad-faces. In video games, quad-faced meshes are converted to triangle-faced before the rendering pipeline. Mesh reconstruction is performed on all input data to convert the geometry from triangle-face meshes to quad-faces. The Blender API offers a tool to partially automate this process, batch conversion of the training set is performed by running a script that executes the following steps in Blender:
+As mentioned, it is often the case for 3D mesh topology to be organised by quad-faces. In video games, quad meshes are converted to triangles before the rendering pipeline. Mesh reconstruction is performed on all input data to convert the geometry from triangle-face meshes to quad-faces. The Blender API offers a tool to partially automate this process, batch conversion of the training set is performed by running a script that executes the following steps in Blender:
 \begin{enumerate}
 	\item First, a new blank scene is created.
 	\item Import a mesh object from the directory that contains the training data set.
@@ -625,7 +625,11 @@ As mentioned, it is often the case for 3D mesh topology to be organised by quad-
 	\item Delete the mesh from the scene and repeat from step 2 with the next mesh in the training directory until all meshes has been processed.
 \end{enumerate}
 
-Existing algorithmic solutions for converting a triangle meshes to a quad mesh are imperfect. After the procedure,  remaining triangle faces are converted manually. The conversion process alters the geometry very marginally, but the hair representation is preserved - the quad-faced meshes are used for feature extraction, and are assumed to be correct in the context that it is representative of a valid hairstyle.
+Existing algorithmic solutions for converting a triangle meshes to a quad mesh are imperfect. After the procedure, remaining triangle faces are to be converted manually. The conversion process alters the geometry very marginally, but the hair representation is preserved - the quad-faced meshes are used for feature extraction, and are assumed to be correct in the context that it is representative of a valid hairstyle. 
+
+{\color{red}
+On average the training data has X vertices and Y edges. Separating the hair mesh to individual segments give up to ? submeshes. Each segment has ? faces, around ? are left as tris converting a tris to quads manually takes the knife tool or dissolving edges, several actions per face. Manually converting a single hair mesh on average took 2 hours. This takes considerable time to achieve, thus not all the training data is converted, resulting in an imperfect training set.
+}
 
 \section{Generative Model of Hair}
 In order to utilise machine learning methods for production of 3D hair geometry,  we develop a generative model of 3D hair structure. Mesh data is difficult to compare as topology and fidelity alters both structure of the data encoded and dimensionality. The data alignment problem is addressed by approximating the mesh to obtain generative parameters of a similar output possible by the model. Training learns the relation of observed generative parameters obtained from approximating the mesh data.
@@ -686,28 +690,72 @@ Mesh geometry data of \textit{OBJ} files are read into a graph data structure of
 \end{algorithm}
 
 \subsection{Assumptions of Input Mesh}
-We assume the mesh only contain hair segments that are \textbf{polystrips}, meaning it has a grid-like topology.
+We assume the mesh only contain hair segments have a grid-like topology of \textbf{polystrips}.
 
 \subsection{Spline Estimation}
 \subsubsection{Edge Loop Extraction}
+Our assumption of the input mesh topology allows us to extract edge loops that describe the structure of hair segments.
+
+In the Blender documentation, the algorithm of edge loop selection is described  \cite{blenderedgeloop}:
+\begin{enumerate}
+	\item Only continue searching adjacent edges if the candidates connects to only 3 other edges, as any other value would indicate either the border of a mesh or encountering a pole vertex.
+	\item If an adjacent edge is already added to the edge loop collection, end the selection as a cyclic edge loop has been completed.
+	\item Adjacent edges that share a face with the current edge are discarded from consideration.
+\end{enumerate}
+
+\begin{figure}[!h]
+	\centering
+	To add %*
+	\caption{Image of edge loop growing}
+	\label{fig}
+\end{figure}
+
+Our edge loop extraction algorithm begins by selecting an edge within the mesh graph. The two vertices of the edge are identified as \textit{end vertices}. We then proceed to \textit{grow} the edge loop selection recursively.
+
+Take the set of 1st degree neighbours from an \textit{end vertex}. We remove selected edge loops and the end vertices themselves from this set of 1st degree neighbours. We add the 1st degree neighbours to a set of face vertices. Proceed to take a set of 2nd degree neighbours from the current set of 1st degree neighbours. Remove the end vertex from the set of 2nd degree neighbours. Each 2nd degree neighbour is only added to the edge loop if it does not intersect with face vertices. The added vertex is returned as a new end vertex. This process is repeated until there are no end vertices left to grow the selection.
 
 \subsubsection{Border Edge Loops}
-Hair structure estimation begins by splitting the hair mesh into sub-meshes of hair segments determined by connectivity. For each segment, its border edge loops are extracted by finding corner vertices (having exactly two neighbour vertices).
+Hair structure estimation begins by splitting the hair mesh into sub-meshes of hair segments determined by connectivity.
+
+For each segment mesh, we are interested in the edge loops that represent hair strands from its roots on the scalp. To find these edge loops, we must find the border edge loops of the mesh and choose one to be the root edge loop.
+
+First create a collection of corner vertices, those that have exactly two edges. Create another collection of border vertices, the nodes that have exactly three edges.
+
+\begin{figure}[!h]
+	\centering
+	To add %*
+	\caption{Image of corners and borders}
+	\label{fig}
+\end{figure}
+
+Border edge loops are determined by selecting an edge of a corner vertex and growing the edge loop. Any edge of a corner vertex will connect to a border vertex. The selection is specified to stop upon encountering another corner vertex, resulting in an edge loop of a border. We discard border vertices that has been extracted as edge loops. Remove any corner vertices that no longer have any neighbours left in the set of border vertices. Repeat until there are no corner nodes left, thus successfully extracting the border of the mesh as a collection edge loops.
+
 \begin{algorithm}[!h]
 	\caption{Extracting border edge loops}
 \end{algorithm}
 
 \subsubsection{Root Edge Loop}
-A root border edge loop is determined by finding the border edge that is closest to the root.
+The \textit{root edge loop} is the border edge loop that is closest to the surface of the scalp. It serves as a reference for where the hair strands begin. We determine the root loop by finding the average distance of each vertex in a border loop.
+$$mathforroot$$
+When the root is aligned across the scalp, the distance should be minimal.
+
+There is a significant flaw in this approach as it will not correctly predict roots of hair segments that are represented by multiple meshes. A solution to this would be to accept hair that has clear roots first then iteratively discover the floating segments until there are none left or the system is unable to connect any meshes further.	
+
 \begin{algorithm}[!h]
 	\caption{Determining root border edge loop}
 \end{algorithm}
-Using the root border edge loop, spline edge loops are selected as strands of hair.
 
 \subsubsection{Spline Edge Loops}
+With the root loop we are able to extract a collection of edge loops that represents the pivotal hair strands of the segment cluster.
+
+Given the neighbours of root vertices, when we remove the neighbours that are also root vertices then we are left with edges that move along the root. When there is one edge we take this as a key strand representation and grow an edge loop from it. The edge loop will grow until the border unless a pole is encountered.
+
 \begin{algorithm}[!h]
 	\caption{Extracting spline edge loops}
 \end{algorithm}
+
+\subsection{Edge Loop Path Derivation}
+Given an edge loop graph and a start vertex, we can constrruct a path by creating a collection of the edge loop nodes then continually find the adjacent nodes, appending it to a list that represents the path.
 
 \begin{algorithm}[!h]
 	\caption{Reconstructing spline path}
@@ -716,8 +764,14 @@ Using the root border edge loop, spline edge loops are selected as strands of ha
 \subsubsection{Spline Repair Operation}
 A repair operator performs reparation on extracted splines: attaching floating splines to closest ends of root splines. Splines that are too short are also removed.
 
+Floating splines are identified when start points are too far from the scalp space. We attach the start to tHe closest end of a root strang or remove it.
+
 \subsubsection{Approximating Fixed Spline}
-Fixed uniform points.
+Given veritces of the mesh, a set point count, and the collection of spline paths.
+First establish intervals of the path distance covered between the vertices.
+Take the total distance and divide it by the point count.
+
+Calculate the distance that the new point should cover. Find the interval index where the point lies. Calculate the new position by choosing the lower index and add the vector to the next point multiplied by the distance left.
 
 \subsection{Structure Estimation}
 \subsubsection{Selection Operator}

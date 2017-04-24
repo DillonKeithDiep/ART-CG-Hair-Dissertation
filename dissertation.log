@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.3.12)  23 APR 2017 22:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.3.27)  24 APR 2017 21:37
 entering extended mode
 **./dissertation.tex
 (dissertation.tex
@@ -7,20 +7,19 @@ Babel <3.9r> and hyphenation patterns for 75 language(s) loaded.
 (dissertation.cls
 Document Class: dissertation 2012/05/04, Daniel Page <Daniel.Page@bristol.ac.uk
 >
-(E:\Programs\MikTex\tex\latex\pgf\utilities\pgfkeys.sty
-(E:\Programs\MikTex\tex\generic\pgf\utilities\pgfkeys.code.tex
+("C:\Program Files\MikTex\tex\latex\pgf\utilities\pgfkeys.sty"
+("C:\Program Files\MikTex\tex\generic\pgf\utilities\pgfkeys.code.tex"
 \pgfkeys@pathtoks=\toks14
 \pgfkeys@temptoks=\toks15
 
-(E:\Programs\MikTex\tex\generic\pgf\utilities\pgfkeysfiltered.code.tex
+("C:\Program Files\MikTex\tex\generic\pgf\utilities\pgfkeysfiltered.code.tex"
 \pgfkeys@tmptoks=\toks16
-)))
-(E:\Programs\MikTex\tex\latex\pgfopts\pgfopts.sty
+))) ("C:\Program Files\MikTex\tex\latex\pgfopts\pgfopts.sty"
 Package: pgfopts 2014/07/10 v2.1a LaTeX package options with pgfkeys
 \pgfopts@list@add@a@toks=\toks17
 \pgfopts@list@add@b@toks=\toks18
 )
-(E:\Programs\MikTex\tex\latex\tools\bm.sty
+("C:\Program Files\MikTex\tex\latex\tools\bm.sty"
 Package: bm 2017/01/16 v1.2c Bold Symbol Support (DPC/FMi)
 \symboldoperators=\mathgroup4
 \symboldletters=\mathgroup5
@@ -28,9 +27,9 @@ Package: bm 2017/01/16 v1.2c Bold Symbol Support (DPC/FMi)
 LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 141.
 LaTeX Info: Redefining \bm on input line 207.
 )
-(E:\Programs\MikTex\tex\latex\base\book.cls
+("C:\Program Files\MikTex\tex\latex\base\book.cls"
 Document Class: book 2014/09/29 v1.4h Standard LaTeX document class
-(E:\Programs\MikTex\tex\latex\base\bk10.clo
+("C:\Program Files\MikTex\tex\latex\base\bk10.clo"
 File: bk10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
@@ -46,31 +45,31 @@ File: bk10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-(E:\Programs\MikTex\tex\latex\graphics\graphicx.sty
+("C:\Program Files\MikTex\tex\latex\graphics\graphicx.sty"
 Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 
-(E:\Programs\MikTex\tex\latex\graphics\keyval.sty
+("C:\Program Files\MikTex\tex\latex\graphics\keyval.sty"
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks19
 )
-(E:\Programs\MikTex\tex\latex\graphics\graphics.sty
+("C:\Program Files\MikTex\tex\latex\graphics\graphics.sty"
 Package: graphics 2016/10/09 v1.0u Standard LaTeX Graphics (DPC,SPQR)
 
-(E:\Programs\MikTex\tex\latex\graphics\trig.sty
+("C:\Program Files\MikTex\tex\latex\graphics\trig.sty"
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-(E:\Programs\MikTex\tex\latex\graphics-cfg\graphics.cfg
+("C:\Program Files\MikTex\tex\latex\graphics-cfg\graphics.cfg"
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 99.
 
-(E:\Programs\MikTex\tex\latex\graphics-def\pdftex.def
+("C:\Program Files\MikTex\tex\latex\graphics-def\pdftex.def"
 File: pdftex.def 2017/01/12 v0.06k Graphics/color for pdfTeX
 
-(E:\Programs\MikTex\tex\generic\oberdiek\infwarerr.sty
+("C:\Program Files\MikTex\tex\generic\oberdiek\infwarerr.sty"
 Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
 )
-(E:\Programs\MikTex\tex\generic\oberdiek\ltxcmds.sty
+("C:\Program Files\MikTex\tex\generic\oberdiek\ltxcmds.sty"
 Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
 )
 \Gread@gobject=\count88
@@ -78,25 +77,25 @@ Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
 \Gin@req@height=\dimen103
 \Gin@req@width=\dimen104
 )
-(E:\Programs\MikTex\tex\latex\amsmath\amsmath.sty
+("C:\Program Files\MikTex\tex\latex\amsmath\amsmath.sty"
 Package: amsmath 2016/11/05 v2.16a AMS math features
 \@mathmargin=\skip43
 
 For additional information on amsmath, use the `?' option.
-(E:\Programs\MikTex\tex\latex\amsmath\amstext.sty
+("C:\Program Files\MikTex\tex\latex\amsmath\amstext.sty"
 Package: amstext 2000/06/29 v2.01 AMS text
 
-(E:\Programs\MikTex\tex\latex\amsmath\amsgen.sty
+("C:\Program Files\MikTex\tex\latex\amsmath\amsgen.sty"
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks20
 \ex@=\dimen105
 ))
-(E:\Programs\MikTex\tex\latex\amsmath\amsbsy.sty
+("C:\Program Files\MikTex\tex\latex\amsmath\amsbsy.sty"
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 LaTeX Info: Redefining \boldsymbol on input line 28.
 \pmbraise@=\dimen106
 )
-(E:\Programs\MikTex\tex\latex\amsmath\amsopn.sty
+("C:\Program Files\MikTex\tex\latex\amsmath\amsopn.sty"
 Package: amsopn 2016/03/08 v2.02 operator names
 )
 \inf@bad=\count89
@@ -137,38 +136,38 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
 LaTeX Info: Redefining \[ on input line 2817.
 LaTeX Info: Redefining \] on input line 2818.
 )
-(E:\Programs\MikTex\tex\latex\amsfonts\amssymb.sty
+("C:\Program Files\MikTex\tex\latex\amsfonts\amssymb.sty"
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 
-(E:\Programs\MikTex\tex\latex\amsfonts\amsfonts.sty
+("C:\Program Files\MikTex\tex\latex\amsfonts\amsfonts.sty"
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSa=\mathgroup7
 \symAMSb=\mathgroup8
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
-(E:\Programs\MikTex\tex\latex\adjustbox\adjustbox.sty
+("C:\Program Files\MikTex\tex\latex\adjustbox\adjustbox.sty"
 Package: adjustbox 2012/05/21 v1.0 Adjusting TeX boxes (trim, clip, ...)
 
-(E:\Programs\MikTex\tex\latex\xkeyval\xkeyval.sty
+("C:\Program Files\MikTex\tex\latex\xkeyval\xkeyval.sty"
 Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
 
-(E:\Programs\MikTex\tex\generic\xkeyval\xkeyval.tex
-(E:\Programs\MikTex\tex\generic\xkeyval\xkvutils.tex
+("C:\Program Files\MikTex\tex\generic\xkeyval\xkeyval.tex"
+("C:\Program Files\MikTex\tex\generic\xkeyval\xkvutils.tex"
 \XKV@toks=\toks25
 \XKV@tempa@toks=\toks26
 )
 \XKV@depth=\count101
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 ))
-(E:\Programs\MikTex\tex\latex\adjustbox\adjcalc.sty
+("C:\Program Files\MikTex\tex\latex\adjustbox\adjcalc.sty"
 Package: adjcalc 2012/05/16 v1.1 Provides advanced setlength with multiple back
 -ends (calc, etex, pgfmath)
 )
-(E:\Programs\MikTex\tex\latex\adjustbox\trimclip.sty
+("C:\Program Files\MikTex\tex\latex\adjustbox\trimclip.sty"
 Package: trimclip 2012/05/16 v1.0 Trim and clip general TeX material
 
-(E:\Programs\MikTex\tex\latex\collectbox\collectbox.sty
+("C:\Program Files\MikTex\tex\latex\collectbox\collectbox.sty"
 Package: collectbox 2012/05/17 v0.4b Collect macro arguments as boxes
 \collectedbox=\box28
 )
@@ -178,7 +177,7 @@ Package: collectbox 2012/05/17 v0.4b Collect macro arguments as boxes
 \tc@ury=\dimen117
 Package trimclip Info: Using driver 'tc-pdftex.def'.
 
-(E:\Programs\MikTex\tex\latex\adjustbox\tc-pdftex.def
+("C:\Program Files\MikTex\tex\latex\adjustbox\tc-pdftex.def"
 File: tc-pdftex.def 2012/05/13 v1.0 Clipping driver for pdftex
 ))
 \adjbox@Width=\dimen118
@@ -186,22 +185,22 @@ File: tc-pdftex.def 2012/05/13 v1.0 Clipping driver for pdftex
 \adjbox@Depth=\dimen120
 \adjbox@Totalheight=\dimen121
 
-(E:\Programs\MikTex\tex\latex\ifoddpage\ifoddpage.sty
+("C:\Program Files\MikTex\tex\latex\ifoddpage\ifoddpage.sty"
 Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
 \c@checkoddpage=\count102
 )
-(E:\Programs\MikTex\tex\latex\ltxmisc\varwidth.sty
+("C:\Program Files\MikTex\tex\latex\ltxmisc\varwidth.sty"
 Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
 \@vwid@box=\box29
 \sift@deathcycles=\count103
 \@vwid@loff=\dimen122
 \@vwid@roff=\dimen123
 ))
-(E:\Programs\MikTex\tex\latex\etoolbox\etoolbox.sty
+("C:\Program Files\MikTex\tex\latex\etoolbox\etoolbox.sty"
 Package: etoolbox 2017/01/02 v2.4 e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count104
 )
-(E:\Programs\MikTex\tex\latex\fancyhdr\fancyhdr.sty
+("C:\Program Files\MikTex\tex\latex\fancyhdr\fancyhdr.sty"
 Package: fancyhdr 2016/09/06 3.8 Extensive control of page headers and footers
 \fancy@headwidth=\skip46
 \f@ncyO@elh=\skip47
@@ -213,17 +212,17 @@ Package: fancyhdr 2016/09/06 3.8 Extensive control of page headers and footers
 \f@ncyO@olf=\skip53
 \f@ncyO@orf=\skip54
 )
-(E:\Programs\MikTex\tex\latex\geometry\geometry.sty
+("C:\Program Files\MikTex\tex\latex\geometry\geometry.sty"
 Package: geometry 2010/09/12 v5.6 Page Geometry
 
-(E:\Programs\MikTex\tex\generic\oberdiek\ifpdf.sty
+("C:\Program Files\MikTex\tex\generic\oberdiek\ifpdf.sty"
 Package: ifpdf 2016/05/14 v3.1 Provides the ifpdf switch
 )
-(E:\Programs\MikTex\tex\generic\oberdiek\ifvtex.sty
+("C:\Program Files\MikTex\tex\generic\oberdiek\ifvtex.sty"
 Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
 Package ifvtex Info: VTeX not detected.
 )
-(E:\Programs\MikTex\tex\generic\ifxetex\ifxetex.sty
+("C:\Program Files\MikTex\tex\generic\ifxetex\ifxetex.sty"
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
 \Gm@cnth=\count105
@@ -239,20 +238,20 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \Gm@layoutvoffset=\dimen131
 \Gm@dimlist=\toks27
 
-(E:\Programs\MikTex\tex\latex\geometry\geometry.cfg))
-(E:\Programs\MikTex\tex\latex\datetime\datetime.sty
+("C:\Program Files\MikTex\tex\latex\geometry\geometry.cfg"))
+("C:\Program Files\MikTex\tex\latex\datetime\datetime.sty"
 Package: datetime 2015/03/20 v2.60 Date Time Package
 
-(E:\Programs\MikTex\tex\latex\fmtcount\fmtcount.sty
+("C:\Program Files\MikTex\tex\latex\fmtcount\fmtcount.sty"
 Package: fmtcount 2015/05/05 v3.01
 
-(E:\Programs\MikTex\tex\latex\base\ifthen.sty
+("C:\Program Files\MikTex\tex\latex\base\ifthen.sty"
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
-(E:\Programs\MikTex\tex\latex\fmtcount\fcprefix.sty
+("C:\Program Files\MikTex\tex\latex\fmtcount\fcprefix.sty"
 Package: fcprefix 2012/09/28
 
-(E:\Programs\MikTex\tex\latex\fmtcount\fcnumparser.sty
+("C:\Program Files\MikTex\tex\latex\fmtcount\fcnumparser.sty"
 Package: fcnumparser 2012/09/28
 \fc@digit@counter=\count108
 ))
@@ -266,10 +265,10 @@ Package: fcnumparser 2012/09/28
 \@DT@loopN=\count116
 \@DT@X=\count117
 
-(E:\Programs\MikTex\tex\latex\fmtcount\fc-english.def
+("C:\Program Files\MikTex\tex\latex\fmtcount\fc-english.def"
 File: fc-english.def 2013/08/17
 ))
-(E:\Programs\MikTex\tex\latex\datetime\datetime-defaults.sty
+("C:\Program Files\MikTex\tex\latex\datetime\datetime-defaults.sty"
 Package: datetime-defaults 2013/09/10
 )
 \@day=\count118
@@ -293,15 +292,15 @@ LaTeX Info: Redefining \today on input line 736.
 \dt@a=\toks28
 \dt@b=\toks29
 )
-(E:\Programs\MikTex\tex\latex\algorithm2e\algorithm2e.sty
+("C:\Program Files\MikTex\tex\latex\algorithm2e\algorithm2e.sty"
 Package: algorithm2e 2013/01/06 v5.00 algorithms environments
 \c@AlgoLine=\count133
 \algocf@hangindent=\skip55
 
-(E:\Programs\MikTex\tex\latex\tools\xspace.sty
+("C:\Program Files\MikTex\tex\latex\tools\xspace.sty"
 Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 )
-(E:\Programs\MikTex\tex\latex\ltxmisc\relsize.sty
+("C:\Program Files\MikTex\tex\latex\ltxmisc\relsize.sty"
 Package: relsize 2003/07/04 ver 3.1
 )
 ********************************************************
@@ -345,7 +344,7 @@ subscribe by emailing sympa@lirmm.fr with 'subscribe <list> <firstname name>'
 \c@algocf=\count136
 \algocf@algoframe=\box36
 \algocf@algobox=\box37
-) (E:\Programs\MikTex\tex\latex\listings\listings.sty
+) ("C:\Program Files\MikTex\tex\latex\listings\listings.sty"
 \lst@mode=\count137
 \lst@gtempboxa=\box38
 \lst@token=\toks30
@@ -359,37 +358,37 @@ subscribe by emailing sympa@lirmm.fr with 'subscribe <list> <firstname name>'
 \lst@lineno=\count142
 \lst@maxwidth=\dimen141
 
-(E:\Programs\MikTex\tex\latex\listings\lstmisc.sty
+("C:\Program Files\MikTex\tex\latex\listings\lstmisc.sty"
 File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
 \c@lstnumber=\count143
 \lst@skipnumbers=\count144
 \lst@framebox=\box39
 )
-(E:\Programs\MikTex\tex\latex\listings\listings.cfg
+("C:\Program Files\MikTex\tex\latex\listings\listings.cfg"
 File: listings.cfg 2015/06/04 1.6 listings configuration
 ))
 Package: listings 2015/06/04 1.6 (Carsten Heinz)
 
-(E:\Programs\MikTex\tex\latex\xstring\xstring.sty
-(E:\Programs\MikTex\tex\generic\xstring\xstring.tex
+("C:\Program Files\MikTex\tex\latex\xstring\xstring.sty"
+("C:\Program Files\MikTex\tex\generic\xstring\xstring.tex"
 \@xs@message=\write3
 \integerpart=\count145
 \decimalpart=\count146
 )
 Package: xstring 2013/10/13  v1.7c  String manipulations (C Tellechea)
 )
-(E:\Programs\MikTex\tex\latex\url\url.sty
+("C:\Program Files\MikTex\tex\latex\url\url.sty"
 \Urlmuskip=\muskip11
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-(E:\Programs\MikTex\tex\latex\hyperref\hyperref.sty
+("C:\Program Files\MikTex\tex\latex\hyperref\hyperref.sty"
 Package: hyperref 2016/06/24 v6.83q Hypertext links for LaTeX
 
-(E:\Programs\MikTex\tex\generic\oberdiek\hobsub-hyperref.sty
+("C:\Program Files\MikTex\tex\generic\oberdiek\hobsub-hyperref.sty"
 Package: hobsub-hyperref 2016/05/16 v1.14 Bundle oberdiek, subset hyperref (HO)
 
 
-(E:\Programs\MikTex\tex\generic\oberdiek\hobsub-generic.sty
+("C:\Program Files\MikTex\tex\generic\oberdiek\hobsub-generic.sty"
 Package: hobsub-generic 2016/05/16 v1.14 Bundle oberdiek, subset generic (HO)
 Package: hobsub 2016/05/16 v1.14 Construct package bundles (HO)
 Package hobsub Info: Skipping package `infwarerr' (already loaded).
@@ -427,22 +426,22 @@ Package: atbegshi 2016/06/09 v1.18 At begin shipout hook (HO)
 Package: refcount 2016/05/16 v3.5 Data extraction from label references (HO)
 Package: hycolor 2016/05/16 v1.8 Color options for hyperref/bookmark (HO)
 )
-(E:\Programs\MikTex\tex\latex\oberdiek\auxhook.sty
+("C:\Program Files\MikTex\tex\latex\oberdiek\auxhook.sty"
 Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
 )
-(E:\Programs\MikTex\tex\latex\oberdiek\kvoptions.sty
+("C:\Program Files\MikTex\tex\latex\oberdiek\kvoptions.sty"
 Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
 )
 \@linkdim=\dimen142
 \Hy@linkcounter=\count147
 \Hy@pagecounter=\count148
 
-(E:\Programs\MikTex\tex\latex\hyperref\pd1enc.def
+("C:\Program Files\MikTex\tex\latex\hyperref\pd1enc.def"
 File: pd1enc.def 2016/06/24 v6.83q Hyperref: PDFDocEncoding definition (HO)
 )
 \Hy@SavedSpaceFactor=\count149
 
-(E:\Programs\MikTex\tex\latex\00miktex\hyperref.cfg
+("C:\Program Files\MikTex\tex\latex\00miktex\hyperref.cfg"
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
 Package hyperref Info: Hyper figures OFF on input line 4486.
@@ -474,19 +473,19 @@ LaTeX Info: Redefining \pageref on input line 6416.
 
 Package hyperref Message: Driver (autodetected): hpdftex.
 
-(E:\Programs\MikTex\tex\latex\hyperref\hpdftex.def
+("C:\Program Files\MikTex\tex\latex\hyperref\hpdftex.def"
 File: hpdftex.def 2016/06/24 v6.83q Hyperref driver for pdfTeX
 \Fld@listcount=\count155
 \c@bookmark@seq@number=\count156
 
-(E:\Programs\MikTex\tex\latex\oberdiek\rerunfilecheck.sty
+("C:\Program Files\MikTex\tex\latex\oberdiek\rerunfilecheck.sty"
 Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
 )
 \Hy@SectionHShift=\skip73
 )
-(E:\Programs\MikTex\tex\latex\lipsum\lipsum.sty
+("C:\Program Files\MikTex\tex\latex\lipsum\lipsum.sty"
 Package: lipsum 2014/07/27 v1.3 150 paragraphs of Lorem Ipsum dummy text
 \c@lips@count=\count157
 )
@@ -497,6 +496,12 @@ Package hyperref Warning: Option `bookmarks' has already been used,
 (hyperref)                setting the option has no effect on input line 80.
 
 ) (dissertation.aux
+
+LaTeX Warning: Label `fig' multiply defined.
+
+
+LaTeX Warning: Label `fig' multiply defined.
+
 
 LaTeX Warning: Label `fig' multiply defined.
 
@@ -520,7 +525,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 36.
 LaTeX Font Info:    ... okay on input line 36.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 36.
 LaTeX Font Info:    ... okay on input line 36.
- (E:\Programs\MikTex\tex\context\base\supp-pdf.mkii
+ ("C:\Program Files\MikTex\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count158
 \scratchdimen=\dimen146
@@ -533,10 +538,10 @@ LaTeX Font Info:    ... okay on input line 36.
 \MPnumerator=\count162
 \makeMPintoPDFobject=\count163
 \everyMPtoPDFconversion=\toks32
-) (E:\Programs\MikTex\tex\latex\oberdiek\epstopdf-base.sty
+) ("C:\Program Files\MikTex\tex\latex\oberdiek\epstopdf-base.sty"
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
-(E:\Programs\MikTex\tex\latex\oberdiek\grfext.sty
+("C:\Program Files\MikTex\tex\latex\oberdiek\grfext.sty"
 Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
 )
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -582,20 +587,20 @@ G,.JBIG2,.JB2,.eps]
 
 \c@lstlisting=\count164
 \AtBeginShipoutBox=\box41
-(E:\Programs\MikTex\tex\latex\graphics\color.sty
+("C:\Program Files\MikTex\tex\latex\graphics\color.sty"
 Package: color 2016/07/10 v1.1e Standard LaTeX Color (DPC)
 
-(E:\Programs\MikTex\tex\latex\graphics-cfg\color.cfg
+("C:\Program Files\MikTex\tex\latex\graphics-cfg\color.cfg"
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package color Info: Driver file: pdftex.def on input line 147.
 )
 Package hyperref Info: Link coloring ON on input line 36.
 
-(E:\Programs\MikTex\tex\latex\hyperref\nameref.sty
+("C:\Program Files\MikTex\tex\latex\hyperref\nameref.sty"
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 
-(E:\Programs\MikTex\tex\generic\oberdiek\gettitlestring.sty
+("C:\Program Files\MikTex\tex\generic\oberdiek\gettitlestring.sty"
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count165
@@ -603,7 +608,8 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 36.
 LaTeX Info: Redefining \pageref on input line 36.
 LaTeX Info: Redefining \nameref on input line 36.
- (dissertation.out) (dissertation.out)
+
+(dissertation.out) (dissertation.out)
 \@outlinefile=\write4
 \openout4 = `dissertation.out'.
 
@@ -629,12 +635,12 @@ Overfull \hbox (0.84189pt too wide) in paragraph at lines 50--50
  []
 
 LaTeX Font Info:    Try loading font information for U+msa on input line 50.
-(E:\Programs\MikTex\tex\latex\amsfonts\umsa.fd
+("C:\Program Files\MikTex\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Try loading font information for U+msb on input line 50.
 
-(E:\Programs\MikTex\tex\latex\amsfonts\umsb.fd
+("C:\Program Files\MikTex\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
@@ -680,7 +686,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ]
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 97.
 
-(E:\Programs\MikTex\tex\latex\base\omscmr.fd
+("C:\Program Files\MikTex\tex\latex\base\omscmr.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
@@ -689,10 +695,10 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 
 ] [15] [16
 
-] [17] [18
-
 ]
-[19] [20
+[17] [18
+
+] [19] [20
 
 ]
 Chapter 1.
@@ -730,31 +736,46 @@ LaTeX Warning: Citation `s4pe' on page 13 undefined on input line 615.
 
 LaTeX Warning: Citation `s4cas' on page 13 undefined on input line 615.
 
-
-LaTeX Warning: Citation `examplebasedhair' on page 13 undefined on input line 6
-33.
-
 [13
 
 ]
 
-LaTeX Warning: Citation `sphericalcoords' on page 14 undefined on input line 63
-6.
+LaTeX Warning: Citation `examplebasedhair' on page 14 undefined on input line 6
+37.
 
-(E:\Programs\MikTex\tex\latex\listings\lstlang1.sty
+
+LaTeX Warning: Citation `sphericalcoords' on page 14 undefined on input line 64
+0.
+
+("C:\Program Files\MikTex\tex\latex\listings\lstlang1.sty"
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
-(E:\Programs\MikTex\tex\latex\listings\lstmisc.sty
+("C:\Program Files\MikTex\tex\latex\listings\lstmisc.sty"
 File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
-) [14] [15] [16]
-Chapter 4.
-[17
+)
 
-] [18]
-Chapter 5.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: Citation `blenderedgeloop' on page 14 undefined on input line 69
+9.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[14]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[15] [16] [17] [18]
+Chapter 4.
 [19
 
-] [20
+] [20]
+Chapter 5.
+[21
+
+] [22
 
 ] (dissertation.bbl
 Missing character: There is no â in font cmr10!
@@ -763,18 +784,18 @@ Missing character: There is no “ in font cmr10!
 Missing character: There is no â in font cmr10!
 Missing character: There is no € in font cmr10!
 Missing character: There is no “ in font cmr10!
-) [21
+) [23
 
-] [22
+] [24
 
 ]
 Appendix A.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 925.
-[23]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 925.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 981.
+[25]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 981.
  (dissertation.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 925.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 925.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 981.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 981.
 Package rerunfilecheck Info: File `dissertation.out' has not changed.
 (rerunfilecheck)             Checksum: 29A688BCF10482A4017F05B4ECFF88E2;2286.
 
@@ -790,35 +811,36 @@ LaTeX Warning: There were multiply-defined labels.
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 11831 strings out of 493333
- 175638 string characters out of 3143102
- 432166 words of memory out of 3000000
+ 11839 strings out of 493333
+ 176708 string characters out of 3140918
+ 432750 words of memory out of 3000000
  14950 multiletter control sequences out of 15000+200000
  12043 words of font info for 44 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  42i,20n,74p,1154b,7218s stack positions out of 5000i,500n,10000p,200000b,50000s
-<E:/Programs/MikTex/fonts/type1/public/amsfonts/cm/cmbsy10.pfb>
-<E:/Programs/MikTex/fonts/type1/public/amsfonts/cmextra/cmbsy7.pfb><E:/Programs
-/MikTex/fonts/type1/public/amsfonts/cm/cmbx10.pfb><E:/Programs/MikTex/fonts/typ
-e1/public/amsfonts/cm/cmbx12.pfb><E:/Programs/MikTex/fonts/type1/public/amsfont
-s/cm/cmbx5.pfb><E:/Programs/MikTex/fonts/type1/public/amsfonts/cm/cmbx7.pfb><E:
-/Programs/MikTex/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><E:/Programs/MikTe
-x/fonts/type1/public/amsfonts/cm/cmex10.pfb><E:/Programs/MikTex/fonts/type1/pub
-lic/amsfonts/cm/cmmi10.pfb><E:/Programs/MikTex/fonts/type1/public/amsfonts/cm/c
-mmi7.pfb><E:/Programs/MikTex/fonts/type1/public/amsfonts/cm/cmmib10.pfb><E:/Pro
-grams/MikTex/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb><E:/Programs/MikTex
-/fonts/type1/public/amsfonts/cm/cmr10.pfb><E:/Programs/MikTex/fonts/type1/publi
-c/amsfonts/cm/cmr12.pfb><E:/Programs/MikTex/fonts/type1/public/amsfonts/cm/cmr1
-7.pfb><E:/Programs/MikTex/fonts/type1/public/amsfonts/cm/cmr5.pfb><E:/Programs/
-MikTex/fonts/type1/public/amsfonts/cm/cmr7.pfb><E:/Programs/MikTex/fonts/type1/
-public/amsfonts/cm/cmsl10.pfb><E:/Programs/MikTex/fonts/type1/public/amsfonts/c
-m/cmsy10.pfb><E:/Programs/MikTex/fonts/type1/public/amsfonts/cm/cmsy7.pfb><E:/P
-rograms/MikTex/fonts/type1/public/amsfonts/cm/cmti10.pfb><E:/Programs/MikTex/fo
-nts/type1/public/amsfonts/cm/cmtt10.pfb><E:/Programs/MikTex/fonts/type1/public/
-amsfonts/symbols/msbm10.pfb>
-Output written on dissertation.pdf (45 pages, 428453 bytes).
+<C:/Program Files/MikTex/fonts/type1/public/amsfonts/cm/cmbsy10
+.pfb><C:/Program Files/MikTex/fonts/type1/public/amsfonts/cmextra/cmbsy7.pfb><C
+:/Program Files/MikTex/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program Fi
+les/MikTex/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MikTex/f
+onts/type1/public/amsfonts/cm/cmbx5.pfb><C:/Program Files/MikTex/fonts/type1/pu
+blic/amsfonts/cm/cmbx7.pfb><C:/Program Files/MikTex/fonts/type1/public/amsfonts
+/cm/cmbxti10.pfb><C:/Program Files/MikTex/fonts/type1/public/amsfonts/cm/cmex10
+.pfb><C:/Program Files/MikTex/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Pro
+gram Files/MikTex/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files/Mi
+kTex/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Program Files/MikTex/fonts/
+type1/public/amsfonts/cmextra/cmmib7.pfb><C:/Program Files/MikTex/fonts/type1/p
+ublic/amsfonts/cm/cmr10.pfb><C:/Program Files/MikTex/fonts/type1/public/amsfont
+s/cm/cmr12.pfb><C:/Program Files/MikTex/fonts/type1/public/amsfonts/cm/cmr17.pf
+b><C:/Program Files/MikTex/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Program 
+Files/MikTex/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files/MikTex/f
+onts/type1/public/amsfonts/cm/cmsl10.pfb><C:/Program Files/MikTex/fonts/type1/p
+ublic/amsfonts/cm/cmsy10.pfb><C:/Program Files/MikTex/fonts/type1/public/amsfon
+ts/cm/cmsy7.pfb><C:/Program Files/MikTex/fonts/type1/public/amsfonts/cm/cmti10.
+pfb><C:/Program Files/MikTex/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Prog
+ram Files/MikTex/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on dissertation.pdf (47 pages, 435482 bytes).
 PDF statistics:
- 664 PDF objects out of 1000 (max. 8388607)
- 194 named destinations out of 1000 (max. 500000)
+ 681 PDF objects out of 1000 (max. 8388607)
+ 202 named destinations out of 1000 (max. 500000)
  270 words of extra memory for PDF output out of 10000 (max. 10000000)
 

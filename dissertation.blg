@@ -5,10 +5,13 @@ Repeated entry---line 33 of file dissertation.bib
  : @book{procedural1
  :                  ,
 I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "curseofdyn"
 Warning--I didn't find a database entry for "lsystem"
 Warning--I didn't find a database entry for "pca1933"
 Warning--I didn't find a database entry for "s4pe"
 Warning--I didn't find a database entry for "s4cas"
+Warning--I didn't find a database entry for "examplebasedhair"
+Warning--I didn't find a database entry for "sphericalcoords"
 Name 1 in "D. M. D. Carli, C. T. Pozzer, F. Bevilacqua, and M. C. d Ornellas" has a comma at the end for entry procedural1
 while executing---line 1049 of file plain.bst
 Name 1 in "Baxter, W., and Anjyo, K." has a comma at the end for entry latentdoodle
@@ -57,9 +60,6 @@ Warning--empty year in pca1901
 Warning--empty title in tsr
 Warning--empty publisher in tsr
 Warning--empty year in tsr
-Warning--empty title in mri
-Warning--empty publisher in mri
-Warning--empty year in mri
 Name 1 in "Rasmussen, C. E., and Williams, C." has a comma at the end for entry gp
 while executing---line 1090 of file plain.bst
 Name 1 in "Tipping, M. E., and Bishop, C. M." has a comma at the end for entry ppca
