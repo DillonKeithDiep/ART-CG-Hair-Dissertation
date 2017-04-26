@@ -1,5 +1,10 @@
 \begin{thebibliography}{10}
 
+\bibitem{sphericalcoords}
+G.~B. Arfken and H.~J. Weber.
+\newblock {\em Mathematical Methods for Physicists}.
+\newblock Academic Press, 6th edition, 2005.
+
 \bibitem{wingededge}
 B.~G. Baumgart.
 \newblock {\em Winged Edge Polyhedron Representation}.
@@ -37,7 +42,7 @@ R.~Milo. et~al.
 \newblock BioNumbers. BNID 101509, 2017.
 
 \bibitem{styleik}
-et~al Grochow, K.
+K.~et~al. Grochow.
 \newblock {\em Style-Based Inverse Kinematics}.
 \newblock SIGGRAPH '04 ACM SIGGRAPH 2004 Papers. pp.522-531, 2004.
 
@@ -59,7 +64,7 @@ N.~D. Lawrence.
 \newblock The Journal of Machine Learning Research 6, 1783–1816, 2004.
 
 \bibitem{drawingassistance}
-et~al Limpaecher, A.
+A.~et~al. Limpaecher.
 \newblock {\em Real-time Drawing Assistance through Crowdsourcing}.
 \newblock ACM Trans. Graph. 32, 4 (July), 2013.
 
@@ -88,6 +93,12 @@ M.~E. Tipping and C.~M. Bishop.
 M.~K. Titsias and N.~D. Lawrence.
 \newblock {\em Bayesian Gaussian Process Latent Variable Model}.
 \newblock AISTATS. Vol. 9, 2010.
+
+\bibitem{examplebasedhair}
+L.~et~al. Wang.
+\newblock {\em Example-Based Hair Geometry Synthesis}.
+\newblock ACM Transactions on Graphics (TOG) - Proceedings of ACM SIGGRAPH
+  2009. Vol. 28, Issue 3., 2009.
 
 \bibitem{graphtheory}
 R.~J. Wilson.

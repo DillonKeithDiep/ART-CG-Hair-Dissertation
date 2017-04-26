@@ -8,6 +8,7 @@
 \RequirePackage{pgfkeys}
 \RequirePackage{pgfopts}
 \RequirePackage{bm}
+\RequirePackage{gensymb}
 
 \pgfkeys{/dissertation/.cd,
 %     author = string
@@ -124,6 +125,11 @@
 }
 
 \pagestyle{plain}
+
+% extra styling %
+%\setlength{\parskip}{1em}
+%\renewcommand{\baselinestretch}{1}
+%\setlength{\parindent}{0em}
 
 % -----------------------------------------------------------------------------
 

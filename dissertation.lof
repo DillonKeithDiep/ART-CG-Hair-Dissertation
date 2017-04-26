@@ -2,10 +2,10 @@
 \contentsline {figure}{\numberline {1.1}{\ignorespaces Image of hair geometry.}}{1}{figure.1.1}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Spherical coordinate system}}{14}{figure.3.1}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Image of scalp space}}{14}{figure.3.2}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Image of edge loop growing}}{15}{figure.3.3}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Image of corners and borders}}{15}{figure.3.4}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces 3D spherical coordinate system}}{14}{figure.3.1}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Sphere meshes visualise root positions. The angle ranges specify coverage area of the scalp, while the interval of placements determines resolution. Fitting a sphere to the reference head mesh approximates the radial distance and origin.}}{14}{figure.3.2}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Our edge loop extraction algorithm begins by selecting an edge within the mesh graph. The two vertices of the edge are \textbf {end vertices}. We then proceed to \textit {grow} the edge loop selection. Take the set of \textbf {first degree neighbours} of the \textit {end vertices}, these nodes are the \textit {candidates} for the edge loop. We remove edges that are part of the current edge loop from this set of first degree neighbours. We add the first degree neighbours to a set of face vertices for following iterations. Take the neighbours of the first degree neighbours as a set of \textbf {second degree neighbours}, removing its originating end vertex. A candidate node is only accepted to the edge loop if its set neighbours do not intersect with the set of face vertices. Accepted vertices are appended to the list of end vertices, this process is repeated until there are no end vertices left to grow the selection.}}{15}{figure.3.3}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Observe that the corner vertices have two edges, and the border edges have three. Determining the root edge loop is done by choosing the border edge loop that is closest to the scalp surface.}}{16}{figure.3.4}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
