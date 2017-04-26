@@ -9,6 +9,7 @@
 \RequirePackage{pgfopts}
 \RequirePackage{bm}
 \RequirePackage{gensymb}
+\RequirePackage{tikz}
 
 \pgfkeys{/dissertation/.cd,
 %     author = string

@@ -641,7 +641,7 @@ The spherical polar coordinate system specifies a point from the origin using th
 \begin{figure}[!h]
 	\centering
 	\includegraphics[scale=0.25]{images/sphereCoords}\\
-	\tiny{Source: Public Domain, CC0}
+	\tiny{Source: \href{https://commons.wikimedia.org/wiki/File:3D_Spherical.svg}{https://commons.wikimedia.org/wiki/File:3D\_Spherical.svg}, public domain.}
 	\caption{3D spherical coordinate system}
 	\label{fig}
 \end{figure}
@@ -767,29 +767,40 @@ where $\bm{S}$ denotes the starting position that is the $j_{th}$ point of the o
 A potential improvement for parametrising the strand splines is to concentrating more sampling points at curves rather than evenly spaced. Using less parameters mitigates problems introduced by the curse of dimensionality.
 
 \subsection{Structure Estimation}
-\subsubsection{Selection Operator}
-Each root is associated to a spline by a selection operator. Attributes that make a spline more desirable to a particular root are attributes such as proximity or uniqueness compared to previously selected splines. The motivation is to use a set amount of roots to represent the hair structure without losing too much information.
+Spline estimation extracts an arbitrary number of splines. The next step is to choose a fixed number of splines that represents the hair structure.
+
+We introduce a \textbf{selection operator} to associate a root with a spline such that the combination of splines are representative of the hair structure. Attributes that make a spline more desirable to a particular root include
 \begin{itemize}
-	\item Closest strand to root
-	\item Average of area
-	\item "Unique" factor
+	\item \textit{proximity} - how close the subject spline is to the root position.
+	\item \textit{entropy} - the information conveyed by the subjected spline.
+	\item \textit{uniqueness} - whether there are other roots that have already captured the information conveyed by the subjected spline.
 \end{itemize}
+We experimented with several selection operators:
+\begin{itemize}
+	\item \textit{nearest strand selector} naively selects the closest spline of each root position. 
+	\item \textit{average strand selector} picks all strands within vicinity and takes the average representation.
+	\item \textit{unique selector} considers all strands within vicinity and takes the spline that has maximises the minimum distance from any spline already selected by other roots.
+\end{itemize}
+
+\begin{figure}[!h]
+	\centering
+	\caption{Comparison of selection operators}
+	%\includegraphics[scale=0.5]{images/selectionOperators}\\
+\end{figure}
 
 \section{Learning a Manifold with Bayesian GP-LVM}
 
-\subsection{Handling Uncertainty}
-Add offset so top of head is "mean", so uncertain hair moves towards the top (avoids hair moving inside head or other unlikely areas)
+Once we have acquired a method to estimate the hair structure of the input data, we can then learn a latent manifold for generative parameters of hair.
 
-\subsection{GP-LVM and Bayesian GP-LVM}
+A prior of the covariance matrix is updated by each observed data. The kernel we select assumes the relation of the true function.
 
-\subsection{Kernel: ARD, Variance, and Lengthscale}
-\subsubsection{RBF}
-Smooth
-\subsubsection{Exponential}
-Moving latent variables make little change when uncertain
+RBF: Smooth
+Exponential: Moving latent variables make little change when uncertain
+Lienar: bad, moving in 1 dimensions only changes the hairstyle one way
 
-\subsubsection{Linear}
-Bad, moving in 1 dimensions only changes the hairstyle one way
+Variance, lengthscale, ARD
+
+Handling uncertainty: Add offset so top of head is "mean", so uncertain hair moves towards the top (avoids hair moving inside head or other unlikely areas)
 
 \section{Generation of Output}
 GPy native matplotlib conflicts with Blender as TKInter is disabled.

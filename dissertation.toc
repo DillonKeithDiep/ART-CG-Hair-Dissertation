@@ -50,20 +50,13 @@
 \contentsline {subsubsection}{Spline Repair Operation}{17}{section*.23}
 \contentsline {subsubsection}{Parametrising a Strand Spline}{17}{section*.24}
 \contentsline {subsection}{\numberline {3.3.3}Structure Estimation}{17}{subsection.3.3.3}
-\contentsline {subsubsection}{Selection Operator}{17}{section*.25}
 \contentsline {section}{\numberline {3.4}Learning a Manifold with Bayesian GP-LVM}{18}{section.3.4}
-\contentsline {subsection}{\numberline {3.4.1}Handling Uncertainty}{18}{subsection.3.4.1}
-\contentsline {subsection}{\numberline {3.4.2}GP-LVM and Bayesian GP-LVM}{18}{subsection.3.4.2}
-\contentsline {subsection}{\numberline {3.4.3}Kernel: ARD, Variance, and Lengthscale}{18}{subsection.3.4.3}
-\contentsline {subsubsection}{RBF}{18}{section*.26}
-\contentsline {subsubsection}{Exponential}{18}{section*.27}
-\contentsline {subsubsection}{Linear}{18}{section*.28}
 \contentsline {section}{\numberline {3.5}Generation of Output}{18}{section.3.5}
 \contentsline {section}{\numberline {3.6}Data Acquisition}{18}{section.3.6}
 \contentsline {section}{\numberline {3.7}Challenges}{18}{section.3.7}
 \contentsline {section}{\numberline {3.8}Project Management}{18}{section.3.8}
 \contentsline {subsection}{\numberline {3.8.1}Source Control}{18}{subsection.3.8.1}
-\contentsline {subsection}{\numberline {3.8.2}Issue Tracking}{18}{subsection.3.8.2}
+\contentsline {subsection}{\numberline {3.8.2}Issue Tracking}{19}{subsection.3.8.2}
 \contentsline {subsection}{\numberline {3.8.3}Time-line}{19}{subsection.3.8.3}
 \contentsline {chapter}{\numberline {4}Critical Evaluation}{21}{chapter.4}
 \contentsline {section}{\numberline {4.1}Functional Testing}{21}{section.4.1}
@@ -74,8 +67,8 @@
 \contentsline {subsection}{\numberline {4.4.2}Choice of Learning Model}{21}{subsection.4.4.2}
 \contentsline {subsection}{\numberline {4.4.3}Comparing with Other methods}{21}{subsection.4.4.3}
 \contentsline {subsection}{\numberline {4.4.4}Extending to other models}{21}{subsection.4.4.4}
-\contentsline {subsubsection}{Addressing Non-Intuitive Use}{22}{section*.29}
-\contentsline {subsubsection}{Observations}{22}{section*.30}
+\contentsline {subsubsection}{Addressing Non-Intuitive Use}{22}{section*.25}
+\contentsline {subsubsection}{Observations}{22}{section*.26}
 \contentsline {section}{\numberline {4.5}Applications}{22}{section.4.5}
 \contentsline {chapter}{\numberline {5}Conclusion}{23}{chapter.5}
 \contentsline {section}{\numberline {5.1}Summary}{23}{section.5.1}
