@@ -610,25 +610,41 @@ An edge loop is a set of connected non-forking edges that traverses the polygon 
 \chapter{Project Execution}
 \label{chap:execution}
 
+This chapter discusses the steps undertaken to produce 3D hair geometry. A significant portion of this project is dedicated towards processing input polygonal hair mesh data so that the GP-LVM model can be effectively applied. 
+First, we outline the process of acquiring appropriate 3D mesh input data and challenges imposed by using polygonal meshes as training data. Then, we address the data alignment problem, resolving it by feature extraction via approximating the data to obtain estimated parameters of a generative model. The latter sections of this chapter covers the training process and using output of the model to define geometry.
+
 \section{Training Data Set}
 \subsection{Acquiring Training Data}
-The machine learning process begins with training data acquisition. Suitable 3D hair geometry is scarce when compared to alternatives such as images. Courtesy of Electronic Arts there exists an active community that produces free custom content for their gaming software - which includes polygonal hair. \cite{tsr} Files acquired are encoded in the \textit{Package} format, developed for a video game series, \textit{The Sims}. Open-source community software \textit{s4pe} is used to read the package file and extract geometry in \textit{Simgeom} format. \cite{s4pe} The \textit{Simgeom} format is then converted to \textit{OBJ} format using yet another open-source program \textit{S4CASTools}. \cite{s4cas} The geometry extracted is already standardised in scale and orientation.
+The machine learning process begins with training data acquisition. Suitable 3D hair geometry is scarce when compared to alternatives such as images. Courtesy of Electronic Arts there exists an active community that produces free custom content for their gaming software - which includes polygonal hair. \cite{tsr} Files acquired are encoded in the \textit{Package} format, developed for a video game series, \textit{The Sims}. Open-source community software \textit{s4pe} is used to read the \textit{Package} file and extract geometry in \textit{Simgeom} format. \cite{s4pe} The \textit{Simgeom} format is then converted to \textit{OBJ} format using yet another open-source program \textit{S4CASTools}. \cite{s4cas} The geometry extracted is already standardised in scale and orientation.
+
+\begin{figure}[!h]
+	\centering
+	%\includegraphics[scale=0.25]{}\\
+	\caption{example polygon hair mesh training data.}
+\end{figure}
 
 \subsection{Repairing Training Data}
 As mentioned, it is often the case for 3D mesh topology to be organised by quad-faces during production. Rendering pipelines convert quad meshes to triangles as an optimisation process. \textit{Simgeom} data are triangulated meshes; reconstruction is performed on all input data to convert the geometry from triangulated meshes to have quad-face topology. It is possible to partially automate this process through functionality offered by the Blender API. A script to batch process conversion of multiple meshes executes the following steps in Blender:
 \begin{enumerate}
 	\item First, a new blank scene is created.
 	\item Import a mesh object from the directory that contains the training data set.
-	\item Select the imported mesh and enter edit mode which as its name suggests is for editing objects.
+	\item Select the imported mesh and enter edit context mode which enables operations for manipulating objects.
 	\item Select all vertices of the mesh and apply the tri-to-quad conversion operation.
-	\item Export the mesh object after entering object mode.
-	\item Delete the mesh from the scene and repeat from step 2 with the next mesh in the training directory until processing of all meshes.
+	\item Enter object context mode to export the mesh.
+	\item Delete the mesh from the scene
+	\item Repeat from step 2 with the next mesh in the training directory until processing of all meshes.
 \end{enumerate}
 
-Existing algorithmic solutions for converting a triangle mesh to a quad mesh are imperfect. Remaining triangle faces are to be removed manually after the procedure. The conversion process alters the geometry very marginally but preserves the representation of hair structure. The quad-faced meshes are used for feature extraction and are assumed to be correct in the context that it is representative of a valid hairstyle. 
+Existing algorithmic solutions for converting a triangle mesh to a quad mesh are imperfect. Remaining triangle faces are required to be removed manually after the procedure. The conversion process alters the geometry very marginally but preserves the representation of hair structure. The quad-faced meshes are used for feature extraction and are assumed to be correct in the context that it is representative of a valid hairstyle. 
+
+\begin{figure}[!h]
+	\centering
+	%\includegraphics[scale=0.25]{}\\
+	\caption{(a) the original training mesh, (b) a partially retopologised mesh after tri-to-quad conversion operation, (c) a fully retopologised mesh after manually completing the conversion.}
+\end{figure}
 
 {\color{red}
-On average the training data has X vertices and Y edges. Separating the hair mesh to individual segments give up to ? submeshes. Each segment has ? faces, around ? are left as tris converting a tris to quads manually takes the knife tool or dissolving edges, several actions per face. Manually converting a single hair mesh on average took 2 hours. This takes considerable time to achieve, thus not all the training data is converted, resulting in an imperfect training set.
+On average a input training mesh has X vertices and Y edges. The conversion algorithm on the training set used completes about ?\% of the retopologising process. To retopologise the remaining triangles as quads manually, the hair mesh is separated into individual segments so that vertex, edge, and face components are not obstructed by layering geometry. On average, each mesh of the training set has around ? sub-meshes. Every sub-mesh must be inspected to find remaining trianglular polygons. There are many ways one can modify topology of a mesh, we assume that basic methods such as utilising the knife tool or dissolve tool of Blender takes only order of seconds per sub-mesh. The time for manually retopologising a partially converted mesh with the complexity of our training data takes order of hours each. Unfortunately, this meant that it is extremely time consuming to prepare meshes defined by the \textit{Simgeom} format, thus for larger training sets we settled with including flawed examples.
 }
 
 \section{Generative Model of Hair}
@@ -657,10 +673,20 @@ Uniformly placing points at a fixed radial distance and constant intervals withi
 
 A total of 342 splines in our generative model is used to describe hair structure. We construct each spline from 10 points in a 3D space. The resulting feature vector is 10260 dimensions long.
 
+\begin{figure}[!h]
+	\centering
+	%\includegraphics[scale=0.25]{}\\
+	\caption{A possible configuration of 10260 parameters in the generative model, rendered on Plotly.}
+\end{figure}
+
 \section{Approximating Generative Parameters from Input Data}
 \subsection{Parsing OBJ File}
-Approximation begins by parsing the geometric data of OBJ files into a graph data structure of nodes and edges. The axis of exported OBJ files is different from the axis of Blender, to align the coordinate system, swap the Y and Z axis, then negate the Y axis.
-
+Approximation begins by parsing the geometric data of OBJ files into a graph data structure of nodes and edges. The axis of exported OBJ files is different from the axis of Blender, to align the coordinate system, swap the Y and Z axis, then negate the Y axis. \textit{OBJ} is a human-readable format that declares a mesh element per line. The elements we are concerned of are:
+\begin{itemize}
+	\item geometric vertices, specified by a line that starts with the "v" character, followed by floating values that represent the x, y, z of the vertex position.
+	\item face elements, specified by a line that starts with the "f" character, followed by a list of vertex indices that correspond to a vertex line.
+\end{itemize}
+Variations of the format may exist by implementation, but only the essentials identified are required for our purpose. An algorithm that parses \textit{OBJ} files to retrieve a mesh graph and its corresponding vertex dictionary is given by:
 \begin{algorithm}[!h]
 	\caption{Parsing OBJ format}
 	\textbf{Input}: file name\;
@@ -681,9 +707,7 @@ Approximation begins by parsing the geometric data of OBJ files into a graph dat
 
 \subsection{Spline Estimation}
 \subsubsection{Edge Loop Extraction}
-The versatile structure of polygon meshes allows it to be an expressive format, however, this flexibility can cause ambiguity when analysing geometric structure. We assume that the mesh only contains sub-meshes of hair segments that have grid-like topology. Our assumption allows us to extract edge loops that describe the structure of hair segments.
-
-In the technical documentation of Blender, it describes an algorithm for edge loop selection. \cite{blenderedgeloop}:
+The versatile structure of polygon meshes allows it to be an expressive representation, however, this flexibility can cause ambiguity when analysing geometric structure. We assume that the mesh only contains sub-meshes of hair segments that have grid-like topology. Our assumption allows us to extract edge loops that describe the structure of hair segments. In the technical documentation of Blender, it describes an algorithm for edge loop selection. \cite{blenderedgeloop}:
 \begin{enumerate}
 \item Given a starting edge, only continue searching adjacent edges if the candidates connect to exactly three other neighbours, as any other value would indicate either the border of a mesh or encountering a pole vertex.
 \item Completing a cyclic edge loop ends the selection process.
@@ -699,11 +723,11 @@ We devise an edge loop extraction algorithm that achieves the properties specifi
 	\label{edgeLoopFig}
 \end{figure}
 
-\subsubsection{Border Edge Loops}
-Hair structure estimation begins by splitting the mesh into sub-meshes, determined by graph connectivity. For each segment mesh, we are interested in the edge loops that represent hair strands from the scalp roots. To find these edge loops, we must locate the border edge loops of the mesh and choose one to be the root edge loop.
+\subsubsection{Boundary Edge Loops}
+Hair structure estimation begins by splitting the mesh into sub-meshes, determined by graph connectivity. For each segment mesh, we are interested in the edge loops that represent hair strands from the scalp roots. To find these edge loops, we must locate the boundary edge loops of the mesh and choose one to be the root edge loop.
 
 \begin{algorithm}[!h]
-	\caption{Extracting border edge loops}
+	\caption{Extracting boundary edge loops}
 	\While{number of corner vertices greater than 0}{
 		pick a corner vertex\;
 		\For{vertex in neighbours of selected corner}{
@@ -722,16 +746,16 @@ Hair structure estimation begins by splitting the mesh into sub-meshes, determin
 	\Return border edge loops
 \end{algorithm}
 
-Corner vertices are nodes that have exactly two edges, while border vertices have three edges. Border edge loops are determined by selecting an edge of a corner vertex and growing the edge loop. Any edge of a corner vertex will connect to a border vertex. The selection is specified to stop upon encountering another corner vertex, resulting in an edge loop of a border. We discard the vertices of the extracted border edge loop. Remove any corner vertices that no longer have any neighbours left in the set of border vertices. Repeat until there are no corner nodes left, thus successfully extracting the boundary of the mesh as a collection edge loops.
+Corner vertices are nodes that have exactly two edges, while border vertices have three edges. Boundary edge loops are determined by selecting an edge of a corner vertex and growing the edge loop. Any edge of a corner vertex will connect to a border vertex. The selection is specified to stop upon encountering another corner vertex, resulting in an edge loop of the bounds. We discard the vertices of the extracted boundary edge loop. Remove any corner vertices that no longer have any neighbours left in the set of border vertices. Repeat until there are no corner nodes left, thus successfully extracting the boundary of the mesh as a collection edge loops.
 
 \begin{figure}[!h]
 	\centering
-	\caption{Observe that the corner vertices have two edges, and the border edges have three. Determining the root edge loop is done by choosing the border edge loop that is closest to the scalp surface.}
+	\caption{Observe that the corner vertices have two edges, and the boundary edges have three. Determining the root edge loop is done by choosing the boundary edge loop that is closest to the scalp surface.}
 	\includegraphics[scale=0.5]{images/rootLoop}\\
 \end{figure}
 
 \subsubsection{Root Edge Loop}
-The \textit{root edge loop} is the border edge loop that is closest to the surface of the scalp. It serves as a reference for where the hair strands begin. We determine the root loop by finding the average distance of each vertex in a border loop. Heuristically, the root border has minimal distance when aligned across the scalp.
+The \textit{root edge loop} is the boundary edge loop that is closest to the surface of the scalp. It serves as a reference for where the hair strands begin. We determine the root loop by finding the average distance of each vertex in a boundary loop. Heuristically, the root border has minimal distance when aligned across the scalp.
 
 There is a significant flaw in this approach as it will not correctly predict roots of hair segments that are represented by multiple meshes. A solution to this would be to accept hair that has clear roots first then iteratively join \textit{floating segments} to the end of the closest corresponding \textit{rooted segment} until there are no more, or the system is unable to connect any segments further.	
 
@@ -740,7 +764,7 @@ There is a significant flaw in this approach as it will not correctly predict ro
 \end{algorithm}
 
 \subsubsection{Pivotal Strand Splines}
-With the root loop, we can extract a collection of edge loops that represents the \textit{pivotal} (descriptive) hair strands of the segment cluster. Given the neighbours of root vertices, removing the neighbours that are also root vertices leave edges that represent key strands. When there is one edge, we take the edge loop as a pivotal strand representation. The edge loop will extend until it encounters a pole or ends on the boundary. It is useful to know where the strand starts (from the root), and where it ends. We extract a path from the edge loop graph by continually appending adjacent nodes, starting from the root node. The result forms a spline of connected lines.
+With the root loop, we can extract a collection of edge loops that represents the \textit{pivotal} (descriptive) hair strands of the segment cluster. Given the neighbours of root vertices, removing the neighbours that are also root vertices will leave edges that represent key strands. When there is one edge, we take the edge loop as a pivotal strand representation. The edge loop will extend until it encounters a pole or ends on the boundary. It is useful to know where the strand starts (from the root), and where it ends. We extract a path from the edge loop graph by continually appending adjacent nodes, starting from the root node. The result forms a spline of connecting lines.
 
 \begin{algorithm}[!h]
 	\caption{Extracting spline edge loops}
@@ -751,7 +775,7 @@ With the root loop, we can extract a collection of edge loops that represents th
 \end{algorithm}
 
 \subsubsection{Spline Repair Operation}
-A repair operator processes the strand splines to improve the approximation. First, the starting point of floating splines is attached to the nearest end of a rooted spline if there is one within a specified vicinity. We discard the remaining floating splines that are not attached. Secondly, removing splines that are insignificantly short in length allows for more descriptive splines to be sampled.
+A repair operator processes the strand splines to improve the approximation. First, the starting point of floating splines is attached to the nearest end of a rooted spline, only if there exists one within a specified vicinity. We discard the remaining floating splines that are not attached. Secondly, removing splines that are insignificantly short in length allows for more descriptive splines to be sampled.
 
 \subsubsection{Parametrising a Strand Spline}
 The procedure thus far returns a set of strand splines that have varying number of nodes. We produce a constant dimension through sampling to acquire a spline that is applicable for use as parameters of our generative model.
@@ -764,22 +788,20 @@ We determine the indices $[j, j+1]$ where the sample distance lies on the spline
 $$\bm{P} = \bm{S} + r\bm{D},$$
 where $\bm{S}$ denotes the starting position that is the $j_{th}$ point of the original spline, plus the unit vector direction to the next $j+1_{th}$ point, multiplied by scalar $r$, the remaining distance to cover from the $j_{th}$ interval.
 
-A potential improvement for parametrising the strand splines is to concentrating more sampling points at curves rather than evenly spaced. Using less parameters mitigates problems introduced by the curse of dimensionality.
+A potential improvement for parametrising the strand splines is to concentrate sampling points at curves rather than evenly spaced. Sampling effectively allows the model to be descriptive with less parameters, mitigating problems introduced by the curse of dimensionality.
 
 \subsection{Structure Estimation}
-Spline estimation extracts an arbitrary number of splines. The next step is to choose a fixed number of splines that represents the hair structure.
-
-We introduce a \textbf{selection operator} to associate a root with a spline such that the combination of splines are representative of the hair structure. Attributes that make a spline more desirable to a particular root include
+Spline estimation extracts an arbitrary number of splines. The next step is to choose a fixed number of splines for representing the hair geometry. We introduce a \textbf{selection operator} to associate a root with a spline such that the combination of splines are representative of the hair structure. Attributes that make a spline more desirable to a particular root include:
 \begin{itemize}
 	\item \textit{proximity} - how close the subject spline is to the root position.
-	\item \textit{entropy} - the information conveyed by the subjected spline.
+	\item \textit{significance} - how definitive a particular spline is, or the information conveyed by the subjected spline.
 	\item \textit{uniqueness} - whether there are other roots that have already captured the information conveyed by the subjected spline.
 \end{itemize}
-We experimented with several selection operators:
+Several selection operators experimented are:
 \begin{itemize}
-	\item \textit{nearest strand selector} naively selects the closest spline of each root position. 
-	\item \textit{average strand selector} picks all strands within vicinity and takes the average representation.
-	\item \textit{unique selector} considers all strands within vicinity and takes the spline that has maximises the minimum distance from any spline already selected by other roots.
+	\item \textit{nearest strand selector} - it naively selects the closest spline of each root position. 
+	\item \textit{average strand selector} - picks all strands within vicinity and takes the average representation.
+	\item \textit{unique selector} - considers all strands within vicinity and takes the spline that has maximises the minimum distance from any spline already selected by other roots.
 \end{itemize}
 
 \begin{figure}[!h]
@@ -789,42 +811,50 @@ We experimented with several selection operators:
 \end{figure}
 
 \section{Learning a Manifold with Bayesian GP-LVM}
-
 Once we have acquired a method to estimate the hair structure of the input data, we can then learn a latent manifold for generative parameters of hair.
 
-A prior of the covariance matrix is updated by each observed data. The kernel we select assumes the relation of the true function.
+A perspective that extends GP-LVM is the paradigm of \textbf{Kernel Method Based GP-LVMs}. \cite{reviewgplvm}  GP-PLVM can be equivalent to \textit{Probabilistic Kernel Principal Component Analysis} (PKPCA) when replacing the $\bm{XX}^T$ term of equation ? with a kernel matrix. The choice of a kernel influences performance of the model as it specifies the prior distribution for regression. Selection of the kernel depends on the task to be accomplished.
 
-RBF: Smooth
-Exponential: Moving latent variables make little change when uncertain
-Lienar: bad, moving in 1 dimensions only changes the hairstyle one way
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.3]{images/gpyKernels}\\
+	\tiny{Source: GPy library documentation}
+	\caption{GPy offers various standard kernels. Multi-modal kernels can be formed from combining kernels to represent data of complex nature.}
+\end{figure}
 
-Variance, lengthscale, ARD
+The \textbf{radial basis function (RBF) kernel} models the data smoothly, interpolating between variables gradually. An \textbf{exponential kernel} places emphasis at peak likelihoods, changing very little from observed data when uncertainty is high. Using a \textbf{linear kernel} is equivalent to modelling with PPCA. Figure \ref{kernelHair} illustrates the results of RBF, exponential, and linear kernels in our regression model.
 
-Handling uncertainty: Add offset so top of head is "mean", so uncertain hair moves towards the top (avoids hair moving inside head or other unlikely areas)
+\begin{figure}[!h]
+	\centering
+	%\includegraphics[scale=0.3]{images/kernelHair}\\
+	\caption{As expected, a linearly embedded hairstyle is of little use as it can only extrapolate along one style. }
+	\label{kernelHair}
+\end{figure}
+
+
+\textit{Hyper-parameters} of a kernel specifies its behaviour. A \textit{lengthscale} parameter determines how much the distance of variables influence each other, and the \textit{variance} describes its distribution. We apply \textit{automatic relevance determination} (ARD), which uses the observed data to estimate the length-scale parameters. 
+
+The input data is transformed so that the origin is marginally above the origin of the scalp space. When the regression model is uncertain, it is sensible to bias the prediction towards the mean. Transforming the input data prevents generated hair to move inside the reference head mesh when uncertainty is high. An inverse transformation is applied on the output after prediction so that the generated mesh is located at its intended position. 
 
 \section{Generation of Output}
-GPy native matplotlib conflicts with Blender as TKInter is disabled.
-Plot image of latent space to be imported into image editor of Blender.
-Pickle model to be imported by Blender's python.
-Select latent variables from manifold (Blender event API)
-Read model and predict output by selected latent variables
-Generate guide splines following format of latent model and generative model
-Extrude by spline object
-Rotate by head surface normals
-Convert to Poly
+Completion of the training process provides a regression model that predicts hair structure from estimated input data using our generative model. A problem encountered was incompatibility of the plotting module in the GPy library with the Python distribution of Blender, where a required standard module \textit{TKInter} is not present. To overcome this issue, the training process plotted latent manifold is stored as an image and the regression model is serialised using the \textit{Pickle} module of Python. A Blender add-on implementation can then load the latent manifold image on the UV image editor of the program and through the API, load the serialised regression model to predict latent variables sampled from the manifold.
 
-\section{Data Acquisition}
-Split tests to 0-9 output in folder with user identifier and test value
+Output generative parameters are used to create \textit{guide splines} from the poly-line data structure of the Blender API. Polygon mesh geometry is produced from assigning these guide splines to a predefined taper curve and applied with the extrude functionality to create the appearance of hair geometry. An extension to our generative model would be specifying additional parameters such as orientation and width of hair segments, this would enable the regression model to also learn such attributes of the input data.
 
-\section{Challenges}
-Discuss problems resolved here
+\begin{figure}[!h]
+	\centering
+	%\includegraphics[scale=0.3]{images/kernelHair}\\
+	\caption{Blender Latent Hair Modelling Add-on}
+	\label{blenderAddon}
+\end{figure}
+
+
+\section{Logging User Activity}
+Our add-on implementation can be set to track user activity for acquiring behavioural data when using the latent manifold for geometry generation. Data logged include time spent exploring the manifold, mouse movement, and normalised likelihood of selected predictions. An output management procedure is developed to organise and write logged data automatically so that user testing can proceed seamlessly.
 
 \section{Project Management}
-\subsection{Source Control}
-Git is used for source control of the project implementation. The branching feature is useful for separating development of features. Maintaining multiple versions of the code base prevented issues caused by the interaction of incomplete features. The merging and rebasing tools helped conflict resolution. Descriptive atomic commits keep a log of progress and supports roll-back to older versions when necessary. A private repository backup was set up on a hosting service provider to prevent data loss and enable development on multiple machines with ease.
+\textit{Git} is used for source control of the project implementation. The branching feature is useful for separating development of features. Maintaining multiple versions of the code base prevented issues caused by the interaction of incomplete features. The merging and rebasing tools helped conflict resolution. Descriptive atomic commits keep a log of progress and supports roll-back to older versions when necessary. A private repository backup was set up on a hosting service provider to prevent data loss and enable development on multiple machines with ease.
 
-\subsection{Issue Tracking}
-Trello
 
 \subsection{Time-line}
 Calender.
@@ -842,6 +872,8 @@ Internal Deadlines.
 	\caption{This is an example table.}
 	\label{tab}
 \end{table}
+
+Issue tracking was performed on Trello.
 
 % -----------------------------------------------------------------------------
 
