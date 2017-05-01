@@ -77,35 +77,29 @@ year={2014} ]{dissertation}
 % -----------------------------------------------------------------------------
 
 \chapter*{Executive Summary}
+The topic of this dissertation explores assisted content generation through training regression models using unsupervised machine learning for the production of 3D hair geometry. The research hypothesis of this study is that non-linear probabilistic dimension reduction embeddings offer an alternate procedure that improves the efficacy of creative production for complex 3D hair geometry on virtual humanoids.
 
-{\bf A compulsory section, of at most $1$ page} 
-\vspace{1cm} 
+Production of 3D virtual worlds is a time-consuming and costly process that also demand expert knowledge. 3D assets encompass a vast range of applications, ranging from simulations and research to contributing towards the functioning of many industries. Our proposition of non-linear probabilistic dimension reduction consolidates observed variables to provide a parsimonious collection of latent variables, drastically diminishing the complexity of the production pipeline. Simplifying a procedure within the pipeline yield increased throughput and offer an opportunity for rapid prototyping. A non-linear approach minimises loss of information; thus high dimensional data can be reduced effectively to dimensionality that is sufficiently low. Non-experts may find directing a few descriptive components within a low dimension representation easier than controlling an overwhelming number of attributes present in the original data.
 
-\noindent
-The topic of this dissertation explores assisted content generation by training generative models using unsupervised machine learning for the production of 3D hair geometry. The research hypothesis of this study is that non-linear probabilistic principal component analysis with the Gaussian Process Latent Variable Model is applicable for improving the creative production workflow of complex 3D hair geometry for humanoids.
+One particular task is the creation of 3D hair geometry for humanoid characters. Creating 3D hair is arduous as hair structure is a complex system containing much interdependence between components. The properties of 3D hair geometry pose significant challenges for machine learning solutions. Machine learning typically uses large data sets for training on problems that often have a concise answer for a given prediction. The application of machine learning to enhance production for creative work is an exciting field that faces novel challenges: artistic products tend to have small sets of data available, and evaluation of quality is subjective. Given the same input, acceptable solutions can vary significantly. The outlined peculiarities of applying machine learning to 3D mesh data establish a unique field of problems to investigate.
 
-Production of 3D virtual worlds is a time-consuming and costly process that also demand expert knowledge. 3D assets encompass a vast range of applications, ranging from simulations and research, to contributing towards the functioning of many businesses. The production of 3D assets impacts many industries including engineering, medicine, and the provisioning of entertainment. One particular task is the creation of 3D hair geometry for humanoid characters. Creating 3D hair is arduous as hair structure is a complex system containing much interdependence between components.
+Existing tools for 3D modelling have remained mostly static in the paradigm of approach over the past several decades. Automation through methods such as procedural generation can produce content faster, but the lack of control over the final result make it typically less desirable than traditional methods of 3D modelling. The focus of this project is to present a revolutionary approach that offers an alternative workflow which could potentially improve the efficacy of producing 3D hair geometry through non-linear dimensionality reduction to train regression models.
 
-Machine learning applications typically use large data sets for training on problems that often have a concise answer for a given prediction. The application of machine learning to enhance production for creative work is an exciting field that tackles novel challenges: artistic products tend to have small sets of data available and evaluation of quality is subjective. Given the same input, acceptable solutions can vary significantly. The outlined peculiarities of applying machine learning for 3D mesh data establish a unique field of problems to investigate.
-
-Existing tools for 3D modelling have remained mostly static in the paradigm of approach over the past several decades. Automation through methods such as procedural generation can produce output much faster, but the lack of control over the final result makes it less desirable than traditional methods of 3D modelling. The focus of this project is to formulate a revolutionary approach that offers an alternative work-flow which could potentially improve the efficacy of producing 3D hair geometry through unsupervised training of generative models.
-
-Deliverables:
 \begin{quote}
-	\noindent
+	Deliverables:
 	\begin{itemize}
-		\item Formulation of a generative model for 3D humanoid hair structure.
-		\item Resolving the alignment problem by approximating raw input data using a generative model.
+		\item Formulating a generative model for 3D humanoid hair structure.
+		\item Resolving the alignment problem by repairing raw input mesh data and feature extraction by approximating parameters of our generative model.
 		\item Learning a low dimension latent-space of high dimensional hair structure data.
-		\item Investigated the performance of various kernels for high dimensional training data.
-		\item Implemented an add-on package for a 3D production program, Blender.
+		\item Investigate the performance of various kernels and its impact on the latent variable model.
+		\item Implement an add-on package for a 3D production program, Blender.
 		\begin{itemize}
-			\item The implementation creates guiding splines that are useful for generating hair geometry.
-			\item Appropriate for small training set that is practical for content creators.
-			\item Real-time performance that matches state of the art non-learning tools.
-			\item Functionality to records user activity for analysis.
+			\item Generating guiding hair splines from the output of our regression model.
+			\item Developed with a small training set that is practical for content creators.
+			\item Achieving real-time performance, matching state of the art non-learning tools.
+			\item Including functionality to records user activity for analysis.
 		\end{itemize}
-		\item Acquired data for evaluation of the research hypothesis.
+		\item Evaluation of data collected from survey and tests.
 	\end{itemize}
 \end{quote}
 
@@ -113,10 +107,6 @@ Deliverables:
 
 \chapter*{Supporting Technologies}
 
-{\bf A compulsory section, of at most $1$ page}
-\vspace{1cm} 
-
-\noindent
 This section should present a detailed summary, in bullet point form, 
 of any third-party resources (e.g., hardware and software components) 
 used during the project.  Use of such resources is always perfectly 
@@ -129,17 +119,10 @@ dissertation''); an example is as follows:
 \begin{quote}
 	\noindent
 	\begin{itemize}
-		\item I used the Java {\tt BigInteger} class to support my implementation 
-		of RSA.
-		\item I used a parts of the OpenCV computer vision library to capture 
-		images from a camera, and for various standard operations (e.g., 
-		threshold, edge detection).
-		\item I used an FPGA device supplied by the Department, and altered it 
-		to support an open-source UART core obtained from 
-		\url{http://opencores.org/}.
-		\item The web-interface component of my system was implemented by 
-		extending the open-source WordPress software available from
-		\url{http://wordpress.org/}.
+		\item I use the GPy library to implement the regression model.
+		\item I use NumPy, SciPy, and Networkx for operations and processing meshes.
+		\item I used parts of the Blender API for mesh processing and the Blender 3D program for demonstration of our regression model.
+		\item I used Google Forms to create feedback survey.
 	\end{itemize}
 \end{quote}
 
