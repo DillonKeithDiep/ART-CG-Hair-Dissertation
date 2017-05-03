@@ -10,6 +10,9 @@
 \RequirePackage{bm}
 \RequirePackage{gensymb}
 \RequirePackage{tikz}
+\RequirePackage{multirow}
+\RequirePackage{multicol}
+\newcommand{\algrule}[1][.4pt]{\vskip.4\baselineskip\hrule height #1\vskip.5\baselineskip}
 
 \pgfkeys{/dissertation/.cd,
 %     author = string
