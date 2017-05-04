@@ -143,17 +143,7 @@ Existing tools for 3D modelling have remained mostly static in the paradigm of a
 % -----------------------------------------------------------------------------
 
 \chapter*{Acknowledgements}
-
-{\bf An optional section, of at most $1$ page}
-\vspace{1cm} 
-
-\noindent
-It is common practice (although totally optional) to acknowledge any
-third-party advice, contribution or influence you have found useful
-during your work.  Examples include support from friends or family, 
-the input of your Supervisor and/or Advisor, external organisations 
-or persons who  have supplied resources of some kind (e.g., funding, 
-advice or time), and so on.
+I would like to thank coffee
 
 % =============================================================================
 
@@ -841,17 +831,181 @@ Issue tracking was performed on Trello.
 
 \chapter{Critical Evaluation}
 \label{chap:evaluation}
-{\color{red}{CONFIRM RESULT VALUES}}
+This chapter will start by examining two methods devised to obtain feedback regarding the application of 3D modelling with a latent manifold. First, a survey is used to compare results of the generative output to the training set, and obtain initial reception to the concept. A sample size of 15 subjects completed this survey. Secondly, a sequence of experiments were conducted by users examining our prototype implementation. Activity data was logged to analyse behavioural patterns among subjects. A sample size of 10 completed the experiment. We then proceed to discuss the performance of our demonstrative implementation. The chapter concludes with evaluation of choices made during this project and potential applications of assisted real-time content generation with latent regression models.
 
-This chapter will start by examining what we have achieved with assisted real-time content generation by using latent regression models.
-Two main methods were devised to obtain feedback regarding the application of 3D modelling with a latent manifold. First, a survey is used to compare results of the generative output to the training set, and obtain initial reception to the concept. A sample size of 15 subjects completed this survey. Secondly, a sequence of tests were conducted by users examining our prototype implementation. Activity data was logged to analyse behavioural patterns among subjects. A sample size of 11 completed the tests. The chapter concludes with evaluation of choices made in this project and potential applications of assisted real-time content generation with latent regression models.
+\section{Latent Hair Modelling Survey}
+The survey starts with a section that queries the name of participants and their experience with producing 3D content. Out of ethical concern, this survey questioned only information necessary for the study, minimising inquiry of personal details. 60\% of the participants considered themselves non-experts, while the remaining 40\% had some form of experience. The first section seeks to evaluate the performance of our generative model. The survey presents participants a series of images consisting of training meshes and meshes generated using the output of our regression model, to which they give a likelihood rating between the range 0 to 10 for which how much the presented geometry resembles hair. 
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=1]{images/surveyMesh1}
+	\includegraphics[scale=1]{images/surveyMesh2}
+	\includegraphics[scale=1]{images/surveyMesh3}
+	\includegraphics[scale=1]{images/surveyMesh4}\\
+	\vspace{0.07cm}
+	\includegraphics[scale=1]{images/surveyMesh5}
+	\includegraphics[scale=1]{images/surveyMesh6}
+	\includegraphics[scale=1]{images/surveyMesh7}
+	\includegraphics[scale=1]{images/surveyMesh8}\\
+	\caption{Images presented in the survey, named mesh 1-4 on the first row from left to right, and 5-8 on the second. Training meshes are 1, 4, 5, and 6. Output mesh are 2, 3, 7, and 8.}
+\end{figure}
+
+A mixture of training and output mesh is presented independently without notifying the subjects know which set a particular example belongs to. This enables us to evaluate an objective difference between the perception of training data and output result. If the subject believes that the training meshes are a good indicator for hair, then success criteria for our generative model would be to match those likelihood ratings. Likewise, a low absolute rating for the output mesh is acceptable if the ratings of training meshes are also low.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.6]{images/meshRating}
+	\caption{The mean, standard deviation, and variance comparison of training and output mesh presented on the survey.}
+\end{figure}
+
+\begin{table}[!h]
+	\centering
+	\begin{tabular}{|c|c|c|c|}
+		\hline
+		Mesh Type 	& Mean		& Standard Deviation	& Variance\\
+		\hline
+		Training 	& 7.92      & 1.62      			& 2.62\\
+		\hline
+		Output 		& 5.08 		& 2.51 					& 6.28 \\
+		\hline
+	\end{tabular}
+	\caption{Mean, standard deviation, and variance of training and output mesh (3 s.f).}
+\end{table}
+
+In general, training mesh is consistently rated very highly in likelihood at 7.92 mean with 2.62 variance. On the other hand, the output mesh has a mean of 5.08 but results spread out more with a variance of 6.28. To determine whether the difference of results is reliable, we perform an independent samples $t$-test for inferential evaluation. The null hypothesis is that there exists no statistical significance difference between the samples. The $t$ value is computed as
+$$\text{t}=\frac{\text{difference between group means}}{\text{variability of groups}}=\frac{\bar{x_1}-\bar{x_2}}{\sqrt{\frac{\sigma^2}{n_1}+\frac{\sigma^2}{n_2}}}$$
+We obtain t-value
+$$t = \frac{2.84}{\sqrt{\frac{2.62}{60}+\frac{6.28}{60}}}=7.37.$$
+The degree of freedom for a sample size of 120 is 118. The test rejects the null hypothesis for a $p$-value of 0.05, where the critical value of a two-tailed test with high degree of freedom is 1.96. This indicates that there is extreme statistical significance between the two sets. From this result, we can infer that there is an observable difference between the training and output meshes.
+
+The following section of the survey introduces basic concepts of 3D modelling and a video depicting the use of a latent manifold for generating meshes. Questions regarding feelings towards use of a latent manifold for 3D production is asked.
+
+When questioned regarding the difficulty of generating output with a latent manifold, the mean is 4.67, suggesting that difficulty is moderate. However, the distribution of responses is skewed, a modal value of 3 tells us that among the sample, most participants found it fairly easy to generate output with a latent manifold.
+\begin{figure}[!h]
+	\centering
+	\caption{Responses for difficulty rating of generating output with a latent manifold, from 1 (easy) to 10 (difficult).}
+	\includegraphics[scale=0.7]{images/surveyDifficulty}
+\end{figure}
+
+{\color{red} Calculate quartile percentiles}
+
+The idea of using a latent manifold for exploring new hairstyles or variations of existing ones was welcomed. For exploring styles, the mean is 7.53 with a variance of 2.55, whilst exploring variations have a mean of 7.27 and variance 1.78. In both cases, the high mean value and relatively low variance indicate that participants believe in the potency of discovering new geometry with a latent manifold.
+
+Participants are asked estimate how much of the 3D geometry production pipeline can be automated with a latent manifold. The response resembles a normal distribution, with mean, mode and median at 6, plus variance of 4. 
+\begin{figure}[!h]
+	\centering
+	\caption{Responses for estimation of automating the 3D production pipeline with a latent manifold, from 1 (none) to 10 (all).}
+	\includegraphics[scale=0.7]{images/surveyAutomate}
+\end{figure}
+
+An overwhelming portion of participants are willing to try rapid prototyping with a latent manifold. Out of 15 responses, 6 (40.3\%) participants agreed that they would use a latent manifold for rapid prototyping, 8 (53.3\%) chose \textit{'Maybe'}, and only one participant decided to not use a latent manifold. 
+
+\begin{figure}[!h]
+	\centering
+	\caption{Responses for whether participants would use a latent manifold for rapid prototyping.}
+	\includegraphics[scale=0.7]{images/surveyPrototype}
+\end{figure}
+
+The survey results indicate that whilst the output of our current generative model is notably imperfect when compared to the training data, it is satisfactory expectation as confidence is high in respect to the efficacy of producing 3D content with a latent regression model. Many participants believe a latent manifold is effective for discovering new styles and modifying variations of existing styles. The drawbacks identified include that some users find traversing a non-linear embedded manifold difficult to grasp, thus while it is easy to have an output, controlling the turnout is non-intuitive. That said, most participants would still consider using a latent manifold for rapid prototyping. There is much future research that could yield improved results, to which we will discuss in later sections of this chapter.
+
+\section{Latent Application Experiment}
+Participants are shown a series of images from the output of our regression model, displayed in table \ref{experimentmesh}. They are tasked to find the closest corresponding point on the latent manifold that reproduces the geometry presented. An output file with the data displayed on table \ref{outputfile} writes the logged user activity obtained from the tests.
+
+\begin{table}[!h]
+	\centering
+	\caption{Experiment Geometry}
+	\begin{tabular}{|c|c|c|c|}
+		\hline
+		Test Number	& Image & Regression Likelihood & Manifold Image Position\\
+		\hline
+		1
+					&\raisebox{-.45\height}{\includegraphics[scale=1.5]{images/surveyMesh2}}
+							& 0.929					& 12, 24\\
+		\hline
+		2
+					&\raisebox{-.45\height}{\includegraphics[scale=1.5]{images/surveyMesh8}}
+							& 0.925					& 45, 19\\
+		\hline
+		3
+					&\raisebox{-.45\height}{\includegraphics[scale=1.5]{images/surveyMesh3}}
+							& 0.902					& 93, 10\\
+		\hline
+	\end{tabular}
+	\label{experimentmesh}
+\end{table}
+
+\begin{table}[!h]
+	\centering
+	\caption{Contents of the output data file.}
+	\begin{tabular}{|l|l|}
+		\hline
+		Data field 				& Description\\
+		\hline
+		Model 					& The name of the regression model loaded\\
+		\hline
+		Time taken				& Measure of time spent from starting selection to choosing a result (seconds)\\
+		\hline
+		Path 					& A list of image coordinates sampled by the cursor during latent selection\\
+		\hline
+		Distance 				& The total distance traversed by the the path (image pixels)\\
+		\hline
+		Likelihood				& The normalised probability associated by the regression model\\
+		\hline
+		Latent Variables		& The selected latent variables\\
+		\hline
+		Generative Parameters 	& The predicted output of the selected latent variables by the regression model\\
+		\hline
+	\end{tabular}
+	\label{outputfile}
+\end{table}
+
+\subsubsection{Behavioural Observation: Familiarising with the manifold}
+
+\begin{figure}[!h]
+	\centering
+	\caption{Results of a participant who located later targets quickly after spending some time to explore the manifold first.}
+	\includegraphics[scale=0.6]{images/experiment/Andrei_ONE_REPLOT}
+	\includegraphics[scale=0.6]{images/experiment/Andrei_TWO_REPLOT}
+	\includegraphics[scale=0.6]{images/experiment/Andrei_THREE_REPLOT}
+	\label{andreiresult}
+\end{figure}
+
+Some users invest in exploring the manifold thoroughly when first introduced to it. One example is displayed on figure \ref{andreiresult}. After familiarising with a particular manifold, participants are able to locate their objective quickly with improved accuracy.
+
+{\color{red} Back up with stats }
+
+\subsubsection{Behavioural Observation: Fine-tuning the result}
+
+\begin{figure}[!h]
+	\centering
+	\caption{Plot for the first three tests of a participant.}
+	\includegraphics[scale=0.6]{images/experiment/Nick_ONE_REPLOT}
+	\includegraphics[scale=0.6]{images/experiment/Nick_TWO_REPLOT}
+	\includegraphics[scale=0.6]{images/experiment/Nick_THREE_REPLOT}
+	\label{nickresult}
+\end{figure}
+
+Among participants who take significantly longer to select a prediction, some do so as they value precision over speed. Figure \ref{nickresult} shows one such case. We can observe that the participant begins with an exploratory mindset as the path moves boldly, but once they close in to their target, an exploitative strategy is adopted. Staggering movement sets in towards the end of the path as participants attempt to find their best fitting prediction.
+
+\subsubsection{Behavioural Observation: Misleading local optima}
+
+Participants that do not explore the manifold risk becoming stranded within a local optima. Results in figure \ref{mariaresult} is an example of this. The participant did not explore during the first test, which lead to a lengthy search process during the second test - where the participant primarily looked within an area that resembles the target, but the actual target is located elsewhere in the manifold. This is a property that makes the latent manifold unintuitive to use, as it would seem logical for similar meshes to be close in the manifold, but a nonlinear embedding means that this is not always true.
+
+\begin{figure}[!h]
+	\centering
+	\caption{Plot for the first three tests of a participant.}
+	\includegraphics[scale=0.6]{images/experiment/Maria_Marinova_ONE_REPLOT}
+	\includegraphics[scale=0.6]{images/experiment/Maria_Marinova_TWO_REPLOT}
+	\includegraphics[scale=0.6]{images/experiment/Maria_Marinova_THREE_REPLOT}
+	\label{mariaresult}
+\end{figure}
 
 \section{Functional Performance}
 {\color{red}
-functional  testing, including analysis and explanation of failure cases.
-nice resolution, decent output, measure realtime
-bald spots, inside head, intersection 
-causes and solutions
+	functional  testing, including analysis and explanation of failure cases.
+	nice resolution, decent output, measure realtime
+	bald spots, inside head, intersection 
+	causes and solutions
 }
 
 A framework that puts our concept of learning-based assisted content generation to use can be divided into two main stages. First, we have the training process which involves:
@@ -864,7 +1018,8 @@ Once a regression model has been trained, it can then be used for production, th
 \begin{enumerate}
 	\item Loading the regression model.
 	\item Selecting a latent variable.
-	\item Generating output.
+	\item Predicting output of selected latent variable.
+	\item Generating geometry with predicted output.
 \end{enumerate}
 
 The ambiguous nature of creative content and mesh data structure makes training a regression model for 3D content difficult. We have demonstrated how algorithmic solutions can automate the task of preparing input mesh for learning. Content creators that have quadrilateral meshes will not require the retopologising stage, which is necessary for our training set as it contains limiting meshes triangulated for rendering. The unpredictable structure of mesh representation requires making some assumptions regarding the input mesh topology. Despite so, our implementation degrades gracefully with the presence of flawed training data. From edge loops, we determine the structure of the surface.
@@ -907,144 +1062,42 @@ A regression model it can be used to predict generative parameters repeatedly. S
 
 Loading a small regression model and an image is only required once per start-up of a session, and are negligible with contemporary hardware. A 10200-generative parameter regression model on the same machine that performed the benchmark tests spends around $10^{-3}$ seconds to predict an output, using the output to generate hair geometry takes an about of $10^{-1}$ seconds. As a user moves the cursor across the manifold, the implementation presents roughly ten hair meshes per second. This performance is sufficient for producing visible feedback as users traverse the latent manifold.
 
-\section{Latent Hair Modelling Survey}
-The survey starts with a section that queries the name of participants and their experience with producing 3D content. Out of ethical concern, this survey questioned only information necessary for the study, minimising inquiry of personal details. 60\% of the participants considered themselves non-experts, while the remaining 40\% had some form of experience. The first section seeks to evaluate the performance of our generative model. The survey presents participants a series of images consisting of training meshes and meshes generated using the output of our regression model, to which they give a likelihood rating between the range 0 to 10 for which how much the presented geometry resembles hair. 
+\section{Evaluative Discussion}
+\subsection{Training and Model}
+The presence of triangulated faces in training data hinders the accuracy of our regression model. Access to a training set of quadrilateral meshes would improve parameter estimation of our generative model, yielding output that is more representative of training mesh.
 
-\begin{figure}[!h]
-	\centering
-	\includegraphics[scale=1]{images/surveyMesh1}
-	\includegraphics[scale=1]{images/surveyMesh2}
-	\includegraphics[scale=1]{images/surveyMesh3}
-	\includegraphics[scale=1]{images/surveyMesh4}\\
-	\vspace{0.07cm}
-	\includegraphics[scale=1]{images/surveyMesh5}
-	\includegraphics[scale=1]{images/surveyMesh6}
-	\includegraphics[scale=1]{images/surveyMesh7}
-	\includegraphics[scale=1]{images/surveyMesh8}\\
-	\caption{Images presented in the survey, named mesh 1-4 on the first row from left to right, and 5-8 on the second. Training meshes are 1, 4, 5, and 6. Output mesh are 2, 3, 7, and 8.}
-\end{figure}
+The prediction interpolates between styles, drastically differing styles give rise to conflicting substructure of hair geometry. Perhaps it would be more intuitive to use with a training set of varying but similar styles. Campbell and Kautz \cite{fontmanifold} learn manifolds of fonts for individual characters as well as joint manifolds. A single manifold to edit font characters independently allow for more freedom of control. A consideration would be to use a joint manifold for defining an overall hair structure and then refine layers or sections with single manifolds on top. Multiple manifolds divide the problem at hand, reducing outcomes that seem bizarre due to interpolating of non-linear embeddings at the cost of a more preparation required and an involved training process.
 
-A mixture of training and output mesh is presented independently without notifying the subjects know which set a particular example belongs to. This enables us to evaluate an objective difference between the perception of training data and output result. If the subject believes that the training meshes are a good indicator for hair, then success criteria for our generative model would be to match those likelihood ratings. Likewise, a low absolute rating for the output mesh is acceptable if the ratings of training meshes are also low.
-
-\begin{figure}[!h]
-	\centering
-	\includegraphics[scale=0.6]{images/meshRating}
-	\caption{The mean, standard deviation, and variance comparison of training and output mesh presented on the survey.}
-\end{figure}
-
-\begin{table}[!h]
-	\centering
-	\begin{tabular}{|c|c|c|c|}
-		\hline
-		Mesh Type 	&	Mean	& Standard Deviation	&	Variance\\
-		\hline
-		Training & 7.92      & 1.62      & 2.62\\
-		\hline
-		Output & 5.08 & 2.51 & 6.28 \\
-		\hline
-	\end{tabular}
-	\caption{Mean, standard deviation, and variance of training and output mesh (3 s.f).}
-\end{table}
-
-In general, training mesh is consistently rated very highly in likelihood at 7.92 mean with 2.62 variance. On the other hand, the output mesh has a mean of 5.08 but results spread out more with a variance of 6.28. To determine whether the difference of results is reliable, we perform a  independent (unpaired) $t$-test for inferential evaluation. A null hypothesis is that there is no statistical significant difference between the samples. The $t$ value is computed as
-$$\text{t}=\frac{\text{difference between group means}}{\text{variability of groups}}=\frac{\bar{X_1}-\bar{X_2}}{\sqrt{\frac{\sigma^2}{n_1}+\frac{\sigma^2}{n_2}}}$$
-We obtain t-value
-$$t = \frac{2.84}{\sqrt{\frac{2.62}{60}+\frac{6.28}{60}}}=?.$$
-The degree of freedom for a sample size of 15 is 13. The test rejects the null hypothesis for a $p$-value of 0.05, where the critical value is 2.16. This indicates that there is a statistical significance between the two sets.
-
-We perform t-test on the experts and non-experts separately. 
-
-
-The following section of the survey introduces basic concepts of 3D modelling and a video depicting the use of a latent manifold for generating meshes. Questions regarding feelings towards use of a latent manifold for 3D production is asked.
-
-When questioned regarding the difficulty of generating output with a latent manifold, the mean is 4.67, suggesting that difficulty is moderate. However, when looking at the actual responses, a median value of 3 tells us that among the sample, most participants found it easy to generate output with a latent manifold.
-\begin{figure}[!h]
-	\centering
-	\caption{Responses for difficulty rating of generating output with a latent manifold, from 1 (easy) to 10 (difficult).}
-	\includegraphics[scale=0.7]{images/surveyDifficulty}
-\end{figure}
-
-{\color{red}Difference between experts and non-experts}
-
-
-The idea of using a latent manifold for exploring new hairstyles or variations of existing ones was welcomed. For exploring styles, the mean is 7.53 with a variance of 2.55, whilst exploring variations have a mean of 7.27 and variance 1.78. In both cases, the high mean value and relatively low variance indicate that participants believe in the potency of discovering new geometry with a latent manifold.
-{\color{red}Difference between experts and non-experts}
-
-Participants are asked estimate how much of the 3D geometry production pipeline can be automated with a latent manifold. The response resembles a normal distribution, with mean, mode and median at 6, plus variance of 4. 
-\begin{figure}[!h]
-	\centering
-	\caption{Responses for estimation of automating the 3D production pipeline with a latent manifold, from 1 (none) to 10 (all).}
-	\includegraphics[scale=0.7]{images/surveyAutomate}
-\end{figure}
-{\color{red}Difference between experts and non-experts}
-
-An overwhelming portion of participants are willing to try rapid prototyping with a latent manifold. Out of 15 responses, 6 (40.3\%) participants agreed that they would use a latent manifold for rapid prototyping, 8 (53.3\%) chose \textit{'Maybe'}, and only one participant decided to not use a latent manifold. 
-
-\begin{figure}[!h]
-	\centering
-	\caption{Responses for whether participants would use a latent manifold for rapid prototyping.}
-	\includegraphics[scale=0.7]{images/surveyPrototype}
-\end{figure}
-
-The survey results indicate that whilst the output of our current generative model is notably imperfect when compared to the training data, it is satisfactory expectation as confidence is high in respect to the efficacy of producing 3D content with a latent regression model. Many participants believe a latent manifold is effective for discovering new styles and modifying variations of existing styles. The drawbacks identified include that some users find traversing a non-linear embedded manifold difficult to grasp, thus while it is easy to have an output, controlling the turnout is non-intuitive. That said, most participants would still consider using a latent manifold for rapid prototyping. There is much future research that could yield improved results, to which we will discuss in later sections of this chapter.
-
-\section{Latent Application Tests}
-Phase one of tests show three output of a latent manifold and subjects were tasked to find the closest corresponding point that generates the displayed output. An image of the path traversed as the user explores the latent manifold is plot, along with a text file that include generative parameters output and likelihood of selection according to the regression model.
-
-\begin{figure}[!h]
-	\centering
-	\caption{An example plot of mouse path recorded from a test.}
-	\includegraphics[scale=0.5]{images/testPath}
-\end{figure}
-
-Case: Explore first, quick afterwards
-
-Case: Stuck in local optima, when true result is at another peak
-
-Case: Spending long time near result to fine-tune output.
-
-\section{Evaluation}
-evaluation of options and decisions within the project, and/or a comparison with alternatives.
-5 page
-
-Determining threshold of acceptable hair.
-
-As mentioned previously, 3D meshes are delicate and can easily be invalidated from small changes. Thus, reparations to ensure that the output of trained models are acceptable is a topic to explore.
-
-\section{Training and Model}
-Assumes training data is correct. Triangles are a problem.
-Approximating loses a lot of data, data that is manually converted provides more information, giving better output visually.
-
-Works better when styles are similar, otherwise strands interpolate in between to be incorrect such as inside head.
-
-\section{Choice of Learning Model}
+{\color{red}
 Linear, decision trees, neural nets, GPLVM
 Supervised, unsupervised, genetic
+Deep GPs and variants
+}
 
-\section{Comparing with Other methods}
-AutoHair, Exemplar, etc
+\subsection{Comparison with existing solutions}
+The AutoHair implementation by Chai et al. (2016) \cite{autohair} delivers hair models that is visually superior in comparison to our demonstrative implementation. AutoHair is a fully automatic procedure, our solution is not intended to replace artists but to assist their creation process. On superior hardware (quad-core Intel i7 CPU, NVIDIA GTX 970 graphics card, and 32GB of RAM), it takes less than a minute for AutoHair to process an image for hair modelling. While this is reasonably fast, our implementation generates geometry at close to real-time. In a production environment, immediate observable feedback is strongly desirable as designs frequently change and creators often want to be directing the progression. 
 
-\section{Extending to other models}
+AutoHair used a database of 300 exemplar 3D hair models and a neural network trained on 50,000 portrait images. The significantly larger amount of material required for the training process increases to the time required for training. According to the originating paper, preprocessing of portrait images is outsourced and takes around a minute per image. The 3D hair exemplars take less than ten hours, and training the neural network is about eight hours. A trained implementation of AutoHair can help 3D artists create models, provided that there is an input image available for the desired hairstyle. It can also be used to discover hairstyles if a 3D hairstyle space is pre-generated. It is unlikely that content creators will collect the material required for training their own implementation. Our solution is more flexible in this aspect, as it expects small training sets. This makes it much faster in performance, while not a fully automatic process, it is suitable for assisted content generation and a strong contender for rapid prototyping. Accepting meshes as input to produce output meshes is also more fitting for a production environment than a portrait image. Our solution can easily be used for different genres of 3D models by specifying a generative model for the type of surface or choosing one of the many existing generative models developed.
+
+Compare with AutoHair, Exemplar, etc
+
+\subsection{Potential Improvements}
+Generative model
+Regression model
 Simulating foliage, grass.
-Can easy do surface
-Combine models
-Deep GPs
-2 pages
+transferring to fixed objects like a face: mouth, eye, etc that is more "predictable".
+Determining threshold of acceptable hair.
+As mentioned previously, 3D meshes are delicate and can easily be invalidated from small changes. Thus, reparations to ensure that the output of trained models are acceptable is a topic to explore.
 
 \subsubsection{Addressing Non-Intuitive Use}
 Plot small image of output in corresponding area of latent variable model to illustrate the certain areas (training data) so users can explore around it for variation.
 
-\subsubsection{Observations}
-What I can do:
-transferring to fixed objects like a face: mouth, eye, etc that is more "predictable".
+\subsection{Applications}
+The advent of 3D printing, augmented reality, and virtual reality has resurfaced interest in production of 3D representations. In addition of contribution toward the important production pipeline, content creation extends to consumer applications. Advancements in communication and technology established a culture of creation and sharing experiences on social media. An easy to use method of creating content is a coveted feature.
+For example, consider a system in a video game that allows users to create customise their avatar appearance. A content customisation system desires to be flexible, but may be abused to create inappropriate content if no restrictions are applied. This is especially problematic if such content is shared or displayed through an online platform. Our solution can be applied to address this problem training a regression model for parameters of the customisation system and only accept inputs that have an associated likelihood above a certain threshold. Selecting from a latent manifold can update many parameters simultaneously and interpolate between predefined configurations, providing an excellent level of customisation while adhering to defined constraints.
 
-\section{Applications}
-MMOs, games, etc.
 3D latent space with VR.
 2 page
-
-An example would be avatar creation for many applications and video games. A space of reasonable options generated from predefined outputs by the developers will allow users to interpolate between sensible configurations, providing an excellent level of customisation while adhering to defined constraints.
-
 % -----------------------------------------------------------------------------
 
 \chapter{Conclusion}

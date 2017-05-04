@@ -45,19 +45,20 @@
 \contentsline {section}{\numberline {3.7}Project Management}{21}{section.3.7}
 \contentsline {subsection}{\numberline {3.7.1}Time-line}{21}{subsection.3.7.1}
 \contentsline {chapter}{\numberline {4}Critical Evaluation}{23}{chapter.4}
-\contentsline {section}{\numberline {4.1}Functional Performance}{23}{section.4.1}
-\contentsline {section}{\numberline {4.2}Latent Hair Modelling Survey}{24}{section.4.2}
-\contentsline {section}{\numberline {4.3}Latent Application Tests}{27}{section.4.3}
-\contentsline {section}{\numberline {4.4}Evaluation}{27}{section.4.4}
-\contentsline {section}{\numberline {4.5}Training and Model}{27}{section.4.5}
-\contentsline {section}{\numberline {4.6}Choice of Learning Model}{28}{section.4.6}
-\contentsline {section}{\numberline {4.7}Comparing with Other methods}{28}{section.4.7}
-\contentsline {section}{\numberline {4.8}Extending to other models}{28}{section.4.8}
-\contentsline {subsubsection}{Addressing Non-Intuitive Use}{28}{section*.23}
-\contentsline {subsubsection}{Observations}{28}{section*.24}
-\contentsline {section}{\numberline {4.9}Applications}{28}{section.4.9}
-\contentsline {chapter}{\numberline {5}Conclusion}{29}{chapter.5}
-\contentsline {section}{\numberline {5.1}Summary}{29}{section.5.1}
-\contentsline {section}{\numberline {5.2}Project Status}{29}{section.5.2}
-\contentsline {section}{\numberline {5.3}Future Work}{29}{section.5.3}
-\contentsline {chapter}{\numberline {A}An Example Appendix}{33}{appendix.A}
+\contentsline {section}{\numberline {4.1}Latent Hair Modelling Survey}{23}{section.4.1}
+\contentsline {section}{\numberline {4.2}Latent Application Experiment}{26}{section.4.2}
+\contentsline {subsubsection}{Behavioural Observation: Familiarising with the manifold}{26}{section*.23}
+\contentsline {subsubsection}{Behavioural Observation: Fine-tuning the result}{27}{section*.24}
+\contentsline {subsubsection}{Behavioural Observation: Misleading local optima}{27}{section*.25}
+\contentsline {section}{\numberline {4.3}Functional Performance}{27}{section.4.3}
+\contentsline {section}{\numberline {4.4}Evaluative Discussion}{29}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}Training and Model}{29}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.2}Comparison with existing solutions}{29}{subsection.4.4.2}
+\contentsline {subsection}{\numberline {4.4.3}Potential Improvements}{29}{subsection.4.4.3}
+\contentsline {subsubsection}{Addressing Non-Intuitive Use}{30}{section*.26}
+\contentsline {subsection}{\numberline {4.4.4}Applications}{30}{subsection.4.4.4}
+\contentsline {chapter}{\numberline {5}Conclusion}{31}{chapter.5}
+\contentsline {section}{\numberline {5.1}Summary}{31}{section.5.1}
+\contentsline {section}{\numberline {5.2}Project Status}{31}{section.5.2}
+\contentsline {section}{\numberline {5.3}Future Work}{31}{section.5.3}
+\contentsline {chapter}{\numberline {A}An Example Appendix}{35}{appendix.A}

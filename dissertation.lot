@@ -3,7 +3,9 @@
 \addvspace {10\p@ }
 \contentsline {table}{\numberline {3.1}{\ignorespaces This is an example table.}}{21}{table.3.1}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {4.1}{\ignorespaces Benchmarks of the training process were performed on a machine with an 2.6 GHz CPU (Intel i7-6700HQ), GTX 970M graphics card, and 8GB RAM. }}{24}{table.4.1}
-\contentsline {table}{\numberline {4.2}{\ignorespaces Mean, standard deviation, and variance of training and output mesh (3 s.f).}}{25}{table.4.2}
+\contentsline {table}{\numberline {4.1}{\ignorespaces Mean, standard deviation, and variance of training and output mesh (3 s.f).}}{23}{table.4.1}
+\contentsline {table}{\numberline {4.2}{\ignorespaces Experiment Geometry}}{26}{table.4.2}
+\contentsline {table}{\numberline {4.3}{\ignorespaces Contents of the output data file.}}{26}{table.4.3}
+\contentsline {table}{\numberline {4.4}{\ignorespaces Benchmarks of the training process were performed on a machine with an 2.6 GHz CPU (Intel i7-6700HQ), GTX 970M graphics card, and 8GB RAM. }}{28}{table.4.4}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
