@@ -131,7 +131,7 @@
 \pagestyle{plain}
 
 % extra styling %
-%\setlength{\parskip}{1em}
+\setlength{\parskip}{1em}
 %\renewcommand{\baselinestretch}{1}
 %\setlength{\parindent}{0em}
 
