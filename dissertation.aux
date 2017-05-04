@@ -29,10 +29,10 @@
 \citation{curseofdyn}
 \citation{procedural1}
 \citation{lsystem}
-\citation{styleik}
 \@writefile{toc}{\contentsline {subsection}{\numberline {1.1.1}3D Hair Geometry}{2}{subsection.1.1.1}}
 \@writefile{lof}{\contentsline {figure}{\numberline {1.2}{\ignorespaces Image of hair geometry.}}{2}{figure.1.2}}
 \@writefile{toc}{\contentsline {section}{\numberline {1.2}Related Research of Machine Learning in Creative Fields}{2}{section.1.2}}
+\citation{styleik}
 \citation{latentdoodle}
 \citation{fontmanifold}
 \citation{drawingassistance}
@@ -109,10 +109,9 @@
 \@writefile{loa}{\addvspace {10\p@ }}
 \newlabel{chap:execution}{{3}{13}{Project Execution}{chapter.3}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {3.1}Training Data Set}{13}{section.3.1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.1}Acquiring Training Data}{13}{subsection.3.1.1}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces examples of polygon hair mesh training data.}}{13}{figure.3.1}}
 \newlabel{inputHairs}{{3.1}{13}{examples of polygon hair mesh training data}{figure.3.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.2}Retopologising Training Data}{13}{subsection.3.1.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.1}Retopologising Training Data}{13}{subsection.3.1.1}}
 \citation{examplebasedhair}
 \citation{sphericalcoords}
 \@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces Triangular faces are highlighted using a selection procedure for all faces that are made of exactly three edges. To the left is an original mesh acquired, the middle shows a selection of remaining triangles after the automatic tri-to-quad conversion, and the right displays a retopologised mesh of entirely quads.}}{14}{figure.3.2}}
@@ -120,30 +119,30 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {3.3}{\ignorespaces 3D spherical coordinate system}}{15}{figure.3.3}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3.4}{\ignorespaces Sphere meshes visualise root positions. The angle ranges specify coverage area of the scalp, while the interval of placements determines resolution. Fitting a sphere to the reference head mesh approximates the radial distance and origin.}}{15}{figure.3.4}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3.5}{\ignorespaces A possible configuration of 10260 data points in the generative model}}{15}{figure.3.5}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.3}Approximating Generative Parameters from Input Data}{15}{section.3.3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.1}Parsing OBJ File}{15}{subsection.3.3.1}}
 \citation{blenderedgeloop}
-\@writefile{toc}{\contentsline {section}{\numberline {3.3}Approximating Generative Parameters from Input Data}{16}{section.3.3}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.1}Parsing OBJ File}{16}{subsection.3.3.1}}
 \@writefile{loa}{\contentsline {algocf}{\numberline {3.1}{\ignorespaces Parsing OBJ format}}{16}{algocf.3.1}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.3.2}Spline Estimation}{16}{subsection.3.3.2}}
 \@writefile{toc}{\contentsline {subsubsection}{Edge Loop Extraction}{16}{section*.19}}
+\@writefile{toc}{\contentsline {subsubsection}{Boundary and Root Edge Loops}{16}{section*.20}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3.6}{\ignorespaces Our edge loop extraction algorithm begins by selecting an edge within the mesh graph. The two vertices of the edge are \textbf  {end vertices}. We then proceed to \textit  {grow} the edge loop selection. Take the set of \textbf  {first degree neighbours} of the \textit  {end vertices}, these nodes are the \textit  {candidates} for the edge loop. We remove edges that are part of the current edge loop from this set of first degree neighbours. We add the first degree neighbours to a set of face vertices for following iterations. Take the neighbours of the first degree neighbours as a set of \textbf  {second degree neighbours}, removing its originating end vertex. A candidate node is only accepted to the edge loop if its set neighbours do not intersect with the set of face vertices. Accepted vertices are appended to the list of end vertices, this process is repeated until there are no end vertices left to grow the selection.}}{17}{figure.3.6}}
 \newlabel{edgeLoopFig}{{3.6}{17}{Our edge loop extraction algorithm begins by selecting an edge within the mesh graph. The two vertices of the edge are \textbf {end vertices}. We then proceed to \textit {grow} the edge loop selection. Take the set of \textbf {first degree neighbours} of the \textit {end vertices}, these nodes are the \textit {candidates} for the edge loop. We remove edges that are part of the current edge loop from this set of first degree neighbours. We add the first degree neighbours to a set of face vertices for following iterations. Take the neighbours of the first degree neighbours as a set of \textbf {second degree neighbours}, removing its originating end vertex. A candidate node is only accepted to the edge loop if its set neighbours do not intersect with the set of face vertices. Accepted vertices are appended to the list of end vertices, this process is repeated until there are no end vertices left to grow the selection}{figure.3.6}{}}
-\@writefile{toc}{\contentsline {subsubsection}{Boundary and Root Edge Loops}{17}{section*.20}}
 \@writefile{loa}{\contentsline {algocf}{\numberline {3.2}{\ignorespaces Extracting boundary edge loops}}{17}{algocf.3.2}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3.7}{\ignorespaces Observe that the corner vertices have two edges, and the boundary edges have three. Determining the root edge loop is done by choosing the boundary edge loop that is closest to the scalp surface.}}{18}{figure.3.7}}
 \@writefile{toc}{\contentsline {subsubsection}{Pivotal Strand Poly-lines}{18}{section*.21}}
 \@writefile{loa}{\contentsline {algocf}{\numberline {3.3}{\ignorespaces Extracting spline edge loops}}{18}{algocf.3.3}}
+\@writefile{toc}{\contentsline {subsubsection}{Parametrising a Strand Spline}{18}{section*.22}}
 \citation{reviewgplvm}
-\@writefile{toc}{\contentsline {subsubsection}{Parametrising a Strand Spline}{19}{section*.22}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.3.3}Structure Estimation}{19}{subsection.3.3.3}}
 \@writefile{toc}{\contentsline {section}{\numberline {3.4}Learning a Manifold with Bayesian GP-LVM}{19}{section.3.4}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3.8}{\ignorespaces GPy offers various standard kernels. Multi-modal kernels can be formed from combining kernels to represent data of complex nature.}}{20}{figure.3.8}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3.9}{\ignorespaces As expected, a linearly embedded hairstyle is of little use as it can only extrapolate along one style. }}{20}{figure.3.9}}
 \newlabel{kernelHair}{{3.9}{20}{As expected, a linearly embedded hairstyle is of little use as it can only extrapolate along one style}{figure.3.9}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {3.5}Generation of Output}{20}{section.3.5}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.6}Logging User Activity}{20}{section.3.6}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3.10}{\ignorespaces The latent hair modelling add-on for Blender 3D uses the image editor to display the latent manifold.}}{21}{figure.3.10}}
 \newlabel{blenderAddon}{{3.10}{21}{The latent hair modelling add-on for Blender 3D uses the image editor to display the latent manifold}{figure.3.10}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.6}Logging User Activity}{21}{section.3.6}}
 \@writefile{toc}{\contentsline {section}{\numberline {3.7}Project Management}{21}{section.3.7}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.7.1}Time-line}{21}{subsection.3.7.1}}
 \@writefile{lot}{\contentsline {table}{\numberline {3.1}{\ignorespaces This is an example table.}}{21}{table.3.1}}
@@ -179,10 +178,11 @@
 \newlabel{trainingbenchmarks}{{4.4}{28}{Benchmarks of the training process were performed on a machine with an 2.6 GHz CPU (Intel i7-6700HQ), GTX 970M graphics card, and 8GB RAM}{table.4.4}{}}
 \citation{fontmanifold}
 \citation{autohair}
+\citation{examplebasedhair}
 \@writefile{toc}{\contentsline {section}{\numberline {4.4}Evaluative Discussion}{29}{section.4.4}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.4.1}Training and Model}{29}{subsection.4.4.1}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.4.2}Comparison with existing solutions}{29}{subsection.4.4.2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.4.3}Potential Improvements}{29}{subsection.4.4.3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4.3}Potential Improvements}{30}{subsection.4.4.3}}
 \@writefile{toc}{\contentsline {subsubsection}{Addressing Non-Intuitive Use}{30}{section*.26}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.4.4}Applications}{30}{subsection.4.4.4}}
 \@writefile{toc}{\contentsline {chapter}{\numberline {5}Conclusion}{31}{chapter.5}}

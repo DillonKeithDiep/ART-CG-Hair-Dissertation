@@ -28,20 +28,19 @@
 \contentsline {subsubsection}{Edge Loops}{12}{section*.18}
 \contentsline {chapter}{\numberline {3}Project Execution}{13}{chapter.3}
 \contentsline {section}{\numberline {3.1}Training Data Set}{13}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}Acquiring Training Data}{13}{subsection.3.1.1}
-\contentsline {subsection}{\numberline {3.1.2}Retopologising Training Data}{13}{subsection.3.1.2}
+\contentsline {subsection}{\numberline {3.1.1}Retopologising Training Data}{13}{subsection.3.1.1}
 \contentsline {section}{\numberline {3.2}Generative Model of Hair}{14}{section.3.2}
-\contentsline {section}{\numberline {3.3}Approximating Generative Parameters from Input Data}{16}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}Parsing OBJ File}{16}{subsection.3.3.1}
+\contentsline {section}{\numberline {3.3}Approximating Generative Parameters from Input Data}{15}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Parsing OBJ File}{15}{subsection.3.3.1}
 \contentsline {subsection}{\numberline {3.3.2}Spline Estimation}{16}{subsection.3.3.2}
 \contentsline {subsubsection}{Edge Loop Extraction}{16}{section*.19}
-\contentsline {subsubsection}{Boundary and Root Edge Loops}{17}{section*.20}
+\contentsline {subsubsection}{Boundary and Root Edge Loops}{16}{section*.20}
 \contentsline {subsubsection}{Pivotal Strand Poly-lines}{18}{section*.21}
-\contentsline {subsubsection}{Parametrising a Strand Spline}{19}{section*.22}
+\contentsline {subsubsection}{Parametrising a Strand Spline}{18}{section*.22}
 \contentsline {subsection}{\numberline {3.3.3}Structure Estimation}{19}{subsection.3.3.3}
 \contentsline {section}{\numberline {3.4}Learning a Manifold with Bayesian GP-LVM}{19}{section.3.4}
 \contentsline {section}{\numberline {3.5}Generation of Output}{20}{section.3.5}
-\contentsline {section}{\numberline {3.6}Logging User Activity}{21}{section.3.6}
+\contentsline {section}{\numberline {3.6}Logging User Activity}{20}{section.3.6}
 \contentsline {section}{\numberline {3.7}Project Management}{21}{section.3.7}
 \contentsline {subsection}{\numberline {3.7.1}Time-line}{21}{subsection.3.7.1}
 \contentsline {chapter}{\numberline {4}Critical Evaluation}{23}{chapter.4}
@@ -54,7 +53,7 @@
 \contentsline {section}{\numberline {4.4}Evaluative Discussion}{29}{section.4.4}
 \contentsline {subsection}{\numberline {4.4.1}Training and Model}{29}{subsection.4.4.1}
 \contentsline {subsection}{\numberline {4.4.2}Comparison with existing solutions}{29}{subsection.4.4.2}
-\contentsline {subsection}{\numberline {4.4.3}Potential Improvements}{29}{subsection.4.4.3}
+\contentsline {subsection}{\numberline {4.4.3}Potential Improvements}{30}{subsection.4.4.3}
 \contentsline {subsubsection}{Addressing Non-Intuitive Use}{30}{section*.26}
 \contentsline {subsection}{\numberline {4.4.4}Applications}{30}{subsection.4.4.4}
 \contentsline {chapter}{\numberline {5}Conclusion}{31}{chapter.5}

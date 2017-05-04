@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.3.12)  4 MAY 2017 08:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.3.12)  4 MAY 2017 20:55
 entering extended mode
 **./dissertation.tex
 (dissertation.tex
@@ -978,13 +978,13 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
  [11] [12
 
 ]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 91.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 89.
 
 (E:\Programs\MikTex\tex\latex\base\omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 91.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 89.
  [13] [14
 
 ] [15] [16
@@ -1000,62 +1000,62 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.187 
+l.183 
        [1
 
 ]
 
-LaTeX Warning: Citation `curseofdyn' on page 2 undefined on input line 196.
+LaTeX Warning: Citation `curseofdyn' on page 2 undefined on input line 195.
 
 
-LaTeX Warning: Citation `lsystem' on page 2 undefined on input line 198.
+LaTeX Warning: Citation `lsystem' on page 2 undefined on input line 197.
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.210 
+l.207 
        [2] [3] [4]
 Chapter 2.
 
-LaTeX Warning: Citation `pca1933' on page 5 undefined on input line 256.
+LaTeX Warning: Citation `pca1933' on page 5 undefined on input line 255.
 
 [5
 
 ] [6] [7] [8] [9] [10] [11] [12]
 Chapter 3.
 
-LaTeX Warning: Citation `s4pe' on page 13 undefined on input line 557.
+LaTeX Warning: Citation `s4pe' on page 13 undefined on input line 555.
 
 
-LaTeX Warning: Citation `s4cas' on page 13 undefined on input line 557.
+LaTeX Warning: Citation `s4cas' on page 13 undefined on input line 555.
 
 <images/inputHair1.png, id=498, 53.60025pt x 49.02315pt>
 File: images/inputHair1.png Graphic file (type png)
 
 <use images/inputHair1.png>
-Package pdftex.def Info: images/inputHair1.png used on input line 561.
+Package pdftex.def Info: images/inputHair1.png used on input line 559.
 (pdftex.def)             Requested size: 107.2002pt x 98.04602pt.
 
 <images/inputHair2.png, id=500, 53.60025pt x 49.02315pt>
 File: images/inputHair2.png Graphic file (type png)
 
 <use images/inputHair2.png>
-Package pdftex.def Info: images/inputHair2.png used on input line 562.
+Package pdftex.def Info: images/inputHair2.png used on input line 560.
 (pdftex.def)             Requested size: 107.2002pt x 98.04602pt.
 
 <images/inputHair3.png, id=501, 53.60025pt x 49.02315pt>
 File: images/inputHair3.png Graphic file (type png)
 
 <use images/inputHair3.png>
-Package pdftex.def Info: images/inputHair3.png used on input line 563.
+Package pdftex.def Info: images/inputHair3.png used on input line 561.
 (pdftex.def)             Requested size: 107.2002pt x 98.04602pt.
 
 <images/inputHair4.png, id=502, 53.60025pt x 49.02315pt>
 File: images/inputHair4.png Graphic file (type png)
 
 <use images/inputHair4.png>
-Package pdftex.def Info: images/inputHair4.png used on input line 564.
+Package pdftex.def Info: images/inputHair4.png used on input line 562.
 (pdftex.def)             Requested size: 107.2002pt x 98.04602pt.
  [13
 
@@ -1065,28 +1065,28 @@ Package pdftex.def Info: images/inputHair4.png used on input line 564.
 File: images/triToQuad1.png Graphic file (type png)
 
 <use images/triToQuad1.png>
-Package pdftex.def Info: images/triToQuad1.png used on input line 585.
+Package pdftex.def Info: images/triToQuad1.png used on input line 583.
 (pdftex.def)             Requested size: 107.2002pt x 98.04602pt.
 
 <images/triToQuad2.png, id=515, 53.60025pt x 49.02315pt>
 File: images/triToQuad2.png Graphic file (type png)
 
 <use images/triToQuad2.png>
-Package pdftex.def Info: images/triToQuad2.png used on input line 586.
+Package pdftex.def Info: images/triToQuad2.png used on input line 584.
 (pdftex.def)             Requested size: 107.2002pt x 98.04602pt.
 
 <images/triToQuad3.png, id=516, 53.60025pt x 49.02315pt>
 File: images/triToQuad3.png Graphic file (type png)
 
 <use images/triToQuad3.png>
-Package pdftex.def Info: images/triToQuad3.png used on input line 587.
+Package pdftex.def Info: images/triToQuad3.png used on input line 585.
 (pdftex.def)             Requested size: 107.2002pt x 98.04602pt.
 
 <images/sphereCoords.png, id=520, 560.0925pt x 517.935pt>
 File: images/sphereCoords.png Graphic file (type png)
 
 <use images/sphereCoords.png>
-Package pdftex.def Info: images/sphereCoords.png used on input line 602.
+Package pdftex.def Info: images/sphereCoords.png used on input line 600.
 (pdftex.def)             Requested size: 140.02278pt x 129.48343pt.
 
 
@@ -1096,33 +1096,34 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 File: images/spherePoints.png Graphic file (type png)
 
 <use images/spherePoints.png>
-Package pdftex.def Info: images/spherePoints.png used on input line 612.
+Package pdftex.def Info: images/spherePoints.png used on input line 610.
 (pdftex.def)             Requested size: 225.4668pt x 131.74185pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[14 <./images/triToQuad1.png> <./images/triToQuad2.png> <./images/triToQuad3.pn
-g>] <images/generativeModel.png, id=538, 77.8107pt x 71.66776pt>
+<images/generativeModel.png, id=523, 77.8107pt x 71.66776pt>
 File: images/generativeModel.png Graphic file (type png)
 
 <use images/generativeModel.png>
-Package pdftex.def Info: images/generativeModel.png used on input line 619.
+Package pdftex.def Info: images/generativeModel.png used on input line 617.
 (pdftex.def)             Requested size: 233.4315pt x 215.00272pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [15 <./images/sphereCoords.png> <./images/spherePoints.png> <./images/generati
-veModel.png>]
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[14 <./images/triToQuad1.png> <./images/triToQuad2.png> <./images/triToQuad3.pn
+g>] [15 <./images/sphereCoords.png> <./images/spherePoints.png> <./images/gener
+ativeModel.png>]
 
 LaTeX Warning: Citation `blenderedgeloop' on page 16 undefined on input line 65
-5.
+3.
 
 <images/edgeLoopDiagram.png, id=548, 697.10437pt x 347.04657pt>
 File: images/edgeLoopDiagram.png Graphic file (type png)
 
 <use images/edgeLoopDiagram.png>
-Package pdftex.def Info: images/edgeLoopDiagram.png used on input line 666.
+Package pdftex.def Info: images/edgeLoopDiagram.png used on input line 664.
 (pdftex.def)             Requested size: 243.99017pt x 121.46811pt.
 
 
@@ -1132,7 +1133,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 File: images/rootLoop.jpg Graphic file (type jpg)
 
 <use images/rootLoop.jpg>
-Package pdftex.def Info: images/rootLoop.jpg used on input line 704.
+Package pdftex.def Info: images/rootLoop.jpg used on input line 702.
 (pdftex.def)             Requested size: 316.18048pt x 166.74756pt.
 
 
@@ -1140,90 +1141,96 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [17 <./images/edgeLoopDiagram.png>] [18 <./images/rootLoop.jpg>]
 
-LaTeX Warning: Citation `reviewgplvm' on page 19 undefined on input line 768.
+LaTeX Warning: Citation `reviewgplvm' on page 19 undefined on input line 766.
 
 <images/gpyKernels.png, id=574, 1164.9924pt x 875.9124pt>
 File: images/gpyKernels.png Graphic file (type png)
 
 <use images/gpyKernels.png>
-Package pdftex.def Info: images/gpyKernels.png used on input line 772.
+Package pdftex.def Info: images/gpyKernels.png used on input line 770.
 (pdftex.def)             Requested size: 349.50041pt x 262.77574pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[19] [20 <./images/gpyKernels.png>]
-<images/latentHairAddon.jpg, id=587, 1394.96156pt x 791.95876pt>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[19] <images/latentHairAddon.jpg, id=581, 1394.96156pt x 791.95876pt>
 File: images/latentHairAddon.jpg Graphic file (type jpg)
 
 <use images/latentHairAddon.jpg>
-Package pdftex.def Info: images/latentHairAddon.jpg used on input line 798.
+Package pdftex.def Info: images/latentHairAddon.jpg used on input line 796.
 (pdftex.def)             Requested size: 278.98737pt x 158.38895pt.
- [21 <./images/latentHairAddon.jpg>] [22
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[20 <./images/gpyKernels.png>] [21 <./images/latentHairAddon.jpg>] [22
 
 ]
 Chapter 4.
-<images/surveyMesh1.png, id=598, 97.3236pt x 48.78226pt>
+<images/surveyMesh1.png, id=597, 97.3236pt x 48.78226pt>
 File: images/surveyMesh1.png Graphic file (type png)
 
 <use images/surveyMesh1.png>
-Package pdftex.def Info: images/surveyMesh1.png used on input line 841.
+Package pdftex.def Info: images/surveyMesh1.png used on input line 839.
 (pdftex.def)             Requested size: 97.32333pt x 48.78212pt.
 
-<images/surveyMesh2.png, id=599, 97.3236pt x 48.78226pt>
+<images/surveyMesh2.png, id=598, 97.3236pt x 48.78226pt>
 File: images/surveyMesh2.png Graphic file (type png)
 
 <use images/surveyMesh2.png>
-Package pdftex.def Info: images/surveyMesh2.png used on input line 842.
+Package pdftex.def Info: images/surveyMesh2.png used on input line 840.
 (pdftex.def)             Requested size: 97.32333pt x 48.78212pt.
 
-<images/surveyMesh3.png, id=600, 97.3236pt x 48.78226pt>
+<images/surveyMesh3.png, id=599, 97.3236pt x 48.78226pt>
 File: images/surveyMesh3.png Graphic file (type png)
 
 <use images/surveyMesh3.png>
-Package pdftex.def Info: images/surveyMesh3.png used on input line 843.
+Package pdftex.def Info: images/surveyMesh3.png used on input line 841.
 (pdftex.def)             Requested size: 97.32333pt x 48.78212pt.
 
-<images/surveyMesh4.png, id=601, 97.3236pt x 48.78226pt>
+<images/surveyMesh4.png, id=600, 97.3236pt x 48.78226pt>
 File: images/surveyMesh4.png Graphic file (type png)
 
 <use images/surveyMesh4.png>
-Package pdftex.def Info: images/surveyMesh4.png used on input line 844.
+Package pdftex.def Info: images/surveyMesh4.png used on input line 842.
 (pdftex.def)             Requested size: 97.32333pt x 48.78212pt.
 
-<images/surveyMesh5.png, id=602, 97.3236pt x 48.78226pt>
+<images/surveyMesh5.png, id=601, 97.3236pt x 48.78226pt>
 File: images/surveyMesh5.png Graphic file (type png)
 
 <use images/surveyMesh5.png>
-Package pdftex.def Info: images/surveyMesh5.png used on input line 846.
+Package pdftex.def Info: images/surveyMesh5.png used on input line 844.
 (pdftex.def)             Requested size: 97.32333pt x 48.78212pt.
 
-<images/surveyMesh6.png, id=603, 97.3236pt x 48.78226pt>
+<images/surveyMesh6.png, id=602, 97.3236pt x 48.78226pt>
 File: images/surveyMesh6.png Graphic file (type png)
 
 <use images/surveyMesh6.png>
-Package pdftex.def Info: images/surveyMesh6.png used on input line 847.
+Package pdftex.def Info: images/surveyMesh6.png used on input line 845.
 (pdftex.def)             Requested size: 97.32333pt x 48.78212pt.
 
-<images/surveyMesh7.png, id=604, 97.3236pt x 48.78226pt>
+<images/surveyMesh7.png, id=603, 97.3236pt x 48.78226pt>
 File: images/surveyMesh7.png Graphic file (type png)
 
 <use images/surveyMesh7.png>
-Package pdftex.def Info: images/surveyMesh7.png used on input line 848.
+Package pdftex.def Info: images/surveyMesh7.png used on input line 846.
 (pdftex.def)             Requested size: 97.32333pt x 48.78212pt.
 
-<images/surveyMesh8.png, id=605, 97.3236pt x 48.78226pt>
+<images/surveyMesh8.png, id=604, 97.3236pt x 48.78226pt>
 File: images/surveyMesh8.png Graphic file (type png)
 
 <use images/surveyMesh8.png>
-Package pdftex.def Info: images/surveyMesh8.png used on input line 849.
+Package pdftex.def Info: images/surveyMesh8.png used on input line 847.
 (pdftex.def)             Requested size: 97.32333pt x 48.78212pt.
 
-<images/meshRating.png, id=606, 602.25pt x 372.39125pt>
+<images/meshRating.png, id=605, 602.25pt x 372.39125pt>
 File: images/meshRating.png Graphic file (type png)
 
 <use images/meshRating.png>
-Package pdftex.def Info: images/meshRating.png used on input line 857.
+Package pdftex.def Info: images/meshRating.png used on input line 855.
 (pdftex.def)             Requested size: 361.35278pt x 223.43646pt.
 
 
@@ -1232,31 +1239,31 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 [23 <./images/surveyMesh1.png> <./images/surveyMesh2.png> <./images/surveyMesh3
 .png> <./images/surveyMesh4.png> <./images/surveyMesh5.png> <./images/surveyMes
 h6.png> <./images/surveyMesh7.png> <./images/surveyMesh8.png>]
-<images/surveyDifficulty.png, id=619, 526.21594pt x 225.09094pt>
+<images/surveyDifficulty.png, id=618, 526.21594pt x 225.09094pt>
 File: images/surveyDifficulty.png Graphic file (type png)
 
 <use images/surveyDifficulty.png>
-Package pdftex.def Info: images/surveyDifficulty.png used on input line 887.
+Package pdftex.def Info: images/surveyDifficulty.png used on input line 885.
 (pdftex.def)             Requested size: 368.34865pt x 157.56258pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<images/surveyAutomate.png, id=620, 526.21594pt x 225.09094pt>
+<images/surveyAutomate.png, id=619, 526.21594pt x 225.09094pt>
 File: images/surveyAutomate.png Graphic file (type png)
 
 <use images/surveyAutomate.png>
-Package pdftex.def Info: images/surveyAutomate.png used on input line 898.
+Package pdftex.def Info: images/surveyAutomate.png used on input line 896.
 (pdftex.def)             Requested size: 368.34865pt x 157.56258pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<images/surveyPrototype.png, id=621, 526.21594pt x 225.09094pt>
+<images/surveyPrototype.png, id=620, 526.21594pt x 225.09094pt>
 File: images/surveyPrototype.png Graphic file (type png)
 
 <use images/surveyPrototype.png>
-Package pdftex.def Info: images/surveyPrototype.png used on input line 906.
+Package pdftex.def Info: images/surveyPrototype.png used on input line 904.
 (pdftex.def)             Requested size: 368.34865pt x 157.56258pt.
 
 
@@ -1266,102 +1273,102 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 rveyAutomate.png> <./images/surveyPrototype.png>]
 File: images/surveyMesh2.png Graphic file (type png)
  <use images/surveyMesh2.png>
-Package pdftex.def Info: images/surveyMesh2.png used on input line 922.
+Package pdftex.def Info: images/surveyMesh2.png used on input line 920.
 (pdftex.def)             Requested size: 145.985pt x 73.17317pt.
 File: images/surveyMesh8.png Graphic file (type png)
 
 <use images/surveyMesh8.png>
-Package pdftex.def Info: images/surveyMesh8.png used on input line 926.
+Package pdftex.def Info: images/surveyMesh8.png used on input line 924.
 (pdftex.def)             Requested size: 145.985pt x 73.17317pt.
 File: images/surveyMesh3.png Graphic file (type png)
  <use images/surveyMesh3.png>
-Package pdftex.def Info: images/surveyMesh3.png used on input line 930.
+Package pdftex.def Info: images/surveyMesh3.png used on input line 928.
 (pdftex.def)             Requested size: 145.985pt x 73.17317pt.
 
-Overfull \hbox (5.82607pt too wide) in paragraph at lines 940--960
+Overfull \hbox (5.82607pt too wide) in paragraph at lines 938--958
  [][] 
  []
 
-<images/experiment/Andrei_ONE_REPLOT.png, id=635, 200.75pt x 200.75pt>
+<images/experiment/Andrei_ONE_REPLOT.png, id=634, 200.75pt x 200.75pt>
 File: images/experiment/Andrei_ONE_REPLOT.png Graphic file (type png)
 
 <use images/experiment/Andrei_ONE_REPLOT.png>
 Package pdftex.def Info: images/experiment/Andrei_ONE_REPLOT.png used on input 
-line 967.
+line 965.
 (pdftex.def)             Requested size: 120.45091pt x 120.45091pt.
 
-<images/experiment/Andrei_TWO_REPLOT.png, id=636, 200.75pt x 200.75pt>
+<images/experiment/Andrei_TWO_REPLOT.png, id=635, 200.75pt x 200.75pt>
 File: images/experiment/Andrei_TWO_REPLOT.png Graphic file (type png)
 
 <use images/experiment/Andrei_TWO_REPLOT.png>
 Package pdftex.def Info: images/experiment/Andrei_TWO_REPLOT.png used on input 
-line 968.
+line 966.
 (pdftex.def)             Requested size: 120.45091pt x 120.45091pt.
 
-<images/experiment/Andrei_THREE_REPLOT.png, id=637, 200.75pt x 200.75pt>
+<images/experiment/Andrei_THREE_REPLOT.png, id=636, 200.75pt x 200.75pt>
 File: images/experiment/Andrei_THREE_REPLOT.png Graphic file (type png)
 
 <use images/experiment/Andrei_THREE_REPLOT.png>
 Package pdftex.def Info: images/experiment/Andrei_THREE_REPLOT.png used on inpu
-t line 969.
+t line 967.
 (pdftex.def)             Requested size: 120.45091pt x 120.45091pt.
  [26 <./images/experiment/Andrei_ONE_REPLOT.png (PNG copy)> <./images/experimen
 t/Andrei_TWO_REPLOT.png (PNG copy)> <./images/experiment/Andrei_THREE_REPLOT.pn
 g (PNG copy)>]
-<images/experiment/Nick_ONE_REPLOT.png, id=644, 200.75pt x 200.75pt>
+<images/experiment/Nick_ONE_REPLOT.png, id=643, 200.75pt x 200.75pt>
 File: images/experiment/Nick_ONE_REPLOT.png Graphic file (type png)
 
 <use images/experiment/Nick_ONE_REPLOT.png>
 Package pdftex.def Info: images/experiment/Nick_ONE_REPLOT.png used on input li
-ne 982.
+ne 980.
 (pdftex.def)             Requested size: 120.45091pt x 120.45091pt.
 
-<images/experiment/Nick_TWO_REPLOT.png, id=645, 200.75pt x 200.75pt>
+<images/experiment/Nick_TWO_REPLOT.png, id=644, 200.75pt x 200.75pt>
 File: images/experiment/Nick_TWO_REPLOT.png Graphic file (type png)
 
 <use images/experiment/Nick_TWO_REPLOT.png>
 Package pdftex.def Info: images/experiment/Nick_TWO_REPLOT.png used on input li
-ne 983.
+ne 981.
 (pdftex.def)             Requested size: 120.45091pt x 120.45091pt.
 
-<images/experiment/Nick_THREE_REPLOT.png, id=646, 200.75pt x 200.75pt>
+<images/experiment/Nick_THREE_REPLOT.png, id=645, 200.75pt x 200.75pt>
 File: images/experiment/Nick_THREE_REPLOT.png Graphic file (type png)
 
 <use images/experiment/Nick_THREE_REPLOT.png>
 Package pdftex.def Info: images/experiment/Nick_THREE_REPLOT.png used on input 
-line 984.
+line 982.
 (pdftex.def)             Requested size: 120.45091pt x 120.45091pt.
 
-<images/experiment/Maria_Marinova_ONE_REPLOT.png, id=649, 200.75pt x 200.75pt>
+<images/experiment/Maria_Marinova_ONE_REPLOT.png, id=648, 200.75pt x 200.75pt>
 File: images/experiment/Maria_Marinova_ONE_REPLOT.png Graphic file (type png)
 
 <use images/experiment/Maria_Marinova_ONE_REPLOT.png>
 Package pdftex.def Info: images/experiment/Maria_Marinova_ONE_REPLOT.png used o
-n input line 997.
+n input line 995.
 (pdftex.def)             Requested size: 120.45091pt x 120.45091pt.
 
-<images/experiment/Maria_Marinova_TWO_REPLOT.png, id=650, 200.75pt x 200.75pt>
+<images/experiment/Maria_Marinova_TWO_REPLOT.png, id=649, 200.75pt x 200.75pt>
 File: images/experiment/Maria_Marinova_TWO_REPLOT.png Graphic file (type png)
 
 <use images/experiment/Maria_Marinova_TWO_REPLOT.png>
 Package pdftex.def Info: images/experiment/Maria_Marinova_TWO_REPLOT.png used o
-n input line 998.
+n input line 996.
 (pdftex.def)             Requested size: 120.45091pt x 120.45091pt.
 
-<images/experiment/Maria_Marinova_THREE_REPLOT.png, id=651, 200.75pt x 200.75pt
+<images/experiment/Maria_Marinova_THREE_REPLOT.png, id=650, 200.75pt x 200.75pt
 >
 File: images/experiment/Maria_Marinova_THREE_REPLOT.png Graphic file (type png)
 
  <use images/experiment/Maria_Marinova_THREE_REPLOT.png>
 Package pdftex.def Info: images/experiment/Maria_Marinova_THREE_REPLOT.png used
- on input line 999.
+ on input line 997.
 (pdftex.def)             Requested size: 120.45091pt x 120.45091pt.
  [27 <./images/experiment/Nick_ONE_REPLOT.png (PNG copy)> <./images/experiment/
 Nick_TWO_REPLOT.png (PNG copy)> <./images/experiment/Nick_THREE_REPLOT.png (PNG
  copy)> <./images/experiment/Maria_Marinova_ONE_REPLOT.png (PNG copy)> <./image
 s/experiment/Maria_Marinova_TWO_REPLOT.png (PNG copy)> <./images/experiment/Mar
 ia_Marinova_THREE_REPLOT.png (PNG copy)>]
-Overfull \hbox (22.04837pt too wide) in paragraph at lines 1031--1051
+Overfull \hbox (22.04837pt too wide) in paragraph at lines 1029--1049
  [][] 
  []
 
@@ -1403,8 +1410,8 @@ LaTeX Warning: There were undefined references.
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 21453 strings out of 493333
- 377878 string characters out of 3143102
+ 21452 strings out of 493333
+ 377862 string characters out of 3143102
  594297 words of memory out of 3000000
  24318 multiletter control sequences out of 15000+200000
  11875 words of font info for 43 fonts, out of 3000000 for 9000
@@ -1428,9 +1435,9 @@ public/amsfonts/cm/cmsl10.pfb><E:/Programs/MikTex/fonts/type1/public/amsfonts/c
 m/cmsy10.pfb><E:/Programs/MikTex/fonts/type1/public/amsfonts/cm/cmsy7.pfb><E:/P
 rograms/MikTex/fonts/type1/public/amsfonts/cm/cmti10.pfb><E:/Programs/MikTex/fo
 nts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on dissertation.pdf (57 pages, 3160735 bytes).
+Output written on dissertation.pdf (57 pages, 3172789 bytes).
 PDF statistics:
  824 PDF objects out of 1000 (max. 8388607)
- 213 named destinations out of 1000 (max. 500000)
+ 212 named destinations out of 1000 (max. 500000)
  425 words of extra memory for PDF output out of 10000 (max. 10000000)
 
