@@ -2,6 +2,8 @@
 \contentsline {figure}{\numberline {1.1}{\ignorespaces A point cloud representation is a collection of points (vertices) that describe surface geometry. Range images map pixels of a depth image to a set of points in the scene. Voxels are unit cubes, corresponding to the concept of pixels, a collection of voxels describe an object volumetrically.}}{1}{figure.1.1}
 \contentsline {figure}{\numberline {1.2}{\ignorespaces Image of hair geometry.}}{2}{figure.1.2}
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces In a latent variable model, a latent variable, $\bm {X}$, is input into a function, $\bm {F}$, which maps to the output observed variables, $\bm {Y}$.}}{9}{figure.2.1}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces A prior and posterio GP}}{12}{figure.2.2}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces examples of polygon hair mesh training data.}}{17}{figure.3.1}
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Triangular faces are highlighted using a selection procedure for all faces that are made of exactly three edges. To the left is an original mesh acquired, the middle shows a selection of remaining triangles after the automatic tri-to-quad conversion, and the right displays a retopologised mesh of entirely quads.}}{18}{figure.3.2}

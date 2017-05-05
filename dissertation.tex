@@ -360,7 +360,21 @@ For each observed data point, $\bm{y}_i \in \bm{Y}$, $1 \leq i \leq n $, there i
 \bm{y}_i=\bm{Wx}_i+\bm{\mu}_i+\bm{\epsilon}_i.
 \end{equation}
 The matrix $\bm{W}$ represents the linear relationship between the latent-space with the data-space.
-The parameter $\bm{\mu}_i$ allows for non-zero mean, and the $\bm{\epsilon}_i$ parameter represents noise within the model. Standard PCA can be viewed as a variant of factor analysis where the noise parameter is not accounted for. The maximum-likelihood estimates of $\bm{W}$ will thus generally not correspond to the principal subspace. 
+The parameter $\bm{\mu}_i$ allows for non-zero mean, and the $\bm{\epsilon}_i$ parameter represents noise within the model. Standard PCA can be viewed as a variant of factor analysis where the noise parameter is not accounted for. The maximum-likelihood estimates of $\bm{W}$ will thus generally not correspond to the principal subspace. PCA reduce dimensionality without explaining the relation between the original data and its principal components. Regression is possible with a model that explains the relation between observed variables and latent variables.
+
+\begin{figure}[!h]
+	\centering
+	\caption{In a latent variable model, a latent variable, $\bm{X}$, is input into a function, $\bm{F}$, which maps to the output observed variables, $\bm{Y}$.}
+	\begin{tikzpicture}
+		\tikzstyle{bf} = [font=\bf]
+		\node[bf, draw, circle] (X) {X};
+		\node[bf, draw, circle] (F) [below of=X] {F};
+		\node[bf, draw, circle] (Y) [below of=F] {Y};
+		
+		\path [->] (X) edge (F);
+		\path [->] (F) edge (Y);
+	\end{tikzpicture}
+\end{figure} 
 
 The latent variable model developed by Tipping and Bishop performs principal component analysis by modelling the noise parameter of equation \ref{ppca:fa} as an isotropic, spherical Gaussian distribution
 The noise values, $\epsilon_i \in \Re^{d \times 1}$, are sampled from a independent spherical Gaussian distribution, $$\bm{\epsilon}_i\sim\mathcal{N}(\bm{0}, \bm{\beta}^{-1}\bm{I}).$$
@@ -407,7 +421,7 @@ The matrix $\bm{U}_q$ contains the column vectors that are the principal eigenve
 Maximising the likelihood of $\bm{W}$ by equation \ref{ppca:ml} on the latent variable model defined by equation \ref{ppca:fa} maps the latent-space to the principal subspace of the observed data. Satisfying $\bm{W}_{ML}$, the latent variable model is effectively equivalent to standard principal component analysis.
 
 \section{Gaussian Process Latent Variable Model}
-The Gaussian Process Latent Variable Model (GP-LVM) is a non-linear latent variable model derived from a dual of the probabilistic PCA by replacing the inner product kernel with Gaussian processes (Lawrence 2005) \cite{gplvm}. GP-LVM allow non-linear embedding of the observed variables to capture the complexity of high dimensional observed data, such as polygonal hair structure.
+The Gaussian Process Latent Variable Model (GP-LVM) is a non-linear latent variable model derived from a dual of the probabilistic PCA by replacing the inner product kernel with Gaussian processes (Lawrence 2005) \cite{gplvm}. A non-linear embedding is more suitable model for capturing high dimensional data such as polygonal hair structure.
 	
 \subsection{Dual Probabilistic PCA}
 The dual probabilistic PCA introduced by Lawrence marginalises the parameters, $\bm{W}$, and optimises with respect to latent variables, $\bm{X}$. This is the dual approach of the standard probabilistic PCA where the parameters are optimised and the latent variables are marginalised.
@@ -416,26 +430,35 @@ First, a conjugate prior to the likelihood of probabilistic PCA (\ref{ppca:likel
 $$p(\bm{W})=\prod^d_{i=1}\mathcal{N}(\bm{w}_i|\bm{0,I}).$$
 As marginalisation of both $\bm{W}$ and $\bm{X}$ is often intractable in practice, $\bm{W}$ is selected for marginalisation as the conjugate prior is Gaussian distributed, thus, it can be integrated analytically.
 The marginalised likelihood of $\bm{W}$ is
-$$p(\bm{Y|X},\beta)=\prod^d_{i=1}p(\bm{y}_{:,i}|\bm{X},\beta),$$
+$$p(\bm{Y|X},\bm{\beta})=\prod^d_{i=1}p(\bm{y}_{:,i}|\bm{X},\bm{\beta}),$$
 The $\bm{y}_{:,i}$ parameter represents the $i^{it}$ column of $\bm{Y}$, where
-$$p(\bm{y}_{:,i}|\bm{X},\beta)=\mathcal{N}(\bm{y}_{:,i}|\bm{0,XX}^T+\beta^{-1}\bm{I}).$$
+$$p(\bm{y}_{:,i}|\bm{X},\bm{\beta})=\mathcal{N}(\bm{y}_{:,i}|\bm{0,XX}^T+\bm{\beta}^{-1}\bm{I}).$$
 The objective function is the log-likelihood
 \begin{equation} \label{dppca:loglikelihood}
 L=-\frac{dn}{2}ln2\pi-\frac{d}{2}ln|\bm{K}|-\frac{1}{2}tr(\bm{K^{-1}YY}^T),
 \end{equation}
-$$\bm{K=XX}^T+\beta^{-1}I.$$
+$$\bm{K=XX}^T+\bm{\beta}^{-1}I.$$
 In the original paper, Lawrence found the gradients of the log-likelihood (\ref{dppca:loglikelihood}) with respect to $\bm{X}$ as
 $$\frac{\sigma L}{\sigma \bm{X}}=\bm{K^{-1}YY}^T\bm{K^{-1}X}-d\bm{K^{-1}X}.$$ 
 A stationary point where the gradients are zero is given by
 $$\frac{1}{d}\bm{YY}^T\bm{K^{-1}X=X}.$$
 The values for $\bm{X}$ which maximise the likelihood are given by singular value decomposition of $\bm{X}$,
 $$\bm{X=ULV}^T.$$
-$\bm{U}$ is an $n \times q$ matrix whose orthonormal column vectors are the first eigenvectors of $\bm{YY}^T$. $\bm{L}$ is a $q \times q$ diagonal matrix of singular values, whose $j^{th}$ element is $l_j=(\lambda_j-\frac{1}{\beta})^{-\frac{1}{2}}$, where $\lambda_j$ is the eigenvalue associated with the $j^{th}$ eigenvector $d^{-1}\bm{YY}^T$. $\bm{V}$ is an arbitrary $q\times q$ rotation matrix. Lawrence showed that the eigenvalue problem developed here is equivalent to the eigenvalue problem solved in PPCA, and thus, DPPCA is also effectively equal to standard PCA when the likelihood is maximised.
-
+$\bm{U}$ is a matrix whose orthonormal column vectors are the first eigenvectors of $\bm{YY}^T$. $\bm{L}$ is a diagonal matrix of singular values, whose $i^{th}$ element is $l_i=(\lambda_i-\frac{1}{\beta})^{-\frac{1}{2}}$, where $\lambda_i$ is the eigenvalue associated with the $i^{th}$ eigenvector $\frac{1}{d}\bm{YY}^T$. $\bm{V}$ is an arbitrary rotation matrix. Lawrence showed that the eigenvalue problem developed here is equivalent to the eigenvalue problem solved in probabilistic PCA, and thus, dual probabilistic PCA is also effectively equal to standard PCA when the likelihood is maximised.
 Dual probabilistic PCA assumes that the output dimensions are linear, independent, and identically distributed. Infringing upon these assumptions derive new probabilistic models.
 
 \subsection{Gaussian Processes}
-A Gaussian process (GP) is a non-parametric statistical model that generalises a probability distribution over functions by treating each observed variable as an independent distribution. Formally, a Gaussian process is a finite collection of random variables that are jointly Gaussian, specified by a mean function $m(\bm{x})$ and covariance function $k(\bm{x},\bm{x'})$ of a real process $f(\bm{x})$\cite[p.13]{gp},
+A Gaussian process (GP) is a non-parametric statistical model that generalises a probability distribution over functions by treating each observed variable as an independent distribution.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.5]{images/gpPrior}
+	\includegraphics[scale=0.5]{images/gpPosterior}
+	\caption{A prior and posterio GP}
+	\label{gpnoisy}
+\end{figure}
+
+Formally, a Gaussian process is a finite collection of random variables that are jointly Gaussian, specified by a mean function $m(\bm{x})$ and covariance function $k(\bm{x},\bm{x'})$ of a real process $f(\bm{x})$\cite[p.13]{gp},
 $$f(\bm{x})\sim\mathcal{GP}(m(\bm{x}), k(\bm{x}, \bm{x'})),$$
 where
 $$m(\bm{x})=\mathbb{E}[f(\bm{x})],$$
