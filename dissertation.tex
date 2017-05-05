@@ -258,11 +258,11 @@ In multivariate analysis, principal component analysis (PCA) is a statistical te
 
 Consider the properties that describe hair structure. Observable variables that can be measured include location, orientation, length, and colour. The data collected may indicate that some variables change together, this relation is measured as the covariance. The PCA technique searches for an ordered set of principal components that retain maximal variance. A principal component can be viewed as a combination of the observed variables. Should two observed variables strongly covary linearly, then it is plausible to describe the data with a single variable instead. The more linearly observed variables covary, the less information is lost from choosing a smaller set of principal components, thus effectively reducing dimensionality.
 
-Given a set of $n$ observed $d$-dimensional data represented as a design matrix, $\bm{X=[x_1,...,x_n]}^T$, the $q$ principal components $\bm{w_j}$, $j \in {1,...,q}$, are the orthonormal axes with maximal variance retained. The first principal component is a linear function $\bm{\alpha}^T_1\bm{X}$ that retains most variance of $\bm{X}$, where $\bm{\alpha} = [\alpha_{11}, \alpha_{12}, ..., \alpha_{1n}]$ is a vector of $n$ constants such that:
+Given a set of $n$ observed $d$-dimensional data represented as a design matrix, $\bm{X}=[\bm{x}_1,...,\bm{x}_n]^T$, the $q$ principal components $\bm{w}_j$, $j \in \{1,...,q\}$, are the orthonormal axes with maximal variance retained. The first principal component is a linear function $\bm{\alpha}^T_1\bm{X}$ that retains most variance of $\bm{X}$, where $\bm{\alpha}_1 = [\alpha_{11}, \alpha_{12}, ..., \alpha_{1n}]$ is a vector of $n$ constants such that \cite[p.4]{pca2002}:
 $$\bm{\alpha}^T_1\bm{X}=\alpha_{11}\bm{x_1}+\alpha_{12}\bm{x_2}+...+\alpha_{1n}\bm{x_n} = \sum^n_{i=1}a_{1i}\bm{x_i}$$
 The following principal components are found by looking for a linear function that is orthogonal to the selected principal components and retain maximum variance.
 
-PCA can be performed by singular value decomposition (SVD) of $\bm{X}$ in matrix form \cite{pca2002},
+PCA can be performed by singular value decomposition (SVD) of design matrix $\bm{X}$ \cite[pp.44-46]{pca2002},
 $$\bm{X=ULV}^T,$$
 where given $r = r(\bm{X})$ denotes the rank of $\bm{X}$, then
 $\bm{U} \in \Re^{n \times r}$ is a matrix of orthonormal columns that are the left singular vectors,
@@ -273,10 +273,10 @@ A limitation of standard PCA is the lack of a probabilistic solution.
 It is very likely for there to be a multiple sets of principal components that is equally acceptable. In the case of polygonal hair production, this aspect is more prominent as an artistic environment desires to evaluate various plausible designs. A probabilistic model will enable exploration of other stylistic embeddings for hair structure. One way to formulate a probabilistic model is to introduce the notion of noise among observed variables.
 
 \section{The Gaussian Distribution}
-The Gaussian (normal) distribution is a reasonable prior assumption for data that is subject to the central limit theorem, which states that as the sample size of a population tends to infinity, the distribution becomes increasingly Gaussian\cite[p.78]{bishop}.
+The Gaussian (normal) distribution is a reasonable prior assumption for data that is subject to the central limit theorem, which states that as the sample size of a population tends to infinity, the distribution becomes normally distributed \cite[p.78]{bishop}.
 A random variable $X$ that is normally distributed with mean $\mu$ and variance $\sigma^2$ is denoted as
 $$X\sim\mathcal{N}(\mu, \sigma^2).$$
-The Gaussian density for a single variable $y$ is expressed as\cite[p.78]{bishop}:
+The Gaussian density for a single variable $y$ is expressed as \cite[p.78]{bishop}:
 $$\mathcal{N}(y|\mu, \sigma^2)=\frac{1}{\sqrt{2\pi\sigma^2}}\exp\left(-\frac{(y-\mu)^2}{2\sigma^2}\right),$$
 $$\mathcal{N}(y|\mu,\sigma^2) \equiv p(y|\mu,\sigma^2).$$
 Notable properties of the Gaussian distribution that are useful include the summation (\ref{gd:sum}), scaling (\ref{gd:scale}), and product (\ref{gd:prod}) operation - all of which yields a result that is also a Gaussian distribution\cite[p.200]{gp}.
