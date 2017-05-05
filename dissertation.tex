@@ -81,7 +81,7 @@ Production of 3D virtual worlds is a time-consuming and costly process that also
 
 One particular task is the creation of 3D hair geometry for humanoid characters. Creating 3D hair is arduous as hair structure is a complex system containing much interdependence between components. The properties of 3D hair geometry pose significant challenges for machine learning solutions. Machine learning typically uses large data sets for training on problems that often have a concise answer for a given prediction. The application of machine learning to enhance production for creative work is an exciting field that faces novel challenges: artistic products tend to have small sets of data available, and evaluation of quality is subjective. Given the same input, acceptable solutions can vary significantly. The outlined peculiarities of applying machine learning to 3D mesh data establish a unique field of problems to investigate.
 
-Existing tools for 3D modelling have remained mostly static in the paradigm of approach over the past several decades. Automation through methods such as procedural generation can produce content faster. However, the lack of control over the final result causes standard automation to be typically less desirable than traditional methods of 3D modelling. The research hypothesis of this study is that non-linear probabilistic dimensionality reduction embeddings offer an alternate procedure that improves the efficacy of creative content production for exceptionally high dimensional data such as complex 3D hair geometry on virtual humanoids.
+Existing tools for 3D modelling have remained mostly static in the paradigm of approach over the past several decades. Automation through methods such as procedural generation can produce content faster. However, the lack of control over the final result causes standard automation to be typically less desirable than traditional methods of 3D modelling. The research hypothesis of this study is that of applying non-linear probabilistic dimensionality reduction to improve the efficacy of creative content production for exceptionally high dimensional data such as complex 3D hair geometry on virtual humanoids.
 
 \begin{quote}
 	Deliverables:
@@ -163,8 +163,8 @@ I would like to thank coffee
 \chapter{Contextual Background}
 \label{chap:context}
 This dissertation explores assisted real-time content generation through training regression models using unsupervised machine learning for the production of 3D hair geometry.
-The purpose of a 3D object is to describe a surface. There are multiple representations of 3D objects in computer graphics. Typically we define geometric surfaces using a combination of primitives components, allocating more components for representations of greater fidelity. The craft of 3D content is a meticulous procedure as content creators are required to work with enormously high dimensional observed data.
-The objective of this project is to demonstrate the potential of probabilistic non-linear dimensionality reduction on creative content production by presenting a revolutionary approach that improves the efficacy of producing 3D hair geometry. 
+The purpose of a 3D object is to describe a surface. Typically we define geometric surfaces using a combination of many primitive components. The craft of 3D content is a meticulous procedure as content creators are required to work with enormously high dimensional observed data.
+The objective of this project is to demonstrate the potential of probabilistic non-linear dimensionality reduction on creative content production by presenting a framework that improves the efficacy of producing 3D hair geometry. 
 In this chapter, we will introduce complications of producing 3D hair geometry with traditional methods and past research on machine learning applied to creative fields. We will also outline the motivation and significance for research, including challenges and central objectives of this study.
 
 \section{Production of 3D Content}
@@ -205,7 +205,7 @@ Three major paradigms divide the task of machine learning:
 	\item \textit{Unsupervised learning} seeks to learn the structure of and relation between input data.
 	\item \textit{Reinforcement learning} iteratively improve a pool of solutions by simulating an environment that applies concepts inspired by the theory of evolution.
 \end{itemize}
-The role that learning methods play in both manufacturing and consumer application continue to grow, however, adoption has been slow for creative fields.  Generally, robust models improve in performance as more reliable data is obtained. Creative production values uniqueness and versatility, properties that cause difficulty in machine learning methods. Varying artistic styles in design complicate feature analysis and ambiguity of correctness is problematic when predicting an output.
+The role that learning methods play in both manufacturing and consumer application continue to grow, however, adoption has been slow for creative fields.  Generally, robust models improve in performance as more reliable data is obtained. Creative production values uniqueness and versatility, properties that cause difficulty in machine learning methods. Varying artistic styles in design complicate feature analysis and ambiguity of correctness is problematic when predicting an output. In machine learning, prediction of continuous variables is a \textbf{regression} problem. 
 
 Style-based inverse kinematics introduced the Scaled Gaussian Process Latent Variable Model to learn the probabilistic distribution of a 3D human posture model\cite{styleik}. Character posing from motion data is represented as a 42-dimensional feature vector that encapsulated joint information of a humanoid body. Learning a model of poses established the relation between joints and identified constraints exhibited in the training data - where unusual postures are given a lower likelihood rating.
 
@@ -250,11 +250,11 @@ In a production environment, the time required for a technique to return observa
 
 \chapter{Technical Background}
 \label{chap:technical}
-
+In the previous chapter we briefly introduced the \textit{curse of dimensionality}. High dimensional data is often counter-intuitive to perceive and process. Unfortunately, it is common for observed data to be in a representation of greater dimensionality than it requires. This gives rise to the notion of \textbf{dimensionality reduction}, a sub-field of machine learning that is motivated find a descriptive low-dimensional representation of data.
 This chapter will establish the technical foundation required for understanding the probabilistic non-linear dimensionality reduction model we use for assisted real-time content generation of polygonal hair. Starting with principal component analysis (PCA), we review its probabilistic equivalent that contributes to the derivation of the Gaussian Process Latent Variable Model (GP-LVM). Then, we give a formal definition of polygon meshes from the perspective of graph theory - along with concepts that are useful for mesh processing.
 
-\section{Probabilistic Principal Component Analysis}
-In multivariate analysis, principal component analysis (PCA) is a statistical technique used to perform linear dimensionality reduction. It was originally introduced by Pearson\cite{pca1901}, and independently developed by Hotelling\cite{pca1933}, where the standard algebraic derivation of PCA was presented.
+\section{Principal Component Analysis}
+In multivariate analysis, principal component analysis (PCA) is a statistical technique used to perform linear dimensionality reduction. It was originally introduced by Pearson \cite{pca1901}, and independently developed by Hotelling \cite{pca1933}, where the standard algebraic derivation of PCA was presented.
 
 Consider the properties that describe hair structure. Observable variables that can be measured include location, orientation, length, and colour. The data collected may indicate that some variables change together, this relation is measured as the covariance. The PCA technique searches for an ordered set of principal components that retain maximal variance. A principal component can be viewed as a combination of the observed variables. Should two observed variables strongly covary linearly, then it is plausible to describe the data with a single variable instead. The more linearly observed variables covary, the less information is lost from choosing a smaller set of principal components, thus effectively reducing dimensionality.
 
@@ -262,20 +262,17 @@ Given a set of $n$ observed $d$-dimensional data represented as a design matrix,
 $$\bm{\alpha}^T_1\bm{X}=\alpha_{11}\bm{x_1}+\alpha_{12}\bm{x_2}+...+\alpha_{1n}\bm{x_n} = \sum^n_{i=1}a_{1i}\bm{x_i}$$
 The following principal components are found by looking for a linear function that is orthogonal to the selected principal components and retain maximum variance.
 
-PCA can be performed by singular value decomposition (SVD) of $\bm{X}$ in matrix form\cite{pca2002},
+PCA can be performed by singular value decomposition (SVD) of $\bm{X}$ in matrix form \cite{pca2002},
 $$\bm{X=ULV}^T,$$
 where given $r = r(\bm{X})$ denotes the rank of $\bm{X}$, then
 $\bm{U} \in \Re^{n \times r}$ is a matrix of orthonormal columns that are the left singular vectors,
 $\bm{L} \in \Re^{r \times r}$ is a diagonal matrix of the singular values of $\bm{X}$, and
 $\bm{V} \in \Re^{d \times r}$ is a matrix of orthonormal columns that are the right singular vectors.
 
-% Start PPCA
-A limitation of standard PCA is the lack of a probabilistic solution. Tipping and Bishop introduced a probabilistic principal component analysis by constraining the noise distribution of a latent variable model to be Gaussian such that it is effectively equivalent when its marginal likelihood is maximised\cite{ppca}.
+A limitation of standard PCA is the lack of a probabilistic solution. 
+It is very likely for there to be a multiple sets of principal components that is equally acceptable. In the case of polygonal hair production, this aspect is more prominent as an artistic environment desires to evaluate various plausible designs. A probabilistic model will enable exploration of other stylistic embeddings for hair structure. One way to formulate a probabilistic model is to introduce the notion of noise among observed variables.
 
-Suppose that the PCA is applied to a set of data that represents hair structure. Standard PCA searches for the orthonormal axes that retain maximal variance. Extrapolating values using the principal axes can infer new hairstyles, but only within a fixed style described by the principal axes. In the case of 3D content production, it is much more useful to have a selection of plausible designs to choose from. A probabilistic model of PCA will enable exploration of other potential linear embeddings of hair structure.
-
-
-\subsection{The Gaussian Distribution}
+\section{The Gaussian Distribution}
 The Gaussian (normal) distribution is a reasonable prior assumption for data that is subject to the central limit theorem, which states that as the sample size of a population tends to infinity, the distribution becomes increasingly Gaussian\cite[p.78]{bishop}.
 A random variable $X$ that is normally distributed with mean $\mu$ and variance $\sigma^2$ is denoted as
 $$X\sim\mathcal{N}(\mu, \sigma^2).$$
@@ -298,7 +295,7 @@ $$\bm{c}=C(A^{-1}\bm{a}+B^{-1}\bm{b}),$$
 $$C = (A^{-1}+B^{-1})^{-1}).$$
 
 
-\subsubsection{Multivariate Gaussian Distribution}
+\subsection{Multivariate Gaussian Distribution}
 \noindent
 Let $w$ and $h$ be jointly Gaussian distributed variables, if the variables are independent, then $p(w,h)=p(w)p(h)$.
 The joint probability density is thus,
@@ -350,22 +347,21 @@ p(\bm{y})=\frac{1}{2\pi|\bm{D}|^{1/2}}\exp\left(-\frac{1}{2}(\bm{y}-\bm{\mu})^T\
 \end{equation}
 where $\bm{D}\in\Re^{n \times 1}$ is the diagonal matrix of the variances $\Sigma$\cite[p.78]{bishop}.
 
-\subsection{Latent Variable Models and Factor Analysis}
-A latent variable model transforms a set of $n$ $d$-dimensional observed variables encoded as a design matrix, $\bm{Y}\in\Re^{n \times d}$, to a set of $n$ $q$-dimensional latent (unobserved) variables, $\bm{X}\in\Re^{n \times q}$. Latent variables are parsimonious, it is generally the case that $q \ll d$, explaining the original data with fewer variables. A notable latent variable model is that of factor analysis, one that assumes linearity in relation of the observed data set,
+\section{A Probabilistic Model for PCA}
+Tipping and Bishop introduced a probabilistic principal component analysis by constraining the noise distribution of a \textbf{latent variable model} to be Gaussian such that it is \textit{effectively equivalent when its marginal likelihood is maximised} \cite{ppca}.
+
+A \textit{latent variable model} transforms a set of $n$ $d$-dimensional observed variables encoded as a design matrix, $\bm{Y}\in\Re^{n \times d}$, to a set of $n$ $q$-dimensional latent (unobserved) variables, $\bm{X}\in\Re^{n \times q}$. Latent variables are parsimonious, it is generally the case that $q \ll d$, explaining the original data with fewer variables. A notable latent variable model is that of \textbf{factor analysis}, one that assumes linearity in relation of the observed data set,
 \begin{equation} \label{ppca:fa}
 \bm{Y=WX+\mu+\epsilon}.
 \end{equation}
-$\bm{W}$ represents a matrix that specifies the linear relation between the observed data-space with the latent-space.
+The matrix $\bm{W \in \Re^{d \times q}}$ represents the linear relationship between the latent-space with the data-space.
 The parameter $\mu$ allows for non-zero mean, and the $\epsilon$ parameter represents noise within the model. Standard PCA can be viewed as a variant of factor analysis where the noise parameter is not accounted for. The maximum-likelihood estimates of $\bm{W}$ will thus generally not correspond to the principal subspace. 
 
-\subsection{A Probabilistic Model for PCA}
-Tipping and Bishop develop a latent variable model that performs principal component analysis by modelling the parameter $\epsilon$ of equation \ref{ppca:fa} as an isotropic, spherical Gaussian distribution $\mathcal{N}(\bm{0},\beta^{-1}\bm{I})$. Consider a design matrix of $n$ centred $d$-dimensional vectors $\bm{Y=[y_1,...,y_n]}^T$.
+The latent variable model developed by Tipping and Bishop performs principal component analysis by modelling the parameter $\epsilon$ of equation \ref{ppca:fa} as an isotropic, spherical Gaussian distribution $\mathcal{N}(\bm{0},\beta^{-1}\bm{I})$. Suppose that $\bm{Y=[y_1,...,y_n]}^T$.
 For each observed data point, $1 \leq i \leq n $, there is an associated $q$-dimensional latent variable $\bm{x_i}$.
 The original data can be represented in terms of the latent variable with noise value,
-$$\bm{y}_i=\bm{Wx}_i+\bm{\epsilon}_i.$$
-A general representation for data with non-zero mean includes the mean parameter, $\bm{\mu}_i$,
 $$\bm{y}_i=\bm{Wx}_i+\bm{\mu}_i+\bm{\epsilon}_i.$$
-The matrix $\bm{W \in \Re^{d \times q}}$ represents the linear relationship between the latent-space with the  data-space. The noise values, $\epsilon_i \in \Re^{d \times 1}$, are sampled from a independent spherical Gaussian distribution, $\epsilon_i\sim\mathcal{N}(\bm{0, \beta^{-1}I})$.
+The noise values, $\epsilon_i \in \Re^{d \times 1}$, are sampled from a independent spherical Gaussian distribution, $\epsilon_i\sim\mathcal{N}(\bm{0, \beta^{-1}I})$.
 The conditional probability distribution of a observed variables $\bm{y}_i$ given input variables $\bm{x}_i$ is thus Gaussian distributed as
 \begin{equation} \label{ppca:conditional}
 p(\bm{y}_i|\bm{x}_i)=\mathcal{N}(\bm{W\bm{x}_i+\bm{\mu}_i},\bm{\beta}^{-1}\bm{I}). 
@@ -380,7 +376,7 @@ As a consequence, we can derive that given $\bm{x}_i\sim\mathcal{N}(\bm{\mu}_i,\
 Thus, for centred data where $\bm{\mu}=\bm{0}$, 
 $$\bm{Wx}_i\sim\mathcal{N}(\bm{0},\bm{WW}^T),$$
 $$\bm{y}_i\sim\mathcal{N}(\bm{0},\bm{C}),$$
-where the observation covariance model is $\bm{C}=\bm{WW}^T\beta^{-1}\bm{I}$, with corresponding log-likelihood\cite{gplvm}
+where the observation covariance model is $\bm{C}=\bm{WW}^T\beta^{-1}\bm{I}$, with corresponding log-likelihood \cite{gplvm}
 \begin{equation} \label{ppca:loglikelihood}
 \mathcal{L}=\frac{n}{2}(d ln(2\pi)+ln|\bm{C}|+tr(\bm{C^{-1}S})),
 \end{equation}
@@ -398,7 +394,7 @@ Assuming that the data points are independent, the likelihood of the full data s
 $$p(\bm{Y|W,\beta})=\prod^n_{i=1} p(\bm{y_i|W,\beta}).$$
 
 \subsubsection{The Principal Subspace of PPCA}
-Tipping and Bishop\cite{ppca} showed that all potential solutions for $\bm{W}$, the likelihood (\ref{ppca:loglikelihood}), is of the form $$\bm{W=U_q(K_q-\sigma^2I)^\frac{1}{2}R}.$$
+Tipping and Bishop showed that all potential solutions for $\bm{W}$, the likelihood (\ref{ppca:loglikelihood}), is of the form \cite{ppca} $$\bm{W=U_q(K_q-\sigma^2I)^\frac{1}{2}R}.$$
 One particular case of interest is when the likelihood is maximised,
 \begin{equation} \label{ppca:ml}
 \bm{W}_{ML}=\bm{U}_q\bm{LR},
@@ -409,9 +405,7 @@ The matrix $\bm{U_q}\in\Re^{d \times q}$ contains the column vectors that are th
 Maximising the likelihood of $\bm{W}$ by equation \ref{ppca:ml} on the latent variable model defined by equation \ref{ppca:fa} maps the latent-space to the principal subspace of the observed data. Selecting $\bm{W}_{ML}$, the latent variable model is effectively equivalent to standard principal component analysis.
 
 \section{Gaussian Process Latent Variable Model}
-The Gaussian Process Latent Variable Model (GP-LVM) is a non-linear latent variable model derived from a dual of the probabilistic PCA by replacing the inner product kernel with Gaussian processes (Lawrence 2005)\cite{gplvm}. The use of an inner product kernel that allows for non-linear functions enable a non-linear embedding of the data-space to obtain a lower dimension latent-space. 
-
-Probabilistic PCA presented a space of linearly embedded hairstyles, however, it is unlikely that linear embeddings of observed variables for hair is effective for high dimensional data such as hair structure. GP-LVM replaces the covariance matrix with a non-linear kernel, allowing non-linear embedding of the observed variables to capture the complexity of hair structure.
+The Gaussian Process Latent Variable Model (GP-LVM) is a non-linear latent variable model derived from a dual of the probabilistic PCA by replacing the inner product kernel with Gaussian processes (Lawrence 2005) \cite{gplvm}. GP-LVM allow non-linear embedding of the observed variables to capture the complexity of high dimensional observed data, such as polygonal hair structure.
 	
 \subsection{Dual Probabilistic PCA}
 The dual probabilistic PCA introduced by Lawrence marginalises the parameters, $\bm{W}$, and optimises with respect to latent variables, $\bm{X}$. This is the dual approach of the standard probabilistic PCA where the parameters are optimised and the latent variables are marginalised.

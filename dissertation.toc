@@ -6,26 +6,25 @@
 \contentsline {section}{\numberline {1.4}Challenges}{4}{section.1.4}
 \contentsline {section}{\numberline {1.5}Central Objectives}{5}{section.1.5}
 \contentsline {chapter}{\numberline {2}Technical Background}{7}{chapter.2}
-\contentsline {section}{\numberline {2.1}Probabilistic Principal Component Analysis}{7}{section.2.1}
-\contentsline {subsection}{\numberline {2.1.1}The Gaussian Distribution}{8}{subsection.2.1.1}
-\contentsline {subsubsection}{Multivariate Gaussian Distribution}{8}{section*.11}
-\contentsline {subsection}{\numberline {2.1.2}Latent Variable Models and Factor Analysis}{9}{subsection.2.1.2}
-\contentsline {subsection}{\numberline {2.1.3}A Probabilistic Model for PCA}{9}{subsection.2.1.3}
-\contentsline {subsubsection}{The Principal Subspace of PPCA}{10}{section*.12}
-\contentsline {section}{\numberline {2.2}Gaussian Process Latent Variable Model}{10}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}Dual Probabilistic PCA}{10}{subsection.2.2.1}
-\contentsline {subsection}{\numberline {2.2.2}Gaussian Processes}{11}{subsection.2.2.2}
-\contentsline {subsubsection}{GPs for Regression}{12}{section*.13}
-\contentsline {subsubsection}{Learning with the Covariance Function}{12}{section*.14}
-\contentsline {section}{\numberline {2.3}Bayesian Gaussian Process Latent Variable Model}{12}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1}Variational Inference}{13}{subsection.2.3.1}
-\contentsline {section}{\numberline {2.4}Formal Definition of 3D Polygon Mesh Representation}{14}{section.2.4}
-\contentsline {subsection}{\numberline {2.4.1}The Mesh Data Structure}{14}{subsection.2.4.1}
-\contentsline {subsubsection}{Definition of a Graph}{14}{section*.15}
-\contentsline {subsubsection}{Definition of a Mesh}{14}{section*.16}
-\contentsline {subsection}{\numberline {2.4.2}Topology}{14}{subsection.2.4.2}
-\contentsline {subsubsection}{Poles}{15}{section*.17}
-\contentsline {subsubsection}{Edge Loops}{15}{section*.18}
+\contentsline {section}{\numberline {2.1}Principal Component Analysis}{7}{section.2.1}
+\contentsline {section}{\numberline {2.2}The Gaussian Distribution}{8}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Multivariate Gaussian Distribution}{8}{subsection.2.2.1}
+\contentsline {section}{\numberline {2.3}A Probabilistic Model for PCA}{9}{section.2.3}
+\contentsline {subsubsection}{The Principal Subspace of PPCA}{10}{section*.11}
+\contentsline {section}{\numberline {2.4}Gaussian Process Latent Variable Model}{10}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}Dual Probabilistic PCA}{10}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {2.4.2}Gaussian Processes}{11}{subsection.2.4.2}
+\contentsline {subsubsection}{GPs for Regression}{11}{section*.12}
+\contentsline {subsubsection}{Learning with the Covariance Function}{12}{section*.13}
+\contentsline {section}{\numberline {2.5}Bayesian Gaussian Process Latent Variable Model}{12}{section.2.5}
+\contentsline {subsection}{\numberline {2.5.1}Variational Inference}{13}{subsection.2.5.1}
+\contentsline {section}{\numberline {2.6}Formal Definition of 3D Polygon Mesh Representation}{13}{section.2.6}
+\contentsline {subsection}{\numberline {2.6.1}The Mesh Data Structure}{13}{subsection.2.6.1}
+\contentsline {subsubsection}{Definition of a Graph}{14}{section*.14}
+\contentsline {subsubsection}{Definition of a Mesh}{14}{section*.15}
+\contentsline {subsection}{\numberline {2.6.2}Topology}{14}{subsection.2.6.2}
+\contentsline {subsubsection}{Poles}{14}{section*.16}
+\contentsline {subsubsection}{Edge Loops}{15}{section*.17}
 \contentsline {chapter}{\numberline {3}Project Execution}{17}{chapter.3}
 \contentsline {section}{\numberline {3.1}Training Data Set}{17}{section.3.1}
 \contentsline {subsection}{\numberline {3.1.1}Retopologising Training Data}{17}{subsection.3.1.1}
@@ -33,10 +32,10 @@
 \contentsline {section}{\numberline {3.3}Approximating Generative Parameters from Input Data}{19}{section.3.3}
 \contentsline {subsection}{\numberline {3.3.1}Parsing OBJ File}{19}{subsection.3.3.1}
 \contentsline {subsection}{\numberline {3.3.2}Spline Estimation}{20}{subsection.3.3.2}
-\contentsline {subsubsection}{Edge Loop Extraction}{20}{section*.19}
-\contentsline {subsubsection}{Boundary and Root Edge Loops}{21}{section*.20}
-\contentsline {subsubsection}{Pivotal Strand Poly-lines}{22}{section*.21}
-\contentsline {subsubsection}{Parametrising a Strand Spline}{23}{section*.22}
+\contentsline {subsubsection}{Edge Loop Extraction}{20}{section*.18}
+\contentsline {subsubsection}{Boundary and Root Edge Loops}{21}{section*.19}
+\contentsline {subsubsection}{Pivotal Strand Poly-lines}{22}{section*.20}
+\contentsline {subsubsection}{Parametrising a Strand Spline}{23}{section*.21}
 \contentsline {subsection}{\numberline {3.3.3}Structure Estimation}{23}{subsection.3.3.3}
 \contentsline {section}{\numberline {3.4}Learning a Manifold with Bayesian GP-LVM}{24}{section.3.4}
 \contentsline {section}{\numberline {3.5}Generation of Output}{25}{section.3.5}
@@ -46,15 +45,15 @@
 \contentsline {chapter}{\numberline {4}Critical Evaluation}{27}{chapter.4}
 \contentsline {section}{\numberline {4.1}Latent Hair Modelling Survey}{27}{section.4.1}
 \contentsline {section}{\numberline {4.2}Latent Application Experiment}{30}{section.4.2}
-\contentsline {subsubsection}{Behavioural Observation: Familiarising with the manifold}{31}{section*.23}
-\contentsline {subsubsection}{Behavioural Observation: Fine-tuning the result}{31}{section*.24}
-\contentsline {subsubsection}{Behavioural Observation: Misleading local optima}{31}{section*.25}
+\contentsline {subsubsection}{Behavioural Observation: Familiarising with the manifold}{31}{section*.22}
+\contentsline {subsubsection}{Behavioural Observation: Fine-tuning the result}{31}{section*.23}
+\contentsline {subsubsection}{Behavioural Observation: Misleading local optima}{31}{section*.24}
 \contentsline {section}{\numberline {4.3}Functional Performance}{31}{section.4.3}
 \contentsline {section}{\numberline {4.4}Evaluative Discussion}{33}{section.4.4}
 \contentsline {subsection}{\numberline {4.4.1}Training and Model}{33}{subsection.4.4.1}
 \contentsline {subsection}{\numberline {4.4.2}Comparison with existing solutions}{34}{subsection.4.4.2}
 \contentsline {subsection}{\numberline {4.4.3}Potential Improvements}{34}{subsection.4.4.3}
-\contentsline {subsubsection}{Addressing Non-Intuitive Use}{34}{section*.26}
+\contentsline {subsubsection}{Addressing Non-Intuitive Use}{34}{section*.25}
 \contentsline {subsection}{\numberline {4.4.4}Applications}{34}{subsection.4.4.4}
 \contentsline {chapter}{\numberline {5}Conclusion}{37}{chapter.5}
 \contentsline {section}{\numberline {5.1}Summary}{37}{section.5.1}
