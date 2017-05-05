@@ -7,23 +7,22 @@
 \contentsline {section}{\numberline {1.5}Central Objectives}{5}{section.1.5}
 \contentsline {chapter}{\numberline {2}Technical Background}{7}{chapter.2}
 \contentsline {section}{\numberline {2.1}Principal Component Analysis}{7}{section.2.1}
-\contentsline {section}{\numberline {2.2}The Gaussian Distribution}{8}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}Multivariate Gaussian Distribution}{8}{subsection.2.2.1}
+\contentsline {section}{\numberline {2.2}Multivariate Gaussian Distribution}{8}{section.2.2}
 \contentsline {section}{\numberline {2.3}A Probabilistic Model for PCA}{9}{section.2.3}
 \contentsline {subsubsection}{The Principal Subspace of PPCA}{10}{section*.11}
 \contentsline {section}{\numberline {2.4}Gaussian Process Latent Variable Model}{10}{section.2.4}
-\contentsline {subsection}{\numberline {2.4.1}Dual Probabilistic PCA}{10}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {2.4.1}Dual Probabilistic PCA}{11}{subsection.2.4.1}
 \contentsline {subsection}{\numberline {2.4.2}Gaussian Processes}{11}{subsection.2.4.2}
-\contentsline {subsubsection}{GPs for Regression}{11}{section*.12}
+\contentsline {subsubsection}{GPs for Regression}{12}{section*.12}
 \contentsline {subsubsection}{Learning with the Covariance Function}{12}{section*.13}
-\contentsline {section}{\numberline {2.5}Bayesian Gaussian Process Latent Variable Model}{12}{section.2.5}
+\contentsline {section}{\numberline {2.5}Bayesian Gaussian Process Latent Variable Model}{13}{section.2.5}
 \contentsline {subsection}{\numberline {2.5.1}Variational Inference}{13}{subsection.2.5.1}
-\contentsline {section}{\numberline {2.6}Formal Definition of 3D Polygon Mesh Representation}{13}{section.2.6}
-\contentsline {subsection}{\numberline {2.6.1}The Mesh Data Structure}{13}{subsection.2.6.1}
+\contentsline {section}{\numberline {2.6}Formal Definition of 3D Polygon Mesh Representation}{14}{section.2.6}
+\contentsline {subsection}{\numberline {2.6.1}The Mesh Data Structure}{14}{subsection.2.6.1}
 \contentsline {subsubsection}{Definition of a Graph}{14}{section*.14}
 \contentsline {subsubsection}{Definition of a Mesh}{14}{section*.15}
-\contentsline {subsection}{\numberline {2.6.2}Topology}{14}{subsection.2.6.2}
-\contentsline {subsubsection}{Poles}{14}{section*.16}
+\contentsline {subsection}{\numberline {2.6.2}Topology}{15}{subsection.2.6.2}
+\contentsline {subsubsection}{Poles}{15}{section*.16}
 \contentsline {subsubsection}{Edge Loops}{15}{section*.17}
 \contentsline {chapter}{\numberline {3}Project Execution}{17}{chapter.3}
 \contentsline {section}{\numberline {3.1}Training Data Set}{17}{section.3.1}

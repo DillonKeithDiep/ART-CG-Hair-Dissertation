@@ -272,14 +272,17 @@ $\bm{V} \in \Re^{d \times r}$ is a matrix of orthonormal columns that are the ri
 A limitation of standard PCA is the lack of a probabilistic solution. 
 It is very likely for there to be a multiple sets of principal components that is equally acceptable. In the case of polygonal hair production, this aspect is more prominent as an artistic environment desires to evaluate various plausible designs. A probabilistic model will enable exploration of other stylistic embeddings for hair structure. One way to formulate a probabilistic model is to introduce the notion of noise among observed variables.
 
-\section{The Gaussian Distribution}
+\section{Multivariate Gaussian Distribution}
 The Gaussian (normal) distribution is a reasonable prior assumption for data that is subject to the central limit theorem, which states that as the sample size of a population tends to infinity, the distribution becomes normally distributed \cite[p.78]{bishop}.
 A random variable $X$ that is normally distributed with mean $\mu$ and variance $\sigma^2$ is denoted as
 $$X\sim\mathcal{N}(\mu, \sigma^2).$$
 The Gaussian density for a single variable $y$ is expressed as \cite[p.78]{bishop}:
 $$\mathcal{N}(y|\mu, \sigma^2)=\frac{1}{\sqrt{2\pi\sigma^2}}\exp\left(-\frac{(y-\mu)^2}{2\sigma^2}\right),$$
 $$\mathcal{N}(y|\mu,\sigma^2) \equiv p(y|\mu,\sigma^2).$$
-Notable properties of the Gaussian distribution that are useful include the summation (\ref{gd:sum}), scaling (\ref{gd:scale}), and product (\ref{gd:prod}) operation - all of which yields a result that is also a Gaussian distribution\cite[p.200]{gp}.
+For a $d$-dimensional vector $\bm{y}$, the multivariate Gaussian distribution with mean vector $d$-dimensional $\bm{u}$, $d \times d$ covariance matrix $\bm{\Sigma}$, and the determinant of $\bm{\Sigma}$ as $\bm{|\Sigma}|$, is
+$$\mathcal{N}(\bm{y}|\bm{\mu}, \bm{\Sigma})=\frac{1}{(2\pi)^{\frac{d}{2}}\sqrt{|\bm{\Sigma}|}}
+\exp\left(-\frac{1}{2}(\bm{x}-\bm{\mu})^T\bm{\Sigma}^{-1}(\bm{x}-\bm{\mu})\right).$$
+The Gaussian distribution is \textit{closed} under addition (\ref{gd:sum}), scaling (\ref{gd:scale}), and multiplication (\ref{gd:prod}) - all of which yields a result that is also a Gaussian distribution \cite[p.200]{gp}. These notable properties will be useful in later sections as it allows analytical integration of multivariate Gaussian distributions.
 \begin{equation} \label{gd:sum}
 \sum^n_{i=1}y_i\sim\mathcal{N}(\sum^n_{i=1}\mu_i,\sum^n_{i=1}\sigma^2_i)
 \end{equation}
@@ -289,17 +292,18 @@ wy\sim\mathcal{N}(w\mu,w^2\sigma^2)
 \end{equation}
 
 \begin{equation} \label{gd:prod}
-\mathcal{N}(\bm{x|a},A)\mathcal{N}(\bm{x|b},B) = \mathcal{N}(\bm{a|b},A+B)\mathcal{N}(\bm{x}|\bm{c}, C),
+\mathcal{N}(\bm{x}|\bm{a},\bm{A})\mathcal{N}(\bm{x}|\bm{b},\bm{B}) = Z^{-1}\mathcal{N}(\bm{x}|\bm{c}, \bm{C}),
 \end{equation}
-$$\bm{c}=C(A^{-1}\bm{a}+B^{-1}\bm{b}),$$
-$$C = (A^{-1}+B^{-1})^{-1}).$$
+$$Z^{-1}=
+\frac{1}{(2\pi)^\frac{d}{2}\sqrt{|\bm{A}+\bm{B}|}}
+\exp\left(-\frac{1}{2}(\bm{a}-\bm{b})^T(\bm{A}+\bm{B})^T(\bm{a}-\bm{b})\right),$$
+$$\bm{c}=\bm{C}(\bm{A}^{-1}\bm{a}+\bm{B}^{-1}\bm{b}),$$
+$$\bm{C} = (\bm{A}^{-1}+\bm{B}^{-1})^{-1}).$$
 
-
-\subsection{Multivariate Gaussian Distribution}
-\noindent
-Let $w$ and $h$ be jointly Gaussian distributed variables, if the variables are independent, then $p(w,h)=p(w)p(h)$.
+Let $w\sim\mathcal{N}(\mu_1, \sigma^2_1)$ and $h\sim\mathcal{N}(\mu_2, \sigma^2_2)$ be jointly Gaussian distributed variables, if the variables are independent, then $p(w,h)=p(w)p(h)$.
 The joint probability density is thus,
-$$p(w,h)=\frac{1}{\sqrt{2\pi\sigma^2_1}\sqrt{2\pi\sigma^2_2}}\exp\left(-\frac{1}{2}\left(\frac{w-\mu_1)^2}{\sigma^2_1}+\frac{h-\mu_2)^2}{\sigma^2_2}\right)\right).$$
+$$p(w,h)=\frac{1}{\sqrt{2\pi\sigma^2_1}\sqrt{2\pi\sigma^2_2}}
+\exp\left(-\frac{1}{2}\left(\frac{(w-\mu_1)^2}{\sigma^2_1}+\frac{(h-\mu_2)^2}{\sigma^2_2}\right)\right).$$
 In matrix form, the joint probability is
 $$p(w,h)=\frac{1}{2\pi\sqrt{\sigma^2_1\sigma^2_2}}\exp
 \left(
@@ -324,7 +328,7 @@ h
 \sigma^2_1  &   0\\
 0           &   \sigma^2_2
 \end{matrix}
-\right]
+\right]^{-1}
 \left(
 \left[
 \begin{matrix}
@@ -341,18 +345,18 @@ h
 \right]
 \right)
 \right).$$
-For a $n$-dimensional vector $\bm{y}$, the joint probability density is expressed as
+Assuming independence, the joint probability density for a $n$-dimensional vector $\bm{y}$ is expressed as
 \begin{equation} \label{jointpd}
-p(\bm{y})=\frac{1}{2\pi|\bm{D}|^{1/2}}\exp\left(-\frac{1}{2}(\bm{y}-\bm{\mu})^T\bm{D}^{-1}(\bm{y}-\bm{\mu})\right),
+p(\bm{y})=\frac{1}{2\pi\sqrt{|\bm{D}|}}\exp\left(-\frac{1}{2}(\bm{y}-\bm{\mu})^T\bm{D}^{-1}(\bm{y}-\bm{\mu})\right),
 \end{equation}
-where $\bm{D}\in\Re^{n \times 1}$ is the diagonal matrix of the variances $\Sigma$\cite[p.78]{bishop}.
+where $\bm{D}\in\Re^{n \times n}$ is the diagonal matrix of the variances \cite[p.78]{bishop}.
 
 \section{A Probabilistic Model for PCA}
 Tipping and Bishop introduced a probabilistic principal component analysis by constraining the noise distribution of a \textbf{latent variable model} to be Gaussian such that it is \textit{effectively equivalent when its marginal likelihood is maximised} \cite{ppca}.
 
-A \textit{latent variable model} transforms a set of $n$ $d$-dimensional observed variables encoded as a design matrix, $\bm{Y}\in\Re^{n \times d}$, to a set of $n$ $q$-dimensional latent (unobserved) variables, $\bm{X}\in\Re^{n \times q}$. Latent variables are parsimonious, it is generally the case that $q \ll d$, explaining the original data with fewer variables. A notable latent variable model is that of \textbf{factor analysis}, one that assumes linearity in relation of the observed data set,
+A \textit{latent variable model} transforms a set of $n$ $d$-dimensional observed variables encoded as a design matrix, $\bm{Y}$, to a set of $n$ $q$-dimensional latent (unobserved) variables, $\bm{X}$. Latent variables are parsimonious, it is generally the case that $q \ll d$, explaining the original data with fewer variables. A notable latent variable model is that of \textbf{factor analysis}, one that assumes linearity in relation of the observed data set,
 \begin{equation} \label{ppca:fa}
-\bm{Y=WX+\mu+\epsilon}.
+\bm{Y}=\bm{WX}+\bm{\mu}+\bm{\epsilon}.
 \end{equation}
 The matrix $\bm{W \in \Re^{d \times q}}$ represents the linear relationship between the latent-space with the data-space.
 The parameter $\mu$ allows for non-zero mean, and the $\epsilon$ parameter represents noise within the model. Standard PCA can be viewed as a variant of factor analysis where the noise parameter is not accounted for. The maximum-likelihood estimates of $\bm{W}$ will thus generally not correspond to the principal subspace. 
