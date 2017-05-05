@@ -354,30 +354,29 @@ where $\bm{D}\in\Re^{n \times n}$ is the diagonal matrix of the variances \cite[
 \section{A Probabilistic Model for PCA}
 Tipping and Bishop introduced a probabilistic principal component analysis by constraining the noise distribution of a \textbf{latent variable model} to be Gaussian such that it is \textit{effectively equivalent when its marginal likelihood is maximised} \cite{ppca}.
 
-A \textit{latent variable model} transforms a set of $n$ $d$-dimensional observed variables encoded as a design matrix, $\bm{Y}$, to a set of $n$ $q$-dimensional latent (unobserved) variables, $\bm{X}$. Latent variables are parsimonious, it is generally the case that $q \ll d$, explaining the original data with fewer variables. A notable latent variable model is that of \textbf{factor analysis}, one that assumes linearity in relation of the observed data set,
+A \textit{latent variable model} transforms a set of $n$ $d$-dimensional observed variables encoded as a design matrix, $\bm{Y}=[\bm{y}_1,...,\bm{y}_n]^T$, to a set of $n$ $q$-dimensional latent (unobserved) variables, $\bm{X}=[\bm{x}_1,...,\bm{x}_n]^T$. Latent variables are parsimonious, it is generally the case that $q \ll d$, explaining the original data with fewer variables. A notable latent variable model is that of \textbf{factor analysis}, one that assumes linearity in relation of the observed data set.
+For each observed data point, $\bm{y}_i \in \bm{Y}$, $1 \leq i \leq n $, there is an associated latent variable $\bm{x_i}$. The original data can be represented in terms of the corresponding latent variable as
 \begin{equation} \label{ppca:fa}
-\bm{Y}=\bm{WX}+\bm{\mu}+\bm{\epsilon}.
+\bm{y}_i=\bm{Wx}_i+\bm{\mu}_i+\bm{\epsilon}_i.
 \end{equation}
-The matrix $\bm{W \in \Re^{d \times q}}$ represents the linear relationship between the latent-space with the data-space.
-The parameter $\mu$ allows for non-zero mean, and the $\epsilon$ parameter represents noise within the model. Standard PCA can be viewed as a variant of factor analysis where the noise parameter is not accounted for. The maximum-likelihood estimates of $\bm{W}$ will thus generally not correspond to the principal subspace. 
+The matrix $\bm{W}$ represents the linear relationship between the latent-space with the data-space.
+The parameter $\bm{\mu}_i$ allows for non-zero mean, and the $\bm{\epsilon}_i$ parameter represents noise within the model. Standard PCA can be viewed as a variant of factor analysis where the noise parameter is not accounted for. The maximum-likelihood estimates of $\bm{W}$ will thus generally not correspond to the principal subspace. 
 
-The latent variable model developed by Tipping and Bishop performs principal component analysis by modelling the parameter $\epsilon$ of equation \ref{ppca:fa} as an isotropic, spherical Gaussian distribution $\mathcal{N}(\bm{0},\beta^{-1}\bm{I})$. Suppose that $\bm{Y=[y_1,...,y_n]}^T$.
-For each observed data point, $1 \leq i \leq n $, there is an associated $q$-dimensional latent variable $\bm{x_i}$.
-The original data can be represented in terms of the latent variable with noise value,
-$$\bm{y}_i=\bm{Wx}_i+\bm{\mu}_i+\bm{\epsilon}_i.$$
-The noise values, $\epsilon_i \in \Re^{d \times 1}$, are sampled from a independent spherical Gaussian distribution, $\epsilon_i\sim\mathcal{N}(\bm{0, \beta^{-1}I})$.
+The latent variable model developed by Tipping and Bishop performs principal component analysis by modelling the noise parameter of equation \ref{ppca:fa} as an isotropic, spherical Gaussian distribution
+The noise values, $\epsilon_i \in \Re^{d \times 1}$, are sampled from a independent spherical Gaussian distribution, $$\bm{\epsilon}_i\sim\mathcal{N}(\bm{0}, \bm{\beta}^{-1}\bm{I}).$$
 The conditional probability distribution of a observed variables $\bm{y}_i$ given input variables $\bm{x}_i$ is thus Gaussian distributed as
 \begin{equation} \label{ppca:conditional}
-p(\bm{y}_i|\bm{x}_i)=\mathcal{N}(\bm{W\bm{x}_i+\bm{\mu}_i},\bm{\beta}^{-1}\bm{I}). 
+p(\bm{y}_i|\bm{x}_i)=\mathcal{N}(\bm{W}\bm{x}_i+\bm{\mu}_i,\bm{\beta}^{-1}\bm{I}). 
 \end{equation}
-The marginal distribution over the latent variables are standard Gaussian, defined as $\bm{x}_i\sim\mathcal{N}(\bm{0},\bm{I})$. The marginal distribution for the observed data $\bm{y}_i$ is obtained by integrating out the latent variables.
-From equation \ref{jointpd}, an arbitrary rotation matrix $\bm{R}^T\in\Re^{n \times n}$ can be applied to the basis, forming the correlated Gaussian,
-$$p(\bm{y}_i)=\frac{1}{2\pi|\bm{D}|^{1/2}}\exp\left(-\frac{1}{2}(\bm{R}^T\bm{y}_i-\bm{R}^T\bm{\mu}_i)^T\bm{D}^{-1}(\bm{R}^T\bm{y}_i-\bm{R}^T\bm{\mu}_i)\right).$$
+The prior of latent variables is assumed to be standard Gaussian with zero mean and unit covariance, defined as $\bm{x}_i\sim\mathcal{N}(\bm{0},\bm{I})$. The marginal distribution for the observed data $\bm{y}_i$ is obtained by integrating out the latent variables.
+From equation \ref{jointpd}, an arbitrary rotation matrix $\bm{R}^T$ can be applied to the basis, forming the correlated Gaussian,
+$$p(\bm{y}_i)=\frac{1}{2\pi\sqrt{|\bm{D}|}}
+\exp\left(-\frac{1}{2}(\bm{R}^T\bm{y}_i-\bm{R}^T\bm{\mu}_i)^T\bm{D}^{-1}(\bm{R}^T\bm{y}_i-\bm{R}^T\bm{\mu}_i)\right).$$
 This gives an eigenvalue decomposition of the inverse covariance matrix, and thus the covariance matrix,
 $$\bm{C}^{-1}=\bm{RD}^{-1}\bm{R}^T,$$
 $$\bm{C}=\bm{RDR}^T.$$
 As a consequence, we can derive that given $\bm{x}_i\sim\mathcal{N}(\bm{\mu}_i,\bm{\beta}^{-1})$ and $\bm{y}_i=\bm{Wx}_i$, then the distribution of the observed variables can be denoted as $\bm{y}_i\sim\mathcal{N}(\bm{W\mu}_i,\bm{W\beta}^{-1}\bm{W}^T)$.
-Thus, for centred data where $\bm{\mu}=\bm{0}$, 
+Thus, with a prior as standard Gaussian, $\mathcal{N}(\bm{0},\bm{I})$, 
 $$\bm{Wx}_i\sim\mathcal{N}(\bm{0},\bm{WW}^T),$$
 $$\bm{y}_i\sim\mathcal{N}(\bm{0},\bm{C}),$$
 where the observation covariance model is $\bm{C}=\bm{WW}^T\beta^{-1}\bm{I}$, with corresponding log-likelihood \cite{gplvm}
@@ -387,7 +386,7 @@ where the observation covariance model is $\bm{C}=\bm{WW}^T\beta^{-1}\bm{I}$, wi
 $$\bm{S}=\frac{1}{n}\sum^n_{i=1}(\bm{y}_i-\mu)(\bm{y}_i-\mu)^T.$$
 We can write the likelihood for a data point as
 \begin{equation} \label{ppca:likelihood}
-p(\bm{y_i|x_i,W,\beta)=\mathcal{N}(y_i|Wx_i,\beta^{-1}I)}.
+p(\bm{y}_i|\bm{x}_i,\bm{W},\bm{\beta})=\mathcal{N}(\bm{y}_i|\bm{Wx}_i,\bm{\beta}^{-1}\bm{I}).
 \end{equation}
 Integrating over the latent variables gives the marginal likelihood,
 $$p(\bm{y_i|W,\beta})=\int p(\bm{y_i|x_i,W,\beta})p(\bm{x_i})d\bm{x_i}.$$
@@ -395,18 +394,17 @@ As the prior of probabilistic PCA is modelled as a standard Gaussian distributio
 marginalisation of the integral obtains the marginal likelihood of each data point as
 $$p(\bm{y_i|W,\beta})=\mathcal{N}(\bm{y_i|0,WW^T+\beta^{-1}I}).$$
 Assuming that the data points are independent, the likelihood of the full data set is the product of each marginal likelihood,
-$$p(\bm{Y|W,\beta})=\prod^n_{i=1} p(\bm{y_i|W,\beta}).$$
+$$p(\bm{Y}|\bm{W},\bm{\beta})=\prod^n_{i=1} p(\bm{y}_i|\bm{W},\bm{\beta}).$$
 
 \subsubsection{The Principal Subspace of PPCA}
-Tipping and Bishop showed that all potential solutions for $\bm{W}$, the likelihood (\ref{ppca:loglikelihood}), is of the form \cite{ppca} $$\bm{W=U_q(K_q-\sigma^2I)^\frac{1}{2}R}.$$
+Tipping and Bishop showed that all potential solutions for $\bm{W}$, the likelihood (\ref{ppca:loglikelihood}), is of the form \cite{ppca} $$\bm{W}=\bm{U}_q(\bm{K}_q-\sigma^2\bm{I})^\frac{1}{2}\bm{R}.$$
 One particular case of interest is when the likelihood is maximised,
 \begin{equation} \label{ppca:ml}
 \bm{W}_{ML}=\bm{U}_q\bm{LR},
 \end{equation}
-$$\bm{L}=(\Lambda_q-\sigma^2\bm{I})^{\frac{1}{2}}$$
-The matrix $\bm{U_q}\in\Re^{d \times q}$ contains the column vectors that are the principal eigenvectors, $\Lambda_q=[\lambda_1,...,\lambda_q]$ represents the diagonal matrix of the corresponding eigenvalues, and $\bm{R}\in\Re^{q \times q}$ represent an arbitrary orthogonal rotation matrix. 
-
-Maximising the likelihood of $\bm{W}$ by equation \ref{ppca:ml} on the latent variable model defined by equation \ref{ppca:fa} maps the latent-space to the principal subspace of the observed data. Selecting $\bm{W}_{ML}$, the latent variable model is effectively equivalent to standard principal component analysis.
+$$\bm{L}=(\bm{\Lambda}_q-\sigma^2\bm{I})^{\frac{1}{2}}$$
+The matrix $\bm{U}_q$ contains the column vectors that are the principal eigenvectors, $\bm{\Lambda}_q=[\lambda_1,...,\lambda_q]$ represents the diagonal matrix of the corresponding eigenvalues, and $\bm{R}$ represent an arbitrary orthogonal rotation matrix. 
+Maximising the likelihood of $\bm{W}$ by equation \ref{ppca:ml} on the latent variable model defined by equation \ref{ppca:fa} maps the latent-space to the principal subspace of the observed data. Satisfying $\bm{W}_{ML}$, the latent variable model is effectively equivalent to standard principal component analysis.
 
 \section{Gaussian Process Latent Variable Model}
 The Gaussian Process Latent Variable Model (GP-LVM) is a non-linear latent variable model derived from a dual of the probabilistic PCA by replacing the inner product kernel with Gaussian processes (Lawrence 2005) \cite{gplvm}. GP-LVM allow non-linear embedding of the observed variables to capture the complexity of high dimensional observed data, such as polygonal hair structure.
