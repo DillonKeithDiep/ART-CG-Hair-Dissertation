@@ -87,7 +87,7 @@ Existing tools for 3D modelling have remained mostly static in the paradigm of a
 	Deliverables:
 	\begin{itemize}
 		\item Formulating a generative model for 3D humanoid hair structure.
-		\item Resolving the alignment problem by repairing raw input mesh data and feature extraction by approximating parameters of our generative model.
+		\item Resolving the alignment problem by repairing raw input mesh data and feature extraction by approximating inputs of our generative model from sampling training mesh.
 		\item Learning a low dimension latent-space of high dimensional hair structure data.
 		\item Investigated the performance of various kernels and its impact on the latent variable model.
 		\item Implemented an add-on package for a 3D production program, Blender.
@@ -550,7 +550,7 @@ Our motivation for dimensionality reduction on 3D geometry with a latent variabl
 \chapter{Project Execution}
 \label{chap:execution}
 
-This chapter covers the process of assisted real-time content generation for 3D hair geometry by applying non-linear dimensionality reduction to obtain a regression model and a latent manifold for selecting output. A significant portion of this project is dedicated towards processing input polygonal hair mesh data so that the non-linear dimensionality reduction can be effectively applied. First, we outline the process of acquiring appropriate 3D mesh input data and challenges imposed by using polygonal meshes as training data. Then, we discuss why it is difficult to apply machine learning methods on mesh data structure and presenting a solution to address this issue. The latter sections of this chapter covers the training process and using output of the regression model to define geometry.
+This chapter covers the process of assisted real-time content generation for 3D hair geometry by applying non-linear dimensionality reduction to obtain a \textit{regression model} and a \textit{latent manifold} for selecting output. A significant portion of this project is dedicated towards processing input polygonal hair mesh data so that the non-linear dimensionality reduction can be effectively applied. First, we outline the process of acquiring appropriate 3D mesh input data and challenges imposed by using polygonal meshes as training data. Then, we discuss why it is difficult to apply machine learning methods on mesh data structure and presenting a solution to address this issue by sampling generative inputs from the mesh. The training process gives a regression model which can predict output data that represents hair structure from input latent variables. Reducing the dimensionality of generative inputs to two latent variables allow us to plot the likelihood distribution of the latent manifold as a 2D image. We present a demonstrative implementation as an add-on for Blender 3D, where the 2D latent manifold serves as a method of selecting latent variables as input for the regression model to create hair geometry.
 
 \section{Training Data Set}
 The machine learning process begins with training data acquisition. Suitable 3D hair geometry is scarce when compared to other mediums such as images. Courtesy of Electronic Arts there exists an active community that produces free for non-commercial use custom content for their gaming software - which includes polygonal hair \cite{tsr}. Files acquired are encoded in the \textit{Package} format, developed for a video game series, \textit{The Sims}. Open-source community software \textit{s4pe} is used to read the \textit{Package} file and extract geometry in \textit{Simgeom} format \cite{s4pe}. The \textit{Simgeom} format is then converted to \textit{OBJ} format using yet another open-source program \textit{S4CASTools} \cite{s4cas}. The geometry extracted is already standardised in scale and orientation.
@@ -618,7 +618,7 @@ A total of 342 polylines in our generative model is used to describe hair struct
 	\caption{A possible configuration of 10260 data points in the generative model}
 \end{figure}
 
-\section{Approximating Generative Parameters from Input Data}
+\section{Sampling Generative Inputs from Input Data}
 
 Approximation begins by parsing the geometric data of mesh files into a graph data structure of nodes and edges. The axes of OBJ files are misaligned from the axes of Blender, to align the coordinate system, swap the Y and Z axis, then negate the Y axis. OBJ is a human-readable format that declares a mesh element per line. The elements we are interested in are:
 \begin{itemize}
@@ -733,7 +733,7 @@ With the root loop, we can extract a collection of edge loops that represents th
 A \textbf{repair operator} processes the strand polylines to improve the approximation. First, the starting point of floating polylines is attached to the nearest end of a rooted polyline, only if there exists one within a specified vicinity. We discard the remaining floating polylines that are not attached. Secondly, removing polylines that are insignificantly short in length allows for more descriptive polylines to be sampled.
 
 \subsection{Parametrising a Strand Polyline}
-The procedure thus far returns a set of strand polylines that have varying number of nodes. We produce a constant dimension through sampling to acquire a polyline that is applicable for use as parameters of our generative model.
+The procedure thus far returns a set of strand polylines that have varying number of nodes. We produce a constant dimension through sampling to acquire a polyline that is applicable for use as input of our generative model.
 
 First establish intervals of the distance covered between the points of the original polylines. Now suppose we want to evenly sample the polyline with $n$ points, we can compute the distance where the $i_{th}$ sample point should travel along the polylines as
 $$distance=\frac{i \cdot s_l}{n},$$
@@ -760,7 +760,7 @@ Several selection operators experimented are:
 \end{itemize}
 
 \section{Learning a Manifold with Bayesian GP-LVM}
-Once we have acquired a method to estimate the hair structure of the input data, we can then learn a latent manifold for generative parameters of hair.
+Once we have acquired a method to estimate the hair structure of the input data, we can then learn a latent manifold for generative inputs sampled from hair meshes.
 
 A perspective that extends GP-LVM is the paradigm of \textbf{Kernel Method Based GP-LVMs} \cite{reviewgplvm}.  GP-PLVM can be equivalent to \textit{Probabilistic Kernel Principal Component Analysis} (PKPCA) when replacing the $\bm{XX}^T$ term of equation \ref{gplvm:marginal} with a kernel matrix. The choice of a kernel influences performance of the model as it specifies the prior distribution for regression. Selection of the kernel depends on the task to be accomplished.
 
@@ -789,7 +789,7 @@ The input data is transformed so that the origin is marginally above the origin 
 \section{Generation of Output}
 Completion of the training process provides a regression model that predicts hair structure from estimated input data using our generative model. A problem encountered was incompatibility of the plotting module in the GPy library with the Python distribution of Blender, where a required standard module \textit{TKInter} is not present. To overcome this issue, the training process plotted latent manifold is stored as an image and the regression model is serialised using the \textit{Pickle} module of Python. A Blender add-on implementation can then load the latent manifold image on the UV image editor of the program and through the API, load the serialised regression model to predict latent variables sampled from the manifold.
 
-Output generative parameters are used to create \textit{guide strands} from the polyline data structure of the Blender API. Polygon mesh geometry is produced from assigning these guide strands to a predefined taper curve and applied with the extrude functionality to create the appearance of hair geometry. An extension to our generative model would be specifying additional parameters such as orientation and width of hair segments, this would enable the regression model to also learn such attributes of the input data.
+Output generative inputs are used to create \textit{guide strands} from the polyline data structure of the Blender API. Polygon mesh geometry is produced from assigning these guide strands to a predefined taper curve and applied with the extrude functionality to create the appearance of hair geometry. An extension to our generative model would be specifying additional sample attributes such as orientation and width of hair segments, this would enable the regression model to also learn such attributes of the input data.
 
 \begin{figure}[!h]
 	\centering
@@ -928,7 +928,7 @@ Participants are shown a series of images from the output of our regression mode
 		\hline
 		Latent Variables		& The selected latent variables\\
 		\hline
-		Generative Parameters 	& The predicted output of the selected latent variables by the regression model\\
+		Generative Inputs Sampled 	& The predicted output of the selected latent variables by the regression model\\
 		\hline
 	\end{tabular}
 	\label{outputfile}
@@ -1005,7 +1005,7 @@ Training mesh data is scarce. Non-experts content creators are more so susceptib
 	\centering
 	\begin{tabular}{|c|c|c|c|c|}
 		\hline
-		Training Size & Generative Parameters &	Approximation time (s)	& Optimisation time (s)	&	Total time (s)\\
+		Training Size & Generative Inputs &	Approximation time (s)	& Optimisation time (s)	&	Total time (s)\\
 		\hline
 		\multirow{3}{*}{10}
 		& 2700 	& 100	    & 41     	& 141\\
@@ -1027,19 +1027,19 @@ Training mesh data is scarce. Non-experts content creators are more so susceptib
 	\label{trainingbenchmarks}
 \end{table}
 
-We use a configuration file to determine properties of our generative model and the fidelity of approximation. In our benchmark tests, we alter the intervals of hair roots to change the number of generative parameters learned by the regression model.
+We use a configuration file to determine properties of our generative model and the fidelity of approximation. In our benchmark tests, we alter the intervals of hair roots to change the number of generative input the regression model uses for training.
 
-Results of table \ref{trainingbenchmarks} show that approximating generative parameters is the most time-consuming procedure. The time required for approximating is dependent on the complexity of the generative model and input mesh. Thus the benchmark displays a linear relation between total approximation time and training size. Hair geometry as one of the most complicated to be represented use more generative parameters than other categories of surfaces. The number of generative parameters can be kept in sustainable numbers by choice of generative model.
+Results of table \ref{trainingbenchmarks} show that approximating generative inputs is the most time-consuming procedure. The time required for approximating is dependent on the complexity of the generative model and input mesh. Thus the benchmark displays a linear relation between total approximation time and training size. Hair geometry as one of the most complicated to be represented use more generative inputs than other categories of surfaces. The number of generative inputs can be kept in sustainable numbers by choice of generative model.
 
 Plotting the latent manifold as a 2D image provides a visualisation of latent variables and corresponding likelihood. Large training sets incorporate more example styles, but too many reduce ease of use as exploring the 2D non-linear manifold would interpolate unintuitively. Training sets of this solution will inherently be small in cardinality.
 
-A regression model it can be used to predict generative parameters repeatedly. Serialising regression models trained with small sets will result in distributable file sizes. Content creators have the option to collect and share regression models. Refining a GP-LVM regression model is possible by inferring new observations, updating the posterior distribution. The initial time investment required to train a model is made up for if the regression model can reduce total time spent over the course of its usage.
+A regression model it can be used to predict generative inputs repeatedly. Serialising regression models trained with small sets will result in distributable file sizes. Content creators have the option to collect and share regression models. Refining a GP-LVM regression model is possible by inferring new observations, updating the posterior distribution. The initial time investment required to train a model is made up for if the regression model can reduce total time spent over the course of its usage.
 
-Loading a small regression model and an image is only required once per start-up of a session, and are negligible with contemporary hardware. A 10200-generative parameter regression model on the same machine that performed the benchmark tests spends around $10^{-3}$ seconds to predict an output, using the output to generate hair geometry takes an about of $10^{-1}$ seconds. As a user moves the cursor across the manifold, the implementation presents roughly ten hair meshes per second. This performance is sufficient for producing visible feedback as users traverse the latent manifold.
+Loading a small regression model and an image is only required once per start-up of a session, and are negligible with contemporary hardware. A 10200-generative input regression model on the same machine that performed the benchmark tests spends around $10^{-3}$ seconds to predict an output, using the output to generate hair geometry takes an about of $10^{-1}$ seconds. As a user moves the cursor across the manifold, the implementation presents roughly ten hair meshes per second. This performance is sufficient for producing visible feedback as users traverse the latent manifold.
 
 \section{Evaluative Discussion}
 \subsection{Training and Model}
-The presence of triangulated faces in training data hinders the accuracy of our regression model. Access to a training set of quadrilateral meshes would improve parameter estimation of our generative model, yielding output that is more representative of training mesh.
+The presence of triangulated faces in training data hinders the accuracy of our regression model. Access to a training set of quadrilateral meshes would improve sample estimation of our generative model, yielding output that is more representative of training mesh.
 
 The prediction interpolates between styles, drastically differing styles give rise to conflicting substructure of hair geometry. Perhaps it would be more intuitive to use with a training set of varying but similar styles. Campbell and Kautz \cite{fontmanifold} learn manifolds of fonts for individual characters as well as joint manifolds. A single manifold to edit font characters independently allow for more freedom of control. A consideration would be to use a joint manifold for defining an overall hair structure and then refine layers or sections with single manifolds on top. Multiple manifolds divide the problem at hand, reducing outcomes that seem bizarre due to interpolating of non-linear embeddings at the cost of a more preparation required and an involved training process.
 

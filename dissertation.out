@@ -15,7 +15,7 @@
 \BOOKMARK [0][-]{chapter.3}{Project Execution}{}% 15
 \BOOKMARK [1][-]{section.3.1}{Training Data Set}{chapter.3}% 16
 \BOOKMARK [1][-]{section.3.2}{Generative Model of Hair}{chapter.3}% 17
-\BOOKMARK [1][-]{section.3.3}{Approximating Generative Parameters from Input Data}{chapter.3}% 18
+\BOOKMARK [1][-]{section.3.3}{Sampling Generative Inputs from Input Data}{chapter.3}% 18
 \BOOKMARK [1][-]{section.3.4}{Learning a Manifold with Bayesian GP-LVM}{chapter.3}% 19
 \BOOKMARK [1][-]{section.3.5}{Generation of Output}{chapter.3}% 20
 \BOOKMARK [1][-]{section.3.6}{User Activity Log}{chapter.3}% 21

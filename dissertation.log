@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.3.12)  6 MAY 2017 04:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.3.12)  6 MAY 2017 13:51
 entering extended mode
 **./dissertation.tex
 (dissertation.tex
@@ -1070,23 +1070,26 @@ File: images/inputHair4.png Graphic file (type png)
 <use images/inputHair4.png>
 Package pdftex.def Info: images/inputHair4.png used on input line 563.
 (pdftex.def)             Requested size: 107.2002pt x 98.04602pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
  [17 <./images/inputHair1.png> <./images/inputHair2.png> <./images/inputHair3.p
-ng> <./images/inputHair4.png>]
-<images/triToQuad1.png, id=549, 53.60025pt x 49.02315pt>
+ng> <./images/inputHair4.png>] <images/triToQuad1.png, id=548, 53.60025pt x 49.
+02315pt>
 File: images/triToQuad1.png Graphic file (type png)
 
 <use images/triToQuad1.png>
 Package pdftex.def Info: images/triToQuad1.png used on input line 584.
 (pdftex.def)             Requested size: 107.2002pt x 98.04602pt.
 
-<images/triToQuad2.png, id=550, 53.60025pt x 49.02315pt>
+<images/triToQuad2.png, id=549, 53.60025pt x 49.02315pt>
 File: images/triToQuad2.png Graphic file (type png)
 
 <use images/triToQuad2.png>
 Package pdftex.def Info: images/triToQuad2.png used on input line 585.
 (pdftex.def)             Requested size: 107.2002pt x 98.04602pt.
 
-<images/triToQuad3.png, id=551, 53.60025pt x 49.02315pt>
+<images/triToQuad3.png, id=550, 53.60025pt x 49.02315pt>
 File: images/triToQuad3.png Graphic file (type png)
 
 <use images/triToQuad3.png>
@@ -1118,9 +1121,14 @@ Package pdftex.def Info: images/generativeModel.png used on input line 617.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[19 <./images/sphereCoords.png> <./images/spherePoints.png>] [20 <./images/gene
-rativeModel.png>]
-<images/edgeLoopDiagram.png, id=593, 697.10437pt x 347.04657pt>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [19 <./images/sphereCoords.png> <./images/spherePoints.png>]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<images/edgeLoopDiagram.png, id=584, 697.10437pt x 347.04657pt>
 File: images/edgeLoopDiagram.png Graphic file (type png)
 
 <use images/edgeLoopDiagram.png>
@@ -1130,7 +1138,11 @@ Package pdftex.def Info: images/edgeLoopDiagram.png used on input line 663.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<images/rootLoop.jpg, id=594, 632.3625pt x 333.49594pt>
+[20 <./images/generativeModel.png>]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<images/rootLoop.jpg, id=596, 632.3625pt x 333.49594pt>
 File: images/rootLoop.jpg Graphic file (type jpg)
 
 <use images/rootLoop.jpg>
@@ -1140,18 +1152,14 @@ Package pdftex.def Info: images/rootLoop.jpg used on input line 701.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[21 <./images/edgeLoopDiagram.png>]
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+Underfull \vbox (badness 1264) has occurred while \output is active []
 
-
-Underfull \vbox (badness 1910) has occurred while \output is active []
-
- [22 <./images/rootLoop.jpg>] [23]
+ [21 <./images/edgeLoopDiagram.png>] [22 <./images/rootLoop.jpg>] [23]
 
 LaTeX Warning: Citation `reviewgplvm' on page 24 undefined on input line 765.
 
-<images/gpyKernels.png, id=618, 1164.9924pt x 875.9124pt>
+<images/gpyKernels.png, id=617, 1164.9924pt x 875.9124pt>
 File: images/gpyKernels.png Graphic file (type png)
 
 <use images/gpyKernels.png>
@@ -1161,17 +1169,20 @@ Package pdftex.def Info: images/gpyKernels.png used on input line 769.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[24 <./images/gpyKernels.png>]
-<images/latentHairAddon.jpg, id=627, 1394.96156pt x 791.95876pt>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[24] <images/latentHairAddon.jpg, id=626, 1394.96156pt x 791.95876pt>
 File: images/latentHairAddon.jpg Graphic file (type jpg)
 
 <use images/latentHairAddon.jpg>
 Package pdftex.def Info: images/latentHairAddon.jpg used on input line 796.
 (pdftex.def)             Requested size: 278.98737pt x 158.38895pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [25 <./images/latentHairAddon.jpg>] [26]
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[25 <./images/gpyKernels.png>] [26 <./images/latentHairAddon.jpg>]
 Chapter 4.
 <images/surveyMesh1.png, id=636, 97.3236pt x 48.78226pt>
 File: images/surveyMesh1.png Graphic file (type png)
@@ -1294,7 +1305,7 @@ File: images/surveyMesh3.png Graphic file (type png)
 Package pdftex.def Info: images/surveyMesh3.png used on input line 905.
 (pdftex.def)             Requested size: 145.985pt x 73.17317pt.
 
-Overfull \hbox (5.82607pt too wide) in paragraph at lines 915--935
+Overfull \hbox (25.07614pt too wide) in paragraph at lines 915--935
  [][] 
  []
 
@@ -1382,7 +1393,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
  (PNG copy)> <./images/experiment/Nick_ONE_REPLOT.png (PNG copy)> <./images/exp
 eriment/Nick_TWO_REPLOT.png (PNG copy)> <./images/experiment/Nick_THREE_REPLOT.
 png (PNG copy)>]
-Overfull \hbox (22.04837pt too wide) in paragraph at lines 1006--1026
+Overfull \hbox (0.7428pt too wide) in paragraph at lines 1006--1026
  [][] 
  []
 
@@ -1418,7 +1429,7 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1155.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1155.
 
 Package rerunfilecheck Info: File `dissertation.out' has not changed.
-(rerunfilecheck)             Checksum: E4B460AD30C15C8DBE9AB64CB097C0FD;2185.
+(rerunfilecheck)             Checksum: AC7499A24BD6D6DDFFE80F62FD263782;2176.
 
 
 LaTeX Warning: There were undefined references.
@@ -1429,10 +1440,10 @@ LaTeX Warning: There were undefined references.
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 21535 strings out of 493333
- 379675 string characters out of 3143102
- 595637 words of memory out of 3000000
- 24399 multiletter control sequences out of 15000+200000
+ 21534 strings out of 493333
+ 379664 string characters out of 3143102
+ 594572 words of memory out of 3000000
+ 24398 multiletter control sequences out of 15000+200000
  12043 words of font info for 44 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  61i,18n,56p,1387b,6738s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1455,7 +1466,7 @@ m/cmsy10.pfb><E:/Programs/MikTex/fonts/type1/public/amsfonts/cm/cmsy7.pfb><E:/P
 rograms/MikTex/fonts/type1/public/amsfonts/cm/cmti10.pfb><E:/Programs/MikTex/fo
 nts/type1/public/amsfonts/cm/cmtt10.pfb><E:/Programs/MikTex/fonts/type1/public/
 amsfonts/symbols/msbm10.pfb>
-Output written on dissertation.pdf (63 pages, 3380594 bytes).
+Output written on dissertation.pdf (63 pages, 3360616 bytes).
 PDF statistics:
  881 PDF objects out of 1000 (max. 8388607)
  211 named destinations out of 1000 (max. 500000)
