@@ -13,46 +13,38 @@
 \contentsline {section}{\numberline {2.4}Gaussian Process Latent Variable Model}{11}{section.2.4}
 \contentsline {subsection}{\numberline {2.4.1}Dual Probabilistic PCA}{11}{subsection.2.4.1}
 \contentsline {subsection}{\numberline {2.4.2}Gaussian Processes}{12}{subsection.2.4.2}
-\contentsline {subsubsection}{GPs for Regression}{12}{section*.12}
-\contentsline {subsubsection}{Learning with the Covariance Function}{13}{section*.13}
+\contentsline {subsubsection}{Gaussian Processes for Regression}{12}{section*.12}
 \contentsline {section}{\numberline {2.5}Bayesian Gaussian Process Latent Variable Model}{13}{section.2.5}
-\contentsline {subsection}{\numberline {2.5.1}Variational Inference}{14}{subsection.2.5.1}
-\contentsline {section}{\numberline {2.6}Formal Definition of 3D Polygon Mesh Representation}{14}{section.2.6}
-\contentsline {subsection}{\numberline {2.6.1}The Mesh Data Structure}{14}{subsection.2.6.1}
-\contentsline {subsubsection}{Definition of a Graph}{14}{section*.14}
-\contentsline {subsubsection}{Definition of a Mesh}{14}{section*.15}
-\contentsline {subsection}{\numberline {2.6.2}Topology}{15}{subsection.2.6.2}
-\contentsline {subsubsection}{Poles}{15}{section*.16}
-\contentsline {subsubsection}{Edge Loops}{15}{section*.17}
+\contentsline {section}{\numberline {2.6}The Mesh Data Structure}{14}{section.2.6}
+\contentsline {subsection}{\numberline {2.6.1}Topology}{14}{subsection.2.6.1}
+\contentsline {subsubsection}{Poles}{15}{section*.13}
+\contentsline {subsubsection}{Edge Loops}{15}{section*.14}
+\contentsline {section}{\numberline {2.7}Summary of Technical Background}{15}{section.2.7}
 \contentsline {chapter}{\numberline {3}Project Execution}{17}{chapter.3}
 \contentsline {section}{\numberline {3.1}Training Data Set}{17}{section.3.1}
 \contentsline {subsection}{\numberline {3.1.1}Retopologising Training Data}{17}{subsection.3.1.1}
 \contentsline {section}{\numberline {3.2}Generative Model of Hair}{18}{section.3.2}
 \contentsline {section}{\numberline {3.3}Approximating Generative Parameters from Input Data}{19}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}Parsing OBJ File}{19}{subsection.3.3.1}
-\contentsline {subsection}{\numberline {3.3.2}Spline Estimation}{20}{subsection.3.3.2}
-\contentsline {subsubsection}{Edge Loop Extraction}{20}{section*.18}
-\contentsline {subsubsection}{Boundary and Root Edge Loops}{21}{section*.19}
-\contentsline {subsubsection}{Pivotal Strand Poly-lines}{22}{section*.20}
-\contentsline {subsubsection}{Parametrising a Strand Spline}{23}{section*.21}
-\contentsline {subsection}{\numberline {3.3.3}Structure Estimation}{23}{subsection.3.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Edge Loop Extraction}{20}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Boundary and Root Edge Loops}{21}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}Pivotal Strand Polylines}{22}{subsection.3.3.3}
+\contentsline {subsection}{\numberline {3.3.4}Parametrising a Strand Polyline}{23}{subsection.3.3.4}
+\contentsline {subsection}{\numberline {3.3.5}Structure Estimation}{23}{subsection.3.3.5}
 \contentsline {section}{\numberline {3.4}Learning a Manifold with Bayesian GP-LVM}{24}{section.3.4}
 \contentsline {section}{\numberline {3.5}Generation of Output}{25}{section.3.5}
-\contentsline {section}{\numberline {3.6}Logging User Activity}{26}{section.3.6}
-\contentsline {section}{\numberline {3.7}Project Management}{26}{section.3.7}
-\contentsline {subsection}{\numberline {3.7.1}Time-line}{26}{subsection.3.7.1}
+\contentsline {section}{\numberline {3.6}User Activity Log}{26}{section.3.6}
 \contentsline {chapter}{\numberline {4}Critical Evaluation}{27}{chapter.4}
 \contentsline {section}{\numberline {4.1}Latent Hair Modelling Survey}{27}{section.4.1}
 \contentsline {section}{\numberline {4.2}Latent Application Experiment}{30}{section.4.2}
-\contentsline {subsubsection}{Behavioural Observation: Familiarising with the manifold}{31}{section*.22}
-\contentsline {subsubsection}{Behavioural Observation: Fine-tuning the result}{31}{section*.23}
-\contentsline {subsubsection}{Behavioural Observation: Misleading local optima}{31}{section*.24}
+\contentsline {subsubsection}{Behavioural Observation: Familiarising with the manifold}{31}{section*.15}
+\contentsline {subsubsection}{Behavioural Observation: Fine-tuning the result}{31}{section*.16}
+\contentsline {subsubsection}{Behavioural Observation: Misleading local optima}{31}{section*.17}
 \contentsline {section}{\numberline {4.3}Functional Performance}{31}{section.4.3}
 \contentsline {section}{\numberline {4.4}Evaluative Discussion}{33}{section.4.4}
 \contentsline {subsection}{\numberline {4.4.1}Training and Model}{33}{subsection.4.4.1}
 \contentsline {subsection}{\numberline {4.4.2}Comparison with existing solutions}{34}{subsection.4.4.2}
 \contentsline {subsection}{\numberline {4.4.3}Potential Improvements}{34}{subsection.4.4.3}
-\contentsline {subsubsection}{Addressing Non-Intuitive Use}{34}{section*.25}
+\contentsline {subsubsection}{Addressing Non-Intuitive Use}{34}{section*.18}
 \contentsline {subsection}{\numberline {4.4.4}Applications}{34}{subsection.4.4.4}
 \contentsline {chapter}{\numberline {5}Conclusion}{37}{chapter.5}
 \contentsline {section}{\numberline {5.1}Summary}{37}{section.5.1}

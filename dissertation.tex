@@ -92,7 +92,7 @@ Existing tools for 3D modelling have remained mostly static in the paradigm of a
 		\item Investigated the performance of various kernels and its impact on the latent variable model.
 		\item Implemented an add-on package for a 3D production program, Blender.
 		\begin{itemize}
-			\item Generating guiding hair splines from the output of our regression model.
+			\item Generating guiding hair strands from the output of our regression model.
 			\item Developed with a small training set that is practical for content creators.
 			\item Achieving real-time performance, matching state of the art non-learning tools.
 			\item Including functionality to records user activity for analysis.
@@ -196,7 +196,7 @@ On average, a human is born with between 90,000 to 150,000 scalp hair follicles 
 There are various ways to construct a polygonal hair mesh. We are concerned with hair meshes formed from multiple planar sub-meshes of hair locks or segments. This type of hair mesh can express a variety of styles but produce densely arranged geometry. 
 Producing hair mesh data is challenging as content creators manipulate data that is exceptionally high dimensional, this reflects on \textbf{the curse of dimensionality}, a term coined by Bellman \cite{curseofdyn} which refers to the phenomena where exhibited complexity of high-dimensional spaces grows exponentially greater than those of low-dimensionality. There are two perspectives where the curse of dimensionality applies in our project. First, from the viewpoint of a 3D content creator, appending data points to geometry on a 3D program becomes increasingly difficult. Tightly positioned components are laborious for creators to find or select, with each action having less impact on the overall surface. The other perspective is that of algorithmic complexity. Machine learning methods scale and generalise better when using a few key features, use of many features is computationally expensive and risks overfitting.
 
-Procedural generation techniques produce output that adheres to rules established by the generative model defined. Generation of terrains and city modelling sometimes employ procedural techniques to take advantage of its systematic nature to mass produce variations in agreement with specified patterns\cite{procedural1}. Fractals and methods such as the Lindenmayer system have been used to create patterns that resemble those observed in nature\cite{lsystem}. Automated techniques such as the ones discussed, however, are seldom used for modelling distinct objects with a specific design. It is an involved process to control the output of procedurally generated content without heavily restricting its capabilities. Automated methods that do not learn cannot adapt to changing demands without reimplementation.
+Procedural generation techniques produce output that adheres to rules established by the generative model defined. Generation of terrains and city modelling sometimes employ procedural techniques to take advantage of its systematic nature to mass produce variations in agreement with specified patterns \cite{procedural1}. Fractals and methods such as the Lindenmayer system have been used to create patterns that resemble those observed in nature \cite{lsystem}. Automated techniques such as the ones discussed, however, are seldom used for modelling distinct objects with a specific design. It is an involved process to control the output of procedurally generated content without heavily restricting its capabilities. Automated methods that do not learn cannot adapt to changing demands without reimplementation.
 
 \section{Related Research of Machine Learning in Creative Fields}
 Three major paradigms divide the task of machine learning:
@@ -207,15 +207,15 @@ Three major paradigms divide the task of machine learning:
 \end{itemize}
 The role that learning methods play in both manufacturing and consumer application continue to grow, however, adoption has been slow for creative fields.  Generally, robust models improve in performance as more reliable data is obtained. Creative production values uniqueness and versatility, properties that cause difficulty in machine learning methods. Varying artistic styles in design complicate feature analysis and ambiguity of correctness is problematic when predicting an output. In machine learning, prediction of continuous variables is a \textbf{regression} problem. 
 
-Style-based inverse kinematics introduced the Scaled Gaussian Process Latent Variable Model to learn the probabilistic distribution of a 3D human posture model\cite{styleik}. Character posing from motion data is represented as a 42-dimensional feature vector that encapsulated joint information of a humanoid body. Learning a model of poses established the relation between joints and identified constraints exhibited in the training data - where unusual postures are given a lower likelihood rating.
+Style-based inverse kinematics introduced the Scaled Gaussian Process Latent Variable Model to learn the probabilistic distribution of a 3D human posture model \cite{styleik}. Character posing from motion data is represented as a 42-dimensional feature vector that encapsulated joint information of a humanoid body. Learning a model of poses established the relation between joints and identified constraints exhibited in the training data - where unusual postures are given a lower likelihood rating.
 
-A latent doodle space is the use of a low-dimension latent space that has been applied on simple line drawings\cite{latentdoodle}. The motivation of a latent doodle space is to generating new drawings that are inspired by the input data. There are two key phases to derive a latent doodle space: the first challenge is to identify line strokes within drawings, a latent variable method is then used to learn a latent space.
+A latent doodle space is the use of a low-dimension latent space that has been applied on simple line drawings \cite{latentdoodle}. The motivation of a latent doodle space is to generating new drawings that are inspired by the input data. There are two key phases to derive a latent doodle space: the first challenge is to identify line strokes within drawings, a latent variable method is then used to learn a latent space.
 
-A study by Campbell \& Kautz presented a framework that learns the latent manifold of existing font styles\cite{fontmanifold}. The process involved universal parametrization of fonts to a polyline representation so that a distance measure is applicable and the generative model can interpolate between styles. Unsupervised learning with the GP-LVM model enabled rapid prototyping and non-experts could create font styles without experience on type design.
+A study by Campbell \& Kautz presented a framework that learns the latent manifold of existing font styles \cite{fontmanifold}. The process involved universal parametrization of fonts to a polyline representation so that a distance measure is applicable and the generative model can interpolate between styles. Unsupervised learning with the GP-LVM model enabled rapid prototyping and non-experts could create font styles without experience on type design.
 
-Drawing assistance powered by large-scale crowd-sourcing explored the potential of data driven drawing to prompt for correction by achieving an artistic consensus\cite{drawingassistance}. A consensus is found by learning a correction vector field from training drawings. Stroke-correction is applied using the correction vector field to adjust user input dynamically.
+Drawing assistance powered by large-scale crowd-sourcing explored the potential of data driven drawing to prompt for correction by achieving an artistic consensus \cite{drawingassistance}. A consensus is found by learning a correction vector field from training drawings. Stroke-correction is applied using the correction vector field to adjust user input dynamically.
 
-Chai et al. introduced AutoHair, a method for automatic modelling of 3D hair from a portrait image\cite{autohair}. The approach extracts information from images and uses a database of hair meshes to construct a 3D representation of the information conveyed. A hierarchical deep neural network trained on annotated hair images learn to segment hair and estimate growth direction within portraits. Data-driven hair matching and modelling algorithm fit meshes from the database to parameters output by the neural net model to automatically produce 3D hair. The experiment developed a traversable hairstyle space of 50,000 hair models, using training images and 3D exemplars obtained from the internet.
+Chai et al. introduced AutoHair, a method for automatic modelling of 3D hair from a portrait image \cite{autohair}. The approach extracts information from images and uses a database of hair meshes to construct a 3D representation of the information conveyed. A hierarchical deep neural network trained on annotated hair images learn to segment hair and estimate growth direction within portraits. Data-driven hair matching and modelling algorithm fit meshes from the database to parameters output by the neural net model to automatically produce 3D hair. The experiment developed a traversable hairstyle space of 50,000 hair models, using training images and 3D exemplars obtained from the internet.
 
 Research regarding creative content often parametrise the input data so that machine learning is applicable. There is no clearly defined solution for a problem in the creative field, effective solutions strive for versatility, employing consensus decision making or offering multiple solutions. To overcome the challenges introduced, dimensionality reduction through unsupervised learning with probabilistic latent variable models such as the Gaussian Process Latent Variable Model (GP-LVM) \cite{gplvm} present an opportunity to learn stylistic properties of design and predict multiple acceptable outputs by analysing the likelihood.
 
@@ -229,7 +229,7 @@ Learning the relation of hair structure allows the potential of discovering new 
 \section{Challenges}
 This study faces multiple challenges. Firstly, 3D meshes are difficult to compare. The training data in its raw form will have varying dimensions. We can view meshes as samples of the actual surface. Thus meshes that represent the same object could differ drastically in the number of data points depending on its level of detail. Typical feature extraction methods do not work well on meshes as artistic products are sensitive to data loss - any change could affect the perception of final result drastically.
 
-Another problem encountered is the lack of training data. Typical machine learning solutions use huge data sets in the order of hundreds of thousands for training, but for 3D meshes, the standard size of readily available training data is much smaller. Public repositories of 3D polygonal hair ordinarily contain up to thousands of meshes\cite{tsr}. Studios that store and organise past production may match the extent of public repositories, depending on the size of the company. Private repositories of independent artists will rarely exceed the order of hundreds.
+Another problem encountered is the lack of training data. Typical machine learning solutions use huge data sets in the order of hundreds of thousands for training, but for 3D meshes, the standard size of readily available training data is much smaller. Public repositories of 3D polygonal hair ordinarily contain up to thousands of meshes \cite{tsr}. Studios that store and organise past production may match the extent of public repositories, depending on the size of the company. Private repositories of independent artists will rarely exceed the order of hundreds.
 
 The application of machine learning methods must also account for the subjectivity of evaluating artistic assets. The range of acceptable solutions is ambiguous, likened to how hair styles of characters can change drastically during the design phase.
 
@@ -379,9 +379,7 @@ The parameter $\bm{\mu}_i$ allows for non-zero mean, and the $\bm{\epsilon}_i$ p
 The latent variable model developed by Tipping and Bishop performs principal component analysis by modelling the noise parameter of equation \ref{ppca:fa} as an isotropic, spherical Gaussian distribution
 The noise values, $\epsilon_i \in \Re^{d \times 1}$, are sampled from a independent spherical Gaussian distribution, $$\bm{\epsilon}_i\sim\mathcal{N}(\bm{0}, \bm{\beta}^{-1}\bm{I}).$$
 The conditional probability distribution of a observed variables $\bm{y}_i$ given input variables $\bm{x}_i$ is thus Gaussian distributed as
-\begin{equation} \label{ppca:conditional}
-p(\bm{y}_i|\bm{x}_i)=\mathcal{N}(\bm{W}\bm{x}_i+\bm{\mu}_i,\bm{\beta}^{-1}\bm{I}). 
-\end{equation}
+$$p(\bm{y}_i|\bm{x}_i)=\mathcal{N}(\bm{W}\bm{x}_i+\bm{\mu}_i,\bm{\beta}^{-1}\bm{I}).$$
 The prior of latent variables is assumed to be standard Gaussian with zero mean and unit covariance, defined as $\bm{x}_i\sim\mathcal{N}(\bm{0},\bm{I})$. The marginal distribution for the observed data $\bm{y}_i$ is obtained by integrating out the latent variables.
 From equation \ref{jointpd}, an arbitrary rotation matrix $\bm{R}^T$ can be applied to the basis, forming the correlated Gaussian,
 $$p(\bm{y}_i)=\frac{1}{2\pi\sqrt{|\bm{D}|}}
@@ -432,7 +430,9 @@ As marginalisation of both $\bm{W}$ and $\bm{X}$ is often intractable in practic
 The marginalised likelihood of $\bm{W}$ is
 $$p(\bm{Y|X},\bm{\beta})=\prod^d_{i=1}p(\bm{y}_{:,i}|\bm{X},\bm{\beta}),$$
 The $\bm{y}_{:,i}$ parameter represents the $i^{it}$ column of $\bm{Y}$, where
-$$p(\bm{y}_{:,i}|\bm{X},\bm{\beta})=\mathcal{N}(\bm{y}_{:,i}|\bm{0,XX}^T+\bm{\beta}^{-1}\bm{I}).$$
+\begin{equation} \label{gplvm:marginal}
+p(\bm{y}_{:,i}|\bm{X},\bm{\beta})=\mathcal{N}(\bm{y}_{:,i}|\bm{0,XX}^T+\bm{\beta}^{-1}\bm{I}).
+\end{equation}
 The objective function is the log-likelihood
 \begin{equation} \label{dppca:loglikelihood}
 L=-\frac{dn}{2}ln2\pi-\frac{d}{2}ln|\bm{K}|-\frac{1}{2}tr(\bm{K^{-1}YY}^T),
@@ -446,19 +446,18 @@ The values for $\bm{X}$ which maximise the likelihood are given by singular valu
 $$\bm{X=ULV}^T.$$
 $\bm{U}$ is a matrix whose orthonormal column vectors are the first eigenvectors of $\bm{YY}^T$. $\bm{L}$ is a diagonal matrix of singular values, whose $i^{th}$ element is $l_i=(\lambda_i-\frac{1}{\beta})^{-\frac{1}{2}}$, where $\lambda_i$ is the eigenvalue associated with the $i^{th}$ eigenvector $\frac{1}{d}\bm{YY}^T$. $\bm{V}$ is an arbitrary rotation matrix. Lawrence showed that the eigenvalue problem developed here is equivalent to the eigenvalue problem solved in probabilistic PCA, and thus, dual probabilistic PCA is also effectively equal to standard PCA when the likelihood is maximised.
 Dual probabilistic PCA assumes that the output dimensions are linear, independent, and identically distributed. Infringing upon these assumptions derive new probabilistic models.
-
 \subsection{Gaussian Processes}
-A Gaussian process (GP) is a non-parametric statistical model that generalises a probability distribution over functions by treating each observed variable as an independent distribution.
+A Gaussian process (GP) is a non-parametric statistical model that generalises a probability distribution over functions by treating each observed variable as an independent distribution. A prior probability distribution is an assumption of belief before taking into account of evidence. Observing the output of a continuous function provides information regarding its behaviour around that specific point. For a noiseless model, we can be certain that the input must intersect the point at observed output. This refines our belief to obtain a posterior. A model with noise can \textit{infer} that the mapping is nearby the observation, thus treating each observed variable as an independent distribution allows us to take into account of the noise model for prediction.
 
 \begin{figure}[!h]
 	\centering
 	\includegraphics[scale=0.5]{images/gpPrior}
 	\includegraphics[scale=0.5]{images/gpPosterior}
-	\caption{A prior and posterio GP}
+	\caption{To the left is a prior distribution of a Gaussian process, and to the right is the posterior distribution after updating with observations that are corrupted by noise. The semi-transparent functions represent samples from the likelihood distribution.}
 	\label{gpnoisy}
 \end{figure}
 
-Formally, a Gaussian process is a finite collection of random variables that are jointly Gaussian, specified by a mean function $m(\bm{x})$ and covariance function $k(\bm{x},\bm{x'})$ of a real process $f(\bm{x})$\cite[p.13]{gp},
+Formally, a Gaussian process is a finite collection of random variables that are jointly Gaussian, specified by a mean function $m(\bm{x})$ and covariance function $k(\bm{x},\bm{x'})$ of a real process $f(\bm{x})$ \cite[p.13]{gp},
 $$f(\bm{x})\sim\mathcal{GP}(m(\bm{x}), k(\bm{x}, \bm{x'})),$$
 where
 $$m(\bm{x})=\mathbb{E}[f(\bm{x})],$$
@@ -466,78 +465,58 @@ $$k(\bm{x},\bm{x'})=\mathbb{E}[(f(\bm{x})-m(\bm{x}))(f(\bm{x'})-m(\bm{x'}))].$$
 The mean function of a Gaussian process is generally assumed to be zero, unless stated otherwise.
 Polynomial regression models yield best results when the behaviour of the observed data resembles the selected polynomial function, but determining a suitable function is challenging. As a non-parametric model, Gaussian processes provides a probability distribution over a space of functions that associates a likelihood for each function, presenting the opportunity to sample various functions that encode the behaviour of observed data. Gaussian process regression models can be overfitted, but overfitting a space of functions is more lenient than overfitting a single function.
 
-\subsubsection{GPs for Regression}
+\subsubsection{Gaussian Processes for Regression}
 The observed data $\bm{y}$ is assumed to be modelled by a function $f(\bm{x})$ with input $\bm{x}$ and corrupted by noise, $\epsilon$. Noise interference depends on the problem, a simple relationship is a model with additive noise,
-$$y = f(\bm{x}) + \epsilon.$$
-Suppose that the noise on each observed variable is modelled by an independent Gaussian distribution, $\epsilon\sim\mathcal{N}(0, \sigma^2_n)$, the joint likelihood is the product of marginal likelihoods,
-$$p(y|X,w)=\prod^n_{i=1}p(y_i|x_i, w)=\mathcal{N}(X^Tw, \sigma^2_n\bm{I})$$
-In Bayesian reasoning, we update our prior knowledge with observed evidence to obtain a posterior. This methodology is expressed in Bayes' Theorem,
-\begin{equation} \label{bayes}
-\text{posterior}=\frac{\text{likelihood}\times\text{prior}}{\text{marginal likelihood}}, \hspace{1cm} p(w|y,X)=\frac{p(y|X,w)p(w)}{p(y|X)}
-\end{equation}
-The marginal likelihood $p(y|X)$ is a normalising constant, given by integral
-$$p(y|X)=\int p(y|X,w)p(w)dw.$$
+$$f(\bm{x})=\bm{x}^T\bm{w}
+\hspace{1cm}
+y = f(\bm{x}) + \epsilon.$$
+Here, $\bm{w}$ represents the parameters that specify the behaviour of the function. Take $\bm{X}$ as the design matrix of the input values. Suppose that the noise on each observed variable is modelled by an independent Gaussian distribution, $\epsilon\sim\mathcal{N}(0, \sigma^2_n)$, the joint likelihood is the product of marginal likelihoods,
+$$p(\bm{y}|\bm{X},\bm{w})=\prod^n_{i=1}p(y_i|\bm{x}_i, \bm{w})=\mathcal{N}(\bm{X}^T\bm{w}, \sigma^2_n\bm{I}).$$
+
+In \textbf{Bayesian reasoning}, we update our prior knowledge with observed evidence to obtain a posterior. This methodology is expressed in \textit{Bayes' Theorem},
+$$\text{posterior}=\frac{\text{likelihood}\times\text{prior}}{\text{marginal likelihood}}, \hspace{1cm} p(\bm{w}|\bm{y},\bm{X})=\frac{p(\bm{y}|\bm{X},\bm{w})p(\bm{w})}{p(\bm{y}|\bm{X})}$$
+The marginal likelihood is given by
+$$p(\bm{y}|\bm{X})=\int p(\bm{y}|\bm{X},\bm{w})p(\bm{w})d\bm{w}.$$
 The posterior expresses what we know about the parameters using the likelihood and the prior. We can then use the posterior to make an informed prediction for test inputs.
 
-The dual probabilistic PCA model uses a Gaussian process prior that is corrupted by Gaussian noise\cite{gplvm}, $\epsilon\sim\mathcal{N}(\bm{0},\beta^{-1}\bm{I})$.
+The dual probabilistic PCA model uses a Gaussian process prior that is corrupted by Gaussian noise \cite{gplvm}, $\epsilon\sim\mathcal{N}(\bm{0},\beta^{-1}\bm{I})$.
 The covariance function (kernel) is thus,
 \begin{equation} \label{gp:prior}
 k(\bm{x}_i,\bm{x}_j)=\bm{x}^T_i\bm{x}_j+\beta^{-1}\delta_{ij}.
 \end{equation}
 Parameters $\bm{x}_i$ and $\bm{x}_j$ are vectors from the space of inputs to the function and $\sigma_1{ij}$ represents the Knronecker delta, defined by 
-\begin{equation} \label{kronecker}
+$$
 \delta_{ij} =
 \begin{cases}
 1, &         \text{if } i=j,\\
 0, &         \text{if } i\neq j.
 \end{cases}
-\end{equation}
+$$
 Taking inputs from matrix $\bm{X}$ and evaluating the covariance function at each observed variable gives the covariance matrix,
 $$\bm{K=XX}^T+\beta^{-1}\bm{I}.$$
-The element at $i_{th}$ row and $j_{th}$ column of $\bm{K}$ is given by the prior distribution (\ref{gp:prior}). Thus, the marginal likelihood of dual probabilistic PCA is a product of $d$ independent Gaussian processes.
-
-\subsubsection{Learning with the Covariance Function}
-The covariance function of a Gaussian process describes the properties of functions, such as variability. Learning in Gaussian processes is to determine a suitable hyperparameters of a covariance function.
+The element at $i_{th}$ row and $j_{th}$ column of $\bm{K}$ is given by the prior distribution (\ref{gp:prior}). Thus, the marginal likelihood of dual probabilistic PCA is a product of $d$ independent Gaussian processes. The covariance function of a Gaussian process describes the properties of functions, such as variability. Learning in Gaussian processes is to determine hyper-parameters of a covariance function that is suitable for the problem being modelled.
 
 \section{Bayesian Gaussian Process Latent Variable Model}
-The Bayesian Gaussian Process Latent Variable Model (Bayesian GP-LVM) \cite{bgplvm} extends the GP-LVM by variationally integrating out the input variables of the Gaussian process to approximate the marginal likelihood of a fully marginalised model. The approximated marginal likelihood can be used to compute a lower bound that is robust to overfitting. A fully marginalised model establishes a Bayesian perspective that copes well with uncertainty caused by missing data and can automatically determine latent dimensions within the observed data set.
-
-The marginalised likelihood of the GP-LVM can be represented in the form
-$$p(\bm{Y|X})=\prod^d_{i=1}p(\bm{y}_{:,i}|\bm{X})$$
-where $\bm{y}_{:,i}$ represents the $i^{th}$ column of $\bm{Y}$ and
-$$p(\bm{y}_{:,i}|\bm{X})=\mathcal{N}(\bm{y_{:,i}|0},K_{nn}+\beta^{-1}\bm{I}_n).$$
-$K_{nn}$ is the $n \times n$ covariance matrix defined by the kernel function $k(\bm{x,x'})$.
-The latent variable X is assigned a prior density given by the standard Gaussian distribution, 
-$$p(\bm{X})=\prod^n_{i=1}\mathcal{N}(\bm{x_i|0, I}).$$
-Each $\bm{x_i}$ is the $i^{th}$ row of $\bm{X}$. The joint probability model for the GP-LVM is
-$$p(\bm{Y,X})=p(\bm{Y|X})p(\bm{X})$$
-
-The standard GP-LVM method trains by finding the MAP estimate of $\bm{X}$ whilst jointly maximizing with respect to the hyperparameters. Bayesian GP-LVM performs variational inference to marginalise the latent variables. This method enables optimisation of the resulting lower bound on the marginal likelihood with respect to the hyperparameters. 
-
-\subsection{Variational Inference}
-{ \color{red}In order to apply variational Bayesian methods to GP-LVM, the latent/input variables that appear non-linearly must first be approximately integrated out.}
+The Bayesian Gaussian Process Latent Variable Model (Bayesian GP-LVM) \cite{bgplvm} extends GP-LVM. The standard GP-LVM method trains by finding the \textit{maximum a posteriori} (MAP) estimate of $\bm{X}$ and jointly maximizing with respect to the hyper-parameters. Bayesian GP-LVM performs variational inference to marginalise the latent variables. This method enables optimisation of the resulting lower bound on the marginal likelihood with respect to the hyper-parameters. 
 
 The marginal likelihood of the observed data is obtained by integrating out the latent variables:
 $$p(\bm{Y})=\int p(\bm{Y|X})p(\bm{X})d\bm{X}.$$
-Computationally, this integration is intractable in practice. Variaitonal Bayesian methods can instead be used by using variational distribution $q(\bm{X})$ to approximate the posterior distribution over the latent variables, $p(\bm{X|Y})$.
-$$q(\bm{X})=\prod^n_{i=1}\mathcal{N}(\bm{x_n|\mu_n,S_n}).$$
-The variational parameters are $\bm{ \{ \mu_n,S_n \}^n_{i=1} }$ and $\bm{S_n}$ is a diagonal covariance matrix. 
-
+Computationally, this integration is intractable in practice. A variational distribution, $q(\bm{X})$, can instead be used to approximate the posterior distribution over the latent variables, $p(\bm{X|Y})$.
+$$q(\bm{X})=\prod^n_{i=1}\mathcal{N}(\bm{x}_i|\bm{\mu}_i,\bm{S}_i).$$
+$\bm{\mu_n}$ and $\bm{S}_i$ are the variational parameters. $\bm{S_i}$ is taken as a diagonal covariance matrix. 
 The variational distribution can then be used to obtain a Jensen's lower bound on $\log p(\bm{Y})$:
 $$F(q)=\int q(\bm{X})\log \frac{ p(\bm{Y|X})p(\bm{X}) }{ q(\bm{X}) } d\bm{X}$$
-$$=\int q(\bm{X})\log p(\bm{Y|X})p(\bm{X})d\bm{X} - \int q(x)\log\frac{q(X)}{p(X)}dX$$
+$$=\int q(\bm{X})\log p(\bm{Y|X})p(\bm{X})d\bm{X} - \int q(\bm{X})\log\frac{q(\bm{X})}{p(\bm{X})}dX$$
 $$=\tilde{F}(q)-KL(q||p).$$
-The $KL(q||p)$ term is the negative KL divergence between the variational posterior distribution $q(X)$ and the prior distribution p(X) over the latent variables. Since the distributions are Gaussian, the negative KL divergence is tractable. The problematic term is $\tilde{F}(q)$, where variational sparse Gaussian process regression is applied for approximation.
+The $KL(q||p)$ term is the negative KL divergence between the variational posterior distribution $q(\bm{X})$ and the prior distribution $p(\bm{X})$ over the latent variables. As the KL divergence is Gaussian, by the closed properties of the Gaussian distribution, we know it is analytically tractable. The problematic term is $\tilde{F}(q)$, which is solved by variational sparse Gaussian process regression \cite{bgplvm}.
 
-\section{Formal Definition of 3D Polygon Mesh Representation}
+A fully marginalised GP-LVM approximated by variational inference establishes a Bayesian perspective that is robust to overfitting, thus applicable to data sets even with missing or uncertain observed data. Now that we have established a foundation for probabilistic latent variable models, the next section will look at the data structure of our training input data, the 3D polygon mesh representation.
 
-\subsection{The Mesh Data Structure}
-Polygon mesh data structure used in contemporary 3D programs vary by implementation. The winged-edge polyhedron representation defined by Baumgart in 1972 \cite{wingededge} specified the essential components required to model a polygonal mesh: vertices, edges, and faces. We take advantage of the structural similarity between a mesh and a graph to inspire a formal definition for polygonal mesh geometry.
+\section{The Mesh Data Structure}
+Polygon mesh data structure used in contemporary 3D programs vary by implementation. The \textit{winged-edge polyhedron} representation defined by Baumgart in 1972 \cite{wingededge} specified the essential components required to model a polygonal mesh: vertices, edges, and faces. We take advantage of the structural similarity between a mesh and a graph to inspire a formal definition for polygonal mesh geometry.
 
-\subsubsection{Definition of a Graph}
-A \textbf{graph} $G$ can be defined as $G=(V,E)$ where $V$ is a non-empty finite \textbf{vertex set} and $E$ is the \textbf{edge set}\cite[p.8]{graphtheory}. An edge $e$ joins a pair of vertices in the graph together, defined as $e=(v_1, v_2)$ where $\forall(v_1 \land v_2)\in V$.
+A \textbf{graph} $G$ can be defined as $G=(V,E)$ where $V$ is a non-empty finite \textbf{vertex set} and $E$ is the \textbf{edge set} \cite[p.8]{graphtheory}. An edge $e$ joins a pair of vertices in the graph together, defined as $e=(v_1, v_2)$ where $\forall(v_1 \land v_2)\in V$.
 
-\subsubsection{Definition of a Mesh}
 Let polygon mesh $P = (V, E, F)$, where $V, E, F$ represents the set of vertices, edges, and faces respectively. In practice, polygonal meshes contain more components that influences surface appearance such as texture coordinates and vertex normals, however, the components described are sufficient for geometric processing. We assume vertex set and edge set of a mesh forms an \textbf{undirected simple graph}, where there is at most one edge for each pair of vertices and edges are bidirectional links.
 
 A \textbf{mesh vertex} $v$ is a 3D point of the form
@@ -556,24 +535,25 @@ $$\forall (v_1 \land v_2 \land v_3 \land v_4) \in V, f_4 = (v_1, v_2, v_3, v_4).
 The face component describes the geometric surface of an object.
 
 \subsection{Topology}
-The term topology in mesh modelling refers to the organisation of mesh components\cite[p.91]{blenderstudio}. A mesh is a sample of the true object it represents, the construction of meshes can vary significantly even if they represent the same object. An intuitive explanation is to consider a high level of detail mesh with a low level of detail mesh of the same object - while visually the two might be evidently similar, this relationship is much harder to convey when observing the raw mesh data. The placement of vertices along with the arrangement of edges and faces determine how well the mesh will adapt to operations such as deforming and modifying algorithms, as well as how much computational resource it will consume.
+The term topology in mesh modelling refers to the organisation of mesh components \cite[p.91]{blenderstudio}. A mesh is a sample of the true object it represents, the construction of meshes can vary significantly even if they represent the same object. An intuitive explanation is to consider a high level of detail mesh with a low level of detail mesh of the same object - while visually the two might be evidently similar, this relationship is much harder to convey when observing the raw mesh data. The placement of vertices along with the arrangement of edges and faces determine how well the mesh will adapt to operations such as deforming and modifying algorithms, as well as how much computational resource it will consume.
 
 \subsubsection{Poles}
-A pole is a vertex that does not have exactly four edges connected to it\cite[p.92]{blenderstudio}. Meshes in production are organised using quad-faces, thus the majority of vertices are expected to have four edges. Poles with two or three edges are often necessary, however, poorly placed poles can be problematic when applying deformation.
+A pole is a vertex that does not have exactly four edges connected to it \cite[p.92]{blenderstudio}. Meshes in production are organised using quad-faces, thus the majority of vertices are expected to have four edges. Poles with two or three edges are often necessary, however, poorly placed poles can be problematic when applying deformation.
 
 \subsubsection{Edge Loops}
-An edge loop is a set of connected non-forking edges that traverses the polygon geometry until it either forms an unbroken ring (cyclic edge loop), or ends at a pole\cite[p.93]{blenderstudio}. Typically, edge loops are applied to mimic organic structures for maintaining a clean topology \cite[pp.10-12]{edgeloops}. Effective use of edge loops enable the mesh to deform smoothly during editing and animation. Edge loops can be extracted from the mesh edges, providing structural information of the geometry.
+An edge loop is a set of connected non-forking edges that traverses the polygon geometry until it either forms an unbroken ring (cyclic edge loop), or ends at a pole \cite[p.93]{blenderstudio}. Typically, edge loops are applied to mimic organic structures for maintaining a clean topology \cite[pp.10-12]{edgeloops}. Effective use of edge loops enable the mesh to deform smoothly during editing and animation. Edge loops can be extracted from the mesh edges, providing structural information of the geometry.
 
-
+\section{Summary of Technical Background}
+Our motivation for dimensionality reduction on 3D geometry with a latent variable model aspires to simplify the production process by explaining the underlying behaviour of observed mesh data. The learning models discussed in this chapter adopt a probabilistic framework so that artists can retain creative control. The next chapter will examine dimensionality reduction for the mesh data structure with the learning models introduced.
 % -----------------------------------------------------------------------------
 
 \chapter{Project Execution}
 \label{chap:execution}
 
-This chapter discusses the steps undertaken to produce 3D hair geometry. A significant portion of this project is dedicated towards processing input polygonal hair mesh data so that the non-linear dimensionality reduction can be effectively applied. First, we outline the process of acquiring appropriate 3D mesh input data and challenges imposed by using polygonal meshes as training data. Then, we discuss why it is difficult to apply machine learning methods on mesh data structure and presenting a solution to address this issue. The latter sections of this chapter covers the training process and using output of the model to define geometry.
+This chapter covers the process of assisted real-time content generation for 3D hair geometry by applying non-linear dimensionality reduction to obtain a regression model and a latent manifold for selecting output. A significant portion of this project is dedicated towards processing input polygonal hair mesh data so that the non-linear dimensionality reduction can be effectively applied. First, we outline the process of acquiring appropriate 3D mesh input data and challenges imposed by using polygonal meshes as training data. Then, we discuss why it is difficult to apply machine learning methods on mesh data structure and presenting a solution to address this issue. The latter sections of this chapter covers the training process and using output of the regression model to define geometry.
 
 \section{Training Data Set}
-The machine learning process begins with training data acquisition. Suitable 3D hair geometry is scarce when compared to other mediums such as images. Courtesy of Electronic Arts there exists an active community that produces free for non-commercial use custom content for their gaming software - which includes polygonal hair\cite{tsr}. Files acquired are encoded in the \textit{Package} format, developed for a video game series, \textit{The Sims}. Open-source community software \textit{s4pe} is used to read the \textit{Package} file and extract geometry in \textit{Simgeom} format\cite{s4pe}. The \textit{Simgeom} format is then converted to \textit{OBJ} format using yet another open-source program \textit{S4CASTools}\cite{s4cas}. The geometry extracted is already standardised in scale and orientation.
+The machine learning process begins with training data acquisition. Suitable 3D hair geometry is scarce when compared to other mediums such as images. Courtesy of Electronic Arts there exists an active community that produces free for non-commercial use custom content for their gaming software - which includes polygonal hair \cite{tsr}. Files acquired are encoded in the \textit{Package} format, developed for a video game series, \textit{The Sims}. Open-source community software \textit{s4pe} is used to read the \textit{Package} file and extract geometry in \textit{Simgeom} format \cite{s4pe}. The \textit{Simgeom} format is then converted to \textit{OBJ} format using yet another open-source program \textit{S4CASTools} \cite{s4cas}. The geometry extracted is already standardised in scale and orientation.
 
 \begin{figure}[!h]
 	\centering
@@ -607,20 +587,19 @@ Existing algorithmic solutions for converting a triangle mesh to a quad mesh are
 	\caption{Triangular faces are highlighted using a selection procedure for all faces that are made of exactly three edges. To the left is an original mesh acquired, the middle shows a selection of remaining triangles after the automatic tri-to-quad conversion, and the right displays a retopologised mesh of entirely quads.}
 \end{figure}
 
-Sampling four input mesh from the training set (those displayed in figure \ref{inputHairs}), on average there are around $2 \times 10^{2}$ sub-meshes, $1 \times 10^{4}$ vertices and  $3 \times 10^{4}$ edges per mesh. To retopologise the remaining triangles as quads manually, the hair mesh is separated into individual segments so that visibility of layering sub-mesh surfaces can be toggled to not obstruct vertex, edge, and face components. Each sub-mesh must be inspected to find remaining trianglular polygons. There are many ways one can modify topology of a mesh, we assume that basic methods such as utilising the knife tool or dissolve tool of Blender takes only order of seconds per sub-mesh. The time for manually retopologising a partially converted mesh with the complexity of our training data takes order of hours each. Unfortunately, this meant that it is extremely time consuming to prepare meshes defined by the \textit{Simgeom} format, thus for regression models with larger training sets we settled with including partial examples.
+Sampling four input mesh from the training set (those displayed in figure \ref{inputHairs}), on average there are around $2 \times 10^{2}$ sub-meshes, $1 \times 10^{4}$ vertices and  $3 \times 10^{4}$ edges per mesh. To retopologise the remaining triangles as quads manually, the hair mesh is separated into individual segments so that visibility of layering sub-mesh surfaces can be toggled to not obstruct vertex, edge, and face components. Each sub-mesh must be inspected to find remaining trianglular polygons. There are many ways one can modify topology of a mesh, we assume that basic methods such as utilising the knife tool or dissolve tool of Blender takes a non-expert order of seconds per sub-mesh. The time for manually retopologising a partially converted mesh with the complexity of our training data takes order of hours each. Unfortunately, this meant that it is extremely time consuming to prepare meshes defined by the \textit{Simgeom} format, thus for regression models with larger training sets we settled with including partial examples.
 
 \section{Generative Model of Hair}
-To utilise machine learning methods for production of 3D hair geometry,  we develop a generative model of 3D hair structure. Mesh data is tricky to compare as topology and fidelity alter both structure of the data encoded and dimensionality. We address the data alignment problem by approximating the mesh to obtain generative parameters of a similar output possible by a model. Training learns the relation of observed generative parameters obtained from approximating the mesh data.
+To utilise machine learning methods for production of 3D hair geometry,  we develop a generative model of 3D hair structure. Mesh data is tricky to compare as topology and fidelity alter both structure of the data encoded and dimensionality. To successfully learn the relation of mesh data, we must first standardise the 3D representation by approximating the mesh to sample generative input of a similar representation possible by a model. Training learns the relation of observed generative inputs obtained from approximating the mesh data.
 
-Wang et al. (2009) parametrised a 3D scalp space using spherical projection\cite{examplebasedhair}. This space approximated the surface of a scalp as a hemisphere with the centre denoting the origin. We apply a similar approach with a spherical coordinate system to determine the surface of a scalp.
+Wang et al. (2009) parametrised a 3D scalp space using spherical projection \cite{examplebasedhair}. This space approximated the surface of a scalp as a hemisphere with the centre denoting the origin. We apply a similar approach with a spherical coordinate system to determine the surface of a scalp.
 
-The spherical polar coordinate system specifies a point from the origin using three parameters:  $(r,\theta,\phi)$\cite[pp.123-126]{sphericalcoords}. The \textbf{radial distance}, $r$, represents the distance from the origin. We also measure two angles: a \textbf{polar angle}, $\theta$, from the positive $z$-axis (zenith direction) and an \textbf{azimuth angle}, $\phi$, is measured from the $xy$-plane that is orthogonal to the zenith.
+The spherical polar coordinate system specifies a point from the origin using three parameters:  $(r,\theta,\phi)$ \cite[pp.123-126]{sphericalcoords}. The \textbf{radial distance}, $r$, represents the distance from the origin. We also measure two angles: a \textbf{polar angle}, $\theta$, from the positive $z$-axis (zenith direction) and an \textbf{azimuth angle}, $\phi$, is measured from the $xy$-plane that is orthogonal to the zenith.
 
 \begin{figure}[!h]
 	\centering
 	\includegraphics[scale=0.25]{images/sphereCoords}\\
-	\tiny{Source: \href{https://commons.wikimedia.org/wiki/File:3D_Spherical.svg}{https://commons.wikimedia.org/wiki/File:3D\_Spherical.svg}, public domain.}
-	\caption{3D spherical coordinate system}
+	\caption{Source: \href{https://commons.wikimedia.org/wiki/File:3D_Spherical.svg}{https://commons.wikimedia.org/wiki/File:3D\_Spherical.svg}, Public Domain. The 3D spherical coordinate system.}
 \end{figure}
 
 Uniformly placing points at a fixed radial distance and constant intervals within constrained angles give a collection of points that represent hair roots of the scalp. Increasing the number of hair roots allows sampling of higher fidelity. However, this also demands greater computational resources.
@@ -631,7 +610,7 @@ Uniformly placing points at a fixed radial distance and constant intervals withi
 	\includegraphics[scale=0.5]{images/spherePoints}\\
 \end{figure}
 
-A total of 342 splines in our generative model is used to describe hair structure. We construct each spline from 10 points in a 3D space. The resulting feature vector is 10260 dimensions long.
+A total of 342 polylines in our generative model is used to describe hair structure. We construct each polyline from 10 points in a 3D space. The resulting feature vector is 10260 dimensions long.
 
 \begin{figure}[!h]
 	\centering
@@ -640,8 +619,8 @@ A total of 342 splines in our generative model is used to describe hair structur
 \end{figure}
 
 \section{Approximating Generative Parameters from Input Data}
-\subsection{Parsing OBJ File}
-Approximation begins by parsing the geometric data of OBJ files into a graph data structure of nodes and edges. The axis of exported OBJ files is different from the axis of Blender, to align the coordinate system, swap the Y and Z axis, then negate the Y axis. \textit{OBJ} is a human-readable format that declares a mesh element per line. The elements we are interested in are:
+
+Approximation begins by parsing the geometric data of mesh files into a graph data structure of nodes and edges. The axes of OBJ files are misaligned from the axes of Blender, to align the coordinate system, swap the Y and Z axis, then negate the Y axis. OBJ is a human-readable format that declares a mesh element per line. The elements we are interested in are:
 \begin{itemize}
 	\item geometric vertices, specified by a line that starts with the "v" character, followed by floating values that represent the x, y, z of the vertex position.
 	\item face elements, specified by a line that starts with the "f" character, followed by a list of vertex indices that correspond to a vertex line.
@@ -669,9 +648,8 @@ Variations of the format may exist by implementation, but only the essentials id
 	\Return vertex dictionary, graph
 \end{algorithm}
 
-\subsection{Spline Estimation}
-\subsubsection{Edge Loop Extraction}
-The versatile structure of polygon meshes allows it to be an expressive representation, however, this flexibility can cause ambiguity when analysing geometric structure. We assume that the mesh only contains sub-meshes of hair segments that have grid-like topology. Our assumption allows us to extract edge loops that describe the structure of hair segments. In the technical documentation of Blender, it describes an algorithm for edge loop selection\cite{blenderedgeloop}:
+\subsection{Edge Loop Extraction}
+The versatile structure of polygon meshes allows it to be an expressive representation, however, this flexibility can cause ambiguity when analysing geometric structure. We assume that the mesh only contains sub-meshes of hair segments that have grid-like topology. Our assumption allows us to extract edge loops that describe the structure of hair segments. In the technical documentation of Blender, it describes an algorithm for edge loop selection \cite{blenderedgeloop}:
 \begin{enumerate}
 \item Given a starting edge, only continue searching adjacent edges if the candidates connect to exactly three other neighbours, as any other value would indicate either the border of a mesh or encountering a pole vertex.
 \item Completing a cyclic edge loop ends the selection process.
@@ -687,10 +665,10 @@ We devise an edge loop extraction algorithm that achieves the properties specifi
 	\label{edgeLoopFig}
 \end{figure}
 
-\subsubsection{Boundary and Root Edge Loops}
-Hair structure estimation begins by splitting the mesh into sub-meshes, determined by graph connectivity. For each segment mesh, we are interested in the edge loops that represent hair strands from the scalp roots. To find these edge loops, we must locate the boundary edge loops of the mesh and choose one to be the root edge loop.
+\subsection{Boundary and Root Edge Loops}
+Hair structure estimation begins by splitting the mesh into sub-meshes, determined by graph connectivity. For each segment mesh, we are interested in the edge loops that represent hair strands from the scalp roots. To find these edge loops, we must locate the \textit{boundary edge loops} of the mesh and choose one to be the \textit{root edge loop}.
 
-Corner vertices are nodes that have exactly two edges, while border vertices have three edges. Boundary edge loops are determined by selecting an edge of a corner vertex and growing the edge loop. Any edge of a corner vertex will connect to a border vertex. The selection is specified to stop upon encountering another corner vertex, resulting in an edge loop of the bounds. We discard the vertices of the extracted boundary edge loop. Remove any corner vertices that no longer have any neighbours left in the set of border vertices. Repeat until there are no corner nodes left, thus successfully extracting the boundary of the mesh as a collection edge loops.
+\textit{Corner vertices} are nodes that have exactly two edges, while \textit{border vertices} have three edges. Boundary edge loops are determined by selecting an edge of a corner vertex and growing the edge loop. Any edge of a corner vertex will connect to a border vertex. The selection is specified to stop upon encountering another corner vertex, resulting in an edge loop of the bounds. We discard the vertices of the extracted boundary edge loop. Remove any corner vertices that no longer have any neighbours left in the set of border vertices. Repeat until there are no corner nodes left, thus successfully extracting the boundary of the mesh as a collection edge loops.
 
 \begin{algorithm}[!h]
 	\caption{Extracting boundary edge loops}
@@ -723,17 +701,17 @@ Corner vertices are nodes that have exactly two edges, while border vertices hav
 	\includegraphics[scale=0.5]{images/rootLoop}\\
 \end{figure}
 
-The \textit{root edge loop} is the boundary edge loop that is closest to the surface of the scalp. It serves as a reference for where the hair strands begin. We determine the root loop by finding the average distance of each vertex in a boundary loop. Heuristically, the root border has minimal distance when aligned across the scalp.
+The root edge loop is the boundary edge loop that is closest to the surface of the scalp. It serves as a reference for where the hair strands begin. We determine the root loop by finding the average distance of each vertex in a boundary loop. Heuristically, the root border has minimal distance when aligned across the scalp.
 
-There is a significant flaw in this approach as it will not correctly predict roots of hair segments that are represented by multiple meshes. A solution to this would be to accept hair that has clear roots first then iteratively join \textit{floating segments} to the end of the closest corresponding \textit{rooted segment} until there are no more, or the system is unable to connect any segments further.	
+There is a significant flaw in this approach as it will not correctly predict roots of hair segments that are represented by multiple meshes. A solution to this would be to accept hair that has clear roots first then iteratively join \textit{floating segments} to the end of the closest corresponding \textit{rooted segment} until there are no more, or when the operation is unable to connect any segments further.	
 
-\subsubsection{Pivotal Strand Poly-lines}
-With the root loop, we can extract a collection of edge loops that represents the \textit{pivotal} (descriptive) hair strands of the segment cluster. Given the neighbours of root vertices, removing the neighbours that are also root vertices will leave edges that represent key strands. When there is one edge, we take the edge loop as a pivotal strand representation. The edge loop will extend until it encounters a pole or ends on the boundary. It is useful to know where the strand starts (from the root), and where it ends. We extract a path from the edge loop graph by continually appending adjacent nodes, starting from the root node. The result forms a spline of connecting lines.
+\subsection{Pivotal Strand Polylines}
+With the root loop, we can extract a collection of edge loops that represents the \textit{pivotal} (descriptive) hair strands of the segment cluster. Given the neighbours of root vertices, removing the neighbours that are also root vertices will leave edges that represent key strands. When there is one edge, we take the edge loop as a pivotal strand representation. The edge loop will extend until it encounters a pole or ends on the boundary. It is useful to know where the strand starts (from the root), and where it ends. We extract a path from the edge loop graph by continually appending adjacent nodes, starting from the root node. The result forms a polyline, a sequence of connecting lines.
 
 \begin{algorithm}[!h]
 	\algrule
 	\textbf{Input:} hair mesh\;
-	\textbf{Output:} collection of pivotal poly-lines\;
+	\textbf{Output:} collection of pivotal polylines\;
 	\algrule
 	\textbf{initialise}\;
 	\For{sub-mesh \textbf{in} mesh}{
@@ -743,65 +721,66 @@ With the root loop, we can extract a collection of edge loops that represents th
 			\For{neighbour of node}{		
 				\If{node \textbf{not in} root loop}{
 					grow pivotal strand edge loop\;
-					add pivotal strand to poly-line collection\;
+					add pivotal strand to polyline collection\;
 				}
 			}
 		}
 	}
 	\Return pivotal poly-line collection\;
-	\caption{Extracting spline edge loops}
+	\caption{Extracting polyline edge loops}
 \end{algorithm}
 
-A \textbf{repair operator} processes the strand splines to improve the approximation. First, the starting point of floating splines is attached to the nearest end of a rooted spline, only if there exists one within a specified vicinity. We discard the remaining floating splines that are not attached. Secondly, removing splines that are insignificantly short in length allows for more descriptive splines to be sampled.
+A \textbf{repair operator} processes the strand polylines to improve the approximation. First, the starting point of floating polylines is attached to the nearest end of a rooted polyline, only if there exists one within a specified vicinity. We discard the remaining floating polylines that are not attached. Secondly, removing polylines that are insignificantly short in length allows for more descriptive polylines to be sampled.
 
-\subsubsection{Parametrising a Strand Spline}
-The procedure thus far returns a set of strand splines that have varying number of nodes. We produce a constant dimension through sampling to acquire a spline that is applicable for use as parameters of our generative model.
+\subsection{Parametrising a Strand Polyline}
+The procedure thus far returns a set of strand polylines that have varying number of nodes. We produce a constant dimension through sampling to acquire a polyline that is applicable for use as parameters of our generative model.
 
-First establish intervals of the distance covered between the points of the original spline. Now suppose we want to evenly sample the spline with $n$ points, we can compute the distance where the $i_{th}$ sample point should travel along the spline as
+First establish intervals of the distance covered between the points of the original polylines. Now suppose we want to evenly sample the polyline with $n$ points, we can compute the distance where the $i_{th}$ sample point should travel along the polylines as
 $$distance=\frac{i \cdot s_l}{n},$$
-where $s_l$ is the spline length.
+where $s_l$ is the polyline length.
 
-We determine the indices $[j, j+1]$ where the sample distance lies on the spline by comparing the sample distance to the distance of the interval list. The position, $\bm{P}$, of the sample point is
+We determine the indices $[j, j+1]$ where the sample distance lies on the polyline by comparing the sample distance to the distance of the interval list. The position, $\bm{P}$, of the sample point is
 $$\bm{P} = \bm{S} + r\bm{D},$$
-where $\bm{S}$ denotes the starting position that is the $j_{th}$ point of the original spline, plus the unit vector direction to the next $j+1_{th}$ point, multiplied by scalar $r$, the remaining distance to cover from the $j_{th}$ interval.
+where $\bm{S}$ denotes the starting position that is the $j_{th}$ point of the original polyline, plus the unit vector direction to the next $j+1_{th}$ point, multiplied by scalar $r$, the remaining distance to cover from the $j_{th}$ interval.
 
-A potential improvement for parametrising the strand splines is to concentrate sampling points at curves rather than evenly spaced. Sampling effectively allows the model to be descriptive with less parameters, mitigating problems introduced by the curse of dimensionality.
+A potential improvement for parametrising the strand polyline is to concentrate sampling points at areas of high curvature rather than at evenly spaced intervals. Sampling effectively allows the model to be descriptive with less parameters, mitigating problems introduced by the curse of dimensionality.
 
 \subsection{Structure Estimation}
-Spline estimation extracts an arbitrary number of splines. The next step is to choose a fixed number of splines for representing the hair geometry. We introduce a \textbf{selection operator} to associate a root with a spline such that the combination of splines are representative of the hair structure. Attributes that make a spline more desirable to a particular root include:
+Strand estimation extracts an arbitrary number of polylines. The next step is to choose a fixed number of polylines for representing the hair geometry. We introduce a \textbf{selection operator} to associate a root with a polyline such that the combination of polylines are representative of the hair structure. Attributes that make a strand polyline more desirable to a particular root include:
 \begin{itemize}
-	\item \textit{proximity} - how close the subject spline is to the root position.
-	\item \textit{significance} - how definitive a particular spline is, or the information conveyed by the subjected spline.
-	\item \textit{uniqueness} - whether there are other roots that have already captured the information conveyed by the subjected spline.
+	\item \textit{proximity} - how close the subject strand is to the root position.
+	\item \textit{significance} - how definitive a particular strand is, or the information conveyed by the subjected polyline.
+	\item \textit{uniqueness} - whether there are other roots that have already captured the information conveyed by the subjected strand.
 \end{itemize}
 Several selection operators experimented are:
 \begin{itemize}
-	\item \textit{nearest strand selector} - it naively selects the closest spline of each root position. 
+	\item \textit{nearest strand selector} - it naively selects the closest strand of each root position. 
 	\item \textit{average strand selector} - picks all strands within vicinity and takes the average representation.
-	\item \textit{unique selector} - considers all strands within vicinity and takes the spline that has maximises the minimum distance from any spline already selected by other roots.
+	\item \textit{unique selector} - considers all strands within vicinity and takes the strand that has maximises the minimum distance from any polyline already selected by other roots.
 \end{itemize}
 
 \section{Learning a Manifold with Bayesian GP-LVM}
 Once we have acquired a method to estimate the hair structure of the input data, we can then learn a latent manifold for generative parameters of hair.
 
-A perspective that extends GP-LVM is the paradigm of \textbf{Kernel Method Based GP-LVMs}\cite{reviewgplvm}.  GP-PLVM can be equivalent to \textit{Probabilistic Kernel Principal Component Analysis} (PKPCA) when replacing the $\bm{XX}^T$ term of equation ? with a kernel matrix. The choice of a kernel influences performance of the model as it specifies the prior distribution for regression. Selection of the kernel depends on the task to be accomplished.
+A perspective that extends GP-LVM is the paradigm of \textbf{Kernel Method Based GP-LVMs} \cite{reviewgplvm}.  GP-PLVM can be equivalent to \textit{Probabilistic Kernel Principal Component Analysis} (PKPCA) when replacing the $\bm{XX}^T$ term of equation \ref{gplvm:marginal} with a kernel matrix. The choice of a kernel influences performance of the model as it specifies the prior distribution for regression. Selection of the kernel depends on the task to be accomplished.
 
 \begin{figure}[!h]
 	\centering
 	\includegraphics[scale=0.3]{images/gpyKernels}\\
-	\tiny{Source: GPy library documentation}
-	\caption{GPy offers various standard kernels. Multi-modal kernels can be formed from combining kernels to represent data of complex nature.}
+	\caption{Source: \href{http://gpytest2.readthedocs.io/en/latest/tuto_kernel_overview.html}{GPy Library Documentation: A kernel overview}. The GPy library offers various standard kernels. Multi-modal kernels can be formed from combining kernels to represent data of complex nature.}
 \end{figure}
 
 The \textbf{radial basis function (RBF) kernel} models the data smoothly, interpolating between variables gradually. An \textbf{exponential kernel} places emphasis at peak likelihoods, changing very little from observed data when uncertainty is high. Using a \textbf{linear kernel} is equivalent to modelling with PPCA. Figure \ref{kernelHair} illustrates the results of RBF, exponential, and linear kernels in our regression model.
 
+{\color{red}
 \begin{figure}[!h]
 	\centering
 	%\includegraphics[scale=0.3]{images/kernelHair}\\
 	\caption{As expected, a linearly embedded hairstyle is of little use as it can only extrapolate along one style. }
 	\label{kernelHair}
 \end{figure}
-
+............................
+}
 
 \textit{Hyper-parameters} of a kernel specifies its behaviour. A \textit{lengthscale} parameter determines how much the distance of variables influence each other, and the \textit{variance} describes its distribution. We apply \textit{automatic relevance determination} (ARD), which uses the observed data to estimate the length-scale parameters. 
 
@@ -810,7 +789,7 @@ The input data is transformed so that the origin is marginally above the origin 
 \section{Generation of Output}
 Completion of the training process provides a regression model that predicts hair structure from estimated input data using our generative model. A problem encountered was incompatibility of the plotting module in the GPy library with the Python distribution of Blender, where a required standard module \textit{TKInter} is not present. To overcome this issue, the training process plotted latent manifold is stored as an image and the regression model is serialised using the \textit{Pickle} module of Python. A Blender add-on implementation can then load the latent manifold image on the UV image editor of the program and through the API, load the serialised regression model to predict latent variables sampled from the manifold.
 
-Output generative parameters are used to create \textit{guide splines} from the poly-line data structure of the Blender API. Polygon mesh geometry is produced from assigning these guide splines to a predefined taper curve and applied with the extrude functionality to create the appearance of hair geometry. An extension to our generative model would be specifying additional parameters such as orientation and width of hair segments, this would enable the regression model to also learn such attributes of the input data.
+Output generative parameters are used to create \textit{guide strands} from the polyline data structure of the Blender API. Polygon mesh geometry is produced from assigning these guide strands to a predefined taper curve and applied with the extrude functionality to create the appearance of hair geometry. An extension to our generative model would be specifying additional parameters such as orientation and width of hair segments, this would enable the regression model to also learn such attributes of the input data.
 
 \begin{figure}[!h]
 	\centering
@@ -820,31 +799,8 @@ Output generative parameters are used to create \textit{guide splines} from the 
 \end{figure}
 
 
-\section{Logging User Activity}
+\section{User Activity Log}
 Our add-on implementation can be set to track user activity for acquiring behavioural data when using the latent manifold for geometry generation. Data logged include time spent exploring the manifold, mouse movement, and normalised likelihood of selected predictions. An output management procedure is developed to organise and write logged data automatically so that user testing can proceed seamlessly.
-
-\section{Project Management}
-\textit{Git} is used for source control of the project implementation. The branching feature is useful for separating development of features. Maintaining multiple versions of the code base prevented issues caused by the interaction of incomplete features. The merging and rebasing tools helped conflict resolution. Descriptive atomic commits keep a log of progress and supports roll-back to older versions when necessary. A private repository backup was set up on a hosting service provider to prevent data loss and enable development on multiple machines with ease.
-
-
-\subsection{Time-line}
-Calender.
-Internal Deadlines.
-
-\begin{table}[!h]
-	\centering
-	\begin{tabular}{|cc|c|}
-		\hline
-		foo      & bar      & baz      \\
-		\hline
-		$0     $ & $0     $ & $0     $ \\
-		\hline
-	\end{tabular}
-	\caption{This is an example table.}
-	\label{tab}
-\end{table}
-
-Issue tracking was performed on Trello.
 
 % -----------------------------------------------------------------------------
 
@@ -1008,7 +964,7 @@ Among participants who take significantly longer to select a prediction, some do
 
 \subsubsection{Behavioural Observation: Misleading local optima}
 
-Participants that do not explore the manifold risk becoming stranded within a local optima. Results in figure \ref{mariaresult} is an example of this. The participant did not explore during the first test, which lead to a lengthy search process during the second test - where the participant primarily looked within an area that resembles the target, but the actual target is located elsewhere in the manifold. This is a property that makes the latent manifold unintuitive to use, as it would seem logical for similar meshes to be close in the manifold, but a nonlinear embedding means that this is not always true.
+Participants that do not explore the manifold risk becoming stranded within a local optima. Results in figure \ref{mariaresult} is an example of this. The participant did not explore during the first test, which lead to a lengthy search process during the second test - where the participant primarily looked within an area that resembles the target, but the actual target is located elsewhere in the manifold. This is a property that makes the latent manifold unintuitive to use, as it would seem logical for similar meshes to be close in the manifold, but a non-linear embedding means that this is not always true.
 
 \begin{figure}[!h]
 	\centering
@@ -1043,7 +999,7 @@ Once a regression model has been trained, it can then be used for production, th
 
 The ambiguous nature of creative content and mesh data structure makes training a regression model for 3D content difficult. We have demonstrated how algorithmic solutions can automate the task of preparing input mesh for learning. Content creators that have quadrilateral meshes will not require the retopologising stage, which is necessary for our training set as it contains limiting meshes triangulated for rendering. The unpredictable structure of mesh representation requires making some assumptions regarding the input mesh topology. Despite so, our implementation degrades gracefully with the presence of flawed training data. From edge loops, we determine the structure of the surface.
 
-Training mesh data is scarce. Non-experts content creators are more so susceptible to the lack of training meshes. Learning-based assisted content generation by nonlinear dimensionality reduction is intended to be robust with small training sets. Table \ref{trainingbenchmarks} displays benchmark results of times taken for the training process on our implementation. The benchmark result is highly dependent on many factors including input data, generative model, implementation, and the hardware of the machine. The point to take away is that training a regression model that makes a prediction from selecting variables in a non-linear latent manifold is a reasonably fast, completing in only matter of minutes.
+Training mesh data is scarce. Non-experts content creators are more so susceptible to the lack of training meshes. Learning-based assisted content generation by non-linear dimensionality reduction is intended to be robust with small training sets. Table \ref{trainingbenchmarks} displays benchmark results of times taken for the training process on our implementation. The benchmark result is highly dependent on many factors including input data, generative model, implementation, and the hardware of the machine. The point to take away is that training a regression model that makes a prediction from selecting variables in a non-linear latent manifold is a reasonably fast, completing in only matter of minutes.
 
 \begin{table}[!h]
 	\centering
@@ -1075,7 +1031,7 @@ We use a configuration file to determine properties of our generative model and 
 
 Results of table \ref{trainingbenchmarks} show that approximating generative parameters is the most time-consuming procedure. The time required for approximating is dependent on the complexity of the generative model and input mesh. Thus the benchmark displays a linear relation between total approximation time and training size. Hair geometry as one of the most complicated to be represented use more generative parameters than other categories of surfaces. The number of generative parameters can be kept in sustainable numbers by choice of generative model.
 
-Plotting the latent manifold as a 2D image provides a visualisation of latent variables and corresponding likelihood. Large training sets incorporate more example styles, but too many reduce ease of use as exploring the 2D nonlinear manifold would interpolate unintuitively. Training sets of this solution will inherently be small in cardinality.
+Plotting the latent manifold as a 2D image provides a visualisation of latent variables and corresponding likelihood. Large training sets incorporate more example styles, but too many reduce ease of use as exploring the 2D non-linear manifold would interpolate unintuitively. Training sets of this solution will inherently be small in cardinality.
 
 A regression model it can be used to predict generative parameters repeatedly. Serialising regression models trained with small sets will result in distributable file sizes. Content creators have the option to collect and share regression models. Refining a GP-LVM regression model is possible by inferring new observations, updating the posterior distribution. The initial time investment required to train a model is made up for if the regression model can reduce total time spent over the course of its usage.
 

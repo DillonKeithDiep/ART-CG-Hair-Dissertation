@@ -1,5 +1,26 @@
 \begin{thebibliography}{10}
 
+\bibitem{blenderedgeloop}
+Blender manual: Edge loop selection.
+\newblock
+  \url{https://wiki.blender.org/index.php/Doc:2.4/Manual/Modeling/Meshes/Selecting/Edges}.
+\newblock [Online; accessed 06-May-2017].
+
+\bibitem{s4cas}
+S4 cas tools.
+\newblock \url{http://www.modthesims.info/download.php?t=582348}.
+\newblock [Online; accessed 06-May-2017].
+
+\bibitem{s4pe}
+s4pe.
+\newblock \url{https://github.com/s4ptacle/Sims4Tools}.
+\newblock [Online; accessed 06-May-2017].
+
+\bibitem{tsr}
+The sims resource.
+\newblock \url{https://www.thesimsresource.com/}.
+\newblock [Online; accessed 06-May-2017].
+
 \bibitem{sphericalcoords}
 G.~B. Arfken and H.~J. Weber.
 \newblock {\em Mathematical Methods for Physicists}.
@@ -54,9 +75,6 @@ H.~Hotelling.
 
 \bibitem{pca1901}
 [PCA~1901] http://stat.smmu.edu.cn/history/pearson1901.pdf.
-
-\bibitem{tsr}
-[TSR] https://www.thesimsresource.com/.
 
 \bibitem{pca2002}
 I.~T. Jolliffe.

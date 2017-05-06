@@ -7,9 +7,6 @@ Repeated entry---line 33 of file dissertation.bib
 I'm skipping whatever remains of this entry
 Warning--I didn't find a database entry for "curseofdyn"
 Warning--I didn't find a database entry for "lsystem"
-Warning--I didn't find a database entry for "s4pe"
-Warning--I didn't find a database entry for "s4cas"
-Warning--I didn't find a database entry for "blenderedgeloop"
 Warning--I didn't find a database entry for "reviewgplvm"
 Name 1 in "D. M. D. Carli, C. T. Pozzer, F. Bevilacqua, and M. C. d Ornellas" has a comma at the end for entry procedural1
 while executing---line 1049 of file plain.bst
@@ -29,10 +26,14 @@ Too many commas in name 1 of "Chai, M., Shaq, T., Wu, H., Weng, Y., and Zhou, K"
 while executing---line 1049 of file plain.bst
 Too many commas in name 1 of "Chai, M., Shaq, T., Wu, H., Weng, Y., and Zhou, K" for entry autohair
 while executing---line 1049 of file plain.bst
+Warning--to sort, need author or key in tsr
 Name 1 in "Rasmussen, C. E., and Williams, C." has a comma at the end for entry gp
 while executing---line 1049 of file plain.bst
 Name 1 in "Titsias, M. K., and Lawrence, N. D." has a comma at the end for entry bgplvm
 while executing---line 1049 of file plain.bst
+Warning--to sort, need author or key in s4pe
+Warning--to sort, need author or key in s4cas
+Warning--to sort, need author or key in blenderedgeloop
 Name 1 in "Baxter, W., and Anjyo, K." has a comma at the end for entry latentdoodle
 while executing---line 1090 of file plain.bst
 Name 1 in "Campbell, N. D., AND Kautz, J." has a comma at the end for entry fontmanifold
@@ -54,9 +55,6 @@ while executing---line 1090 of file plain.bst
 Warning--empty title in pca1901
 Warning--empty publisher in pca1901
 Warning--empty year in pca1901
-Warning--empty title in tsr
-Warning--empty publisher in tsr
-Warning--empty year in tsr
 Name 1 in "Rasmussen, C. E., and Williams, C." has a comma at the end for entry gp
 while executing---line 1090 of file plain.bst
 Name 1 in "Titsias, M. K., and Lawrence, N. D." has a comma at the end for entry bgplvm

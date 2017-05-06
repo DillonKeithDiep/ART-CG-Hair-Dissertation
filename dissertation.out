@@ -10,15 +10,15 @@
 \BOOKMARK [1][-]{section.2.3}{A Probabilistic Model for PCA}{chapter.2}% 10
 \BOOKMARK [1][-]{section.2.4}{Gaussian Process Latent Variable Model}{chapter.2}% 11
 \BOOKMARK [1][-]{section.2.5}{Bayesian Gaussian Process Latent Variable Model}{chapter.2}% 12
-\BOOKMARK [1][-]{section.2.6}{Formal Definition of 3D Polygon Mesh Representation}{chapter.2}% 13
-\BOOKMARK [0][-]{chapter.3}{Project Execution}{}% 14
-\BOOKMARK [1][-]{section.3.1}{Training Data Set}{chapter.3}% 15
-\BOOKMARK [1][-]{section.3.2}{Generative Model of Hair}{chapter.3}% 16
-\BOOKMARK [1][-]{section.3.3}{Approximating Generative Parameters from Input Data}{chapter.3}% 17
-\BOOKMARK [1][-]{section.3.4}{Learning a Manifold with Bayesian GP-LVM}{chapter.3}% 18
-\BOOKMARK [1][-]{section.3.5}{Generation of Output}{chapter.3}% 19
-\BOOKMARK [1][-]{section.3.6}{Logging User Activity}{chapter.3}% 20
-\BOOKMARK [1][-]{section.3.7}{Project Management}{chapter.3}% 21
+\BOOKMARK [1][-]{section.2.6}{The Mesh Data Structure}{chapter.2}% 13
+\BOOKMARK [1][-]{section.2.7}{Summary of Technical Background}{chapter.2}% 14
+\BOOKMARK [0][-]{chapter.3}{Project Execution}{}% 15
+\BOOKMARK [1][-]{section.3.1}{Training Data Set}{chapter.3}% 16
+\BOOKMARK [1][-]{section.3.2}{Generative Model of Hair}{chapter.3}% 17
+\BOOKMARK [1][-]{section.3.3}{Approximating Generative Parameters from Input Data}{chapter.3}% 18
+\BOOKMARK [1][-]{section.3.4}{Learning a Manifold with Bayesian GP-LVM}{chapter.3}% 19
+\BOOKMARK [1][-]{section.3.5}{Generation of Output}{chapter.3}% 20
+\BOOKMARK [1][-]{section.3.6}{User Activity Log}{chapter.3}% 21
 \BOOKMARK [0][-]{chapter.4}{Critical Evaluation}{}% 22
 \BOOKMARK [1][-]{section.4.1}{Latent Hair Modelling Survey}{chapter.4}% 23
 \BOOKMARK [1][-]{section.4.2}{Latent Application Experiment}{chapter.4}% 24
