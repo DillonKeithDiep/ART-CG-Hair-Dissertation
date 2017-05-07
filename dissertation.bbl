@@ -87,6 +87,11 @@ N.~D. Lawrence.
   Gaussian process latent variable models}.
 \newblock The Journal of Machine Learning Research 6, 1783–1816, 2004.
 
+\bibitem{reviewgplvm}
+P.~Li and S.~Chen.
+\newblock {\em A review on Gaussian Process Latent Variable Models}.
+\newblock CAAI Transactions on Intelligence Technology 1 (2016) 366-376, 2016.
+
 \bibitem{drawingassistance}
 A.~et~al. Limpaecher.
 \newblock {\em Real-time Drawing Assistance through Crowdsourcing}.

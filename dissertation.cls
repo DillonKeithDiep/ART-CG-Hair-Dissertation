@@ -12,6 +12,7 @@
 \RequirePackage{tikz}
 \RequirePackage{multirow}
 \RequirePackage{multicol}
+%\RequirePackage{caption}
 \newcommand{\algrule}[1][.4pt]{\vskip.4\baselineskip\hrule height #1\vskip.5\baselineskip}
 
 \pgfkeys{/dissertation/.cd,
