@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.3.12)  7 MAY 2017 12:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.3.12)  7 MAY 2017 12:22
 entering extended mode
 **./dissertation.tex
 (dissertation.tex
@@ -951,5 +951,702 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 \openout6 = `dissertation.toc'.
 
  [4] (dissertation.lof
-Runaway argument?
-{\numberline {3.4}{\ig
+Overfull \hbox (66.54108pt too wide) in paragraph at lines 11--11
+ [][] [][][]\OT1/cmr/m/n/10 The 3D spher-i-cal co-or-di-nate sys-tem. Source: [
+][]https://commons.wikimedia.org/wiki/File:3D[]Spherical.svg[][], 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [5
+
+])
+\tf@lof=\write7
+\openout7 = `dissertation.lof'.
+
+
+[6] (dissertation.lot)
+\tf@lot=\write8
+\openout8 = `dissertation.lot'.
+
+ [7
+
+] [8
+
+] (dissertation.loa)
+\tf@loa=\write9
+\openout9 = `dissertation.loa'.
+
+ [9] [10
+
+] (dissertation.lol)
+\tf@lol=\write10
+\openout10 = `dissertation.lol'.
+
+
+[11] [12
+
+]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 89.
+ (E:\Programs\MikTex\tex\latex\base\omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 89.
+ [13] [14
+
+] [15] [16
+
+]
+[17] [18
+
+] [19] [20
+
+]
+Chapter 1.
+<images/pointCloud.jpg, id=398, 674.52pt x 342.27875pt>
+File: images/pointCloud.jpg Graphic file (type jpg)
+
+<use images/pointCloud.jpg>
+Package pdftex.def Info: images/pointCloud.jpg used on input line 176.
+(pdftex.def)             Requested size: 101.17363pt x 51.33958pt.
+
+<images/rangeImage.jpg, id=399, 726.715pt x 260.975pt>
+File: images/rangeImage.jpg Graphic file (type jpg)
+
+<use images/rangeImage.jpg>
+Package pdftex.def Info: images/rangeImage.jpg used on input line 177.
+(pdftex.def)             Requested size: 145.34042pt x 52.19408pt.
+
+<images/octreeVoxel.png, id=400, 451.6875pt x 442.65375pt>
+File: images/octreeVoxel.png Graphic file (type png)
+
+<use images/octreeVoxel.png>
+Package pdftex.def Info: images/octreeVoxel.png used on input line 178.
+(pdftex.def)             Requested size: 56.46078pt x 55.33157pt.
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.184 
+       [1
+
+ <./images/pointCloud.jpg> <./images/rangeImage.jpg> <./images/octreeVoxel.png>
+]
+
+LaTeX Warning: Citation `curseofdyn' on page 2 undefined on input line 193.
+
+
+LaTeX Warning: Citation `lsystem' on page 2 undefined on input line 195.
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.196 
+       [2] <images/hairExemplar.jpg, id=415, 963.6pt x 788.9475pt>
+File: images/hairExemplar.jpg Graphic file (type jpg)
+
+<use images/hairExemplar.jpg>
+Package pdftex.def Info: images/hairExemplar.jpg used on input line 200.
+(pdftex.def)             Requested size: 289.08223pt x 236.68607pt.
+ [3 <./images/hairExemplar.jpg>] [4] [5] [6
+
+]
+Chapter 2.
+[7] [8] [9] [10] [11] <images/gpPrior.png, id=515, 433.62pt x 289.08pt>
+File: images/gpPrior.png Graphic file (type png)
+
+<use images/gpPrior.png>
+Package pdftex.def Info: images/gpPrior.png used on input line 456.
+(pdftex.def)             Requested size: 216.80946pt x 144.53964pt.
+ <images/gpPosterior.png, id=516, 433.62pt x 289.08pt>
+File: images/gpPosterior.png Graphic file (type png)
+
+<use images/gpPosterior.png>
+Package pdftex.def Info: images/gpPosterior.png used on input line 457.
+(pdftex.def)             Requested size: 216.80946pt x 144.53964pt.
+ [12 <./images/gpPrior.png> <./images/gpPosterior.png>] [13] [14] [15] [16
+
+]
+Chapter 3.
+<images/latentHairAddon.jpg, id=563, 986.9372pt x 689.57625pt>
+File: images/latentHairAddon.jpg Graphic file (type jpg)
+
+<use images/latentHairAddon.jpg>
+Package pdftex.def Info: images/latentHairAddon.jpg used on input line 559.
+(pdftex.def)             Requested size: 296.08344pt x 206.87447pt.
+ [17 <./images/latentHairAddon.jpg>]
+<images/inputHair1.png, id=571, 53.60025pt x 49.02315pt>
+File: images/inputHair1.png Graphic file (type png)
+
+<use images/inputHair1.png>
+Package pdftex.def Info: images/inputHair1.png used on input line 569.
+(pdftex.def)             Requested size: 107.2002pt x 98.04602pt.
+
+<images/inputHair2.png, id=572, 53.60025pt x 49.02315pt>
+File: images/inputHair2.png Graphic file (type png)
+
+<use images/inputHair2.png>
+Package pdftex.def Info: images/inputHair2.png used on input line 570.
+(pdftex.def)             Requested size: 107.2002pt x 98.04602pt.
+
+<images/inputHair3.png, id=573, 53.60025pt x 49.02315pt>
+File: images/inputHair3.png Graphic file (type png)
+
+<use images/inputHair3.png>
+Package pdftex.def Info: images/inputHair3.png used on input line 571.
+(pdftex.def)             Requested size: 107.2002pt x 98.04602pt.
+
+<images/inputHair4.png, id=574, 53.60025pt x 49.02315pt>
+File: images/inputHair4.png Graphic file (type png)
+
+<use images/inputHair4.png>
+Package pdftex.def Info: images/inputHair4.png used on input line 572.
+(pdftex.def)             Requested size: 107.2002pt x 98.04602pt.
+
+<images/triToQuad1.png, id=575, 53.60025pt x 49.02315pt>
+File: images/triToQuad1.png Graphic file (type png)
+
+<use images/triToQuad1.png>
+Package pdftex.def Info: images/triToQuad1.png used on input line 593.
+(pdftex.def)             Requested size: 107.2002pt x 98.04602pt.
+
+<images/triToQuad2.png, id=576, 53.60025pt x 49.02315pt>
+File: images/triToQuad2.png Graphic file (type png)
+
+<use images/triToQuad2.png>
+Package pdftex.def Info: images/triToQuad2.png used on input line 594.
+(pdftex.def)             Requested size: 107.2002pt x 98.04602pt.
+
+<images/triToQuad3.png, id=577, 53.60025pt x 49.02315pt>
+File: images/triToQuad3.png Graphic file (type png)
+
+<use images/triToQuad3.png>
+Package pdftex.def Info: images/triToQuad3.png used on input line 595.
+(pdftex.def)             Requested size: 107.2002pt x 98.04602pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[18 <./images/inputHair1.png> <./images/inputHair2.png> <./images/inputHair3.pn
+g> <./images/inputHair4.png>]
+<images/sphereCoords.png, id=599, 560.0925pt x 517.935pt>
+File: images/sphereCoords.png Graphic file (type png)
+
+<use images/sphereCoords.png>
+Package pdftex.def Info: images/sphereCoords.png used on input line 610.
+(pdftex.def)             Requested size: 140.02278pt x 129.48343pt.
+
+Overfull \hbox (52.92993pt too wide) in paragraph at lines 612--612
+[]\OT1/cmr/m/n/10 Figure 3.4: []The 3D spher-i-cal co-or-di-nate sys-tem. Sourc
+e: [][]https://commons.wikimedia.org/wiki/File:3D[]Spherical.svg[][],
+ []
+
+<images/spherePoints.png, id=602, 450.9347pt x 263.48438pt>
+File: images/spherePoints.png Graphic file (type png)
+
+<use images/spherePoints.png>
+Package pdftex.def Info: images/spherePoints.png used on input line 620.
+(pdftex.def)             Requested size: 225.4668pt x 131.74185pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<images/generativeModel.png, id=603, 77.8107pt x 71.66776pt>
+File: images/generativeModel.png Graphic file (type png)
+
+<use images/generativeModel.png>
+Package pdftex.def Info: images/generativeModel.png used on input line 627.
+(pdftex.def)             Requested size: 233.4315pt x 215.00272pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [19 <./images/triToQuad1.png> <./images/triToQuad2.png> <./images/triToQuad3.p
+ng> <./images/sphereCoords.png>]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Underfull \vbox (badness 5970) has occurred while \output is active []
+
+ [20 <./images/spherePoints.png> <./images/generativeModel.png>]
+<images/edgeLoopDiagram.png, id=623, 697.10437pt x 347.04657pt>
+File: images/edgeLoopDiagram.png Graphic file (type png)
+
+<use images/edgeLoopDiagram.png>
+Package pdftex.def Info: images/edgeLoopDiagram.png used on input line 673.
+(pdftex.def)             Requested size: 243.99017pt x 121.46811pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<images/rootLoop.jpg, id=624, 632.3625pt x 333.49594pt>
+File: images/rootLoop.jpg Graphic file (type jpg)
+
+<use images/rootLoop.jpg>
+Package pdftex.def Info: images/rootLoop.jpg used on input line 711.
+(pdftex.def)             Requested size: 316.18048pt x 166.74756pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[21] [22 <./images/edgeLoopDiagram.png>] [23 <./images/rootLoop.jpg>]
+<images/gpyKernels.png, id=651, 1164.9924pt x 875.9124pt>
+File: images/gpyKernels.png Graphic file (type png)
+
+<use images/gpyKernels.png>
+Package pdftex.def Info: images/gpyKernels.png used on input line 779.
+(pdftex.def)             Requested size: 465.98871pt x 350.35875pt.
+
+Overfull \hbox (10.7446pt too wide) in paragraph at lines 779--779
+ [][] 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[24] <images/latentPlot_t10.png, id=660, 100.375pt x 100.375pt>
+File: images/latentPlot_t10.png Graphic file (type png)
+
+<use images/latentPlot_t10.png>
+Package pdftex.def Info: images/latentPlot_t10.png used on input line 793.
+(pdftex.def)             Requested size: 100.37474pt x 100.37474pt.
+
+<images/latentPlot_exp.png, id=661, 100.375pt x 100.375pt>
+File: images/latentPlot_exp.png Graphic file (type png)
+
+<use images/latentPlot_exp.png>
+Package pdftex.def Info: images/latentPlot_exp.png used on input line 794.
+(pdftex.def)             Requested size: 100.37474pt x 100.37474pt.
+
+<images/latentPlot_linear.png, id=662, 100.375pt x 100.375pt>
+File: images/latentPlot_linear.png Graphic file (type png)
+
+<use images/latentPlot_linear.png>
+Package pdftex.def Info: images/latentPlot_linear.png used on input line 795.
+(pdftex.def)             Requested size: 100.37474pt x 100.37474pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Underfull \vbox (badness 7468) has occurred while \output is active []
+
+ [25 <./images/gpyKernels.png>] [26 <./images/latentPlot_t10.png (PNG copy)> <.
+/images/latentPlot_exp.png (PNG copy)> <./images/latentPlot_linear.png (PNG cop
+y)>]
+<images/guidingStrands.jpg, id=674, 700.86844pt x 378.66469pt>
+File: images/guidingStrands.jpg Graphic file (type jpg)
+
+<use images/guidingStrands.jpg>
+Package pdftex.def Info: images/guidingStrands.jpg used on input line 834.
+(pdftex.def)             Requested size: 210.26215pt x 113.60028pt.
+
+<images/guidingExtrusion.jpg, id=675, 700.86844pt x 376.40625pt>
+File: images/guidingExtrusion.jpg Graphic file (type jpg)
+
+<use images/guidingExtrusion.jpg>
+Package pdftex.def Info: images/guidingExtrusion.jpg used on input line 835.
+(pdftex.def)             Requested size: 210.26215pt x 112.92273pt.
+
+<images/outputMesh1.jpg, id=676, 362.10281pt x 375.65344pt>
+File: images/outputMesh1.jpg Graphic file (type jpg)
+
+<use images/outputMesh1.jpg>
+Package pdftex.def Info: images/outputMesh1.jpg used on input line 853.
+(pdftex.def)             Requested size: 90.52547pt x 93.91312pt.
+
+<images/outputMesh2.jpg, id=677, 362.10281pt x 372.64218pt>
+File: images/outputMesh2.jpg Graphic file (type jpg)
+
+<use images/outputMesh2.jpg>
+Package pdftex.def Info: images/outputMesh2.jpg used on input line 854.
+(pdftex.def)             Requested size: 90.52547pt x 93.16031pt.
+
+<images/outputMesh3.jpg, id=678, 362.10281pt x 375.65344pt>
+File: images/outputMesh3.jpg Graphic file (type jpg)
+
+<use images/outputMesh3.jpg>
+Package pdftex.def Info: images/outputMesh3.jpg used on input line 855.
+(pdftex.def)             Requested size: 90.52547pt x 93.91312pt.
+
+<images/outputMesh4.jpg, id=679, 360.59718pt x 375.65344pt>
+File: images/outputMesh4.jpg Graphic file (type jpg)
+
+<use images/outputMesh4.jpg>
+Package pdftex.def Info: images/outputMesh4.jpg used on input line 856.
+(pdftex.def)             Requested size: 90.14906pt x 93.91312pt.
+
+<images/outputMesh5.jpg, id=680, 363.60844pt x 377.91188pt>
+File: images/outputMesh5.jpg Graphic file (type jpg)
+
+<use images/outputMesh5.jpg>
+Package pdftex.def Info: images/outputMesh5.jpg used on input line 857.
+(pdftex.def)             Requested size: 90.90189pt x 94.47774pt.
+
+<images/outputMesh6.jpg, id=681, 362.10281pt x 374.90062pt>
+File: images/outputMesh6.jpg Graphic file (type jpg)
+
+<use images/outputMesh6.jpg>
+Package pdftex.def Info: images/outputMesh6.jpg used on input line 858.
+(pdftex.def)             Requested size: 90.52547pt x 93.72491pt.
+
+<images/outputMesh7.jpg, id=682, 362.85562pt x 374.90062pt>
+File: images/outputMesh7.jpg Graphic file (type jpg)
+
+<use images/outputMesh7.jpg>
+Package pdftex.def Info: images/outputMesh7.jpg used on input line 859.
+(pdftex.def)             Requested size: 90.71368pt x 93.72491pt.
+
+<images/outputMesh8.jpg, id=683, 363.60844pt x 375.65344pt>
+File: images/outputMesh8.jpg Graphic file (type jpg)
+
+<use images/outputMesh8.jpg>
+Package pdftex.def Info: images/outputMesh8.jpg used on input line 860.
+(pdftex.def)             Requested size: 90.90189pt x 93.91312pt.
+
+<images/outputMesh9.jpg, id=684, 360.59718pt x 375.65344pt>
+File: images/outputMesh9.jpg Graphic file (type jpg)
+
+<use images/outputMesh9.jpg>
+Package pdftex.def Info: images/outputMesh9.jpg used on input line 861.
+(pdftex.def)             Requested size: 90.14906pt x 93.91312pt.
+
+<images/outputMesh10.jpg, id=685, 359.84438pt x 372.64218pt>
+File: images/outputMesh10.jpg Graphic file (type jpg)
+
+<use images/outputMesh10.jpg>
+Package pdftex.def Info: images/outputMesh10.jpg used on input line 862.
+(pdftex.def)             Requested size: 89.96086pt x 93.16031pt.
+
+<images/outputMesh11.jpg, id=686, 361.35pt x 374.90062pt>
+File: images/outputMesh11.jpg Graphic file (type jpg)
+
+<use images/outputMesh11.jpg>
+Package pdftex.def Info: images/outputMesh11.jpg used on input line 863.
+(pdftex.def)             Requested size: 90.33728pt x 93.72491pt.
+
+<images/outputMesh12.jpg, id=687, 362.10281pt x 377.15906pt>
+File: images/outputMesh12.jpg Graphic file (type jpg)
+
+<use images/outputMesh12.jpg>
+Package pdftex.def Info: images/outputMesh12.jpg used on input line 864.
+(pdftex.def)             Requested size: 90.52547pt x 94.28954pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[27 <./images/guidingStrands.jpg> <./images/guidingExtrusion.jpg>] [28 <./image
+s/outputMesh1.jpg> <./images/outputMesh2.jpg> <./images/outputMesh3.jpg> <./ima
+ges/outputMesh4.jpg> <./images/outputMesh5.jpg> <./images/outputMesh6.jpg> <./i
+mages/outputMesh7.jpg> <./images/outputMesh8.jpg> <./images/outputMesh9.jpg> <.
+/images/outputMesh10.jpg> <./images/outputMesh11.jpg> <./images/outputMesh12.jp
+g>]
+Chapter 4.
+<images/surveyMesh1.png, id=697, 97.3236pt x 48.78226pt>
+File: images/surveyMesh1.png Graphic file (type png)
+
+<use images/surveyMesh1.png>
+Package pdftex.def Info: images/surveyMesh1.png used on input line 881.
+(pdftex.def)             Requested size: 107.05626pt x 53.66063pt.
+
+<images/surveyMesh2.png, id=698, 97.3236pt x 48.78226pt>
+File: images/surveyMesh2.png Graphic file (type png)
+
+<use images/surveyMesh2.png>
+Package pdftex.def Info: images/surveyMesh2.png used on input line 882.
+(pdftex.def)             Requested size: 107.05626pt x 53.66063pt.
+
+<images/surveyMesh3.png, id=699, 97.3236pt x 48.78226pt>
+File: images/surveyMesh3.png Graphic file (type png)
+
+<use images/surveyMesh3.png>
+Package pdftex.def Info: images/surveyMesh3.png used on input line 883.
+(pdftex.def)             Requested size: 107.05626pt x 53.66063pt.
+
+<images/surveyMesh4.png, id=700, 97.3236pt x 48.78226pt>
+File: images/surveyMesh4.png Graphic file (type png)
+
+<use images/surveyMesh4.png>
+Package pdftex.def Info: images/surveyMesh4.png used on input line 884.
+(pdftex.def)             Requested size: 107.05626pt x 53.66063pt.
+
+<images/surveyMesh5.png, id=701, 97.3236pt x 48.78226pt>
+File: images/surveyMesh5.png Graphic file (type png)
+
+<use images/surveyMesh5.png>
+Package pdftex.def Info: images/surveyMesh5.png used on input line 886.
+(pdftex.def)             Requested size: 107.05626pt x 53.66063pt.
+
+<images/surveyMesh6.png, id=702, 97.3236pt x 48.78226pt>
+File: images/surveyMesh6.png Graphic file (type png)
+
+<use images/surveyMesh6.png>
+Package pdftex.def Info: images/surveyMesh6.png used on input line 887.
+(pdftex.def)             Requested size: 107.05626pt x 53.66063pt.
+
+<images/surveyMesh7.png, id=703, 97.3236pt x 48.78226pt>
+File: images/surveyMesh7.png Graphic file (type png)
+
+<use images/surveyMesh7.png>
+Package pdftex.def Info: images/surveyMesh7.png used on input line 888.
+(pdftex.def)             Requested size: 107.05626pt x 53.66063pt.
+
+<images/surveyMesh8.png, id=704, 97.3236pt x 48.78226pt>
+File: images/surveyMesh8.png Graphic file (type png)
+
+<use images/surveyMesh8.png>
+Package pdftex.def Info: images/surveyMesh8.png used on input line 889.
+(pdftex.def)             Requested size: 107.05626pt x 53.66063pt.
+ [29
+
+ <./images/surveyMesh1.png> <./images/surveyMesh2.png> <./images/surveyMesh3.pn
+g> <./images/surveyMesh4.png> <./images/surveyMesh5.png> <./images/surveyMesh6.
+png> <./images/surveyMesh7.png> <./images/surveyMesh8.png>] <images/meshRating.
+png, id=717, 602.25pt x 372.39125pt>
+File: images/meshRating.png Graphic file (type png)
+
+<use images/meshRating.png>
+Package pdftex.def Info: images/meshRating.png used on input line 897.
+(pdftex.def)             Requested size: 361.35278pt x 223.43646pt.
+
+<images/surveyDifficulty.png, id=718, 526.21594pt x 225.09094pt>
+File: images/surveyDifficulty.png Graphic file (type png)
+
+<use images/surveyDifficulty.png>
+Package pdftex.def Info: images/surveyDifficulty.png used on input line 927.
+(pdftex.def)             Requested size: 368.34865pt x 157.56258pt.
+ [30 <./images/meshRating.png>]
+<images/surveyAutomate.png, id=724, 526.21594pt x 225.09094pt>
+File: images/surveyAutomate.png Graphic file (type png)
+
+<use images/surveyAutomate.png>
+Package pdftex.def Info: images/surveyAutomate.png used on input line 938.
+(pdftex.def)             Requested size: 368.34865pt x 157.56258pt.
+
+<images/surveyPrototype.png, id=725, 526.21594pt x 225.09094pt>
+File: images/surveyPrototype.png Graphic file (type png)
+
+<use images/surveyPrototype.png>
+Package pdftex.def Info: images/surveyPrototype.png used on input line 946.
+(pdftex.def)             Requested size: 368.34865pt x 157.56258pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[31 <./images/surveyDifficulty.png> <./images/surveyAutomate.png>]
+File: images/surveyMesh2.png Graphic file (type png)
+
+<use images/surveyMesh2.png>
+Package pdftex.def Info: images/surveyMesh2.png used on input line 962.
+(pdftex.def)             Requested size: 145.985pt x 73.17317pt.
+File: images/surveyMesh8.png Graphic file (type png)
+ <use images/surveyMesh8.png>
+Package pdftex.def Info: images/surveyMesh8.png used on input line 966.
+(pdftex.def)             Requested size: 145.985pt x 73.17317pt.
+File: images/surveyMesh3.png Graphic file (type png)
+
+<use images/surveyMesh3.png>
+Package pdftex.def Info: images/surveyMesh3.png used on input line 970.
+(pdftex.def)             Requested size: 145.985pt x 73.17317pt.
+
+Overfull \hbox (25.07614pt too wide) in paragraph at lines 980--1000
+ [][] 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<images/experiment/Andrei_ONE_REPLOT.png, id=733, 200.75pt x 200.75pt>
+File: images/experiment/Andrei_ONE_REPLOT.png Graphic file (type png)
+
+<use images/experiment/Andrei_ONE_REPLOT.png>
+Package pdftex.def Info: images/experiment/Andrei_ONE_REPLOT.png used on input 
+line 1011.
+(pdftex.def)             Requested size: 100.37474pt x 100.37474pt.
+
+<images/experiment/Andrei_TWO_REPLOT.png, id=734, 200.75pt x 200.75pt>
+File: images/experiment/Andrei_TWO_REPLOT.png Graphic file (type png)
+
+<use images/experiment/Andrei_TWO_REPLOT.png>
+Package pdftex.def Info: images/experiment/Andrei_TWO_REPLOT.png used on input 
+line 1012.
+(pdftex.def)             Requested size: 100.37474pt x 100.37474pt.
+
+<images/experiment/Andrei_THREE_REPLOT.png, id=735, 200.75pt x 200.75pt>
+File: images/experiment/Andrei_THREE_REPLOT.png Graphic file (type png)
+
+<use images/experiment/Andrei_THREE_REPLOT.png>
+Package pdftex.def Info: images/experiment/Andrei_THREE_REPLOT.png used on inpu
+t line 1013.
+(pdftex.def)             Requested size: 100.37474pt x 100.37474pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[32 <./images/surveyPrototype.png>]
+<images/experiment/Maria_Marinova_ONE_REPLOT.png, id=745, 200.75pt x 200.75pt>
+File: images/experiment/Maria_Marinova_ONE_REPLOT.png Graphic file (type png)
+
+<use images/experiment/Maria_Marinova_ONE_REPLOT.png>
+Package pdftex.def Info: images/experiment/Maria_Marinova_ONE_REPLOT.png used o
+n input line 1049.
+(pdftex.def)             Requested size: 100.37474pt x 100.37474pt.
+
+<images/experiment/Maria_Marinova_TWO_REPLOT.png, id=746, 200.75pt x 200.75pt>
+File: images/experiment/Maria_Marinova_TWO_REPLOT.png Graphic file (type png)
+
+<use images/experiment/Maria_Marinova_TWO_REPLOT.png>
+Package pdftex.def Info: images/experiment/Maria_Marinova_TWO_REPLOT.png used o
+n input line 1050.
+(pdftex.def)             Requested size: 100.37474pt x 100.37474pt.
+
+<images/experiment/Maria_Marinova_THREE_REPLOT.png, id=747, 200.75pt x 200.75pt
+>
+File: images/experiment/Maria_Marinova_THREE_REPLOT.png Graphic file (type png)
+
+ <use images/experiment/Maria_Marinova_THREE_REPLOT.png>
+Package pdftex.def Info: images/experiment/Maria_Marinova_THREE_REPLOT.png used
+ on input line 1051.
+(pdftex.def)             Requested size: 100.37474pt x 100.37474pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[33 <./images/experiment/Andrei_ONE_REPLOT.png (PNG copy)> <./images/experiment
+/Andrei_TWO_REPLOT.png (PNG copy)> <./images/experiment/Andrei_THREE_REPLOT.png
+ (PNG copy)>]
+<images/experiment/Nick_ONE_REPLOT.png, id=755, 200.75pt x 200.75pt>
+File: images/experiment/Nick_ONE_REPLOT.png Graphic file (type png)
+
+<use images/experiment/Nick_ONE_REPLOT.png>
+Package pdftex.def Info: images/experiment/Nick_ONE_REPLOT.png used on input li
+ne 1085.
+(pdftex.def)             Requested size: 100.37474pt x 100.37474pt.
+
+<images/experiment/Nick_TWO_REPLOT.png, id=756, 200.75pt x 200.75pt>
+File: images/experiment/Nick_TWO_REPLOT.png Graphic file (type png)
+
+<use images/experiment/Nick_TWO_REPLOT.png>
+Package pdftex.def Info: images/experiment/Nick_TWO_REPLOT.png used on input li
+ne 1086.
+(pdftex.def)             Requested size: 100.37474pt x 100.37474pt.
+
+<images/experiment/Nick_THREE_REPLOT.png, id=757, 200.75pt x 200.75pt>
+File: images/experiment/Nick_THREE_REPLOT.png Graphic file (type png)
+
+<use images/experiment/Nick_THREE_REPLOT.png>
+Package pdftex.def Info: images/experiment/Nick_THREE_REPLOT.png used on input 
+line 1087.
+(pdftex.def)             Requested size: 100.37474pt x 100.37474pt.
+ [34 <./images/experiment/Maria_Marinova_ONE_REPLOT.png (PNG copy)> <./images/e
+xperiment/Maria_Marinova_TWO_REPLOT.png (PNG copy)> <./images/experiment/Maria_
+Marinova_THREE_REPLOT.png (PNG copy)> <./images/experiment/Nick_ONE_REPLOT.png 
+(PNG copy)> <./images/experiment/Nick_TWO_REPLOT.png (PNG copy)> <./images/expe
+riment/Nick_THREE_REPLOT.png (PNG copy)>] <images/baldHair.jpg, id=763, 361.35p
+t x 377.15906pt>
+File: images/baldHair.jpg Graphic file (type jpg)
+
+<use images/baldHair.jpg>
+Package pdftex.def Info: images/baldHair.jpg used on input line 1113.
+(pdftex.def)             Requested size: 144.53743pt x 150.86095pt.
+
+<images/intersectHair.jpg, id=764, 361.35pt x 374.14781pt>
+File: images/intersectHair.jpg Graphic file (type jpg)
+
+<use images/intersectHair.jpg>
+Package pdftex.def Info: images/intersectHair.jpg used on input line 1114.
+(pdftex.def)             Requested size: 144.53743pt x 149.65646pt.
+ [35 <./images/baldHair.jpg> <./images/intersectHair.jpg>]
+Overfull \hbox (0.7428pt too wide) in paragraph at lines 1139--1159
+ [][] 
+ []
+
+[36]
+
+LaTeX Warning: Citation `helicoidhair' on page 37 undefined on input line 1192.
+
+
+[37]
+
+LaTeX Warning: Citation `deepgp' on page 38 undefined on input line 1198.
+
+[38] [39] [40
+
+]
+Chapter 5.
+[41] [42
+
+] (dissertation.bbl
+Missing character: There is no â in font cmr10!
+Missing character: There is no € in font cmr10!
+Missing character: There is no “ in font cmr10!
+Missing character: There is no â in font cmr10!
+Missing character: There is no € in font cmr10!
+Missing character: There is no “ in font cmr10!
+ [43
+
+]) [44]
+Appendix A.
+[45
+
+]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1290.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1290.
+ (dissertation.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1290.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1290.
+
+Package rerunfilecheck Info: File `dissertation.out' has not changed.
+(rerunfilecheck)             Checksum: 6AECAD1E74C4A869B6B7B186665A75D9;2330.
+
+
+LaTeX Warning: There were undefined references.
+
+ )
+(\end occurred inside a group at level 1)
+
+### simple group (level 1) entered at line 1061 ({)
+### bottom level 
+Here is how much of TeX's memory you used:
+ 21660 strings out of 493333
+ 382661 string characters out of 3143102
+ 597953 words of memory out of 3000000
+ 24494 multiletter control sequences out of 15000+200000
+ 12043 words of font info for 44 fonts, out of 3000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 61i,18n,56p,1406b,6738s stack positions out of 5000i,500n,10000p,200000b,50000s
+<E:/Programs/MikTex/fonts/type1/public/amsfonts/cm/cmbsy10.pfb>
+<E:/Programs/MikTex/fonts/type1/public/amsfonts/cmextra/cmbsy7.pfb><E:/Programs
+/MikTex/fonts/type1/public/amsfonts/cm/cmbx10.pfb><E:/Programs/MikTex/fonts/typ
+e1/public/amsfonts/cm/cmbx12.pfb><E:/Programs/MikTex/fonts/type1/public/amsfont
+s/cm/cmbx7.pfb><E:/Programs/MikTex/fonts/type1/public/amsfonts/cm/cmbxti10.pfb>
+<E:/Programs/MikTex/fonts/type1/public/amsfonts/cm/cmex10.pfb><E:/Programs/MikT
+ex/fonts/type1/public/amsfonts/cm/cmmi10.pfb><E:/Programs/MikTex/fonts/type1/pu
+blic/amsfonts/cm/cmmi5.pfb><E:/Programs/MikTex/fonts/type1/public/amsfonts/cm/c
+mmi7.pfb><E:/Programs/MikTex/fonts/type1/public/amsfonts/cm/cmmib10.pfb><E:/Pro
+grams/MikTex/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb><E:/Programs/MikTex
+/fonts/type1/public/amsfonts/cm/cmr10.pfb><E:/Programs/MikTex/fonts/type1/publi
+c/amsfonts/cm/cmr12.pfb><E:/Programs/MikTex/fonts/type1/public/amsfonts/cm/cmr1
+7.pfb><E:/Programs/MikTex/fonts/type1/public/amsfonts/cm/cmr5.pfb><E:/Programs/
+MikTex/fonts/type1/public/amsfonts/cm/cmr7.pfb><E:/Programs/MikTex/fonts/type1/
+public/amsfonts/cm/cmsl10.pfb><E:/Programs/MikTex/fonts/type1/public/amsfonts/c
+m/cmsy10.pfb><E:/Programs/MikTex/fonts/type1/public/amsfonts/cm/cmsy7.pfb><E:/P
+rograms/MikTex/fonts/type1/public/amsfonts/cm/cmti10.pfb><E:/Programs/MikTex/fo
+nts/type1/public/amsfonts/cm/cmtt10.pfb><E:/Programs/MikTex/fonts/type1/public/
+amsfonts/symbols/msbm10.pfb>
+Output written on dissertation.pdf (67 pages, 4288360 bytes).
+PDF statistics:
+ 953 PDF objects out of 1000 (max. 8388607)
+ 218 named destinations out of 1000 (max. 500000)
+ 582 words of extra memory for PDF output out of 10000 (max. 10000000)
+
