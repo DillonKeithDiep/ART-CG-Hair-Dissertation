@@ -28,13 +28,13 @@ G.~B. Arfken and H.~J. Weber.
 
 \bibitem{wingededge}
 B.~G. Baumgart.
-\newblock Winged edge polyhedron representation.
-\newblock 1972.
+\newblock {\em Winged Edge Polyhedron Representation}.
+\newblock Advanced Research Projects Agency. AD-755 141, 1972.
 
 \bibitem{latentdoodle}
 W.~Baxter and K.~Anjyo.
-\newblock Latent doodle space.
-\newblock 2006.
+\newblock {\em Latent Doodle Space}.
+\newblock Eurographics 2006. Vol. 25, 3, 2006.
 
 \bibitem{curseofdim}
 R.~E. Bellman.
@@ -48,24 +48,24 @@ C.~M. Bishop.
 
 \bibitem{fontmanifold}
 N.~D. Campbell and J.~Kautz.
-\newblock Learning a manifold of fonts.
-\newblock 2014.
+\newblock {\em Learning a manifold of fonts}.
+\newblock ACM Transactions on Graphics (TOG) 33, 4, 91, 2014.
 
 \bibitem{procedural1}
 D.~M.~D. Carli, F.~Bevilacqua, C.~T. Pozzer, and M.~C.~d. Ornellas.
-\newblock A survey of procedural content generation techniques suitable to game
-  development.
-\newblock 2011.
+\newblock {\em A survey of procedural content generation techniques suitable to
+  game development}.
+\newblock X Simposio Brasileiro de Games e Entretenimento Digital, 2011.
 
 \bibitem{autohair}
 M.~Chai, T.~Shaq, H.~Wu, Y.~Weng, and K~Zhou.
-\newblock Autohair: Fully automatic hair modeling from a single image.
-\newblock 2016.
+\newblock {\em AutoHair: Fully automatic hair modeling from a single image}.
+\newblock ACM Trans. Graph. 35, 4 (July), 116:1–116:12, 2016.
 
 \bibitem{deepgp}
 A.~C. Damianou and N.~D. Lawrence.
-\newblock Deep gaussian processes.
-\newblock 2013.
+\newblock {\em Deep Gaussian Processes}.
+\newblock AISTATS, 2013.
 
 \bibitem{hairfollicles}
 R.~Milo. et~al.
@@ -75,14 +75,14 @@ R.~Milo. et~al.
 
 \bibitem{styleik}
 K.~Grochow, S.~L. Martin, A.~Hertzmann, and Z.~Popovich.
-\newblock Style-based inverse kinematics.
-\newblock 2004.
+\newblock {\em Style-Based Inverse Kinematics}.
+\newblock SIGGRAPH '04 ACM SIGGRAPH 2004 Papers. pp.522-531, 2004.
 
 \bibitem{pca1933}
 H.~Hotelling.
-\newblock Analysis of a complex of statistical variables into principal
-  components.
-\newblock 1933.
+\newblock {\em Analysis of a Complex of Statistical Variables into Principal
+  Components}.
+\newblock Journal of Educational Psychology, Vol 24(6), 1933.
 
 \bibitem{pca2002}
 I.~T. Jolliffe.
@@ -91,19 +91,19 @@ I.~T. Jolliffe.
 
 \bibitem{gplvm}
 N.~D. Lawrence.
-\newblock Probabilistic non-linear principal component analysis with gaussian
-  process latent variable models.
-\newblock 2004.
+\newblock {\em Probabilistic non-linear principal component analysis with
+  Gaussian process latent variable models}.
+\newblock The Journal of Machine Learning Research 6, 1783–1816, 2004.
 
 \bibitem{reviewgplvm}
 P.~Li and S.~Chen.
-\newblock A review on gaussian process latent variable models.
-\newblock 2016.
+\newblock {\em A review on Gaussian Process Latent Variable Models}.
+\newblock CAAI Transactions on Intelligence Technology 1 366-376, 2016.
 
 \bibitem{drawingassistance}
 A.~Limpaecher, N.~Feltman, A.~Treuille, and M.~Cohen.
-\newblock Real-time drawing assistance through crowdsourcing.
-\newblock 2013.
+\newblock {\em Real-time Drawing Assistance through Crowdsourcing}.
+\newblock ACM Trans. Graph. 32, 4 (July), 2013.
 
 \bibitem{blenderstudio}
 T.~Mullen and C.~Andaur.
@@ -112,13 +112,14 @@ T.~Mullen and C.~Andaur.
 
 \bibitem{pca1901}
 K.~Pearson.
-\newblock On lines and planes of closest fit to systems of points in space.
-\newblock 1901.
+\newblock {\em On Lines and Planes of Closest Fit to Systems of Points in
+  Space}.
+\newblock Philosophical Magazine, 2, 559-572, 1901.
 
 \bibitem{helicoidhair}
 E.~Piuze, P.~G. Kry, and K.~Siddiqi.
-\newblock Generalized helicoids for modeling hair geometry.
-\newblock 2011.
+\newblock {\em Generalized Helicoids for Modeling Hair Geometry}.
+\newblock EUROGRAPHICS, 2011.
 
 \bibitem{lsystem}
 P.~Prusinkiewicz and A.~Lindenmayer.
@@ -127,9 +128,9 @@ P.~Prusinkiewicz and A.~Lindenmayer.
 
 \bibitem{edgeloops}
 B.~Raitt and G.~Minter.
-\newblock Digital sculpture techniques: How to apply the principles of
-  traditional sculpture to make stunning 3d characters.
-\newblock 2000.
+\newblock {\em Digital Sculpture Techniques: How to apply the principles of
+  traditional sculpture to make stunning 3D characters}.
+\newblock Nichimen Graphics, 2000.
 
 \bibitem{gp}
 C.~E. Rasmussen and C.~Williams.
@@ -144,13 +145,14 @@ M.~E. Tipping and C.~M. Bishop.
 
 \bibitem{bgplvm}
 M.~K. Titsias and N.~D. Lawrence.
-\newblock Bayesian gaussian process latent variable model.
-\newblock 2010.
+\newblock {\em Bayesian Gaussian Process Latent Variable Model}.
+\newblock AISTATS. Vol. 9, 2010.
 
 \bibitem{examplebasedhair}
 L.~Wang, Y.~Yu, K.~Zhou, and B.~Guo.
-\newblock Example-based hair geometry synthesis.
-\newblock 2009.
+\newblock {\em Example-Based Hair Geometry Synthesis}.
+\newblock ACM Transactions on Graphics (TOG) - Proceedings of ACM SIGGRAPH
+  2009. Vol. 28, Issue 3, 2009.
 
 \bibitem{graphtheory}
 R.~J. Wilson.
