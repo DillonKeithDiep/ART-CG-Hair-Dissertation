@@ -31,7 +31,7 @@
 \contentsline {subsection}{\numberline {3.3.4}Parametrising a Strand Polyline}{23}{subsection.3.3.4}
 \contentsline {subsection}{\numberline {3.3.5}Structure Estimation}{24}{subsection.3.3.5}
 \contentsline {section}{\numberline {3.4}Learning a Manifold with Bayesian GP-LVM}{24}{section.3.4}
-\contentsline {section}{\numberline {3.5}Generation of Output}{26}{section.3.5}
+\contentsline {section}{\numberline {3.5}Geometry Generation from Regression Output}{26}{section.3.5}
 \contentsline {section}{\numberline {3.6}Summary of Project Execution}{27}{section.3.6}
 \contentsline {chapter}{\numberline {4}Critical Evaluation}{29}{chapter.4}
 \contentsline {section}{\numberline {4.1}Latent Hair Modelling Survey}{29}{section.4.1}
@@ -44,7 +44,5 @@
 \contentsline {section}{\numberline {4.5}Potential Improvements}{37}{section.4.5}
 \contentsline {section}{\numberline {4.6}Applications}{38}{section.4.6}
 \contentsline {chapter}{\numberline {5}Conclusion}{41}{chapter.5}
-\contentsline {section}{\numberline {5.1}Summary}{41}{section.5.1}
-\contentsline {section}{\numberline {5.2}Project Status}{41}{section.5.2}
-\contentsline {section}{\numberline {5.3}Future Work}{41}{section.5.3}
+\contentsline {section}{\numberline {5.1}Future Work}{42}{section.5.1}
 \contentsline {chapter}{\numberline {A}An Example Appendix}{45}{appendix.A}

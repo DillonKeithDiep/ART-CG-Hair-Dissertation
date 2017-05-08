@@ -26,9 +26,9 @@ supervisor={Dr. Carl Henrik Ek},
 % the degree programme
 degree={MEng},
 % the dissertation    title (which cannot be blank)
-title={ART-CG:},
+title={ART-CG Hair:},
 % the dissertation subtitle (which can    be blank)
-subtitle={Assisted Real-time Content Generation of 3D Hair by Learning Manifolds},
+subtitle={Assisted Real-time Content Generation of Stylised Virtual Hair},
 % the dissertation     type
 type={Research},
 % the year of submission
@@ -77,27 +77,27 @@ year={2017} ]{dissertation}
 % -----------------------------------------------------------------------------
 
 \chapter*{Executive Summary}
-Production of 3D virtual worlds is a time-consuming and costly process that also demand expert knowledge. 3D assets encompass a vast range of applications, ranging from simulations and research to contributing towards the functioning of many industries. Our proposition of probabilistic non-linear dimension reduction consolidates observed variables to provide a parsimonious collection of latent variables, drastically diminishing the complexity of the production pipeline. Simplifying a procedure within the pipeline yield increased throughput and offer an opportunity for rapid prototyping. A non-linear approach minimises loss of information; thus high dimensional data can be reduced effectively to dimensionality that is sufficiently low. Non-experts may find directing a few descriptive components within a low dimension representation easier than controlling an overwhelming number of attributes present in the original data.
+Production of 3D virtual worlds is a time-consuming and costly process that also demand expert knowledge. 3D assets encompass a vast range of applications, ranging from simulations and research to contributing towards the functioning of many industries. Our proposition of probabilistic non-linear dimension reduction consolidates observed variables to provide a parsimonious collection of latent variables, drastically diminishing the complexity of the production pipeline through regression. Simplifying a procedure within the pipeline yield increased throughput and offer an opportunity for rapid prototyping. A non-linear approach minimises loss of information; thus high dimensional data can be reduced effectively to dimensionality that is sufficiently low. Non-experts may find directing a few descriptive components within a low dimension representation easier than controlling an overwhelming number of attributes present in the original data.
 
 One particular task is the creation of 3D hair geometry for humanoid characters. Creating 3D hair is arduous as hair structure is a complex system containing much interdependence between components. The properties of 3D hair geometry pose significant challenges for machine learning solutions. Machine learning typically uses large data sets for training on problems that often have a concise answer for a given prediction. The application of machine learning to enhance production for creative work is an exciting field that faces novel challenges: artistic products tend to have small sets of data available, and evaluation of quality is subjective. Given the same input, acceptable solutions can vary significantly. The outlined peculiarities of applying machine learning to 3D mesh data establish a unique field of problems to investigate.
 
-Existing tools for 3D modelling have remained mostly static in the paradigm of approach over the past several decades. Automation through methods such as procedural generation can produce content faster. However, the lack of control over the final result causes standard automation to be typically less desirable than traditional methods of 3D modelling. The research hypothesis of this study is that of applying non-linear probabilistic dimensionality reduction to improve the efficacy of creative content production for exceptionally high dimensional data such as complex 3D hair geometry on virtual humanoids.
+Existing tools for 3D modelling have remained mostly static in the paradigm of approach over the past several decades. Automation through methods such as procedural generation can produce content faster. However, traditional synthesis and automated solutions are defined to produce a specific class of output through established patterns and cannot adapt to new models without reimplementation. The research hypothesis of this study is that of applying non-linear probabilistic dimensionality reduction improves the efficacy of creative content production for exceptionally high dimensional data such as complex 3D hair geometry on virtual humanoids.
 
 \begin{quote}
 	Deliverables:
 	\begin{itemize}
-		\item Formulating a generative model for 3D humanoid hair structure.
-		\item Resolving the alignment problem by repairing raw input mesh data and feature extraction by approximating inputs of our generative model from sampling training mesh.
-		\item Learning a low dimension latent-space of high dimensional hair structure data.
-		\item Investigated the performance of various kernels and its impact on the latent variable model.
-		\item Implemented an add-on package for a 3D production program, Blender.
+		\item Formulated a generative model for 3D humanoid hair structure.
+		\item Standardised mesh data for training through repairing raw input mesh data then feature extraction to estimate inputs of our generative model.
+		\item Learned a low-dimensional latent-space of high-dimensional hair structure data with a probabilistic latent variable model.
+		\item Investigated the performance of various kernels and their impact on the latent variable model.
+		\item Implemented a demonstrative add-on package for a 3D production program, Blender.
 		\begin{itemize}
 			\item Generating guiding hair strands from the output of our regression model.
 			\item Developed with a small training set that is practical for content creators.
 			\item Achieving real-time performance, matching state of the art non-learning tools.
 			\item Including functionality to records user activity for analysis.
 		\end{itemize}
-		\item Evaluation of data collected from survey and tests.
+		\item Evaluation of data collected from survey and experiments.
 	\end{itemize}
 \end{quote}
 
@@ -110,11 +110,11 @@ Existing tools for 3D modelling have remained mostly static in the paradigm of a
 	\begin{itemize}
 		\item Python with standard libraries for implementation.
 		\item GPy library to implement the regression model.
-		\item NumPy, SciPy, and Networkx for operations and processing meshes.
+		\item NumPy, SciPy, and Networkx for mathematical operations and processing meshes as graphs.
 		\item PIL, Matplotlib, and Plotly for plotting images and graphs.
 		\item Pickle for serialising objects as files.
-		\item Blender API for mesh processing and the Blender 3D program for demonstration of our regression model.
-		\item Google Forms to create feedback survey.
+		\item Blender API for mesh processing and interfacing with the Blender 3D program for demonstration of our implementation.
+		\item Google Applications to create survey and collect feedback data.
 	\end{itemize}
 \end{quote}
 
@@ -141,7 +141,11 @@ Existing tools for 3D modelling have remained mostly static in the paradigm of a
 % -----------------------------------------------------------------------------
 
 \chapter*{Acknowledgements}
-I would like to thank coffee
+
+%I would like to thank myself for completing this dissertation. 
+
+\noindent
+%However, it would not have been possible if not for the advice and guidance of my supervisor, Dr. Carl Henrik Ek, as well as the support of my friends and family. So please, allow me to thank you all with utmost sincerity.
 
 % =============================================================================
 
@@ -168,7 +172,7 @@ The objective of this project is to demonstrate the potential of probabilistic n
 In this chapter, we will introduce complications of producing 3D hair geometry with traditional methods and past research on machine learning applied to creative fields. We will also outline the motivation and significance for research, including challenges and central objectives of this study.
 
 \section{Production of 3D Content}
-There are multiple representations of 3D objects in computer graphics. One way to obtain 3D geometry data is to sample surfaces of the physical world with a 3D scanner. Common representations of sampled geometric data include point clouds, range maps, and voxels. Such representations are effective for sampling as they reconstruct a surface from allocating many simple components.
+There are numerous representations of 3D objects in computer graphics. One way to obtain 3D geometry data is to sample surfaces of the physical world with a 3D scanner. Common representations of sampled geometric data include point clouds, range maps, and voxels. Such representations are effective for sampling as they reconstruct a surface from allocating many simple components.
 
 \begin{figure}[!h]
 	\centering
@@ -180,17 +184,17 @@ There are multiple representations of 3D objects in computer graphics. One way t
 
 Representations have advantages and disadvantages depending on the use case. It is possible to convert between representations; however, converting between representations may incur data loss. Precise representations are often mathematical models such as \textit{NURBS} (Non-Uniform Rational Basis Spline) - frequently applied in the \textit{CAD} (Computer-Aided Design) industry. Mathematical models are precise as they do not suffer from floating-point inaccuracy that is present in many representations. The most widely applied representation for \textit{CGI} (Computer-Generated Imagery) is \textit{polygonal meshes}. In a production environment, it is preferred to define geometry specifically to requirements of the design as opposed to capturing examples. Polygon meshes are simple to define, yet with established techniques such as UV texturing and normal mapping, are sufficiently expressive for visual purposes. A significant amount of study has been conducted in the field of polygon meshes to improve its versatility. The study of polygonal meshes is deeply rooted in computer graphics.
 
-The elements of a polygonal mesh are \textit{vertices}, \textit{edges}, and \textit{faces}. The \textit{topology} of a mesh concerns with the arrangement of its components, well-organised topology is required to maintain geometric qualities when performing algorithmic operations on a mesh. In practice, professionals create polygon meshes with majority quad-face topology (faces formed from four edges) during production. The rendering pipeline often automatically converts polygon meshes to triangle faces (formed from three edges) as an optimisation process. \textit{Quadrilateral mesh} form ring loops that we call \textit{edge loops} which can be used to define the structure of geometry, thus conform better with editing tools and algorithms than \textit{triangle meshes}.
+The elements of a polygonal mesh are \textit{vertices}, \textit{edges}, and \textit{faces}. The \textit{topology} of a mesh concerns with the arrangement of its components, well-organised topology is required to maintain geometric qualities when performing algorithmic operations on a mesh. In practice, professionals create polygon meshes with majority quad-face topology (faces formed from four edges) during production. The rendering pipeline often automatically converts polygon meshes to triangle faces (formed from three edges) as an optimisation process. \textit{Quadrilateral mesh} form what we call \textit{edge loops} which can be used to define the structure of geometry, thus conform better with editing tools and algorithms than \textit{triangle meshes}.
 
-State of the art 3D production software such as AutoDesk Maya, 3DS Max, and Blender are advanced programs with a sophisticated list of features. That said, such programs have extremely convoluted user interfaces, even the most experienced professionals do not recognise each and every tool available. The high learning curve with an overwhelming user experience is not beginner-friendly. In fact, the most functionality is only accessible through an API (Application Program Interface) via a scripting language.  Experienced users welcome this complexity as it allows creators to customise their ideal workflow, but it also creates a high barrier to entry for non-experts who wish to possess the capability of such 3D programs.
+State of the art 3D production software such as AutoDesk Maya, 3DS Max, and Blender are advanced programs with a sophisticated list of features. That said, such programs have extremely convoluted user interfaces, even the most experienced professionals do not recognise each and every tool available. The high learning curve with an overwhelming user experience is not beginner-friendly. In fact, most functionality is only accessible through an API (Application Program Interface) via a scripting language.  Experienced users welcome this complexity as it allows creators to customise their ideal workflow, but it also creates a high barrier to entry for non-experts who wish to possess the capability of such 3D programs.
 
 \subsection{3D Hair Geometry}
-In recent years, leading solutions for real-time simulation of realistic hair and fur, such as \textit{NVIDIA HairWorks} and \textit{AMD TressFX} has emerged. These solutions, however, have limited application in comparison to their traditional counterpart of polygonal hair. It is often the case that texture-mapped polygonal hair is used as a fallback when advanced simulation fails. Realism is not necessarily always desirable, and polygon hair can flexibly represent different art styles. In some cases, a blend of multiple representations is used to balance between cost and quality. 3D hair in cinematography with a large budget can afford to render hair with much higher fidelity for major characters, but would still consider using efficient variants for scenarios such as crowd simulation. Ultimately, we can observe that the representation of virtual hair follows a structure of splines with control points that define the overall organisation of strands or segments. This information will allow transferral between representations to an extent.
-
 On average, a human is born with between 90,000 to 150,000 scalp hair follicles \cite{hairfollicles}. It is computationally very expensive to render and animate physically correct hair, but creative liberties are taken to approximate or stylise 3D hair such that it is both acceptable aesthetically and feasible regarding performance. This study considers modelling of hair geometry, the motion of hair is assumed to be its default resting pose.
 
-There are various ways to construct a polygonal hair mesh. We are concerned with hair meshes formed from multiple planar sub-meshes of hair locks or segments. This type of hair mesh can express a variety of styles but produce densely arranged geometry. 
-Producing hair mesh data is challenging as content creators manipulate data that is exceptionally high dimensional, this reflects on \textbf{the curse of dimensionality}, a term coined by Bellman \cite{curseofdyn} which refers to the phenomena where exhibited complexity of high-dimensional spaces grows exponentially greater than those of low-dimensionality. There are two perspectives where the curse of dimensionality applies in our project. First, from the viewpoint of a 3D content creator, appending data points to geometry on a 3D program becomes increasingly difficult. Tightly positioned components are laborious for creators to find or select, with each action having less impact on the overall surface. The other perspective is that of algorithmic complexity. Machine learning methods scale and generalise better when using a few key features, use of many features is computationally expensive and risks overfitting.
+In recent years, leading solutions for real-time simulation of realistic hair and fur, such as \textit{NVIDIA HairWorks} and \textit{AMD TressFX} has emerged. These solutions, however, currently have limited adoption in comparison to their traditional counterpart of polygonal hair on real-time applications. It is often the case that texture-mapped polygonal hair is used as a fallback when advanced simulation fails. Realism is not necessarily always desirable, and polygon hair can flexibly represent different art styles. In some cases, a blend of multiple representations is used to balance between cost and quality. 3D hair in cinematography with a large budget can afford to render hair with representations that achieve much higher fidelity for major characters, but would still consider using efficient variants for scenarios such as crowd simulation. Ultimately, we can observe that the representation of virtual hair follows a structure of splines with control points that define the overall organisation of strands and wisp segment. This information will allow transferral between representations to an extent.
+
+There are various ways to construct a polygonal hair mesh. We are concerned with hair meshes formed from multiple planar sub-meshes of hair segments. This type of hair mesh can express a variety of styles but produce densely arranged geometry. 
+Producing hair mesh data is challenging as content creators manipulate data that is exceptionally high dimensional, this reflects on \textbf{the curse of dimensionality}, a term coined by Bellman \cite{curseofdim} which refers to the phenomena where exhibited complexity of high-dimensional spaces grows exponentially greater than those of low-dimensionality. There are two perspectives where the curse of dimensionality applies in our project. First, from the viewpoint of a 3D content creator, appending data points to geometry on a 3D program becomes increasingly difficult. Tightly positioned components are laborious for creators to find or select, with each action having less impact on the overall surface. The other perspective is that of algorithmic complexity. Machine learning methods scale and generalise better when using a few key features, use of many features is computationally expensive and risks overfitting.
 
 Procedural generation techniques produce output that adheres to rules established by the generative model defined. Generation of terrains and city modelling sometimes employ procedural techniques to take advantage of its systematic nature to mass produce variations in agreement with specified patterns \cite{procedural1}. Fractals and methods such as the Lindenmayer system have been used to create patterns that resemble those observed in nature \cite{lsystem}. Automated techniques such as the ones discussed, however, are seldom used for modelling distinct objects with a specific design. It is an involved process to control the output of procedurally generated content without heavily restricting its capabilities. Automated methods that do not learn cannot adapt to changing demands without reimplementation.
 
@@ -240,12 +244,12 @@ In a production environment, the time required for a technique to return observa
 \section{Central Objectives}
 %The aim of this study is ...
 \begin{itemize}
-	\item Resolving the alignment problem of 3D data through a representative generative model.
-	\item Explore the application of non-linear dimension reduction for high dimensional data such as 3D hair geometry.
+	\item Performing dimension reduction on 3D mesh data.
+	\item Exploring the application of non-linear dimension reduction for high dimensional data such as 3D hair geometry.
 	\item Investigate the use of latent variables for identifying stylistic properties of 3D content.
 	\item Demonstrate the use of a non-linear manifold to generate new hairstyles from training data.
-	\item Enable an intuitive method for non-experts to easily create 3D hair geometry.
-	\item Observable output demand performance comparable to real-time for practical use.
+	\item Enable an intuitive method for both experienced users and non-experts to easily create 3D hair geometry.
+	\item Achieve performance close to real-time for practical use.
 \end{itemize}
 
 % -----------------------------------------------------------------------------
@@ -799,7 +803,7 @@ Using a \textit{linear kernel} is equivalent to modelling with PPCA. Each latent
 
 The input data is transformed so that the origin is marginally above the origin of the scalp surface space. When the regression model is uncertain, it is sensible to bias the prediction towards the mean. While not an optimal solution, transforming the input data to have a mean above the scalp surface is heuristically better than an arbitrary point or the global origin that is usually under the scalp - encouraging uncertain output to move inside the reference head mesh. An inverse transformation is applied on the output after prediction so that the generated mesh is located at its intended position. 
 
-\section{Generation of Output}
+\section{Geometry Generation from Regression Output}
 Completion of the training process provides a regression model that predicts hair structure from estimated input data using our generative model. A problem encountered was incompatibility of the plotting module in the GPy library with the Python distribution of Blender, where a required standard module \textit{Tk interface} is not present. To overcome this issue, the training process plotted latent manifold is stored as an image and the regression model is serialised using the \textit{Pickle} module of Python. A Blender add-on implementation (introduced in figure \ref{latentAddon}) can then load the latent manifold image on the UV image editor of the program and through the API, load the serialised regression model to predict latent variables sampled from the manifold.
 
 A user-defined Blender operator class, the \textbf{latent selection modal operator}, is responsible for linking a regression model to Blender. Upon \textit{invocation} for setup, a serialised regression model with its corresponding latent manifold image is loaded. A \textit{modal operator} in Blender listens for events until a signal for \textit{finishing} or \textit{cancellation} is returned. Latent selection uses the modal operator to sample coordinates in event of mouse movement. The sampled mouse coordinates is transformed to the latent image coordinate space which is in turn used to obtain the actual latent variables from the regression model. 
@@ -1215,29 +1219,40 @@ Our proposition is specifically for hair, however, it would also be applicable f
 \chapter{Conclusion}
 \label{chap:conclusion}
 
-\section{Summary}
-(Re)summarise the main contributions and achievements, in essence
-summing up the content.
+Assisted real-time content generation by learning a latent manifold of existing polygonal hair meshes seeks to alleviate the complexity of producing hair through dimensionality reduction.
+We have demonstrated the implementation of a framework that assists content creators by automatically modelling high-dimensional geometry at close to real-time performance when navigating through a low-dimensional space.
 
-\section{Project Status}
-Clearly state the current project status (e.g., ``X is working, Y 
-is not'') and evaluate what has been achieved with respect to the 
-initial aims and objectives (e.g., ``I completed aim X outlined 
-previously, the evidence for this is within Chapter Y'').  There 
-is no problem including aims which were not completed, but it is 
-important to evaluate and/or justify why this is the case.
+The erratic nature of defining a surface with mesh data makes it unreliable for data analysis without preparation. We formulated methods to extract meaningful information from input meshes and standardise the data to obtain a fixed length hair structure feature vector. Input mesh are redefined to quadrilateral topology in order to take advantage of structural information conveyed by edge loops. 
+By strategically sampling data of a mesh, an approximation within a generative model is obtained.
+
+An artistic production environment desires freedom for expression. Performing regression through probabilistic latent variable models fulfils this need by offering a space of possible predictions. We analysed and compared the behaviour of the RBF, exponential, and linear kernel for a regression model that predicts hair structure.
+
+The regression model predicts values of a hair feature vector. This data is input into the generative model to reconstruct the hair representation. A geometry generation process uses the hair structure as reference for creating the resulting geometry. Our implementation parses the feature vector of polylines descriptors into curve data and creates geometry through extrusion and bevelling function commonly available on state-of-the-art 3D software.
+
+Feedback was acquired through an online survey and a series of experiments completed during face-to-face session. 
+Respecting our central objectives outlined in chapter \ref{chap:context}, we managed to perform dimensionality reduction on hair meshes by sampling a feature vector of estimated inputs for a generative model. Results of the survey indicate that despite embedding the training hair meshes into a two dimensional latent space, participants of the survey found that the geometry generated moderately resembled hair.
+
+The application of non-linear dimension reduction for high dimensional data such as 3D hair geometry was discussed in chapter \ref{chap:evaluation}. Our implementation demonstrated its application towards the 3D production pipeline.
+
+Latent variables as a consolidation of observed variables are not well-defined attributes, thus they do not identify stylistic properties. That said, they do encode stylistic properties as the survey results suggest that participants find the latent space useful for exploring new styles and discovering variations of geometry.
+
+
+As it turns out, there are issues that cause the latent manifold to in fact be unintuitive to use. While the results recorded in the feedback find most participants considering the latent manifold intuitive to use, a proportion of users voiced that there are moments when it is difficult to understand how movement in the latent manifold affects the output. There is a consensus that it is suitably easy for non-experts to generate output.
+
+Performance close to real-time is achieved as our regression model is able to predict a feature vector for hair structure with around $10^{-3}$ seconds (milliseconds), and generating geometry take around $10^{-1}$ seconds (deciseconds).
 
 \section{Future Work}
-Outline any open problems or future plans.  Rather than treat this
-only as an exercise in what you {\em could} have done given more 
-time, try to focus on any unexplored options or interesting outcomes
-(e.g., ``my experiment for X gave counter-intuitive results, this 
-could be because Y and would form an interesting area for further 
-study'' or ``users found feature Z of my software difficult to use,
-which is obvious in hindsight but not during at design stage; to 
-resolve this, I could clearly apply the technique of Smith [7]'').
+A number of potential improvements to investigate was proposed in chapter \ref{chap:evaluation}. This section discusses the topics with a broader perspective and places greater emphasis on the pursuit for further research.
 
+A latent variable lacks a well-defined description as it represents the underlying unobserved attributes of data. Research contributing towards presenting a latent-space meaningfully is a multidisciplinary study that extends visualisation of data with latent variable models and incorporates psychological factors of user experience such as intuitiveness. This field of work would propel the application of non-linear latent variable models for regression of novel output such as content creation and 3D production.
 
+The use of a generative model or synthesising methods is to standardise mesh data. We have demonstrated our framework for production of 3D hair geometry through a simple generative model to focus more on the entire framework overall. A review of established generative and learning models expand the options available to our framework. This would allow for production of other surface types.
+
+Machine learning research that output 3D data frequently use images or scanned 3D representations that do not convey topological information as input. Production 3D data provide are descriptive for the appearance of an object, without any obstructed information present in images and include topology that is useful for algorithmic operations. Study of preserving topological data would improve the efficacy of assisted content generation through regression by dimension reduction.
+
+Empirical analysis over the steps of execution within our framework would provide explanation for the feedback data acquired and identify the performance of the system. Collecting data from a larger sample of participants would also improve the reliability of our results.
+
+Assisted real-time content generation by learning a latent manifold of existing polygonal hair meshes is a study engages in the discussion of automated production for creative content in the future by tying together the topic of machine learning and 3D mesh processing with production qualities in mind. 
 
 % =============================================================================
 

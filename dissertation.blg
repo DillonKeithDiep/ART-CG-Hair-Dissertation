@@ -1,12 +1,13 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: dissertation.aux
 The style file: plain.bst
 Database file #1: dissertation.bib
-Repeated entry---line 33 of file dissertation.bib
+Repeated entry---line 29 of file dissertation.bib
  : @book{procedural1
  :                  ,
 I'm skipping whatever remains of this entry
-Warning--I didn't find a database entry for "curseofdyn"
 Warning--I didn't find a database entry for "lsystem"
+Warning--I didn't find a database entry for "helicoidhair"
+Warning--I didn't find a database entry for "deepgp"
 Name 1 in "D. M. D. Carli, C. T. Pozzer, F. Bevilacqua, and M. C. d Ornellas" has a comma at the end for entry procedural1
 while executing---line 1049 of file plain.bst
 Name 1 in "Baxter, W., and Anjyo, K." has a comma at the end for entry latentdoodle
