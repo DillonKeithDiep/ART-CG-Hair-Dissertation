@@ -251,9 +251,9 @@ In a production environment, the time required for a technique to return observa
 %The aim of this study is ...
 \begin{enumerate}
 	\item Performing dimensionality reduction on 3D mesh data.
-	\item Exploring the application of non-linear dimension reduction for high dimensional data such as 3D hair geometry.
+	\item Exploring the application of non-linear dimensionality reduction for high-dimensional mesh data such as 3D hair geometry.
 	\item Investigate the use of latent variables for identifying stylistic properties of 3D content.
-	\item Demonstrate the use of a non-linear manifold to generate new hairstyles from training data.
+	\item Demonstrate the use of a non-linear latent manifold to generate hair geometry.
 	\item Enable an intuitive method for both experienced users and non-experts to easily create 3D hair geometry.
 	\item Achieve performance close to real-time for practical use.
 \end{enumerate}
@@ -471,7 +471,7 @@ A Gaussian process (GP) is a non-parametric statistical model that is a distribu
 	\label{gpplot}
 \end{figure}
 
-Formally, a Gaussian process is an finite collection of random variables that are jointly Gaussian, specified by a mean function $m(\bm{x})$ and covariance function $k(\bm{x},\bm{x'})$ of a real process $f(\bm{x})$ \cite[p.13]{gp},
+Formally, a Gaussian process is the infinite generalisation of the Gaussian distribution, specified by a mean function $m(\bm{x})$ and covariance function $k(\bm{x},\bm{x'})$ of a real process $f(\bm{x})$ \cite[p.13]{gp},
 $$f(\bm{x})\sim\mathcal{GP}(m(\bm{x}), k(\bm{x}, \bm{x'})),$$
 where
 $$m(\bm{x})=\mathbb{E}[f(\bm{x})],$$
@@ -1216,31 +1216,44 @@ Our proposition is specifically for hair. However, it would also be applicable f
 
 \chapter{Conclusion}
 \label{chap:conclusion}
-
-Assisted real-time content generation by learning a latent manifold of existing polygonal hair meshes seeks to alleviate the complexity of producing hair through dimensionality reduction.
+Assisted real-time content generation by learning a latent manifold of existing polygonal hair meshes seeks to alleviate the complexity of producing hair geometry through dimensionality reduction.
 We have demonstrated the implementation of a framework that assists content creators by automatically modelling high-dimensional geometry at close to real-time performance when navigating through a low-dimensional space.
 
 The erratic nature of defining a surface with mesh data makes it unreliable for data analysis without preparation.
-Methods that extract meaningful information from input meshes and standardise the data to obtain a fixed-length feature vector for hair structure were applied.
-Strategically sampling data from a mesh using edge loops that convey structural information approximate inputs of a generative model, allowing for dimensionality reduction.
-Chapter \ref{chap:execution} tackled the objective of performing dimensionality reduction on 3D meshes in section \ref{chap:context:objectives}.
-\ref{chap:execution}. According to the results of \ref{chap:evaluation:mesh}, participants can distinguish between the original high-dimensional training mesh and output mesh generated from the low-dimensional latent space. While not perfect, the low-dimensional representation is still considered to be moderately resembling.
+Chapter \ref{chap:execution} introduced automated methods that extract meaningful information from input meshes to standardise the data as a fixed-length feature vector for hair structure.
+Converting triangular meshes to quadrilateral meshes allow extraction of edge loops that convey structural information. As the conversion process is laborious to perform manually, algorithmic solutions were used to complete the conversion partially.
+Devising a generative model with its inputs as the feature vector allow estimation of an approximation within the generative model by sampling inputs from the training mesh.
+The fixed-length feature vector enables for dimensionality reduction.
 
-An artistic production environment desires freedom for expression. Performing regression through probabilistic latent variable models fulfils this need by offering a space of possible predictions. 
-We analysed and compared the behaviour of the RBF, exponential, and linear kernel for a regression model that predicts hair structure.
+An artistic production environment desires freedom for expression. Performing regression through probabilistic latent variable models fulfils this need by offering a space of possible predictions associated with a likelihood probability.
+Our study discussed the relevance of kernels in learning with latent variable models and investigated the behaviour of three standard kernels: the RBF, exponential, and linear kernels.
+The training stage produces an image of the latent manifold where the image dimensions are the latent (unobserved) variables, and the pixel value corresponds to the likelihood of the latent variables.
+The regression model produced is serialised, we demonstrate a prototype implementation as an add-on for Blender 3D which loads the latent manifold image and regression model. The latent manifold serves as a visualisation of the low-dimensional latent-space for input selection and browsing. The regression model takes the selected latent input and predicts a hair feature vector as output, creating novel hair output using the latent-space learned from training data.
+The predicted output is input to the generative model for a representation of hair structure data. 
+The hair structure representation serves as a reference for generating geometry.
+Our implementation parses the feature vector of polylines descriptors into curve data and creates geometry through extrusion and bevelling function commonly available for state of the art 3D software.
 
-The regression model predicts values of a hair feature vector. This data is input into the generative model to reconstruct the hair representation. A geometry generation process uses hair structure as a reference for creating the resulting geometry. Our implementation parses the feature vector of polylines descriptors into curve data and creates geometry through extrusion and bevelling function commonly available on state-of-the-art 3D software.
+Evaluation of central objectives collected feedback through an online survey and a series of experiments completed during a face-to-face session. 
+First, a central objective is to perform dimensionality reduction on 3D mesh data.
+Chapter \ref{execution} covers the procedure of preparing a mesh for dimensionality reduction and learning a low-dimensional latent space from training data.
+The survey results in section \ref{meshOutput} of chapter \ref{evaluation} indicate that participants can distinguish between original high-dimensional hair examples from output hair mesh generated from selection within a low-dimensional latent manifold. The generated mesh, however, is still considered to be moderately resembling of hair geometry. The use of flawed examples among the training data and a basic generative model suggest there is much room for improvement in the effectiveness of dimensionality reduction.
 
-We acquired feedback through an online survey and a series of experiments completed during a face-to-face session. 
-Respecting our central objectives outlined in chapter \ref{chap:context}, we managed to perform dimensionality reduction on hair meshes by sampling a feature vector of estimated inputs for a generative model. Results of the survey indicate that despite embedding the training hair meshes into a two-dimensional latent-space, participants found that the geometry generated moderately resembled hair.
+%Mesh result moderate, confidence still high.
 
-The application of non-linear dimension reduction for high dimensional data such as 3D hair geometry was discussed in chapter \ref{chap:evaluation}. Our implementation demonstrated its application towards the 3D production pipeline.
+Secondly, a central objective is to explore the applications of non-linear dimensionality reduction for high-dimensional mesh data such as 3D hair geometry.
+The implementation was only intended to demonstrate usage in the production pipeline. That said, we can infer potential applications from the evaluation of feedback acquired, as we did in section \ref{application} of chapter \ref{evaluation}.
+The ease of use and speed of generation make non-linear dimension reduction attractive for production pipeline such as assisted content generation.
+No advanced training is required for non-experts to quickly begin generating output, opening potential applications for consumer usage.
+A probabilistic model can also prune predictions that are far too different from training data, providing an interesting solution for users to create custom content with a large degree of freedom while constrained to the underlying structure outlined and thresholds set.
 
-Latent variables as a consolidation of observed variables are not well-defined attributes. Thus they do not identify stylistic properties. That said, they do encode stylistic properties as the survey results suggest that participants find the latent-space useful for exploring new styles and discovering variations of geometry.
+One central objective is the investigation of using latent variables for identifying stylistic properties of 3D content. As it turns out, latent variables are not clearly defined as it represents unobserved variables. Participants of the survey agree that the latent manifold is useful for discovering new styles and variations, but this is due to the ease of use and quick generation. The latent variables depend on the training set. Thus, it is not a simple task to identify stylistic properties of 3D content with latent variables.
 
-As it turns out, there exist issues that cause the latent manifold to in fact be unintuitive to use. While the results recorded in the feedback find most participants considering the latent manifold intuitive to use, a proportion of users voiced that there are moments when it is challenging to understand how movement in the latent manifold affects the output. There is a consensus that it is suitably easy for non-experts to generate output.
+The fourth central objective is demonstrating of generating hair geometry with a non-linear latent manifold. The implementation described in chapter \ref{chap:execution} achieves this objective. 
+Experiments of section \ref{experiments} in chapter \ref{chap:evaluation} show that it is very easy to generate geometry with a latent manifold. From the cursor path plotted, we can observe that every participant was able to explore the latent manifold and finding a target output (assuming that it exists within the latent-space) with reasonable accuracy.
 
-The demonstrative implementation achieves performance close to real-time, as our regression model can predict a feature vector for hair structure with around $10^{-3}$ seconds (milliseconds), and generating geometry take around $10^{-1}$ seconds (deciseconds).
+The fifth central objective considers how intuitive it is for experts and non-experts to use the latent manifold. The recorded feedback suggests that participants found the latent manifold intuitive and very easy to use. Unfortunately, the sample size is not large enough for there to make any decisive comment regarding the difference between experts and non-experts. From face-to-face sessions during experiments, expert users seem to find the latent manifold less intuitive to use. Determining a difference would require further investigation. There are some properties of a latent manifold that causes it to be unintuitive. In this scenario, representing enormously high-dimensional data as a two-dimensional latent space can cause wild transformations when moving across the latent manifold, this is more evident on models with large training sets as a movement towards a single direction would interpolate the output between many training examples. It is also difficult to comprehend how actions in the latent-space would affect the resulting prediction.
+
+Finally, the last central objective is to achieve close to real-time performance for practical use. The benchmarks in section \ref{sec:bench} of chapter \ref{chap:evaluaiton} show that generating output with a latent manifold is incredibly fast, enabling display of around ten geometric updates as a user browses the latent manifold. The demonstrative implementation achieves performance close to real-time, as our regression model can predict a feature vector for hair structure with around $10^{-3}$ seconds (milliseconds), and generating geometry take around $10^{-1}$ seconds (deciseconds).
 
 \section{Future Work}
 A latent variable lacks a clear description as it represents the underlying unobserved attributes of data. Research contributing towards presenting a latent-space in a meaningful manner is a multidisciplinary study that extends visualisation of data with latent variable models and incorporates psychological factors of user experience such as intuitiveness. This field of work would propel the application of non-linear latent variable models for regression of novel output such as content creation and 3D production.

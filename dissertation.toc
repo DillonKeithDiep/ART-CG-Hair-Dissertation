@@ -44,5 +44,5 @@
 \contentsline {section}{\numberline {4.5}Applications}{37}{section.4.5}
 \contentsline {chapter}{\numberline {5}Conclusion}{39}{chapter.5}
 \contentsline {section}{\numberline {5.1}Future Work}{40}{section.5.1}
-\contentsline {section}{\numberline {5.2}Potential Improvements}{40}{section.5.2}
+\contentsline {section}{\numberline {5.2}Potential Improvements}{41}{section.5.2}
 \contentsline {chapter}{\numberline {A}An Example Appendix}{45}{appendix.A}

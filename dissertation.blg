@@ -51,9 +51,6 @@ Too many commas in name 1 of "Chai, M., Shaq, T., Wu, H., Weng, Y., and Zhou, K"
 while executing---line 1090 of file plain.bst
 Name 1 in "D. M. D. Carli, C. T. Pozzer, F. Bevilacqua, and M. C. d Ornellas" has a comma at the end for entry procedural1
 while executing---line 1090 of file plain.bst
-Warning--empty title in pca1901
-Warning--empty publisher in pca1901
-Warning--empty year in pca1901
 Name 1 in "Rasmussen, C. E., and Williams, C." has a comma at the end for entry gp
 while executing---line 1090 of file plain.bst
 Name 1 in "Titsias, M. K., and Lawrence, N. D." has a comma at the end for entry bgplvm

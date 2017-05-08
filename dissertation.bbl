@@ -78,9 +78,6 @@ H.~Hotelling.
   Components}.
 \newblock Journal of Educational Psychology, Vol 24(6), 1933.
 
-\bibitem{pca1901}
-[PCA~1901] http://stat.smmu.edu.cn/history/pearson1901.pdf.
-
 \bibitem{pca2002}
 I.~T. Jolliffe.
 \newblock {\em Principal Component Analysis}.
@@ -106,6 +103,12 @@ A.~et~al. Limpaecher.
 T.~Mullen and C.~Andaur.
 \newblock {\em Blender Studio Projects: Digital Movie-Making}.
 \newblock Wiley Publishing, Inc, 2010.
+
+\bibitem{pca1901}
+K.~Pearson.
+\newblock {\em On Lines and Planes of Closest Fit to Systems of Points in
+  Space}.
+\newblock Philosophical Magazine, 2, 559-572, 1901.
 
 \bibitem{lsystem}
 P.~Prusinkiewicz and A.~Lindenmayer.
