@@ -5,8 +5,6 @@ Repeated entry---line 29 of file dissertation.bib
  : @book{procedural1
  :                  ,
 I'm skipping whatever remains of this entry
-Warning--I didn't find a database entry for "helicoidhair"
-Warning--I didn't find a database entry for "deepgp"
 Name 1 in "D. M. D. Carli, C. T. Pozzer, F. Bevilacqua, and M. C. d Ornellas" has a comma at the end for entry procedural1
 while executing---line 1049 of file plain.bst
 Name 1 in "Baxter, W., and Anjyo, K." has a comma at the end for entry latentdoodle
@@ -33,6 +31,10 @@ while executing---line 1049 of file plain.bst
 Warning--to sort, need author or key in s4pe
 Warning--to sort, need author or key in s4cas
 Warning--to sort, need author or key in blenderedgeloop
+Name 1 in "Piuze, E., Kry, P. G., and Siddiqi, K." has a comma at the end for entry helicoidhair
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Piuze, E., Kry, P. G., and Siddiqi, K." for entry helicoidhair
+while executing---line 1049 of file plain.bst
 Name 1 in "Baxter, W., and Anjyo, K." has a comma at the end for entry latentdoodle
 while executing---line 1090 of file plain.bst
 Name 1 in "Campbell, N. D., AND Kautz, J." has a comma at the end for entry fontmanifold
@@ -51,8 +53,12 @@ Too many commas in name 1 of "Chai, M., Shaq, T., Wu, H., Weng, Y., and Zhou, K"
 while executing---line 1090 of file plain.bst
 Name 1 in "D. M. D. Carli, C. T. Pozzer, F. Bevilacqua, and M. C. d Ornellas" has a comma at the end for entry procedural1
 while executing---line 1090 of file plain.bst
+Name 1 in "Piuze, E., Kry, P. G., and Siddiqi, K." has a comma at the end for entry helicoidhair
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Piuze, E., Kry, P. G., and Siddiqi, K." for entry helicoidhair
+while executing---line 1090 of file plain.bst
 Name 1 in "Rasmussen, C. E., and Williams, C." has a comma at the end for entry gp
 while executing---line 1090 of file plain.bst
 Name 1 in "Titsias, M. K., and Lawrence, N. D." has a comma at the end for entry bgplvm
 while executing---line 1090 of file plain.bst
-(There were 23 error messages)
+(There were 27 error messages)

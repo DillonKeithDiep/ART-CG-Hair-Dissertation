@@ -62,6 +62,11 @@ F.~Bevilacqua D.~M. D.~Carli, C. T.~Pozzer and M.~C. d~Ornellas.
   game development}.
 \newblock X Simposio Brasileiro de Games e Entretenimento Digital, 2011.
 
+\bibitem{deepgp}
+A.~C. Damianou and N.~D. Lawrence.
+\newblock {\em Deep Gaussian Processes}.
+\newblock AISTATS, 2013.
+
 \bibitem{hairfollicles}
 R.~Milo. et~al.
 \newblock {\em Number of hairs on human head}.
@@ -92,7 +97,7 @@ N.~D. Lawrence.
 \bibitem{reviewgplvm}
 P.~Li and S.~Chen.
 \newblock {\em A review on Gaussian Process Latent Variable Models}.
-\newblock CAAI Transactions on Intelligence Technology 1 (2016) 366-376, 2016.
+\newblock CAAI Transactions on Intelligence Technology 1 366-376, 2016.
 
 \bibitem{drawingassistance}
 A.~et~al. Limpaecher.
@@ -109,6 +114,11 @@ K.~Pearson.
 \newblock {\em On Lines and Planes of Closest Fit to Systems of Points in
   Space}.
 \newblock Philosophical Magazine, 2, 559-572, 1901.
+
+\bibitem{helicoidhair}
+Kry P.~G. Piuze, E. and K.~Siddiqi.
+\newblock {\em Generalized Helicoids for Modeling Hair Geometry}.
+\newblock EUROGRAPHICS, 2011.
 
 \bibitem{lsystem}
 P.~Prusinkiewicz and A.~Lindenmayer.
@@ -128,8 +138,9 @@ C.~E. Rasmussen and C.~Williams.
 
 \bibitem{ppca}
 M.~E. Tipping and C.~M. Bishop.
-\newblock {\em Probabilistic Principal Component Analysis}.
-\newblock Microsoft Research, Cambridge, UK, 1998.
+\newblock Probabilistic principal component analysis.
+\newblock {\em Journal of the Royal Statistical Society, Series B},
+  61:611--622, 1999.
 
 \bibitem{bgplvm}
 M.~K. Titsias and N.~D. Lawrence.
