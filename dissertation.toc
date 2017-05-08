@@ -10,14 +10,14 @@
 \contentsline {section}{\numberline {2.2}Multivariate Gaussian Distribution}{8}{section.2.2}
 \contentsline {section}{\numberline {2.3}A Probabilistic Model for PCA}{9}{section.2.3}
 \contentsline {subsubsection}{The Principal Subspace of PPCA}{10}{section*.11}
-\contentsline {section}{\numberline {2.4}Gaussian Process Latent Variable Model}{10}{section.2.4}
+\contentsline {section}{\numberline {2.4}Gaussian Process Latent Variable Model}{11}{section.2.4}
 \contentsline {subsection}{\numberline {2.4.1}Dual Probabilistic PCA}{11}{subsection.2.4.1}
-\contentsline {subsection}{\numberline {2.4.2}Gaussian Processes}{11}{subsection.2.4.2}
+\contentsline {subsection}{\numberline {2.4.2}Gaussian Processes}{12}{subsection.2.4.2}
 \contentsline {subsubsection}{Gaussian Processes for Regression}{12}{section*.12}
 \contentsline {section}{\numberline {2.5}Bayesian Gaussian Process Latent Variable Model}{13}{section.2.5}
 \contentsline {section}{\numberline {2.6}The Mesh Data Structure}{14}{section.2.6}
 \contentsline {subsection}{\numberline {2.6.1}Topology}{14}{subsection.2.6.1}
-\contentsline {subsubsection}{Poles}{14}{section*.13}
+\contentsline {subsubsection}{Poles}{15}{section*.13}
 \contentsline {subsubsection}{Edge Loops}{15}{section*.14}
 \contentsline {section}{\numberline {2.7}Summary of Technical Background}{15}{section.2.7}
 \contentsline {chapter}{\numberline {3}Project Execution}{17}{chapter.3}
@@ -43,5 +43,5 @@
 \contentsline {section}{\numberline {4.4}Comparison with existing solutions}{37}{section.4.4}
 \contentsline {section}{\numberline {4.5}Applications}{37}{section.4.5}
 \contentsline {chapter}{\numberline {5}Conclusion}{39}{chapter.5}
-\contentsline {section}{\numberline {5.1}Future Work}{40}{section.5.1}
-\contentsline {chapter}{\numberline {A}An Example Appendix}{45}{appendix.A}
+\contentsline {section}{\numberline {5.1}Project Status}{39}{section.5.1}
+\contentsline {section}{\numberline {5.2}Future Work}{40}{section.5.2}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.3.12)  8 MAY 2017 21:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.3.12)  8 MAY 2017 23:45
 entering extended mode
 **./dissertation.tex
 (dissertation.tex
@@ -1028,32 +1028,44 @@ l.192
        [1
 
  <./images/pointCloud.jpg> <./images/rangeImage.jpg> <./images/octreeVoxel.png>
-] <images/hairExemplar.jpg, id=397, 963.6pt x 788.9475pt>
+] <images/hairExemplar.jpg, id=396, 963.6pt x 788.9475pt>
 File: images/hairExemplar.jpg Graphic file (type jpg)
 
 <use images/hairExemplar.jpg>
-Package pdftex.def Info: images/hairExemplar.jpg used on input line 208.
+Package pdftex.def Info: images/hairExemplar.jpg used on input line 214.
 (pdftex.def)             Requested size: 289.08223pt x 236.68607pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
 pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.210 \end{figure}
-                   [2] [3 <./images/hairExemplar.jpg>] [4] [5] [6
+l.221 	\item \textit
+                    {Supervised learning} is provided input training example...
+[2] [3 <./images/hairExemplar.jpg>] [4] [5] [6
 
 ]
 Chapter 2.
-[7] [8] [9] [10] <images/gpPrior.png, id=508, 433.62pt x 289.08pt>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [7]
+[8] [9] [10] <images/gpPrior.png, id=507, 433.62pt x 289.08pt>
 File: images/gpPrior.png Graphic file (type png)
 
 <use images/gpPrior.png>
-Package pdftex.def Info: images/gpPrior.png used on input line 468.
+Package pdftex.def Info: images/gpPrior.png used on input line 472.
 (pdftex.def)             Requested size: 216.80946pt x 144.53964pt.
- <images/gpPosterior.png, id=509, 433.62pt x 289.08pt>
+ <images/gpPosterior.png, id=508, 433.62pt x 289.08pt>
 File: images/gpPosterior.png Graphic file (type png)
 
 <use images/gpPosterior.png>
-Package pdftex.def Info: images/gpPosterior.png used on input line 469.
+Package pdftex.def Info: images/gpPosterior.png used on input line 473.
 (pdftex.def)             Requested size: 216.80946pt x 144.53964pt.
 
 
@@ -1068,56 +1080,56 @@ Chapter 3.
 File: images/latentHairAddon.jpg Graphic file (type jpg)
 
 <use images/latentHairAddon.jpg>
-Package pdftex.def Info: images/latentHairAddon.jpg used on input line 571.
+Package pdftex.def Info: images/latentHairAddon.jpg used on input line 576.
 (pdftex.def)             Requested size: 296.08344pt x 206.87447pt.
  [17 <./images/latentHairAddon.jpg>]
 <images/inputHair1.png, id=573, 53.60025pt x 49.02315pt>
 File: images/inputHair1.png Graphic file (type png)
 
 <use images/inputHair1.png>
-Package pdftex.def Info: images/inputHair1.png used on input line 581.
+Package pdftex.def Info: images/inputHair1.png used on input line 586.
 (pdftex.def)             Requested size: 107.2002pt x 98.04602pt.
 
 <images/inputHair2.png, id=574, 53.60025pt x 49.02315pt>
 File: images/inputHair2.png Graphic file (type png)
 
 <use images/inputHair2.png>
-Package pdftex.def Info: images/inputHair2.png used on input line 582.
+Package pdftex.def Info: images/inputHair2.png used on input line 587.
 (pdftex.def)             Requested size: 107.2002pt x 98.04602pt.
 
 <images/inputHair3.png, id=575, 53.60025pt x 49.02315pt>
 File: images/inputHair3.png Graphic file (type png)
 
 <use images/inputHair3.png>
-Package pdftex.def Info: images/inputHair3.png used on input line 583.
+Package pdftex.def Info: images/inputHair3.png used on input line 588.
 (pdftex.def)             Requested size: 107.2002pt x 98.04602pt.
 
 <images/inputHair4.png, id=576, 53.60025pt x 49.02315pt>
 File: images/inputHair4.png Graphic file (type png)
 
 <use images/inputHair4.png>
-Package pdftex.def Info: images/inputHair4.png used on input line 584.
+Package pdftex.def Info: images/inputHair4.png used on input line 589.
 (pdftex.def)             Requested size: 107.2002pt x 98.04602pt.
 
 <images/triToQuad1.png, id=578, 53.60025pt x 49.02315pt>
 File: images/triToQuad1.png Graphic file (type png)
 
 <use images/triToQuad1.png>
-Package pdftex.def Info: images/triToQuad1.png used on input line 606.
+Package pdftex.def Info: images/triToQuad1.png used on input line 611.
 (pdftex.def)             Requested size: 107.2002pt x 98.04602pt.
 
 <images/triToQuad2.png, id=579, 53.60025pt x 49.02315pt>
 File: images/triToQuad2.png Graphic file (type png)
 
 <use images/triToQuad2.png>
-Package pdftex.def Info: images/triToQuad2.png used on input line 607.
+Package pdftex.def Info: images/triToQuad2.png used on input line 612.
 (pdftex.def)             Requested size: 107.2002pt x 98.04602pt.
 
 <images/triToQuad3.png, id=580, 53.60025pt x 49.02315pt>
 File: images/triToQuad3.png Graphic file (type png)
 
 <use images/triToQuad3.png>
-Package pdftex.def Info: images/triToQuad3.png used on input line 608.
+Package pdftex.def Info: images/triToQuad3.png used on input line 613.
 (pdftex.def)             Requested size: 107.2002pt x 98.04602pt.
 
 
@@ -1129,10 +1141,10 @@ g> <./images/inputHair4.png>]
 File: images/sphereCoords.png Graphic file (type png)
 
 <use images/sphereCoords.png>
-Package pdftex.def Info: images/sphereCoords.png used on input line 625.
+Package pdftex.def Info: images/sphereCoords.png used on input line 630.
 (pdftex.def)             Requested size: 140.02278pt x 129.48343pt.
 
-Overfull \hbox (52.92993pt too wide) in paragraph at lines 627--627
+Overfull \hbox (52.92993pt too wide) in paragraph at lines 632--632
 []\OT1/cmr/m/n/10 Figure 3.4: []The 3D spher-i-cal co-or-di-nate sys-tem. Sourc
 e: [][]https://commons.wikimedia.org/wiki/File:3D[]Spherical.svg[][],
  []
@@ -1141,7 +1153,7 @@ e: [][]https://commons.wikimedia.org/wiki/File:3D[]Spherical.svg[][],
 File: images/spherePoints.png Graphic file (type png)
 
 <use images/spherePoints.png>
-Package pdftex.def Info: images/spherePoints.png used on input line 636.
+Package pdftex.def Info: images/spherePoints.png used on input line 641.
 (pdftex.def)             Requested size: 225.4668pt x 131.74185pt.
 
 
@@ -1151,7 +1163,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 File: images/generativeModel.png Graphic file (type png)
 
 <use images/generativeModel.png>
-Package pdftex.def Info: images/generativeModel.png used on input line 644.
+Package pdftex.def Info: images/generativeModel.png used on input line 649.
 (pdftex.def)             Requested size: 233.4315pt x 215.00272pt.
 
 
@@ -1173,7 +1185,7 @@ Underfull \vbox (badness 5970) has occurred while \output is active []
 File: images/edgeLoopDiagram.png Graphic file (type png)
 
 <use images/edgeLoopDiagram.png>
-Package pdftex.def Info: images/edgeLoopDiagram.png used on input line 692.
+Package pdftex.def Info: images/edgeLoopDiagram.png used on input line 697.
 (pdftex.def)             Requested size: 243.99017pt x 121.46811pt.
 
 
@@ -1186,7 +1198,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 File: images/rootLoop.jpg Graphic file (type jpg)
 
 <use images/rootLoop.jpg>
-Package pdftex.def Info: images/rootLoop.jpg used on input line 729.
+Package pdftex.def Info: images/rootLoop.jpg used on input line 734.
 (pdftex.def)             Requested size: 316.18048pt x 166.74756pt.
 
 
@@ -1197,10 +1209,10 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 File: images/gpyKernels.png Graphic file (type png)
 
 <use images/gpyKernels.png>
-Package pdftex.def Info: images/gpyKernels.png used on input line 798.
+Package pdftex.def Info: images/gpyKernels.png used on input line 803.
 (pdftex.def)             Requested size: 465.98871pt x 350.35875pt.
 
-Overfull \hbox (10.7446pt too wide) in paragraph at lines 798--798
+Overfull \hbox (10.7446pt too wide) in paragraph at lines 803--803
  [][] 
  []
 
@@ -1211,21 +1223,21 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 File: images/latentPlot_t10.png Graphic file (type png)
 
 <use images/latentPlot_t10.png>
-Package pdftex.def Info: images/latentPlot_t10.png used on input line 814.
+Package pdftex.def Info: images/latentPlot_t10.png used on input line 819.
 (pdftex.def)             Requested size: 100.37474pt x 100.37474pt.
 
 <images/latentPlot_exp.png, id=669, 100.375pt x 100.375pt>
 File: images/latentPlot_exp.png Graphic file (type png)
 
 <use images/latentPlot_exp.png>
-Package pdftex.def Info: images/latentPlot_exp.png used on input line 815.
+Package pdftex.def Info: images/latentPlot_exp.png used on input line 820.
 (pdftex.def)             Requested size: 100.37474pt x 100.37474pt.
 
 <images/latentPlot_linear.png, id=670, 100.375pt x 100.375pt>
 File: images/latentPlot_linear.png Graphic file (type png)
 
 <use images/latentPlot_linear.png>
-Package pdftex.def Info: images/latentPlot_linear.png used on input line 816.
+Package pdftex.def Info: images/latentPlot_linear.png used on input line 821.
 (pdftex.def)             Requested size: 100.37474pt x 100.37474pt.
 
 
@@ -1241,98 +1253,98 @@ y)>]
 File: images/guidingStrands.jpg Graphic file (type jpg)
 
 <use images/guidingStrands.jpg>
-Package pdftex.def Info: images/guidingStrands.jpg used on input line 856.
+Package pdftex.def Info: images/guidingStrands.jpg used on input line 861.
 (pdftex.def)             Requested size: 210.26215pt x 113.60028pt.
 
 <images/guidingExtrusion.jpg, id=685, 700.86844pt x 376.40625pt>
 File: images/guidingExtrusion.jpg Graphic file (type jpg)
 
 <use images/guidingExtrusion.jpg>
-Package pdftex.def Info: images/guidingExtrusion.jpg used on input line 857.
+Package pdftex.def Info: images/guidingExtrusion.jpg used on input line 862.
 (pdftex.def)             Requested size: 210.26215pt x 112.92273pt.
 
 <images/outputMesh1.jpg, id=687, 362.10281pt x 375.65344pt>
 File: images/outputMesh1.jpg Graphic file (type jpg)
 
 <use images/outputMesh1.jpg>
-Package pdftex.def Info: images/outputMesh1.jpg used on input line 876.
+Package pdftex.def Info: images/outputMesh1.jpg used on input line 881.
 (pdftex.def)             Requested size: 90.52547pt x 93.91312pt.
 
 <images/outputMesh2.jpg, id=688, 362.10281pt x 372.64218pt>
 File: images/outputMesh2.jpg Graphic file (type jpg)
 
 <use images/outputMesh2.jpg>
-Package pdftex.def Info: images/outputMesh2.jpg used on input line 877.
+Package pdftex.def Info: images/outputMesh2.jpg used on input line 882.
 (pdftex.def)             Requested size: 90.52547pt x 93.16031pt.
 
 <images/outputMesh3.jpg, id=689, 362.10281pt x 375.65344pt>
 File: images/outputMesh3.jpg Graphic file (type jpg)
 
 <use images/outputMesh3.jpg>
-Package pdftex.def Info: images/outputMesh3.jpg used on input line 878.
+Package pdftex.def Info: images/outputMesh3.jpg used on input line 883.
 (pdftex.def)             Requested size: 90.52547pt x 93.91312pt.
 
 <images/outputMesh4.jpg, id=690, 360.59718pt x 375.65344pt>
 File: images/outputMesh4.jpg Graphic file (type jpg)
 
 <use images/outputMesh4.jpg>
-Package pdftex.def Info: images/outputMesh4.jpg used on input line 879.
+Package pdftex.def Info: images/outputMesh4.jpg used on input line 884.
 (pdftex.def)             Requested size: 90.14906pt x 93.91312pt.
 
 <images/outputMesh5.jpg, id=691, 363.60844pt x 377.91188pt>
 File: images/outputMesh5.jpg Graphic file (type jpg)
 
 <use images/outputMesh5.jpg>
-Package pdftex.def Info: images/outputMesh5.jpg used on input line 880.
+Package pdftex.def Info: images/outputMesh5.jpg used on input line 885.
 (pdftex.def)             Requested size: 90.90189pt x 94.47774pt.
 
 <images/outputMesh6.jpg, id=692, 362.10281pt x 374.90062pt>
 File: images/outputMesh6.jpg Graphic file (type jpg)
 
 <use images/outputMesh6.jpg>
-Package pdftex.def Info: images/outputMesh6.jpg used on input line 881.
+Package pdftex.def Info: images/outputMesh6.jpg used on input line 886.
 (pdftex.def)             Requested size: 90.52547pt x 93.72491pt.
 
 <images/outputMesh7.jpg, id=693, 362.85562pt x 374.90062pt>
 File: images/outputMesh7.jpg Graphic file (type jpg)
 
 <use images/outputMesh7.jpg>
-Package pdftex.def Info: images/outputMesh7.jpg used on input line 882.
+Package pdftex.def Info: images/outputMesh7.jpg used on input line 887.
 (pdftex.def)             Requested size: 90.71368pt x 93.72491pt.
 
 <images/outputMesh8.jpg, id=694, 363.60844pt x 375.65344pt>
 File: images/outputMesh8.jpg Graphic file (type jpg)
 
 <use images/outputMesh8.jpg>
-Package pdftex.def Info: images/outputMesh8.jpg used on input line 883.
+Package pdftex.def Info: images/outputMesh8.jpg used on input line 888.
 (pdftex.def)             Requested size: 90.90189pt x 93.91312pt.
 
 <images/outputMesh9.jpg, id=695, 360.59718pt x 375.65344pt>
 File: images/outputMesh9.jpg Graphic file (type jpg)
 
 <use images/outputMesh9.jpg>
-Package pdftex.def Info: images/outputMesh9.jpg used on input line 884.
+Package pdftex.def Info: images/outputMesh9.jpg used on input line 889.
 (pdftex.def)             Requested size: 90.14906pt x 93.91312pt.
 
 <images/outputMesh10.jpg, id=696, 359.84438pt x 372.64218pt>
 File: images/outputMesh10.jpg Graphic file (type jpg)
 
 <use images/outputMesh10.jpg>
-Package pdftex.def Info: images/outputMesh10.jpg used on input line 885.
+Package pdftex.def Info: images/outputMesh10.jpg used on input line 890.
 (pdftex.def)             Requested size: 89.96086pt x 93.16031pt.
 
 <images/outputMesh11.jpg, id=697, 361.35pt x 374.90062pt>
 File: images/outputMesh11.jpg Graphic file (type jpg)
 
 <use images/outputMesh11.jpg>
-Package pdftex.def Info: images/outputMesh11.jpg used on input line 886.
+Package pdftex.def Info: images/outputMesh11.jpg used on input line 891.
 (pdftex.def)             Requested size: 90.33728pt x 93.72491pt.
 
 <images/outputMesh12.jpg, id=698, 362.10281pt x 377.15906pt>
 File: images/outputMesh12.jpg Graphic file (type jpg)
 
 <use images/outputMesh12.jpg>
-Package pdftex.def Info: images/outputMesh12.jpg used on input line 887.
+Package pdftex.def Info: images/outputMesh12.jpg used on input line 892.
 (pdftex.def)             Requested size: 90.52547pt x 94.28954pt.
 
 
@@ -1349,56 +1361,56 @@ Chapter 4.
 File: images/surveyMesh1.png Graphic file (type png)
 
 <use images/surveyMesh1.png>
-Package pdftex.def Info: images/surveyMesh1.png used on input line 905.
+Package pdftex.def Info: images/surveyMesh1.png used on input line 910.
 (pdftex.def)             Requested size: 107.05626pt x 53.66063pt.
 
 <images/surveyMesh2.png, id=709, 97.3236pt x 48.78226pt>
 File: images/surveyMesh2.png Graphic file (type png)
 
 <use images/surveyMesh2.png>
-Package pdftex.def Info: images/surveyMesh2.png used on input line 906.
+Package pdftex.def Info: images/surveyMesh2.png used on input line 911.
 (pdftex.def)             Requested size: 107.05626pt x 53.66063pt.
 
 <images/surveyMesh3.png, id=710, 97.3236pt x 48.78226pt>
 File: images/surveyMesh3.png Graphic file (type png)
 
 <use images/surveyMesh3.png>
-Package pdftex.def Info: images/surveyMesh3.png used on input line 907.
+Package pdftex.def Info: images/surveyMesh3.png used on input line 912.
 (pdftex.def)             Requested size: 107.05626pt x 53.66063pt.
 
 <images/surveyMesh4.png, id=711, 97.3236pt x 48.78226pt>
 File: images/surveyMesh4.png Graphic file (type png)
 
 <use images/surveyMesh4.png>
-Package pdftex.def Info: images/surveyMesh4.png used on input line 908.
+Package pdftex.def Info: images/surveyMesh4.png used on input line 913.
 (pdftex.def)             Requested size: 107.05626pt x 53.66063pt.
 
 <images/surveyMesh5.png, id=712, 97.3236pt x 48.78226pt>
 File: images/surveyMesh5.png Graphic file (type png)
 
 <use images/surveyMesh5.png>
-Package pdftex.def Info: images/surveyMesh5.png used on input line 910.
+Package pdftex.def Info: images/surveyMesh5.png used on input line 915.
 (pdftex.def)             Requested size: 107.05626pt x 53.66063pt.
 
 <images/surveyMesh6.png, id=713, 97.3236pt x 48.78226pt>
 File: images/surveyMesh6.png Graphic file (type png)
 
 <use images/surveyMesh6.png>
-Package pdftex.def Info: images/surveyMesh6.png used on input line 911.
+Package pdftex.def Info: images/surveyMesh6.png used on input line 916.
 (pdftex.def)             Requested size: 107.05626pt x 53.66063pt.
 
 <images/surveyMesh7.png, id=714, 97.3236pt x 48.78226pt>
 File: images/surveyMesh7.png Graphic file (type png)
 
 <use images/surveyMesh7.png>
-Package pdftex.def Info: images/surveyMesh7.png used on input line 912.
+Package pdftex.def Info: images/surveyMesh7.png used on input line 917.
 (pdftex.def)             Requested size: 107.05626pt x 53.66063pt.
 
 <images/surveyMesh8.png, id=715, 97.3236pt x 48.78226pt>
 File: images/surveyMesh8.png Graphic file (type png)
 
 <use images/surveyMesh8.png>
-Package pdftex.def Info: images/surveyMesh8.png used on input line 913.
+Package pdftex.def Info: images/surveyMesh8.png used on input line 918.
 (pdftex.def)             Requested size: 107.05626pt x 53.66063pt.
  [29
 
@@ -1409,28 +1421,28 @@ png, id=729, 602.25pt x 372.39125pt>
 File: images/meshRating.png Graphic file (type png)
 
 <use images/meshRating.png>
-Package pdftex.def Info: images/meshRating.png used on input line 925.
+Package pdftex.def Info: images/meshRating.png used on input line 930.
 (pdftex.def)             Requested size: 361.35278pt x 223.43646pt.
  [30 <./images/meshRating.png>]
 <images/surveyDifficulty.png, id=735, 526.21594pt x 225.09094pt>
 File: images/surveyDifficulty.png Graphic file (type png)
 
 <use images/surveyDifficulty.png>
-Package pdftex.def Info: images/surveyDifficulty.png used on input line 956.
+Package pdftex.def Info: images/surveyDifficulty.png used on input line 961.
 (pdftex.def)             Requested size: 368.34865pt x 157.56258pt.
 
 <images/surveyAutomate.png, id=738, 526.21594pt x 225.09094pt>
 File: images/surveyAutomate.png Graphic file (type png)
 
 <use images/surveyAutomate.png>
-Package pdftex.def Info: images/surveyAutomate.png used on input line 968.
+Package pdftex.def Info: images/surveyAutomate.png used on input line 973.
 (pdftex.def)             Requested size: 368.34865pt x 157.56258pt.
 
 <images/surveyPrototype.png, id=740, 526.21594pt x 225.09094pt>
 File: images/surveyPrototype.png Graphic file (type png)
 
 <use images/surveyPrototype.png>
-Package pdftex.def Info: images/surveyPrototype.png used on input line 977.
+Package pdftex.def Info: images/surveyPrototype.png used on input line 982.
 (pdftex.def)             Requested size: 368.34865pt x 157.56258pt.
 
 
@@ -1440,19 +1452,19 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 File: images/surveyMesh2.png Graphic file (type png)
 
 <use images/surveyMesh2.png>
-Package pdftex.def Info: images/surveyMesh2.png used on input line 995.
+Package pdftex.def Info: images/surveyMesh2.png used on input line 1000.
 (pdftex.def)             Requested size: 145.985pt x 73.17317pt.
 File: images/surveyMesh8.png Graphic file (type png)
  <use images/surveyMesh8.png>
-Package pdftex.def Info: images/surveyMesh8.png used on input line 999.
+Package pdftex.def Info: images/surveyMesh8.png used on input line 1004.
 (pdftex.def)             Requested size: 145.985pt x 73.17317pt.
 File: images/surveyMesh3.png Graphic file (type png)
 
 <use images/surveyMesh3.png>
-Package pdftex.def Info: images/surveyMesh3.png used on input line 1003.
+Package pdftex.def Info: images/surveyMesh3.png used on input line 1008.
 (pdftex.def)             Requested size: 145.985pt x 73.17317pt.
 
-Overfull \hbox (25.07614pt too wide) in paragraph at lines 1013--1033
+Overfull \hbox (25.07614pt too wide) in paragraph at lines 1018--1038
  [][] 
  []
 
@@ -1464,7 +1476,7 @@ File: images/experiment/Andrei_ONE_REPLOT.png Graphic file (type png)
 
 <use images/experiment/Andrei_ONE_REPLOT.png>
 Package pdftex.def Info: images/experiment/Andrei_ONE_REPLOT.png used on input 
-line 1044.
+line 1049.
 (pdftex.def)             Requested size: 100.37474pt x 100.37474pt.
 
 <images/experiment/Andrei_TWO_REPLOT.png, id=750, 200.75pt x 200.75pt>
@@ -1472,7 +1484,7 @@ File: images/experiment/Andrei_TWO_REPLOT.png Graphic file (type png)
 
 <use images/experiment/Andrei_TWO_REPLOT.png>
 Package pdftex.def Info: images/experiment/Andrei_TWO_REPLOT.png used on input 
-line 1045.
+line 1050.
 (pdftex.def)             Requested size: 100.37474pt x 100.37474pt.
 
 <images/experiment/Andrei_THREE_REPLOT.png, id=751, 200.75pt x 200.75pt>
@@ -1480,7 +1492,7 @@ File: images/experiment/Andrei_THREE_REPLOT.png Graphic file (type png)
 
 <use images/experiment/Andrei_THREE_REPLOT.png>
 Package pdftex.def Info: images/experiment/Andrei_THREE_REPLOT.png used on inpu
-t line 1046.
+t line 1051.
 (pdftex.def)             Requested size: 100.37474pt x 100.37474pt.
  [32 <./images/surveyPrototype.png>] [33 <./images/experiment/Andrei_ONE_REPLOT
 .png (PNG copy)> <./images/experiment/Andrei_TWO_REPLOT.png (PNG copy)> <./imag
@@ -1490,7 +1502,7 @@ File: images/experiment/Maria_Marinova_ONE_REPLOT.png Graphic file (type png)
 
 <use images/experiment/Maria_Marinova_ONE_REPLOT.png>
 Package pdftex.def Info: images/experiment/Maria_Marinova_ONE_REPLOT.png used o
-n input line 1082.
+n input line 1087.
 (pdftex.def)             Requested size: 100.37474pt x 100.37474pt.
 
 <images/experiment/Maria_Marinova_TWO_REPLOT.png, id=768, 200.75pt x 200.75pt>
@@ -1498,7 +1510,7 @@ File: images/experiment/Maria_Marinova_TWO_REPLOT.png Graphic file (type png)
 
 <use images/experiment/Maria_Marinova_TWO_REPLOT.png>
 Package pdftex.def Info: images/experiment/Maria_Marinova_TWO_REPLOT.png used o
-n input line 1083.
+n input line 1088.
 (pdftex.def)             Requested size: 100.37474pt x 100.37474pt.
 
 <images/experiment/Maria_Marinova_THREE_REPLOT.png, id=769, 200.75pt x 200.75pt
@@ -1507,7 +1519,7 @@ File: images/experiment/Maria_Marinova_THREE_REPLOT.png Graphic file (type png)
 
  <use images/experiment/Maria_Marinova_THREE_REPLOT.png>
 Package pdftex.def Info: images/experiment/Maria_Marinova_THREE_REPLOT.png used
- on input line 1084.
+ on input line 1089.
 (pdftex.def)             Requested size: 100.37474pt x 100.37474pt.
 
 <images/experiment/Nick_ONE_REPLOT.png, id=771, 200.75pt x 200.75pt>
@@ -1515,7 +1527,7 @@ File: images/experiment/Nick_ONE_REPLOT.png Graphic file (type png)
 
 <use images/experiment/Nick_ONE_REPLOT.png>
 Package pdftex.def Info: images/experiment/Nick_ONE_REPLOT.png used on input li
-ne 1116.
+ne 1121.
 (pdftex.def)             Requested size: 100.37474pt x 100.37474pt.
 
 <images/experiment/Nick_TWO_REPLOT.png, id=772, 200.75pt x 200.75pt>
@@ -1523,7 +1535,7 @@ File: images/experiment/Nick_TWO_REPLOT.png Graphic file (type png)
 
 <use images/experiment/Nick_TWO_REPLOT.png>
 Package pdftex.def Info: images/experiment/Nick_TWO_REPLOT.png used on input li
-ne 1117.
+ne 1122.
 (pdftex.def)             Requested size: 100.37474pt x 100.37474pt.
 
 <images/experiment/Nick_THREE_REPLOT.png, id=773, 200.75pt x 200.75pt>
@@ -1531,7 +1543,7 @@ File: images/experiment/Nick_THREE_REPLOT.png Graphic file (type png)
 
 <use images/experiment/Nick_THREE_REPLOT.png>
 Package pdftex.def Info: images/experiment/Nick_THREE_REPLOT.png used on input 
-line 1118.
+line 1123.
 (pdftex.def)             Requested size: 100.37474pt x 100.37474pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1545,17 +1557,17 @@ riment/Nick_THREE_REPLOT.png (PNG copy)>]
 File: images/baldHair.jpg Graphic file (type jpg)
 
 <use images/baldHair.jpg>
-Package pdftex.def Info: images/baldHair.jpg used on input line 1145.
+Package pdftex.def Info: images/baldHair.jpg used on input line 1150.
 (pdftex.def)             Requested size: 144.53743pt x 150.86095pt.
 
 <images/intersectHair.jpg, id=781, 361.35pt x 374.14781pt>
 File: images/intersectHair.jpg Graphic file (type jpg)
 
 <use images/intersectHair.jpg>
-Package pdftex.def Info: images/intersectHair.jpg used on input line 1146.
+Package pdftex.def Info: images/intersectHair.jpg used on input line 1151.
 (pdftex.def)             Requested size: 144.53743pt x 149.65646pt.
  [35 <./images/baldHair.jpg> <./images/intersectHair.jpg>]
-Overfull \hbox (0.7428pt too wide) in paragraph at lines 1172--1192
+Overfull \hbox (0.7428pt too wide) in paragraph at lines 1177--1197
  [][] 
  []
 
@@ -1568,49 +1580,34 @@ Underfull \vbox (badness 1831) has occurred while \output is active []
  [37]
 [38]
 Chapter 5.
+[39
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [39
-
-]
-[40]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+] [40]
+Underfull \vbox (badness 1365) has occurred while \output is active []
 
  [41]
-[42] (dissertation.bbl
-Missing character: There is no â in font cmr10!
-Missing character: There is no € in font cmr10!
-Missing character: There is no “ in font cmr10!
-Missing character: There is no â in font cmr10!
-Missing character: There is no € in font cmr10!
-Missing character: There is no “ in font cmr10!
- [43
+[42] (dissertation.bbl [43
 
 
 ]) [44]
-Appendix A.
-[45
-
-]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1346.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1346.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1336.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1336.
  (dissertation.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1346.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1346.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1336.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1336.
 
 Package rerunfilecheck Info: File `dissertation.out' has not changed.
-(rerunfilecheck)             Checksum: EFE3FA1A06737354E39323897110A00F;2165.
+(rerunfilecheck)             Checksum: 605C96A8869B318826BF839B8CEBFE3D;2170.
  )
 (\end occurred inside a group at level 1)
 
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 21685 strings out of 493333
- 383028 string characters out of 3143102
- 600471 words of memory out of 3000000
- 24512 multiletter control sequences out of 15000+200000
+ 21683 strings out of 493333
+ 383009 string characters out of 3143102
+ 600427 words of memory out of 3000000
+ 24511 multiletter control sequences out of 15000+200000
  12043 words of font info for 44 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  61i,18n,56p,1422b,6756s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1633,9 +1630,9 @@ m/cmsy10.pfb><E:/Programs/MikTex/fonts/type1/public/amsfonts/cm/cmsy7.pfb><E:/P
 rograms/MikTex/fonts/type1/public/amsfonts/cm/cmti10.pfb><E:/Programs/MikTex/fo
 nts/type1/public/amsfonts/cm/cmtt10.pfb><E:/Programs/MikTex/fonts/type1/public/
 amsfonts/symbols/msbm10.pfb>
-Output written on dissertation.pdf (67 pages, 4284660 bytes).
+Output written on dissertation.pdf (66 pages, 4246323 bytes).
 PDF statistics:
- 987 PDF objects out of 1000 (max. 8388607)
- 225 named destinations out of 1000 (max. 500000)
+ 984 PDF objects out of 1000 (max. 8388607)
+ 224 named destinations out of 1000 (max. 500000)
  558 words of extra memory for PDF output out of 10000 (max. 10000000)
 
