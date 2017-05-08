@@ -110,11 +110,11 @@ Existing tools for 3D modelling have remained mostly static in the paradigm of a
 	\begin{itemize}
 		\item Python with standard libraries for implementation.
 		\item GPy library to implement the regression model.
-		\item NumPy, SciPy, and Networkx for mathematical operations and processing meshes as graphs.
-		\item PIL, Matplotlib, and Plotly for plotting images and graphs.
+		\item NumPy and SciPy for mathematical operations
+		\item NetworkX for processing meshes as graphs.
+		\item Pillow, Matplotlib, and Plotly for plotting images and graphs.
 		\item Pickle for serialising objects as files.
 		\item Blender API for mesh processing and interfacing with the Blender 3D program for demonstration of our implementation.
-		\item Google Applications to create survey and collect feedback data.
 	\end{itemize}
 \end{quote}
 
@@ -125,14 +125,17 @@ Existing tools for 3D modelling have remained mostly static in the paradigm of a
 \begin{quote}
 	\noindent
 	\begin{tabular}{lcl}
-		$x$                 &:	& Scalar\\
+		$x$                 &:	& Scalar value\\
 		$\bm{x}$            &:	& Column vector\\
 		$\bm{x}^T$			&:	& Row vector, superscript T denotes transpose\\
 		$x_i$               &:  & the $i$-th value of a vector $\bm{x}$\\
+		$\bm{X}$			&:	& Matrix\\
 		$\bm{I}$ 			&:	& Identity matrix\\
-		$\bm{X}\in \Re^{n \times m}$	&:	& Matrix of real numbers with size $n \times m$\\
+		$\Re$				&:	& Set of real numbers\\
+		$|\bm{X}|$			&:	& Determinant of matrix $\bm{X}$\\	
 		$\mathcal{N}\sim(\mu, \sigma^2)$ 			&:	& Gaussian (normal) distribution with mean $\mu$ and variance $\sigma^2$.\\
-		DR					&:	& Dimensionality Reduction\\
+		ART-CG				&:	& Assisted Real-time Content Generation\\
+		MAP					&:	& Maximum A Posteriori\\
 		PCA		 			&:	& Principal Component Analysis\\
 		GP-LVM	 			&:	& Gaussian Process Latent Variable Model\\
 	\end{tabular}
@@ -172,7 +175,7 @@ The objective of this project is to demonstrate the potential of probabilistic n
 In this chapter, we will introduce complications of producing 3D hair geometry with traditional methods and past research on machine learning applied to creative fields. We will also outline the motivation and significance for research, including challenges and central objectives of this study.
 
 \section{Production of 3D Content}
-There are numerous representations of 3D objects in computer graphics. One way to obtain 3D geometry data is to sample surfaces of the physical world with a 3D scanner. Common representations of sampled geometric data include point clouds, range maps, and voxels. Such representations are effective for sampling as they reconstruct a surface from allocating many simple components.
+There are numerous representations of 3D objects in computer graphics. One way to obtain 3D geometry data is to sample surfaces of the physical world with a 3D scanner. Common representations of sampled geometric data include point clouds, range maps, and voxels (figure \ref{3drepresentations}). Such representations are effective for sampling as they reconstruct a surface from allocating many simple components.
 
 \begin{figure}[!h]
 	\centering
@@ -180,6 +183,7 @@ There are numerous representations of 3D objects in computer graphics. One way t
 	\includegraphics[scale=0.15]{images/pointCloud}
 	\includegraphics[scale=0.2]{images/rangeImage}
 	\includegraphics[scale=0.125]{images/octreeVoxel}\\
+	\label{3drepresentations}
 \end{figure}
 
 Representations have advantages and disadvantages depending on the use case. It is possible to convert between representations; however, converting between representations may incur data loss. Precise representations are often mathematical models such as \textit{NURBS} (Non-Uniform Rational Basis Spline) - frequently applied in the \textit{CAD} (Computer-Aided Design) industry. Mathematical models are precise as they do not suffer from floating-point inaccuracy that is present in many representations. The most widely applied representation for \textit{CGI} (Computer-Generated Imagery) is \textit{polygonal meshes}. In a production environment, it is preferred to define geometry specifically to requirements of the design as opposed to capturing examples. Polygon meshes are simple to define, yet with established techniques such as UV texturing and normal mapping, are sufficiently expressive for visual purposes. A significant amount of study has been conducted in the field of polygon meshes to improve its versatility. The study of polygonal meshes is deeply rooted in computer graphics.
@@ -193,7 +197,7 @@ On average, a human is born with between 90,000 to 150,000 scalp hair follicles 
 
 In recent years, leading solutions for real-time simulation of realistic hair and fur, such as \textit{NVIDIA HairWorks} and \textit{AMD TressFX} has emerged. These solutions, however, currently have limited adoption in comparison to their traditional counterpart of polygonal hair on real-time applications. It is often the case that texture-mapped polygonal hair is used as a fallback when advanced simulation fails. Realism is not necessarily always desirable, and polygon hair can flexibly represent different art styles. In some cases, a blend of multiple representations is used to balance between cost and quality. 3D hair in cinematography with a large budget can afford to render hair with representations that achieve much higher fidelity for major characters, but would still consider using efficient variants for scenarios such as crowd simulation. Ultimately, we can observe that the representation of virtual hair follows a structure of splines with control points that define the overall organisation of strands and wisp segment. This information will allow transferral between representations to an extent.
 
-There are various ways to construct a polygonal hair mesh. We are concerned with hair meshes formed from multiple planar sub-meshes of hair segments. This type of hair mesh can express a variety of styles but result in densely arranged geometry. 
+There are various ways to construct a polygonal hair mesh. We are concerned with hair meshes formed from multiple planar sub-meshes of hair segments such as the one presented in figure \ref{hairExemplar}. This type of hair mesh can express a variety of styles but result in densely arranged geometry. 
 Producing hair mesh data is challenging as content creators manipulate data that is exceptionally high dimensional, this reflects on \textbf{the curse of dimensionality}, a term coined by Bellman \cite{curseofdim} which refers to the phenomena where exhibited complexity of high-dimensional spaces grows exponentially greater than those of low-dimensionality. There are two perspectives where the curse of dimensionality applies in our project. First, from the viewpoint of a 3D content creator, appending data points to geometry on a 3D program becomes increasingly difficult. Tightly positioned components are laborious for creators to find or select, with each action having less impact on the overall surface. The other perspective is that of algorithmic complexity. Machine learning methods scale and generalise better when using a few key features, use of many features is computationally expensive and risks overfitting.
 
 Procedural generation techniques produce output that adheres to rules established by the generative model defined. Generation of terrains and city modelling sometimes employ procedural techniques to take advantage of its systematic nature to mass produce variations in agreement with specified patterns \cite{procedural1}. Fractals and methods such as the Lindenmayer system have been used to create patterns that resemble those observed in nature \cite{lsystem}. Automated techniques such as the ones discussed, however, are seldom used for modelling distinct objects with a specific design. It is an involved process to control the output of procedurally generated content without heavily restricting its capabilities. Automated methods that do not learn cannot adapt to changing demands without reimplementation, motivating for a learning-based solution.
@@ -202,6 +206,7 @@ Procedural generation techniques produce output that adheres to rules establishe
 	\centering
 	\caption{Polygonal hair representation. Image courtesy of Madina Chionidi, permission for use granted.}
 	\includegraphics[scale=0.3]{images/hairExemplar}\\
+	\label{hairExemplar}
 \end{figure}
 
 \section{Related Research of Machine Learning in Creative Fields}
@@ -244,14 +249,14 @@ In a production environment, the time required for a technique to return observa
 \section{Central Objectives}
 \label{chap:context:objectives}
 %The aim of this study is ...
-\begin{itemize}
+\begin{enumerate}
 	\item Performing dimensionality reduction on 3D mesh data.
 	\item Exploring the application of non-linear dimension reduction for high dimensional data such as 3D hair geometry.
 	\item Investigate the use of latent variables for identifying stylistic properties of 3D content.
 	\item Demonstrate the use of a non-linear manifold to generate new hairstyles from training data.
 	\item Enable an intuitive method for both experienced users and non-experts to easily create 3D hair geometry.
 	\item Achieve performance close to real-time for practical use.
-\end{itemize}
+\end{enumerate}
 
 % -----------------------------------------------------------------------------
 
@@ -263,7 +268,7 @@ This chapter will establish the technical foundation required for understanding 
 \section{Principal Component Analysis}
 In multivariate analysis, principal component analysis (PCA) is a statistical technique used to perform linear dimensionality reduction. It was originally introduced by Pearson \cite{pca1901}, and independently developed by Hotelling \cite{pca1933}, where the standard algebraic derivation of PCA was presented.
 
-Consider the properties that describe hair structure. Observable variables that can be measured include location, orientation, length, and colour. The data collected may indicate that some variables change together, this relation is measured as the covariance. The PCA technique searches for an ordered set of principal components that retain maximal variance. A principal component can be viewed as a combination of the observed variables. Should two observed variables strongly covary linearly, then it is plausible to describe the data with a single variable instead. The more linearly observed variables covary, the less information is lost from choosing a smaller set of principal components, thus effectively reducing dimensionality.
+Consider the properties that describe hair structure. Observable variables that can be measured include location, orientation, length, and colour. The data collected may indicate that some variables change together, this relation is measured as the covariance. The PCA technique searches for an orthogonal set of principal components that retain maximal variance. A principal component can be viewed as a combination of the observed variables. Should two observed variables strongly covary linearly, then it is plausible to describe the data with a single variable instead. The more linearly observed variables covary, the less information is lost from choosing a smaller set of principal components, thus effectively reducing dimensionality.
 
 Given a set of $n$ observed $d$-dimensional data represented as a design matrix, $\bm{X}=[\bm{x}_1,...,\bm{x}_n]^T$, the $q$ principal components $\bm{w}_j$, $j \in \{1,...,q\}$, are the orthonormal axes with maximal variance retained. The first principal component is a linear function $\bm{\alpha}^T_1\bm{X}$ that retains most variance of $\bm{X}$, where $\bm{\alpha}_1 = [\alpha_{11}, \alpha_{12}, ..., \alpha_{1n}]$ is a vector of $n$ constants such that \cite[p.4]{pca2002}:
 $$\bm{\alpha}^T_1\bm{X}=\alpha_{11}\bm{x_1}+\alpha_{12}\bm{x_2}+...+\alpha_{1n}\bm{x_n} = \sum^n_{i=1}a_{1i}\bm{x_i}$$
@@ -277,7 +282,7 @@ $\bm{L} \in \Re^{r \times r}$ is a diagonal matrix of the singular values of $\b
 $\bm{V} \in \Re^{d \times r}$ is a matrix of orthonormal columns that are the right singular vectors.
 
 A limitation of standard PCA is the lack of a probabilistic solution. 
-It is very likely for there to be a multiple sets of principal components that is equally acceptable. In the case of polygonal hair production, this aspect is more prominent as an artistic environment desires to evaluate various plausible designs. A probabilistic model will enable exploration of other stylistic embeddings for hair structure. One way to formulate a probabilistic model is to introduce the notion of noise among observed variables.
+It is very likely for there to be multiple sets of principal components that are equally acceptable. In the case of polygonal hair production, this aspect is more prominent as an artistic environment desires to evaluate various plausible designs. A probabilistic model will enable exploration of other stylistic embeddings for hair structure. One way to formulate a probabilistic model is to introduce the notion of noise among observed variables. It is often the case that we assume the noise to follow a Gaussian distribution. In the remainder of this chapter, the Gaussian distribution will take a central role. Therefore, we will proceed to describe its characteristics in detail.
 
 \section{Multivariate Gaussian Distribution}
 The Gaussian (normal) distribution is a reasonable prior assumption for data that is subject to the central limit theorem, which states that as the sample size of a population tends to infinity, the distribution becomes normally distributed \cite[p.78]{bishop}.
@@ -359,28 +364,29 @@ p(\bm{y})=\frac{1}{2\pi\sqrt{|\bm{D}|}}\exp\left(-\frac{1}{2}(\bm{y}-\bm{\mu})^T
 where $\bm{D}\in\Re^{n \times n}$ is the diagonal matrix of the variances \cite[p.78]{bishop}.
 
 \section{A Probabilistic Model for PCA}
-Tipping and Bishop introduced a probabilistic principal component analysis by constraining the noise distribution of a \textbf{latent variable model} to be Gaussian such that it is \textit{effectively equivalent when its marginal likelihood is maximised} \cite{ppca}.
+Tipping and Bishop introduced a probabilistic framework for principal component analysis by constraining the noise distribution of a \textbf{latent variable model} \cite{ppca}.
 
 A \textit{latent variable model} transforms a set of $n$ $d$-dimensional observed variables encoded as a design matrix, $\bm{Y}=[\bm{y}_1,...,\bm{y}_n]^T$, to a set of $n$ $q$-dimensional latent (unobserved) variables, $\bm{X}=[\bm{x}_1,...,\bm{x}_n]^T$. Latent variables are parsimonious, it is generally the case that $q \ll d$, explaining the original data with fewer variables. A notable latent variable model is that of \textbf{factor analysis}, one that assumes linearity in relation of the observed data set.
 For each observed data point, $\bm{y}_i \in \bm{Y}$, $1 \leq i \leq n $, there is an associated latent variable $\bm{x_i}$. The original data can be represented in terms of the corresponding latent variable as
 \begin{equation} \label{ppca:fa}
 \bm{y}_i=\bm{Wx}_i+\bm{\mu}_i+\bm{\epsilon}_i.
 \end{equation}
-The matrix $\bm{W}$ represents the linear relationship between the latent-space with the data-space.
+The matrix $\bm{W}$ represents the linear relationship between the latent-space with the data-space. Figure \ref{lvm} shows how observed variables can be obtained from a latent variable model.
 The parameter $\bm{\mu}_i$ allows for non-zero mean, and the $\bm{\epsilon}_i$ parameter represents noise within the model. Standard PCA can be viewed as a variant of factor analysis where the noise parameter is not accounted for. The maximum-likelihood estimates of $\bm{W}$ will thus generally not correspond to the principal subspace. PCA reduce dimensionality without explaining the relation between the original data and its principal components. Regression is possible with a model that explains the relation between observed variables and latent variables.
 
 \begin{figure}[!h]
 	\centering
-	\caption{In a latent variable model, a latent variable, $\bm{X}$, is input into a function, $\bm{F}$, which maps to the output observed variables, $\bm{Y}$.}
+	\caption{A latent variable model learns the mapping of input $\bm{x}_i$ to output $\bm{y}_i$ by encoding the relationship in matrix $\bm{W}$, which models the behaviour of the underlying function.}
+	\vspace{0.1cm}
 	\begin{tikzpicture}
-		\tikzstyle{bf} = [font=\bf]
-		\node[bf, draw, circle] (X) {X};
-		\node[bf, draw, circle] (F) [below of=X] {F};
-		\node[bf, draw, circle] (Y) [below of=F] {Y};
+		\node[draw, circle] (X) at (-1, 0) {$\bm{x}_i$};
+		\node[draw, circle] (W) at (1, 0) {$\bm{W}$};
+		\node[draw, circle] (Y) at (0, -1) {$\bm{y}_i$};
 		
-		\path [->] (X) edge (F);
-		\path [->] (F) edge (Y);
+		\path [->] (X) edge (Y);
+		\path [->] (W) edge (Y);
 	\end{tikzpicture}
+	\label{lvm}
 \end{figure} 
 
 The latent variable model developed by Tipping and Bishop performs principal component analysis by modelling the noise parameter of equation \ref{ppca:fa} as an isotropic, spherical Gaussian distribution
@@ -426,10 +432,10 @@ The matrix $\bm{U}_q$ contains the column vectors that are the principal eigenve
 Maximising the likelihood of $\bm{W}$ by equation \ref{ppca:ml} on the latent variable model defined by equation \ref{ppca:fa} maps the latent-space to the principal subspace of the observed data. Satisfying $\bm{W}_{ML}$, the latent variable model is effectively equivalent to standard principal component analysis.
 
 \section{Gaussian Process Latent Variable Model}
-The Gaussian Process Latent Variable Model (GP-LVM) is a non-linear latent variable model derived from a dual of the probabilistic PCA by replacing the inner product kernel with Gaussian processes (Lawrence 2005) \cite{gplvm}. A non-linear embedding is more suitable model for capturing high dimensional data such as polygonal hair structure.
+The PCA formulation by Tipping and Bishop allows a probabilistic model, however, it assumes the relation of data is linear. The Gaussian Process Latent Variable Model (GP-LVM) is a non-linear latent variable model derived from a dual of the probabilistic PCA by replacing the inner product kernel with Gaussian processes (Lawrence 2005) \cite{gplvm}. A non-linear embedding is a more suitable model for capturing high dimensional data such as polygonal hair structure.
 	
 \subsection{Dual Probabilistic PCA}
-The dual probabilistic PCA introduced by Lawrence marginalises the parameters, $\bm{W}$, and optimises with respect to latent variables, $\bm{X}$. This is the dual approach of the standard probabilistic PCA where the parameters are optimised and the latent variables are marginalised.
+The dual probabilistic PCA introduced by Lawrence allow for latent mappings to be non-linearised through the kernel trick. It marginalises the parameters, $\bm{W}$, and optimises with respect to latent variables, $\bm{X}$. This is the dual approach of the standard probabilistic PCA where the parameters are optimised and the latent variables are marginalised.
 
 First, a conjugate prior to the likelihood of probabilistic PCA (\ref{ppca:likelihood}) is taken to be a spherical Gaussian distribution,
 $$p(\bm{W})=\prod^d_{i=1}\mathcal{N}(\bm{w}_i|\bm{0,I}).$$
@@ -453,18 +459,19 @@ The values for $\bm{X}$ which maximise the likelihood are given by singular valu
 $$\bm{X=ULV}^T.$$
 $\bm{U}$ is a matrix whose orthonormal column vectors are the first eigenvectors of $\bm{YY}^T$. $\bm{L}$ is a diagonal matrix of singular values, whose $i^{th}$ element is $l_i=(\lambda_i-\frac{1}{\beta})^{-\frac{1}{2}}$, where $\lambda_i$ is the eigenvalue associated with the $i^{th}$ eigenvector $\frac{1}{d}\bm{YY}^T$. $\bm{V}$ is an arbitrary rotation matrix. Lawrence showed that the eigenvalue problem developed here is equivalent to the eigenvalue problem solved in probabilistic PCA, and thus, dual probabilistic PCA is also effectively equal to standard PCA when the likelihood is maximised.
 Dual probabilistic PCA assumes that the output dimensions are linear, independent, and identically distributed. Infringing upon these assumptions derive new probabilistic models.
+
 \subsection{Gaussian Processes}
-A Gaussian process (GP) is a non-parametric statistical model that generalises a probability distribution over functions by treating each observed variable as an independent distribution. A prior probability distribution is an assumption of belief before taking into account of evidence. Observing the output of a continuous function provides information regarding its behaviour around that specific point. For a noiseless model, we can be certain that the input must intersect the point at observed output. This refines our belief to obtain a posterior. A model with noise can \textit{infer} that the mapping is nearby the observation, thus treating each observed variable as an independent distribution allows us to take into account of the noise model for prediction.
+A Gaussian process (GP) is a non-parametric statistical model that is a distribution over functions. It treats each observed variable as an independent distribution. A prior probability distribution is an assumption of belief before taking into account of evidence. Observing the output of a continuous function provides information regarding its behaviour around that specific point. For a noiseless model, we can be certain that the input must intersect the point at an observed output, as shown in figure \ref{gpplot}. An observation refines our belief to obtain a posterior. A model with noise can \textit{infer} that the mapping is nearby the observation, thus treating each observed variable as an independent distribution allows us to take into account of the noise model for prediction.
 
 \begin{figure}[!h]
 	\centering
 	\includegraphics[scale=0.5]{images/gpPrior}
 	\includegraphics[scale=0.5]{images/gpPosterior}
-	\caption{To the left is a prior distribution of a Gaussian process, and to the right is the posterior distribution after updating with observations that are corrupted by noise. The semi-transparent functions represent samples from the likelihood distribution.}
-	\label{gpnoisy}
+	\caption{Plot of a Gaussian process prior (left) and posterior (right). The semi-transparent functions represent samples from the likelihood distribution.}
+	\label{gpplot}
 \end{figure}
 
-Formally, a Gaussian process is a finite collection of random variables that are jointly Gaussian, specified by a mean function $m(\bm{x})$ and covariance function $k(\bm{x},\bm{x'})$ of a real process $f(\bm{x})$ \cite[p.13]{gp},
+Formally, a Gaussian process is an finite collection of random variables that are jointly Gaussian, specified by a mean function $m(\bm{x})$ and covariance function $k(\bm{x},\bm{x'})$ of a real process $f(\bm{x})$ \cite[p.13]{gp},
 $$f(\bm{x})\sim\mathcal{GP}(m(\bm{x}), k(\bm{x}, \bm{x'})),$$
 where
 $$m(\bm{x})=\mathbb{E}[f(\bm{x})],$$
@@ -557,17 +564,17 @@ Our motivation for dimensionality reduction on 3D geometry with a latent variabl
 \chapter{Project Execution}
 \label{chap:execution}
 
-This chapter covers the process of assisted real-time content generation for 3D hair geometry by applying non-linear dimensionality reduction to obtain a \textit{regression model} and a \textit{latent manifold} for selecting output. The project dedicated a significant portion to the processing of input polygonal hair mesh data so that the non-linear dimensionality reduction can be effectively applied. First, we outline the process of acquiring appropriate 3D mesh input data and challenges imposed by using polygonal meshes as training data. Then, we discuss why it is hard to apply machine learning methods on mesh data structure and presenting a solution to address this issue by sampling generative inputs from the mesh. The training process gives a regression model which can predict output data that represents hair structure from latent input variables. Reducing the dimensionality of generative inputs to two latent variables allow us to plot the likelihood distribution of the latent manifold as a 2D image. We present a demonstrative implementation as an add-on for Blender 3D, where the 2D latent manifold serves as a method of selecting latent variables as input for the regression model to create hair geometry.
+This chapter covers the process of assisted real-time content generation for 3D hair geometry by applying non-linear dimensionality reduction to obtain a \textit{regression model} and a \textit{latent manifold} for selecting output. The project dedicated a significant portion to the processing of input polygonal hair mesh data so that the non-linear dimensionality reduction can be effectively applied. First, we outline the process of acquiring appropriate 3D mesh input data and challenges imposed by using polygonal meshes as training data. Then, we discuss why it is hard to apply machine learning methods on mesh data structure and presenting a solution to address this issue by sampling generative inputs from the mesh. The training process gives a regression model which can predict output data that represents hair structure from latent input variables. Reducing the dimensionality of generative inputs to two latent variables allow us to plot the likelihood distribution of the latent manifold as a 2D image. We present a demonstrative implementation as an add-on for Blender 3D, where the 2D latent manifold serves as a method of selecting latent variables as input for the regression model to create hair geometry. Figure \ref{latentAddon} displays an image capture of the demonstrative add-on in use.
 
 \begin{figure}[!h]
 	\centering
 	\includegraphics[scale=0.3]{images/latentHairAddon}
-	\caption{Assisted real-time content generation with the regression model and latent manifold image obtained from the training process is demonstrated as an add-on for Blender 3D.}
+	\caption{A screen capture of the assisted real-time content generation add-on for Blender. It loads the regression model and latent manifold image obtained from the training process.}
 	\label{latentAddon}
 \end{figure}
 
 \section{Training Data Set}
-The machine learning process begins with training data acquisition. Suitable 3D hair geometry is scarce when compared to other mediums such as images. Courtesy of Electronic Arts there exists an active community that produces free for non-commercial use custom content for their gaming software - which includes polygonal hair \cite{tsr}. Files acquired are encoded in the \textit{Package} format, developed for a video game series, \textit{The Sims}. Open-source community software \textit{s4pe} is used to read the \textit{Package} file and extract geometry in \textit{Simgeom} format \cite{s4pe}. The \textit{Simgeom} format is then converted to \textit{OBJ} format using yet another open-source program \textit{S4CASTools} \cite{s4cas}. The geometry extracted is already standardised in scale and orientation.
+The machine learning process begins with training data acquisition. Suitable 3D hair geometry is scarce when compared to other mediums such as images. Courtesy of Electronic Arts there exists an active community that produces free for non-commercial use custom content for their gaming software - which includes polygonal hair \cite{tsr}. Files acquired are encoded in the \textit{Package} format, developed for a video game series, \textit{The Sims}. Open-source community software \textit{s4pe} is used to read the \textit{Package} file and extract geometry in \textit{Simgeom} format \cite{s4pe}. The \textit{Simgeom} format is then converted to \textit{OBJ} format using yet another open-source program \textit{S4CASTools} \cite{s4cas}. Figure \ref{inputHairs} present four examples of the training mesh acquired. The geometry extracted are already standardised in scale and orientation.
 
 \begin{figure}[!h]
 	\centering
@@ -575,7 +582,7 @@ The machine learning process begins with training data acquisition. Suitable 3D 
 	\includegraphics[scale=2]{images/inputHair2}
 	\includegraphics[scale=2]{images/inputHair3}
 	\includegraphics[scale=2]{images/inputHair4}
-	\caption{examples of polygon hair mesh training data.}
+	\caption{Examples of polygon hair mesh training data.}
 	\label{inputHairs}
 \end{figure}
 
@@ -591,14 +598,15 @@ The machine learning process begins with training data acquisition. Suitable 3D 
 	\item Repeat from step 2 with the next mesh in the training directory until processing of all meshes.
 \end{enumerate}
 
-Existing algorithmic solutions for converting a triangle mesh to a quad mesh are imperfect. Remaining triangular faces are required to be removed manually after the procedure. The conversion process alters the geometry very marginally but preserves the representation of hair structure. The quad-faced meshes are used for feature extraction and are assumed to be correct in the context that it is representative of a valid hairstyle. 
+Existing algorithmic solutions for converting a triangle mesh to a quad mesh are imperfect. Remaining triangular faces are required to be removed manually after the procedure. The conversion process, expressed in figure \ref{fig:triToQuad}, alters the geometry very marginally - but preserves the representation of hair structure. The quad-faced meshes are used for feature extraction and are assumed to be correct in the context that it is representative of a valid hairstyle. 
 
 \begin{figure}[!h]
 	\centering
 	\includegraphics[scale=2]{images/triToQuad1}
 	\includegraphics[scale=2]{images/triToQuad2}
 	\includegraphics[scale=2]{images/triToQuad3}
-	\caption{Triangular faces are highlighted using a selection procedure for all faces that are made of exactly three edges. To the left is an original mesh acquired, the middle shows a selection of remaining triangles after the automatic tri-to-quad conversion, and the right displays a retopologised mesh of entirely quads.}
+	\caption{The retopology process. Triangular faces are highlighted using a selection procedure for all faces that are made of exactly three edges. To the left is an original mesh acquired, the middle shows a selection of remaining triangles after the automatic tri-to-quad conversion, and the right displays a retopologised mesh of entirely quads.}
+	\label{fig:triToQuad}
 \end{figure}
 
 Sampling four input mesh from the training set (those displayed in figure \ref{inputHairs}), on average there are around $2 \times 10^{2}$ sub-meshes, $1 \times 10^{4}$ vertices and  $3 \times 10^{4}$ edges per mesh. To retopologise the remaining triangles as quads manually, the hair mesh is separated into individual segments. Toggling the visibility of layering sub-mesh surfaces hides obstructing vertex, edge, and face components. Each sub-mesh must be inspected to find remaining triangular polygons. There are many ways one can modify the topology of a mesh; we assume that basic methods such as utilising the knife tool or dissolve tool of Blender takes a non-expert order of seconds per sub-mesh. The time for manually retopologising a partially converted mesh with the complexity of our training data takes order of hours each. Unfortunately, this meant that it is extremely time consuming to prepare meshes defined by the \textit{Simgeom} format, thus for regression models with larger training sets we settled with including partial examples.
@@ -608,29 +616,32 @@ To utilise machine learning methods for production of 3D hair geometry,  we deve
 
 Wang et al. (2009) parametrised a 3D scalp space using spherical projection \cite{examplebasedhair}. This space approximated the surface of a scalp as a hemisphere with the centre denoting the origin. We apply a similar approach with a spherical coordinate system to determine the surface of a scalp.
 
-The spherical polar coordinate system specifies a point from the origin using three parameters:  $(r,\theta,\phi)$ \cite[pp.123-126]{sphericalcoords}. The \textbf{radial distance}, $r$, represents the distance from the origin. We also measure two angles: a \textbf{polar angle}, $\theta$, from the positive $z$-axis (zenith direction) and an \textbf{azimuth angle}, $\phi$, is measured from the $xy$-plane that is orthogonal to the zenith.
+The spherical polar coordinate system (figure \ref{fig:sphereCoord}) specifies a point from the origin using three parameters:  $(r,\theta,\phi)$ \cite[pp.123-126]{sphericalcoords}. The \textbf{radial distance}, $r$, represents the distance from the origin. We also measure two angles: a \textbf{polar angle}, $\theta$, from the positive $z$-axis (zenith direction) and an \textbf{azimuth angle}, $\phi$, is measured from the $xy$-plane that is orthogonal to the zenith.
 
 \begin{figure}[!h]
 	\centering
 	\includegraphics[scale=0.25]{images/sphereCoords}\\
 	\caption{The 3D spherical coordinate system.
 	Source: \href{https://commons.wikimedia.org/wiki/File:3D_Spherical.svg}{https://commons.wikimedia.org/wiki/File:3D\_Spherical.svg}, Public Domain.}
+	\label{fig:sphereCoord}
 \end{figure}
 
-Uniformly placing points at a fixed radial distance and constant intervals within constrained angles give a collection of points that represent hair roots of the scalp. Increasing the number of hair roots allows sampling of higher fidelity. However, this also demands greater computational resources.
+Uniformly placing points at a fixed radial distance and constant intervals within constrained angles give a collection of points that represent hair roots of the scalp. Figure \ref{fig:roots} visualise the hair roots placed by one particular arrangement. Increasing the number of hair roots allows sampling of higher fidelity. However, this also demands greater computational resources.
 
 \begin{figure}[!h]
 	\centering
 	\caption{Sphere meshes visualise root positions. The angle ranges specify coverage area of the scalp, while the interval of placements determines resolution. Fitting a sphere to the reference head mesh approximates the radial distance and origin.}
 	\includegraphics[scale=0.5]{images/spherePoints}\\
+	\label{fig:roots}
 \end{figure}
 
-A total of 342 polylines in our generative model is used to describe hair structure. We construct each polyline from 10 points in a 3D space. The resulting feature vector is 10260 dimensions long.
+A total of 342 polylines in our generative model is used to describe hair structure. We construct each polyline from 10 points in a 3D space. The resulting feature vector is 10260 dimensions long. An example is a plot in figure \ref{fig:genModel}.
 
 \begin{figure}[!h]
 	\centering
 	\includegraphics[scale=3]{images/generativeModel}\\
 	\caption{A possible configuration of 10260 data points in the generative model}
+	\label{fig:genModel}
 \end{figure}
 
 \section{Sampling Generative Inputs from Input Data}
@@ -677,7 +688,6 @@ We devise an edge loop extraction algorithm that achieves the properties specifi
 	\centering
 	\caption{The edge loop extraction algorithm. It begins by selecting an edge within the mesh graph. The two vertices of the edge are \textbf{end vertices}. We then proceed to \textit{grow} the edge loop selection. Take the set of \textbf{first-degree neighbours} of the \textit{end vertices}; these nodes are the \textit{candidates} for the edge loop. We remove edges that are part of the current edge loop from this set of first-degree neighbours. We add the first-degree neighbours to a set of face vertices for following iterations. Take the neighbours of the first-degree neighbours as a set of \textbf{second-degree neighbours}, removing its originating end vertex. A candidate node is only accepted to the edge loop if its set neighbours do not intersect with the set of face vertices. Append accepted vertices to the list of end vertices will allow the repeat of this process until there are no end vertices left to grow the selection.}
 	\includegraphics[scale=0.35]{images/edgeLoopDiagram}\\
-	
 	\label{edgeLoopFig}
 \end{figure}
 
@@ -713,7 +723,7 @@ Hair structure estimation begins by splitting the mesh into sub-meshes, determin
 
 \begin{figure}[!h]
 	\centering
-	\caption{Observe that the corner vertices have two edges, and the boundary edges have three. Determining the root edge loop is done by choosing the boundary edge loop that is closest to the scalp surface.}
+	\caption{A selected root edge loop. Observe that the corner vertices have two edges, and the boundary edges have three. Determining the root edge loop is done by choosing the boundary edge loop that is closest to the scalp surface.}
 	\includegraphics[scale=0.5]{images/rootLoop}\\
 \end{figure}
 
@@ -793,7 +803,7 @@ The \textit{radial basis function} (RBF) kernel models data smoothly. Generating
 
 An \textit{exponential kernel} behaves sharply, resembling the training data only very close to the corresponding latent variable on the manifold. Any distance from the latent variables of training data quickly introduces uncertainty, causing the regression model to move towards the mean value. This behaviour can perhaps be useful when setting the mean to a typical default hairstyle for exploring variations, however, a regression model with zero mean quickly produces invalid geometry as surfaces begin to overlap and collapse towards the origin.
 
-Using a \textit{linear kernel} is equivalent to modelling with PPCA. Each latent variable embeds a linear relationship of the original data, thus not as effective for hair geometry that is profoundly non-linear in nature. The majority of the latent manifold in the demonstrative implementation produces nonsensical hair geometry when using the regression model with a linear kernel. Linear relationships, however, are simpler to interpret, thus might have applications as additional controllers for in-depth modelling.
+Using a \textit{linear kernel} is equivalent to modelling with PPCA. Each latent variable embeds a linear relationship of the original data, thus not as effective for hair geometry that is profoundly non-linear in nature. The majority of the latent manifold in the demonstrative implementation produces nonsensical hair geometry when using the regression model with a linear kernel. Linear relationships, however, are simpler to interpret, thus might have applications as additional controllers for in-depth modelling. Figure \ref{fig:manifold} shows the latent manifolds learned from our training set with RBF, exponential, and linear kernel.
 
 \begin{figure}[!h]
 	\centering
@@ -801,6 +811,7 @@ Using a \textit{linear kernel} is equivalent to modelling with PPCA. Each latent
 	\includegraphics[scale=1]{images/latentPlot_t10}
 	\includegraphics[scale=1]{images/latentPlot_exp}
 	\includegraphics[scale=1]{images/latentPlot_linear}
+	\label{fig:manifold}
 \end{figure}
 
 \textit{Hyperparameters} of a kernel specifies its behaviour. A \textit{lengthscale} parameter determines how much the distance of variables influence each other, and the \textit{variance} describes its distribution. We apply \textit{automatic relevance determination} (ARD), which uses the observed data to estimate the hyperparameters of the kernel.
@@ -833,7 +844,7 @@ A user-defined Blender operator class, the \textbf{latent selection modal operat
 	\caption{Latent Variable Selection}
 \end{algorithm}
 
-The output of the regression model is an array of inputs for the generative model. The prediction is restructured to create \textit{guide strands} from the polyline curve data structure of the Blender API. Polygon mesh geometry is created using curve modelling attributes commonly available to 3D software. The \textit{extrude} functionality creates planar geometry along the polylines. As the geometry produced is not textured, we use a generative model that creates more roots and tapering geometry to replicate hair locks.
+The output of the regression model is an array of inputs for the generative model. The prediction is restructured to create \textit{guide strands} from the polyline curve data structure of the Blender API as displayed in figure \ref{fig:guidingStrands}. Polygon mesh geometry is created using curve modelling attributes commonly available to 3D software. The \textit{extrude} functionality creates planar geometry along the polylines. As the geometry produced is not textured, we use a generative model that creates more roots and tapering geometry to replicate hair locks.
 A \textit{taper object} is a reference curve that defines thickness of the geometry produced along the polyline. A \textit{bevel} on a curve defines the cross-section geometry. The use of bevel and extrusion creates geometry that covers the scalp surface.
 
 \begin{figure}[!h]
@@ -841,6 +852,7 @@ A \textit{taper object} is a reference curve that defines thickness of the geome
 	\caption{The generative inputs predicted are restructured into guiding strands. Geometry is created in accordance to the hair structure described by the guiding strands.}
 	\includegraphics[scale=0.3]{images/guidingStrands}
 	\includegraphics[scale=0.3]{images/guidingExtrusion}
+	\label{fig:guidingStrands}
 \end{figure}
 
 An extension to our generative model would be specifying additional sample attributes such as orientation and width of hair segments; this would enable the regression model to learn such attributes of the input data.
@@ -853,7 +865,7 @@ The motivation for assisted real-time content generation of polygonal hair stems
 
 We collect example meshes for training data. Geometric data representing a surface is a many-to-one relationship. There are many arrangements of geometric properties that could denote the same surface. However, data analysis requires this representation must be standardised beforehand. The proposition of a generative model allows sampling of meshes to acquire standardised generative inputs so machine learning methods can be applied.
 
-Learning is selecting an appropriate kernel and refining the hyperparameters with evidence. We observed the behaviour of various kernels, discussing properties that may be useful. Finally, we incorporate the regression model and latent manifold obtained from learning into a state-of-the-art 3D software and created geometry from the generative information predicted.
+Learning is selecting an appropriate kernel and refining the hyperparameters with evidence. We observed the behaviour of various kernels, discussing properties that may be useful. Finally, we incorporate the regression model and latent manifold obtained from learning into a state-of-the-art 3D software and created geometry (figure \ref{fig:outputMeshes}) from the generative information predicted.
 
 \begin{figure}[!h]
 	\centering
@@ -870,19 +882,19 @@ Learning is selecting an appropriate kernel and refining the hyperparameters wit
 	\includegraphics[scale=0.25]{images/outputMesh10}
 	\includegraphics[scale=0.25]{images/outputMesh11}
 	\includegraphics[scale=0.25]{images/outputMesh12}
+	\label{fig:outputMeshes}
 \end{figure}
 
 % -----------------------------------------------------------------------------
 
 \chapter{Critical Evaluation}
 \label{chap:evaluation}
+Through assisted real-time content generation we aim to improve the efficacy of producing 3D hair geometry. For this reason, we seek to evaluate what our proposition has to contribute towards the process of creating hair geometry. Primary categories of contribution include the usefulness of resulting geometry, the time it takes to produce geometry, user experience and behavioural characteristics of users when modelling with a latent manifold.
 
-Through assisted real-time content generation we aim to improve the efficacy of producing 3D hair geometry. For this reason, we seek to evaluate what our proposition has to contribute towards the process of creating hair geometry. Primary categories of contribution include: the usefulness of resulting geometry, the time it takes to produce geometry, user experience and behavioural characteristics of users when modelling with a latent manifold.
-
-This chapter will start by examining two methods devised to obtain feedback regarding the application of 3D modelling with a latent manifold. First, a survey is used to compare results of the generative output to the training set, and obtain initial reception to the concept. A sample size of 15 subjects completed this survey. Secondly, a sequence of experiments were conducted by users examining our prototype implementation. Activity data was logged to analyse behavioural patterns among subjects. A sample size of 10 completed the experiment. We then proceed to discuss the performance of our demonstrative implementation. The chapter concludes with evaluation of choices made during this project and potential applications of assisted real-time content generation with latent regression models.
+This chapter will start by examining two methods devised to obtain feedback regarding the application of 3D modelling with a latent manifold. First, a survey is used to compare results of the generative output to the training set and obtain initial reception to the concept. A sample size of 15 subjects completed this survey. Secondly, we conducted a sequence of experiments that involve users navigating through the latent manifold of our prototype implementation. Activity data was logged to analyse behavioural patterns among subjects. A sample size of 10 completed the experiment. We then proceed to discuss the performance of our demonstrative implementation. The chapter concludes with potential applications of assisted real-time content generation with latent regression models.
 
 \section{Latent Hair Modelling Survey}
-The survey starts with a section that queries the name of participants and their experience with producing 3D content. Out of ethical concern, this survey questioned only information necessary for the study, minimising inquiry of personal details. Participants are notified that the data collected will be used for research purposes. 60\% of the participants considered themselves non-experts, while the remaining 40\% had some form of experience. The first section seeks to evaluate the performance of our generative model. The survey presents participants a series of images consisting of training meshes and meshes generated using the output of our regression model, to which they give a likelihood rating between the range 0 (0\%) to 10 (100\%) for which how much the presented geometry resembles hair. 
+The survey starts with a section that queries the name of participants and their experience with producing 3D content. Out of ethical concern, this survey questioned only information necessary for the study, minimising inquiry of personal details. A disclaimer notifies participants how the data collected will be used for research purposes. 60\% of the participants considered themselves non-experts, while the remaining 40\% had some form of experience.
 
 \begin{figure}[!h]
 	\centering
@@ -896,9 +908,13 @@ The survey starts with a section that queries the name of participants and their
 	\includegraphics[scale=1.1]{images/surveyMesh7}
 	\includegraphics[scale=1.1]{images/surveyMesh8}\\
 	\caption{Images presented in the survey, named mesh 1-4 on the first row from left to right, and 5-8 on the second. Training meshes are 1, 4, 5, and 6. Output mesh are 2, 3, 7, and 8.}
+	\label{surveyMeshes}
 \end{figure}
 
-A mixture of training and output mesh is presented independently without notifying the subjects know which set a particular example belongs to. This enables us to evaluate an objective difference between the perception of training data and output result. If the subject believes that the training meshes are a good indicator for hair, then success criteria for our generative model would be to match those likelihood ratings. Likewise, a low absolute rating for the output mesh is acceptable if the ratings of training meshes are also low.
+The first section presents participants with a series of images (displayed in figure \ref{surveyMeshes}). The presented set of images consists of training meshes and generated meshes using the output of our regression model. Participants estimate a likelihood rating between the range 0 (0\%) to 10 (100\%) for how much the geometry resembles hair. 
+The latent-space is a low-dimensional representation of the high-dimensional hair geometry learned from training meshes. This section of the survey seeks to evaluate the how effectively have we performed dimensionality reduction on hair geometry by observing whether participants believe there is an evident difference between the low-dimensional representation of hair geometry output generated from a latent-space and original high-dimensional training hair meshes. 
+
+A mixture of training and output mesh is presented independently without notifying the subjects which set a particular example belongs. Comparing results of the two sets can evaluate a relative difference between the training data and output result regardless of how a participant perceives hair resemblance. If the subject believes that the training meshes are a good indicator for hair, then success criteria for our generative model would be to match those likelihood ratings. Likewise, a low absolute rating for the output mesh is acceptable if the ratings of training meshes are also low.
 
 \begin{figure}[!h]
 	\centering
@@ -910,54 +926,58 @@ A mixture of training and output mesh is presented independently without notifyi
 	\centering
 	\begin{tabular}{|c|c|c|c|}
 		\hline
-		Mesh Type 	& Mean		& Standard Deviation	& Variance\\
+		Mesh Type 	& Mean		& Variance	& Standard Deviation\\
 		\hline
-		Training 	& 7.92      & 1.62      			& 2.62\\
+		Training 	& 7.92      & 2.62		& 1.62\\
 		\hline
-		Output 		& 5.08 		& 2.51 					& 6.28 \\
+		Output 		& 5.08 		& 6.28 		& 2.51\\
 		\hline
 	\end{tabular}
 	\caption{Mean, standard deviation, and variance of training and output mesh (3 s.f).}
 \end{table}
 
-In general, training mesh is consistently rated very highly in likelihood at 7.92 mean with 2.62 variance. On the other hand, the output mesh has a mean of 5.08 but results spread out more with a variance of 6.28. To determine whether the difference of results is reliable, we perform an independent samples $t$-test for inferential evaluation. The null hypothesis is that there exists no statistical significance difference between the samples. The $t$ value is computed as
+In general, training mesh is consistently rated very highly in likelihood at 7.92 mean with a standard deviation of 1.62. On the other hand, the output mesh rated moderately with a mean of 5.08 but results spread out more with a standard deviation of 2.51. To determine whether the difference of results is reliable, we perform independent samples $t$-test for inferential evaluation. The null hypothesis is that there exists no statistical significance difference between the samples. The $t$ value is computed as
 $$\text{t}=\frac{\text{difference between group means}}{\text{variability of groups}}=\frac{\bar{x_1}-\bar{x_2}}{\sqrt{\frac{\sigma^2}{n_1}+\frac{\sigma^2}{n_2}}}$$
 We obtain t-value
 $$t = \frac{2.84}{\sqrt{\frac{2.62}{60}+\frac{6.28}{60}}}=7.37.$$
-The degree of freedom for a sample size of 120 is 118. The test rejects the null hypothesis for a $p$-value of 0.05, where the critical value of a two-tailed test with high degree of freedom is 1.96. This indicates that there is extreme statistical significance between the two sets. From this result, we can infer that there is an observable difference between the training and output meshes.
+The degree of freedom for a sample size of 120 is 118. The test rejects the null hypothesis for a $p$-value of 0.05, where the critical value of a two-tailed test with a high degree of freedom is 1.96. The result of the t-test indicates that there is extreme statistical significance between the two sets. From this result, we can infer that there is an observable difference between the training and output meshes.
 
-The following section of the survey introduces basic concepts of 3D modelling and a video depicting the use of a latent manifold for generating meshes. Questions regarding feelings towards use of a latent manifold for 3D production is asked.
+The following section of the survey introduces basic concepts of 3D modelling and a video depicting the use of a latent manifold for generating meshes. Participants answer questions regarding their feelings towards the application of a latent manifold for 3D production.
 
-When questioned regarding the difficulty of generating output with a latent manifold, the mean is 4.67, suggesting that difficulty is moderate. However, the distribution of responses is skewed, a modal value of 3 tells us that among the sample, most participants found it fairly easy to generate output with a latent manifold.
+When questioned on the difficulty of generating output with a latent manifold, the mean is 4.67, suggesting that difficulty is moderate. However, there is a skewed distribution of responses. A modal value of 3 tells us that among the sample, most participants found it relatively easy to generate output with a latent manifold.
+
 \begin{figure}[!h]
 	\centering
 	\caption{Responses for difficulty rating of generating output with a latent manifold, from 1 (easy) to 10 (difficult).}
 	\includegraphics[scale=0.7]{images/surveyDifficulty}
+	\label{fig:surveyDifficulty}
 \end{figure}
 
-{\color{red} Calculate quartile percentiles}
+%*{\color{red} Calculate quartile percentiles}
+Figure \ref{fig:surveyDifficulty} displays the distribution of responses for difficulty rating of using a latent manifold.
+Participants welcomed the idea of using a latent manifold for exploring new hairstyles or variations of existing ones. For exploring styles, the mean is 7.53 with a standard deviation of 1.60, while exploring variations have a mean of 7.27 and standard deviation 1.33. In both cases, the high mean value and relatively low variance indicate that participants believe in the potency of discovering new geometry with a latent manifold.
 
-The idea of using a latent manifold for exploring new hairstyles or variations of existing ones was welcomed. For exploring styles, the mean is 7.53 with a variance of 2.55, whilst exploring variations have a mean of 7.27 and variance 1.78. In both cases, the high mean value and relatively low variance indicate that participants believe in the potency of discovering new geometry with a latent manifold.
-
-Participants are asked estimate how much of the 3D geometry production pipeline can be automated with a latent manifold. The response resembles a normal distribution, with mean, mode and median at 6, plus variance of 4. 
+We then ask participants to estimate how much automation a latent manifold could complete for the 3D geometry production pipeline. Planning of this question overlooked that non-experts are unfamiliar with the production pipeline, leading to mixed responses shown in figure \ref{surveyAutomate}. The response resembled a normal distribution with mean, mode and median at 6. The standard deviation is 2.
 \begin{figure}[!h]
 	\centering
 	\caption{Responses for estimation of automating the 3D production pipeline with a latent manifold, from 1 (none) to 10 (all).}
 	\includegraphics[scale=0.7]{images/surveyAutomate}
+	\label{surveyAutomate}
 \end{figure}
 
-An overwhelming portion of participants are willing to try rapid prototyping with a latent manifold. Out of 15 responses, 6 (40.3\%) participants agreed that they would use a latent manifold for rapid prototyping, 8 (53.3\%) chose \textit{'Maybe'}, and only one participant decided to not use a latent manifold. 
+An overwhelming portion of participants is willing to try rapid prototyping with a latent manifold. Out of 15 responses on figure \ref{surveyPrototype}, 6 (40.3\%) participants agreed that they would use a latent manifold for rapid prototyping, 8 (53.3\%) chose \textit{'Maybe'}, and only one participant decided not to use a latent manifold. 
 
 \begin{figure}[!h]
 	\centering
 	\caption{Responses for whether participants would use a latent manifold for rapid prototyping.}
 	\includegraphics[scale=0.7]{images/surveyPrototype}
+	\label{surveyPrototype}
 \end{figure}
 
-The survey results indicate that whilst the output of our current generative model is notably imperfect when compared to the training data, it is satisfactory expectation as confidence is high in respect to the efficacy of producing 3D content with a latent regression model. Many participants believe a latent manifold is effective for discovering new styles and modifying variations of existing styles. The drawbacks identified include that some users find traversing a non-linear embedded manifold difficult to grasp, thus while it is easy to have an output, controlling the turnout is non-intuitive. That said, most participants would still consider using a latent manifold for rapid prototyping. There is much future research that could yield improved results, to which we will discuss in later sections of this chapter.
+The survey results indicate that while the output of our current generative model is notably imperfect when compared to the training data, it is satisfactory as confidence is high on the efficacy of producing 3D content with a latent regression model. Many participants believe a latent manifold is effective for discovering new styles and modifying variations of existing styles. The drawbacks identified include that some users find traversing a non-linear embedded manifold difficult to grasp, thus while it is easy to have an output, controlling the turnout is non-intuitive. That said, most participants would still consider using a latent manifold for rapid prototyping. There is much future research that could yield improved results, to which we will discuss in chapter \ref{chap:conclusion}.
 
 \section{Latent Application Experiment}
-Participants are shown a series of images from the output of our regression model, displayed in table \ref{experimentmesh}. They are tasked to find the closest corresponding point on the latent manifold that reproduces the geometry presented. An output file with the data displayed on table \ref{outputfile} writes the logged user activity obtained from the tests.
+The experiment shows participants a series of images from the output of our regression model, displayed in table \ref{experimentmesh}. They are tasked to find the closest corresponding point on the latent manifold that reproduces the geometry presented. An output file with the data displayed on table \ref{outputfile} writes the logged user activity obtained from the tests. This experiment allows us to observe how users react to the latent manifold and discover interesting or common behavioural characteristics.
 
 \begin{table}[!h]
 	\centering
@@ -1038,13 +1058,13 @@ Participants are shown a series of images from the output of our regression mode
 	\label{andreiresult}
 \end{table}
 
-A portion of users invest in exploring the manifold thoroughly when first introduced to it. One example is displayed on table \ref{andreiresult}. In the first experiment, the path plotted suggests that the participant scanned through the manifold by tracing around the image border and then shifting diagonally across with jittering movement to observe how the manifold affects output.
+A portion of users invests in exploring the manifold thoroughly when first introduced to it. Table \ref{andreiresult} displays one such example. The \textbf{green dot} in the path represents the \textbf{starting location}, and a white path gradually dims as it reaches a \textbf{red dot} that represents the \textbf{ending location}. In the first experiment, the path plotted suggests that the participant scanned through the manifold by tracing around the image border and then shifting diagonally across with jittering movement to observe how the manifold affects output.
 
-Once familiarising with a particular manifold, a participant would able to locate their objective quickly. The first experiment on table \ref{andreiresult} spent 47 seconds to travel a distance 712 pixels. In the second experiment, the participant took half the time (57\%) and only travelled a fourth of the distance in comparison to the first (24\%), while still selecting point that is close to the target within a tenth of the latent manifold image size (9.1\%). Finally, in the last experiment, the participant was even faster - travelling 92 pixels to select a point that is only 2.2\% of the image size away from the actual target in ten seconds.
+Once familiarising with a particular manifold, a participant would able to locate their objective quickly. The first experiment on table \ref{andreiresult} spent 47 seconds to travel a distance 712 pixels. In the second experiment, the participant took half the time (57\%) and only travelled a fourth of the distance in comparison to the first (24\%), while still selecting a point that is close to the target within a tenth of the latent manifold image size (9.1\%). Finally, in the last experiment, the participant was even faster - travelling 92 pixels to select a point that is only 2.2\% of the image size away from the actual target in ten seconds.
 
 \subsubsection{Behavioural Observation: Misleading local optima}
 
-Participants that do not explore the manifold risk becoming stranded within a local optima. Results in table \ref{mariaresult} is an example of this. The participant did not explore during the first test, which lead to a lengthy search process during the second test - where the participant primarily searched within an area that resembles the target, despite the actual target is located elsewhere in the manifold. This is a property that makes the latent manifold unintuitive to use, as it would seem logical for similar meshes to be close in the manifold, but a non-linear embedding means that this is not always true. It would be interesting to study how participants adapt to misleading local optima over time with longer sequence of tests, as it would seem sensible for this problem to diminish as users learn the output of the latent manifold.
+Participants that do not explore the manifold risk becoming stranded within local optima. Results in table \ref{mariaresult} is an example of this. The participant did not explore during the first test, which leads to a lengthy search process during the second test - where the participant primarily searched within an area that resembles the target, despite the fact that the actual target is located elsewhere in the manifold. The presence of misleading output is a property that makes the latent manifold unintuitive to use, as it would seem logical for similar meshes to be close together in the manifold, but a non-linear embedding means that this is not always true. It would be interesting to study how participants adapt to misleading local optima over time with a longer sequence of tests, as it would seem sensible for this problem to diminish when users learn the output of the latent manifold.
 
 \begin{table}[!h]
 	\centering
@@ -1076,11 +1096,9 @@ Participants that do not explore the manifold risk becoming stranded within a lo
 	\label{mariaresult}
 \end{table}
 
-\newpage
-
 \subsubsection{Behavioural Observation: Explore then exploit}
 
-Among participants who take significantly longer to select a prediction are those that value precision over speed. Table \ref{nickresult} shows results where the path starts with bold movement, but gradually becomes unstable towards the end. This could suggest that the participant began with an exploratory mindset and shifting to an exploitative strategy once the participant believes they are close to their target. 
+Among participants who take significantly longer to select a prediction are those that value precision over speed. Table \ref{nickresult} shows results where the path starts with bold movement, but gradually becomes unstable towards the end. The path could suggest that the participant began with an exploratory mindset and shifting to an exploitative strategy once the participant believes they are close to their target. 
 
 \begin{table}[!h]
 	\centering
@@ -1113,18 +1131,19 @@ Among participants who take significantly longer to select a prediction are thos
 \end{table}
 
 \section{Functional Performance}
-Our demonstrative implementation produced hair geometry that resembles hair structure. According to the samples presented in the survey, the average likelihood rating assigned to output meshes by participants is 5.09 (50.9\%). This value indicates moderate resemblance to hair when compared to input meshes which received an average likelihood rating of 7.92 (79.2\%). Our choice of generative model exhibits several flaws that hinder the performance of the training. Firstly, approximating input data from raw meshes causes loss of information. Some hair segments that are formed from multiple sub-meshes may not be fully captured, along with sub-meshes that do not fit with the assumption of grid-like topology or unusual shapes. This leads to observable patches of the scalp surface where hair geometry is expected to cover. Constraints for hair geometry, such as not intersecting and not growing inwards the scalp, are not enforced by the regression model. This leads to predictions containing invalid properties where surfaces depict nonsensical structure, especially when uncertainty is high.
+Our demonstrative implementation produced hair geometry that resembles hair structure. According to the samples presented in the survey, the average likelihood rating assigned to output meshes by participants is 5.09 (50.9\%). This value indicates moderate resemblance to hair when compared to input meshes which received an average likelihood rating of 7.92 (79.2\%). Our choice of generative model exhibits several flaws that hinder the performance of the training (figure \ref{fig:genIssues}). Firstly, approximating input data from raw meshes causes loss of information. Hair segments formed from multiple sub-meshes may not be fully captured, along with sub-meshes that do not fit with the assumption of grid-like topology or unusual shapes. The loss of information leads to observable patches of the scalp surface where hair geometry is expected to cover. Constraints for hair geometry, such as not intersecting and not growing inwards into the scalp, are not enforced by the regression model. Without constraints, the regression model may make predictions containing invalid properties where surfaces depict nonsensical structure, especially when uncertainty is high.
 
 \begin{figure}[!h]
 	\centering
-	\caption{The left image shows scalp surface exposure. In the right image, half of the head mesh is disabled to show hair geometry predicted to be inside.}
+	\caption{Issues identified in our generative model. The left image shows scalp surface exposure. In the right image, half of the head mesh is disabled to show hair geometry predicted to be inside.}
 	\includegraphics[scale=0.4]{images/baldHair}
 	\includegraphics[scale=0.4]{images/intersectHair}
+	\label{fig:genIssues}
 \end{figure}
 
-It is worth noting that the generative model we use has much potential for improvement. Input estimation currently samples polylines from the raw mesh. This can be extended to include width and orientation. Alternatively, established generative models can be used in place as our regression model learns only the generative input values. Moreover, post-processing methods are applicable to the geometry constructed from the generative inputs. With the centre of the reference head sphere, we are able to obtain a direction from the origin to a root. This direction vector could be used to find a perpendicular plane where the geometry can follow to provide more coverage.
+It is worth noting that the generative model we use has much potential for improvement. Input estimation currently samples polylines from the raw mesh. The generative model can be extended to include width and orientation. Alternatively, established generative models can be used in place as our regression model learns only the generative input values. Moreover, the geometry generation procedure can perform post-prediction processing to improve the output mesh, incorporating traditional modelling techniques into the framework. With the centre of the reference head sphere, we can obtain a direction from the origin to a root. This direction vector could be used to find a perpendicular plane where the geometry can follow to provide more coverage.
 
-A framework that puts our concept of learning-based assisted content generation to use can be divided into two main stages. First, we have the training process which involves:
+A framework that puts our concept of learning-based assisted content generation to use has two main stages: training and predicting. First, we have the training process which involves:
 \begin{enumerate}
 	\item Data acquisition.
 	\item Kernel and hyperparameter selection.
@@ -1140,7 +1159,7 @@ Once a regression model has been trained, it can then be used for production, th
 
 The ambiguous nature of creative content and mesh data structure makes training a regression model for 3D content difficult. We have demonstrated how algorithmic solutions can automate the task of preparing input mesh for learning. Content creators that have quadrilateral meshes will not require the retopologising stage, which is necessary for our training set as it contains limiting meshes triangulated for rendering. The unpredictable structure of mesh representation requires making some assumptions regarding the input mesh topology. Despite so, our implementation degrades gracefully with the presence of flawed training data. From edge loops, we determine the structure of the surface.
 
-Training mesh data is scarce. Non-experts content creators are more so susceptible to the lack of training meshes. Learning-based assisted content generation by non-linear dimensionality reduction is intended to be robust with small training sets. Table \ref{trainingbenchmarks} displays benchmark results of times taken for the training process on our implementation. The benchmark result is highly dependent on many factors including input data, generative model, implementation, and the hardware of the machine. The point to take away is that training a regression model that makes a prediction from selecting variables in a non-linear latent manifold is a reasonably fast, completing in only matter of minutes.
+Training mesh data is scarce. Non-experts are more so susceptible to the lack of training meshes. Learning-based assisted content generation by non-linear dimensionality reduction is intended to be robust with small training sets. Table \ref{trainingbenchmarks} displays benchmark results of times taken for the training process on our implementation. The benchmark result is highly dependent on many factors including input data, generative model, implementation, and the hardware of the machine. The point to take away is that training a regression model that makes a prediction from selecting variables in a non-linear latent manifold is a reasonably fast, completing in only matter of minutes.
 
 \begin{table}[!h]
 	\centering
@@ -1170,53 +1189,28 @@ Training mesh data is scarce. Non-experts content creators are more so susceptib
 
 We use a configuration file to determine properties of our generative model and the fidelity of approximation. In our benchmark tests, we alter the intervals of hair roots to change the number of generative input the regression model uses for training.
 
-Results of table \ref{trainingbenchmarks} show that approximating generative inputs is the most time-consuming procedure. The time required for approximating is dependent on the complexity of the generative model and input mesh. Thus the benchmark displays a linear relation between total approximation time and training size. Hair geometry as one of the most complicated to be represented use more generative inputs than other categories of surfaces. The number of generative inputs can be kept in sustainable numbers by choice of generative model.
+Results of table \ref{trainingbenchmarks} show that approximating generative inputs is the most time-consuming procedure. The time required for approximating is dependent on the complexity of the generative model and input mesh. Thus the benchmark displays a linear relation between total approximation time and training size. Hair mesh is one of the most complicated geometry, thus, are likely to use more generative inputs than other categories of surfaces. One can maintain a sustainable number of generative inputs by choice of generative model.
 
-Plotting the latent manifold as a 2D image provides a visualisation of latent variables and corresponding likelihood. Large training sets incorporate more example styles, but too many reduce ease of use as exploring the 2D non-linear manifold would interpolate unintuitively. Training sets of this solution will inherently be small in cardinality.
+Plotting the latent manifold as a 2D image provides a visualisation of latent variables and corresponding likelihood. Large training sets incorporate more example styles, but too many reduce ease of use as exploring the 2D non-linear manifold would interpolate unintuitively. Training sets of this solution will inherently be small in cardinality. Fortunately, the GP-LVM model is effective with small training sets.
 
 A regression model it can be used to predict generative inputs repeatedly. Serialising regression models trained with small sets will result in distributable file sizes. Content creators have the option to collect and share regression models. Refining a GP-LVM regression model is possible by inferring new observations, updating the posterior distribution. The initial time investment required to train a model is worthwhile if the regression model can reduce total time spent over the course of its usage.
 
 Loading a small regression model and an image is only required once per start-up of a session, the computational cost is negligible with contemporary hardware. A 10200-generative input regression model on the same machine that performed the benchmark tests spends around $10^{-3}$ seconds to predict an output, using the output to generate hair geometry takes an about of $10^{-1}$ seconds. As a user moves the cursor across the manifold, the implementation presents roughly ten hair meshes per second. This performance is sufficient for producing visible feedback as users traverse the latent manifold.
 
 \section{Comparison with existing solutions}
-AutoHair by Chai et al. (2016) \cite{autohair} delivers hair models that is visually superior in comparison to our demonstrative implementation. AutoHair is a fully automatic procedure, our solution is not intended to replace artists but to assist their creation process. On superior hardware (quad-core Intel i7 CPU, NVIDIA GTX 970 graphics card, and 32GB of RAM), it takes less than a minute for AutoHair to process an image for hair modelling. While this is reasonably fast, our implementation generates geometry at close to real-time. In a production environment, immediate observable feedback is strongly desirable as designs frequently change and creators often want to be directing the progression. 
+AutoHair by Chai et al. (2016) \cite{autohair} delivers hair models that are visually superior in comparison to our demonstrative implementation. AutoHair is a fully automatic procedure; our solution is not intended to replace artists but to assist their creation process. On better hardware than those we use for our benchmarks (quad-core Intel i7 CPU, NVIDIA GTX 970 graphics card, and 32GB of RAM), it takes less than a minute for AutoHair to process an image for hair modelling. The AutoHair implementation produces output reasonably fast, however, our implementation generates geometry at close to real-time. In a production environment, immediate observable feedback is strongly desirable as designs frequently change and creators often want to be directing the progression. 
 
-The AutoHair implementation used a database of 300 exemplar 3D hair models and a neural network trained on 50,000 portrait images. The significantly larger amount of material required for the training process increases to the time required for training. According to the originating paper, preprocessing of portrait images is outsourced and takes around a minute per image. The 3D hair exemplars take less than ten hours, and training the neural network is about eight hours. A trained implementation of AutoHair can help 3D artists create models, provided that there is an input image available for the desired hairstyle. It can also be used to discover hairstyles if a 3D hairstyle space is pre-generated. It is unlikely that content creators will collect the material required for training their own implementation. Our solution is more flexible in this aspect, as it expects small training sets. This makes it much faster in performance, while not a fully automatic process, it is suitable for assisted content generation and a strong contender for rapid prototyping. Accepting meshes as input to produce output meshes is also more fitting for a production environment than a portrait image. Our solution can easily be used for different genres of 3D models by specifying a generative model for the type of surface or choosing one of the many existing generative models developed.
+The AutoHair implementation used a database of 300 exemplary 3D hair models and a neural network trained on 50,000 portrait images. The significantly larger amount of material required for the training process increases the time needed for training. According to the originating paper, preprocessing of portrait images is outsourced and takes around a minute per image. The 3D hair exemplars take less than ten hours, and training the neural network is about eight hours. A trained implementation of AutoHair can help 3D artists create models, provided that there be an input image available for the desired hairstyle. It can also be used to discover hairstyles if a 3D hairstyle space is pre-generated. It is unlikely that content creators will collect the material required for training their personal predictive model. Our solution is more flexible in this aspect, as it expects small training sets. A small training set makes it much faster in performance, while not a fully automatic process, it is suitable for assisted content generation and a strong contender for rapid prototyping. Accepting meshes as input to produce output meshes is also more fitting for a production environment than a portrait image. Our solution can easily adapt to different genres of 3D models by specifying a generative model for the type of surface or choosing one of the many existing generative models developed.
 
-Example-based hair geometry synthesis by Wang et al. (2009) \cite{examplebasedhair} is a hierarchical synthesis framework that creates hair models by jointly parametrising hair as a 3D vector field and a 2D arrangement of hair strands. Fully automatic without user intervention. 100,000 strands takes less than two minutes on a 3GHz Pentium 4 CPU with 2GB RAM. Texture synthesis applied to the geometry completes more of the production pipeline than our solution. As a synthesis method, visual properties are controlled with parameters prior to generation, creating novel hairstyles by taking input hairstyle and finding statistically similar spatial arrangements of geometric details. Without learning, the synthesis-based solution requires an example and cannot flexibly model other surfaces that is attainable through learning latent manifolds. We can incorporate synthesis models in place of our generative model. The use of a 3D vector field and 2D arrangement of hair strands encoded in data images can provide a volumetric field to sample hair geometry from rather than manipulating a fit set of strands.
-
-\section{Potential Improvements}
-The performance of our framework is a cumulative result of the: 
-\begin{itemize}
-\item the properties of training data acquired.
-\item the capability of chosen generative model.
-\item the effectiveness of the method for sampling generative inputs.
-\item the regression model obtained from training.
-\item the generation of geometry from predicted output.
-\end{itemize}
-
-Presence of triangulated faces in training data hinders the accuracy of our regression model as loss of information is incurred during generative input estimation. Access to a training set of quadrilateral meshes would improve sample estimation of our generative model, yielding output that is more representative of training mesh. Fortunately, it is common practice for production to organise meshes with quadrilateral topology. Experienced content creators are more likely to have the option of testing various training sets, whereas our demonstration only used meshes that were available.
-
-In chapter \ref{chap:execution}, the generative model of our implementation was introduced. The topic of generative models is extensively studied, more sophisticated representations may improve the fidelity of sampled generative inputs. Splines are better representations of curving hair strands as opposed to polylines. Defining attributes such as orientation, width, tapering on the generative model would grant the regression model richer information regarding the training hair meshes. Piuze et al. (2011) \cite{helicoidhair} is a mathematical-based representation for hair and hair-like structures using generalised helicoids. The helicoid model can define patterns such as wisps and waviness, the model also allows interpolation between hair within vicinity.
-
-The prediction interpolates between styles, drastically differing styles give rise to conflicting substructure of hair geometry. Perhaps it would be more intuitive to use with a training set of varying but similar styles. Campbell and Kautz \cite{fontmanifold} learn manifolds of fonts for individual characters as well as joint manifolds. A single manifold to edit font characters independently allow for more freedom of control. A consideration would be to use a joint manifold for defining an overall hair structure and then refine layers or sections with single manifolds on top. Multiple manifolds divide the problem at hand, reducing outcomes that seem bizarre due to interpolating of non-linear embeddings at the cost of a more preparation required and an involved training process.
-A method to determining the threshold of acceptable hair would allow us to prune uncertain predictions from the latent manifold to expand areas of interest that could make exploration of the manifold more intuitive. 
-As mentioned previously, 3D meshes are delicate and can easily be invalidated from small changes. Thus, a reparation operator or constraints to ensure that the predicted output of the regression models is acceptable would be a topic to explore.
-
-There are many extensions for GP-LVM. Deep Gaussian processes \cite{deepgp} offers a hierarchical belief network is potentially effective for hair structure as it often exhibits layering segments.
-The choice of probabilistic non-linear latent variable models is one that directly impacts the result of hair structures predicted and determines the form of the latent manifold which affects ease of use.
-
-The geometry generation process is vital as it determines the final resulting mesh. It is worth noting that externalising predictable attributes from the training process would reduce the dimension of input data handled by the regression model without affecting the resulting mesh much. Delegating attributes to the geometry generation phase alleviates the curse of dimensionality and allows the regression model to focus on important attributes that are desirable to learn.
-
-The application of a latent manifold for production may seem alien to some users, especially among experienced content creators who are trained in traditional tools. A non-linear embedding can cause prediction of output to morph counter-intuitively. One way that makes the latent manifold more understandable is to plot small image of output in corresponding area of latent variable model. The original paper of probablistic PCA and GP-LVM both make use of this concept to visualise the embedding of the latent space.
+Example-based hair geometry synthesis by Wang et al. (2009) \cite{examplebasedhair} is a hierarchical synthesis framework that creates hair models by the parametrising of hair as a 3D vector field and a 2D arrangement of hair strands. Fully automatic without user intervention. 100,000 strands take less than two minutes on a 3GHz Pentium 4 CPU with 2GB RAM. Texture synthesis applied to the geometry completes more of the production pipeline than our solution. As a synthesis method, visual properties are controlled with parameters before generation, creating novel hairstyles by taking input hairstyle and finding statistically similar spatial arrangements of geometric details. Without learning, the synthesis-based solution requires an example and cannot flexibly model other surfaces that are attainable through learning latent manifolds. We can incorporate synthesis methods in place of our generative model. The use of a 3D vector field and 2D arrangement of hair strands encoded in data images can provide a volumetric field to sample hair geometry from rather than manipulating a fit set of strands.
 
 \section{Applications}
-The advent of 3D printing, augmented reality, and virtual reality has resurfaced interest in production of 3D representations. In addition of contribution toward the important production pipeline, content creation extends to consumer applications. Advancements in communication and technology established a culture of creation and sharing experiences on social media. An easy to use method of creating content is a coveted feature.
-For example, consider a system in a video game that allows users to create customise their avatar appearance. A content customisation system desires to be flexible, but may be abused to create inappropriate content if no restrictions are applied. This is especially problematic if such content is shared or displayed through an online platform. Our solution can be applied to address this problem training a regression model for parameters of the customisation system and only accept inputs that have an associated likelihood above a certain threshold. Selecting from a latent manifold can update many parameters simultaneously and interpolate between predefined configurations, providing an excellent level of customisation while adhering to defined constraints.
+The advent of 3D printing, augmented reality, and virtual reality has resurfaced interest in the production of 3D representations. Content creation extends to consumer applications. Advancements in communication and technology established a culture that shares experiences on social media. An easy method of creating content is a coveted feature.
+For example, consider a system in a video game that allows users to customise their avatar appearance. A content customisation system desires to be flexible but may be abused to create inappropriate content if no restrictions are applied. A custom content system is especially problematic if inappropriate content is shared or displayed through an online platform. Our solution can be employed to address this problem training a regression model for parameters of the customisation system and only accept inputs that have an associated likelihood above a certain threshold. Selecting from a latent manifold can update many parameters simultaneously and interpolate between predefined configurations, providing an excellent level of customisation while adhering to defined constraints.
 
 A 3D latent space offers greater freedom of control for embedding data. Producing in a 3D space through VR has been gaining momentum and could be an interesting solution for when a 2D manifold is not sufficient for describing the data.
 
-Our proposition is specifically for hair, however, it would also be applicable for hair-like structure such as foliage or grass. The framework we propose is extremely versatile, choosing other generative models would allow application of assisted content generation. 3D sculpting often produces vector displacement maps that deforms base geometry to a high resolution surface. Transferring assisted real-time content generation to model organic surfaces is a plausible claim that improves its applicability significantly.
+Our proposition is specifically for hair. However, it would also be applicable for other hair-like structures such as foliage or grass. The framework we propose is extremely versatile, choosing other generative models would allow application of assisted content generation. 3D sculpting often produces vector displacement maps that deform base geometry to a high-resolution surface. Transferring assisted real-time content generation to model organic surfaces is a plausible claim that improves its applicability significantly.
 
 % -----------------------------------------------------------------------------
 
@@ -1226,37 +1220,63 @@ Our proposition is specifically for hair, however, it would also be applicable f
 Assisted real-time content generation by learning a latent manifold of existing polygonal hair meshes seeks to alleviate the complexity of producing hair through dimensionality reduction.
 We have demonstrated the implementation of a framework that assists content creators by automatically modelling high-dimensional geometry at close to real-time performance when navigating through a low-dimensional space.
 
-The erratic nature of defining a surface with mesh data makes it unreliable for data analysis without preparation. We formulated methods to extract meaningful information from input meshes and standardise the data to obtain a fixed length hair structure feature vector. Input mesh are redefined to quadrilateral topology in order to take advantage of structural information conveyed by edge loops. 
-By strategically sampling data of a mesh, an approximation within a generative model is obtained.
+The erratic nature of defining a surface with mesh data makes it unreliable for data analysis without preparation.
+Methods that extract meaningful information from input meshes and standardise the data to obtain a fixed-length feature vector for hair structure were applied.
+Strategically sampling data from a mesh using edge loops that convey structural information approximate inputs of a generative model, allowing for dimensionality reduction.
+Chapter \ref{chap:execution} tackled the objective of performing dimensionality reduction on 3D meshes in section \ref{chap:context:objectives}.
+\ref{chap:execution}. According to the results of \ref{chap:evaluation:mesh}, participants can distinguish between the original high-dimensional training mesh and output mesh generated from the low-dimensional latent space. While not perfect, the low-dimensional representation is still considered to be moderately resembling.
 
-An artistic production environment desires freedom for expression. Performing regression through probabilistic latent variable models fulfils this need by offering a space of possible predictions. We analysed and compared the behaviour of the RBF, exponential, and linear kernel for a regression model that predicts hair structure.
+An artistic production environment desires freedom for expression. Performing regression through probabilistic latent variable models fulfils this need by offering a space of possible predictions. 
+We analysed and compared the behaviour of the RBF, exponential, and linear kernel for a regression model that predicts hair structure.
 
-The regression model predicts values of a hair feature vector. This data is input into the generative model to reconstruct the hair representation. A geometry generation process uses the hair structure as reference for creating the resulting geometry. Our implementation parses the feature vector of polylines descriptors into curve data and creates geometry through extrusion and bevelling function commonly available on state-of-the-art 3D software.
+The regression model predicts values of a hair feature vector. This data is input into the generative model to reconstruct the hair representation. A geometry generation process uses hair structure as a reference for creating the resulting geometry. Our implementation parses the feature vector of polylines descriptors into curve data and creates geometry through extrusion and bevelling function commonly available on state-of-the-art 3D software.
 
-Feedback was acquired through an online survey and a series of experiments completed during face-to-face session. 
-Respecting our central objectives outlined in chapter \ref{chap:context}, we managed to perform dimensionality reduction on hair meshes by sampling a feature vector of estimated inputs for a generative model. Results of the survey indicate that despite embedding the training hair meshes into a two dimensional latent space, participants of the survey found that the geometry generated moderately resembled hair.
+We acquired feedback through an online survey and a series of experiments completed during a face-to-face session. 
+Respecting our central objectives outlined in chapter \ref{chap:context}, we managed to perform dimensionality reduction on hair meshes by sampling a feature vector of estimated inputs for a generative model. Results of the survey indicate that despite embedding the training hair meshes into a two-dimensional latent-space, participants found that the geometry generated moderately resembled hair.
 
 The application of non-linear dimension reduction for high dimensional data such as 3D hair geometry was discussed in chapter \ref{chap:evaluation}. Our implementation demonstrated its application towards the 3D production pipeline.
 
-Latent variables as a consolidation of observed variables are not well-defined attributes, thus they do not identify stylistic properties. That said, they do encode stylistic properties as the survey results suggest that participants find the latent space useful for exploring new styles and discovering variations of geometry.
+Latent variables as a consolidation of observed variables are not well-defined attributes. Thus they do not identify stylistic properties. That said, they do encode stylistic properties as the survey results suggest that participants find the latent-space useful for exploring new styles and discovering variations of geometry.
 
+As it turns out, there exist issues that cause the latent manifold to in fact be unintuitive to use. While the results recorded in the feedback find most participants considering the latent manifold intuitive to use, a proportion of users voiced that there are moments when it is challenging to understand how movement in the latent manifold affects the output. There is a consensus that it is suitably easy for non-experts to generate output.
 
-As it turns out, there are issues that cause the latent manifold to in fact be unintuitive to use. While the results recorded in the feedback find most participants considering the latent manifold intuitive to use, a proportion of users voiced that there are moments when it is difficult to understand how movement in the latent manifold affects the output. There is a consensus that it is suitably easy for non-experts to generate output.
-
-Performance close to real-time is achieved as our regression model is able to predict a feature vector for hair structure with around $10^{-3}$ seconds (milliseconds), and generating geometry take around $10^{-1}$ seconds (deciseconds).
+The demonstrative implementation achieves performance close to real-time, as our regression model can predict a feature vector for hair structure with around $10^{-3}$ seconds (milliseconds), and generating geometry take around $10^{-1}$ seconds (deciseconds).
 
 \section{Future Work}
-A number of potential improvements to investigate was proposed in chapter \ref{chap:evaluation}. This section discusses the topics with a broader perspective and places greater emphasis on the pursuit for further research.
+A latent variable lacks a clear description as it represents the underlying unobserved attributes of data. Research contributing towards presenting a latent-space in a meaningful manner is a multidisciplinary study that extends visualisation of data with latent variable models and incorporates psychological factors of user experience such as intuitiveness. This field of work would propel the application of non-linear latent variable models for regression of novel output such as content creation and 3D production.
 
-A latent variable lacks a well-defined description as it represents the underlying unobserved attributes of data. Research contributing towards presenting a latent-space meaningfully is a multidisciplinary study that extends visualisation of data with latent variable models and incorporates psychological factors of user experience such as intuitiveness. This field of work would propel the application of non-linear latent variable models for regression of novel output such as content creation and 3D production.
+The use of a generative model or synthesising methods is to standardise mesh data. We have demonstrated our framework for the production of 3D hair geometry through a simple generative model to focus more on the entire framework overall. A review of established generative and learning models expand the options available to our framework, allow for the production of other surface types.
 
-The use of a generative model or synthesising methods is to standardise mesh data. We have demonstrated our framework for production of 3D hair geometry through a simple generative model to focus more on the entire framework overall. A review of established generative and learning models expand the options available to our framework. This would allow for production of other surface types.
+Machine learning research that output 3D data frequently use images or scanned 3D representations that do not convey topological information as input. Production 3D data provide descriptive for the appearance of an object, without any obstructed information present in images and include topology that is useful for algorithmic operations. Study of preserving topological data would improve the efficacy of assisted content generation through regression by dimension reduction.
 
-Machine learning research that output 3D data frequently use images or scanned 3D representations that do not convey topological information as input. Production 3D data provide are descriptive for the appearance of an object, without any obstructed information present in images and include topology that is useful for algorithmic operations. Study of preserving topological data would improve the efficacy of assisted content generation through regression by dimension reduction.
-
-Empirical analysis over the steps of execution within our framework would provide explanation for the feedback data acquired and identify the performance of the system. Collecting data from a larger sample of participants would also improve the reliability of our results.
+Empirical analysis over the steps of execution within our framework would provide an explanation for the feedback data acquired and provide more information regarding the performance of the system. Collecting data from a larger sample of participants would also improve the reliability of our results.
 
 Assisted real-time content generation by learning a latent manifold of existing polygonal hair meshes is a study engages in the discussion of automated production for creative content in the future by tying together the topic of machine learning and 3D mesh processing with production qualities in mind. 
+
+\section{Potential Improvements}
+The performance of our framework is a cumulative result of the: 
+\begin{itemize}
+	\item the properties of training data acquired.
+	\item the capability of chosen generative model.
+	\item the effectiveness of the method for sampling generative inputs.
+	\item the regression model obtained from training.
+	\item the generation of geometry from predicted output.
+\end{itemize}
+
+The presence of triangulated faces in training data hinders the accuracy of our regression model as loss of information is incurred during generative input estimation. Access to a training set of quadrilateral meshes would improve sample estimation of our generative model, yielding an output that is more representative of training mesh. Fortunately, it is common practice for production to organise meshes with quadrilateral topology. Experienced content creators are more likely to have the option of testing various training sets, whereas our demonstration only used meshes that were available.
+
+In chapter \ref{chap:execution}, the generative model of our implementation was introduced. The topic of generative models is extensively studied, more sophisticated representations may improve the fidelity of sampled generative inputs. Splines are better representations of curving hair strands as opposed to polylines. Defining attributes such as orientation, width, tapering on the generative model would grant the regression model richer information regarding the training hair meshes. Piuze et al. (2011) \cite{helicoidhair} is a mathematical-based representation for hair and hair-like structures using generalised helicoids. The helicoid model can define patterns such as wisps and waviness. The helicoid representation also allows interpolation between hair within the vicinity.
+
+The prediction interpolates between styles, drastically differing styles give rise to a conflicting substructure of hair geometry. Perhaps it would be more intuitive to use a latent manifold learned from a training set of similar styles. Campbell and Kautz \cite{fontmanifold} learn manifolds of fonts for individual characters as well as joint manifolds. A single manifold to edit font characters independently allow for more freedom of control. One consideration would be to use a joint manifold for defining an overall hair structure and then refine layers or sections with single manifolds on top. Multiple manifolds divide the problem at hand, reducing outcomes that seem bizarre due to interpolating of non-linear embeddings at the cost of a more preparation required and an involved training process.
+A method for determining the threshold of acceptable hair would allow us to prune uncertain predictions from the latent manifold to expand areas of interest that could make exploration of the manifold more intuitive. 
+As mentioned previously, 3D meshes are delicate and can be invalidated easily from small changes. Thus, a reparation operator or constraints to ensure that the predicted output of the regression models is acceptable would be a topic to explore.
+
+There are many extensions for GP-LVM. Deep Gaussian processes \cite{deepgp} offers a hierarchical belief network is potentially effective for hair structure as it often exhibits layering segments.
+The choice of probabilistic non-linear latent variable models is one that directly impacts the result of hair structures predicted and determines the form of the latent manifold which affects ease of use.
+
+The geometry generation process is vital as it determines the final resulting mesh. It is worth noting that externalising predictable attributes from the training process would reduce the dimension of input data handled by the regression model without affecting the resulting mesh much. Delegating attributes to the geometry generation phase alleviates the curse of dimensionality and allows the regression model to focus on important attributes that are desirable to learn.
+
+The application of a latent manifold for production may seem alien to some users, especially among experienced content creators trained to use traditional approaches. A non-linear embedding can cause prediction of output to morph counter-intuitively. One way that makes the latent manifold more understandable is to plot small image of resulting hair in the corresponding area of the latent manifold. The original paper of probabilistic PCA and GP-LVM both make use of this concept to visualise the embedding of the latent-space.
 
 % =============================================================================
 
