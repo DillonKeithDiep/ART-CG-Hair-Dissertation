@@ -501,10 +501,10 @@ $$
 $$
 Taking inputs from matrix $\bm{X}$ and evaluating the covariance function at each observed variable gives the covariance matrix,
 $$\bm{K=XX}^T+\beta^{-1}\bm{I}.$$
-The element at $i_{th}$ row and $j_{th}$ column of $\bm{K}$ is given by the prior distribution (\ref{gp:prior}). Thus, the marginal likelihood of dual probabilistic PCA is a product of $d$ independent Gaussian processes. The covariance function of a Gaussian process describes the properties of functions, such as variability. Learning in Gaussian processes is to determine hyper-parameters of a covariance function that is suitable for the problem being modelled.
+The element at $i_{th}$ row and $j_{th}$ column of $\bm{K}$ is given by the prior distribution (\ref{gp:prior}). Thus, the marginal likelihood of dual probabilistic PCA is a product of $d$ independent Gaussian processes. The covariance function of a Gaussian process describes the properties of functions, such as variability. Learning in Gaussian processes is to determine hyperparameters of a covariance function that is suitable for the problem being modelled.
 
 \section{Bayesian Gaussian Process Latent Variable Model}
-The Bayesian Gaussian Process Latent Variable Model (Bayesian GP-LVM) \cite{bgplvm} extends GP-LVM. The standard GP-LVM method trains by finding the \textit{maximum a posteriori} (MAP) estimate of $\bm{X}$ and jointly maximizing with respect to the hyper-parameters. Bayesian GP-LVM performs variational inference to marginalise the latent variables. This method enables optimisation of the resulting lower bound on the marginal likelihood with respect to the hyper-parameters. 
+The Bayesian Gaussian Process Latent Variable Model (Bayesian GP-LVM) \cite{bgplvm} extends GP-LVM. The standard GP-LVM method trains by finding the \textit{maximum a posteriori} (MAP) estimate of $\bm{X}$ and jointly maximizing with respect to the hyperparameters. Bayesian GP-LVM performs variational inference to marginalise the latent variables. This method enables optimisation of the resulting lower bound on the marginal likelihood with respect to the hyperparameters. 
 
 The marginal likelihood of the observed data is obtained by integrating out the latent variables:
 $$p(\bm{Y})=\int p(\bm{Y|X})p(\bm{X})d\bm{X}.$$
@@ -640,7 +640,7 @@ Approximation begins by parsing the geometric data of mesh files into a graph da
 	\item geometric vertices, specified by a line that starts with the "v" character, followed by floating values that represent the x, y, z of the vertex position.
 	\item face elements, specified by a line that starts with the "f" character, followed by a list of vertex indices that correspond to a vertex line.
 \end{itemize}
-Variations of the format may exist by implementation, but only the essentials identified are required for our purpose. An algorithm that parses \textit{OBJ} files to retrieve a mesh graph and its corresponding vertex dictionary is given by:
+Variations of the format may exist by the implementation, but we only require the essentials identified for our purpose. Algorithm \ref{objparse} parses \textit{OBJ} files to retrieve a mesh graph and its corresponding vertex dictionary.
 
 \begin{algorithm}[!h]
 	\caption{Parsing OBJ format}
@@ -661,20 +661,21 @@ Variations of the format may exist by implementation, but only the essentials id
 		}
 	}
 	\Return vertex dictionary, graph
+	\label{objparse}
 \end{algorithm}
 
 \subsection{Edge Loop Extraction}
-The versatile structure of polygon meshes allows it to be an expressive representation, however, this flexibility can cause ambiguity when analysing geometric structure. We assume that the mesh only contains sub-meshes of hair segments that have grid-like topology. Our assumption allows us to extract edge loops that describe the structure of hair segments. In the technical documentation of Blender, it describes an algorithm for edge loop selection \cite{blenderedgeloop}:
+The versatile structure of polygon meshes allows it to be an expressive representation. However, this flexibility can cause ambiguity when analysing geometric structure. We assume that the mesh only contains sub-meshes of hair segments that have grid-like topology. Our assumption allows us to extract edge loops that describe the structure of hair segments. In the technical documentation of Blender, it describes an algorithm for edge loop selection. \cite{blenderedgeloop}:
 \begin{enumerate}
 \item Given a starting edge, only continue searching adjacent edges if the candidates connect to exactly three other neighbours, as any other value would indicate either the border of a mesh or encountering a pole vertex.
 \item Completing a cyclic edge loop ends the selection process.
-\item Adjacent edges that share a face with the current one are discarded from consideration.
+\item Discard adjacent edges that share a face with the current one from consideration.
 \end{enumerate}
 We devise an edge loop extraction algorithm that achieves the properties specified, illustrated in figure \ref{edgeLoopFig}.
 
 \begin{figure}[!h]
 	\centering
-	\caption{Our edge loop extraction algorithm begins by selecting an edge within the mesh graph. The two vertices of the edge are \textbf{end vertices}. We then proceed to \textit{grow} the edge loop selection. Take the set of \textbf{first degree neighbours} of the \textit{end vertices}, these nodes are the \textit{candidates} for the edge loop. We remove edges that are part of the current edge loop from this set of first degree neighbours. We add the first degree neighbours to a set of face vertices for following iterations. Take the neighbours of the first degree neighbours as a set of \textbf{second degree neighbours}, removing its originating end vertex. A candidate node is only accepted to the edge loop if its set neighbours do not intersect with the set of face vertices. Accepted vertices are appended to the list of end vertices, this process is repeated until there are no end vertices left to grow the selection.}
+	\caption{The edge loop extraction algorithm. It begins by selecting an edge within the mesh graph. The two vertices of the edge are \textbf{end vertices}. We then proceed to \textit{grow} the edge loop selection. Take the set of \textbf{first-degree neighbours} of the \textit{end vertices}; these nodes are the \textit{candidates} for the edge loop. We remove edges that are part of the current edge loop from this set of first-degree neighbours. We add the first-degree neighbours to a set of face vertices for following iterations. Take the neighbours of the first-degree neighbours as a set of \textbf{second-degree neighbours}, removing its originating end vertex. A candidate node is only accepted to the edge loop if its set neighbours do not intersect with the set of face vertices. Append accepted vertices to the list of end vertices will allow the repeat of this process until there are no end vertices left to grow the selection.}
 	\includegraphics[scale=0.35]{images/edgeLoopDiagram}\\
 	
 	\label{edgeLoopFig}
@@ -718,7 +719,7 @@ Hair structure estimation begins by splitting the mesh into sub-meshes, determin
 
 The root edge loop is the boundary edge loop that is closest to the surface of the scalp. It serves as a reference for where the hair strands begin. We determine the root loop by finding the average distance of each vertex in a boundary loop. Heuristically, the root border has minimal distance when aligned across the scalp.
 
-There is a significant flaw in this approach as it will not correctly predict roots of hair segments that are represented by multiple meshes. A solution to this would be to accept hair that has clear roots first then iteratively join \textit{floating segments} to the end of the closest corresponding \textit{rooted segment} until there are no more, or when the operation is unable to connect any segments further.	
+There is a significant flaw in this approach as it will not correctly predict roots of hair segments that are represented by multiple attached sub-meshes. A solution to this would be to accept hair that has clear roots first then iteratively join \textit{floating segments} to the end of the closest corresponding \textit{rooted segment} until there are no more, or when the operation is unable to connect any segments further.	
 
 \subsection{Pivotal Strand Polylines}
 With the root loop, we can extract a collection of edge loops that represents the \textit{pivotal} (descriptive) hair strands of the segment cluster. Given the neighbours of root vertices, removing the neighbours that are also root vertices will leave edges that represent key strands. When there is one edge, we take the edge loop as a pivotal strand representation. The edge loop will extend until it encounters a pole or ends on the boundary. It is useful to know where the strand starts (from the root), and where it ends. We extract a path from the edge loop graph by continually appending adjacent nodes, starting from the root node. The result forms a polyline, a sequence of connecting lines.
@@ -748,20 +749,20 @@ With the root loop, we can extract a collection of edge loops that represents th
 A \textbf{repair operator} processes the strand polylines to improve the approximation. First, the starting point of floating polylines is attached to the nearest end of a rooted polyline, only if there exists one within a specified vicinity. We discard the remaining floating polylines that are not attached. Secondly, removing polylines that are insignificantly short in length allows for more descriptive polylines to be sampled.
 
 \subsection{Parametrising a Strand Polyline}
-The procedure thus far returns a set of strand polylines that have varying number of nodes. We produce a constant dimension through sampling to acquire a polyline that is applicable for use as input of our generative model.
+The procedure thus far returns a set of strand polylines that have a varying number of nodes. We produce a constant dimension through sampling to acquire a polyline that is applicable for use as the input of our generative model.
 
-First establish intervals of the distance covered between the points of the original polylines. Now suppose we want to evenly sample the polyline with $n$ points, we can compute the distance where the $i_{th}$ sample point should travel along the polylines as
+First, establish intervals of the distance covered between the points of the original polylines. Now suppose we want to sample the polyline with $n$ points evenly, we can compute the distance where the $i_{th}$ sample point should travel along the polylines as
 $$distance=\frac{i \cdot s_l}{n},$$
 where $s_l$ is the polyline length.
 
-We determine the indices $[j, j+1]$ where the sample distance lies on the polyline by comparing the sample distance to the distance of the interval list. The position, $\bm{P}$, of the sample point is
+We determine the indices $j$ and $j+1$ where the sample distance lies on the polyline by comparing the sample distance to the distance of the interval list. The position, $\bm{P}$, of the sample point is
 $$\bm{P} = \bm{S} + r\bm{D},$$
-where $\bm{S}$ denotes the starting position that is the $j_{th}$ point of the original polyline, plus the unit vector direction to the next $j+1_{th}$ point, multiplied by scalar $r$, the remaining distance to cover from the $j_{th}$ interval.
+where $\bm{S}$ denotes the starting position that is the $j_{th}$ point of the original polyline, plus the unit vector direction to the next $j+1_{th}$ point, $\bm{D}$, multiplied by scalar $r$, the remaining distance to cover from the $j_{th}$ interval.
 
-A potential improvement for parametrising the strand polyline is to concentrate sampling points at areas of high curvature rather than at evenly spaced intervals. Sampling effectively allows the model to be descriptive with less parameters, mitigating problems introduced by the curse of dimensionality.
+A potential improvement for parametrising the strand polyline is to concentrate sampling points in areas of high curvature rather than at evenly spaced intervals. Sampling effectively allows the model to be descriptive with fewer parameters, mitigating problems introduced by the curse of dimensionality.
 
 \subsection{Structure Estimation}
-Strand estimation extracts an arbitrary number of polylines. The next step is to choose a fixed number of polylines for representing the hair geometry. We introduce a \textbf{selection operator} to associate a root with a polyline such that the combination of polylines are representative of the hair structure. Attributes that make a strand polyline more desirable to a particular root include:
+Strand estimation extracts an arbitrary number of polylines. The next step is to choose a fixed number of polylines for representing the hair geometry. We introduce a \textbf{selection operator} to associate a root with a polyline such that the combination of polylines is representative of the hair structure. Attributes that make a strand polyline more desirable to a particular root include:
 \begin{itemize}
 	\item \textit{proximity} - how close the subject strand is to the root position.
 	\item \textit{significance} - how definitive a particular strand is, or the information conveyed by the subjected polyline.
@@ -777,20 +778,22 @@ Several selection operators experimented are:
 \section{Learning a Manifold with Bayesian GP-LVM}
 Once we have acquired a method to estimate the hair structure of the input data, we can then learn a latent manifold for generative inputs sampled from hair meshes. 
 
-A perspective that extends GP-LVM is the paradigm of \textit{kernel method based GP-LVMs} \cite{reviewgplvm}, the choice of a kernel influences performance of the model as it specifies the prior distribution for regression. Selection of the kernel depends on the task to be accomplished. Figure \ref{kernels} shows the behaviour of various standard kernels.
+A perspective that extends GP-LVM is the paradigm of a \textit{kernel method based GP-LVMs} \cite{reviewgplvm}, the choice of a kernel influences performance of the model as it specifies the prior distribution for regression. Which kernel to use depends on the task to be accomplished. Figure \ref{kernels} shows the behaviour of various standard kernels.
 
 \begin{figure}[!h]
 	\centering
 	\includegraphics[scale=0.4]{images/gpyKernels}\\
-	\caption{Source: \href{http://gpytest2.readthedocs.io/en/latest/tuto_kernel_overview.html}{GPy Library Documentation: A kernel overview}. The GPy library offers various standard kernels. Multi-modal kernels can be formed from combining kernels to represent data of complex nature.}
+	\caption{
+	The GPy library offers various standard kernels. Multi-modal kernels can be formed from combining kernels to represent data of complex nature.
+	Source: \href{http://gpytest2.readthedocs.io/en/latest/tuto_kernel_overview.html}{GPy Library Documentation: A kernel overview}.}
 	\label{kernels}
 \end{figure}
 
 The \textit{radial basis function} (RBF) kernel models data smoothly. Generating hair structures with a regression model trained using the RBF kernel interpolate in a gradual manner. The smoothness of the RBF kernel is an attractive property for applying small variations on a hairstyle without destroying its form.
 
-An \textit{exponential kernel} behaves sharply, resembling the training data only very close to the corresponding latent variable on the manifold. Any distance from the latent variables of training data quickly introduces uncertainty, causing the regression model to move towards the mean. This behaviour can perhaps be useful when the mean is set to a common default hairstyle for exploring variations, however, a regression model with zero mean quickly produces invalid geometry as surfaces begin to overlap and collapse towards the origin.
+An \textit{exponential kernel} behaves sharply, resembling the training data only very close to the corresponding latent variable on the manifold. Any distance from the latent variables of training data quickly introduces uncertainty, causing the regression model to move towards the mean value. This behaviour can perhaps be useful when setting the mean to a typical default hairstyle for exploring variations, however, a regression model with zero mean quickly produces invalid geometry as surfaces begin to overlap and collapse towards the origin.
 
-Using a \textit{linear kernel} is equivalent to modelling with PPCA. Each latent variable embeds a linear relationship of the original data, thus not as effective for hair geometry that is profoundly non-linear in nature. The majority of the latent manifold in the demonstrative implementation produces nonsensical hair geometry when using the regression model with a linear kernel. Linear relationships however, are simpler to interpret, thus might have applications as additional controllers for in-depth modelling.
+Using a \textit{linear kernel} is equivalent to modelling with PPCA. Each latent variable embeds a linear relationship of the original data, thus not as effective for hair geometry that is profoundly non-linear in nature. The majority of the latent manifold in the demonstrative implementation produces nonsensical hair geometry when using the regression model with a linear kernel. Linear relationships, however, are simpler to interpret, thus might have applications as additional controllers for in-depth modelling.
 
 \begin{figure}[!h]
 	\centering
@@ -800,14 +803,14 @@ Using a \textit{linear kernel} is equivalent to modelling with PPCA. Each latent
 	\includegraphics[scale=1]{images/latentPlot_linear}
 \end{figure}
 
-\textit{Hyper-parameters} of a kernel specifies its behaviour. A \textit{lengthscale} parameter determines how much the distance of variables influence each other, and the \textit{variance} describes its distribution. We apply \textit{automatic relevance determination} (ARD), which uses the observed data to estimate the hyper-parameters of the kernel.
+\textit{Hyperparameters} of a kernel specifies its behaviour. A \textit{lengthscale} parameter determines how much the distance of variables influence each other, and the \textit{variance} describes its distribution. We apply \textit{automatic relevance determination} (ARD), which uses the observed data to estimate the hyperparameters of the kernel.
 
-The input data is transformed so that the origin is marginally above the origin of the scalp surface space. When the regression model is uncertain, it is sensible to bias the prediction towards the mean. While not an optimal solution, transforming the input data to have a mean above the scalp surface is heuristically better than an arbitrary point or the global origin that is usually under the scalp - encouraging uncertain output to move inside the reference head mesh. An inverse transformation is applied on the output after prediction so that the generated mesh is located at its intended position. 
+When the regression model is uncertain, it is sensible to bias the prediction towards the mean. While not an optimal solution, transforming the input data to be marginally above the scalp surface is heuristically better than an arbitrary point or the global origin that is usually under the scalp - encouraging uncertain output to move inside the reference head mesh. An inverse transformation is applied to the output after prediction to place that the generated mesh at its intended location. 
 
 \section{Geometry Generation from Regression Output}
-Completion of the training process provides a regression model that predicts hair structure from estimated input data using our generative model. A problem encountered was incompatibility of the plotting module in the GPy library with the Python distribution of Blender, where a required standard module \textit{Tk interface} is not present. To overcome this issue, the training process plotted latent manifold is stored as an image and the regression model is serialised using the \textit{Pickle} module of Python. A Blender add-on implementation (introduced in figure \ref{latentAddon}) can then load the latent manifold image on the UV image editor of the program and through the API, load the serialised regression model to predict latent variables sampled from the manifold.
+Completion of the training process provides a regression model that predicts hair structure from estimated input data using our generative model. A problem encountered was incompatibility of the plotting module in the GPy library with the Python distribution of Blender, where a required standard module \textit{Tk interface} is not present. We resolve this issue by plotting the latent manifold as an image, and serialising the regression model using the \textit{Pickle} module of Python. A Blender add-on implementation (introduced in figure \ref{latentAddon}) can then load the latent manifold image in the UV image editor of the program and through the API, load the serialised regression model to predict latent variables sampled from the manifold.
 
-A user-defined Blender operator class, the \textbf{latent selection modal operator}, is responsible for linking a regression model to Blender. Upon \textit{invocation} for setup, a serialised regression model with its corresponding latent manifold image is loaded. A \textit{modal operator} in Blender listens for events until a signal for \textit{finishing} or \textit{cancellation} is returned. Latent selection uses the modal operator to sample coordinates in event of mouse movement. The sampled mouse coordinates is transformed to the latent image coordinate space which is in turn used to obtain the actual latent variables from the regression model. 
+A user-defined Blender operator class, the \textbf{latent selection modal operator}, is responsible for linking a regression model to Blender. Upon \textit{invocation} for setup, a serialised regression model with its corresponding latent manifold image is loaded. A \textit{modal operator} in Blender listens for events until a signal for \textit{finishing} or \textit{cancellation} is returned. Latent selection uses the modal operator to sample coordinates of a mouse movement event. We transform the sampled mouse coordinates to the latent image coordinate space which is in turn used to obtain the actual latent variables from the regression model. 
 
 \begin{algorithm}[!h]
 	\algrule
@@ -840,17 +843,17 @@ A \textit{taper object} is a reference curve that defines thickness of the geome
 	\includegraphics[scale=0.3]{images/guidingExtrusion}
 \end{figure}
 
-An extension to our generative model would be specifying additional sample attributes such as orientation and width of hair segments, this would enable the regression model to also learn such attributes of the input data.
+An extension to our generative model would be specifying additional sample attributes such as orientation and width of hair segments; this would enable the regression model to learn such attributes of the input data.
 
-Our demonstrative implementation can be set to track user activity for acquiring behavioural data when using the latent manifold for geometry generation. Data logged include time spent exploring the manifold, mouse movement, and normalised likelihood of selected predictions. An output management procedure is developed to organise and write logged data automatically so that user testing can proceed seamlessly.
+Our demonstrative implementation can be set to track user activity for acquiring behavioural data when using the latent manifold for geometry generation. Data logged include time spent exploring the manifold, mouse movement, and normalised likelihood of selected predictions. Development of an output management procedure assists in organising and writing logged data automatically so that user testing can proceed seamlessly.
 
 \section{Summary of Project Execution}
 
 The motivation for assisted real-time content generation of polygonal hair stems from the complexity of producing high dimensional geometric data.
 
-We collect example meshes for training data. Geometric data representing a surface is a many-to-one relationship. There are many arrangements of geometric properties that could denote the same surface, however, this representation must be standardised for analysis to be made. The proposition of a generative model allows sampling of meshes to acquire standardised generative inputs so machine learning methods can be applied.
+We collect example meshes for training data. Geometric data representing a surface is a many-to-one relationship. There are many arrangements of geometric properties that could denote the same surface. However, data analysis requires this representation must be standardised beforehand. The proposition of a generative model allows sampling of meshes to acquire standardised generative inputs so machine learning methods can be applied.
 
-Learning is selecting an appropriate kernel and refining the hyper-parameters with evidence. We observed the behaviour of various kernels, discussing properties that may be useful. Finally, we incorporate the regression model and latent manifold obtained from learning into a state-of-the-art 3D software and created geometry from the generative information predicted.
+Learning is selecting an appropriate kernel and refining the hyperparameters with evidence. We observed the behaviour of various kernels, discussing properties that may be useful. Finally, we incorporate the regression model and latent manifold obtained from learning into a state-of-the-art 3D software and created geometry from the generative information predicted.
 
 \begin{figure}[!h]
 	\centering
@@ -1124,7 +1127,7 @@ It is worth noting that the generative model we use has much potential for impro
 A framework that puts our concept of learning-based assisted content generation to use can be divided into two main stages. First, we have the training process which involves:
 \begin{enumerate}
 	\item Data acquisition.
-	\item Kernel and hyper-parameter selection.
+	\item Kernel and hyperparameter selection.
 	\item Learning the regression model.
 \end{enumerate}
 Once a regression model has been trained, it can then be used for production, the regression process that consists of:
