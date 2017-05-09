@@ -42,6 +42,7 @@
 \contentsline {section}{\numberline {4.3}Functional Performance}{35}{section.4.3}
 \contentsline {section}{\numberline {4.4}Comparison with existing solutions}{37}{section.4.4}
 \contentsline {section}{\numberline {4.5}Applications}{37}{section.4.5}
+\contentsline {section}{\numberline {4.6}Summary of Evaluation}{38}{section.4.6}
 \contentsline {chapter}{\numberline {5}Conclusion}{39}{chapter.5}
 \contentsline {section}{\numberline {5.1}Project Status}{39}{section.5.1}
 \contentsline {section}{\numberline {5.2}Future Work}{40}{section.5.2}
