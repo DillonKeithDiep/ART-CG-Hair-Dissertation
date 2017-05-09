@@ -69,7 +69,7 @@ year={2017} ]{dissertation}
 \listoffigures
 \listoftables
 \listofalgorithms
-\lstlistoflistings
+%\lstlistoflistings
 
 % The following sections are part of the front matter, but are not generated
 % automatically by LaTeX; the use of \chapter* means they are not numbered.
@@ -108,13 +108,16 @@ Existing tools for 3D modelling have remained mostly static in the paradigm of a
 \begin{quote}
 	\noindent
 	\begin{itemize}
-		\item Python with standard libraries for implementation.
-		\item GPy library to implement the regression model.
-		\item NumPy and SciPy for mathematical operations
-		\item NetworkX for processing meshes as graphs.
-		\item Pillow, Matplotlib, and Plotly for plotting images and graphs.
+		\item Python 3.5.1 with standard libraries for implementation.
+		\item GPy 1.5.6 to implement the regression model.
+		\item NumPy 1.12.0 and SciPy 0.18.1 for mathematical operations
+		\item NetworkX 1.11 for processing meshes as graphs.
+		\item Pillow 4.0.0, Matplotlib 2.0.0, and Plotly 2.0.1 to plot images and diagrams.
 		\item Pickle for serialising objects as files.
-		\item Blender API for mesh processing and interfacing with the Blender 3D program for demonstration of our implementation.
+		\item scikit-learn 0.18.1 to plot figure \ref{gpplot}
+		\item s4pe for exporting Simgeom data from Package file
+		\item S4 CAS Tools to convert Simgeom files to OBJ files.
+		\item Blender API for mesh processing and interfacing with the Blender 3D program (version 2.77a) for demonstration of our implementation.
 	\end{itemize}
 \end{quote}
 
@@ -131,9 +134,13 @@ Existing tools for 3D modelling have remained mostly static in the paradigm of a
 		$x_i$               &:  & the $i$-th value of a vector $\bm{x}$\\
 		$\bm{X}$			&:	& Matrix\\
 		$\bm{I}$ 			&:	& Identity matrix\\
+		$\bm{\Sigma}$			&:	& Covariance matrix\\
+		$|\bm{X}|$			&:	& Determinant of matrix $\bm{X}$\\
 		$\Re$				&:	& Set of real numbers\\
-		$|\bm{X}|$			&:	& Determinant of matrix $\bm{X}$\\	
-		$\mathcal{N}\sim(\mu, \sigma^2)$ 			&:	& Gaussian (normal) distribution with mean $\mu$ and variance $\sigma^2$.\\
+		$\mu$				&:	& Mean\\
+		$\sigma^2$			&:	& Variance\\
+		$\mathcal{N}\sim(\mu, \sigma^2)$ 			&:	& Gaussian (normal) distribution with mean $\mu$ and variance $\sigma^2$\\
+		$\exp(\bm{\cdot})$	&:	& The exponential function\\
 		ART-CG				&:	& Assisted Real-time Content Generation\\
 		MAP					&:	& Maximum A Posteriori\\
 		PCA		 			&:	& Principal Component Analysis\\
@@ -145,10 +152,10 @@ Existing tools for 3D modelling have remained mostly static in the paradigm of a
 
 \chapter*{Acknowledgements}
 
-%I would like to thank myself for completing this dissertation. 
+I would like to thank myself for completing this dissertation. 
 
 \noindent
-%However, it would not have been possible if not for the advice and guidance of my supervisor, Dr. Carl Henrik Ek, as well as the support of my friends and family. So please, allow me to thank you all with utmost sincerity.
+That said, it would not have been possible if not for the advice and guidance of my supervisor, Dr. Carl Henrik Ek, as well as the support of my friends and family. So please, allow me to thank you all with utmost sincerity.
 
 % =============================================================================
 
@@ -1299,7 +1306,7 @@ Empirical analysis over the steps of execution within our framework would provid
 
 A latent variable lacks a clear description for what it represents as it is the underlying unobserved attributes of the input data. Research contributing towards presenting a latent space in a meaningful manner is a multidisciplinary study that extends visualisation of data with latent variable models and incorporates psychological factors of user experience such as intuitiveness. This field of work would propel the application of non-linear latent variable models for regression of novel output such as content creation and 3D production.
 
-Assisted real-time content generation by learning a latent manifold of existing polygonal hair meshes engages in the discussion of automated production for creative content in the future by tying together the topic of machine learning and 3D mesh processing with the desire to preserve production qualities.
+%Assisted real-time content generation by learning a latent manifold of existing polygonal hair meshes engages in the discussion of automated production for creative content in the future by tying together the topic of machine learning and 3D mesh processing with the desire to preserve production qualities.
 
 % =============================================================================
 
