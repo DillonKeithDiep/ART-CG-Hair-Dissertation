@@ -16,7 +16,7 @@
 \contentsline {figure}{\numberline {3.9}{\ignorespaces The GPy library offers various standard kernels. Multi-modal kernels can be formed from combining kernels to represent data of complex nature. Source: \href {http://gpytest2.readthedocs.io/en/latest/tuto_kernel_overview.html}{GPy Library Documentation: A kernel overview}.}}{25}{figure.3.9}
 \contentsline {figure}{\numberline {3.10}{\ignorespaces 2D latent manifold plots. From left to right: RBF, exponential, and linear kernels. Brightness represents likelihood of the output.}}{26}{figure.3.10}
 \contentsline {figure}{\numberline {3.11}{\ignorespaces The generative inputs predicted are restructured into guiding strands. Geometry is created in accordance to the hair structure described by the guiding strands.}}{27}{figure.3.11}
-\contentsline {figure}{\numberline {3.12}{\ignorespaces Polygonal hair geometry produced by our non-linear regression model from selecting within a latent manifold.}}{28}{figure.3.12}
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Polygonal hair geometry produced by our nonlinear regression model from selecting within a latent manifold.}}{28}{figure.3.12}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Images presented in the survey, named mesh 1-4 on the first row from left to right, and 5-8 on the second. Training meshes are 1, 4, 5, and 6. Output mesh are 2, 3, 7, and 8.}}{29}{figure.4.1}
 \contentsline {figure}{\numberline {4.2}{\ignorespaces The mean, standard deviation, and variance comparison of training and output mesh presented on the survey.}}{30}{figure.4.2}

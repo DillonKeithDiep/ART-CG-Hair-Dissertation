@@ -36,10 +36,10 @@
 \contentsline {chapter}{\numberline {4}Critical Evaluation}{29}{chapter.4}
 \contentsline {section}{\numberline {4.1}Latent Hair Modelling Survey}{29}{section.4.1}
 \contentsline {section}{\numberline {4.2}Latent Application Experiment}{32}{section.4.2}
-\contentsline {subsubsection}{Behavioural Observation: Familiarising with the manifold}{33}{section*.14}
+\contentsline {subsubsection}{Behavioural Observation: Familiarising with the manifold}{32}{section*.14}
 \contentsline {subsubsection}{Behavioural Observation: Misleading local optima}{33}{section*.15}
 \contentsline {subsubsection}{Behavioural Observation: Explore then exploit}{34}{section*.16}
-\contentsline {section}{\numberline {4.3}Functional Performance}{35}{section.4.3}
+\contentsline {section}{\numberline {4.3}Functional Performance}{34}{section.4.3}
 \contentsline {section}{\numberline {4.4}Comparison with existing solutions}{37}{section.4.4}
 \contentsline {section}{\numberline {4.5}Applications}{37}{section.4.5}
 \contentsline {section}{\numberline {4.6}Summary of Evaluation}{38}{section.4.6}
