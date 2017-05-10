@@ -1,0 +1,199 @@
+\documentclass[a4paper, fontsize=15pt, onecolumn]{article} % A4 paper and 11pt font size
+%\documentclass[a4paper,11pt]{article}
+%\usepackage[a4paper, total={7.5in, 9.5in}]{geometry}
+\usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+
+\usepackage[pdftex]{graphicx}
+\usepackage{hyperref}
+\usepackage{multirow}
+\usepackage{fourier} % Use the Adobe Utopia font for the document - comment this line to return to the LaTeX default
+%\usepackage[english]{babel} % English language/hyphenation
+\usepackage{amsmath,amsfonts,amsthm} % Math packages
+\usepackage{sectsty} % Allows customizing section commands
+
+\bibliographystyle{plain}
+
+\allsectionsfont{\normalfont\scshape} % Make all sections centered, the default font and small caps
+
+\usepackage{fancyhdr} % Custom headers and footers
+%\pagestyle{fancy}
+\rhead{ }
+\renewcommand{\headrulewidth}{0pt} % Remove header underlines
+\renewcommand{\footrulewidth}{0pt} % Remove footer underlines
+\setlength{\headheight}{13.6pt} % Customize the height of the header
+
+\numberwithin{equation}{section} % Number equations within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{figure}{section} % Number figures within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{table}{section} % Number tables within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs - comment this line for an assignment with lots of text
+
+\setlength\columnsep{18pt}
+
+\title{
+	\vspace{-3.0cm}
+	\horrule{0.4pt} \\[0.2cm] % Top horizontal rule
+	\vspace{0.2cm}
+	\Large Assisted Real-Time Content Generation\\
+	\horrule{0.4pt} \\[0cm] % Bottom horizontal rule
+	\vspace{-0.5cm}
+}
+\date{} % No date
+
+\newcommand{\horrule}[1]{\rule{\linewidth}{#1}} % Create horizontal rule command with 1 argument of height
+
+%%%%% FOOTNOTE EXAMPLE %%%%%
+%\footnote{\href{www.google.com}{www.google.com}}
+
+
+\begin{document}
+\maketitle
+\thispagestyle{fancy} % Show header on front page
+%\pagestyle{plain} % Remove header on following pages
+
+\section*{Case for Support}
+\section{Overview and Motivation}
+The production of 3D virtual worlds is a time-consuming and costly process that also demand expert knowledge. 3D assets are critical to the functioning of many businesses, applications in engineering design, and the provisioning of entertainment. This proposal presents the concept of assisted content generation, a workflow that will revolutionise the production of 3D assets by applying machine learning to the operation of 3D production tools.
+
+The 3D production pipeline has remained vastly static for many years. Often, an artist will plan out the asset through references or concept art. A base geometry is selected to work on- this could be entirely from scratch or modifying similar geometry already available. Traditional tools used within 3D production apply to a wide range of scenarios, but only perform steps of changes at a time. 
+Quick methods of production such as procedural generation exist, but seldom used as the output is troublesome to control.
+
+There exist many factors that impede production in the traditional pipeline. The pre-production and design phase begins with a medium that can visualise the concept early - such as paintings and artwork. Whilst this is a faster approach, there is a loss of data incurred when transferring from one medium to another. Art design demands consistency, but the division of labour is vital for studios to meet deadlines. Each artist can only focus on one piece of work at a time, along with projects evolving over a long span of period, stylistic consistency can be difficult to achieve. 
+
+Throughout the vast history of 3D graphical applications, An abundance of the commonly observed geometry of has been produced. The foundation established by previous work can be used to train tools that apply machine-learning to significantly reduce the overhead of repetitive tasks, allowing creators to focus more on design and refining. Content creators and consumers could enjoy the benefit of rapid prototyping and extrapolate a trained model to explore and identify novel stylistic properties.
+
+The application of machine-learning based tools could enhance the workflow of professional users and improve the experience for non-expert consumers. Such tools integrate into the production environment to improve the efficiency of acquiring initial base geometry and visually compare designs during pre-production. Non-expert users receive the ability to produce 3D geometry without requiring to learn the intrinsics of traditional 3D modelling software. The rise in popularity for augmented reality and 3D printing inspires the development of generative tools that are intuitive and simplistic to use. Applications that allow users to create their personal content could also integrate machine-learning based tools to prevent inappropriate or undesirable creation from being produced while providing options that surpass existing alternatives. An example would be avatar creation for many applications and video games. A space of reasonable options generated from predefined outputs by the developers will allow users to interpolate between sensible configurations, providing an excellent level of customisation while adhering to defined constraints.
+
+\section{Background}
+The preferred representation of 3D objects within the industry is polygons. A polygonal object is defined by vertices, edges, and faces that form the geometry. Topology is the study of geometrical arrangement for the object. It is best practice to use quad-faces, which are faces formed from four edges asset production. The rendering pipeline often requires and automatically converts geometry to tri-faces, faces formed from three edges. Other representations include voxels which represent objects with cubes, and pixols, a 3D variant of pixels introduced by Pixelogic for their state of the art sculpting program, ZBrush.
+
+Extensive research has been performed in graphics in the past several decades. Generative models have been used for procedural modelling and estimation.
+[Cite related work on traditional graphics/3D]
+
+LAWRENCE, N. 2005. Probabilistic non-linear principal component analysis with Gaussian process latent variable models. The Journal of Machine Learning Research 6, 1783–1816. 
+
+CAMPBELL, N. D., AND KAUTZ, J. 2014. Learning a manifold of fonts. ACM Transactions on Graphics (TOG) 33, 4, 91. 
+
+CHAI, M., SHAO, T., WU, H., WENG, Y., AND ZHOU, K. 2016. AutoHair: Fully automatic hair modeling from a single image. ACM Trans. Graph. 35, 4 (July), 116:1–116:12.
+
+Etc
+
+\section{National Importance}
+The production of 3D assets play a pivotal role in business, engineering, and entertainment.
+[Cite market surveys of CAD, business, visualisation, entertainment, other benefits]
+
+More 3D in future, Microsoft 3D Paint, augmented reality on tablets and smartphones, etc
+
+EPSRC Themes: Digital economy, some Engineering and ICT
+
+Related topics: Graphics and visualisation, artificial intelligence, machine-learning
+
+
+
+\section{Academic Beneficiaries}
+AI
+Smart tools.
+
+Machine Learning
+Small data set.
+Performance critical.
+On-line learning.
+Industrial application.
+
+Graphics
+Generative models.
+Procedural modelling.
+
+\section{Approach}
+Our aim is to provide a framework, techniques, and methods that enable a more efficient workflow for the production of 3D geometry.
+\begin{enumerate}
+	\item Parameterizing polygonal 3D models such that they are comparable for learning purposes, whether through generative models or as point clouds.
+	\item Applying regression models for prediction of output, comparing alternative models, deep learning, layered models for more control of output.
+	\item Devise techniques to repair 3D model data such that it is sensible to the context, based on semantics and constraints of the model.
+	\item Creating a new workflow that is beneficial for the UK digital creative economy, assisting competency of businesses by integration with state of the art tools.
+	\item Enable non-experts to produce personalised 3D geometry effectively based on stylistic properties of the training data set.
+\end{enumerate}
+
+
+
+\section{Research Hypothesis}
+Success Criteria / Objectives: 
+\begin{enumerate}
+	\item Opportunity to use a tool that produces faster than traditional tools.
+	\item Complete much of the repetitive tasks instantly, then artist refine.
+	\item Create new hairstyles from blending existing hairstyles in a practical manner.
+	\item Plausible alternative for users to have uniquely constructed 3D objects yet maintaining control over the environment to prevent inappropriate results.
+\end{enumerate}
+
+Quantitative analysis: performance measurement, loss of data (residuals) from approximation
+Qualitative analysis: working with professional content creators, industrial partners, non-experts, compare demos to alternatives and past work
+
+\section{Objectives and Deliverables}
+\subsection{Deliverables}
+Success Criteria / Objectives: 
+Opportunity to use a tool that produces faster than traditional tools.
+Complete much of the repetitive tasks instantly, then artist refine.
+Create new hairstyles from blending existing hairstyles in a practical manner.
+Plausible alternative for users to have uniquely constructed 3D objects yet maintaining control over the environment to prevent inappropriate results.
+
+Quantitative analysis: performance measurement, loss of data (residuals) from approximation
+Qualitative analysis: working with professional content creators, industrial partners, non-experts, compare demos to alternatives and past work
+
+\section{Programme and Methodology}
+\subsection{Work package 1 (WP1): Resolving the alignment problem of 3D Objects}	
+Research Objective: 3D objects are defined ambiguously, it is challenging to compare structures of 3D geometry without preprocessing. This phase investigates methods of approximating object successfully so that the aligned data are comparable and minimises the data loss from approximation.
+
+\subsection{Deliverables}
+\begin{enumerate}
+	\item Investigate and formulate techniques or generative model(s) that resolve the alignment problem of raw input data, allowing a sufficient approximation of generative parameters with the same dimension.
+	\item Implementation of said approximators, integrated within the production pipeline (extending state of the art tools such as 3DS Max, Maya, and Blender).
+\end{enumerate}
+
+A challenge presented when attempting to learn the variation of 3D objects is the alignment problem. Data produced by creators defined in the form of vertices, edges and faces have varying dimensionality. Representations of the same object can vary, due to the level of detail and the pose of the object. Approximation of the object should be: translation, rotation, scale, and level of detail invariant, demanding a volumetric or an alternative generic approach.
+
+Voxels have had success in estimating 3D objects but typically require closed shapes, this is not enough for production as planes, and unfilled shapes are often used to optimise by reducing the polycount.
+
+\subsection{Work Package 2 (WP2): Learning the Generation of 3D Objects}
+
+Research Objective: Investigate methods that are ideal for learning the generation of 3D objects and how to best visualise it so that it is useful. The scope of investigation encapsulates comparison of different regression models, extending viable models through layered hierarchy or applying deep learning. When applicable to latent variables, determining whether it is possible to infer semantic meaning from common latent variables for classification. Considerations include the limitations of learning models, evaluating the trend of performance as training data set scales.
+
+\subsubsection{Deliverables} 
+\begin{enumerate}
+	\item Investigate viable learning models that are suitable for generation of 3D objects.
+	\item Critically evaluating the advantages and disadvantages of each model.
+	\item Applying research of complex models such as layered models and deep learning.
+\end{enumerate}
+
+\subsection{Work Package 3 (WP3): Generation and Reparation}
+
+Research Objective: The output of trained models contain a level of uncertainty. In the context of 3D assets, it is often flexible with approximation, but some scenarios outline specific constraints. An example would be hair object that should not grow inwards into a head object. Engineering design and architecture also apply strict limitations. This phase investigates methods of generation that conform with specified constraints, performing reparations appropriately so that the output is optimised and practical.
+
+\subsubsection{Deliverables}
+\begin{enumerate}
+	\item Investigate and formulate methods of generation and reparation for the uncertain output of a trained model.
+\end{enumerate}
+
+\subsection{Work Package (WP4): Integration and Applications of Machine-Trained Tools}
+Research Objective: Present a framework or specification of training-based tools that are fitting of integration to production and consumer applications. Discover factors that determine performance attained and identify the performance differences of scenarios, such as real-time programs.
+
+\subsubsection{Deliverables}
+\begin{enumerate}
+	\item Evaluation of online (continually) learning models against offline learning models.
+	\item Developing a framework of ideal workflow that integrates machine-trained tools into state of the art production software.
+	\item Measure the efficacy for both expert and consumer use cases.
+\end{enumerate}
+	
+\bibliography{research_proposal}
+
+\section*{Budget}
+Employment
+Machines \& monitors, accessories
+Travelling
+Conference
+Communication
+
+\section*{Justification for Resources}
+
+\section*{Impact Statement}
+
+\end{document}
