@@ -27,6 +27,7 @@
 \numberwithin{table}{section} % Number tables within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
 
 \setlength\parindent{0pt} % Removes all indentation from paragraphs - comment this line for an assignment with lots of text
+\setlength\parskip{1em}
 
 \setlength\columnsep{18pt}
 
@@ -34,7 +35,7 @@
 	\vspace{-3.0cm}
 	\horrule{0.4pt} \\[0.2cm] % Top horizontal rule
 	\vspace{0.2cm}
-	\Large Assisted Real-Time Content Generation\\
+	\Large ART-CG: Assisted Real-time Content Generation of 3D Assets through Machine Learning\\
 	\horrule{0.4pt} \\[0cm] % Bottom horizontal rule
 	\vspace{-0.5cm}
 }
@@ -53,20 +54,45 @@
 
 \section*{Case for Support}
 \section{Overview and Motivation}
-The production of 3D virtual worlds is a time-consuming and costly process that also demand expert knowledge. 3D assets are critical to the functioning of many businesses, applications in engineering design, and the provisioning of entertainment. This proposal presents the concept of assisted content generation, a workflow that will revolutionise the production of 3D assets by applying machine learning to the operation of 3D production tools.
+%%% Importance of 3D modelling %%%
+The production of 3D assets is a costly and time-consuming procedure that also requires expert knowledge.
+The vast application of 3D assets play a pivotal role in functioning of infrastructure.
+3D assets are used in engineering design.
+CGI.
+Medicine via 3D printing.
+Visualisation and simulation.
 
+We propose the concept of assisted real-time content generation, a novel framework that simplifies the production process of 3D assets through machine learning. Our proposition of probabilistic nonlinear dimension reduction consolidates observed variables to provide a parsimonious collection of latent variables, drastically diminishing the complexity of the production pipeline through regression.
+
+%%% What is the problem in 3D modelling? %%%
 The 3D production pipeline has remained vastly static for many years. Often, an artist will plan out the asset through references or concept art. A base geometry is selected to work on- this could be entirely from scratch or modifying similar geometry already available. Traditional tools used within 3D production apply to a wide range of scenarios, but only perform steps of changes at a time. 
 Quick methods of production such as procedural generation exist, but seldom used as the output is troublesome to control.
 
 There exist many factors that impede production in the traditional pipeline. The pre-production and design phase begins with a medium that can visualise the concept early - such as paintings and artwork. Whilst this is a faster approach, there is a loss of data incurred when transferring from one medium to another. Art design demands consistency, but the division of labour is vital for studios to meet deadlines. Each artist can only focus on one piece of work at a time, along with projects evolving over a long span of period, stylistic consistency can be difficult to achieve. 
 
+%%% About our proposal %%%
 Throughout the vast history of 3D graphical applications, An abundance of the commonly observed geometry of has been produced. The foundation established by previous work can be used to train tools that apply machine-learning to significantly reduce the overhead of repetitive tasks, allowing creators to focus more on design and refining. Content creators and consumers could enjoy the benefit of rapid prototyping and extrapolate a trained model to explore and identify novel stylistic properties.
-
 The application of machine-learning based tools could enhance the workflow of professional users and improve the experience for non-expert consumers. Such tools integrate into the production environment to improve the efficiency of acquiring initial base geometry and visually compare designs during pre-production. Non-expert users receive the ability to produce 3D geometry without requiring to learn the intrinsics of traditional 3D modelling software. The rise in popularity for augmented reality and 3D printing inspires the development of generative tools that are intuitive and simplistic to use. Applications that allow users to create their personal content could also integrate machine-learning based tools to prevent inappropriate or undesirable creation from being produced while providing options that surpass existing alternatives. An example would be avatar creation for many applications and video games. A space of reasonable options generated from predefined outputs by the developers will allow users to interpolate between sensible configurations, providing an excellent level of customisation while adhering to defined constraints.
 
 \section{Background}
+%%% Intro to 3D assets (Representations & Production) %%%
+There are numerous representations of 3D objects in computer graphics. One way to obtain 3D geometry data is to sample surfaces of the physical world with a 3D scanner. Common representations of sampled geometric data include point clouds, range maps, and voxels (figure 1.1).
+
+3D surface representations have advantages and disadvantages depending on the use case. It is possible to convert between representations; however, conversion between representations risk incurring data loss. The CAD (Computer-Aided Design) industry often uses precise mathematical representations such as NURBS (Non-Uniform Rational Basis Spline). The most widely adopted representation for CGI (Computer-Generated Imagery) is polygonal meshes. In a production environment, it is preferred to define geometry specifically to requirements of the design as opposed to capturing examples. Polygon meshes are simple to define, yet with established techniques such as UV texturing and normal mapping, are sufficiently expressive for visualising purposes. The study of polygonal meshes is deeply rooted in computer graphics.
+
+Elements of a polygonal mesh are vertices, edges, and faces. The topology of a mesh is concerned with the arrangement of its components, well-organised topology is required to maintain geometric qualitieswhen performing algorithmic operations on a mesh. In practice, professionals create polygon meshes with majority quad-face topology (faces formed from four edges) during production. The rendering pipeline often automatically converts polygon meshes to triangle faces (formed from three edges) as an optimisation process. Quadrilateral mesh form what we call edge loops which can be used to define the structure of geometry, thus conform better with editing tools and preserve structure when algorithmically processed in comparison to triangle meshes.
+
 The preferred representation of 3D objects within the industry is polygons. A polygonal object is defined by vertices, edges, and faces that form the geometry. Topology is the study of geometrical arrangement for the object. It is best practice to use quad-faces, which are faces formed from four edges asset production. The rendering pipeline often requires and automatically converts geometry to tri-faces, faces formed from three edges. Other representations include voxels which represent objects with cubes, and pixols, a 3D variant of pixels introduced by Pixelogic for their state of the art sculpting program, ZBrush.
 
+State of the art 3D production software such as AutoDesk Maya, 3DS Max, and Blender are advanced
+programs with a sophisticated list of features. 3D software typically has convoluted user interfaces; even the most experienced professionals do not recognise each and every tool available. A combination of a high learning curve and overwhelming user experience causes the standard 3D software to seem intimidating for new users. In fact, most functionality is only accessible through an API (Application Program Interface) via a scripting language. Experienced users welcome this complexity as it allows creators to customise their ideal workflow, but it creates a high barrier to entry for non-experts who wish to possess the capability of such 3D programs.
+
+%%% Automated methods, procedural generation %%%
+Procedural generation techniques can automatically produce output that adheres to rules established by the generative model defined. Generation of terrains and city modelling sometimes employ procedural techniques to take advantage of its systematic nature to mass produce variations in agreement with specified patterns [11]. Fractals and methods such as the Lindenmayer system have been used to create patterns that resemble those observed in nature [24]. Automated techniques such as the ones discussed, however, are seldom used for modelling distinct objects with a specific design. It is an involved process to control the output of procedurally generated content without heavily restricting its capabilities. Automated methods that do not learn cannot adapt to changing demands without reimplementation, motivating for a learning-based solution.
+
+% Existing tools for 3D modelling have remained mostly static in the paradigm of approach over the past several decades. Automation through methods such as procedural generation can produce content faster. However, traditional synthesis and automated solutions are defined to produce a specific class of output through established patterns and cannot adapt to new models without reimplementation. The research hypothesis of this study is that of applying nonlinear probabilistic dimensionality reduction improves the efficacy of creative content production for exceptionally high dimensional data such as complex 3D hair geometry on virtual humanoids.
+
+%%% Machine learning work %%%
 Extensive research has been performed in graphics in the past several decades. Generative models have been used for procedural modelling and estimation.
 [Cite related work on traditional graphics/3D]
 
@@ -78,17 +104,28 @@ CHAI, M., SHAO, T., WU, H., WENG, Y., AND ZHOU, K. 2016. AutoHair: Fully automat
 
 Etc
 
-\section{National Importance}
-The production of 3D assets play a pivotal role in business, engineering, and entertainment.
-[Cite market surveys of CAD, business, visualisation, entertainment, other benefits]
+Simplifying a procedure within the pipeline yield increased throughput and offer an opportunity for rapid prototyping. A nonlinear approach minimises loss of information; thus high dimensional data can be reduced effectively to dimensionality that is sufficiently low. Non-experts may find directing a few descriptive components within a low dimension representation easier than controlling an overwhelming number of attributes present in the original data.
 
-More 3D in future, Microsoft 3D Paint, augmented reality on tablets and smartphones, etc
+\subsection{Related Research of Machine Learning in Creative Fields}
+Three major paradigms divide the task of machine learning:
+\begin{itemize}
+	\item Supervised learning is provided input training examples with desired outputs to learn the mapping of inputs to an output.
+	\item Unsupervised learning seeks to learn the structure of and relation between input data.
+	\item Reinforcement learning iteratively improve a pool of solutions by simulating an environment that applies concepts inspired by the theory of evolution.
+\end{itemize}
+The role that learning methods play in both manufacturing and consumer application continue to grow. However, adoption has been slow for creative fields. Obtaining more reliable data usually improves the performance of robust learning models, but example training sets of creative work are not easily attainable. Creative production values uniqueness and versatility, properties that cause difficulty in machine learning methods. Varying artistic styles in design complicate feature analysis, and ambiguity of correctness is problematic when predicting an output. In machine learning, prediction of continuous variables is a regression problem.
 
-EPSRC Themes: Digital economy, some Engineering and ICT
+Style-based inverse kinematics introduced the Scaled Gaussian Process Latent Variable Model to learn the probabilistic distribution of a 3D human posture model [15]. Motion capture data represent character posture with a 42-dimensional feature vector that encapsulates joint information of a humanoid body. Learning a model of poses established the relation between joints and identified constraints exhibited in the training data. The probabilistic distribution is plot and used to select predictions in the model. There are no constraints on the joints, but sampling areas of high likelihood in the distribution models realistic motion that resembles the input data.
 
-Related topics: Graphics and visualisation, artificial intelligence, machine-learning
+A latent doodle space learns latent (unobserved) variables that describe simple line drawings more concisely than the original data [7]. The motivation of a latent doodle space is to generating new drawings that are inspired by the input data. There are two key phases to derive a latent doodle space: the first challenge is to identify line strokes within drawings, the second is using a latent variable method to learn a low-dimensional latent space of input drawings. 
 
+A study by Campbell and Kautz (2014) presented a framework that learns the latent manifold of existing font styles [10]. The process involved universal parametrization of fonts to a polyline representation so that a distance measure is applicable and the generative model can interpolate between styles. Non-experts could create font styles without experience on type design by sampling points from a two-dimensional latent manifold.
 
+Drawing assistance powered by large-scale crowd-sourcing explored the potential of data-driven drawing to prompt for correction by achieving an artistic consensus [20]. Learning a correction vector field from training drawings finds a consensus. Stroke-correction is applied using the correction vector field to adjust user input dynamically.
+
+Chai et al. (2016) introduced AutoHair, a method for automatic modelling of 3D hair from a portrait image [12]. The approach extracts information from images and uses a database of hair meshes to construct a 3D representation of the information conveyed. A hierarchical deep neural network trained on annotated hair images learn to segment hair and estimate growth direction within portraits. Data-driven hair matching and modelling algorithm fit meshes from the database to parameters output by the neural net model to automatically produce 3D hair. The experiment developed a traversable hairstyle space of 50,000 hair models, using training images to fit segments of 3D examples obtained from the internet.
+
+Research regarding creative content often parametrise the training data so that machine learning is applicable. There is no clearly defined solution for a problem in the creative field, effective solutions strive for versatility, employing consensus decision making or offering multiple solutions. To overcome the challenges introduced, dimensionality reduction through unsupervised learning with probabilistic latent variable models such as the Gaussian Process Latent Variable Model (GP-LVM) [18] present an opportunity to learn stylistic properties of design and predict multiple acceptable outputs by analysing the likelihood.
 
 \section{Academic Beneficiaries}
 AI
@@ -103,6 +140,15 @@ Industrial application.
 Graphics
 Generative models.
 Procedural modelling.
+
+\section{Challenges}
+This study faces multiple challenges. Firstly, 3D meshes are difficult to compare. The training data in its raw form will have varying dimensions. We can view meshes as samples of the actual surface. Thus meshes that represent the same object could differ drastically in the number of data points depending on its level of detail. Typical feature extraction methods do not work well on meshes as artistic products are sensitive to data loss - any change could affect the perception of final result drastically.
+
+Another problem encountered is the lack of training data. Typical machine learning solutions use huge data sets in the order of hundreds of thousands for training, but for 3D meshes, the standard size of readily available training data is much smaller. Public repositories of 3D polygonal hair ordinarily contain up to thousands of meshes [4]. Studios that store and organise past production may match the extent of public repositories, depending on the size of the company. Private repositories of independent artists will rarely exceed the order of hundreds. 
+
+The application of machine learning methods must also account for the subjectivity of evaluating artistic assets. The range of acceptable solutions is ambiguous, likened to how hair styles of characters can change drastically during the design phase.
+
+In a production environment, the time required for a technique to return observable result directly affects throughput. For practical usage of assisted content generation, the technique should be reasonably fast in presenting observable output.
 
 \section{Approach}
 Our aim is to provide a framework, techniques, and methods that enable a more efficient workflow for the production of 3D geometry.
@@ -121,7 +167,7 @@ Success Criteria / Objectives:
 \begin{enumerate}
 	\item Opportunity to use a tool that produces faster than traditional tools.
 	\item Complete much of the repetitive tasks instantly, then artist refine.
-	\item Create new hairstyles from blending existing hairstyles in a practical manner.
+	\item Create new assets from blending existing data in a practical manner.
 	\item Plausible alternative for users to have uniquely constructed 3D objects yet maintaining control over the environment to prevent inappropriate results.
 \end{enumerate}
 
@@ -138,6 +184,15 @@ Plausible alternative for users to have uniquely constructed 3D objects yet main
 
 Quantitative analysis: performance measurement, loss of data (residuals) from approximation
 Qualitative analysis: working with professional content creators, industrial partners, non-experts, compare demos to alternatives and past work
+
+1. Performing dimensionality reduction on 3D mesh data.
+2. Exploring the application of nonlinear dimensionality reduction for high-dimensional mesh data
+such as 3D hair geometry.
+3. Investigate the use of latent variables for identifying stylistic properties of 3D content.
+4. Demonstrate the use of a nonlinear latent manifold to generate hair geometry.
+5. Enable an intuitive method for both experienced users and non-experts to easily create 3D hair
+geometry.
+6. Achieve performance close to real-time for practical use.
 
 \section{Programme and Methodology}
 \subsection{Work package 1 (WP1): Resolving the alignment problem of 3D Objects}	
@@ -185,6 +240,8 @@ Research Objective: Present a framework or specification of training-based tools
 	
 \bibliography{research_proposal}
 
+\newpage
+
 \section*{Budget}
 Employment
 Machines \& monitors, accessories
@@ -192,8 +249,24 @@ Travelling
 Conference
 Communication
 
+\newpage
+
 \section*{Justification for Resources}
 
+\newpage
+
 \section*{Impact Statement}
+The production of 3D assets play a pivotal role in business, engineering, and entertainment.
+[Cite market surveys of CAD, business, visualisation, entertainment, other benefits]
+
+More 3D in future, Microsoft 3D Paint, augmented reality on tablets and smartphones, etc
+
+Related topics: Graphics and visualisation, artificial intelligence, machine-learning
+
+Dimensionality reduction on enormously high dimensional data.
+
+\newpage
+
+\section*{Work Plan}
 
 \end{document}
