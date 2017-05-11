@@ -1,3 +1,22 @@
-\begin{thebibliography}{}
+\begin{thebibliography}{1}
+
+\bibitem{simulation}
+Y.~Gao, P.~Liu, D.~Liu, and L.~Zhang.
+\newblock 3{D} simulation research on hazard of fuel system leakage of {LNG}
+  bus.
+\newblock pages 1--4, 2011.
+
+\bibitem{cgmarket}
+Jon~Peddie Research.
+\newblock The {CG} market will exceed \$235 billion by 2018.
+\newblock
+  \url{http://jonpeddie.com/press-releases/details/the-cg-market-will-exceed-235-billion-by-2018},
+  2017.
+\newblock [Online; accessed 11-May-2017].
+
+\bibitem{3dprinting}
+C.~L. Ventola.
+\newblock Medical applications for {3D} printing: Current and projected uses.
+\newblock 39(10):704--711, 2014.
 
 \end{thebibliography}
