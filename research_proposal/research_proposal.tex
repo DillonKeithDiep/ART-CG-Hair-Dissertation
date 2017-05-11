@@ -35,7 +35,7 @@
 	\vspace{-3.0cm}
 	\horrule{0.4pt} \\[0.2cm] % Top horizontal rule
 	\vspace{0.2cm}
-	\Large ART-CG: Assisted Real-time Content Generation of 3D Assets through Machine Learning\\
+	\Large ART-CG: Assisted Real-time Content Generation of 3D Geometry through Machine Learning\\
 	\horrule{0.4pt} \\[0cm] % Bottom horizontal rule
 	\vspace{-0.5cm}
 }
@@ -55,9 +55,10 @@
 \section*{Case for Support}
 \hrule
 \section{Overview and Motivation}
-%%% Importance of 3D modelling %%%
-The production of 3D assets is a costly and time-consuming procedure that also requires expert knowledge.
+%%% Intro %%%
+The production of 3D assets is a meticulous and time-consuming procedure that also requires expert knowledge. Content developers create, manipulate, and maintain high-dimensional 3D geometric data ranging from order of thousands to millions. The result is a lengthy production pipeline that 
 
+%%% Importance of 3D modelling %%%
 Computer aided-design (CAD) drives engineering and manufacturing.
 Computer-generated image (CGI) supports the entertainment industry.
 3D printing has been utilised in the field of medicine and its application is projected to expand \cite{3dprinting}.
@@ -82,7 +83,8 @@ There are numerous representations of 3D objects in computer graphics. One way t
 
 3D surface representations have advantages and disadvantages depending on the use case. It is possible to convert between representations; however, conversion between representations risk incurring data loss. The CAD (Computer-Aided Design) industry often uses precise mathematical representations such as NURBS (Non-Uniform Rational Basis Spline). The most widely adopted representation for CGI (Computer-Generated Imagery) is polygonal meshes. In a production environment, it is preferred to define geometry specifically to requirements of the design as opposed to capturing examples. Polygon meshes are simple to define, yet with established techniques such as UV texturing and normal mapping, are sufficiently expressive for visualising purposes. The study of polygonal meshes is deeply rooted in computer graphics.
 
-Elements of a polygonal mesh are vertices, edges, and faces. The topology of a mesh is concerned with the arrangement of its components, well-organised topology is required to maintain geometric qualitieswhen performing algorithmic operations on a mesh. In practice, professionals create polygon meshes with majority quad-face topology (faces formed from four edges) during production. The rendering pipeline often automatically converts polygon meshes to triangle faces (formed from three edges) as an optimisation process. Quadrilateral mesh form what we call edge loops which can be used to define the structure of geometry, thus conform better with editing tools and preserve structure when algorithmically processed in comparison to triangle meshes.
+Elements of a polygonal mesh are vertices, edges, and faces. The topology of a mesh is concerned with the arrangement of its components, well-organised topology is required to maintain geometric qualities
+when performing algorithmic operations on a mesh. In practice, professionals create polygon meshes with majority quad-face topology (faces formed from four edges) during production. The rendering pipeline often automatically converts polygon meshes to triangle faces (formed from three edges) as an optimisation process. Quadrilateral mesh form what we call edge loops which can be used to define the structure of geometry, thus conform better with editing tools and preserve structure when algorithmically processed in comparison to triangle meshes.
 
 The preferred representation of 3D objects within the industry is polygons. A polygonal object is defined by vertices, edges, and faces that form the geometry. Topology is the study of geometrical arrangement for the object. It is best practice to use quad-faces, which are faces formed from four edges asset production. The rendering pipeline often requires and automatically converts geometry to tri-faces, faces formed from three edges. Other representations include voxels which represent objects with cubes, and pixols, a 3D variant of pixels introduced by Pixelogic for their state of the art sculpting program, ZBrush.
 
