@@ -70,107 +70,107 @@
 \section*{Case for Support}
 \hrule
 \section{Overview and Motivation}
-%%% Intro %%%
-The production of 3D assets is a meticulous and time-consuming procedure that also requires expert knowledge. Content developers create, manipulate, and maintain high-dimensional 3D geometric data ranging from order of thousands to millions of data points. State of the art 3D software offer an extraordinary number of features to tackle the complexity of 3D production. However, this promotes a steep learning curve and builds a high barrier to entry for non-experts to produce 3D content. Our proposition of assisted real-time content generation investigates simplification of 3D asset production through application of machine learning.
+\label{motivation}
+%%% Background & Hypothesis %%%
+The production of 3D assets is a meticulous and time-consuming procedure that also requires expert knowledge. Content developers create, manipulate, and maintain high-dimensional 3D geometric data ranging from an order of thousands to millions of data points. State of the art 3D software offers an extraordinary number of features to tackle the complexity of 3D production. However, this promotes a steep learning curve and builds a high barrier to entry for non-experts to produce 3D content. Our proposition of assisted real-time content generation investigates simplification of 3D asset production through application of machine learning.
 
-%%% Importance of 3D modelling %%%
-Application of 3D assets contribute immensely to the general public.
-Computer aided-design (CAD) drives engineering and manufacturing.
+%%% National Importance %%%
+Application of 3D assets contributes immensely to the general public.
+Computer-aided-design (CAD) drives engineering and manufacturing.
 Computer-generated imagery (CGI) supports the entertainment industry.
-3D printing has been utilised in the field of medicine and its application is projected to expand \cite{3dprinting}.
-Visualisation, simulation, and research often make use 3D assets \cite{simulation}.
+The field of medicine has utilised 3D printing, and its application is projected to expand \cite{3dprinting}.
+Visualisation, simulation and research often make use 3D assets \cite{simulation}.
 Computer graphics (CG) is not only extensively applied, according to \textit{John Peddie Research (JPR)}, the CG market itself will exceed \$235 billion by 2018 \cite{cgmarket}.
 
-%%% About our proposal %%%
+%%% Challenges %%%
+Definition of geometric representations is often by describing visual properties. For example, polygonal meshes are formed from \textit{edges}, \textit{vertices},  and \textit{faces}. While such approach is sensible for traditional use, the resulting data will have varying dimensionality. This misalignment of dimensionality is problematic for machine learning methods that require computational evaluation and comparison. Creative content is sensitive to corruption, minor changes to a component can be sufficient to invalidate an entire object as a whole. Thus, conventional feature extraction methods are not applicable to 3D geometric data.
+
+The \textit{topology} of a surface is the arrangement of components. The topological structure has practical consequences on the performance of a 3D Topology determines the rendering efficiency and behaviour in reaction to algorithmic operations. Incorporating the idea of topology creates an ambiguous many-to-one mapping of geometric data to the true surface it represents. This ambiguous aspect of geometric representation again contributes to the difficulty of applying established learning methods.
+
+Traditional learning-based approaches generalise a solution by training with a large data set. Unfortunately, 3D data is not as easily attainable when compared to other mediums such as images. Despite the abundance of exemplary 3D output produced, most are not available to the public. Freely available 3D content vary in stylistic properties and suffer from the lack of quality control. In practice, the pool of available 3D exemplars is small. The learning model applied must be robust with small training sets, imperfect examples, and the presence of uncertainty.
+
+The subjective nature of evaluating artistic products poses a problem for computational solutions. A creative environment demands versatility. This incertitude aspect necessitates learning a regression model that can predict a set of acceptable solutions as an assisting procedure, as opposed to a fully-automated process.
+
+%%% Research hypothesis and objectives %%% 
 A learning-based perspective towards production can reuse exemplary data available to automate the task at hand.
-Identifying commonly recurring properties remove the need to manually complete repetitive operations. This leads to \textit{simplification} of the production pipeline. Non-experts receive the ability to create 3D assets, allowing focus on the human aspect of design without requiring to learn the intrinsics of 3D software. 
-A real-time method that uses exemplary data as reference gives rise to the idea of \textit{rapid prototyping}. Typically, visualising a concept is presented through a medium that is faster to produce, such as conceptual art or blueprint sketches. Such practice is common but risks misrepresentation from translation between mediums. Exposing a fast method of sampling from a space that is learned from exemplary designs can provide initial geometry to be refined and provides a clearer indication of the concept. Assisted content generation is useful for professional content creators whom operate in an environment where division of labour is paramount.
+Identifying commonly recurring properties remove the need to complete repetitive operations manually, leading to \textit{simplification} of the production pipeline. Non-experts receive the ability to create 3D assets, allowing focus on the human aspect of design without requiring to learn the intrinsics of 3D software. 
+A real-time method that uses exemplary data as a reference gives rise to the idea of \textit{rapid prototyping}. Typically, visualising a concept is presented through a medium that is faster to produce, such as conceptual art or blueprint sketches. Such practice is common but risks misrepresentation from translation between mediums. Exposing a fast method of sampling from a latent space learned from exemplary designs can provide initial geometry to be refined and presents a clearer indication of a concept.
 
-\section{Challenges}
-The role that learning methods play in both manufacturing and consumer application continue to grow. However, adoption has been slow for creative fields. Applying machine learning to 3D production faces multiple novel challenges. 
-
-Geometric data represent a surface through components and come in varying dimension. Most often, the arrangement of components also come into factor, such as topology of polygonal meshes. This creates a many-to-one mapping of geometric data to the true surface it represents. Creative content is sensitive to corruption, small changes to a component can invalidate an entire object as a whole. Thus, typical feature extraction methods are not applicable.
-
-Machine learning solutions quite often use large training sets. The problem with 3D data is that it is not as easily attainable when compared to other mediums such as images. There are many freely available, but quality is not the best. In practice, the pool of available 3D exemplars is small.
-
-The ambiguous nature of evaluating art poses a problem. A creative environment demands versatility. This is problematic for machine learning methods.
-
-Real-time performance is necessary to provide immediate feedback as artists won't wait idly.
-
-\section{Academic Background}
-
-% Style-based inverse kinematics introduced the Scaled Gaussian Process Latent Variable Model to learn the probabilistic distribution of a 3D human posture model [15]. Motion capture data represent character posture with a 42-dimensional feature vector that encapsulates joint information of a humanoid body. Learning a model of poses established the relation between joints and identified constraints exhibited in the training data. The probabilistic distribution is plot and used to select predictions in the model. There are no constraints on the joints, but sampling areas of high likelihood in the distribution models realistic motion that resembles the input data.
-
-% A latent doodle space learns latent (unobserved) variables that describe simple line drawings more concisely than the original data [7]. The motivation of a latent doodle space is to generating new drawings that are inspired by the input data. There are two key phases to derive a latent doodle space: the first challenge is to identify line strokes within drawings, the second is using a latent variable method to learn a low-dimensional latent space of input drawings. 
-
-% A study by Campbell and Kautz (2014) presented a framework that learns the latent manifold of existing font styles [10]. The process involved universal parametrization of fonts to a polyline representation so that a distance measure is applicable and the generative model can interpolate between styles. Non-experts could create font styles without experience on type design by sampling points from a two-dimensional latent manifold.
-
-% Drawing assistance powered by large-scale crowd-sourcing explored the potential of data-driven drawing to prompt for correction by achieving an artistic consensus [20]. Learning a correction vector field from training drawings finds a consensus. Stroke-correction is applied using the correction vector field to adjust user input dynamically.
-
-% Chai et al. (2016) introduced AutoHair, a method for automatic modelling of 3D hair from a portrait image [12]. The approach extracts information from images and uses a database of hair meshes to construct a 3D representation of the information conveyed. A hierarchical deep neural network trained on annotated hair images learn to segment hair and estimate growth direction within portraits. Data-driven hair matching and modelling algorithm fit meshes from the database to parameters output by the neural net model to automatically produce 3D hair. The experiment developed a traversable hairstyle space of 50,000 hair models, using training images to fit segments of 3D examples obtained from the internet.
-
-Research regarding creative content often parametrise the training data so that machine learning is applicable. There is no clearly defined solution for a problem in the creative field, effective solutions strive for versatility, employing consensus decision making or offering multiple solutions. To overcome the challenges introduced, dimensionality reduction through unsupervised learning with probabilistic latent variable models such as the Gaussian Process Latent Variable Model (GP-LVM) [18] present an opportunity to learn stylistic properties of design and predict multiple acceptable outputs by analysing the likelihood.
+Assisted real-time content generation extends the utility of machine learning research for the creative field. Past research has used probabilistic nonlinear dimensionality reduction to learn a \textit{latent space} (low-dimensional representation) from a high-dimensional space, simplifying data by reducing the number of variables needed to be considered. Such an approach has been employed for animation \cite{styleik}, basic drawings \cite{latentdoodle}, and font design \cite{fontmanifold}. We aim to build upon the foundation established for complex, enormously high dimensional 3D geometric data by resolving the challenges outlined in section \ref{motivation}.
 
 
 \section{Programme and Methodology}
-\subsection{Work package 1 (WP1): Parametrisation of 3D Objects}
-A critical problem 
+\subsection*{Work Package 1 (WP1): Parametrisation of 3D Objects}
+\textbf{Research Leader:} Dr D. K. Diep\par
 
-3D objects are defined ambiguously, it is challenging to compare structures of 3D geometry without preprocessing. This phase investigates methods of approximating object successfully so that the aligned data are comparable and minimises the data loss from approximation.
+The principal research objective of this work package is to establish an intermediate standardised 3D representation suitable for machine learning. As outlined in section \ref{motivation}, conventional feature extraction methods are insufficient to represent delicate details of surfaces. WP1 investigates methods of approximating object successfully so that the aligned data are comparable and minimises the data loss from approximation.
 
-There are numerous representations of 3D objects in computer graphics. One way to obtain 3D geometry data is to sample surfaces of the physical world with a 3D scanner. Common representations of sampled geometric data include point clouds, range maps, and voxels (figure 1.1).
+Geometric representations can describe arbitrary surfaces, adjusting to the need of a content creator flexibly. Unusual surface output is undesirable for the purpose of assisted content generation. Constraints can be placed on the space of possible surfaces described to ensure a level of quality. In computer graphics, there exists procedural generative methods that synthesise complex geometry from a smaller set of input parameters.
 
-3D surface representations have advantages and disadvantages depending on the use case. It is possible to convert between representations; however, conversion between representations risk incurring data loss. The CAD (Computer-Aided Design) industry often uses precise mathematical representations such as NURBS (Non-Uniform Rational Basis Spline). The most widely adopted representation for CGI (Computer-Generated Imagery) is polygonal meshes. In a production environment, it is preferred to define geometry specifically to requirements of the design as opposed to capturing examples. Polygon meshes are simple to define, yet with established techniques such as UV texturing and normal mapping, are sufficiently expressive for visualising purposes. The study of polygonal meshes is deeply rooted in computer graphics.
+The first objective of this phase is to evaluate current generative models available as candidates that can be intermediate representations for machine learning methods. The industrial standard for CGI predominately uses mesh models, a high-fidelity representation but is susceptible to noise corruption - marginal alteration on the vertices of a mesh model can change its appearance significantly. Generative models and representations of surfaces is a large sub-topic with much to explore. Potential intermediate representations include generalised cylinders, voxels, shape histograms, and 3D salient points \cite{salientpoints}. It is critical for the generalised model to strike a balance between the cardinality of inputs required as a generalised representation and the fidelity it is able to capture.
 
-Elements of a polygonal mesh are vertices, edges, and faces. The topology of a mesh is concerned with the arrangement of its components, well-organised topology is required to maintain geometric qualities
-when performing algorithmic operations on a mesh. In practice, professionals create polygon meshes with majority quad-face topology (faces formed from four edges) during production. The rendering pipeline often automatically converts polygon meshes to triangle faces (formed from three edges) as an optimisation process. Quadrilateral mesh form what we call edge loops which can be used to define the structure of geometry, thus conform better with editing tools and preserve structure when algorithmically processed in comparison to triangle meshes.
+From the set of existing models, we will formulate an extended model such that it contains a comparable metric and preserves the necessary properties of geometric data including preservation of the topology. Finally, we devise sampling methods to acquire an approximation of a 3D asset by accurately estimating the inputs of a generative model.
 
-The preferred representation of 3D objects within the industry is polygons. A polygonal object is defined by vertices, edges, and faces that form the geometry. Topology is the study of geometrical arrangement for the object. It is best practice to use quad-faces, which are faces formed from four edges asset production. The rendering pipeline often requires and automatically converts geometry to tri-faces, faces formed from three edges. Other representations include voxels which represent objects with cubes, and pixols, a 3D variant of pixels introduced by Pixelogic for their state of the art sculpting program, ZBrush.
-
-
-\subsection{Deliverables}
+\textbf{Deliverables}
 \begin{enumerate}
-	\item Investigate and formulate techniques or generative model(s) that resolve the alignment problem of raw input data, allowing a sufficient approximation of generative parameters with the same dimension.
-	\item Implementation of said approximators, integrated within the production pipeline (extending state of the art tools such as 3DS Max, Maya, and Blender).
+	\item \textbf{D1a.} Investigate techniques or generative model(s) that is suitable for resolving the alignment problem of raw input data, allowing a sufficient approximation of generative parameters with the same dimension.
+	\item \textbf{D1b.} Formulate techniques or generative model(s) that preserve geometric properties to maintain an organised topology desirable for 3D assets.
+	\item \textbf{D1c.} Devise methods to sample generative inputs from approximating a 3D asset to the closest equivalent defined in a generative model.
 \end{enumerate}
 
-A challenge presented when attempting to learn the variation of 3D objects is the alignment problem. Data produced by creators defined in the form of vertices, edges and faces have varying dimensionality. Representations of the same object can vary, due to the level of detail and the pose of the object. Approximation of the object should be: translation, rotation, scale, and level of detail invariant, demanding a volumetric or an alternative generic approach.
+\subsection{Work Package 2 (WP2): Learning a Regression Model of 3D Objects}
+\textbf{Research Leader:} Dr C. H. Ek\par
 
-Voxels have had success in estimating 3D objects but typically require closed shapes, this is not enough for production as planes, and unfilled shapes are often used to optimise by reducing the polycount.
+The research objective of this phase is to investigate methods that are ideal for learning the generation of 3D objects. There are many machine learning models that can be used for regression. A model that is fitting for production of 3D assets must address the following:
+\begin{itemize}
+	\item Subjective evaluation of artistic products.
+	\item Small training data sets.
+	\item Missing information and uncertainty.
+\end{itemize}
 
-\subsection{Work Package 2 (WP2): Learning the Generation of 3D Objects}
-%%% Automated methods, procedural generation %%%
-Procedural generation techniques can automatically produce output that adheres to rules established by the generative model defined. Generation of terrains and city modelling sometimes employ procedural techniques to take advantage of its systematic nature to mass produce variations in agreement with specified patterns [11]. Fractals and methods such as the Lindenmayer system have been used to create patterns that resemble those observed in nature [24]. Automated techniques such as the ones discussed, however, are seldom used for modelling distinct objects with a specific design. It is an involved process to control the output of procedurally generated content without heavily restricting its capabilities. Automated methods that do not learn cannot adapt to changing demands without reimplementation, motivating for a learning-based solution.
-
-Existing tools for 3D modelling have remained mostly static in the paradigm of approach over the past several decades. Automation through methods such as procedural generation can produce content faster. However, traditional synthesis and automated solutions are defined to produce a specific class of output through established patterns and cannot adapt to new models without reimplementation. The research hypothesis of this study is that of applying nonlinear probabilistic dimensionality reduction improves the efficacy of creative content production for exceptionally high dimensional data such as complex 3D hair geometry on virtual humanoids.
+Past research have utilised the Gaussian process latent variable model (GP-LVM) to learn a probabilistic nonlinear latent manifold embedding of the observed data. The GP-LVM is a strong contender as a regression model for the ART-CG framework as a probabilistic solution can offer multiple acceptable predictions for a content creator to choose from. Gaussian processes are non-parametric, thus, it can flexibly capture a range of possible values fitting for general 3D assets. Chai et al (2016) employed a neural network as part of a system that produces 3D hair geometry \cite{autohair}. The scope of investigation encapsulates comparison of different regression models available.
 
 
-Research Objective: Investigate methods that are ideal for learning the generation of 3D objects and how to best visualise it so that it is useful. The scope of investigation encapsulates comparison of different regression models, extending viable models through layered hierarchy or applying deep learning. When applicable to latent variables, determining whether it is possible to infer semantic meaning from common latent variables for classification. Considerations include the limitations of learning models, evaluating the trend of performance as training data set scales.
+The complexity of 3D geometry calls for advanced regression models. Viable models are to be extended with concepts such as layering hierarchy or applying deep learning. Considerations include the limitations of learning models, evaluating the trend of performance as training data set scales. Online (continually) learning models update with new observations without requiring retraining, this approach is a possible solution for refining regression models as 3D asset is produced even with an initially small training set.
 
 \subsubsection{Deliverables} 
 \begin{enumerate}
-	\item Investigate viable learning models that are suitable for generation of 3D objects.
-	\item Critically evaluating the advantages and disadvantages of each model.
-	\item Applying research of complex models such as layered models and deep learning.
+	\item \textbf{D2a.} Investigate viable learning models that are suitable for generation of 3D objects.
+	\item \textbf{D2b.} Applying research of complex models such as hierarchical layering, deep learning, and online training to utilise an advanced regression model for complex 3D geometry.
+	\item \textbf{D2c.} Assorting competitive kernels that establish effective default prior probability distributions suitable for 3D geometry regression models and learning hyperparameters.
 \end{enumerate}
 
 \subsection{Work Package 3 (WP3): Generation and Reparation}
+\textbf{Research Leader:} Dr D. K. Diep\par
 
-Research Objective: The output of trained models contain a level of uncertainty. In the context of 3D assets, it is often flexible with approximation, but some scenarios outline specific constraints. An example would be hair object that should not grow inwards into a head object. Engineering design and architecture also apply strict limitations. This phase investigates methods of generation that conform with specified constraints, performing reparations appropriately so that the output is optimised and practical.
+The output of trained models contain a level of uncertainty. In the context of 3D assets, there are scenarios where specific constraints for geometry is outlined. An example would be hair object that should not grow inwards into a scalp surface. Engineering design and architecture also apply strict limitations. This phase investigates methods of generation that conform with specified constraints, performing reparations appropriately so that the output is optimised and practical.
 
-\subsubsection{Deliverables}
+\textbf{Deliverables}
 \begin{enumerate}
-	\item Investigate and formulate methods of generation and reparation for the uncertain output of a trained model.
+	\item \textbf{D3a.} Investigate and formulate methods of generation and reparation for the uncertain output of a trained model.
 \end{enumerate}
 
-\subsection{Work Package (WP4): Integration and Applications of Machine-Trained Tools}
-Research Objective: Present a framework or specification of training-based tools that are fitting of integration to production and consumer applications. Discover factors that determine performance attained and identify the performance differences of scenarios, such as real-time programs.
+\subsection{Work Package 4 (WP4): High-Fidelity Generalised Parametrisation}
+\textbf{Research Leader:} Dr C. Strife\par
+
+Techniques such as vector displacement maps provide an additional layer of detail for 3D assets. This phase looks into incorporating displacement maps and similar methodologies as a part of the ART-CG framework to improve the quality of predictions by the regression model without sacrificing topology.
 
 \subsubsection{Deliverables}
 \begin{enumerate}
-	\item Evaluation of online (continually) learning models against offline learning models.
-	\item Developing a framework of ideal workflow that integrates machine-trained tools into state of the art production software.
-	\item Measure the efficacy for both expert and consumer use cases.
+	\item \textbf{D4a.} Learning an additional model of high-fidelity generalised parametrisation to modify 3D assets.
+	\item \textbf{D4b.} Incorporating high-fidelity generalised parametrisation as part of the generative model for the 3D geometry regression model.
+\end{enumerate}
+
+
+\subsection{Work Package 5 (WP5): Intuitive Presentation of Latent Control Variables}
+\textbf{Research Leader:} Dr D. Hu\par
+Research Objective: Present a framework or specification of training-based tools that are fitting of integration to production and consumer applications. Discover factors that determine performance attained and identify the performance differences of scenarios, such as real-time programs.
+ When applicable to latent variables, determining whether it is possible to infer semantic meaning from common latent variables for classification.
+
+\subsubsection{Deliverables}
+\begin{enumerate}
+\item \textbf{D5a.} Developing a framework of ideal workflow that integrates machine-trained tools into state of the art production software.
+\item \textbf{D5b.} Measure the efficacy for both expert and consumer use cases.
 \end{enumerate}
 	
 \bibliography{research_proposal}
@@ -179,11 +179,33 @@ Research Objective: Present a framework or specification of training-based tools
 
 \section*{Budget}
 \hrule
-Employment
-Machines \& monitors, accessories
-Travelling
-Conference
-Communication
+
+\begin{table}[!h]
+	\centering
+	\begin{tabular}{|l|c|c|c|}
+		\hline
+		Item		& Quantity	& Annual cost per unit	& Total cost over duration (\textsterling)\\
+		PI			& 1			& 100,000				& 300,000\\
+		\hline
+		CoI			& 1			& 75,000				& 225,000\\
+		\hline
+		PD			& 2			& 50,000				& 300,000\\
+		\hline
+		PhD			& 2			& 20,000				& 120,000\\
+		\hline
+		Technical Artist (10\%) & 1 & 10,000			& 30,000\\
+		\hline
+		Equipment	& X			& X						& 3,000\\		
+		\hline
+		Travel		& X			& X						& 10,000\\		
+		\hline
+		Workshops	& X			& X						& 3,000\\		
+		\hline
+		Conference	& X			& X						& 3,000\\		
+		\hline
+	\end{tabular}
+	%\caption{budget}
+\end{table}
 
 \newpage
 
@@ -191,7 +213,7 @@ Communication
 \hrule
 \newpage
 
-\section*{Impact Statement}
+\section*{Pathways to Impact}
 \hrule
 The production of 3D assets play a pivotal role in business, engineering, and entertainment.
 [Cite market surveys of CAD, business, visualisation, entertainment, other benefits]
@@ -204,6 +226,9 @@ Dimensionality reduction on enormously high dimensional data.
 
 Applications that allow users to create their personal content could also integrate machine-learning based tools to prevent inappropriate or undesirable creation from being produced while providing options that surpass existing alternatives. An example would be avatar creation for many applications and video games. A space of reasonable options generated from predefined outputs by the developers will allow users to interpolate between sensible configurations, providing an excellent level of customisation while adhering to defined constraints.
 
+The research department of ManualDesk is interested in methods of effectively presenting a low-dimensional representation acquired from dimensionality reduction such that content creators would find intuitive to use.
+
+Circle Enix is seeking assisted content creation tools for non-expert consumers to create custom assets for their upcoming video game software.
 
 \newpage
 
