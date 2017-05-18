@@ -1,4 +1,24 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
+
+\bibitem{latentdoodle}
+W.~Baxter and K.~Anjyo.
+\newblock {\em Latent Doodle Space}.
+\newblock Eurographics 2006. Vol. 25, 3, 2006.
+
+\bibitem{fontmanifold}
+N.~D. Campbell and J.~Kautz.
+\newblock {\em Learning a manifold of fonts}.
+\newblock ACM Transactions on Graphics (TOG) 33, 4, 91, 2014.
+
+\bibitem{autohair}
+M.~Chai, T.~Shaq, H.~Wu, Y.~Weng, and K~Zhou.
+\newblock {\em AutoHair: Fully automatic hair modeling from a single image}.
+\newblock ACM Trans. Graph. 35, 4 (July), 116:1–116:12, 2016.
+
+\bibitem{deepgp}
+A.~C. Damianou and N.~D. Lawrence.
+\newblock {\em Deep Gaussian Processes}.
+\newblock AISTATS, 2013.
 
 \bibitem{simulation}
 Y.~Gao, P.~Liu, D.~Liu, and L.~Zhang.
@@ -6,11 +26,22 @@ Y.~Gao, P.~Liu, D.~Liu, and L.~Zhang.
   bus.
 \newblock pages 1--4, 2011.
 
+\bibitem{styleik}
+K.~Grochow, S.~L. Martin, A.~Hertzmann, and Z.~Popovich.
+\newblock {\em Style-Based Inverse Kinematics}.
+\newblock SIGGRAPH '04 ACM SIGGRAPH 2004 Papers. pp.522-531, 2004.
+
 \bibitem{salientpoints}
 N.~Habiba and D.~Ali.
 \newblock Salient spectral features for points detection.
 \newblock In {\em 2016 2nd International Conference on Advanced Technologies
   for Signal and Image Processing (ATSIP)}, pages 212--216, March 2016.
+
+\bibitem{gplvm}
+N.~D. Lawrence.
+\newblock {\em Probabilistic non-linear principal component analysis with
+  Gaussian process latent variable models}.
+\newblock The Journal of Machine Learning Research 6, 1783–1816, 2004.
 
 \bibitem{cgmarket}
 Jon~Peddie Research.

@@ -1,6 +1,4 @@
-\documentclass[a4paper, fontsize=15pt, onecolumn]{article} % A4 paper and 11pt font size
-%\documentclass[a4paper,11pt]{article}
-%\usepackage[a4paper, total={7.5in, 9.5in}]{geometry}
+\documentclass[a4paper, fontsize=12pt, onecolumn]{article} % A4 paper and 11pt font size
 \usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
 
 \usepackage[pdftex]{graphicx}
@@ -96,7 +94,7 @@ A learning-based perspective towards production can reuse exemplary data availab
 Identifying commonly recurring properties remove the need to complete repetitive operations manually, leading to \textit{simplification} of the production pipeline. Non-experts receive the ability to create 3D assets, allowing focus on the human aspect of design without requiring to learn the intrinsics of 3D software. 
 A real-time method that uses exemplary data as a reference gives rise to the idea of \textit{rapid prototyping}. Typically, visualising a concept is presented through a medium that is faster to produce, such as conceptual art or blueprint sketches. Such practice is common but risks misrepresentation from translation between mediums. Exposing a fast method of sampling from a latent space learned from exemplary designs can provide initial geometry to be refined and presents a clearer indication of a concept.
 
-Assisted real-time content generation extends the utility of machine learning research for the creative field. Past research has used probabilistic nonlinear dimensionality reduction to learn a \textit{latent space} (low-dimensional representation) from a high-dimensional space, simplifying data by reducing the number of variables needed to be considered. Such an approach has been employed for animation \cite{styleik}, basic drawings \cite{latentdoodle}, and font design \cite{fontmanifold}. We aim to build upon the foundation established for complex, enormously high dimensional 3D geometric data by resolving the challenges outlined in section \ref{motivation}.
+Assisted real-time content generation extends the utility of machine learning research for the creative field. Past research has used probabilistic nonlinear dimensionality reduction to learn a \textit{latent space} (low-dimensional representation) from a high-dimensional space, simplifying data by reducing the number of variables needed to be considered. Such an approach has been employed for animation \cite{styleik}, basic drawings \cite{latentdoodle}, and font design \cite{fontmanifold}. ART-CG builds upon the foundation of learning-based solutions for creative purposes established and transfers it to complex, enormously high dimensional 3D geometric data by resolving the challenges outlined.
 
 
 \section{Programme and Methodology}
@@ -107,18 +105,18 @@ The principal research objective of this work package is to establish an interme
 
 Geometric representations can describe arbitrary surfaces, adjusting to the need of a content creator flexibly. Unusual surface output is undesirable for the purpose of assisted content generation. Constraints can be placed on the space of possible surfaces described to ensure a level of quality. In computer graphics, there exists procedural generative methods that synthesise complex geometry from a smaller set of input parameters.
 
-The first objective of this phase is to evaluate current generative models available as candidates that can be intermediate representations for machine learning methods. The industrial standard for CGI predominately uses mesh models, a high-fidelity representation but is susceptible to noise corruption - marginal alteration on the vertices of a mesh model can change its appearance significantly. Generative models and representations of surfaces is a large sub-topic with much to explore. Potential intermediate representations include generalised cylinders, voxels, shape histograms, and 3D salient points \cite{salientpoints}. It is critical for the generalised model to strike a balance between the cardinality of inputs required as a generalised representation and the fidelity it is able to capture.
+The first objective of this phase is to evaluate current generative models available as candidates that can be intermediate representations for machine learning methods. The industrial standard for CGI predominately uses mesh models, a high-fidelity representation but is susceptible to noise corruption - marginal alteration on the vertices of a mesh model can change its appearance significantly. Generative models and representations of surfaces is a large sub-topic with much to explore. Potential intermediate representations include generalised cylinders, voxels, shape histograms, and 3D salient points \cite{salientpoints}. It is critical for the generalised model to strike a balance between the cardinality of inputs required and the fidelity it is able to capture.
 
 From the set of existing models, we will formulate an extended model such that it contains a comparable metric and preserves the necessary properties of geometric data including preservation of the topology. Finally, we devise sampling methods to acquire an approximation of a 3D asset by accurately estimating the inputs of a generative model.
 
-\textbf{Deliverables}
+\subsubsection*{Deliverables} 
 \begin{enumerate}
 	\item \textbf{D1a.} Investigate techniques or generative model(s) that is suitable for resolving the alignment problem of raw input data, allowing a sufficient approximation of generative parameters with the same dimension.
 	\item \textbf{D1b.} Formulate techniques or generative model(s) that preserve geometric properties to maintain an organised topology desirable for 3D assets.
 	\item \textbf{D1c.} Devise methods to sample generative inputs from approximating a 3D asset to the closest equivalent defined in a generative model.
 \end{enumerate}
 
-\subsection{Work Package 2 (WP2): Learning a Regression Model of 3D Objects}
+\subsection*{Work Package 2 (WP2): Learning a Regression Model of 3D Objects}
 \textbf{Research Leader:} Dr C. H. Ek\par
 
 The research objective of this phase is to investigate methods that are ideal for learning the generation of 3D objects. There are many machine learning models that can be used for regression. A model that is fitting for production of 3D assets must address the following:
@@ -128,51 +126,58 @@ The research objective of this phase is to investigate methods that are ideal fo
 	\item Missing information and uncertainty.
 \end{itemize}
 
-Past research have utilised the Gaussian process latent variable model (GP-LVM) to learn a probabilistic nonlinear latent manifold embedding of the observed data. The GP-LVM is a strong contender as a regression model for the ART-CG framework as a probabilistic solution can offer multiple acceptable predictions for a content creator to choose from. Gaussian processes are non-parametric, thus, it can flexibly capture a range of possible values fitting for general 3D assets. Chai et al (2016) employed a neural network as part of a system that produces 3D hair geometry \cite{autohair}. The scope of investigation encapsulates comparison of different regression models available.
+Past research have utilised the Gaussian process latent variable model (GP-LVM) to learn a probabilistic nonlinear latent manifold embedding of the observed data. The GP-LVM model is a strong contender as a regression model for the ART-CG framework as a probabilistic solution can offer multiple acceptable predictions for a content creator to choose from \cite{gplvm}. Gaussian processes are non-parametric, thus, it can flexibly capture a range of possible values fitting for general 3D assets. Chai et al (2016) employed a neural network as part of a system that produces 3D hair geometry \cite{autohair}. The scope of investigation encapsulates comparison of different regression models available.
 
+The complexity of 3D geometry calls for advanced regression models. Viable models are to be extended with concepts such as layering hierarchy or applying deep learning \cite{deepgp}. Considerations include the limitations of learning models, evaluating the trend of performance as training data set scales. Online (continually) learning models update with new observations without requiring retraining, this approach is a possible solution for refining regression models as 3D asset is produced even with an initially small training set.
 
-The complexity of 3D geometry calls for advanced regression models. Viable models are to be extended with concepts such as layering hierarchy or applying deep learning. Considerations include the limitations of learning models, evaluating the trend of performance as training data set scales. Online (continually) learning models update with new observations without requiring retraining, this approach is a possible solution for refining regression models as 3D asset is produced even with an initially small training set.
-
-\subsubsection{Deliverables} 
+\subsubsection*{Deliverables} 
 \begin{enumerate}
 	\item \textbf{D2a.} Investigate viable learning models that are suitable for generation of 3D objects.
 	\item \textbf{D2b.} Applying research of complex models such as hierarchical layering, deep learning, and online training to utilise an advanced regression model for complex 3D geometry.
 	\item \textbf{D2c.} Assorting competitive kernels that establish effective default prior probability distributions suitable for 3D geometry regression models and learning hyperparameters.
 \end{enumerate}
 
-\subsection{Work Package 3 (WP3): Generation and Reparation}
+\subsection*{Work Package 3 (WP3): Generation and Reparation}
 \textbf{Research Leader:} Dr D. K. Diep\par
 
-The output of trained models contain a level of uncertainty. In the context of 3D assets, there are scenarios where specific constraints for geometry is outlined. An example would be hair object that should not grow inwards into a scalp surface. Engineering design and architecture also apply strict limitations. This phase investigates methods of generation that conform with specified constraints, performing reparations appropriately so that the output is optimised and practical.
+Prediction by regression models contain a level of uncertainty. In the context of 3D assets, there are scenarios where specific constraints for geometry is outlined. An example would be hair object that should not grow inwards into a scalp surface. Engineering design and architecture also apply strict limitations. This phase investigates methods of generation that conform with specified constraints, performing reparations appropriately so that the output is optimised and practical. 
+
+Constraints can be applied within the regression model through weighting inputs or implementing a cost function that penalises undesirable attributes.  Post-prediction reparation would consider regulating output through heuristics or physical simulation to remove overlapping surfaces and similar properties.
 
 \textbf{Deliverables}
 \begin{enumerate}
-	\item \textbf{D3a.} Investigate and formulate methods of generation and reparation for the uncertain output of a trained model.
+	\item \textbf{D3a.} Investigate and formulate methods that constrain the regression model.
+	\item \textbf{D3b.} Investigate and formulate methods that repair the output of a regression model.
 \end{enumerate}
 
-\subsection{Work Package 4 (WP4): High-Fidelity Generalised Parametrisation}
+\subsection*{Work Package 4 (WP4): High-Fidelity Generalised Parametrisation}
 \textbf{Research Leader:} Dr C. Strife\par
 
 Techniques such as vector displacement maps provide an additional layer of detail for 3D assets. This phase looks into incorporating displacement maps and similar methodologies as a part of the ART-CG framework to improve the quality of predictions by the regression model without sacrificing topology.
 
-\subsubsection{Deliverables}
+\subsubsection*{Deliverables} 
 \begin{enumerate}
 	\item \textbf{D4a.} Learning an additional model of high-fidelity generalised parametrisation to modify 3D assets.
 	\item \textbf{D4b.} Incorporating high-fidelity generalised parametrisation as part of the generative model for the 3D geometry regression model.
 \end{enumerate}
 
 
-\subsection{Work Package 5 (WP5): Intuitive Presentation of Latent Control Variables}
+\subsection*{Work Package 5 (WP5): Intuitive Presentation of Latent Control Variables}
 \textbf{Research Leader:} Dr D. Hu\par
-Research Objective: Present a framework or specification of training-based tools that are fitting of integration to production and consumer applications. Discover factors that determine performance attained and identify the performance differences of scenarios, such as real-time programs.
- When applicable to latent variables, determining whether it is possible to infer semantic meaning from common latent variables for classification.
+Simplifying the production process through learning a regression model delegates control from the observed variables to descriptive latent (unobserved) variables that are input to the regression model. Determining the output with latent variables reduce the number of inputs required, but serves no purpose if the latent variables are counter-intuitive. This phase aims to deliver an intuitive presentation for latent control variables.
 
-\subsubsection{Deliverables}
+Discover factors that determine performance attained and identify the performance differences of scenarios, such as real-time programs.
+When applicable to latent variables, determining whether it is possible to infer semantic meaning from common latent variables for classification.
+
+\subsubsection*{Deliverables} 
 \begin{enumerate}
-\item \textbf{D5a.} Developing a framework of ideal workflow that integrates machine-trained tools into state of the art production software.
-\item \textbf{D5b.} Measure the efficacy for both expert and consumer use cases.
-\end{enumerate}
+	\item \textbf{D5a.} Evaluating and devising methods of associating latent control variables to semantic properties.
+	\item \textbf{D5a.} Presenting latent control variables intuitively.
 	
+\end{enumerate}
+
+\newpage
+
 \bibliography{research_proposal}
 
 \newpage
@@ -182,12 +187,14 @@ Research Objective: Present a framework or specification of training-based tools
 
 \begin{table}[!h]
 	\centering
+	{\renewcommand{\arraystretch}{1.8} %<- modify value to alter spacing
 	\begin{tabular}{|l|c|c|c|}
 		\hline
-		Item		& Quantity	& Annual cost per unit	& Total cost over duration (\textsterling)\\
+		Item		& Quantity	& Annual cost per unit (\textsterling)	& Total cost over duration (\textsterling)\\
+		\hline
 		PI			& 1			& 100,000				& 300,000\\
 		\hline
-		CoI			& 1			& 75,000				& 225,000\\
+		CoI			& 1			& 75,000				& 210,000\\
 		\hline
 		PD			& 2			& 50,000				& 300,000\\
 		\hline
@@ -195,28 +202,50 @@ Research Objective: Present a framework or specification of training-based tools
 		\hline
 		Technical Artist (10\%) & 1 & 10,000			& 30,000\\
 		\hline
-		Equipment	& X			& X						& 3,000\\		
+		Workstation	& 2			& 500					& 1,000\\		
 		\hline
-		Travel		& X			& X						& 10,000\\		
+		Workshop	& 2			& 1,000					& 2,000\\		
 		\hline
-		Workshops	& X			& X						& 3,000\\		
+		Conference	& 3			& 6,000					& 18,000\\		
 		\hline
-		Conference	& X			& X						& 3,000\\		
+		Travel \& accommodation & X	& 5,000				& 15,000\\		
+		\hline
+		Training Data& X		& X						& 150\\
 		\hline
 	\end{tabular}
+	}
 	%\caption{budget}
 \end{table}
+
+\vspace{1cm}
+
+\textbf{Total cost:} \textsterling 996,150.00
 
 \newpage
 
 \section*{Justification for Resources}
 \hrule
+
+The principal investigator (PI) and co-investigator (CoI) oversees scheduling, administration, and execution of the research project such that it successfully achieves the deliverables promised.
+The principal investigator, Dr D. Diep, is the instigator of the research proposal and will be the one with ultimate responsibility for directing the project in the right direction.
+The co-investigator, Dr. C. H. Ek, will support and assist the principal instigator in leading the research project.
+The investigators will ensure that the project is executed in compliance with governing laws and regulations, as well as adhering to the policies outlined by sponsors.
+
+Post-doctoral researchers bring expertise knowledge from related fields that will assist in making informed decisions to carry out research efficiently. PhD students will support the development of the research project and acquire skills from the field of machine learning, such as probabilistic non-linear dimensionality reduction and other significant learning-based models applicable to the 3D production pipeline.
+
+A part-time technical artist will create and modify geometric data to incorporate extreme or specific test cases considered by the project. An initial training set is purchased as it is more efficient than commissioning a professional artist. However, as the project develops, the input of a professional artist will be required to successfully introduce ART-CG to the production pipeline.
+
+Circle Enix and ManualLab will contribute with their industrial expertise for this project. Exchanging ideas create synergy between academia and industry to improve the chance of delivering successful results.
+
+Two shared workstations in office will process the data and prototyping ideas. While each member of staff is expected to own a personal machine, the workstations will act as a central point for development. Circle Enix has agreed to offer their cloud computing resources as well as access to their render farm facility for this project.
+
+The purpose of conferences and communication is to stay up to date with latest state of the art research and spreading awareness of our research project. National and international travel and accommodation costs is included in the budget. Publicity for the initiative will encourage adoption and draw in potential opportunities for collaboration. Exchanging findings with other researchers will be beneficial for all projects within the community.
+
 \newpage
 
 \section*{Pathways to Impact}
 \hrule
-The production of 3D assets play a pivotal role in business, engineering, and entertainment.
-[Cite market surveys of CAD, business, visualisation, entertainment, other benefits]
+As mentioned in section \ref{motivation}, the production of 3D assets play a pivotal role in business, engineering, and entertainment. It is an industry predicted to be worth \$ 235 billion in 2018. The collaborative effort between University of Bristol with industrial leaders Circle Enix and ManualLab will give an excellent chance of formulating effective methods/
 
 More 3D in future, Microsoft 3D Paint, augmented reality on tablets and smartphones, etc
 
