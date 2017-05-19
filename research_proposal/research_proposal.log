@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.3.12)  19 MAY 2017 15:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.3.12)  19 MAY 2017 17:51
 entering extended mode
 **./research_proposal.tex
 (research_proposal.tex
@@ -494,7 +494,12 @@ Underfull \hbox (badness 2495) in paragraph at lines 53--59
 eed-[]235-[]billion-[]by-[]2018$[]\OT1/ptm/m/n/10.95 , 2017.
  []
 
-) [6] [7] [8]
+) [6]
+Overfull \hbox (10.00053pt too wide) in paragraph at lines 212--239
+ [][] 
+ []
+
+[7] [8]
 Overfull \hbox (14.18756pt too wide) in paragraph at lines 276--278
 []\OT1/ptm/m/n/10.95 The re-search de-part-ment of Man-u-alDesk is in-ter-ested
  in meth-ods of ef-fec-tively pre-sent-ing a low-dimensional
@@ -529,7 +534,7 @@ e1/public/amsfonts/cm/cmsy10.pfb><E:/Programs/MikTex/fonts/type1/public/amsfont
 s/cm/cmtt10.pfb><E:/Programs/MikTex/fonts/type1/urw/times/utmb8a.pfb><E:/Progra
 ms/MikTex/fonts/type1/urw/times/utmr8a.pfb><E:/Programs/MikTex/fonts/type1/urw/
 times/utmri8a.pfb>
-Output written on research_proposal.pdf (10 pages, 130074 bytes).
+Output written on research_proposal.pdf (10 pages, 130162 bytes).
 PDF statistics:
  157 PDF objects out of 1000 (max. 8388607)
  62 named destinations out of 1000 (max. 500000)
